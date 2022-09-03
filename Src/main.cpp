@@ -56,7 +56,7 @@
 
 #include <iostream>
 
-#include "../Inc/SDLWrapper.hpp"
+#include <SDLWrapper.hpp>
 
 int main(int argc, char* argv[])
 {
