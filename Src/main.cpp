@@ -1,16 +1,15 @@
 #include <Logger.hpp>
 
-#include <SDLWrapper.hpp>
-
+#include <RendererWrapper.hpp>
 
 int main(int argc, char* argv[])
 {
-  Drawer drawer(800, 600);
-  if(drawer.Init() != Drawer::DrawerStatus::STATUS_OK) {
+  RendererWrapper drawer(800, 600);
+  if(drawer.Init() != RendererWrapper::RendererStatus::STATUS_OK) {
     Logger::Error("Drawer could not be initialized!");
     return 1;
   }
-  if(drawer.CreateWindow() != Drawer::DrawerStatus::STATUS_OK) {
+  if(drawer.CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK) {
     Logger::Error("Drawer could not be created!");
     return 1;
   }
@@ -18,7 +17,7 @@ int main(int argc, char* argv[])
     drawer.SetDrawColor(0,0,0);
     drawer.Clean();
 
-    drawer.SetDrawColor(Drawer::DrawerColor::RED);
+    drawer.SetDrawColor(RendererWrapper::RendererColor::RED);
 
     drawer.DrawLine(320, 200, 300, 240);
     drawer.DrawLine(300, 240, 340, 240);
