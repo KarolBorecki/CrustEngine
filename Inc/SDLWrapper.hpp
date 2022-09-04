@@ -1,3 +1,6 @@
+#ifndef _SDLWRAPPER_HPP_
+#define _SDLWRAPPER_HPP_
+
 #include <SDL2/SDL.h>
 
 #define DrawerWindow SDL_Window
@@ -115,15 +118,14 @@ inline void Drawer::GetEvent() {
 }
 
 inline void Drawer::Quit() {
-  if (renderer) {
-      SDL_DestroyRenderer(renderer);
-  }
-  if (window) {
-      SDL_DestroyWindow(window);
-  }
+  if (renderer) SDL_DestroyRenderer(renderer);
+  if (window) SDL_DestroyWindow(window);
+
   SDL_Quit();
 }
 
 inline DrawerRenderer* Drawer::GetRenderer() {
   return renderer;
 }
+
+#endif /* _SDLWRAPPER_HPP_ */
