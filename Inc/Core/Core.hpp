@@ -1,8 +1,8 @@
 #ifndef _CORE_HPP_
 #define _CORE_HPP_
 
-#include <Scene.hpp>
-#include <Logger.hpp>
+#include <Core/Scene.hpp>
+#include <Core/Logger.hpp>
 #include <Rendering/RendererWrapper.hpp>
 
 class Core {
