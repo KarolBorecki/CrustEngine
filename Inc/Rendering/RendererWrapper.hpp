@@ -3,12 +3,12 @@
 
 #include <SDL2/SDL.h>
 
-#define RendererWindow SDL_Window
-#define Renderer SDL_Renderer
-#define RendererBool SDL_bool
+#define LibRendererWindow SDL_Window
+#define LibRenderer SDL_Renderer
+#define LibRendererBool SDL_bool
 
-#define RendererFalse SDL_FALSE
-#define RendererTrue SDL_TRUE
+#define LibRendererFalse SDL_FALSE
+#define LibRendererTrue SDL_TRUE
 
 class RendererWrapper {
 public:
@@ -33,7 +33,7 @@ public:
   RendererWrapper(int _width, int _height) : width(_width), height(_height) {
     window = NULL;
     renderer = NULL;
-    isRunning = RendererFalse;
+    isRunning = LibRendererFalse;
   }
   ~RendererWrapper() {}
 
@@ -51,21 +51,22 @@ public:
 
   void Clean();
 
-  RendererBool IsRunning();
+  LibRendererBool IsRunning();
+  void StopRunning();
   void GetEvent();
 
   void Quit();
 
-  Renderer* GetRenderer();
+  LibRenderer* GetRenderer();
 
 private:
   int width;
   int height;
 
-  RendererWindow* window;
-  Renderer* renderer;
+  LibRendererWindow* window;
+  LibRenderer* renderer;
 
-  RendererBool isRunning;
+  LibRendererBool isRunning;
 };
 
 inline RendererWrapper::RendererStatus RendererWrapper::Init() {
@@ -73,7 +74,7 @@ inline RendererWrapper::RendererStatus RendererWrapper::Init() {
 }
 
 inline RendererWrapper::RendererStatus RendererWrapper::CreateWindow() {
-  isRunning = RendererTrue;
+  isRunning = LibRendererTrue;
   return SDL_CreateWindowAndRenderer(width, height, 0, &window, &renderer) == 0 ? STATUS_OK : STATUS_FAIL;
 }
 
@@ -105,14 +106,18 @@ inline void RendererWrapper::Clean() {
   SDL_RenderClear(renderer);
 }
 
-inline RendererBool RendererWrapper::IsRunning() {
+inline LibRendererBool RendererWrapper::IsRunning() {
   return isRunning;
+}
+
+inline void RendererWrapper::StopRunning() {
+  isRunning = LibRendererFalse;
 }
 
 inline void RendererWrapper::GetEvent() {
   SDL_Event event;
   while(SDL_PollEvent(&event))
-    if(event.type == SDL_QUIT) isRunning = RendererFalse;
+    if(event.type == SDL_QUIT) isRunning = LibRendererFalse;
 }
 
 inline void RendererWrapper::Quit() {
@@ -122,7 +127,7 @@ inline void RendererWrapper::Quit() {
   SDL_Quit();
 }
 
-inline Renderer* RendererWrapper::GetRenderer() {
+inline LibRenderer* RendererWrapper::GetRenderer() {
   return renderer;
 }
 

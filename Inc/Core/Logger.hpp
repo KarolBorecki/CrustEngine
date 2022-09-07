@@ -41,6 +41,7 @@ inline void Logger::Error(const char* format, ...) {
   vprintf(format, args);
   printf("\n");
   va_end(args);
+  SetFont(FontColor::WHITE);
 }
 
 inline void Logger::Warning(const char* format, ...) {
@@ -50,6 +51,7 @@ inline void Logger::Warning(const char* format, ...) {
   vprintf(format, args);
   printf("\n");
   va_end(args);
+  SetFont(FontColor::WHITE);
 }
 
 inline void Logger::Info(const char* format, ...) {
@@ -59,6 +61,7 @@ inline void Logger::Info(const char* format, ...) {
   vprintf(format, args);
   printf("\n");
   va_end(args);
+  SetFont(FontColor::WHITE);
 }
 
 inline void Logger::Log(const char* format, ...){

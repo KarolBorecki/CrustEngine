@@ -1,45 +1,27 @@
 #ifndef _CORE_HPP_
 #define _CORE_HPP_
 
-#include <Core/Scene.hpp>
-#include <Core/Logger.hpp>
-#include <Rendering/RendererWrapper.hpp>
+#include <vector>
+
+//#include <Core/Scene.hpp> //TODO: No need for complete type
+#include <Rendering/RenderWindow.hpp>
+
+class Scene;
 
 class Core {
 public:
-  static void Run(int width, int height);
-
-  static void LoadScene(Scene* scene);
+  void OpenNewWindow(int width, int height, Scene* scene);
 
 private:
-  static inline Scene* loadedScene { nullptr };
+  std::vector<RenderWindow*> openedWindows;
 };
 
-inline void Core::Run(int width, int height) {
-  RendererWrapper drawer(width, height);
-  if(drawer.Init() != RendererWrapper::RendererStatus::STATUS_OK) {
-    Logger::Error("Drawer could not be initialized!");
-    return;
-  }
-  if(drawer.CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK) {
-    Logger::Error("Drawer could not be created!");
-    return;
-  }
-  while(drawer.IsRunning()) {
-    drawer.SetDrawColor(0,0,0);
-    drawer.Clean();
+inline void Core::OpenNewWindow(int width, int height, Scene* scene) {
+  RenderWindow window(width, height, scene);
 
-    drawer.SetDrawColor(RendererWrapper::RendererColor::RED);
+  window.Start(); // TODO: run on new thread
 
-    drawer.DrawLine(320, 200, 300, 240);
-    drawer.DrawLine(300, 240, 340, 240);
-    drawer.DrawLine(340, 240, 320, 200);
-
-    drawer.Show();
-    drawer.GetEvent();
-  }
-
-  drawer.Quit();
+  //openedWindows.push_back(&window);
 }
 
 #endif /* _CORE_HPP_ */
