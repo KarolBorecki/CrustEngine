@@ -4,9 +4,8 @@
 #include <queue>
 
 #include <Core/Scene.hpp>
-
 #include <Rendering/Renderer.hpp>
-#include <Rendering/RenderObject.hpp>
+#include <Rendering/Objects/RenderObject.hpp>
 
 class RenderWindow {
 public:
@@ -15,6 +14,8 @@ public:
 
   void Start();
   void Close();
+
+  void LoadScene(Scene* scene);
 
   void AddObjectToRenderStack(RenderObject* obj);
 
@@ -28,7 +29,6 @@ private:
 };
 
 inline RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
-  Renderer rendererTemp(_width, _height);
   renderer = new Renderer(_width, _height);
 
   if(renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK) {
@@ -40,7 +40,7 @@ inline RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
     //TODO quit
   }
 
-  loadedScene = _scene;
+  LoadScene(_scene);
 }
 
 inline void RenderWindow::Start() {
@@ -58,6 +58,11 @@ inline void RenderWindow::Start() {
 inline void RenderWindow::Close() {
   renderer->StopRunning();
   delete renderer;
+}
+
+inline void RenderWindow::LoadScene(Scene* scene) {
+  loadedScene = scene;
+  renderer->SetWindowTitle(scene->GetName());
 }
 
 inline void RenderWindow::AddObjectToRenderStack(RenderObject* obj) {

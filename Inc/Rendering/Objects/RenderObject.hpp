@@ -1,9 +1,9 @@
 #ifndef _RENDEROBJECT_HPP_
 #define _RENDEROBJECT_HPP_
 
-#include <Rendering/Object.hpp>
+#include <Rendering/Objects/Object.hpp>
 
-class RenderObject : public Object{
+class RenderObject : public Object {
 public:
 
 private:

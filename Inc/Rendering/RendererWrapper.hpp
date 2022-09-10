@@ -1,6 +1,8 @@
 #ifndef _RENDERERWRAPPER_HPP_
 #define _RENDERERWRAPPER_HPP_
 
+#include <string>
+
 #include <SDL2/SDL.h>
 
 #define LibRendererWindow SDL_Window
@@ -40,6 +42,8 @@ public:
   RendererStatus Init();
   RendererStatus CreateWindow();
 
+  void SetWindowTitle(std::string title);
+
   void SetDrawColor(int r, int g, int b, int a);
   void SetDrawColor(int r, int g, int b);
   void SetDrawColor(int color, int a);
@@ -76,6 +80,10 @@ inline RendererWrapper::RendererStatus RendererWrapper::Init() {
 inline RendererWrapper::RendererStatus RendererWrapper::CreateWindow() {
   isRunning = LibRendererTrue;
   return SDL_CreateWindowAndRenderer(width, height, 0, &window, &renderer) == 0 ? STATUS_OK : STATUS_FAIL;
+}
+
+inline void RendererWrapper::SetWindowTitle(std::string title) {
+  SDL_SetWindowTitle(window, title.c_str());
 }
 
 inline void RendererWrapper::SetDrawColor(int r, int g, int b, int a) {
@@ -124,7 +132,7 @@ inline void RendererWrapper::Quit() {
   if (renderer) SDL_DestroyRenderer(renderer);
   if (window) SDL_DestroyWindow(window);
 
-  SDL_Quit();
+  SDL_Quit(); /* TODO should it be here? */
 }
 
 inline LibRenderer* RendererWrapper::GetRenderer() {

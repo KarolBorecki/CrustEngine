@@ -3,25 +3,39 @@
 
 #include <vector>
 
-//#include <Core/Scene.hpp> //TODO: No need for complete type
+#include <Core/Scene.hpp>
 #include <Rendering/RenderWindow.hpp>
-
-class Scene;
 
 class Core {
 public:
   void OpenNewWindow(int width, int height, Scene* scene);
+
+  void CloseWindow(RenderWindow);
+  void CloseAllWindows();
+  void Quit();
 
 private:
   std::vector<RenderWindow*> openedWindows;
 };
 
 inline void Core::OpenNewWindow(int width, int height, Scene* scene) {
-  RenderWindow window(width, height, scene);
+  RenderWindow* window = new RenderWindow(width, height, scene);
 
-  window.Start(); // TODO: run on new thread
+  window->Start(); // TODO: run on new thread
 
-  //openedWindows.push_back(&window);
+  openedWindows.push_back(window);
+}
+
+inline void Core::CloseAllWindows() {
+  for (auto &window : openedWindows){
+    window->Close();
+    delete window;
+  }
+  openedWindows.clear();
+}
+
+inline void Core::Quit() {
+  CloseAllWindows();
 }
 
 #endif /* _CORE_HPP_ */
