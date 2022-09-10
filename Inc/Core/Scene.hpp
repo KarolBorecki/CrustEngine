@@ -5,6 +5,7 @@
 #include <string>
 
 #include <Core/Camera.hpp>
+#include <Rendering/Objects/RenderObject.hpp>
 #include <Rendering/Objects/Object.hpp>
 
 class Scene {
@@ -12,7 +13,7 @@ public:
   Scene(std::string _name, Camera* _mainCamera);
   virtual ~Scene() = default;
 
-  void AddObject(Object* obj);
+  void AddObject(Object obj);
 
   std::string GetName();
 
@@ -21,12 +22,16 @@ private:
   Camera* mainCamera { nullptr };
 
   std::vector<Object> objects;
+  std::vector<RenderObject*> renderObjects;
 };
 
 inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {}
 
 inline void Scene::AddObject(Object obj) {
   objects.push_back(obj);
+  RenderObject* renderObj = static_cast<RenderObject*>(&obj);
+  if(renderObj != nullptr)
+    renderObjects.push_back(renderObj);
 }
 
 inline std::string Scene::GetName() { return name; }
