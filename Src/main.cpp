@@ -8,7 +8,7 @@
 
 int main(int argc, char* argv[])
 {
-  Camera cam(0.5);
+  Camera cam(90, 0.1, 100.0);
   Scene scene("Test Scene", &cam);
 
   Mesh mesh;
@@ -38,6 +38,6 @@ int main(int argc, char* argv[])
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);
-  
+
   return 0;
 }

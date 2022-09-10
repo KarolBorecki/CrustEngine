@@ -20,6 +20,9 @@ public:
   void AddObjectToRenderStack(RenderObject* obj);
 
 private:
+  int width { 0 };
+  int height { 0 };
+  double aspectRation { 0.0 };
   Renderer* renderer { nullptr };
   Scene* loadedScene { nullptr };
 
@@ -29,6 +32,10 @@ private:
 };
 
 inline RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
+  width = _width;
+  height = _height;
+  aspectRation = height / width;
+
   renderer = new Renderer(_width, _height);
 
   if(renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK) {
@@ -53,6 +60,8 @@ inline void RenderWindow::Start() {
       Vector3 point1 = obj->GetMesh()->triangles.begin()->point[1];
       Vector3 point2 = obj->GetMesh()->triangles.begin()->point[2];
       Logger::Info("Rendering trangle:\n   %.1f %.1f %.1f \n   %.1f %.1f %.1f \n   %.1f %.1f %.1f", point0.x, point0.y, point0.z, point1.x, point1.y, point1.z, point2.x, point2.y, point2.z);
+
+      //for (auto tri : obj->GetMesh()->triangles)
     }
 
     renderer->Show();
