@@ -14,6 +14,7 @@ public:
   virtual ~Scene() = default;
 
   void AddObject(Object obj);
+  std::vector<RenderObject*> GetObjectsToRender();
 
   std::string GetName();
 
@@ -33,6 +34,8 @@ inline void Scene::AddObject(Object obj) {
   if(renderObj != nullptr)
     renderObjects.push_back(renderObj);
 }
+
+inline std::vector<RenderObject*> Scene::GetObjectsToRender() { return renderObjects; }
 
 inline std::string Scene::GetName() { return name; }
 

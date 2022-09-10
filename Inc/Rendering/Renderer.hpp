@@ -2,6 +2,7 @@
 #define _DRAWER_HPP_
 
 #include <Rendering/RendererWrapper.hpp>
+#include <Rendering/Objects/RenderObject.hpp>
 
 class Renderer : public RendererWrapper{
 public:
@@ -9,6 +10,7 @@ public:
   virtual ~Renderer() = default;
 
   void DrawTri();
+  void DrawMesh(Mesh* mesh);
 
 private:
 };

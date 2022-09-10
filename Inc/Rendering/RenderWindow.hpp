@@ -48,6 +48,9 @@ inline void RenderWindow::Start() {
     Clean();
 
     renderer->DrawTri();
+    for (auto obj : loadedScene->GetObjectsToRender()) {
+      
+    }
 
     renderer->Show();
     renderer->GetEvent();

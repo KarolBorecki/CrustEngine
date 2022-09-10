@@ -10,7 +10,7 @@ class Core {
 public:
   void OpenNewWindow(int width, int height, Scene* scene);
 
-  void CloseWindow(RenderWindow);
+  void CloseWindow(RenderWindow* window);
   void CloseAllWindows();
   void Quit();
 
@@ -24,6 +24,12 @@ inline void Core::OpenNewWindow(int width, int height, Scene* scene) {
   window->Start(); // TODO: run on new thread
 
   openedWindows.push_back(window);
+}
+
+inline void Core::CloseWindow(RenderWindow* window) {
+  window->Close();
+  remove(openedWindows.begin(), openedWindows.end(), window);
+  delete window;
 }
 
 inline void Core::CloseAllWindows() {
