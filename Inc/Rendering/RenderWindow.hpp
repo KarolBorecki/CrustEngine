@@ -49,7 +49,10 @@ inline void RenderWindow::Start() {
 
     renderer->DrawTri();
     for (auto obj : loadedScene->GetObjectsToRender()) {
-      
+      Vector3 point0 = obj->GetMesh()->triangles.begin()->point[0];
+      Vector3 point1 = obj->GetMesh()->triangles.begin()->point[1];
+      Vector3 point2 = obj->GetMesh()->triangles.begin()->point[2];
+      Logger::Info("Rendering trangle:\n   %.1f %.1f %.1f \n   %.1f %.1f %.1f \n   %.1f %.1f %.1f", point0.x, point0.y, point0.z, point1.x, point1.y, point1.z, point2.x, point2.y, point2.z);
     }
 
     renderer->Show();
