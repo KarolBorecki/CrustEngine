@@ -40,7 +40,8 @@ int main(int argc, char* argv[])
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);
-
+  
+/*
   Matrix m(2, 2);
   m.PutValue(0,0,1);
   m.PutValue(0,1,2);
@@ -57,6 +58,6 @@ int main(int argc, char* argv[])
 
   Matrix result = Matrix::Multiply(&m, &m2);
   Logger::Log(result.ToString().c_str());
-
+*/
   return 0;
 }

@@ -22,7 +22,6 @@ public:
 private:
   int width { 0 };
   int height { 0 };
-  double aspectRation { 0.0 };
   Renderer* renderer { nullptr };
   Scene* loadedScene { nullptr };
 
@@ -34,7 +33,6 @@ private:
 RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
   width = _width;
   height = _height;
-  aspectRation = height / width;
 
   renderer = new Renderer(_width, _height);
 
@@ -78,6 +76,7 @@ void RenderWindow::Close() {
 void RenderWindow::LoadScene(Scene* scene) {
   loadedScene = scene;
   renderer->SetWindowTitle(scene->GetName());
+  renderer->RecalculateProjectionMatrix(scene->GetMainCamera());
 }
 
 void RenderWindow::AddObjectToRenderStack(RenderObject* obj) {

@@ -8,10 +8,13 @@
 #include <Rendering/Objects/RenderObject.hpp>
 #include <Rendering/Objects/Object.hpp>
 
+/* For now only objects can be added/changed, camera must stay the same! */
 class Scene {
 public:
   Scene(std::string _name, Camera* _mainCamera);
   virtual ~Scene() = default;
+
+  Camera* GetMainCamera();
 
   void AddObject(Object& obj);
   std::vector<RenderObject*> GetObjectsToRender();
@@ -27,6 +30,8 @@ private:
 };
 
 inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {}
+
+inline Camera* Scene::GetMainCamera() { return mainCamera; }
 
 void Scene::AddObject(Object& obj) {
   objects.push_back(obj);
