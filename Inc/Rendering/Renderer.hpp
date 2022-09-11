@@ -15,7 +15,7 @@ public:
 private:
 };
 
-inline void Renderer::DrawTri() {
+void Renderer::DrawTri() {
   SetDrawColor(RendererWrapper::RendererColor::RED);
 
   DrawLine(320, 200, 300, 240);

@@ -28,7 +28,7 @@ private:
 
 inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {}
 
-inline void Scene::AddObject(Object& obj) {
+void Scene::AddObject(Object& obj) {
   objects.push_back(obj);
   RenderObject* renderObj = static_cast<RenderObject*>(&obj);
   if(renderObj != nullptr)

@@ -18,7 +18,7 @@ private:
   std::vector<RenderWindow*> openedWindows;
 };
 
-inline void Core::OpenNewWindow(int width, int height, Scene* scene) {
+void Core::OpenNewWindow(int width, int height, Scene* scene) {
   RenderWindow* window = new RenderWindow(width, height, scene);
 
   window->Start(); // TODO: run on new thread
@@ -26,13 +26,13 @@ inline void Core::OpenNewWindow(int width, int height, Scene* scene) {
   openedWindows.push_back(window);
 }
 
-inline void Core::CloseWindow(RenderWindow* window) {
+void Core::CloseWindow(RenderWindow* window) {
   window->Close();
   remove(openedWindows.begin(), openedWindows.end(), window);
   delete window;
 }
 
-inline void Core::CloseAllWindows() {
+void Core::CloseAllWindows() {
   for (auto &window : openedWindows){
     window->Close();
     delete window;
@@ -40,7 +40,7 @@ inline void Core::CloseAllWindows() {
   openedWindows.clear();
 }
 
-inline void Core::Quit() {
+void Core::Quit() {
   CloseAllWindows();
 }
 

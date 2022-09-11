@@ -122,13 +122,13 @@ inline void RendererWrapper::StopRunning() {
   isRunning = LibRendererFalse;
 }
 
-inline void RendererWrapper::GetEvent() {
+void RendererWrapper::GetEvent() {
   SDL_Event event;
   while(SDL_PollEvent(&event))
     if(event.type == SDL_QUIT) isRunning = LibRendererFalse;
 }
 
-inline void RendererWrapper::Quit() {
+void RendererWrapper::Quit() {
   if (renderer) SDL_DestroyRenderer(renderer);
   if (window) SDL_DestroyWindow(window);
 
