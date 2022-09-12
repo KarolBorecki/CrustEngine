@@ -20,9 +20,9 @@ private:
 
 void Core::OpenNewWindow(int width, int height, Scene* scene) {
   RenderWindow* window = new RenderWindow(width, height, scene);
-
+  Logger::Log("Staring the window...");
   window->Start(); // TODO: run on new thread
-
+  Logger::Error("After window started!");
   openedWindows.push_back(window);
 }
 

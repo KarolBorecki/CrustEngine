@@ -10,7 +10,7 @@
 class RenderWindow {
 public:
   RenderWindow(int _width, int _height, Scene* _scene);
-  virtual ~RenderWindow() = default; /* todo clean queue? */
+  virtual ~RenderWindow(); /* todo clean queue? */
 
   void Start();
   void Close();
@@ -48,29 +48,46 @@ RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
   LoadScene(_scene);
 }
 
+RenderWindow::~RenderWindow() {
+  if (renderer == nullptr) return;
+  delete renderer;
+}
+
 void RenderWindow::Start() {
   while(renderer->IsRunning()) {
     Clean();
 
     renderer->DrawTri();
-    for (auto obj : loadedScene->GetObjectsToRender()) {
+
+    Logger::Log("Getting render objects...");
+    std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
+    Logger::Log("Render objects got!");
+    for (auto obj : objs) {
+      Logger::Error("Getting point 0...");
       Vector3 point0 = obj->GetMesh()->triangles.begin()->point[0];
+      Logger::Info("Point 0 got!");
+      Logger::Error("Getting point 1...");
       Vector3 point1 = obj->GetMesh()->triangles.begin()->point[1];
+      Logger::Info("Point 1 got!");
+      Logger::Error("Getting point 2...");
       Vector3 point2 = obj->GetMesh()->triangles.begin()->point[2];
-      Logger::Info("Rendering trangle:\n   %.1f %.1f %.1f \n   %.1f %.1f %.1f \n   %.1f %.1f %.1f", point0.x, point0.y, point0.z, point1.x, point1.y, point1.z, point2.x, point2.y, point2.z);
+      Logger::Info("Point 2 got!");
+      //Logger::Info("Rendering trangle:\n   %.1f %.1f %.1f \n   %.1f %.1f %.1f \n   %.1f %.1f %.1f", point0.X(), point0.Y(), point0.Z(), point1.X(), point1.Y(), point1.Z(), point2.X(), point2.Y(), point2.Z());
 
       //for (auto tri : obj->GetMesh()->triangles)
     }
-
+    Logger::Warning("Showing...");
     renderer->Show();
+    Logger::Info("Shown!");
+    Logger::Warning("Getting event...");
     renderer->GetEvent();
+    Logger::Info("Event got!");
   }
   renderer->Quit();
 }
 
 void RenderWindow::Close() {
   renderer->StopRunning();
-  delete renderer;
 }
 
 void RenderWindow::LoadScene(Scene* scene) {

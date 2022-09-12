@@ -40,7 +40,12 @@ int main(int argc, char* argv[])
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);
-  
+/*
+  Logger::Log(mesh.triangles[0].point[0].ToString().c_str());
+  Logger::Log(mesh.triangles[0].point[0].ToString().c_str());
+  Matrix result = Matrix::Multiply(&(mesh.triangles[0].point[0]), &(mesh.triangles[0].point[0]));
+  Logger::Info(result.ToString().c_str());
+*/
 /*
   Matrix m(2, 2);
   m.PutValue(0,0,1);

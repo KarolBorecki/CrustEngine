@@ -7,7 +7,7 @@
 class Matrix {
 public:
   Matrix(int _rows, int _columns);
-  ~Matrix();
+  virtual ~Matrix();
 
   double GetValue(int row, int column);
   void PutValue(int row, int column, double value);
