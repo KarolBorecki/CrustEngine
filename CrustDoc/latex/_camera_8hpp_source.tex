@@ -1,0 +1,45 @@
+\hypertarget{_camera_8hpp_source}{}\doxysection{Camera.\+hpp}
+\label{_camera_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Camera.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Camera.hpp}}
+\mbox{\hyperlink{_camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_CAMERA\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_CAMERA\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define degToRad(angleInDegrees) ((angleInDegrees) * M\_PI / 180.0)}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M\_PI)}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_camera}{Camera}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \mbox{\hyperlink{class_camera}{Camera}}(\textcolor{keywordtype}{int} \_fieldOfView, \textcolor{keywordtype}{double} \_fNear, \textcolor{keywordtype}{double} \_fFar);}
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_camera_ad3ed0c5e02c46f73ba92673598e40514}{\string~Camera}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_camera_af7cabb91d3912475e6cec97ee9f21721}{GetFieldOfViewDeg}}();}
+\DoxyCodeLine{36   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{GetFNear}}();}
+\DoxyCodeLine{42   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{GetFFar}}();}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}{GetFFovRad}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{private}:}
+\DoxyCodeLine{51   \textcolor{keywordtype}{int} fieldOfViewDeg \{ 0 \}; }
+\DoxyCodeLine{52   \textcolor{keywordtype}{double} fNear \{ 0.0 \}; }
+\DoxyCodeLine{53   \textcolor{keywordtype}{double} fFar \{ 0.0 \}; }
+\DoxyCodeLine{54   \textcolor{keywordtype}{double} fFovRad \{ 0.0 \}; }
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{inline} \mbox{\hyperlink{class_camera_a2254bdb764a2a3c4b7ac9cd3bdf7a759}{Camera::Camera}}(\textcolor{keywordtype}{int} \_fieldOfViewDeg, \textcolor{keywordtype}{double} \_fNear, \textcolor{keywordtype}{double} \_fFar) : fieldOfViewDeg(\_fieldOfViewDeg), fNear(\_fNear), fFar(\_fFar) \{}
+\DoxyCodeLine{58   fFovRad = 1.0 / tan(\mbox{\hyperlink{_camera_8hpp_ae9b10e0d9166f7a4fac6502bba06b47d}{degToRad}}(\_fieldOfViewDeg * 0.5));}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_camera_af7cabb91d3912475e6cec97ee9f21721}{Camera::GetFieldOfViewDeg}}() \{ \textcolor{keywordflow}{return} fieldOfViewDeg; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{Camera::GetFNear}}() \{ \textcolor{keywordflow}{return} fNear; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{Camera::GetFFar}}() \{ \textcolor{keywordflow}{return} fFar; \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}{Camera::GetFFovRad}}() \{ \textcolor{keywordflow}{return} fFovRad; \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_CAMERA\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

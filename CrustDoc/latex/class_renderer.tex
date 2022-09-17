@@ -1,0 +1,137 @@
+\hypertarget{class_renderer}{}\doxysection{Renderer Class Reference}
+\label{class_renderer}\index{Renderer@{Renderer}}
+
+
+Class used to render simple shapes on the window.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+Inheritance diagram for Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_renderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}{Renderer}} (int \+\_\+width, int \+\_\+height)
+\item 
+\mbox{\hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}{Draw\+Tri}} ()
+\item 
+void \mbox{\hyperlink{class_renderer_adf26b752d3078d36bcc94729152a37ee}{Draw\+Mesh}} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\begin{DoxyCompactList}\small\item\em Draws given mesh on the screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{Get\+Projection\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Getter for proj\+Matrix field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{Recalculate\+Projection\+Matrix}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$cam)
+\begin{DoxyCompactList}\small\item\em Recalculates the projection matrix for given camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\+\_\+\+MATRIX\+\_\+\+SIZE}} \{ 4 \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class used to render simple shapes on the window. 
+
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}\label{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}} 
+\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})}
+
+Creates new object of type \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Matrix field.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+width} & Width of the window that this \mbox{\hyperlink{class_renderer}{Renderer}} is applied to. \\
+\hline
+{\em \+\_\+height} & Height of the window that this \mbox{\hyperlink{class_renderer}{Renderer}} is applied to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}\label{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}} 
+\index{Renderer@{Renderer}!````~Renderer@{$\sim$Renderer}}
+\index{````~Renderer@{$\sim$Renderer}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Renderer()}{~Renderer()}}
+{\footnotesize\ttfamily Renderer\+::$\sim$\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+If proj\+Matrix is not nullptr deletes it. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_renderer_adf26b752d3078d36bcc94729152a37ee}\label{class_renderer_adf26b752d3078d36bcc94729152a37ee}} 
+\index{Renderer@{Renderer}!DrawMesh@{DrawMesh}}
+\index{DrawMesh@{DrawMesh}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Draws given mesh on the screen. 
+
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. \mbox{\Hypertarget{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}\label{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}} 
+\index{Renderer@{Renderer}!DrawTri@{DrawTri}}
+\index{DrawTri@{DrawTri}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}\label{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}} 
+\index{Renderer@{Renderer}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ Renderer\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for proj\+Matrix field. 
+
+\begin{DoxyReturn}{Returns}
+Handler to proj\+Matrix field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_renderer_a97146506b00259301115bec677ab29e6}\label{class_renderer_a97146506b00259301115bec677ab29e6}} 
+\index{Renderer@{Renderer}!RecalculateProjectionMatrix@{RecalculateProjectionMatrix}}
+\index{RecalculateProjectionMatrix@{RecalculateProjectionMatrix}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{RecalculateProjectionMatrix()}{RecalculateProjectionMatrix()}}
+{\footnotesize\ttfamily void Renderer\+::\+Recalculate\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam }\end{DoxyParamCaption})}
+
+
+
+Recalculates the projection matrix for given camera. 
+
+The projection matrix is calculated as here is explained\+: \href{https://en.wikipedia.org/wiki/3D_projection\#Perspective_projection}{\texttt{ Projection matrix}} ~\newline
+
+
+\begin{DoxyNote}{Note}
+The engine calculation is made based on this formulas.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & \mbox{\hyperlink{class_camera}{Camera}} from which perspective objects will rendered.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}} \mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_renderer_a6abcaa726ad275908c817f4592760fda}\label{class_renderer_a6abcaa726ad275908c817f4592760fda}} 
+\index{Renderer@{Renderer}!PROJ\_MATRIX\_SIZE@{PROJ\_MATRIX\_SIZE}}
+\index{PROJ\_MATRIX\_SIZE@{PROJ\_MATRIX\_SIZE}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{PROJ\_MATRIX\_SIZE}{PROJ\_MATRIX\_SIZE}}
+{\footnotesize\ttfamily constexpr int Renderer\+::\+PROJ\+\_\+\+MATRIX\+\_\+\+SIZE \{ 4 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}
