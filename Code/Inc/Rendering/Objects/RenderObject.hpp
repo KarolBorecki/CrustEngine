@@ -29,7 +29,7 @@ public:
   /**
   * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
   */
-  RenderObject(Mesh& _mesh);
+  RenderObject(Mesh* _mesh);
   virtual ~RenderObject() = default;
 
   /**
@@ -40,11 +40,14 @@ public:
   Mesh* GetMesh();
 
 private:
-  Mesh mesh; //!< Mesh that is rendered in this object position.
+  Mesh* mesh; //!< Mesh that is rendered in this object position.
 };
 
-inline RenderObject::RenderObject(Mesh& _mesh) : mesh(_mesh) {}
+inline RenderObject::RenderObject(Mesh* _mesh) : mesh(_mesh) {
+  Logger::Log("Trying write mesh");
+  Logger::Log(_mesh->triangles.begin()->point[1].ToString().c_str());
+}
 
-inline Mesh* RenderObject::GetMesh() { return &mesh; }
+inline Mesh* RenderObject::GetMesh() { return mesh; }
 
 #endif /* _RENDEROBJECT_HPP_ */

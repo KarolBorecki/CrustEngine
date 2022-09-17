@@ -86,6 +86,7 @@ inline Matrix::Matrix(int _rows, int _columns) : rows(_rows), columns(_columns) 
 }
 
 inline Matrix::~Matrix() {
+  Logger::Error("Deleting Mat %dx%d", Rows(), Columns());
   if (mat == nullptr) return;
   for (int i = 0; i < rows; ++i)
     delete [] mat[i];
@@ -117,7 +118,7 @@ Matrix Matrix::Multiply(Matrix* mat1, Matrix* mat2) {
   for(int r=0; r<resultRows; r++) {
     for(int c=0; c<resultColumns; c++) {
       double value = 0;
-      for(int i=0; i<mat1->Rows(); i++) {
+      for(int i=0; i<mat2->Rows(); i++) {
         value += mat1->GetValue(r, i) * mat2->GetValue(i, c);
       }
       resultMat.PutValue(r, c, value);
