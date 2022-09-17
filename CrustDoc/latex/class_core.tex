@@ -1,0 +1,102 @@
+\hypertarget{class_core}{}\doxysection{Core Class Reference}
+\label{class_core}\index{Core@{Core}}
+
+
+Class, which helds opened windows and manages the engine work.  
+
+
+
+
+{\ttfamily \#include $<$Core.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_core_af8dfa9a1586b40a8b92d92ceb5435814}{Open\+New\+Window}} (int width, int height, \mbox{\hyperlink{class_scene}{Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} with \#width and \#height and default loaded scene set to \#scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_core_a37572d86a6f846b22fe2713b6eee272a}{Close\+Window}} (\mbox{\hyperlink{class_render_window}{Render\+Window}} $\ast$window)
+\begin{DoxyCompactList}\small\item\em Closes the specified window \#window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{Close\+All\+Windows}} ()
+\begin{DoxyCompactList}\small\item\em Closes all opened windows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Quit}} ()
+\begin{DoxyCompactList}\small\item\em Quits the engine. Should be called at program end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class, which helds opened windows and manages the engine work. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_core_aed08a80f222174c48adfb87fa239877c}\label{class_core_aed08a80f222174c48adfb87fa239877c}} 
+\index{Core@{Core}!CloseAllWindows@{CloseAllWindows}}
+\index{CloseAllWindows@{CloseAllWindows}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{CloseAllWindows()}{CloseAllWindows()}}
+{\footnotesize\ttfamily void Core\+::\+Close\+All\+Windows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes all opened windows. 
+
+Loops through opened\+Windows array, runs \mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{Render\+Window\+::\+Close}} and deletes each window.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_core_a37572d86a6f846b22fe2713b6eee272a}\label{class_core_a37572d86a6f846b22fe2713b6eee272a}} 
+\index{Core@{Core}!CloseWindow@{CloseWindow}}
+\index{CloseWindow@{CloseWindow}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{CloseWindow()}{CloseWindow()}}
+{\footnotesize\ttfamily void Core\+::\+Close\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_render_window}{Render\+Window}} $\ast$}]{window }\end{DoxyParamCaption})}
+
+
+
+Closes the specified window \#window. 
+
+Searches for \#window inside opened\+Windows array and runs \mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{Render\+Window\+::\+Close}} method and deletes it\textquotesingle{}s object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & window to close.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_core_af8dfa9a1586b40a8b92d92ceb5435814}\label{class_core_af8dfa9a1586b40a8b92d92ceb5435814}} 
+\index{Core@{Core}!OpenNewWindow@{OpenNewWindow}}
+\index{OpenNewWindow@{OpenNewWindow}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{OpenNewWindow()}{OpenNewWindow()}}
+{\footnotesize\ttfamily void Core\+::\+Open\+New\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{class_scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} with \#width and \#height and default loaded scene set to \#scene. 
+
+Creates new object of instance \mbox{\hyperlink{class_render_window}{Render\+Window}} and adds it to opened\+Windows array. After this the created window starts using \mbox{\hyperlink{class_render_window_ace7b6b9d6045bc2b9fbb41c474122cf8}{Render\+Window\+::\+Start()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new opened window width. \\
+\hline
+{\em height} & The new opened window height. \\
+\hline
+{\em scene} & The new opened scene loaded scene. This can be changed with \mbox{\hyperlink{class_render_window_aff1f326684632bb9e48f19ca7bd85e06}{Render\+Window\+::\+Load\+Scene}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_core_a41b241ecdc132a508a97944ea5044265}\label{class_core_a41b241ecdc132a508a97944ea5044265}} 
+\index{Core@{Core}!Quit@{Quit}}
+\index{Quit@{Quit}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Quit()}{Quit()}}
+{\footnotesize\ttfamily void Core\+::\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Quits the engine. Should be called at program end. 
+
+Runs Render\+Window\+::\+Close\+All\+Windows. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}}\end{DoxyCompactItemize}

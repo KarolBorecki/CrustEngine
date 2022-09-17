@@ -1,0 +1,53 @@
+\hypertarget{_scene_8hpp_source}{}\doxysection{Scene.\+hpp}
+\label{_scene_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp}}
+\mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_SCENE\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_SCENE\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_camera_8hpp}{Core/Camera.hpp}}>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_render_object_8hpp}{Rendering/Objects/RenderObject.hpp}}>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_object_8hpp}{Rendering/Objects/Object.hpp}}>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/* For now only objects can be added/changed, camera must stay the same! */}}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \mbox{\hyperlink{class_scene}{Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera);}
+\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\string~Scene}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{37   \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}\& obj);}
+\DoxyCodeLine{56   std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63   std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{private}:}
+\DoxyCodeLine{66   std::string name; }
+\DoxyCodeLine{67   \mbox{\hyperlink{class_camera}{Camera}}* mainCamera \{ \textcolor{keyword}{nullptr} \}; }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   std::vector<Object> objects; }
+\DoxyCodeLine{70   std::vector<RenderObject*> renderObjects; }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene::Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera) : name(\_name), mainCamera(\_mainCamera) \{\}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{inline} \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Scene::GetMainCamera}}() \{ \textcolor{keywordflow}{return} mainCamera; \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{Scene::AddObject}}(\mbox{\hyperlink{class_object}{Object}}\& obj) \{}
+\DoxyCodeLine{78   objects.push\_back(obj);}
+\DoxyCodeLine{79   \mbox{\hyperlink{class_render_object}{RenderObject}}* renderObj = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_render_object}{RenderObject}}*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{80   \textcolor{keywordflow}{if}(renderObj != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{81     renderObjects.push\_back(renderObj);}
+\DoxyCodeLine{82 \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{inline} std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Scene::GetObjectsToRender}}() \{ \textcolor{keywordflow}{return} renderObjects; \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{Scene::GetName}}() \{ \textcolor{keywordflow}{return} name; \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SCENE\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

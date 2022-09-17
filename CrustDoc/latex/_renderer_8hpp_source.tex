@@ -1,0 +1,81 @@
+\hypertarget{_renderer_8hpp_source}{}\doxysection{Renderer.\+hpp}
+\label{_renderer_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Renderer.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Renderer.hpp}}
+\mbox{\hyperlink{_renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_DRAWER\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_DRAWER\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_matrix_8hpp}{Physics/Matrix.hpp}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_camera_8hpp}{Core/Camera.hpp}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_renderer_wrapper_8hpp}{Rendering/RendererWrapper.hpp}}>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_render_object_8hpp}{Rendering/Objects/RenderObject.hpp}}>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_renderer}{Renderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_renderer_wrapper}{RendererWrapper}} \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_renderer}{Renderer}}(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height);}
+\DoxyCodeLine{29   \mbox{\hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{\string~Renderer}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}{DrawTri}}();}
+\DoxyCodeLine{38   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_adf26b752d3078d36bcc94729152a37ee}{DrawMesh}}(\mbox{\hyperlink{struct_mesh}{Mesh}}* mesh);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45   \mbox{\hyperlink{class_matrix}{Matrix}}* \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{GetProjectionMatrix}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{RecalculateProjectionMatrix}}(\mbox{\hyperlink{class_camera}{Camera}}* cam);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{/* This value should not be changed without full understanding of this change! */}}
+\DoxyCodeLine{61   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\_MATRIX\_SIZE}} \{ 4 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}:}
+\DoxyCodeLine{64   \textcolor{keywordtype}{double} aspectRatio \{ 0.0 \}; }
+\DoxyCodeLine{65   \mbox{\hyperlink{class_matrix}{Matrix}}* projMatrix \{ \textcolor{keyword}{nullptr} \}; }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \mbox{\hyperlink{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}{Renderer::Renderer}}(\textcolor{keywordtype}{int} \_width, \textcolor{keywordtype}{int} \_height) : \mbox{\hyperlink{class_renderer_wrapper}{RendererWrapper}}(\_width, \_height) \{}
+\DoxyCodeLine{69   aspectRatio = \_height / \_width;}
+\DoxyCodeLine{70   projMatrix = \textcolor{keyword}{new} \mbox{\hyperlink{class_matrix}{Matrix}}(\mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\_MATRIX\_SIZE}}, \mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\_MATRIX\_SIZE}});}
+\DoxyCodeLine{71 \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \mbox{\hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{Renderer::\string~Renderer}}() \{}
+\DoxyCodeLine{74   \textcolor{keywordflow}{if} (projMatrix == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{75   \textcolor{keyword}{delete} projMatrix;}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}{Renderer::DrawTri}}() \{}
+\DoxyCodeLine{79   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(\mbox{\hyperlink{class_renderer_wrapper_a9a3cfe775f88bf5b58b293618c1fe8cea6639b4197c12a8a50b3918d17b3d8613}{RendererWrapper::RendererColor::RED}});}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(320, 200, 300, 240);}
+\DoxyCodeLine{82   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(300, 240, 340, 240);}
+\DoxyCodeLine{83   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(340, 240, 320, 200);}
+\DoxyCodeLine{84 \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix}{Matrix}}* \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{Renderer::GetProjectionMatrix}}() \{ \textcolor{keywordflow}{return} projMatrix; \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{Renderer::RecalculateProjectionMatrix}}(\mbox{\hyperlink{class_camera}{Camera}}* cam) \{}
+\DoxyCodeLine{89   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(0, 0, aspectRatio / cam-\/>\mbox{\hyperlink{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}{GetFFovRad}}());}
+\DoxyCodeLine{90   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(0, 1, 0.0);}
+\DoxyCodeLine{91   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(0, 2, 0.0);}
+\DoxyCodeLine{92   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(0, 3, 0.0);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(1, 0, 0.0);}
+\DoxyCodeLine{95   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(1, 1, cam-\/>\mbox{\hyperlink{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}{GetFFovRad}}());}
+\DoxyCodeLine{96   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(1, 2, 0.0);}
+\DoxyCodeLine{97   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(1, 3, 0.0);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(2, 0, 0.0);}
+\DoxyCodeLine{100   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(2, 1, 0.0);}
+\DoxyCodeLine{101   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(2, 2, cam-\/>\mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{GetFFar}}() / (cam-\/>\mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{GetFFar}}() -\/ cam-\/>\mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{GetFNear}}()));}
+\DoxyCodeLine{102   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(2, 3, 1.0);}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(3, 0, 0.0);}
+\DoxyCodeLine{105   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(3, 1, 0.0);}
+\DoxyCodeLine{106   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(3, 2, -\/(cam-\/>\mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{GetFFar}}() * cam-\/>\mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{GetFNear}}()) / (cam-\/>\mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{GetFFar}}() -\/ cam-\/>\mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{GetFNear}}()));}
+\DoxyCodeLine{107   projMatrix-\/>\mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{PutValue}}(3, 3, 0.0);}
+\DoxyCodeLine{108   \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(projMatrix-\/>\mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}().c\_str());}
+\DoxyCodeLine{109 \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_DRAWER\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
