@@ -20,7 +20,6 @@ typedef struct Mesh {
   std::vector<Triangle> triangles;
 } Mesh;
 
-
 /**
 * @brief Represents object present on the scene.
 */

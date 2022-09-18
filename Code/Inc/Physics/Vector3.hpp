@@ -14,7 +14,6 @@ public:
   double X();
   double Y();
   double Z();
-
 private:
 };
 
@@ -22,10 +21,11 @@ inline Vector3::Vector3(double _x, double _y, double _z) : Matrix(1, 3) {
   PutValue(0, 0, _x);
   PutValue(0, 1, _y);
   PutValue(0, 2, _z);
+  Logger::Info("Vector of id: %d created", GetID());
 }
 
 inline Vector3::~Vector3() {
-  Logger::Log("Deleting Vec3");
+  Logger::Error("Vector of id: %d DELETED", GetID());
 }
 
 inline double Vector3::X() { return GetValue(0, 0); }

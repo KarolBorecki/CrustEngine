@@ -73,20 +73,31 @@ public:
   */
   std::string ToString();
 
+  /**
+  * @brief Getter for matrix ID.
+  *
+  * @return Matrix's ID.
+  */
+  uint8_t GetID();
+
 private:
   int rows { 0 }; //!< Amount of rows in the matrix.
   int columns { 0 }; //!< Amount of columns in the matrix.
   double** mat { nullptr }; //!< Array of matrix's values.
+
+  uint8_t ID; //!< Matrix's ID.
+  static inline uint8_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
 };
 
 inline Matrix::Matrix(int _rows, int _columns) : rows(_rows), columns(_columns) {
+  ID = nextID++;
   mat = new double*[rows];
   for (int i = 0; i < rows; ++i)
       mat[i] = new double[columns];
 }
 
 inline Matrix::~Matrix() {
-  Logger::Error("Deleting Mat %dx%d", Rows(), Columns());
+  Logger::Error("Deleting Mat<%d> %dx%d", GetID(), Rows(), Columns());
   if (mat == nullptr) return;
   for (int i = 0; i < rows; ++i)
     delete [] mat[i];
@@ -138,5 +149,7 @@ std::string Matrix::ToString() {
   }
   return result;
 }
+
+inline uint8_t Matrix::GetID() { return ID; }
 
 #endif /* _MATRIX_HPP_ */
