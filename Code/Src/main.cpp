@@ -6,6 +6,8 @@
 
 #include <Rendering/Objects/RenderObject.hpp>
 
+#include <Files/FileReader.hpp>
+
 #include <Physics/Matrix.hpp>
 
 int main(int argc, char* argv[])
@@ -32,6 +34,7 @@ int main(int argc, char* argv[])
   Camera cam(90, 0.1, 100.0);
   Scene scene("T Scene", &cam);
 
+/*
   Logger::Info("Creating Mesh");
   Mesh mesh;
   // Represents the cube
@@ -56,7 +59,14 @@ int main(int argc, char* argv[])
     {new Vector3(1.0,0.0,1.0), new Vector3(0.0,0.0,0.0), new Vector3(1.0,0.0,0.0)},
   };
   Logger::Info("Mesh created");
-
+*/
+Logger::Info("Starting reading...");
+FileReader::OpenFile("/Users/karolborecki/Desktop/CrustEngine/mesh.txt");
+char* t;
+while((t = FileReader::GetLineFromOpenedFile()) != nullptr)
+  Logger::Log("%s", t);
+FileReader::CloseOpenedFile();
+Logger::Info("End reading");
   Core core;
   core.OpenNewWindow(1000, 800, &scene);
 
