@@ -84,23 +84,20 @@ void Renderer::DrawTri() {
 }
 
 void Renderer::DrawMesh(Mesh* mesh) {
-  if(mesh== NULL) Logger::Info("MESH NULL");
-  Matrix* m = &(mesh->triangles[0].point[0]);
+  Matrix* m1 = mesh->GetPoint(0, 0);
+  Logger::Log(m1->ToString().c_str());
 
-  if(m == NULL) Logger::Info("M NULL");
-  Logger::Log("M ROWS: %d", m->Rows());
-  Logger::Log("2");
   Matrix* m2 = GetProjectionMatrix();
   Logger::Log(m2->ToString().c_str());
 
-  Matrix result = Matrix::Multiply(m, m2);
+  Matrix result = Matrix::Multiply(m1, m2);
   Logger::Log(result.ToString().c_str());
 }
 
 inline Matrix* Renderer::GetProjectionMatrix() { return projMatrix; }
 
 void Renderer::RecalculateProjectionMatrix(Camera* cam) {
-  projMatrix->PutValue(0, 0, aspectRatio / cam->GetFFovRad());
+  projMatrix->PutValue(0, 0, aspectRatio * cam->GetFFovRad());
   projMatrix->PutValue(0, 1, 0.0);
   projMatrix->PutValue(0, 2, 0.0);
   projMatrix->PutValue(0, 3, 0.0);

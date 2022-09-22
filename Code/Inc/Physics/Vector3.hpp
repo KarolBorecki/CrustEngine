@@ -11,8 +11,17 @@ public:
   Vector3(double _x, double _y, double _z);
   ~Vector3();
 
+  /**
+  * @brief Getter for Vector3 x value.
+  */
   double X();
+  /**
+  * @brief Getter for Vector3 y value.
+  */
   double Y();
+  /**
+  * @brief Getter for Vector3 z value.
+  */
   double Z();
 private:
 };
@@ -25,7 +34,7 @@ inline Vector3::Vector3(double _x, double _y, double _z) : Matrix(1, 3) {
 }
 
 inline Vector3::~Vector3() {
-  Logger::Error("Vector of id: %d DELETED", GetID());
+  Logger::Info("[X] Deleting Vec3D<%d>", GetID());
 }
 
 inline double Vector3::X() { return GetValue(0, 0); }

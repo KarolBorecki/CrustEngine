@@ -97,7 +97,7 @@ inline Matrix::Matrix(int _rows, int _columns) : rows(_rows), columns(_columns) 
 }
 
 inline Matrix::~Matrix() {
-  Logger::Error("Deleting Mat<%d> %dx%d", GetID(), Rows(), Columns());
+  Logger::Info("[X] Deleting Mat<%d> %dx%d", GetID(), Rows(), Columns());
   if (mat == nullptr) return;
   for (int i = 0; i < rows; ++i)
     delete [] mat[i];
@@ -124,7 +124,10 @@ Matrix Matrix::Multiply(Matrix* mat1, Matrix* mat2) {
   int resultColumns = mat2->Columns();
   Matrix resultMat(resultRows, resultColumns);
 
-  if(mat1->Columns() != mat2->Rows()) return resultMat; // TODO error?? read throw std::runtime_error()
+  if(mat1->Columns() != mat2->Rows()) {
+    Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
+    return resultMat; // TODO error?? read throw std::runtime_error()
+  }
 
   for(int r=0; r<resultRows; r++) {
     for(int c=0; c<resultColumns; c++) {

@@ -56,7 +56,8 @@ public:
   /**
   * @brief Initzializs graphic wrapper. Should be called on wrapper start.
   *
-  * @details Runs SDL Init funciton.
+  * @details Runs SDL Init funciton. Must be called before any drawing will be done on new Renderer.
+  * Also after this call the RendererWrapper::CreateWindow method must be called in order to create new window.
   *
   * @return STATUS_OK if everyting is fine and STATUS_FAIL is something failed and graphic interface cannot start.
   */
@@ -64,7 +65,7 @@ public:
   /**
   * @brief Opens new window to draw on.
   *
-  * @details Runs SDL create window and renderer function.
+  * @details Runs SDL create window and renderer function. Mus be called after RednererWrapper::Init method.
   *
   * @return STATUS_OK if everyting is fine and STATUS_FAIL is something failed and graphic interface cannot open new window.
   */

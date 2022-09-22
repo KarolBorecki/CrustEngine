@@ -85,14 +85,8 @@ void RenderWindow::Start() {
     renderer->DrawTri();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      Vector3 point0 = obj->GetMesh()->triangles.begin()->point[0];
-      Vector3 point1 = obj->GetMesh()->triangles.begin()->point[1];
-      Vector3 point2 = obj->GetMesh()->triangles.begin()->point[2];
-      Logger::Info("Rendering trangle:\n   %.1f %.1f %.1f \n   %.1f %.1f %.1f \n   %.1f %.1f %.1f", point0.X(), point0.Y(), point0.Z(), point1.X(), point1.Y(), point1.Z(), point2.X(), point2.Y(), point2.Z());
-
+      Logger::Info("Drawing object...");
       renderer->DrawMesh(obj->GetMesh());
-
-      //for (auto tri : obj->GetMesh()->triangles)
     }
     renderer->Show();
     renderer->GetEvent();

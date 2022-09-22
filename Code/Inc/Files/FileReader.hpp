@@ -39,7 +39,7 @@ public:
   * @param format Format for reading the file. <a href="https://pl.wikibooks.org/wiki/C/printf">Read more.</a>
   * @param ... Pointers to next variables accordingly to #format.
   */
-  static void GetLineFromOpenedFile(const char* format, ...);
+  static uint8_t GetLineFromOpenedFile(uint8_t expectedArgsCount, const char* format, ...);
 
   /**
   * @brief Getter for #openedFile handler.
@@ -69,16 +69,19 @@ inline void FileReader::CloseOpenedFile() {
   fclose(openedFile);
 }
 
-void FileReader::GetLineFromOpenedFile(const char *format, ...)
+uint8_t FileReader::GetLineFromOpenedFile(uint8_t expectedArgsCount, const char *format, ...)
 {
   if (openedFile == NULL) {
     Logger::Warning("Trying to read file, but there is no opened file!");
-    return;
+    return 0;
   }
-    va_list args;
-    va_start(args, format);
-    vfscanf(openedFile, format, args);
-    va_end(args);
+  va_list args;
+  va_start(args, format);
+  uint8_t count = vfscanf(openedFile, format, args);
+  if(expectedArgsCount != count) return 0;
+  va_end(args);
+
+  return count;
 }
 
 inline FILE* FileReader::GetOpenedFileHanlder() { return openedFile; }

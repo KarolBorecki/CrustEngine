@@ -5,6 +5,8 @@
 #include <cstring>
 #include <cstdio>
 
+//TODO add log destreuctor?? - Debug
+
 /**
 * @brief Static class allowing to log with certain color and style on classic console with well-known printf() arguments.
 */
