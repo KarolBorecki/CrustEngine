@@ -77,6 +77,29 @@ public:
   * @param outMat The output matrix.
   */
   static void Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat);
+  /**
+  * @brief Multiplies given matrix by scalar constant value.
+  *
+  * @param mat Multiplied Matrix.
+  * @param scalar Value by which matrix is being multiplied.
+  */
+  static void Multiply(Matrix* mat, const double scalar);
+
+  /**
+  * @brief Divides given matrix by scalar constant value.
+  *
+  * @param mat Divided Matrix.
+  * @param scalar Value by which matrix is being divided.
+  */
+  static void Divide(Matrix* mat, const double scalar);
+
+  /**
+  * @brief Adds to given matrix scalar constant value.
+  *
+  * @param mat Matrix to which values scalar will be added.
+  * @param scalar Value which will be added.
+  */
+  static void Add(Matrix* mat, const double scalar);
 
   /**
   * @brief Converts matrix to std::string, so it can be written on any output.
@@ -150,6 +173,25 @@ void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
       outMat.PutValue(r, c, value);
     }
   }
+}
+
+void Matrix::Multiply(Matrix* mat, const double scalar) {
+  if(scalar == 0.0) return;
+  for(uint8_t i=0; i < mat->Rows(); i++)
+    for(uint8_t j=0; j < mat->Columns(); j++)
+      mat->PutValue(i, j, mat->GetValue(i, j) * scalar);
+}
+
+void Matrix::Divide(Matrix* mat, const double scalar) {
+  for(uint8_t i=0; i < mat->Rows(); i++)
+    for(uint8_t j=0; j < mat->Columns(); j++)
+      mat->PutValue(i, j, mat->GetValue(i, j) / scalar);
+}
+
+void Matrix:: Add(Matrix* mat, const double scalar) {
+  for(uint8_t i=0; i < mat->Rows(); i++)
+    for(uint8_t j=0; j < mat->Columns(); j++)
+      mat->PutValue(i, j, mat->GetValue(i, j) + scalar);
 }
 
 std::string Matrix::ToString() {

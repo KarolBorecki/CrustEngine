@@ -67,7 +67,7 @@ void MeshLoader::ReadFromObj(const char* fileName, Mesh* outMesh) {
   FileReader::GetLineFromOpenedFile(1, "mtllib %s\n", materialName);
   FileReader::GetLineFromOpenedFile(1, "o %s\n", objectName);
 
-  Logger::Log(Logger::FontColor::LIGHT_BLUE, "Reading *.obj file: %s, with mtl name: %s", objectName, materialName);
+  outMesh->SetName(objectName);
 
   char vertexType[3] = {'\0'};
   double d1=1.0,d2=1.0,d3=1.0;

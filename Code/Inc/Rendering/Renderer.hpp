@@ -1,6 +1,8 @@
 #ifndef _DRAWER_HPP_
 #define _DRAWER_HPP_
 
+#include <math.h> /* cos, sin */
+
 #include <Physics/Matrix.hpp>
 
 #include <Core/Camera.hpp>
@@ -8,6 +10,7 @@
 #include <Rendering/RendererWrapper.hpp>
 
 #include <Physics/Vector3.hpp>
+#include <Physics/Vector4.hpp>
 #include <Physics/Triangle.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
 
@@ -70,7 +73,7 @@ public:
   * @details Class held by RenderWindow.hpp for drawing purposes.
   * It is able to render all shapes that is needed to show mesh on the flat screen.
   */
-  void ProjectTriangle(Triangle* tri);
+  Triangle ProjectTriangle(Triangle* tri);
 
   /**
   * @brief Getter for #projMatrix field.
@@ -126,77 +129,51 @@ void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3
 }
 
 void Renderer::DrawMesh(Mesh* mesh) {
-  Logger::Log("Drawing Mesh \' %s \'", mesh->GetName().c_str());
-
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-
-  Vector3* p1; Vector3* p2; Vector3* p3;
-  Matrix* projMat = GetProjectionMatrix();
-
-  Matrix m1(1, 4, 0.0);
-  Matrix m2(1, 4, 0.0);
-  Matrix m3(1, 4, 0.0);
-
-  Matrix outMatP1(1, 4, 0.0);
-  Matrix outMatP2(1, 4, 0.0);
-  Matrix outMatP3(1, 4, 0.0);
-
-  double z1;
-  double z2;
-  double z3;
-
-  Vector3 projectedP1(1.0);
-  Vector3 projectedP2(1.0);
-  Vector3 projectedP3(1.0);
-
-  Logger::Log("Attempting to draw mesh");
-
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
-    Logger::Log(Logger::FontColor::PINK, "Triangle number: %d", i);
-    Logger::Log(Logger::FontColor::GREY, "%s", mesh->GetTriangle(i)->ToString().c_str());
-    p1 = mesh->GetPoint(i, 0);
-    p2 = mesh->GetPoint(i, 1);
-    p3 = mesh->GetPoint(i, 2);
-
-    m1.PutValue(0,0,p1->X()); m1.PutValue(0,1,p1->Y()); m1.PutValue(0,2,p1->Z()); m1.PutValue(0,3,1);
-    m2.PutValue(0,0,p2->X()); m2.PutValue(0,1,p2->Y()); m2.PutValue(0,2,p2->Z()); m2.PutValue(0,3,1);
-    m3.PutValue(0,0,p3->X()); m3.PutValue(0,1,p3->Y()); m3.PutValue(0,2,p3->Z()); m3.PutValue(0,3,1);
-
-    Matrix::Multiply(&m1, projMat, outMatP1);
-    Matrix::Multiply(&m2, projMat, outMatP2);
-    Matrix::Multiply(&m3, projMat, outMatP3);
-
-    Logger::Log(Logger::FontColor::PINK, "============MULTIPLING:");
-    Logger::Log("After multiply matp1 %s", outMatP1.ToString().c_str());
-    Logger::Log("After multiply matp2 %s", outMatP2.ToString().c_str());
-    Logger::Log("After multiply matp3 %s", outMatP3.ToString().c_str());
-
-    z1 = outMatP1.GetValue(0,3); if(z1 <= 0) {z1 = 1;};
-    z2 = outMatP2.GetValue(0,3); if(z2 <= 0) {z2 = 1;};
-    z3 = outMatP3.GetValue(0,3); if(z3 <= 0) {z3 = 1;};
-    projectedP1.SetX(outMatP1.GetValue(0,0) / z1); projectedP1.SetY(outMatP1.GetValue(0,1) / z1); projectedP1.SetZ(outMatP1.GetValue(0,2) / z1);
-    projectedP2.SetX(outMatP2.GetValue(0,0) / z2); projectedP2.SetY(outMatP2.GetValue(0,1) / z2); projectedP2.SetZ(outMatP2.GetValue(0,2) / z2);
-    projectedP3.SetX(outMatP3.GetValue(0,0) / z3); projectedP3.SetY(outMatP3.GetValue(0,1) / z3); projectedP3.SetZ(outMatP3.GetValue(0,2) / z3);
-
-    Logger::Log(Logger::FontColor::PINK, "============DIVISON(z1=%lf z2=%lf z3=%lf):", z1, z2, z3);
-    Logger::Log("After z division projectedP1 %s", projectedP1.ToString().c_str());
-    Logger::Log("After z division projectedP2 %s", projectedP2.ToString().c_str());
-    Logger::Log("After z division projectedP3 %s", projectedP3.ToString().c_str());
-
-    projectedP1.SetX((projectedP1.X() + 1.0) * 0.5 * Width()); projectedP1.SetY((projectedP1.Y() + 1.0) * 0.5 * Height());
-    projectedP2.SetX((projectedP2.X() + 1.0) * 0.5 * Width()); projectedP2.SetY((projectedP2.Y() + 1.0) * 0.5 * Height());
-    projectedP3.SetX((projectedP3.X() + 1.0) * 0.5 * Width()); projectedP3.SetY((projectedP3.Y() + 1.0) * 0.5 * Height());
-
-    Logger::Log(Logger::FontColor::PINK, "============SCALING(+1.0  *0.5  w=*%d h=*%d):", Width(), Height());
-    Logger::Log("After scaling projectedP1 %s", projectedP1.ToString().c_str());
-    Logger::Log("After scaling projectedP2 %s", projectedP2.ToString().c_str());
-    Logger::Log("After scaling projectedP3 %s", projectedP3.ToString().c_str());
-
-    Triangle projTri(&projectedP1, &projectedP2, &projectedP3);
-
+    Triangle projTri = ProjectTriangle(mesh->GetTriangle(i));
     DrawTri(&projTri);
-    Logger::Log(Logger::FontColor::PINK, "======================================");
   }
+}
+
+Triangle Renderer::ProjectTriangle(Triangle* tri) {
+  static Matrix* projMat = GetProjectionMatrix();
+
+  //TODO play around with static values
+  Vector4 extendedP1(tri->GetPoint(0), 1.0);
+  Vector4 extendedP2(tri->GetPoint(1), 1.0);
+  Vector4 extendedP3(tri->GetPoint(2), 1.0);
+
+  Vector4 outMatP1(0.0);
+  Vector4 outMatP2(0.0);
+  Vector4 outMatP3(0.0);
+
+  Matrix::Multiply(&extendedP1, projMat, outMatP1);
+  Matrix::Multiply(&extendedP2, projMat, outMatP2);
+  Matrix::Multiply(&extendedP3, projMat, outMatP3);
+
+  Vector3 projectedP1(outMatP1.GetValue(0,0), outMatP1.GetValue(0,1), outMatP1.GetValue(0,2));
+  Vector3 projectedP2(outMatP2.GetValue(0,0), outMatP2.GetValue(0,1), outMatP2.GetValue(0,2));
+  Vector3 projectedP3(outMatP3.GetValue(0,0), outMatP3.GetValue(0,1), outMatP3.GetValue(0,2));
+
+  Matrix::Divide(&projectedP1, outMatP1.GetValue(0,3));
+  Matrix::Divide(&projectedP2, outMatP2.GetValue(0,3));
+  Matrix::Divide(&projectedP3, outMatP3.GetValue(0,3));
+
+  Matrix::Add(&projectedP1, 1);
+  Matrix::Add(&projectedP2, 1);
+  Matrix::Add(&projectedP3, 1);
+
+  Matrix::Multiply(&projectedP1, 0.5);
+  Matrix::Multiply(&projectedP2, 0.5);
+  Matrix::Multiply(&projectedP3, 0.5);
+
+  projectedP1.SetX(projectedP1.X() * Width()); projectedP1.SetY(projectedP1.Y() * Height());
+  projectedP2.SetX(projectedP2.X() * Width()); projectedP2.SetY(projectedP2.Y() * Height());
+  projectedP3.SetX(projectedP3.X() * Width()); projectedP3.SetY(projectedP3.Y() * Height());
+
+  Triangle result(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
+  return result;
 }
 
 inline Matrix* Renderer::GetProjectionMatrix() { return projMatrix; }

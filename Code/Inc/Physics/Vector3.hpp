@@ -4,7 +4,7 @@
 #include <Physics/Matrix.hpp>
 
 /**
-* @brief Represents mathematical vector.
+* @brief Represents mathematical vector3.
 */
 class Vector3 : public Matrix {
 public:
@@ -38,23 +38,32 @@ public:
   double Z();
 
   /**
-  * @brief Getter for Vector3 x value.
+  * @brief Setter for Vector3 x value.
   *
   * @param valX New value of vector's x.
   */
   void SetX(double valX);
   /**
-  * @brief Getter for Vector3 y value.
+  * @brief Setter for Vector3 y value.
   *
   * @param valY New value of vector's y.
   */
   void SetY(double valY);
   /**
-  * @brief Getter for Vector3 z value.
+  * @brief Setter for Vector3 z value.
   *
   * @param valZ New value of vector's z.
   */
   void SetZ(double valZ);
+
+  /**
+  * @brief Setter for Vector3 values.
+  *
+  * @param x New value of vector's x.
+  * @param y New value of vector's y.
+  * @param z New value of vector's z.
+  */
+  void SetXYZ(double x, double y, double z);
 
 private:
   void Init(double x, double y, double z);
@@ -80,11 +89,15 @@ inline void Vector3::SetY(double valY) { PutValue(0, 1, valY); }
 
 inline void Vector3::SetZ(double valZ) { PutValue(0, 2, valZ); }
 
-inline void Vector3::Init(double x, double y, double z) {
+void Vector3::SetXYZ(double x, double y, double z) {
   SetX(x);
   SetY(y);
   SetZ(z);
-  Logger::Log(Logger::FontColor::GREEN, "   [+] Vector of id: %d initzialized", GetID());
+}
+
+inline void Vector3::Init(double x, double y, double z) {
+  SetXYZ(x, y, z);
+  Logger::Log(Logger::FontColor::GREEN, "   [+] Vector3 of id: %d initzialized", GetID());
 }
 
 #endif /* _VECTOR3_HPP_ */

@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
   RenderObject rObj(&mesh);
 
   Mesh mesh2("Sample mesh2");
-  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/mesh.txt", &mesh2);
+  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
   RenderObject rObj2(&mesh2);
 
   //scene.AddObject(rObj);
