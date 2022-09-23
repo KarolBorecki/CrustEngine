@@ -10,10 +10,16 @@
 class Matrix {
 public:
   /**
-  * @param _rows Amount of rows in the matrix.
-  * @param _columns Amount of columns in the matrix.
+  * @param rows Amount of rows in the matrix.
+  * @param columns Amount of columns in the matrix.
   */
-  Matrix(int _rows, int _columns);
+  Matrix(uint8_t rows, uint8_t columns);
+  /**
+  * @param rows Amount of rows in the matrix.
+  * @param columns Amount of columns in the matrix.
+  * @param defaultVal The value that will be placed on each position in matrix.
+  */
+  Matrix(uint8_t rows, uint8_t columns, double defaultVal);
   /**
   * @details If #mat is not null deletes it from the heap.
   */
@@ -25,14 +31,21 @@ public:
   * @param row The y index of the position in matrix.
   * @param column The x index of the position in matrix.
   */
-  double GetValue(int row, int column);
+  double GetValue(uint8_t row, uint8_t column);
   /**
   * @brief Puts the given value on the given position.
   *
   * @param row The y index of the position in matrix.
   * @param column The x index of the position in matrix.
   */
-  void PutValue(int row, int column, double value);
+  void PutValue(uint8_t row, uint8_t column, double value);
+
+  /**
+  * @brief Function resets the matrix so each value of it is the same.
+  *
+  * @param val The value that will be placed on each position in matrix.
+  */
+  void ResetMatrix(double val);
 
   /**
   * @brief Getter for #mat field.
@@ -45,13 +58,13 @@ public:
   *
   * @return Amount of rows in matrix.
   */
-  int Rows();
+  uint8_t Rows();
   /**
   * @brief Getter for #columns field.
   *
   * @return Amount of columns in matrix
   */
-  int Columns();
+  uint8_t Columns();
 
   /**
   * @brief Multiplies given matrixes.
@@ -61,8 +74,9 @@ public:
   *
   * @param mat1 First matrix.
   * @param mat2 Second matrix, by which first is being multiplied.
+  * @param outMat The output matrix.
   */
-  static Matrix Multiply(Matrix* mat1, Matrix* mat2);
+  static void Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat);
 
   /**
   * @brief Converts matrix to std::string, so it can be written on any output.
@@ -81,69 +95,66 @@ public:
   uint8_t GetID();
 
 private:
-  int rows { 0 }; //!< Amount of rows in the matrix.
-  int columns { 0 }; //!< Amount of columns in the matrix.
-  double** mat { nullptr }; //!< Array of matrix's values.
+  uint8_t rows { 0 }; //!< Amount of rows in the matrix.
+  uint8_t columns { 0 }; //!< Amount of columns in the matrix.
+  double** mat; //!< Array of matrix's values.
 
   uint8_t ID; //!< Matrix's ID.
   static inline uint8_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
+
+  void Init(uint8_t rows, uint8_t columns, double defaultVal);
 };
 
-inline Matrix::Matrix(int _rows, int _columns) : rows(_rows), columns(_columns) {
-  ID = nextID++;
-  mat = new double*[rows];
-  for (int i = 0; i < rows; ++i)
-      mat[i] = new double[columns];
-}
+inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(columns) { Init(rows, columns, 0.0); }
+
+inline Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
 
 inline Matrix::~Matrix() {
-  Logger::Info("[X] Deleting Mat<%d> %dx%d", GetID(), Rows(), Columns());
-  if (mat == nullptr) return;
-  for (int i = 0; i < rows; ++i)
+  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d", GetID(), Rows(), Columns());
+  for(uint8_t i = 0; i < rows; ++i)
     delete [] mat[i];
-delete [] mat;
+  delete [] mat;
 }
 
-inline double Matrix::GetValue(int row, int column) {
-  return mat[row][column];
-}
+inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[row][column]; }
 
-inline void Matrix::PutValue(int row, int column, double value) {
-  mat[row][column] = value;
+inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[row][column] = value; }
+
+void Matrix::ResetMatrix(double val) {
+  for(uint8_t i=0; i < Rows(); i++)
+    for(uint8_t j=0; j < Columns(); j++)
+      PutValue(i, j, val);
 }
 
 inline double** Matrix::GetMatrix() { return mat; }
 
-inline int Matrix::Rows() { return rows; }
+inline uint8_t Matrix::Rows() { return rows; }
 
-inline int Matrix::Columns() { return columns; }
+inline uint8_t Matrix::Columns() { return columns; }
 
-/* TODO TEST */
-Matrix Matrix::Multiply(Matrix* mat1, Matrix* mat2) {
-  int resultRows = mat1->Rows();
-  int resultColumns = mat2->Columns();
-  Matrix resultMat(resultRows, resultColumns);
-
+void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
+  uint8_t resultRows = mat1->Rows();
+  uint8_t resultColumns = mat2->Columns();
+  //TODO outMat resultMat
   if(mat1->Columns() != mat2->Rows()) {
     Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
-    return resultMat; // TODO error?? read throw std::runtime_error()
+    return; // TODO error?? read throw std::runtime_error()
   }
 
-  for(int r=0; r<resultRows; r++) {
-    for(int c=0; c<resultColumns; c++) {
+  for(uint8_t r=0; r<resultRows; r++) {
+    for(uint8_t c=0; c<resultColumns; c++) {
       double value = 0;
-      for(int i=0; i<mat2->Rows(); i++) {
+      for(uint8_t i=0; i<mat2->Rows(); i++) {
         value += mat1->GetValue(r, i) * mat2->GetValue(i, c);
       }
-      resultMat.PutValue(r, c, value);
+      outMat.PutValue(r, c, value);
     }
   }
-  return resultMat;
 }
 
 std::string Matrix::ToString() {
   std::string result = "";
-  result += "Matrix of size: " + std::to_string(rows) + "x" + std::to_string(columns) + "\n";
+  result += "Matrix<" + std::to_string(GetID()) + "> of size: " + std::to_string(rows) + "x" + std::to_string(columns) + "\n";
   for(int r=0; r<rows; r++){
     for(int c=0; c<columns; c++){
       result += "(" + std::to_string(r) + "," + std::to_string(c) + ")" +std::to_string(GetValue(r, c)) + " ";
@@ -154,5 +165,15 @@ std::string Matrix::ToString() {
 }
 
 inline uint8_t Matrix::GetID() { return ID; }
+
+inline void Matrix::Init(uint8_t rows, uint8_t columns, double defaultVal) {
+  ID = nextID++;
+  mat = new double*[rows];
+  for(int i = 0; i < rows; i++)
+      mat[i] = new double[columns];
+
+  ResetMatrix(defaultVal);
+  Logger::Log(Logger::FontColor::GREEN, "[+] Creating matrix of size %dx%d", rows, columns);
+}
 
 #endif /* _MATRIX_HPP_ */

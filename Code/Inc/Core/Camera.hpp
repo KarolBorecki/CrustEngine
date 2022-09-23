@@ -55,7 +55,7 @@ private:
 };
 
 inline Camera::Camera(int _fieldOfViewDeg, double _fNear, double _fFar) : fieldOfViewDeg(_fieldOfViewDeg), fNear(_fNear), fFar(_fFar) {
-  fFovRad = 1.0 / tan(degToRad(_fieldOfViewDeg * 0.5));
+  fFovRad = (1.0 / tan(_fieldOfViewDeg * 0.0174532925 / 2));
 }
 
 inline int Camera::GetFieldOfViewDeg() { return fieldOfViewDeg; }

@@ -67,6 +67,7 @@ inline void FileReader::CloseOpenedFile() {
     return;
   }
   fclose(openedFile);
+  openedFile = NULL;
 }
 
 uint8_t FileReader::GetLineFromOpenedFile(uint8_t expectedArgsCount, const char *format, ...)

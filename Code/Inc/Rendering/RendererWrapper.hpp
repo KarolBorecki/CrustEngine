@@ -157,6 +157,15 @@ public:
   */
   LibRenderer* GetRenderer();
 
+  /**
+  * @brief Getter for renderer width.
+  */
+  int Width();
+  /**
+  * @brief Getter for renderer height.
+  */
+  int Height();
+
 private:
   int width; //!< Drawing window width.
   int height; //!< Drawing window height.
@@ -232,5 +241,9 @@ void RendererWrapper::Quit() {
 inline LibRenderer* RendererWrapper::GetRenderer() {
   return renderer;
 }
+
+inline int RendererWrapper::Width() { return width; }
+
+inline int RendererWrapper::Height() { return height; }
 
 #endif /* _RENDERERWRAPPER_HPP_ */

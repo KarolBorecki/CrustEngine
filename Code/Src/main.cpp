@@ -13,14 +13,20 @@
 
 int main(int argc, char* argv[])
 {
-  Camera cam(90, 0.1, 100.0);
+  Logger::Log(Logger::FontColor::LIGHT_BLUE, "================STARTING THE ENGINE================");
+  Camera cam(90, 0.1, 1000.0);
   Scene scene("T Scene", &cam);
 
-  Mesh mesh = MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/mesh.txt");
+  Mesh mesh("Sample mesh");
+  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/mesh45deg.txt", &mesh);
   RenderObject rObj(&mesh);
-  Logger::Log("%s", rObj.ToString().c_str());
 
-  scene.AddObject(rObj);
+  Mesh mesh2("Sample mesh2");
+  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/mesh.txt", &mesh2);
+  RenderObject rObj2(&mesh2);
+
+  //scene.AddObject(rObj);
+  scene.AddObject(rObj2);
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);

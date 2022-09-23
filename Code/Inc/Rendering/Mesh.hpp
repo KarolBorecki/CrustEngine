@@ -5,6 +5,8 @@
 
 #include <Physics/Triangle.hpp>
 
+#define DEFAULT_MESH_NAME "NO NAME"
+
 class Vector3;
 
 /**
@@ -13,6 +15,7 @@ class Vector3;
 class Mesh {
 public:
   Mesh();
+  Mesh(std::string name);
   /**
   * @brief Deletes all of the triangles of this mesh
   */
@@ -46,13 +49,33 @@ public:
   */
   uint8_t GetTrianglesCount();
 
+  /**
+  * @brief Setter for #name field.
+  *
+  * @param newName new mesh's name.
+  */
+  void SetName(std::string newName);
+
+  /**
+  * @brief Getter fir #name field.
+  *
+  * @return The mesh's file name.
+  */
+  std::string GetName();
+
 private:
+  std::string name;
+
   std::vector<Triangle*> triangles; //!< Triangles, from which the mesh consists.
 };
 
-Mesh::Mesh() {}
+inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) {Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str());}
+
+inline Mesh::Mesh(std::string meshName) : name(meshName) {Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str());}
 
 Mesh::~Mesh() {
+  // TODO not created? Then dont delete!
+  Logger::Log(Logger::FontColor::PINK, "[x] Deleting mesh %s", GetName().c_str());
   for(auto tri : triangles)
     delete tri;
 }
@@ -64,5 +87,9 @@ inline Triangle* Mesh::GetTriangle(uint8_t index) { return triangles[index]; }
 inline Vector3* Mesh::GetPoint(uint8_t triIndex, uint8_t pointIndex) { return triangles[triIndex]->GetPoint(pointIndex); }
 
 inline uint8_t Mesh::GetTrianglesCount() { return triangles.size(); }
+
+inline void Mesh::SetName(std::string newName) { name = newName; }
+
+inline std::string Mesh::GetName() { return name; }
 
 #endif /* _MESH_HPP_ */

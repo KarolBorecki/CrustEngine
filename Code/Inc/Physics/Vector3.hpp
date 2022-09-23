@@ -6,9 +6,22 @@
 /**
 * @brief Represents mathematical vector.
 */
-class Vector3 : public Matrix{
+class Vector3 : public Matrix {
 public:
-  Vector3(double _x, double _y, double _z);
+  /**
+  * @brief Creates blank vector that consists of values zero.
+  */
+  Vector3();
+  /**
+  * @param valXYZ Value for each X, Y and Z fields.
+  */
+  Vector3(double valXYZ);
+  /**
+  * @param x Value for X field.
+  * @param y Value for Y field.
+  * @param z Value for Z field.
+  */
+  Vector3(double x, double y, double z);
   ~Vector3();
 
   /**
@@ -23,24 +36,55 @@ public:
   * @brief Getter for Vector3 z value.
   */
   double Z();
+
+  /**
+  * @brief Getter for Vector3 x value.
+  *
+  * @param valX New value of vector's x.
+  */
+  void SetX(double valX);
+  /**
+  * @brief Getter for Vector3 y value.
+  *
+  * @param valY New value of vector's y.
+  */
+  void SetY(double valY);
+  /**
+  * @brief Getter for Vector3 z value.
+  *
+  * @param valZ New value of vector's z.
+  */
+  void SetZ(double valZ);
+
 private:
+  void Init(double x, double y, double z);
 };
 
-inline Vector3::Vector3(double _x, double _y, double _z) : Matrix(1, 3) {
-  PutValue(0, 0, _x);
-  PutValue(0, 1, _y);
-  PutValue(0, 2, _z);
-  Logger::Info("Vector of id: %d created", GetID());
-}
+inline Vector3::Vector3() : Matrix(1, 3) { Init(0.0, 0.0, 0.0); }
 
-inline Vector3::~Vector3() {
-  Logger::Info("[X] Deleting Vec3D<%d>", GetID());
-}
+inline Vector3::Vector3(double valXYZ) : Matrix(1, 3) { Init(valXYZ, valXYZ, valXYZ); }
+
+inline Vector3::Vector3(double x, double y, double z) : Matrix(1, 3) { Init(x, y, z); }
+
+inline Vector3::~Vector3() { Logger::Log(Logger::FontColor::PINK, "   [X] Deleting Vec3D<%d>", GetID()); }
 
 inline double Vector3::X() { return GetValue(0, 0); }
 
 inline double Vector3::Y() { return GetValue(0, 1); }
 
 inline double Vector3::Z() { return GetValue(0, 2); }
+
+inline void Vector3::SetX(double valX) { PutValue(0, 0, valX); }
+
+inline void Vector3::SetY(double valY) { PutValue(0, 1, valY); }
+
+inline void Vector3::SetZ(double valZ) { PutValue(0, 2, valZ); }
+
+inline void Vector3::Init(double x, double y, double z) {
+  SetX(x);
+  SetY(y);
+  SetZ(z);
+  Logger::Log(Logger::FontColor::GREEN, "   [+] Vector of id: %d initzialized", GetID());
+}
 
 #endif /* _VECTOR3_HPP_ */

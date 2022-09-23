@@ -20,10 +20,10 @@ public:
     GREY = 37,
     LIGHT_BLUE = 36,
     PINK = 35,
-    BLUE = 34,
-    RED = 31,
-    YELLOW = 33,
-    GREEN = 32
+    GREEN = 32,
+    BLUE = 34, /* RESERVED FOR INFOS */
+    RED = 31, /* RESERVED FOR WARNINGS */
+    YELLOW = 33 /* RESERVED FOR ERRORS */
   };
 
   /**

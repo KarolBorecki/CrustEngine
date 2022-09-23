@@ -82,12 +82,20 @@ RenderWindow::~RenderWindow() {
 void RenderWindow::Start() {
   while(renderer->IsRunning()) {
     Clean();
-    renderer->DrawTri();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      Logger::Info("Drawing object...");
       renderer->DrawMesh(obj->GetMesh());
     }
+    // renderer->SetDrawColor(0, 255, 0);
+    // Vector3 p1(100.0, 100.0, 0.0);
+    // Vector3 p2(300.0, 100.0, 0.0);
+    // Vector3 p3(300.0, 300.0, 0.0);
+    // Triangle tri(&p1, &p2, &p3);
+    // renderer->DrawTri(&tri);
+    //
+    // renderer->SetDrawColor(255, 0, 0);
+    // renderer->DrawTri(0.0, 0.0, 0.0, 200.0, 200.0, 200.0);
+
     renderer->Show();
     renderer->GetEvent();
   }

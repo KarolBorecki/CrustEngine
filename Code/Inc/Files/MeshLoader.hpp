@@ -13,7 +13,7 @@
 class MeshLoader {
 public:
   /**
-  * @brief Returns mesh saved in passed file's path.
+  * @brief Saves mesh saved in #outMesh from passed file's path.
   *
   * @details Recognizes the file's extension by 4 last characters and calls MeshLoader::ReadFromObj or MeshLoader::ReadFromTxt method.
   * If no match for file extension was found then logs an error and returns blank mesh. <br>
@@ -21,7 +21,7 @@ public:
   *   - *.txt <br>
   *   - *.obj <br>
   */
-  static Mesh LoadMeshFromFile(const char* fileName);
+  static void LoadMeshFromFile(const char* fileName, Mesh* outMesh);
 
 private:
   /**
@@ -30,11 +30,9 @@ private:
   * @details Opens file of #filename, reads the content in *.obj convention and creates Mesh object.
   * Before returning it closes the opened file.
   *
-  *@return New Mesh object containging data in file #filename.
-  *
   * @sa FileReader.hpp <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">*.obj file extensions</a>
   */
-  static void ReadFromObj(const char* fileName, Mesh& outMesh);
+  static void ReadFromObj(const char* fileName, Mesh* outMesh);
   /**
   * @brief Reads mesh from *.txt file and returns Mesh object.
   *
@@ -44,29 +42,24 @@ private:
   * 3 vectors per line in pattern: [%lf, %lf, %lf;] <br>
   * Each line represent a mesh's triangle. The example file can bee seen in /mesh.txt. It represents a cube.
   *
-  *@return New Mesh object containging data in file #filename.
-  *
   * @sa FileReader.hpp <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">*.obj file extensions</a>
   */
-  static void ReadFromTxt(const char* fileName, Mesh& outMesh);
+  static void ReadFromTxt(const char* fileName, Mesh* outMesh);
 };
 
-Mesh MeshLoader::LoadMeshFromFile(const char* fileName) {
+void MeshLoader::LoadMeshFromFile(const char* fileName, Mesh* outMesh) {
   uint8_t fileNameLen = strlen(fileName);
-  Mesh mesh;
 
   if(fileName[fileNameLen-1] == 'j' && fileName[fileNameLen-2] == 'b' && fileName[fileNameLen-3] == 'o' && fileName[fileNameLen-4] == '.')
-    ReadFromObj(fileName, mesh);
+    ReadFromObj(fileName, outMesh);
   else if(fileName[fileNameLen-1] == 't' && fileName[fileNameLen-2] == 'x' && fileName[fileNameLen-3] == 't' && fileName[fileNameLen-4] == '.')
-    ReadFromTxt(fileName, mesh);
+    ReadFromTxt(fileName, outMesh);
   else
-    Logger::Error("No mathcing file extension for file: %s", fileName);
-
-  return mesh;
+    Logger::Error("No mathing file extension for file: %s", fileName);
 }
 
 //TODO Need to figure out how to converte vertex to triangles
-void MeshLoader::ReadFromObj(const char* fileName, Mesh& outMesh) {
+void MeshLoader::ReadFromObj(const char* fileName, Mesh* outMesh) {
   FileReader::OpenFile(fileName);
 
   char materialName[256];
@@ -96,17 +89,19 @@ void MeshLoader::ReadFromObj(const char* fileName, Mesh& outMesh) {
   FileReader::CloseOpenedFile();
 }
 
-void MeshLoader::ReadFromTxt(const char* fileName, Mesh& outMesh) {
+void MeshLoader::ReadFromTxt(const char* fileName, Mesh* outMesh) {
   FileReader::OpenFile(fileName);
+  outMesh->SetName(fileName);
+
   double d1,d2,d3,d4,d5,d6,d7,d8,d9;
   while (FileReader::GetLineFromOpenedFile(9, "%lf, %lf, %lf; %lf, %lf, %lf; %lf, %lf, %lf;", &d1, &d2, &d3, &d4, &d5, &d6, &d7, &d8, &d9) == 9) {
     Vector3* v1 = new Vector3(d1, d2, d3);
     Vector3* v2 = new Vector3(d4, d5, d6);
     Vector3* v3 = new Vector3(d7, d8, d9);
     Triangle* tri = new Triangle(v1, v2, v3);
-    outMesh.AddTriangle(tri);
+    outMesh->AddTriangle(tri);
   }
-
+  Logger::Log("Mesh %s loading done.", outMesh->GetName().c_str());
   FileReader::CloseOpenedFile();
 }
 
