@@ -52,6 +52,8 @@ private:
   Scene* loadedScene { nullptr }; //!< Loaded scene's handler.
 
   double deltaTime_ms { 0.0 }; //!< Time of the last frame in milliseconds.
+  double deltaTimeSum_ms { 0.0 };
+  uint32_t framesAmount { 0 };
 
   /**
   * @brief Cleans everything that was drawn on the window.
@@ -108,9 +110,12 @@ void RenderWindow::Start() {
     renderer->GetEvent();
     end = std::chrono::steady_clock::now();
     deltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
+    deltaTimeSum_ms += deltaTime_ms;
     Logger::Info("This frame took: %lf [ms] (%lf [s])", deltaTime_ms, deltaTime_ms * 0.001);
+    framesAmount++;
   }
   renderer->Quit();
+  Logger::Info("Avreage frame time: %lf [ms]", deltaTimeSum_ms / framesAmount);
 }
 
 void RenderWindow::Close() {

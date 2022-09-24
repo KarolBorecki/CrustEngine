@@ -118,8 +118,6 @@ Renderer::~Renderer() {
 }
 
 void Renderer::DrawTri(Triangle* tri) {
-  Logger::Log(Logger::FontColor::LIGHT_BLUE, "Drawing:");
-  Logger::Log(Logger::FontColor::LIGHT_BLUE, "%s", tri->ToString().c_str());
   DrawLine(tri->GetPoint(0)->X(), tri->GetPoint(0)->Y(), tri->GetPoint(1)->X(), tri->GetPoint(1)->Y());
   DrawLine(tri->GetPoint(1)->X(), tri->GetPoint(1)->Y(), tri->GetPoint(2)->X(), tri->GetPoint(2)->Y());
   DrawLine(tri->GetPoint(2)->X(), tri->GetPoint(2)->Y(), tri->GetPoint(0)->X(), tri->GetPoint(0)->Y());
@@ -145,21 +143,27 @@ Triangle Renderer::ProjectTriangle(Triangle* tri) {
   static Matrix* projMat = GetProjectionMatrix();
 
   //TODO play around with static values
-  Vector4 extendedP1(tri->GetPoint(0), 1.0);
-  Vector4 extendedP2(tri->GetPoint(1), 1.0);
-  Vector4 extendedP3(tri->GetPoint(2), 1.0);
+  static Vector4 extendedP1;
+  static Vector4 extendedP2;
+  static Vector4 extendedP3;
+  extendedP1.SetXYZW(tri->GetPoint(0), 1.0);
+  extendedP2.SetXYZW(tri->GetPoint(1), 1.0);
+  extendedP3.SetXYZW(tri->GetPoint(2), 1.0);
 
-  Vector4 outMatP1(0.0);
-  Vector4 outMatP2(0.0);
-  Vector4 outMatP3(0.0);
+  static Vector4 outMatP1;
+  static Vector4 outMatP2;
+  static Vector4 outMatP3;
 
   Matrix::Multiply(&extendedP1, projMat, outMatP1);
   Matrix::Multiply(&extendedP2, projMat, outMatP2);
   Matrix::Multiply(&extendedP3, projMat, outMatP3);
 
-  Vector3 projectedP1(outMatP1.GetValue(0,0), outMatP1.GetValue(0,1), outMatP1.GetValue(0,2));
-  Vector3 projectedP2(outMatP2.GetValue(0,0), outMatP2.GetValue(0,1), outMatP2.GetValue(0,2));
-  Vector3 projectedP3(outMatP3.GetValue(0,0), outMatP3.GetValue(0,1), outMatP3.GetValue(0,2));
+  static Vector3 projectedP1;
+  static Vector3 projectedP2;
+  static Vector3 projectedP3;
+  projectedP1.SetXYZ(outMatP1.GetValue(0,0), outMatP1.GetValue(0,1), outMatP1.GetValue(0,2));
+  projectedP2.SetXYZ(outMatP2.GetValue(0,0), outMatP2.GetValue(0,1), outMatP2.GetValue(0,2));
+  projectedP3.SetXYZ(outMatP3.GetValue(0,0), outMatP3.GetValue(0,1), outMatP3.GetValue(0,2));
 
   Matrix::Divide(&projectedP1, outMatP1.GetValue(0,3));
   Matrix::Divide(&projectedP2, outMatP2.GetValue(0,3));
@@ -177,7 +181,8 @@ Triangle Renderer::ProjectTriangle(Triangle* tri) {
   projectedP2.SetX(projectedP2.X() * Width()); projectedP2.SetY(projectedP2.Y() * Height());
   projectedP3.SetX(projectedP3.X() * Width()); projectedP3.SetY(projectedP3.Y() * Height());
 
-  Triangle result(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
+  static Triangle result;
+  result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
   return result;
 }
 
