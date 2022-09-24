@@ -80,6 +80,7 @@ RenderWindow::~RenderWindow() {
 }
 
 void RenderWindow::Start() {
+  Logger::Info("==================Starting drawing process==================");
   while(renderer->IsRunning()) {
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();

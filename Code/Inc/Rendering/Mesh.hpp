@@ -64,14 +64,14 @@ public:
   std::string GetName();
 
 private:
-  std::string name;
+  std::string name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path.
 
   std::vector<Triangle*> triangles; //!< Triangles, from which the mesh consists.
 };
 
-inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) {Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str());}
+inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) { Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str()); }
 
-inline Mesh::Mesh(std::string meshName) : name(meshName) {Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str());}
+inline Mesh::Mesh(std::string meshName) : name(meshName) { Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str()); }
 
 Mesh::~Mesh() {
   // TODO not created? Then dont delete!

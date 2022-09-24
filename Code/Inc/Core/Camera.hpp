@@ -55,7 +55,9 @@ private:
 };
 
 inline Camera::Camera(int _fieldOfViewDeg, double _fNear, double _fFar) : fieldOfViewDeg(_fieldOfViewDeg), fNear(_fNear), fFar(_fFar) {
+  Logger::Log("============Creating Camera============");
   fFovRad = (1.0 / tan(_fieldOfViewDeg * 0.0174532925 / 2));
+  Logger::Log("============Creating Camera DONE============");
 }
 
 inline int Camera::GetFieldOfViewDeg() { return fieldOfViewDeg; }

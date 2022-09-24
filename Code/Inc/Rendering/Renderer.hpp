@@ -104,9 +104,11 @@ private:
 };
 
 Renderer::Renderer(int _width, int _height) : RendererWrapper(_width, _height) {
+  Logger::Log("============Rednerer creation============");
   aspectRatio = ((double)_height / (double)_width);
-  Logger::Log("ASPECT RATIO: %lf", aspectRatio);
+  Logger::Info("ASPECT RATIO: %lf", aspectRatio);
   projMatrix = new Matrix(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0);
+  Logger::Log("============Rednerer creation DONE============");
 }
 
 Renderer::~Renderer() {
@@ -129,11 +131,16 @@ void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3
 }
 
 void Renderer::DrawMesh(Mesh* mesh) {
+  static uint8_t iterations = 0;
+  if(iterations >= 10) return;
+  Logger::Log("============Drawing mesh %s============", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
     Triangle projTri = ProjectTriangle(mesh->GetTriangle(i));
     DrawTri(&projTri);
   }
+  iterations++;
+  Logger::Log("============Drawing mesh %s DONE============", mesh->GetName().c_str());
 }
 
 Triangle Renderer::ProjectTriangle(Triangle* tri) {
@@ -179,6 +186,7 @@ Triangle Renderer::ProjectTriangle(Triangle* tri) {
 inline Matrix* Renderer::GetProjectionMatrix() { return projMatrix; }
 
 void Renderer::RecalculateProjectionMatrix(Camera* cam) {
+  Logger::Log("============Recalculating projection matrix============");
   double a = aspectRatio;
   float f = cam->GetFFovRad();
   double q = cam->GetFFar() / (cam->GetFFar() - cam->GetFNear());
@@ -190,6 +198,7 @@ void Renderer::RecalculateProjectionMatrix(Camera* cam) {
   projMatrix->PutValue(2, 3, 1.0);
   projMatrix->PutValue(3, 2, -zNear * q);
   Logger::Info(projMatrix->ToString().c_str());
+  Logger::Log("============Recalculating projection matrix DONE============");
 }
 
 

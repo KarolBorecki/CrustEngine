@@ -52,7 +52,7 @@ public:
   *
   * @return Pointer to matrix array.
   */
-  double** GetMatrix();
+  double* GetMatrixArray();
   /**
   * @brief Getter for #rows field.
   *
@@ -115,17 +115,18 @@ public:
   *
   * @return Matrix's ID.
   */
-  uint8_t GetID();
+  uint32_t GetID();
 
 private:
   uint8_t rows { 0 }; //!< Amount of rows in the matrix.
   uint8_t columns { 0 }; //!< Amount of columns in the matrix.
-  double** mat; //!< Array of matrix's values.
+  double* mat; //!< Array of matrix's values.
 
-  uint8_t ID; //!< Matrix's ID.
-  static inline uint8_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
+  uint32_t ID; //!< Matrix's ID.
+  static inline uint32_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
 
-  void Init(uint8_t rows, uint8_t columns, double defaultVal);
+  void Init(uint8_t newRows, uint8_t newColumns, double defaultVal);
+  uint8_t GetMatRealIndex(uint8_t row, uint8_t column);
 };
 
 inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(columns) { Init(rows, columns, 0.0); }
@@ -133,15 +134,14 @@ inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(colum
 inline Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
 
 inline Matrix::~Matrix() {
-  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d", GetID(), Rows(), Columns());
-  for(uint8_t i = 0; i < rows; ++i)
-    delete [] mat[i];
+  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d: \n %s", GetID(), Rows(), Columns(), ToString().c_str());
   delete [] mat;
+  Logger::Log("deleted.");
 }
 
-inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[row][column]; }
+inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }
 
-inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[row][column] = value; }
+inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[GetMatRealIndex(row, column)] = value; }
 
 void Matrix::ResetMatrix(double val) {
   for(uint8_t i=0; i < Rows(); i++)
@@ -149,7 +149,7 @@ void Matrix::ResetMatrix(double val) {
       PutValue(i, j, val);
 }
 
-inline double** Matrix::GetMatrix() { return mat; }
+inline double* Matrix::GetMatrixArray() { return mat; }
 
 inline uint8_t Matrix::Rows() { return rows; }
 
@@ -188,7 +188,7 @@ void Matrix::Divide(Matrix* mat, const double scalar) {
       mat->PutValue(i, j, mat->GetValue(i, j) / scalar);
 }
 
-void Matrix:: Add(Matrix* mat, const double scalar) {
+void Matrix::Add(Matrix* mat, const double scalar) {
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) + scalar);
@@ -197,6 +197,7 @@ void Matrix:: Add(Matrix* mat, const double scalar) {
 std::string Matrix::ToString() {
   std::string result = "";
   result += "Matrix<" + std::to_string(GetID()) + "> of size: " + std::to_string(rows) + "x" + std::to_string(columns) + "\n";
+  if(rows*columns > 200) return result + "Too big to display\n"; //TODO move 200 value to variable
   for(int r=0; r<rows; r++){
     for(int c=0; c<columns; c++){
       result += "(" + std::to_string(r) + "," + std::to_string(c) + ")" +std::to_string(GetValue(r, c)) + " ";
@@ -206,16 +207,16 @@ std::string Matrix::ToString() {
   return result;
 }
 
-inline uint8_t Matrix::GetID() { return ID; }
+inline uint32_t Matrix::GetID() { return ID; }
 
-inline void Matrix::Init(uint8_t rows, uint8_t columns, double defaultVal) {
+void Matrix::Init(uint8_t newRows, uint8_t newColumns, double defaultVal) {
   ID = nextID++;
-  mat = new double*[rows];
-  for(int i = 0; i < rows; i++)
-      mat[i] = new double[columns];
+  mat = new double[newRows * newColumns];
 
   ResetMatrix(defaultVal);
-  Logger::Log(Logger::FontColor::GREEN, "[+] Creating matrix of size %dx%d", rows, columns);
+  Logger::Log(Logger::FontColor::GREEN, "[+] Creating matrix<%d> of size %dx%d", GetID(), rows, columns);
 }
+
+inline uint8_t Matrix::GetMatRealIndex(uint8_t row, uint8_t column) { return column + Columns()*row;}
 
 #endif /* _MATRIX_HPP_ */

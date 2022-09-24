@@ -25,7 +25,7 @@ public:
   * @param _mainCamera Main camera handler.
   */
   Scene(std::string _name, Camera* _mainCamera);
-  virtual ~Scene() = default;
+  ~Scene() {};
 
   /**
   * @brief Getter for #mainCamera field.
@@ -45,7 +45,7 @@ public:
   *
   * @sa Object.hpp RenderObject.hpp
   */
-  void AddObject(Object& obj);
+  void AddObject(Object* obj);
   /**
   * @brief Getter for #renderObjects field.
   *
@@ -66,17 +66,17 @@ private:
   std::string name; //!< Scene name, also used as window caption.
   Camera* mainCamera { nullptr }; //!< Main camera from which perspective the projection will be calculated.
 
-  std::vector<Object> objects; //!< Objects present on the scene.
+  std::vector<Object*> objects; //!< Objects present on the scene.
   std::vector<RenderObject*> renderObjects; //!< Renderable objects present on the scene. This array is sub-array of objects.
 };
 
-inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {}
+inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {Logger::Log("============Creating Scene============");Logger::Log("============Creating Scene DONE============");}
 
 inline Camera* Scene::GetMainCamera() { return mainCamera; }
 
-void Scene::AddObject(Object& obj) {
+void Scene::AddObject(Object* obj) {
   objects.push_back(obj);
-  RenderObject* renderObj = static_cast<RenderObject*>(&obj);
+  RenderObject* renderObj = static_cast<RenderObject*>(obj);
   if(renderObj != nullptr)
     renderObjects.push_back(renderObj);
 }

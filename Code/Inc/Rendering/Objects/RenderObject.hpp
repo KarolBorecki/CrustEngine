@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include <Physics/Vector3.hpp>
 #include <Rendering/Objects/Object.hpp>
 #include <Rendering/Mesh.hpp>
 
@@ -12,10 +13,22 @@
 class RenderObject : public Object {
 public:
   /**
+  * @param pos Object's position.
+  * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
+  */
+  RenderObject(Vector3* pos, Mesh* _mesh);
+  /**
+  * @param posX Object's x position.
+  * @param posY Object's y position.
+  * @param posZ Object's z position.
+  * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
+  */
+  RenderObject(double posX, double posY, double posZ, Mesh* _mesh);
+  /**
   * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
   */
   RenderObject(Mesh* _mesh);
-  virtual ~RenderObject() = default;
+  ~RenderObject();
 
   /**
   * @brief Getter for #mesh field.
@@ -35,7 +48,13 @@ private:
   Mesh* mesh; //!< Mesh that is rendered in this object position.
 };
 
-inline RenderObject::RenderObject(Mesh* _mesh) : mesh(_mesh) {}
+inline RenderObject::RenderObject(Vector3* pos, Mesh* _mesh) : mesh(_mesh), Object(pos) {}
+
+inline RenderObject::RenderObject(double posX, double posY, double posZ, Mesh* _mesh) : mesh(_mesh), Object(posX, posY, posZ) {}
+
+inline RenderObject::RenderObject(Mesh* _mesh) : mesh(_mesh), Object() {}
+
+inline RenderObject::~RenderObject() {}
 
 inline Mesh* RenderObject::GetMesh() { return mesh; }
 
