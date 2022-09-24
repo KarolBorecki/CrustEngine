@@ -101,6 +101,7 @@ public:
 private:
   double aspectRatio { 0.0 }; //!< Assigned window aspect ration. Calulated on Renderer creation.
   Matrix* projMatrix; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+
 };
 
 Renderer::Renderer(int _width, int _height) : RendererWrapper(_width, _height) {
@@ -131,15 +132,12 @@ void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3
 }
 
 void Renderer::DrawMesh(Mesh* mesh) {
-  static uint8_t iterations = 0;
-  if(iterations >= 10) return;
   Logger::Log("============Drawing mesh %s============", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
     Triangle projTri = ProjectTriangle(mesh->GetTriangle(i));
     DrawTri(&projTri);
   }
-  iterations++;
   Logger::Log("============Drawing mesh %s DONE============", mesh->GetName().c_str());
 }
 

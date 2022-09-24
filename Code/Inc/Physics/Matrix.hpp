@@ -134,9 +134,8 @@ inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(colum
 inline Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
 
 inline Matrix::~Matrix() {
-  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d: \n %s", GetID(), Rows(), Columns(), ToString().c_str());
+  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d", GetID(), Rows(), Columns());
   delete [] mat;
-  Logger::Log("deleted.");
 }
 
 inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }

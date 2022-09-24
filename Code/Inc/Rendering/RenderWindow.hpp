@@ -2,6 +2,7 @@
 #define _RENDERWINDOW_HPP_
 
 #include <queue>
+#include <chrono> /* time calculations */
 
 #include <Core/Scene.hpp>
 #include <Rendering/Renderer.hpp>
@@ -50,6 +51,8 @@ private:
   Renderer* renderer { nullptr }; //!< Widnows's renderer handler.
   Scene* loadedScene { nullptr }; //!< Loaded scene's handler.
 
+  double deltaTime_ms { 0.0 }; //!< Time of the last frame in milliseconds.
+
   /**
   * @brief Cleans everything that was drawn on the window.
   */
@@ -81,7 +84,11 @@ RenderWindow::~RenderWindow() {
 
 void RenderWindow::Start() {
   Logger::Info("==================Starting drawing process==================");
+  static std::chrono::steady_clock::time_point begin;
+  static std::chrono::steady_clock::time_point end;
+
   while(renderer->IsRunning()) {
+    begin = std::chrono::steady_clock::now();
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
@@ -99,6 +106,9 @@ void RenderWindow::Start() {
 
     renderer->Show();
     renderer->GetEvent();
+    end = std::chrono::steady_clock::now();
+    deltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
+    Logger::Info("This frame took: %lf [ms] (%lf [s])", deltaTime_ms, deltaTime_ms * 0.001);
   }
   renderer->Quit();
 }
