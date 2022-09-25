@@ -62,18 +62,24 @@ public:
   * It is able to render all shapes that is needed to show mesh on the flat screen.
   *
   * @param mesh Mesh that will be drawn.
+  * @param pos Position in 3D space at which the mesh will be drawn.
   *
   * @sa Mesh.hpp
   */
-  void DrawMesh(Mesh* mesh);
+  void DrawMesh(Mesh* mesh, Vector3* pos);
 
   /**
   * @brief Projects given triangle using #projMatrix.
   *
   * @details Class held by RenderWindow.hpp for drawing purposes.
   * It is able to render all shapes that is needed to show mesh on the flat screen.
+  *
+  * @param tri Projected triangle.
+  * @param pos Projected triangle's mesh position in 3D space.
+  *
+  * @return Projected triangle.
   */
-  Triangle ProjectTriangle(Triangle* tri);
+  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos);
 
   /**
   * @brief Getter for #projMatrix field.
@@ -129,25 +135,36 @@ void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3
   DrawLine(p3X, p3Y, p1X, p1Y);
 }
 
-void Renderer::DrawMesh(Mesh* mesh) {
+void Renderer::DrawMesh(Mesh* mesh, Vector3* pos) {
+  Logger::Log("Drawng mesh %s", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
-    Triangle projTri = ProjectTriangle(mesh->GetTriangle(i));
-    DrawTri(&projTri);
+    DrawTri(ProjectTriangle(mesh->GetTriangle(i), pos));
   }
 }
 
-Triangle Renderer::ProjectTriangle(Triangle* tri) {
-    //DOBIERA Pamięci!!!! Jednak nie XD
+Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos) {
+  //DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix* projMat = GetProjectionMatrix();
 
-  //TODO play around with static values
   static Vector4 extendedP1;
   static Vector4 extendedP2;
   static Vector4 extendedP3;
-  extendedP1.SetXYZW(tri->GetPoint(0), 1.0);
-  extendedP2.SetXYZW(tri->GetPoint(1), 1.0);
-  extendedP3.SetXYZW(tri->GetPoint(2), 1.0);
+
+  static Vector3 movedP1;
+  static Vector3 movedP2;
+  static Vector3 movedP3;
+
+  movedP1.SetXYZ(tri->GetPoint(0));
+  movedP2.SetXYZ(tri->GetPoint(1));
+  movedP3.SetXYZ(tri->GetPoint(2));
+  Matrix::Add(&movedP1, pos);
+  Matrix::Add(&movedP2, pos);
+  Matrix::Add(&movedP3, pos);
+
+  extendedP1.SetXYZW(&movedP1, 1.0);
+  extendedP2.SetXYZW(&movedP2, 1.0);
+  extendedP3.SetXYZW(&movedP3, 1.0);
 
   static Vector4 outMatP1;
   static Vector4 outMatP2;
@@ -182,7 +199,7 @@ Triangle Renderer::ProjectTriangle(Triangle* tri) {
 
   static Triangle result;
   result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
-  return result;
+  return &result;
 }
 
 inline Matrix* Renderer::GetProjectionMatrix() { return projMatrix; }

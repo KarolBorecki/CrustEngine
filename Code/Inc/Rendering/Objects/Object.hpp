@@ -40,6 +40,13 @@ public:
   bool IsActive();
 
   /**
+  * @brief Getter for #pos field.
+  *
+  * @return #pos field.
+  */
+  Vector3* GetPosition();
+
+  /**
   * @brief Getter for matrix ID.
   *
   * @return Matrix's ID.
@@ -75,6 +82,8 @@ Object::~Object() {
 }
 
 inline bool Object::IsActive() { return isActive; }
+
+inline Vector3* Object::GetPosition() { return pos; }
 
 inline uint32_t Object::GetID() { return ID; }
 

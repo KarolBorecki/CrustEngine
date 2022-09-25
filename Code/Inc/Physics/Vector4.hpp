@@ -90,6 +90,14 @@ public:
   * @param w New value of vector's w.
   */
   void SetXYZW(Vector3* vecXYZ, double w);
+
+  /**
+  * @brief Setter for Vector4's values.
+  *
+  * @param vecXYZW Vector handling x, y, z, w values.
+  */
+  void SetXYZW(Vector4* vecXYZW);
+
 private:
   void Init(double x, double y, double z, double w);
 };
@@ -132,6 +140,13 @@ void Vector4::SetXYZW(Vector3* vecXYZ, double w) {
   SetY(vecXYZ->Y());
   SetZ(vecXYZ->Z());
   SetW(w);
+}
+
+void Vector4::SetXYZW(Vector4* vecXYZW) {
+  SetX(vecXYZW->X());
+  SetY(vecXYZW->Y());
+  SetZ(vecXYZW->Z());
+  SetW(vecXYZW->W());
 }
 
 inline void Vector4::Init(double x, double y, double z, double w) {

@@ -65,6 +65,13 @@ public:
   */
   void SetXYZ(double x, double y, double z);
 
+  /**
+  * @brief Setter for Vector3 values from another Vector3.
+  *
+  * @param vec Another vector from which the values will be taken.
+  */
+  void SetXYZ(Vector3* vecXYZ);
+
 private:
   void Init(double x, double y, double z);
 };
@@ -93,6 +100,12 @@ void Vector3::SetXYZ(double x, double y, double z) {
   SetX(x);
   SetY(y);
   SetZ(z);
+}
+
+void Vector3::SetXYZ(Vector3* vecXYZ) {
+  SetX(vecXYZ->X());
+  SetY(vecXYZ->Y());
+  SetZ(vecXYZ->Z());
 }
 
 inline void Vector3::Init(double x, double y, double z) {

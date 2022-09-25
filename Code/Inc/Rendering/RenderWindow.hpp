@@ -94,7 +94,7 @@ void RenderWindow::Start() {
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      renderer->DrawMesh(obj->GetMesh());
+      renderer->DrawMesh(obj->GetMesh(), obj->GetPosition());
     }
 
     renderer->Show();

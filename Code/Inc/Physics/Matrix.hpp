@@ -94,6 +94,14 @@ public:
   static void Divide(Matrix* mat, const double scalar);
 
   /**
+  * @brief Adds to given matrix #mat1 another matrix #mat2.
+  *
+  * @param mat1 Modifiaed matrix.
+  * @param mat2 Added matrix.
+  */
+  static void Add(Matrix* mat1, Matrix* mat2);
+
+  /**
   * @brief Adds to given matrix scalar constant value.
   *
   * @param mat Matrix to which values scalar will be added.
@@ -185,6 +193,13 @@ void Matrix::Divide(Matrix* mat, const double scalar) {
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) / scalar);
+}
+
+void Matrix::Add(Matrix* mat1, Matrix* mat2) {
+  if(mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns()) return;
+  for(uint8_t i=0; i < mat1->Rows(); i++)
+    for(uint8_t j=0; j < mat1->Columns(); j++)
+      mat1->PutValue(i, j, mat1->GetValue(i, j) + mat2->GetValue(i, j));
 }
 
 void Matrix::Add(Matrix* mat, const double scalar) {
