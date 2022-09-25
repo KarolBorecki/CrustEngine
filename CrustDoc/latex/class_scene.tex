@@ -14,11 +14,11 @@ Class holding objects rendered on window and camera, from which the projection w
 \item 
 \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene}} (std\+::string \+\_\+name, \mbox{\hyperlink{class_camera}{Camera}} $\ast$\+\_\+main\+Camera)
 \item 
-virtual \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{$\sim$\+Scene}} ()=default
+\mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
 \item 
 \mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Get\+Main\+Camera}} ()
 \begin{DoxyCompactList}\small\item\em Getter for main\+Camera field. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{Add\+Object}} (\mbox{\hyperlink{class_object}{Object}} \&obj)
+void \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Add\+Object}} (\mbox{\hyperlink{class_object}{Object}} $\ast$obj)
 \begin{DoxyCompactList}\small\item\em Adds the object to the scene. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_render_object}{Render\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Get\+Objects\+To\+Render}} ()
 \begin{DoxyCompactList}\small\item\em Getter for render\+Objects field. \end{DoxyCompactList}\item 
@@ -50,20 +50,20 @@ This class is passed to render window as the information what to render and how 
 {\em \+\_\+main\+Camera} & Main camera handler. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}\label{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}} 
+\mbox{\Hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}} 
 \index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
 \index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
-{\footnotesize\ttfamily virtual Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_scene_aab9ad66bea29441cab72ee58ec9b3917}\label{class_scene_aab9ad66bea29441cab72ee58ec9b3917}} 
+\mbox{\Hypertarget{class_scene_a165e38b1c743b1db60b2ba1e42213726}\label{class_scene_a165e38b1c743b1db60b2ba1e42213726}} 
 \index{Scene@{Scene}!AddObject@{AddObject}}
 \index{AddObject@{AddObject}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}}
-{\footnotesize\ttfamily void Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} \&}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{obj }\end{DoxyParamCaption})}
 
 
 
@@ -128,4 +128,4 @@ render\+Objects field.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\hypertarget{class_mesh}{}\doxysection{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+
+
+Represents 3D model as mesh consisted of 3D triangles.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_a2af137f1571af89172b9c102302c416b}{Mesh}} ()
+\item 
+\mbox{\hyperlink{class_mesh_a9b496cb615ff94d1e7d247eb89810791}{Mesh}} (std\+::string name)
+\item 
+\mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all of the triangles of this mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{Add\+Triangle}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri)
+\begin{DoxyCompactList}\small\item\em Adds the triangle to mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_mesh_aa31be6805b7ccc048ce37f3f27775847}{Get\+Triangle}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Getter for triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{Get\+Point}} (uint8\+\_\+t tri\+Index, uint8\+\_\+t point\+Index)
+\begin{DoxyCompactList}\small\item\em Getter for point of triangle of specified index. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_mesh_a0657100f56c0f80790e4bf8cd57295ed}{Get\+Triangles\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Getter for triangles count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{Set\+Name}} (std\+::string new\+Name)
+\begin{DoxyCompactList}\small\item\em Setter for name field. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_mesh_a8c8e87bb63f0fd8648effba210ddf082}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Getter fir name field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents 3D model as mesh consisted of 3D triangles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mesh_a2af137f1571af89172b9c102302c416b}\label{class_mesh_a2af137f1571af89172b9c102302c416b}} 
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_mesh_a9b496cb615ff94d1e7d247eb89810791}\label{class_mesh_a9b496cb615ff94d1e7d247eb89810791}} 
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}\label{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}} 
+\index{Mesh@{Mesh}!````~Mesh@{$\sim$Mesh}}
+\index{````~Mesh@{$\sim$Mesh}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
+{\footnotesize\ttfamily Mesh\+::$\sim$\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deletes all of the triangles of this mesh. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_a64d0401e240cb2befe5a275578bf7aae}\label{class_mesh_a64d0401e240cb2befe5a275578bf7aae}} 
+\index{Mesh@{Mesh}!AddTriangle@{AddTriangle}}
+\index{AddTriangle@{AddTriangle}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{AddTriangle()}{AddTriangle()}}
+{\footnotesize\ttfamily void Mesh\+::\+Add\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the triangle to mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tri} & Handler to added triangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mesh_a8c8e87bb63f0fd8648effba210ddf082}\label{class_mesh_a8c8e87bb63f0fd8648effba210ddf082}} 
+\index{Mesh@{Mesh}!GetName@{GetName}}
+\index{GetName@{GetName}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Mesh\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter fir name field. 
+
+\begin{DoxyReturn}{Returns}
+The mesh\textquotesingle{}s file name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}\label{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}} 
+\index{Mesh@{Mesh}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Mesh\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{tri\+Index,  }\item[{uint8\+\_\+t}]{point\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for point of triangle of specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tri\+Index} & \mbox{\hyperlink{class_triangle}{Triangle}} index. \\
+\hline
+{\em point\+Index} & \mbox{\hyperlink{class_triangle}{Triangle}}\textquotesingle{}s point index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mesh_aa31be6805b7ccc048ce37f3f27775847}\label{class_mesh_aa31be6805b7ccc048ce37f3f27775847}} 
+\index{Mesh@{Mesh}!GetTriangle@{GetTriangle}}
+\index{GetTriangle@{GetTriangle}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{GetTriangle()}{GetTriangle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Mesh\+::\+Get\+Triangle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index in triangles for got triangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mesh_a0657100f56c0f80790e4bf8cd57295ed}\label{class_mesh_a0657100f56c0f80790e4bf8cd57295ed}} 
+\index{Mesh@{Mesh}!GetTrianglesCount@{GetTrianglesCount}}
+\index{GetTrianglesCount@{GetTrianglesCount}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{GetTrianglesCount()}{GetTrianglesCount()}}
+{\footnotesize\ttfamily uint8\+\_\+t Mesh\+::\+Get\+Triangles\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for triangles count. 
+
+\begin{DoxyReturn}{Returns}
+Triangles count. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_mesh_acd25fc39bfa8e74103191d36529f1841}\label{class_mesh_acd25fc39bfa8e74103191d36529f1841}} 
+\index{Mesh@{Mesh}!SetName@{SetName}}
+\index{SetName@{SetName}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Mesh\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for name field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Name} & new mesh\textquotesingle{}s name. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}}\end{DoxyCompactItemize}

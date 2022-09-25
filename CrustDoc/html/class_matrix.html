@@ -25,7 +25,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo64.png"/></td>
   <td id="projectalign">
    <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
    </div>
@@ -103,43 +102,73 @@ $(document).ready(function(){initNavTree('class_matrix.html',''); initResizable(
  <a href="class_matrix.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Matrix:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_matrix.png" usemap="#Matrix_map" alt=""/>
+  <map id="Matrix_map" name="Matrix_map">
+<area href="class_vector3.html" title="Represents mathematical vector3." alt="Vector3" shape="rect" coords="0,56,57,80"/>
+<area href="class_vector4.html" title="Represents mathematical vector4." alt="Vector4" shape="rect" coords="67,56,124,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01b06ccde68bc91de22652e841d3e3ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a01b06ccde68bc91de22652e841d3e3ad">Matrix</a> (int _rows, int _columns)</td></tr>
-<tr class="separator:a01b06ccde68bc91de22652e841d3e3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c52f04b918a0d4a3241eb4cd31c26b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a00c52f04b918a0d4a3241eb4cd31c26b">Matrix</a> (uint8_t rows, uint8_t columns)</td></tr>
+<tr class="separator:a00c52f04b918a0d4a3241eb4cd31c26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6d6c9da85ace0a00871ed1627a1bd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#adb6d6c9da85ace0a00871ed1627a1bd4">Matrix</a> (uint8_t rows, uint8_t columns, double defaultVal)</td></tr>
+<tr class="separator:adb6d6c9da85ace0a00871ed1627a1bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1c3627f573d78a2f08623fdfef990f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9b1c3627f573d78a2f08623fdfef990f">~Matrix</a> ()</td></tr>
 <tr class="separator:a9b1c3627f573d78a2f08623fdfef990f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae503f0ecfee02b37ef6f72b00d52790c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ae503f0ecfee02b37ef6f72b00d52790c">GetValue</a> (int row, int column)</td></tr>
-<tr class="memdesc:ae503f0ecfee02b37ef6f72b00d52790c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value stored on the given position in matrix.  <a href="class_matrix.html#ae503f0ecfee02b37ef6f72b00d52790c">More...</a><br /></td></tr>
-<tr class="separator:ae503f0ecfee02b37ef6f72b00d52790c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88f4bf85d8c3f8a4dd62a9d5930aa5d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a88f4bf85d8c3f8a4dd62a9d5930aa5d2">PutValue</a> (int row, int column, double value)</td></tr>
-<tr class="memdesc:a88f4bf85d8c3f8a4dd62a9d5930aa5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the given value on the given position.  <a href="class_matrix.html#a88f4bf85d8c3f8a4dd62a9d5930aa5d2">More...</a><br /></td></tr>
-<tr class="separator:a88f4bf85d8c3f8a4dd62a9d5930aa5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65f13564049159a71bc8e6ee50ed4934"><td class="memItemLeft" align="right" valign="top">double **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a65f13564049159a71bc8e6ee50ed4934">GetMatrix</a> ()</td></tr>
-<tr class="memdesc:a65f13564049159a71bc8e6ee50ed4934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mat field.  <a href="class_matrix.html#a65f13564049159a71bc8e6ee50ed4934">More...</a><br /></td></tr>
-<tr class="separator:a65f13564049159a71bc8e6ee50ed4934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10c9c386e1661bb49323b751cdfab2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ae10c9c386e1661bb49323b751cdfab2b">Rows</a> ()</td></tr>
-<tr class="memdesc:ae10c9c386e1661bb49323b751cdfab2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rows field.  <a href="class_matrix.html#ae10c9c386e1661bb49323b751cdfab2b">More...</a><br /></td></tr>
-<tr class="separator:ae10c9c386e1661bb49323b751cdfab2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f5ea502dd80d3895b6722b08a1c7e4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a3f5ea502dd80d3895b6722b08a1c7e4e">Columns</a> ()</td></tr>
-<tr class="memdesc:a3f5ea502dd80d3895b6722b08a1c7e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for columns field.  <a href="class_matrix.html#a3f5ea502dd80d3895b6722b08a1c7e4e">More...</a><br /></td></tr>
-<tr class="separator:a3f5ea502dd80d3895b6722b08a1c7e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729ff19a49e3661c9da642d9b619b4ad"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad">GetValue</a> (uint8_t row, uint8_t column)</td></tr>
+<tr class="memdesc:a729ff19a49e3661c9da642d9b619b4ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value stored on the given position in matrix.  <a href="class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad">More...</a><br /></td></tr>
+<tr class="separator:a729ff19a49e3661c9da642d9b619b4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a578a33e3d05ab109e35c32f062966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a07a578a33e3d05ab109e35c32f062966">PutValue</a> (uint8_t row, uint8_t column, double value)</td></tr>
+<tr class="memdesc:a07a578a33e3d05ab109e35c32f062966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the given value on the given position.  <a href="class_matrix.html#a07a578a33e3d05ab109e35c32f062966">More...</a><br /></td></tr>
+<tr class="separator:a07a578a33e3d05ab109e35c32f062966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3054826e39ab3caf223141fe1a128a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9f3054826e39ab3caf223141fe1a128a">ResetMatrix</a> (double val)</td></tr>
+<tr class="memdesc:a9f3054826e39ab3caf223141fe1a128a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function resets the matrix so each value of it is the same.  <a href="class_matrix.html#a9f3054826e39ab3caf223141fe1a128a">More...</a><br /></td></tr>
+<tr class="separator:a9f3054826e39ab3caf223141fe1a128a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57">GetMatrixArray</a> ()</td></tr>
+<tr class="memdesc:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mat field.  <a href="class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57">More...</a><br /></td></tr>
+<tr class="separator:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9823f552deec6e353ad4b910de873e23"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9823f552deec6e353ad4b910de873e23">Rows</a> ()</td></tr>
+<tr class="memdesc:a9823f552deec6e353ad4b910de873e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rows field.  <a href="class_matrix.html#a9823f552deec6e353ad4b910de873e23">More...</a><br /></td></tr>
+<tr class="separator:a9823f552deec6e353ad4b910de873e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9604bef87537aeb194d6a708d8d8174a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9604bef87537aeb194d6a708d8d8174a">Columns</a> ()</td></tr>
+<tr class="memdesc:a9604bef87537aeb194d6a708d8d8174a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for columns field.  <a href="class_matrix.html#a9604bef87537aeb194d6a708d8d8174a">More...</a><br /></td></tr>
+<tr class="separator:a9604bef87537aeb194d6a708d8d8174a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af40af6f88268cbe1850617269d1f80e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#af40af6f88268cbe1850617269d1f80e2">ToString</a> ()</td></tr>
 <tr class="memdesc:af40af6f88268cbe1850617269d1f80e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts matrix to std::string, so it can be written on any output.  <a href="class_matrix.html#af40af6f88268cbe1850617269d1f80e2">More...</a><br /></td></tr>
 <tr class="separator:af40af6f88268cbe1850617269d1f80e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7bf491631a12f9e68018a95bea2135f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ad7bf491631a12f9e68018a95bea2135f">GetID</a> ()</td></tr>
+<tr class="memdesc:ad7bf491631a12f9e68018a95bea2135f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for matrix ID.  <a href="class_matrix.html#ad7bf491631a12f9e68018a95bea2135f">More...</a><br /></td></tr>
+<tr class="separator:ad7bf491631a12f9e68018a95bea2135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a996f38751067d1c33127263e7c6c0c7d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a996f38751067d1c33127263e7c6c0c7d">Multiply</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat1, <a class="el" href="class_matrix.html">Matrix</a> *mat2)</td></tr>
-<tr class="memdesc:a996f38751067d1c33127263e7c6c0c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies given matrixes.  <a href="class_matrix.html#a996f38751067d1c33127263e7c6c0c7d">More...</a><br /></td></tr>
-<tr class="separator:a996f38751067d1c33127263e7c6c0c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab094af0b0a93d8fa1226139476f69f17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ab094af0b0a93d8fa1226139476f69f17">Multiply</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat1, <a class="el" href="class_matrix.html">Matrix</a> *mat2, <a class="el" href="class_matrix.html">Matrix</a> &amp;outMat)</td></tr>
+<tr class="memdesc:ab094af0b0a93d8fa1226139476f69f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies given matrixes.  <a href="class_matrix.html#ab094af0b0a93d8fa1226139476f69f17">More...</a><br /></td></tr>
+<tr class="separator:ab094af0b0a93d8fa1226139476f69f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08429f5aa98e740e74c27955942b1158"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a08429f5aa98e740e74c27955942b1158">Multiply</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
+<tr class="memdesc:a08429f5aa98e740e74c27955942b1158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies given matrix by scalar constant value.  <a href="class_matrix.html#a08429f5aa98e740e74c27955942b1158">More...</a><br /></td></tr>
+<tr class="separator:a08429f5aa98e740e74c27955942b1158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4886451fa27df3c4b4c886642ab27776"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a4886451fa27df3c4b4c886642ab27776">Divide</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
+<tr class="memdesc:a4886451fa27df3c4b4c886642ab27776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides given matrix by scalar constant value.  <a href="class_matrix.html#a4886451fa27df3c4b4c886642ab27776">More...</a><br /></td></tr>
+<tr class="separator:a4886451fa27df3c4b4c886642ab27776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a4d8417f15dc4e5ebad02321c9fd37e6c">Add</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat1, <a class="el" href="class_matrix.html">Matrix</a> *mat2)</td></tr>
+<tr class="memdesc:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds to given matrix #mat1 another matrix #mat2.  <a href="class_matrix.html#a4d8417f15dc4e5ebad02321c9fd37e6c">More...</a><br /></td></tr>
+<tr class="separator:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa8a37e15cc6098b037fe9bbe4c7a7371">Add</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
+<tr class="memdesc:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds to given matrix scalar constant value.  <a href="class_matrix.html#aa8a37e15cc6098b037fe9bbe4c7a7371">More...</a><br /></td></tr>
+<tr class="separator:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Represents the mathematical matrix and is able to preform matrix calculations. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a01b06ccde68bc91de22652e841d3e3ad" name="a01b06ccde68bc91de22652e841d3e3ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b06ccde68bc91de22652e841d3e3ad">&#9670;&#160;</a></span>Matrix()</h2>
+<a id="a00c52f04b918a0d4a3241eb4cd31c26b" name="a00c52f04b918a0d4a3241eb4cd31c26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c52f04b918a0d4a3241eb4cd31c26b">&#9670;&#160;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,14 +179,14 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Matrix::Matrix </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_rows</em>, </td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_columns</em>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>columns</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -173,8 +202,58 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_rows</td><td>Amount of rows in the matrix. </td></tr>
-    <tr><td class="paramname">_columns</td><td>Amount of columns in the matrix. </td></tr>
+    <tr><td class="paramname">rows</td><td>Amount of rows in the matrix. </td></tr>
+    <tr><td class="paramname">columns</td><td>Amount of columns in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb6d6c9da85ace0a00871ed1627a1bd4" name="adb6d6c9da85ace0a00871ed1627a1bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6d6c9da85ace0a00871ed1627a1bd4">&#9670;&#160;</a></span>Matrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix::Matrix </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>defaultVal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rows</td><td>Amount of rows in the matrix. </td></tr>
+    <tr><td class="paramname">columns</td><td>Amount of columns in the matrix. </td></tr>
+    <tr><td class="paramname">defaultVal</td><td>The value that will be placed on each position in matrix. </td></tr>
   </table>
   </dd>
 </dl>
@@ -208,8 +287,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3f5ea502dd80d3895b6722b08a1c7e4e" name="a3f5ea502dd80d3895b6722b08a1c7e4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f5ea502dd80d3895b6722b08a1c7e4e">&#9670;&#160;</a></span>Columns()</h2>
+<a id="aa8a37e15cc6098b037fe9bbe4c7a7371" name="aa8a37e15cc6098b037fe9bbe4c7a7371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a37e15cc6098b037fe9bbe4c7a7371">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +297,97 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Matrix::Columns </td>
+          <td class="memname">void Matrix::Add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds to given matrix scalar constant value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> to which values scalar will be added. </td></tr>
+    <tr><td class="paramname">scalar</td><td>Value which will be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4d8417f15dc4e5ebad02321c9fd37e6c" name="a4d8417f15dc4e5ebad02321c9fd37e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8417f15dc4e5ebad02321c9fd37e6c">&#9670;&#160;</a></span>Add() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Matrix::Add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds to given matrix #mat1 another matrix #mat2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat1</td><td>Modifiaed matrix. </td></tr>
+    <tr><td class="paramname">mat2</td><td>Added matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9604bef87537aeb194d6a708d8d8174a" name="a9604bef87537aeb194d6a708d8d8174a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9604bef87537aeb194d6a708d8d8174a">&#9670;&#160;</a></span>Columns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Matrix::Columns </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -236,8 +405,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a65f13564049159a71bc8e6ee50ed4934" name="a65f13564049159a71bc8e6ee50ed4934"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65f13564049159a71bc8e6ee50ed4934">&#9670;&#160;</a></span>GetMatrix()</h2>
+<a id="a4886451fa27df3c4b4c886642ab27776" name="a4886451fa27df3c4b4c886642ab27776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4886451fa27df3c4b4c886642ab27776">&#9670;&#160;</a></span>Divide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +415,80 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double ** Matrix::GetMatrix </td>
+          <td class="memname">void Matrix::Divide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divides given matrix by scalar constant value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>Divided <a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>. </td></tr>
+    <tr><td class="paramname">scalar</td><td>Value by which matrix is being divided. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7bf491631a12f9e68018a95bea2135f" name="ad7bf491631a12f9e68018a95bea2135f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7bf491631a12f9e68018a95bea2135f">&#9670;&#160;</a></span>GetID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Matrix::GetID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for matrix ID. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>'s ID. </dd></dl>
+
+</div>
+</div>
+<a id="aa131b2bbb38e52ca8c39a5f716ac9d57" name="aa131b2bbb38e52ca8c39a5f716ac9d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa131b2bbb38e52ca8c39a5f716ac9d57">&#9670;&#160;</a></span>GetMatrixArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * Matrix::GetMatrixArray </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -264,8 +506,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae503f0ecfee02b37ef6f72b00d52790c" name="ae503f0ecfee02b37ef6f72b00d52790c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae503f0ecfee02b37ef6f72b00d52790c">&#9670;&#160;</a></span>GetValue()</h2>
+<a id="a729ff19a49e3661c9da642d9b619b4ad" name="a729ff19a49e3661c9da642d9b619b4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729ff19a49e3661c9da642d9b619b4ad">&#9670;&#160;</a></span>GetValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,13 +518,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">double Matrix::GetValue </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>column</em>&#160;</td>
         </tr>
         <tr>
@@ -309,8 +551,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a996f38751067d1c33127263e7c6c0c7d" name="a996f38751067d1c33127263e7c6c0c7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a996f38751067d1c33127263e7c6c0c7d">&#9670;&#160;</a></span>Multiply()</h2>
+<a id="a08429f5aa98e740e74c27955942b1158" name="a08429f5aa98e740e74c27955942b1158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08429f5aa98e740e74c27955942b1158">&#9670;&#160;</a></span>Multiply() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +561,52 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a> Matrix::Multiply </td>
+          <td class="memname">void Matrix::Multiply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>scalar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplies given matrix by scalar constant value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>Multiplied <a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>. </td></tr>
+    <tr><td class="paramname">scalar</td><td>Value by which matrix is being multiplied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab094af0b0a93d8fa1226139476f69f17" name="ab094af0b0a93d8fa1226139476f69f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab094af0b0a93d8fa1226139476f69f17">&#9670;&#160;</a></span>Multiply() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Matrix::Multiply </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
           <td class="paramname"><em>mat1</em>, </td>
@@ -328,7 +615,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat2</em>&#160;</td>
+          <td class="paramname"><em>mat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>outMat</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -349,14 +642,15 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">mat1</td><td>First matrix. </td></tr>
     <tr><td class="paramname">mat2</td><td>Second matrix, by which first is being multiplied. </td></tr>
+    <tr><td class="paramname">outMat</td><td>The output matrix. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a88f4bf85d8c3f8a4dd62a9d5930aa5d2" name="a88f4bf85d8c3f8a4dd62a9d5930aa5d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88f4bf85d8c3f8a4dd62a9d5930aa5d2">&#9670;&#160;</a></span>PutValue()</h2>
+<a id="a07a578a33e3d05ab109e35c32f062966" name="a07a578a33e3d05ab109e35c32f062966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a578a33e3d05ab109e35c32f062966">&#9670;&#160;</a></span>PutValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,13 +661,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Matrix::PutValue </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>column</em>, </td>
         </tr>
         <tr>
@@ -406,8 +700,34 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae10c9c386e1661bb49323b751cdfab2b" name="ae10c9c386e1661bb49323b751cdfab2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae10c9c386e1661bb49323b751cdfab2b">&#9670;&#160;</a></span>Rows()</h2>
+<a id="a9f3054826e39ab3caf223141fe1a128a" name="a9f3054826e39ab3caf223141fe1a128a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3054826e39ab3caf223141fe1a128a">&#9670;&#160;</a></span>ResetMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Matrix::ResetMatrix </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function resets the matrix so each value of it is the same. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The value that will be placed on each position in matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9823f552deec6e353ad4b910de873e23" name="a9823f552deec6e353ad4b910de873e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9823f552deec6e353ad4b910de873e23">&#9670;&#160;</a></span>Rows()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +736,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Matrix::Rows </td>
+          <td class="memname">uint8_t Matrix::Rows </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -457,7 +777,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a></li>
+<li>CrustEngine/Code/Inc/Physics/<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

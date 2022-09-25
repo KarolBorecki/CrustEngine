@@ -1,0 +1,93 @@
+\hypertarget{_vector4_8hpp_source}{}\doxysection{Vector4.\+hpp}
+\label{_vector4_8hpp_source}\index{CrustEngine/Code/Inc/Physics/Vector4.hpp@{CrustEngine/Code/Inc/Physics/Vector4.hpp}}
+\mbox{\hyperlink{_vector4_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Vector4\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Vector4\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_matrix_8hpp}{Physics/Matrix.hpp}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_vector4}{Vector4}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_matrix}{Matrix}} \{}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14   \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4}}();}
+\DoxyCodeLine{18   \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4}}(\textcolor{keywordtype}{double} valXYZW);}
+\DoxyCodeLine{23   \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4}}(\mbox{\hyperlink{class_vector3}{Vector3}}* vecXYZ, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{30   \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_vector4_af88da4751cb8de048f68ae39fa94e997}{\string~Vector4}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_a2ec4102bea55219f1779056328627652}{X}}();}
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_a8f4da660afefc550f11ce84afd6c061b}{Y}}();}
+\DoxyCodeLine{44   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_abfef291190322d393950899ef11896f7}{Z}}();}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_aa4d2c9b57fc0b1c433d97d12dd0e5c8e}{W}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_abce7484ba796622c1504bf6fd5171340}{SetX}}(\textcolor{keywordtype}{double} valX);}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a8528fac34aac563190dcf18661b28d51}{SetY}}(\textcolor{keywordtype}{double} valY);}
+\DoxyCodeLine{67   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a8c14e2a738f98c341d52b4495935b59e}{SetZ}}(\textcolor{keywordtype}{double} valZ);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a0e4d7c58a508c7e5d2e8ae8f0cd0e58a}{SetW}}(\textcolor{keywordtype}{double} valW);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{SetXYZW}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{92   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{SetXYZW}}(\mbox{\hyperlink{class_vector3}{Vector3}}* vecXYZ, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{SetXYZW}}(\mbox{\hyperlink{class_vector4}{Vector4}}* vecXYZW);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keyword}{private}:}
+\DoxyCodeLine{102   \textcolor{keywordtype}{void} Init(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w);}
+\DoxyCodeLine{103 \};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4::Vector4}}() : \mbox{\hyperlink{class_matrix}{Matrix}}(1, 4) \{ Init(0.0, 0.0, 0.0, 0.0); \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4::Vector4}}(\textcolor{keywordtype}{double} valXYZW) : \mbox{\hyperlink{class_matrix}{Matrix}}(1, 4) \{ Init(valXYZW, valXYZW, valXYZW, valXYZW); \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4::Vector4}}(\mbox{\hyperlink{class_vector3}{Vector3}}* vecXYZ, \textcolor{keywordtype}{double} w) : \mbox{\hyperlink{class_matrix}{Matrix}}(1, 4) \{ Init(vecXYZ-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), vecXYZ-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), vecXYZ-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}(), w); \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector4_a511b4d9c8326c235b76d794eea018921}{Vector4::Vector4}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w) : \mbox{\hyperlink{class_matrix}{Matrix}}(1, 4) \{ Init(x, y, z, w); \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector4_af88da4751cb8de048f68ae39fa94e997}{Vector4::\string~Vector4}}() \{ \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a6b770862391760346b80b3af14dfd81c}{Logger::FontColor::PINK}}, \textcolor{stringliteral}{"{}   [X] Deleting Vec4<\%d>"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}()); \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_a2ec4102bea55219f1779056328627652}{Vector4::X}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(0, 0); \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_a8f4da660afefc550f11ce84afd6c061b}{Vector4::Y}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(0, 1); \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_abfef291190322d393950899ef11896f7}{Vector4::Z}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(0, 2); \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_vector4_aa4d2c9b57fc0b1c433d97d12dd0e5c8e}{Vector4::W}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(0, 3); \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_abce7484ba796622c1504bf6fd5171340}{Vector4::SetX}}(\textcolor{keywordtype}{double} valX) \{ \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(0, 0, valX); \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a8528fac34aac563190dcf18661b28d51}{Vector4::SetY}}(\textcolor{keywordtype}{double} valY) \{ \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(0, 1, valY); \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a8c14e2a738f98c341d52b4495935b59e}{Vector4::SetZ}}(\textcolor{keywordtype}{double} valZ) \{ \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(0, 2, valZ); \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_a0e4d7c58a508c7e5d2e8ae8f0cd0e58a}{Vector4::SetW}}(\textcolor{keywordtype}{double} valW) \{ \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(0, 3, valW); \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{Vector4::SetXYZW}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w) \{}
+\DoxyCodeLine{132   \mbox{\hyperlink{class_vector4_abce7484ba796622c1504bf6fd5171340}{SetX}}(x);}
+\DoxyCodeLine{133   \mbox{\hyperlink{class_vector4_a8528fac34aac563190dcf18661b28d51}{SetY}}(y);}
+\DoxyCodeLine{134   \mbox{\hyperlink{class_vector4_a8c14e2a738f98c341d52b4495935b59e}{SetZ}}(z);}
+\DoxyCodeLine{135   \mbox{\hyperlink{class_vector4_a0e4d7c58a508c7e5d2e8ae8f0cd0e58a}{SetW}}(w);}
+\DoxyCodeLine{136 \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{Vector4::SetXYZW}}(\mbox{\hyperlink{class_vector3}{Vector3}}* vecXYZ, \textcolor{keywordtype}{double} w) \{}
+\DoxyCodeLine{139   \mbox{\hyperlink{class_vector4_abce7484ba796622c1504bf6fd5171340}{SetX}}(vecXYZ-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}());}
+\DoxyCodeLine{140   \mbox{\hyperlink{class_vector4_a8528fac34aac563190dcf18661b28d51}{SetY}}(vecXYZ-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}());}
+\DoxyCodeLine{141   \mbox{\hyperlink{class_vector4_a8c14e2a738f98c341d52b4495935b59e}{SetZ}}(vecXYZ-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}());}
+\DoxyCodeLine{142   \mbox{\hyperlink{class_vector4_a0e4d7c58a508c7e5d2e8ae8f0cd0e58a}{SetW}}(w);}
+\DoxyCodeLine{143 \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{Vector4::SetXYZW}}(\mbox{\hyperlink{class_vector4}{Vector4}}* vecXYZW) \{}
+\DoxyCodeLine{146   \mbox{\hyperlink{class_vector4_abce7484ba796622c1504bf6fd5171340}{SetX}}(vecXYZW-\/>\mbox{\hyperlink{class_vector4_a2ec4102bea55219f1779056328627652}{X}}());}
+\DoxyCodeLine{147   \mbox{\hyperlink{class_vector4_a8528fac34aac563190dcf18661b28d51}{SetY}}(vecXYZW-\/>\mbox{\hyperlink{class_vector4_a8f4da660afefc550f11ce84afd6c061b}{Y}}());}
+\DoxyCodeLine{148   \mbox{\hyperlink{class_vector4_a8c14e2a738f98c341d52b4495935b59e}{SetZ}}(vecXYZW-\/>\mbox{\hyperlink{class_vector4_abfef291190322d393950899ef11896f7}{Z}}());}
+\DoxyCodeLine{149   \mbox{\hyperlink{class_vector4_a0e4d7c58a508c7e5d2e8ae8f0cd0e58a}{SetW}}(vecXYZW-\/>\mbox{\hyperlink{class_vector4_aa4d2c9b57fc0b1c433d97d12dd0e5c8e}{W}}());}
+\DoxyCodeLine{150 \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} Vector4::Init(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} w) \{}
+\DoxyCodeLine{153   \mbox{\hyperlink{class_vector4_ae96b5769ced1ab6732197b62fea0114a}{SetXYZW}}(x, y, z, w);}
+\DoxyCodeLine{154   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a861d8909258d9777e002387388c9fd0c}{Logger::FontColor::GREEN}}, \textcolor{stringliteral}{"{}   [+] Vector4 of id: \%d initzialized"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}());}
+\DoxyCodeLine{155 \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_Vector4\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

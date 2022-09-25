@@ -18,14 +18,111 @@ Inheritance diagram for Object\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}} ()
+\begin{DoxyCompactList}\small\item\em Creates object at position 0, 0, 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_a7ebb6c3f94010e2ec8989bc83a70dc9c}{Object}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos)
+\begin{DoxyCompactList}\small\item\em Creates object at position \#posX, \#posY, \#posZ. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_af1ff0fe699c34b951c8bf03a8c3f5808}{Object}} (double posX, double posY, double posZ)
+\begin{DoxyCompactList}\small\item\em Creates object at position \#posX, \#posY, \#posZ. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object}} ()
+\item 
 bool \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{Is\+Active}} ()
-\begin{DoxyCompactList}\small\item\em Getter for is\+Active field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter for is\+Active field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter for pos field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Move}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Moves object by given values. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{Get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Getter for matrix ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents object present on the scene. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_object_a40860402e64d8008fb42329df7097cdb}\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates object at position 0, 0, 0. 
+
+Calls Object\+::\+Init method with all values equal to 0.\+0. \mbox{\Hypertarget{class_object_a7ebb6c3f94010e2ec8989bc83a70dc9c}\label{class_object_a7ebb6c3f94010e2ec8989bc83a70dc9c}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
+
+
+
+Creates object at position \#posX, \#posY, \#posZ. 
+
+Calls Object\+::\+Init method with values equal to \#posX, \#posY, \#posZ.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position of the new object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_object_af1ff0fe699c34b951c8bf03a8c3f5808}\label{class_object_af1ff0fe699c34b951c8bf03a8c3f5808}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{double}]{posX,  }\item[{double}]{posY,  }\item[{double}]{posZ }\end{DoxyParamCaption})}
+
+
+
+Creates object at position \#posX, \#posY, \#posZ. 
+
+Calls Object\+::\+Init method with values equal to \#posX, \#posY, \#posZ.
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & X position of the new object. \\
+\hline
+{\em posY} & Y position of the new object. \\
+\hline
+{\em posZ} & Z position of the new object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_object_ae8f5483f459e46687bd01e6f9977afd3}\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+\index{Object@{Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_a9103dbe0ba73f056c1981ef8037f029f}\label{class_object_a9103dbe0ba73f056c1981ef8037f029f}} 
+\index{Object@{Object}!GetID@{GetID}}
+\index{GetID@{GetID}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Object\+::\+Get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for matrix ID. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_matrix}{Matrix}}\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_object_ab0945360d98dff31603571ff78acb4f7}\label{class_object_ab0945360d98dff31603571ff78acb4f7}} 
+\index{Object@{Object}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Object\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for pos field. 
+
+\begin{DoxyReturn}{Returns}
+pos field. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_object_a49327b515f7e613c882f33c2b058ab98}\label{class_object_a49327b515f7e613c882f33c2b058ab98}} 
 \index{Object@{Object}!IsActive@{IsActive}}
 \index{IsActive@{IsActive}!Object@{Object}}
@@ -39,8 +136,18 @@ Getter for is\+Active field.
 \begin{DoxyReturn}{Returns}
 is\+Active field. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_object_a66015f89ae68876a273c8a9c8fc0cc57}\label{class_object_a66015f89ae68876a273c8a9c8fc0cc57}} 
+\index{Object@{Object}!Move@{Move}}
+\index{Move@{Move}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Object\+::\+Move (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
 
+
+
+Moves object by given values. 
+
+Adds x, y and z to adequate values of pos vector values. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}}\end{DoxyCompactItemize}

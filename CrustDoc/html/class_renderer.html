@@ -25,7 +25,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo64.png"/></td>
   <td id="projectalign">
    <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
    </div>
@@ -119,11 +118,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9972ee4e3b677e08bb5b5c0a6b7163c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeee408862d5bd6255a6882d47e6d5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a> ()</td></tr>
 <tr class="separator:afeee408862d5bd6255a6882d47e6d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c49d84dbf32f2afe9b258667f27e69b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a0c49d84dbf32f2afe9b258667f27e69b">DrawTri</a> ()</td></tr>
-<tr class="separator:a0c49d84dbf32f2afe9b258667f27e69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf26b752d3078d36bcc94729152a37ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#adf26b752d3078d36bcc94729152a37ee">DrawMesh</a> (<a class="el" href="struct_mesh.html">Mesh</a> *mesh)</td></tr>
-<tr class="memdesc:adf26b752d3078d36bcc94729152a37ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws given mesh on the screen.  <a href="class_renderer.html#adf26b752d3078d36bcc94729152a37ee">More...</a><br /></td></tr>
-<tr class="separator:adf26b752d3078d36bcc94729152a37ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08362456da3321f246d4de151232e27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#aa08362456da3321f246d4de151232e27">DrawTri</a> (<a class="el" href="class_triangle.html">Triangle</a> *tri)</td></tr>
+<tr class="memdesc:aa08362456da3321f246d4de151232e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws given triangle on the screen.  <a href="class_renderer.html#aa08362456da3321f246d4de151232e27">More...</a><br /></td></tr>
+<tr class="separator:aa08362456da3321f246d4de151232e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa784d59b6e5c5bbe005dabd8534911ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#aa784d59b6e5c5bbe005dabd8534911ff">DrawTri</a> (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)</td></tr>
+<tr class="memdesc:aa784d59b6e5c5bbe005dabd8534911ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws triangle with given coordinates on the screen.  <a href="class_renderer.html#aa784d59b6e5c5bbe005dabd8534911ff">More...</a><br /></td></tr>
+<tr class="separator:aa784d59b6e5c5bbe005dabd8534911ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba8d0ec9772da40147b6a5338dafa57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a0ba8d0ec9772da40147b6a5338dafa57">DrawMesh</a> (<a class="el" href="class_mesh.html">Mesh</a> *mesh, <a class="el" href="class_vector3.html">Vector3</a> *pos)</td></tr>
+<tr class="memdesc:a0ba8d0ec9772da40147b6a5338dafa57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws given mesh on the screen.  <a href="class_renderer.html#a0ba8d0ec9772da40147b6a5338dafa57">More...</a><br /></td></tr>
+<tr class="separator:a0ba8d0ec9772da40147b6a5338dafa57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad650d8daefe4a5687dfe56296b3ce0e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#ad650d8daefe4a5687dfe56296b3ce0e5">ProjectTriangle</a> (<a class="el" href="class_triangle.html">Triangle</a> *tri, <a class="el" href="class_vector3.html">Vector3</a> *pos)</td></tr>
+<tr class="memdesc:ad650d8daefe4a5687dfe56296b3ce0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects given triangle using projMatrix.  <a href="class_renderer.html#ad650d8daefe4a5687dfe56296b3ce0e5">More...</a><br /></td></tr>
+<tr class="separator:ad650d8daefe4a5687dfe56296b3ce0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aefc3c14b9db1a0a7abfb784547018e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a1aefc3c14b9db1a0a7abfb784547018e">GetProjectionMatrix</a> ()</td></tr>
 <tr class="memdesc:a1aefc3c14b9db1a0a7abfb784547018e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for projMatrix field.  <a href="class_renderer.html#a1aefc3c14b9db1a0a7abfb784547018e">More...</a><br /></td></tr>
 <tr class="separator:a1aefc3c14b9db1a0a7abfb784547018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +186,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58c881dec5e9d93f0c239eb9e1640060 inherit pub_methods_class_renderer_wrapper"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_renderer_wrapper_8hpp.html#aabfe390260f47e772b92d1812e1ee81f">LibRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#a58c881dec5e9d93f0c239eb9e1640060">GetRenderer</a> ()</td></tr>
 <tr class="memdesc:a58c881dec5e9d93f0c239eb9e1640060 inherit pub_methods_class_renderer_wrapper"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for wrapped renderer.  <a href="class_renderer_wrapper.html#a58c881dec5e9d93f0c239eb9e1640060">More...</a><br /></td></tr>
 <tr class="separator:a58c881dec5e9d93f0c239eb9e1640060 inherit pub_methods_class_renderer_wrapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b4ab35df9e2f56d31120230ce65660 inherit pub_methods_class_renderer_wrapper"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660">Width</a> ()</td></tr>
+<tr class="memdesc:ad3b4ab35df9e2f56d31120230ce65660 inherit pub_methods_class_renderer_wrapper"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderer width.  <a href="class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660">More...</a><br /></td></tr>
+<tr class="separator:ad3b4ab35df9e2f56d31120230ce65660 inherit pub_methods_class_renderer_wrapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb9eb22477d2b5680091b84145bacd9 inherit pub_methods_class_renderer_wrapper"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#abdb9eb22477d2b5680091b84145bacd9">Height</a> ()</td></tr>
+<tr class="memdesc:abdb9eb22477d2b5680091b84145bacd9 inherit pub_methods_class_renderer_wrapper"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderer height.  <a href="class_renderer_wrapper.html#abdb9eb22477d2b5680091b84145bacd9">More...</a><br /></td></tr>
+<tr class="separator:abdb9eb22477d2b5680091b84145bacd9 inherit pub_methods_class_renderer_wrapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -270,8 +282,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adf26b752d3078d36bcc94729152a37ee" name="adf26b752d3078d36bcc94729152a37ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf26b752d3078d36bcc94729152a37ee">&#9670;&#160;</a></span>DrawMesh()</h2>
+<a id="a0ba8d0ec9772da40147b6a5338dafa57" name="a0ba8d0ec9772da40147b6a5338dafa57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba8d0ec9772da40147b6a5338dafa57">&#9670;&#160;</a></span>DrawMesh()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,20 +291,38 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Renderer::DrawMesh </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_mesh.html">Mesh</a> *&#160;</td>
-          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_mesh.html">Mesh</a> *&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Draws given mesh on the screen. </p>
-<p >Class held by <a class="el" href="_render_window_8hpp.html">RenderWindow.hpp</a> for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. </p>
+<p >Class held by <a class="el" href="_render_window_8hpp.html">RenderWindow.hpp</a> for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td><a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D triangles.">Mesh</a> that will be drawn. </td></tr>
+    <tr><td class="paramname">pos</td><td>Position in 3D space at which the mesh will be drawn.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_mesh_8hpp.html">Mesh.hpp</a> </dd></dl>
 
 </div>
 </div>
-<a id="a0c49d84dbf32f2afe9b258667f27e69b" name="a0c49d84dbf32f2afe9b258667f27e69b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c49d84dbf32f2afe9b258667f27e69b">&#9670;&#160;</a></span>DrawTri()</h2>
+<a id="aa784d59b6e5c5bbe005dabd8534911ff" name="aa784d59b6e5c5bbe005dabd8534911ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa784d59b6e5c5bbe005dabd8534911ff">&#9670;&#160;</a></span>DrawTri() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,11 +330,86 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Renderer::DrawTri </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws triangle with given coordinates on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1X</td><td>Point 1 X. </td></tr>
+    <tr><td class="paramname">p1Y</td><td>Point 1 Y. </td></tr>
+    <tr><td class="paramname">p2X</td><td>Point 2 X. </td></tr>
+    <tr><td class="paramname">p2Y</td><td>Point 2 Y. </td></tr>
+    <tr><td class="paramname">p3X</td><td>Point 3 X. </td></tr>
+    <tr><td class="paramname">p3Y</td><td>Point 3 Y. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa08362456da3321f246d4de151232e27" name="aa08362456da3321f246d4de151232e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08362456da3321f246d4de151232e27">&#9670;&#160;</a></span>DrawTri() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::DrawTri </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td>
+          <td class="paramname"><em>tri</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws given triangle on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tri</td><td><a class="el" href="class_triangle.html" title="Represents flat triangled plane in 3D space as 3 points.">Triangle</a> that will be drawn.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_triangle_8hpp.html">Triangle.hpp</a> </dd></dl>
 
 </div>
 </div>
@@ -333,6 +438,45 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Getter for projMatrix field. </p>
 <dl class="section return"><dt>Returns</dt><dd>Handler to projMatrix field. </dd></dl>
+
+</div>
+</div>
+<a id="ad650d8daefe4a5687dfe56296b3ce0e5" name="ad650d8daefe4a5687dfe56296b3ce0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad650d8daefe4a5687dfe56296b3ce0e5">&#9670;&#160;</a></span>ProjectTriangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_triangle.html">Triangle</a> * Renderer::ProjectTriangle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td>
+          <td class="paramname"><em>tri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Projects given triangle using projMatrix. </p>
+<p >Class held by <a class="el" href="_render_window_8hpp.html">RenderWindow.hpp</a> for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tri</td><td>Projected triangle. </td></tr>
+    <tr><td class="paramname">pos</td><td>Projected triangle's mesh position in 3D space.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Projected triangle. </dd></dl>
 
 </div>
 </div>
@@ -390,7 +534,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_8hpp_source.html">Renderer.hpp</a></li>
+<li>CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_8hpp_source.html">Renderer.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -22,10 +22,14 @@ Inheritance diagram for Renderer\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer}} ()
 \item 
-void \mbox{\hyperlink{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}{Draw\+Tri}} ()
-\item 
-void \mbox{\hyperlink{class_renderer_adf26b752d3078d36bcc94729152a37ee}{Draw\+Mesh}} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+void \mbox{\hyperlink{class_renderer_aa08362456da3321f246d4de151232e27}{Draw\+Tri}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri)
+\begin{DoxyCompactList}\small\item\em Draws given triangle on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}{Draw\+Tri}} (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
+\begin{DoxyCompactList}\small\item\em Draws triangle with given coordinates on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}{Draw\+Mesh}} (\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$mesh, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos)
 \begin{DoxyCompactList}\small\item\em Draws given mesh on the screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}{Project\+Triangle}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos)
+\begin{DoxyCompactList}\small\item\em Projects given triangle using proj\+Matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{Get\+Projection\+Matrix}} ()
 \begin{DoxyCompactList}\small\item\em Getter for proj\+Matrix field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{Recalculate\+Projection\+Matrix}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$cam)
@@ -68,22 +72,71 @@ Creates new object of type \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Mat
 If proj\+Matrix is not nullptr deletes it. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_renderer_adf26b752d3078d36bcc94729152a37ee}\label{class_renderer_adf26b752d3078d36bcc94729152a37ee}} 
+\mbox{\Hypertarget{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}\label{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}} 
 \index{Renderer@{Renderer}!DrawMesh@{DrawMesh}}
 \index{DrawMesh@{DrawMesh}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$}]{mesh }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{mesh,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
 
 
 
 Draws given mesh on the screen. 
 
-Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. \mbox{\Hypertarget{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}\label{class_renderer_a0c49d84dbf32f2afe9b258667f27e69b}} 
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & \mbox{\hyperlink{class_mesh}{Mesh}} that will be drawn. \\
+\hline
+{\em pos} & Position in 3D space at which the mesh will be drawn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}\label{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}} 
 \index{Renderer@{Renderer}!DrawTri@{DrawTri}}
 \index{DrawTri@{DrawTri}!Renderer@{Renderer}}
-\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p3X,  }\item[{double}]{p3Y }\end{DoxyParamCaption})}
 
+
+
+Draws triangle with given coordinates on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1X} & Point 1 X. \\
+\hline
+{\em p1Y} & Point 1 Y. \\
+\hline
+{\em p2X} & Point 2 X. \\
+\hline
+{\em p2Y} & Point 2 Y. \\
+\hline
+{\em p3X} & Point 3 X. \\
+\hline
+{\em p3Y} & Point 3 Y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_renderer_aa08362456da3321f246d4de151232e27}\label{class_renderer_aa08362456da3321f246d4de151232e27}} 
+\index{Renderer@{Renderer}!DrawTri@{DrawTri}}
+\index{DrawTri@{DrawTri}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri }\end{DoxyParamCaption})}
+
+
+
+Draws given triangle on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tri} & \mbox{\hyperlink{class_triangle}{Triangle}} that will be drawn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}\label{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}} 
 \index{Renderer@{Renderer}!GetProjectionMatrix@{GetProjectionMatrix}}
 \index{GetProjectionMatrix@{GetProjectionMatrix}!Renderer@{Renderer}}
@@ -96,6 +149,28 @@ Getter for proj\+Matrix field.
 
 \begin{DoxyReturn}{Returns}
 Handler to proj\+Matrix field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}\label{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}} 
+\index{Renderer@{Renderer}!ProjectTriangle@{ProjectTriangle}}
+\index{ProjectTriangle@{ProjectTriangle}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{ProjectTriangle()}{ProjectTriangle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Renderer\+::\+Project\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
+
+
+
+Projects given triangle using proj\+Matrix. 
+
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tri} & Projected triangle. \\
+\hline
+{\em pos} & Projected triangle\textquotesingle{}s mesh position in 3D space.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Projected triangle. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_renderer_a97146506b00259301115bec677ab29e6}\label{class_renderer_a97146506b00259301115bec677ab29e6}} 
 \index{Renderer@{Renderer}!RecalculateProjectionMatrix@{RecalculateProjectionMatrix}}
@@ -134,4 +209,4 @@ The engine calculation is made based on this formulas.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}

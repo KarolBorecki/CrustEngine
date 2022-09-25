@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['librenderer_0',['LibRenderer',['../_renderer_wrapper_8hpp.html#aabfe390260f47e772b92d1812e1ee81f',1,'RendererWrapper.hpp']]],
-  ['librendererbool_1',['LibRendererBool',['../_renderer_wrapper_8hpp.html#af6e11f4a7f8b39b513d9e81abb64524c',1,'RendererWrapper.hpp']]],
-  ['librendererfalse_2',['LibRendererFalse',['../_renderer_wrapper_8hpp.html#ab58498eca2b16ba6caabc4fee5c6eef7',1,'RendererWrapper.hpp']]],
-  ['librenderertrue_3',['LibRendererTrue',['../_renderer_wrapper_8hpp.html#a4262a62250555f6547de7aff6da4cc82',1,'RendererWrapper.hpp']]],
-  ['librendererwindow_4',['LibRendererWindow',['../_renderer_wrapper_8hpp.html#ae8b47be60271af516c1ddae887a141b2',1,'RendererWrapper.hpp']]],
-  ['light_5fblue_5',['LIGHT_BLUE',['../class_logger.html#aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1',1,'Logger']]],
-  ['loadscene_6',['LoadScene',['../class_render_window.html#aff1f326684632bb9e48f19ca7bd85e06',1,'RenderWindow']]],
-  ['log_7',['Log',['../class_logger.html#ae9cc87d3a78f21600b1c5f98c43cd3b8',1,'Logger::Log(const char *format,...)'],['../class_logger.html#a56cc303e45fe5ceb8e74e55cda9cd291',1,'Logger::Log(int colorCode, const char *format,...)']]],
-  ['logger_8',['Logger',['../class_logger.html',1,'']]],
-  ['logger_2ehpp_9',['Logger.hpp',['../_logger_8hpp.html',1,'']]]
+  ['info_0',['Info',['../class_logger.html#aae69f0478dbd5d719e70a8af3b154761',1,'Logger']]],
+  ['init_1',['Init',['../class_renderer_wrapper.html#a24b61a0ab2c161a5569cb1e647731f1d',1,'RendererWrapper']]],
+  ['isactive_2',['IsActive',['../class_object.html#a49327b515f7e613c882f33c2b058ab98',1,'Object']]],
+  ['isrunning_3',['IsRunning',['../class_renderer_wrapper.html#a1dacc6d5f7517f7fc633219e6e37fd67',1,'RendererWrapper']]]
 ];

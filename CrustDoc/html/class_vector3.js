@@ -1,8 +1,15 @@
 var class_vector3 =
 [
-    [ "Vector3", "class_vector3.html#a3b7c8173ed2b3b6683665c603cf7b24b", null ],
-    [ "~Vector3", "class_vector3.html#af9b2623e5113cdcb9d03b612319679e8", null ],
-    [ "x", "class_vector3.html#a60aa84ebc037dec9faba617f8ddb231d", null ],
-    [ "y", "class_vector3.html#ae4965693beffdb6069e0618222cae459", null ],
-    [ "z", "class_vector3.html#aa5f4108b2839a110eeaec8606780eaff", null ]
+    [ "Vector3", "class_vector3.html#a0f49191f7e001e7f7ae1cb49522118b4", null ],
+    [ "Vector3", "class_vector3.html#af3ddf3f85d2e8390fa8c297c8448761e", null ],
+    [ "Vector3", "class_vector3.html#a3b370f98c38f1221df9238a9b5f3200c", null ],
+    [ "~Vector3", "class_vector3.html#a5545e13e2e2861ece8f14b12a6a8101f", null ],
+    [ "SetX", "class_vector3.html#adefc004f13762e3386de5cb557692408", null ],
+    [ "SetXYZ", "class_vector3.html#a96424507ccf818dd9582f648c646a71a", null ],
+    [ "SetXYZ", "class_vector3.html#adce5ef38969238e909fcddcada3b423e", null ],
+    [ "SetY", "class_vector3.html#a84690eeeb8f94037b9103772b8bcb221", null ],
+    [ "SetZ", "class_vector3.html#abef4f93039c0cc4181dea08ee0fc41c2", null ],
+    [ "X", "class_vector3.html#ac489a8c1cb8c052fbfc1227cb66c64d2", null ],
+    [ "Y", "class_vector3.html#ada990cdc627b1eab3ee985458eefb98a", null ],
+    [ "Z", "class_vector3.html#a9cee9c340fd39d7eb535f993ede6c026", null ]
 ];

@@ -18,34 +18,70 @@ Inheritance diagram for Render\+Object\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_render_object_a9bf7b34d8db9cd5f2c2ca29e5ca1afdb}{Render\+Object}} (\mbox{\hyperlink{struct_mesh}{Mesh}} \&\+\_\+mesh)
+\mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{Render\+Object}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos, \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$\+\_\+mesh)
 \item 
-virtual \mbox{\hyperlink{class_render_object_a0b84042fbd5cae579b22d93ea542de2c}{$\sim$\+Render\+Object}} ()=default
+\mbox{\hyperlink{class_render_object_afdbd4674136b38b774969de742c3c40b}{Render\+Object}} (double posX, double posY, double posZ, \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$\+\_\+mesh)
 \item 
-\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$ \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{Get\+Mesh}} ()
-\begin{DoxyCompactList}\small\item\em Getter for mesh field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_render_object_a61730888295064e57f3de7c31695954a}{Render\+Object}} (\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$\+\_\+mesh)
+\item 
+\mbox{\hyperlink{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}{$\sim$\+Render\+Object}} ()
+\item 
+\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{Get\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Getter for mesh field. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Converts \mbox{\hyperlink{class_render_object}{Render\+Object}}\textquotesingle{}s mesh to std\+::string, so it can be written on any output. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents object present on the scene. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_render_object_a9bf7b34d8db9cd5f2c2ca29e5ca1afdb}\label{class_render_object_a9bf7b34d8db9cd5f2c2ca29e5ca1afdb}} 
+\mbox{\Hypertarget{class_render_object_a546733d9fe09e8af26163aaae60c604c}\label{class_render_object_a546733d9fe09e8af26163aaae60c604c}} 
 \index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
 \index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
-\doxysubsubsection{\texorpdfstring{RenderObject()}{RenderObject()}}
-{\footnotesize\ttfamily Render\+Object\+::\+Render\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh}{Mesh}} \&}]{\+\_\+mesh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{RenderObject()}{RenderObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Render\+Object\+::\+Render\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos,  }\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{\+\_\+mesh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+mesh} & \mbox{\hyperlink{struct_mesh}{Mesh}} that will be rendered for this object on the scene that contains this object. \\
+{\em pos} & \mbox{\hyperlink{class_object}{Object}}\textquotesingle{}s position. \\
+\hline
+{\em \+\_\+mesh} & \mbox{\hyperlink{class_mesh}{Mesh}} that will be rendered for this object on the scene that contains this object. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_render_object_a0b84042fbd5cae579b22d93ea542de2c}\label{class_render_object_a0b84042fbd5cae579b22d93ea542de2c}} 
+\mbox{\Hypertarget{class_render_object_afdbd4674136b38b774969de742c3c40b}\label{class_render_object_afdbd4674136b38b774969de742c3c40b}} 
+\index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
+\index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
+\doxysubsubsection{\texorpdfstring{RenderObject()}{RenderObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Render\+Object\+::\+Render\+Object (\begin{DoxyParamCaption}\item[{double}]{posX,  }\item[{double}]{posY,  }\item[{double}]{posZ,  }\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{\+\_\+mesh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & \mbox{\hyperlink{class_object}{Object}}\textquotesingle{}s x position. \\
+\hline
+{\em posY} & \mbox{\hyperlink{class_object}{Object}}\textquotesingle{}s y position. \\
+\hline
+{\em posZ} & \mbox{\hyperlink{class_object}{Object}}\textquotesingle{}s z position. \\
+\hline
+{\em \+\_\+mesh} & \mbox{\hyperlink{class_mesh}{Mesh}} that will be rendered for this object on the scene that contains this object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_render_object_a61730888295064e57f3de7c31695954a}\label{class_render_object_a61730888295064e57f3de7c31695954a}} 
+\index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
+\index{RenderObject@{RenderObject}!RenderObject@{RenderObject}}
+\doxysubsubsection{\texorpdfstring{RenderObject()}{RenderObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Render\+Object\+::\+Render\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{\+\_\+mesh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+mesh} & \mbox{\hyperlink{class_mesh}{Mesh}} that will be rendered for this object on the scene that contains this object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}\label{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}} 
 \index{RenderObject@{RenderObject}!````~RenderObject@{$\sim$RenderObject}}
 \index{````~RenderObject@{$\sim$RenderObject}!RenderObject@{RenderObject}}
 \doxysubsubsection{\texorpdfstring{$\sim$RenderObject()}{~RenderObject()}}
-{\footnotesize\ttfamily virtual Render\+Object\+::$\sim$\+Render\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily Render\+Object\+::$\sim$\+Render\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -54,7 +90,7 @@ Represents object present on the scene.
 \index{RenderObject@{RenderObject}!GetMesh@{GetMesh}}
 \index{GetMesh@{GetMesh}!RenderObject@{RenderObject}}
 \doxysubsubsection{\texorpdfstring{GetMesh()}{GetMesh()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$ Render\+Object\+::\+Get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ Render\+Object\+::\+Get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -63,8 +99,21 @@ Getter for mesh field.
 \begin{DoxyReturn}{Returns}
 Handler to mesh field. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}\label{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}} 
+\index{RenderObject@{RenderObject}!ToString@{ToString}}
+\index{ToString@{ToString}!RenderObject@{RenderObject}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string Render\+Object\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts \mbox{\hyperlink{class_render_object}{Render\+Object}}\textquotesingle{}s mesh to std\+::string, so it can be written on any output. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string containing the triangles that represents this Redner\+Object\textquotesingle{}s mesh. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}}\end{DoxyCompactItemize}

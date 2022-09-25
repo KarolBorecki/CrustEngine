@@ -1,5 +1,5 @@
 \hypertarget{_scene_8hpp_source}{}\doxysection{Scene.\+hpp}
-\label{_scene_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp}}
+\label{_scene_8hpp_source}\index{CrustEngine/Code/Inc/Core/Scene.hpp@{CrustEngine/Code/Inc/Core/Scene.hpp}}
 \mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_SCENE\_HPP\_}}
@@ -16,11 +16,11 @@
 \DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}} \{}
 \DoxyCodeLine{22 \textcolor{keyword}{public}:}
 \DoxyCodeLine{27   \mbox{\hyperlink{class_scene}{Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera);}
-\DoxyCodeLine{28   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\string~Scene}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{28   \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{\string~Scene}}() \{\};}
 \DoxyCodeLine{29 }
 \DoxyCodeLine{37   \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}();}
 \DoxyCodeLine{38 }
-\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}\& obj);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj);}
 \DoxyCodeLine{56   std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
 \DoxyCodeLine{57 }
 \DoxyCodeLine{63   std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}();}
@@ -29,17 +29,17 @@
 \DoxyCodeLine{66   std::string name; }
 \DoxyCodeLine{67   \mbox{\hyperlink{class_camera}{Camera}}* mainCamera \{ \textcolor{keyword}{nullptr} \}; }
 \DoxyCodeLine{68 }
-\DoxyCodeLine{69   std::vector<Object> objects; }
+\DoxyCodeLine{69   std::vector<Object*> objects; }
 \DoxyCodeLine{70   std::vector<RenderObject*> renderObjects; }
 \DoxyCodeLine{71 \};}
 \DoxyCodeLine{72 }
-\DoxyCodeLine{73 \textcolor{keyword}{inline} \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene::Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera) : name(\_name), mainCamera(\_mainCamera) \{\}}
+\DoxyCodeLine{73 \textcolor{keyword}{inline} \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene::Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera) : name(\_name), mainCamera(\_mainCamera) \{\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene============"{}});\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene DONE============"{}});\}}
 \DoxyCodeLine{74 }
 \DoxyCodeLine{75 \textcolor{keyword}{inline} \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Scene::GetMainCamera}}() \{ \textcolor{keywordflow}{return} mainCamera; \}}
 \DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{Scene::AddObject}}(\mbox{\hyperlink{class_object}{Object}}\& obj) \{}
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Scene::AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj) \{}
 \DoxyCodeLine{78   objects.push\_back(obj);}
-\DoxyCodeLine{79   \mbox{\hyperlink{class_render_object}{RenderObject}}* renderObj = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_render_object}{RenderObject}}*\textcolor{keyword}{>}(\&obj);}
+\DoxyCodeLine{79   \mbox{\hyperlink{class_render_object}{RenderObject}}* renderObj = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_render_object}{RenderObject}}*\textcolor{keyword}{>}(obj);}
 \DoxyCodeLine{80   \textcolor{keywordflow}{if}(renderObj != \textcolor{keyword}{nullptr})}
 \DoxyCodeLine{81     renderObjects.push\_back(renderObj);}
 \DoxyCodeLine{82 \}}

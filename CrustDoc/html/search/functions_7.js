@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['matrix_1',['Matrix',['../class_matrix.html#a01b06ccde68bc91de22652e841d3e3ad',1,'Matrix']]],
-  ['multiply_2',['Multiply',['../class_matrix.html#a996f38751067d1c33127263e7c6c0c7d',1,'Matrix']]]
+  ['loadmeshfromfile_0',['LoadMeshFromFile',['../class_mesh_loader.html#a79900851f6165bcdca8eecae4c5b452b',1,'MeshLoader']]],
+  ['loadscene_1',['LoadScene',['../class_render_window.html#aff1f326684632bb9e48f19ca7bd85e06',1,'RenderWindow']]],
+  ['log_2',['Log',['../class_logger.html#ae9cc87d3a78f21600b1c5f98c43cd3b8',1,'Logger::Log(const char *format,...)'],['../class_logger.html#a56cc303e45fe5ceb8e74e55cda9cd291',1,'Logger::Log(int colorCode, const char *format,...)']]]
 ];

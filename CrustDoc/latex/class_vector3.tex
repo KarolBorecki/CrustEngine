@@ -2,82 +2,219 @@
 \label{class_vector3}\index{Vector3@{Vector3}}
 
 
-Represents mathematical vector.  
+Represents mathematical vector3.  
 
 
 
 
 {\ttfamily \#include $<$Vector3.\+hpp$>$}
 
+Inheritance diagram for Vector3\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vector3}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_vector3_a3b7c8173ed2b3b6683665c603cf7b24b}{Vector3}} (double \+\_\+x, double \+\_\+y, double \+\_\+z)
+\mbox{\hyperlink{class_vector3_a0f49191f7e001e7f7ae1cb49522118b4}{Vector3}} ()
+\begin{DoxyCompactList}\small\item\em Creates blank vector that consists of values zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}{Vector3}} (double val\+XYZ)
 \item 
-virtual \mbox{\hyperlink{class_vector3_af9b2623e5113cdcb9d03b612319679e8}{$\sim$\+Vector3}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\mbox{\hyperlink{class_vector3_a3b370f98c38f1221df9238a9b5f3200c}{Vector3}} (double x, double y, double z)
+\item 
+\mbox{\hyperlink{class_vector3_a5545e13e2e2861ece8f14b12a6a8101f}{$\sim$\+Vector3}} ()
+\item 
+double \mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector3_adefc004f13762e3386de5cb557692408}{SetX}} (double valX)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector3_a84690eeeb8f94037b9103772b8bcb221}{SetY}} (double valY)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector3_abef4f93039c0cc4181dea08ee0fc41c2}{SetZ}} (double valZ)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector3_a96424507ccf818dd9582f648c646a71a}{Set\+XYZ}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector3_adce5ef38969238e909fcddcada3b423e}{Set\+XYZ}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec\+XYZ)
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values from another \mbox{\hyperlink{class_vector3}{Vector3}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}{x}}
-\begin{DoxyCompactList}\small\item\em Vector\textquotesingle{}s x value. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_vector3_ae4965693beffdb6069e0618222cae459}{y}}
-\begin{DoxyCompactList}\small\item\em Vector\textquotesingle{}s y value. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_vector3_aa5f4108b2839a110eeaec8606780eaff}{z}}
-\begin{DoxyCompactList}\small\item\em Vector\textquotesingle{}s z value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec, double x, double y, double z)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Represents mathematical vector. 
+Represents mathematical vector3. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_vector3_a3b7c8173ed2b3b6683665c603cf7b24b}\label{class_vector3_a3b7c8173ed2b3b6683665c603cf7b24b}} 
+\mbox{\Hypertarget{class_vector3_a0f49191f7e001e7f7ae1cb49522118b4}\label{class_vector3_a0f49191f7e001e7f7ae1cb49522118b4}} 
 \index{Vector3@{Vector3}!Vector3@{Vector3}}
 \index{Vector3@{Vector3}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}}
-{\footnotesize\ttfamily Vector3\+::\+Vector3 (\begin{DoxyParamCaption}\item[{double}]{\+\_\+x,  }\item[{double}]{\+\_\+y,  }\item[{double}]{\+\_\+z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Vector3\+::\+Vector3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_vector3_af9b2623e5113cdcb9d03b612319679e8}\label{class_vector3_af9b2623e5113cdcb9d03b612319679e8}} 
+
+
+Creates blank vector that consists of values zero. 
+
+\mbox{\Hypertarget{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}\label{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}} 
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Vector3\+::\+Vector3 (\begin{DoxyParamCaption}\item[{double}]{val\+XYZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+XYZ} & Value for each X, Y and Z fields. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_a3b370f98c38f1221df9238a9b5f3200c}\label{class_vector3_a3b370f98c38f1221df9238a9b5f3200c}} 
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Vector3\+::\+Vector3 (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value for X field. \\
+\hline
+{\em y} & Value for Y field. \\
+\hline
+{\em z} & Value for Z field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_a5545e13e2e2861ece8f14b12a6a8101f}\label{class_vector3_a5545e13e2e2861ece8f14b12a6a8101f}} 
 \index{Vector3@{Vector3}!````~Vector3@{$\sim$Vector3}}
 \index{````~Vector3@{$\sim$Vector3}!Vector3@{Vector3}}
 \doxysubsubsection{\texorpdfstring{$\sim$Vector3()}{~Vector3()}}
-{\footnotesize\ttfamily virtual Vector3\+::$\sim$\+Vector3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily Vector3\+::$\sim$\+Vector3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}\label{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}} 
-\index{Vector3@{Vector3}!x@{x}}
-\index{x@{x}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily double Vector3\+::x}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector3_ae919b64e71a55266e36d054ce77a03ea}\label{class_vector3_ae919b64e71a55266e36d054ce77a03ea}} 
+\index{Vector3@{Vector3}!Add@{Add}}
+\index{Add@{Add}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_vector3_adefc004f13762e3386de5cb557692408}\label{class_vector3_adefc004f13762e3386de5cb557692408}} 
+\index{Vector3@{Vector3}!SetX@{SetX}}
+\index{SetX@{SetX}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{SetX()}{SetX()}}
+{\footnotesize\ttfamily void Vector3\+::\+SetX (\begin{DoxyParamCaption}\item[{double}]{valX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Vector\textquotesingle{}s x value. 
-
-\mbox{\Hypertarget{class_vector3_ae4965693beffdb6069e0618222cae459}\label{class_vector3_ae4965693beffdb6069e0618222cae459}} 
-\index{Vector3@{Vector3}!y@{y}}
-\index{y@{y}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{y}{y}}
-{\footnotesize\ttfamily double Vector3\+::y}
+Setter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. 
 
 
-
-Vector\textquotesingle{}s y value. 
-
-\mbox{\Hypertarget{class_vector3_aa5f4108b2839a110eeaec8606780eaff}\label{class_vector3_aa5f4108b2839a110eeaec8606780eaff}} 
-\index{Vector3@{Vector3}!z@{z}}
-\index{z@{z}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{z}{z}}
-{\footnotesize\ttfamily double Vector3\+::z}
+\begin{DoxyParams}{Parameters}
+{\em valX} & New value of vector\textquotesingle{}s x. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_a96424507ccf818dd9582f648c646a71a}\label{class_vector3_a96424507ccf818dd9582f648c646a71a}} 
+\index{Vector3@{Vector3}!SetXYZ@{SetXYZ}}
+\index{SetXYZ@{SetXYZ}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{SetXYZ()}{SetXYZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Vector3\+::\+Set\+XYZ (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
 
 
 
-Vector\textquotesingle{}s z value. 
+Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & New value of vector\textquotesingle{}s x. \\
+\hline
+{\em y} & New value of vector\textquotesingle{}s y. \\
+\hline
+{\em z} & New value of vector\textquotesingle{}s z. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_adce5ef38969238e909fcddcada3b423e}\label{class_vector3_adce5ef38969238e909fcddcada3b423e}} 
+\index{Vector3@{Vector3}!SetXYZ@{SetXYZ}}
+\index{SetXYZ@{SetXYZ}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{SetXYZ()}{SetXYZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Vector3\+::\+Set\+XYZ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec\+XYZ }\end{DoxyParamCaption})}
+
+
+
+Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values from another \mbox{\hyperlink{class_vector3}{Vector3}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Another vector from which the values will be taken. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_a84690eeeb8f94037b9103772b8bcb221}\label{class_vector3_a84690eeeb8f94037b9103772b8bcb221}} 
+\index{Vector3@{Vector3}!SetY@{SetY}}
+\index{SetY@{SetY}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{SetY()}{SetY()}}
+{\footnotesize\ttfamily void Vector3\+::\+SetY (\begin{DoxyParamCaption}\item[{double}]{valY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valY} & New value of vector\textquotesingle{}s y. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_abef4f93039c0cc4181dea08ee0fc41c2}\label{class_vector3_abef4f93039c0cc4181dea08ee0fc41c2}} 
+\index{Vector3@{Vector3}!SetZ@{SetZ}}
+\index{SetZ@{SetZ}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{SetZ()}{SetZ()}}
+{\footnotesize\ttfamily void Vector3\+::\+SetZ (\begin{DoxyParamCaption}\item[{double}]{valZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valZ} & New value of vector\textquotesingle{}s z. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}\label{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}} 
+\index{Vector3@{Vector3}!X@{X}}
+\index{X@{X}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{X()}{X()}}
+{\footnotesize\ttfamily double Vector3\+::X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. 
+
+\mbox{\Hypertarget{class_vector3_ada990cdc627b1eab3ee985458eefb98a}\label{class_vector3_ada990cdc627b1eab3ee985458eefb98a}} 
+\index{Vector3@{Vector3}!Y@{Y}}
+\index{Y@{Y}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Y()}{Y()}}
+{\footnotesize\ttfamily double Vector3\+::Y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. 
+
+\mbox{\Hypertarget{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}\label{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}} 
+\index{Vector3@{Vector3}!Z@{Z}}
+\index{Z@{Z}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Z()}{Z()}}
+{\footnotesize\ttfamily double Vector3\+::Z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}

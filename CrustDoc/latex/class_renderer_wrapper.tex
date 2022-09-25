@@ -71,7 +71,11 @@ void \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{
 void \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}} ()
 \begin{DoxyCompactList}\small\item\em Quits the graphic library. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{Lib\+Renderer}} $\ast$ \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{Get\+Renderer}} ()
-\begin{DoxyCompactList}\small\item\em Getter for wrapped renderer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter for wrapped renderer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{Width}} ()
+\begin{DoxyCompactList}\small\item\em Getter for renderer width. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{Height}} ()
+\begin{DoxyCompactList}\small\item\em Getter for renderer height. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -195,7 +199,7 @@ Function called to clean everything that has been drawn on the screen after last
 
 Opens new window to draw on. 
 
-Runs SDL create window and renderer function.
+Runs SDL create window and renderer function. Mus be called after Rednerer\+Wrapper\+::\+Init method.
 
 \begin{DoxyReturn}{Returns}
 STATUS\+\_\+\+OK if everyting is fine and STATUS\+\_\+\+FAIL is something failed and graphic interface cannot open new window. 
@@ -230,6 +234,16 @@ Checks for events from user and calls methods accordingly.
 
 Getter for wrapped renderer. 
 
+\mbox{\Hypertarget{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}\label{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}} 
+\index{RendererWrapper@{RendererWrapper}!Height@{Height}}
+\index{Height@{Height}!RendererWrapper@{RendererWrapper}}
+\doxysubsubsection{\texorpdfstring{Height()}{Height()}}
+{\footnotesize\ttfamily int Renderer\+Wrapper\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for renderer height. 
+
 \mbox{\Hypertarget{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}\label{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}} 
 \index{RendererWrapper@{RendererWrapper}!Init@{Init}}
 \index{Init@{Init}!RendererWrapper@{RendererWrapper}}
@@ -240,7 +254,7 @@ Getter for wrapped renderer.
 
 Initzializs graphic wrapper. Should be called on wrapper start. 
 
-Runs SDL Init funciton.
+Runs SDL Init funciton. Must be called before any drawing will be done on new \mbox{\hyperlink{class_renderer}{Renderer}}. Also after this call the \mbox{\hyperlink{class_renderer_wrapper_aa75e25014c0efd3ff09d9fdf4e8bbff5}{Renderer\+Wrapper\+::\+Create\+Window}} method must be called in order to create new window.
 
 \begin{DoxyReturn}{Returns}
 STATUS\+\_\+\+OK if everyting is fine and STATUS\+\_\+\+FAIL is something failed and graphic interface cannot start. 
@@ -383,8 +397,18 @@ Function called to show everything that has been drawn on the screen after last 
 
 Stops the renderer. 
 
-This function sets is\+Running field to Lib\+Renderer\+False in order to stop the main thread of this renderer. 
+This function sets is\+Running field to Lib\+Renderer\+False in order to stop the main thread of this renderer. \mbox{\Hypertarget{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}\label{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}} 
+\index{RendererWrapper@{RendererWrapper}!Width@{Width}}
+\index{Width@{Width}!RendererWrapper@{RendererWrapper}}
+\doxysubsubsection{\texorpdfstring{Width()}{Width()}}
+{\footnotesize\ttfamily int Renderer\+Wrapper\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for renderer width. 
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}

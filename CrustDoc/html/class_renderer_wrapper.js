@@ -22,6 +22,7 @@ var class_renderer_wrapper =
     [ "DrawLine", "class_renderer_wrapper.html#ad1c53fa72b0542f272bf45b137e9b647", null ],
     [ "GetEvent", "class_renderer_wrapper.html#a302245c7911cd01359b8d7ee5e512328", null ],
     [ "GetRenderer", "class_renderer_wrapper.html#a58c881dec5e9d93f0c239eb9e1640060", null ],
+    [ "Height", "class_renderer_wrapper.html#abdb9eb22477d2b5680091b84145bacd9", null ],
     [ "Init", "class_renderer_wrapper.html#a24b61a0ab2c161a5569cb1e647731f1d", null ],
     [ "IsRunning", "class_renderer_wrapper.html#a1dacc6d5f7517f7fc633219e6e37fd67", null ],
     [ "Quit", "class_renderer_wrapper.html#aa6f954554db0e56417c7a1b2cf3aef28", null ],
@@ -31,5 +32,6 @@ var class_renderer_wrapper =
     [ "SetDrawColor", "class_renderer_wrapper.html#af2a519ad1b95f9a46a6377b46bfdacc8", null ],
     [ "SetWindowTitle", "class_renderer_wrapper.html#a34dd25d862f072d17d0f6a7aedfd2d59", null ],
     [ "Show", "class_renderer_wrapper.html#a1eb51647308b1afb0fe1af41b9085e65", null ],
-    [ "StopRunning", "class_renderer_wrapper.html#a67346fef7b34bbd20af680866c9d014a", null ]
+    [ "StopRunning", "class_renderer_wrapper.html#a67346fef7b34bbd20af680866c9d014a", null ],
+    [ "Width", "class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660", null ]
 ];

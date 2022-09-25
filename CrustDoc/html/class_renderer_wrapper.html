@@ -25,7 +25,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="logo64.png"/></td>
   <td id="projectalign">
    <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
    </div>
@@ -188,6 +187,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58c881dec5e9d93f0c239eb9e1640060"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_renderer_wrapper_8hpp.html#aabfe390260f47e772b92d1812e1ee81f">LibRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#a58c881dec5e9d93f0c239eb9e1640060">GetRenderer</a> ()</td></tr>
 <tr class="memdesc:a58c881dec5e9d93f0c239eb9e1640060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for wrapped renderer.  <a href="class_renderer_wrapper.html#a58c881dec5e9d93f0c239eb9e1640060">More...</a><br /></td></tr>
 <tr class="separator:a58c881dec5e9d93f0c239eb9e1640060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b4ab35df9e2f56d31120230ce65660"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660">Width</a> ()</td></tr>
+<tr class="memdesc:ad3b4ab35df9e2f56d31120230ce65660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderer width.  <a href="class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660">More...</a><br /></td></tr>
+<tr class="separator:ad3b4ab35df9e2f56d31120230ce65660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb9eb22477d2b5680091b84145bacd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#abdb9eb22477d2b5680091b84145bacd9">Height</a> ()</td></tr>
+<tr class="memdesc:abdb9eb22477d2b5680091b84145bacd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderer height.  <a href="class_renderer_wrapper.html#abdb9eb22477d2b5680091b84145bacd9">More...</a><br /></td></tr>
+<tr class="separator:abdb9eb22477d2b5680091b84145bacd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Wrapper for currently used graphic library. </p>
@@ -376,7 +381,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Opens new window to draw on. </p>
-<p >Runs SDL create window and renderer function.</p>
+<p >Runs SDL create window and renderer function. Mus be called after RednererWrapper::Init method.</p>
 <dl class="section return"><dt>Returns</dt><dd>STATUS_OK if everyting is fine and STATUS_FAIL is something failed and graphic interface cannot open new window. </dd></dl>
 
 </div>
@@ -477,6 +482,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abdb9eb22477d2b5680091b84145bacd9" name="abdb9eb22477d2b5680091b84145bacd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb9eb22477d2b5680091b84145bacd9">&#9670;&#160;</a></span>Height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RendererWrapper::Height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for renderer height. </p>
+
+</div>
+</div>
 <a id="a24b61a0ab2c161a5569cb1e647731f1d" name="a24b61a0ab2c161a5569cb1e647731f1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24b61a0ab2c161a5569cb1e647731f1d">&#9670;&#160;</a></span>Init()</h2>
 
@@ -501,7 +533,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initzializs graphic wrapper. Should be called on wrapper start. </p>
-<p >Runs SDL Init funciton.</p>
+<p >Runs SDL Init funciton. Must be called before any drawing will be done on new <a class="el" href="class_renderer.html" title="Class used to render simple shapes on the window.">Renderer</a>. Also after this call the <a class="el" href="class_renderer_wrapper.html#aa75e25014c0efd3ff09d9fdf4e8bbff5" title="Opens new window to draw on.">RendererWrapper::CreateWindow</a> method must be called in order to create new window.</p>
 <dl class="section return"><dt>Returns</dt><dd>STATUS_OK if everyting is fine and STATUS_FAIL is something failed and graphic interface cannot start. </dd></dl>
 
 </div>
@@ -836,8 +868,35 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad3b4ab35df9e2f56d31120230ce65660" name="ad3b4ab35df9e2f56d31120230ce65660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b4ab35df9e2f56d31120230ce65660">&#9670;&#160;</a></span>Width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RendererWrapper::Width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for renderer width. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_wrapper_8hpp_source.html">RendererWrapper.hpp</a></li>
+<li>CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_wrapper_8hpp_source.html">RendererWrapper.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

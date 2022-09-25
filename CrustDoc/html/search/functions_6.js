@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['loadscene_0',['LoadScene',['../class_render_window.html#aff1f326684632bb9e48f19ca7bd85e06',1,'RenderWindow']]],
-  ['log_1',['Log',['../class_logger.html#ae9cc87d3a78f21600b1c5f98c43cd3b8',1,'Logger::Log(const char *format,...)'],['../class_logger.html#a56cc303e45fe5ceb8e74e55cda9cd291',1,'Logger::Log(int colorCode, const char *format,...)']]]
+  ['info_0',['Info',['../class_logger.html#aae69f0478dbd5d719e70a8af3b154761',1,'Logger']]],
+  ['init_1',['Init',['../class_renderer_wrapper.html#a24b61a0ab2c161a5569cb1e647731f1d',1,'RendererWrapper']]],
+  ['isactive_2',['IsActive',['../class_object.html#a49327b515f7e613c882f33c2b058ab98',1,'Object']]],
+  ['isrunning_3',['IsRunning',['../class_renderer_wrapper.html#a1dacc6d5f7517f7fc633219e6e37fd67',1,'RendererWrapper']]]
 ];

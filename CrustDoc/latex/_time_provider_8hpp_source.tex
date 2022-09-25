@@ -1,0 +1,73 @@
+\hypertarget{_time_provider_8hpp_source}{}\doxysection{Time\+Provider.\+hpp}
+\label{_time_provider_8hpp_source}\index{CrustEngine/Code/Inc/Utils/TimeProvider.hpp@{CrustEngine/Code/Inc/Utils/TimeProvider.hpp}}
+\mbox{\hyperlink{_time_provider_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_TIMEPROVIDER\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_TIMEPROVIDER\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_time_provider}{TimeProvider}} \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8   \mbox{\hyperlink{class_time_provider_a70769e2163712924ac6dfac894ceada2}{TimeProvider}}();}
+\DoxyCodeLine{9   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_time_provider_aa2940b12aa894305fec44de9207fb781}{\string~TimeProvider}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11   \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_ae04680a366faf60db2a88e89b10183a4}{GetTime\_ms}}();}
+\DoxyCodeLine{12   \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{GetTime\_s}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_ab18014f7eac5c54baedef993c18911b9}{OnFrameStart}}();}
+\DoxyCodeLine{15   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}{OnFrameEnd}}();}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}{GetFPS}}();}
+\DoxyCodeLine{18   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_afd7d0882db911eeb4925f85a2fd5f4c5}{GetAverageFPS}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}();}
+\DoxyCodeLine{21   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}{GetDeltaTime\_ms}}();}
+\DoxyCodeLine{22   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{GetAverageFrameTime\_s}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}{OnEngineStart}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}{MILISECONDS\_TO\_SECONDS}} \{ 0.001 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29   \textcolor{keywordtype}{double} frameDeltaTime\_ms \{ 0.0 \};}
+\DoxyCodeLine{30   uint32\_t framesPassed \{ 0 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   std::chrono::steady\_clock::time\_point lastFrameStartTimePoint;}
+\DoxyCodeLine{33   \textcolor{keyword}{static} \textcolor{keyword}{inline} std::chrono::steady\_clock::time\_point engineStartTimePoint;}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \mbox{\hyperlink{class_time_provider_a70769e2163712924ac6dfac894ceada2}{TimeProvider::TimeProvider}}() \{\}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_ae04680a366faf60db2a88e89b10183a4}{TimeProvider::GetTime\_ms}}() \{}
+\DoxyCodeLine{39   \textcolor{keywordflow}{return} std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::steady\_clock::now() -\/ engineStartTimePoint).count();}
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{TimeProvider::GetTime\_s}}() \{}
+\DoxyCodeLine{43   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_time_provider_ae04680a366faf60db2a88e89b10183a4}{GetTime\_ms}}() * \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}{MILISECONDS\_TO\_SECONDS}};}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_ab18014f7eac5c54baedef993c18911b9}{TimeProvider::OnFrameStart}}() \{}
+\DoxyCodeLine{47   lastFrameStartTimePoint = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}{TimeProvider::OnFrameEnd}}() \{}
+\DoxyCodeLine{51   frameDeltaTime\_ms = std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::steady\_clock::now() -\/ lastFrameStartTimePoint).count();}
+\DoxyCodeLine{52   framesPassed++;}
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}{TimeProvider::GetFPS}}() \{ \textcolor{keywordflow}{return} 1 / \mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}(); \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_afd7d0882db911eeb4925f85a2fd5f4c5}{TimeProvider::GetAverageFPS}}() \{ \textcolor{keywordflow}{return} 1 / \mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{GetAverageFrameTime\_s}}(); \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{TimeProvider::GetDeltaTime\_s}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}{GetDeltaTime\_ms}}() * \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}{MILISECONDS\_TO\_SECONDS}}; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}{TimeProvider::GetDeltaTime\_ms}}() \{ \textcolor{keywordflow}{return} frameDeltaTime\_ms; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{TimeProvider::GetAverageFrameTime\_s}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{GetTime\_s}}() / framesPassed; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}{TimeProvider::OnEngineStart}}() \{ engineStartTimePoint = std::chrono::steady\_clock::now(); \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_TIMEPROVIDER\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

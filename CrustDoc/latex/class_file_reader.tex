@@ -1,0 +1,92 @@
+\hypertarget{class_file_reader}{}\doxysection{File\+Reader Class Reference}
+\label{class_file_reader}\index{FileReader@{FileReader}}
+
+
+Static class used to read datat from file in classic-\/printf format.  
+
+
+
+
+{\ttfamily \#include $<$File\+Reader.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{Open\+File}} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Method opens file with \#file\+Name. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{Close\+Opened\+File}} ()
+\begin{DoxyCompactList}\small\item\em Method closes opened\+File. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{Get\+Line\+From\+Opened\+File}} (uint8\+\_\+t expected\+Args\+Count, const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Classic printf format-\/style function for reading opened\+File. \end{DoxyCompactList}\item 
+static FILE $\ast$ \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{Get\+Opened\+File\+Hanlder}} ()
+\begin{DoxyCompactList}\small\item\em Getter for opened\+File handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static class used to read datat from file in classic-\/printf format. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}\label{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}} 
+\index{FileReader@{FileReader}!CloseOpenedFile@{CloseOpenedFile}}
+\index{CloseOpenedFile@{CloseOpenedFile}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{CloseOpenedFile()}{CloseOpenedFile()}}
+{\footnotesize\ttfamily void File\+Reader\+::\+Close\+Opened\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Method closes opened\+File. 
+
+Method closes opened\+File. If opened\+File is NULL then throws a warning and exits the method. \mbox{\Hypertarget{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}\label{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}} 
+\index{FileReader@{FileReader}!GetLineFromOpenedFile@{GetLineFromOpenedFile}}
+\index{GetLineFromOpenedFile@{GetLineFromOpenedFile}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{GetLineFromOpenedFile()}{GetLineFromOpenedFile()}}
+{\footnotesize\ttfamily uint8\+\_\+t File\+Reader\+::\+Get\+Line\+From\+Opened\+File (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{expected\+Args\+Count,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Classic printf format-\/style function for reading opened\+File. 
+
+Method reads from opened\+File using vfscanf and assigns the values accordingly to \#format and args passed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Format for reading the file. \href{https://pl.wikibooks.org/wiki/C/printf}{\texttt{ Read more.}} \\
+\hline
+{\em ...} & Pointers to next variables accordingly to \#format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_file_reader_ae31cdff78db5462139cde270f65164e4}\label{class_file_reader_ae31cdff78db5462139cde270f65164e4}} 
+\index{FileReader@{FileReader}!GetOpenedFileHanlder@{GetOpenedFileHanlder}}
+\index{GetOpenedFileHanlder@{GetOpenedFileHanlder}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{GetOpenedFileHanlder()}{GetOpenedFileHanlder()}}
+{\footnotesize\ttfamily FILE $\ast$ File\+Reader\+::\+Get\+Opened\+File\+Hanlder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Getter for opened\+File handler. 
+
+\begin{DoxyReturn}{Returns}
+opened\+File field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}\label{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}} 
+\index{FileReader@{FileReader}!OpenFile@{OpenFile}}
+\index{OpenFile@{OpenFile}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{OpenFile()}{OpenFile()}}
+{\footnotesize\ttfamily void File\+Reader\+::\+Open\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Method opens file with \#file\+Name. 
+
+Method opens file and assigns it to opened\+File field. If file with passed path does not exit it throws a warning and exits the method. If file could not be opened it thows a warning and exists the method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & New opened file path. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Crust\+Engine/\+Code/\+Inc/\+Files/\mbox{\hyperlink{_file_reader_8hpp}{File\+Reader.\+hpp}}\end{DoxyCompactItemize}

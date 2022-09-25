@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['object_0',['Object',['../class_object.html',1,'']]],
-  ['object_2ehpp_1',['Object.hpp',['../_object_8hpp.html',1,'']]],
-  ['opennewwindow_2',['OpenNewWindow',['../class_core.html#af8dfa9a1586b40a8b92d92ceb5435814',1,'Core']]]
+  ['normal_0',['NORMAL',['../class_logger.html#af06203835bf4572c91b1c4ec1229732ea5b1b3368723dd7a7a8e64a13e45f27a3',1,'Logger']]]
 ];

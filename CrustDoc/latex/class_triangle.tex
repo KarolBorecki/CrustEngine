@@ -1,0 +1,102 @@
+\hypertarget{class_triangle}{}\doxysection{Triangle Class Reference}
+\label{class_triangle}\index{Triangle@{Triangle}}
+
+
+Represents flat triangled plane in 3D space as 3 points.  
+
+
+
+
+{\ttfamily \#include $<$Triangle.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}} ()
+\item 
+\mbox{\hyperlink{class_triangle_ad6140b354e030e413dd093c5bbd47282}{Triangle}} (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)
+\item 
+\mbox{\hyperlink{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}{Triangle}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point1, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point2, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point3)
+\item 
+\mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{$\sim$\+Triangle}} ()
+\item 
+\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{Get\+Point}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Getter for triangle \mbox{\hyperlink{class_vector3}{Vector3}} point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{Set\+Points}} (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)
+\item 
+std\+::string \mbox{\hyperlink{class_triangle_ab15e48058937687f381d00f91ccbd0e7}{To\+String}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents flat triangled plane in 3D space as 3 points. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}\label{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}} 
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_triangle_ad6140b354e030e413dd093c5bbd47282}\label{class_triangle_ad6140b354e030e413dd093c5bbd47282}} 
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p1Z,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p2Z,  }\item[{double}]{p3X,  }\item[{double}]{p3Y,  }\item[{double}]{p3Z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}\label{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}} 
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point1,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point2,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point3 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & First point of triangle. \\
+\hline
+{\em point2} & Second point of triangle. In projection next from \#point1 in clockwise direction. \\
+\hline
+{\em point3} & Third point of triangle. In projection next from \#point1 in clockwise direction. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_triangle_a5199760a17454f4dc94c855a57e3a152}\label{class_triangle_a5199760a17454f4dc94c855a57e3a152}} 
+\index{Triangle@{Triangle}!````~Triangle@{$\sim$Triangle}}
+\index{````~Triangle@{$\sim$Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{$\sim$Triangle()}{~Triangle()}}
+{\footnotesize\ttfamily Triangle\+::$\sim$\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}\label{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}} 
+\index{Triangle@{Triangle}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Triangle\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for triangle \mbox{\hyperlink{class_vector3}{Vector3}} point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point. 0 represents first point, 1 second and 2 thrid point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_triangle_a01d55a4d18956260b842ddc4c580b26e}\label{class_triangle_a01d55a4d18956260b842ddc4c580b26e}} 
+\index{Triangle@{Triangle}!SetPoints@{SetPoints}}
+\index{SetPoints@{SetPoints}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{SetPoints()}{SetPoints()}}
+{\footnotesize\ttfamily void Triangle\+::\+Set\+Points (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p1Z,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p2Z,  }\item[{double}]{p3X,  }\item[{double}]{p3Y,  }\item[{double}]{p3Z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_triangle_ab15e48058937687f381d00f91ccbd0e7}\label{class_triangle_ab15e48058937687f381d00f91ccbd0e7}} 
+\index{Triangle@{Triangle}!ToString@{ToString}}
+\index{ToString@{ToString}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string Triangle\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}}\end{DoxyCompactItemize}

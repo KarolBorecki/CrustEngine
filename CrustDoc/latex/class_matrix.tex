@@ -9,47 +9,82 @@ Represents the mathematical matrix and is able to preform matrix calculations.
 
 {\ttfamily \#include $<$Matrix.\+hpp$>$}
 
+Inheritance diagram for Matrix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_matrix}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_matrix_a01b06ccde68bc91de22652e841d3e3ad}{Matrix}} (int \+\_\+rows, int \+\_\+columns)
+\mbox{\hyperlink{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}{Matrix}} (uint8\+\_\+t rows, uint8\+\_\+t columns)
+\item 
+\mbox{\hyperlink{class_matrix_adb6d6c9da85ace0a00871ed1627a1bd4}{Matrix}} (uint8\+\_\+t rows, uint8\+\_\+t columns, double default\+Val)
 \item 
 \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{$\sim$\+Matrix}} ()
 \item 
-double \mbox{\hyperlink{class_matrix_ae503f0ecfee02b37ef6f72b00d52790c}{Get\+Value}} (int row, int column)
+double \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{Get\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column)
 \begin{DoxyCompactList}\small\item\em Returns value stored on the given position in matrix. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}{Put\+Value}} (int row, int column, double value)
+void \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{Put\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column, double value)
 \begin{DoxyCompactList}\small\item\em Puts the given value on the given position. \end{DoxyCompactList}\item 
-double $\ast$$\ast$ \mbox{\hyperlink{class_matrix_a65f13564049159a71bc8e6ee50ed4934}{Get\+Matrix}} ()
+void \mbox{\hyperlink{class_matrix_a9f3054826e39ab3caf223141fe1a128a}{Reset\+Matrix}} (double val)
+\begin{DoxyCompactList}\small\item\em Function resets the matrix so each value of it is the same. \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{Get\+Matrix\+Array}} ()
 \begin{DoxyCompactList}\small\item\em Getter for mat field. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_matrix_ae10c9c386e1661bb49323b751cdfab2b}{Rows}} ()
+uint8\+\_\+t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}} ()
 \begin{DoxyCompactList}\small\item\em Getter for rows field. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_matrix_a3f5ea502dd80d3895b6722b08a1c7e4e}{Columns}} ()
+uint8\+\_\+t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}} ()
 \begin{DoxyCompactList}\small\item\em Getter for columns field. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{To\+String}} ()
-\begin{DoxyCompactList}\small\item\em Converts matrix to std\+::string, so it can be written on any output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts matrix to std\+::string, so it can be written on any output. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{Get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Getter for matrix ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a996f38751067d1c33127263e7c6c0c7d}{Multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2)
-\begin{DoxyCompactList}\small\item\em Multiplies given matrixes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2, \mbox{\hyperlink{class_matrix}{Matrix}} \&out\+Mat)
+\begin{DoxyCompactList}\small\item\em Multiplies given matrixes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_matrix_a08429f5aa98e740e74c27955942b1158}{Multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
+\begin{DoxyCompactList}\small\item\em Multiplies given matrix by scalar constant value. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Divide}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
+\begin{DoxyCompactList}\small\item\em Divides given matrix by scalar constant value. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2)
+\begin{DoxyCompactList}\small\item\em Adds to given matrix \#mat1 another matrix \#mat2. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_matrix_aa8a37e15cc6098b037fe9bbe4c7a7371}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
+\begin{DoxyCompactList}\small\item\em Adds to given matrix scalar constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents the mathematical matrix and is able to preform matrix calculations. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_matrix_a01b06ccde68bc91de22652e841d3e3ad}\label{class_matrix_a01b06ccde68bc91de22652e841d3e3ad}} 
+\mbox{\Hypertarget{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}\label{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}} 
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
 \index{Matrix@{Matrix}!Matrix@{Matrix}}
-\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}}
-{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{int}]{\+\_\+rows,  }\item[{int}]{\+\_\+columns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{rows,  }\item[{uint8\+\_\+t}]{columns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+rows} & Amount of rows in the matrix. \\
+{\em rows} & Amount of rows in the matrix. \\
 \hline
-{\em \+\_\+columns} & Amount of columns in the matrix. \\
+{\em columns} & Amount of columns in the matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_adb6d6c9da85ace0a00871ed1627a1bd4}\label{class_matrix_adb6d6c9da85ace0a00871ed1627a1bd4}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{rows,  }\item[{uint8\+\_\+t}]{columns,  }\item[{double}]{default\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & Amount of rows in the matrix. \\
+\hline
+{\em columns} & Amount of columns in the matrix. \\
+\hline
+{\em default\+Val} & The value that will be placed on each position in matrix. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}\label{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}} 
@@ -61,11 +96,45 @@ Represents the mathematical matrix and is able to preform matrix calculations.
 If mat is not null deletes it from the heap. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_matrix_a3f5ea502dd80d3895b6722b08a1c7e4e}\label{class_matrix_a3f5ea502dd80d3895b6722b08a1c7e4e}} 
+\mbox{\Hypertarget{class_matrix_aa8a37e15cc6098b037fe9bbe4c7a7371}\label{class_matrix_aa8a37e15cc6098b037fe9bbe4c7a7371}} 
+\index{Matrix@{Matrix}!Add@{Add}}
+\index{Add@{Add}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Matrix\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat,  }\item[{const double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to given matrix scalar constant value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & \mbox{\hyperlink{class_matrix}{Matrix}} to which values scalar will be added. \\
+\hline
+{\em scalar} & Value which will be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}\label{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}} 
+\index{Matrix@{Matrix}!Add@{Add}}
+\index{Add@{Add}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Matrix\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat1,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds to given matrix \#mat1 another matrix \#mat2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat1} & Modifiaed matrix. \\
+\hline
+{\em mat2} & Added matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a9604bef87537aeb194d6a708d8d8174a}\label{class_matrix_a9604bef87537aeb194d6a708d8d8174a}} 
 \index{Matrix@{Matrix}!Columns@{Columns}}
 \index{Columns@{Columns}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{Columns()}{Columns()}}
-{\footnotesize\ttfamily int Matrix\+::\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily uint8\+\_\+t Matrix\+::\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -74,11 +143,41 @@ Getter for columns field.
 \begin{DoxyReturn}{Returns}
 Amount of columns in matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_a65f13564049159a71bc8e6ee50ed4934}\label{class_matrix_a65f13564049159a71bc8e6ee50ed4934}} 
-\index{Matrix@{Matrix}!GetMatrix@{GetMatrix}}
-\index{GetMatrix@{GetMatrix}!Matrix@{Matrix}}
-\doxysubsubsection{\texorpdfstring{GetMatrix()}{GetMatrix()}}
-{\footnotesize\ttfamily double $\ast$$\ast$ Matrix\+::\+Get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_matrix_a4886451fa27df3c4b4c886642ab27776}\label{class_matrix_a4886451fa27df3c4b4c886642ab27776}} 
+\index{Matrix@{Matrix}!Divide@{Divide}}
+\index{Divide@{Divide}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Divide()}{Divide()}}
+{\footnotesize\ttfamily void Matrix\+::\+Divide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat,  }\item[{const double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Divides given matrix by scalar constant value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Divided \mbox{\hyperlink{class_matrix}{Matrix}}. \\
+\hline
+{\em scalar} & Value by which matrix is being divided. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_ad7bf491631a12f9e68018a95bea2135f}\label{class_matrix_ad7bf491631a12f9e68018a95bea2135f}} 
+\index{Matrix@{Matrix}!GetID@{GetID}}
+\index{GetID@{GetID}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Matrix\+::\+Get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for matrix ID. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_matrix}{Matrix}}\textquotesingle{}s ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}\label{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}} 
+\index{Matrix@{Matrix}!GetMatrixArray@{GetMatrixArray}}
+\index{GetMatrixArray@{GetMatrixArray}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{GetMatrixArray()}{GetMatrixArray()}}
+{\footnotesize\ttfamily double $\ast$ Matrix\+::\+Get\+Matrix\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -87,11 +186,11 @@ Getter for mat field.
 \begin{DoxyReturn}{Returns}
 Pointer to matrix array. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_matrix_ae503f0ecfee02b37ef6f72b00d52790c}\label{class_matrix_ae503f0ecfee02b37ef6f72b00d52790c}} 
+\mbox{\Hypertarget{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}\label{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}} 
 \index{Matrix@{Matrix}!GetValue@{GetValue}}
 \index{GetValue@{GetValue}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
-{\footnotesize\ttfamily double Matrix\+::\+Get\+Value (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Matrix\+::\+Get\+Value (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row,  }\item[{uint8\+\_\+t}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -104,11 +203,28 @@ Returns value stored on the given position in matrix.
 {\em column} & The x index of the position in matrix. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_matrix_a996f38751067d1c33127263e7c6c0c7d}\label{class_matrix_a996f38751067d1c33127263e7c6c0c7d}} 
+\mbox{\Hypertarget{class_matrix_a08429f5aa98e740e74c27955942b1158}\label{class_matrix_a08429f5aa98e740e74c27955942b1158}} 
 \index{Matrix@{Matrix}!Multiply@{Multiply}}
 \index{Multiply@{Multiply}!Matrix@{Matrix}}
-\doxysubsubsection{\texorpdfstring{Multiply()}{Multiply()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::\+Multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat1,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{\texorpdfstring{Multiply()}{Multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Matrix\+::\+Multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat,  }\item[{const double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Multiplies given matrix by scalar constant value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Multiplied \mbox{\hyperlink{class_matrix}{Matrix}}. \\
+\hline
+{\em scalar} & Value by which matrix is being multiplied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_ab094af0b0a93d8fa1226139476f69f17}\label{class_matrix_ab094af0b0a93d8fa1226139476f69f17}} 
+\index{Matrix@{Matrix}!Multiply@{Multiply}}
+\index{Multiply@{Multiply}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Multiply()}{Multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Matrix\+::\+Multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat1,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$}]{mat2,  }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{out\+Mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -122,12 +238,14 @@ Multiplies matrixes as the mat1 $\ast$ mat2 and returns new object of type matri
 \hline
 {\em mat2} & Second matrix, by which first is being multiplied. \\
 \hline
+{\em out\+Mat} & The output matrix. \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}\label{class_matrix_a88f4bf85d8c3f8a4dd62a9d5930aa5d2}} 
+\mbox{\Hypertarget{class_matrix_a07a578a33e3d05ab109e35c32f062966}\label{class_matrix_a07a578a33e3d05ab109e35c32f062966}} 
 \index{Matrix@{Matrix}!PutValue@{PutValue}}
 \index{PutValue@{PutValue}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{PutValue()}{PutValue()}}
-{\footnotesize\ttfamily void Matrix\+::\+Put\+Value (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Matrix\+::\+Put\+Value (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row,  }\item[{uint8\+\_\+t}]{column,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -140,11 +258,26 @@ Puts the given value on the given position.
 {\em column} & The x index of the position in matrix. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_matrix_ae10c9c386e1661bb49323b751cdfab2b}\label{class_matrix_ae10c9c386e1661bb49323b751cdfab2b}} 
+\mbox{\Hypertarget{class_matrix_a9f3054826e39ab3caf223141fe1a128a}\label{class_matrix_a9f3054826e39ab3caf223141fe1a128a}} 
+\index{Matrix@{Matrix}!ResetMatrix@{ResetMatrix}}
+\index{ResetMatrix@{ResetMatrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{ResetMatrix()}{ResetMatrix()}}
+{\footnotesize\ttfamily void Matrix\+::\+Reset\+Matrix (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})}
+
+
+
+Function resets the matrix so each value of it is the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value that will be placed on each position in matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix_a9823f552deec6e353ad4b910de873e23}\label{class_matrix_a9823f552deec6e353ad4b910de873e23}} 
 \index{Matrix@{Matrix}!Rows@{Rows}}
 \index{Rows@{Rows}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{Rows()}{Rows()}}
-{\footnotesize\ttfamily int Matrix\+::\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily uint8\+\_\+t Matrix\+::\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -169,4 +302,4 @@ The returned string is in a following format\+:~\newline
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_matrix_8hpp}{Matrix.\+hpp}}\end{DoxyCompactItemize}
+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_matrix_8hpp}{Matrix.\+hpp}}\end{DoxyCompactItemize}

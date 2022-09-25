@@ -1,11 +1,14 @@
 var class_matrix =
 [
-    [ "Matrix", "class_matrix.html#a01b06ccde68bc91de22652e841d3e3ad", null ],
+    [ "Matrix", "class_matrix.html#a00c52f04b918a0d4a3241eb4cd31c26b", null ],
+    [ "Matrix", "class_matrix.html#adb6d6c9da85ace0a00871ed1627a1bd4", null ],
     [ "~Matrix", "class_matrix.html#a9b1c3627f573d78a2f08623fdfef990f", null ],
-    [ "Columns", "class_matrix.html#a3f5ea502dd80d3895b6722b08a1c7e4e", null ],
-    [ "GetMatrix", "class_matrix.html#a65f13564049159a71bc8e6ee50ed4934", null ],
-    [ "GetValue", "class_matrix.html#ae503f0ecfee02b37ef6f72b00d52790c", null ],
-    [ "PutValue", "class_matrix.html#a88f4bf85d8c3f8a4dd62a9d5930aa5d2", null ],
-    [ "Rows", "class_matrix.html#ae10c9c386e1661bb49323b751cdfab2b", null ],
+    [ "Columns", "class_matrix.html#a9604bef87537aeb194d6a708d8d8174a", null ],
+    [ "GetID", "class_matrix.html#ad7bf491631a12f9e68018a95bea2135f", null ],
+    [ "GetMatrixArray", "class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57", null ],
+    [ "GetValue", "class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad", null ],
+    [ "PutValue", "class_matrix.html#a07a578a33e3d05ab109e35c32f062966", null ],
+    [ "ResetMatrix", "class_matrix.html#a9f3054826e39ab3caf223141fe1a128a", null ],
+    [ "Rows", "class_matrix.html#a9823f552deec6e353ad4b910de873e23", null ],
     [ "ToString", "class_matrix.html#af40af6f88268cbe1850617269d1f80e2", null ]
 ];
