@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include <Utils/TimeProvider.hpp>
+
 #include <Core/Scene.hpp>
 #include <Rendering/RenderWindow.hpp>
 
@@ -11,6 +13,8 @@
 */
 class Core {
 public:
+  Core();
+  virtual ~Core() = default;
   /**
   * @brief Opens new RenderWindow with #width and #height and default loaded scene set to #scene.
   *
@@ -53,6 +57,8 @@ private:
   std::vector<RenderWindow*> openedWindows; //!< Array of currently opened windows.
 };
 
+inline Core::Core() { TimeProvider::OnEngineStart(); }
+
 void Core::OpenNewWindow(int width, int height, Scene* scene) {
   RenderWindow* window = new RenderWindow(width, height, scene);
 
@@ -76,6 +82,7 @@ void Core::CloseAllWindows() {
 }
 
 void Core::Quit() {
+  Logger::Info("Engine work time: %lf [s]", TimeProvider::GetTime_s());
   CloseAllWindows();
 }
 

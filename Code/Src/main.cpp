@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
   //scene.AddObject(rObj);
   scene.AddObject(&rObj2);
-  
+
   Core core;
   core.OpenNewWindow(1000, 800, &scene);
 

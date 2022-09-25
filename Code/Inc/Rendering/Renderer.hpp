@@ -140,6 +140,7 @@ void Renderer::DrawMesh(Mesh* mesh) {
 }
 
 Triangle Renderer::ProjectTriangle(Triangle* tri) {
+    //DOBIERA Pamięci!!!! Jednak nie XD
   static Matrix* projMat = GetProjectionMatrix();
 
   //TODO play around with static values

@@ -2,7 +2,8 @@
 #define _RENDERWINDOW_HPP_
 
 #include <queue>
-#include <chrono> /* time calculations */
+
+#include <Utils/TimeProvider.hpp>
 
 #include <Core/Scene.hpp>
 #include <Rendering/Renderer.hpp>
@@ -51,9 +52,7 @@ private:
   Renderer* renderer { nullptr }; //!< Widnows's renderer handler.
   Scene* loadedScene { nullptr }; //!< Loaded scene's handler.
 
-  double deltaTime_ms { 0.0 }; //!< Time of the last frame in milliseconds.
-  double deltaTimeSum_ms { 0.0 };
-  uint32_t framesAmount { 0 };
+  TimeProvider* timeProvider;
 
   /**
   * @brief Cleans everything that was drawn on the window.
@@ -77,45 +76,35 @@ RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
   }
 
   LoadScene(_scene);
+
+  timeProvider = new TimeProvider();
 }
 
 RenderWindow::~RenderWindow() {
-  if(renderer == nullptr) return;
   delete renderer;
+  delete timeProvider;
 }
 
 void RenderWindow::Start() {
   Logger::Info("==================Starting drawing process==================");
-  static std::chrono::steady_clock::time_point begin;
-  static std::chrono::steady_clock::time_point end;
 
   while(renderer->IsRunning()) {
-    begin = std::chrono::steady_clock::now();
+    timeProvider->OnFrameStart();
+
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
       renderer->DrawMesh(obj->GetMesh());
     }
-    // renderer->SetDrawColor(0, 255, 0);
-    // Vector3 p1(100.0, 100.0, 0.0);
-    // Vector3 p2(300.0, 100.0, 0.0);
-    // Vector3 p3(300.0, 300.0, 0.0);
-    // Triangle tri(&p1, &p2, &p3);
-    // renderer->DrawTri(&tri);
-    //
-    // renderer->SetDrawColor(255, 0, 0);
-    // renderer->DrawTri(0.0, 0.0, 0.0, 200.0, 200.0, 200.0);
 
     renderer->Show();
     renderer->GetEvent();
-    end = std::chrono::steady_clock::now();
-    deltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
-    deltaTimeSum_ms += deltaTime_ms;
-    Logger::Info("This frame took: %lf [ms] (%lf [s])", deltaTime_ms, deltaTime_ms * 0.001);
-    framesAmount++;
+
+    timeProvider->OnFrameEnd();
+    Logger::Info("This frame took: %lf [s]", timeProvider->GetDeltaTime_s());
   }
   renderer->Quit();
-  Logger::Info("Avreage frame time: %lf [ms]", deltaTimeSum_ms / framesAmount);
+  Logger::Info("Avreage frame time: %lf [s]", timeProvider->GetAverageFrameTime_s());
 }
 
 void RenderWindow::Close() {
