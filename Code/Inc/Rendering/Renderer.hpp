@@ -130,13 +130,11 @@ void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3
 }
 
 void Renderer::DrawMesh(Mesh* mesh) {
-  Logger::Log("============Drawing mesh %s============", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
     Triangle projTri = ProjectTriangle(mesh->GetTriangle(i));
     DrawTri(&projTri);
   }
-  Logger::Log("============Drawing mesh %s DONE============", mesh->GetName().c_str());
 }
 
 Triangle Renderer::ProjectTriangle(Triangle* tri) {

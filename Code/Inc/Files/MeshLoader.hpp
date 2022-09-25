@@ -95,10 +95,7 @@ void MeshLoader::ReadFromTxt(const char* fileName, Mesh* outMesh) {
   Logger::Log("============Loading mesh %s============", fileName);
   double d1,d2,d3,d4,d5,d6,d7,d8,d9;
   while (FileReader::GetLineFromOpenedFile(9, "%lf, %lf, %lf; %lf, %lf, %lf; %lf, %lf, %lf;", &d1, &d2, &d3, &d4, &d5, &d6, &d7, &d8, &d9) == 9) {
-    Vector3* v1 = new Vector3(d1, d2, d3);
-    Vector3* v2 = new Vector3(d4, d5, d6);
-    Vector3* v3 = new Vector3(d7, d8, d9);
-    Triangle* tri = new Triangle(v1, v2, v3);
+    Triangle* tri = new Triangle(d1, d2, d3, d4, d5, d6, d7, d8, d9);
     outMesh->AddTriangle(tri);
   }
   Logger::Log("============Mesh %s loading done.============", outMesh->GetName().c_str());

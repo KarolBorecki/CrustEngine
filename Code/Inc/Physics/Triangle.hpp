@@ -55,15 +55,16 @@ Triangle::Triangle(double p1X, double p1Y, double p1Z, double p2X, double p2Y, d
 }
 
 Triangle::Triangle(Vector3* point1, Vector3* point2, Vector3* point3) {
-  point[0] = point1;
-  point[1] = point2;
-  point[2] = point3;
+  point[0] = new Vector3(point1->X(), point1->Y(), point1->Z());
+  point[1] = new Vector3(point2->X(), point2->Y(), point2->Z());
+  point[2] = new Vector3(point3->X(), point3->Y(), point3->Z());
   Logger::Log(Logger::FontColor::GREEN, "[+] Creating Triangle");
 }
 
 Triangle::~Triangle() {
-  //for(int i = 0; i < 3; i++) //TODO!
-    //delete point[i];
+  delete point[0];
+  delete point[1];
+  delete point[2];
 }
 
 inline Vector3* Triangle::GetPoint(uint8_t index) { return point[index]; }

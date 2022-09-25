@@ -41,13 +41,11 @@ double TimeProvider::GetTime_s() {
 }
 
 void TimeProvider::OnFrameStart() {
-  Logger::Log("frame start %lf [ms]", GetDeltaTime_ms());
   lastFrameStartTimePoint = std::chrono::steady_clock::now();
 }
 
 void TimeProvider::OnFrameEnd() {
   frameDeltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - lastFrameStartTimePoint).count();
-  Logger::Log("frame end %lf [ms]", GetDeltaTime_ms());
   framesPassed++;
 }
 
