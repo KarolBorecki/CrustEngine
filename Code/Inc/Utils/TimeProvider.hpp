@@ -14,6 +14,9 @@ public:
   void OnFrameStart();
   void OnFrameEnd();
 
+  double GetFPS();
+  double GetAverageFPS();
+
   double GetDeltaTime_s();
   double GetDeltaTime_ms();
   double GetAverageFrameTime_s();
@@ -48,6 +51,10 @@ void TimeProvider::OnFrameEnd() {
   frameDeltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - lastFrameStartTimePoint).count();
   framesPassed++;
 }
+
+inline double TimeProvider::GetFPS() { return 1 / GetDeltaTime_s(); }
+
+inline double TimeProvider::GetAverageFPS() { return 1 / GetAverageFrameTime_s(); }
 
 inline double TimeProvider::GetDeltaTime_s() { return GetDeltaTime_ms() * MILISECONDS_TO_SECONDS; }
 

@@ -37,6 +37,16 @@ public:
   */
   double Z();
 
+  /*
+  * @brief Adds given x, y, z values to given vector.
+  *
+  * @param vec Modified vector to which values will be added.
+  * @param x Value added to #vec x field.
+  * @param y Value added to #vec y field.
+  * @param z Value added to #vec z field.
+  */
+  static void Add(Vector3* vec, double x, double y, double z);
+
   /**
   * @brief Setter for Vector3 x value.
   *
@@ -89,6 +99,12 @@ inline double Vector3::X() { return GetValue(0, 0); }
 inline double Vector3::Y() { return GetValue(0, 1); }
 
 inline double Vector3::Z() { return GetValue(0, 2); }
+
+void Vector3::Add(Vector3* vec, double x, double y, double z) {
+  vec->SetX(vec->X() + x);
+  vec->SetY(vec->Y() + y);
+  vec->SetZ(vec->Z() + z);
+}
 
 inline void Vector3::SetX(double valX) { PutValue(0, 0, valX); }
 

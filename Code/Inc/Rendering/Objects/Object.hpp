@@ -47,6 +47,13 @@ public:
   Vector3* GetPosition();
 
   /**
+  * @brief Moves object by given values.
+  *
+  * @details Adds x, y and z to adequate values of #pos vector values.
+  */
+  void Move(double x, double y, double z);
+
+  /**
   * @brief Getter for matrix ID.
   *
   * @return Matrix's ID.
@@ -84,6 +91,10 @@ Object::~Object() {
 inline bool Object::IsActive() { return isActive; }
 
 inline Vector3* Object::GetPosition() { return pos; }
+
+void Object::Move(double x, double y, double z) {
+  Vector3::Add(pos, x, y, z);
+}
 
 inline uint32_t Object::GetID() { return ID; }
 

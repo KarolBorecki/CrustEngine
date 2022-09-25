@@ -1,3 +1,5 @@
+#include <cstdlib> // Plz no
+
 #include <Core/Logger.hpp>
 
 #include <Core/Camera.hpp>
@@ -23,7 +25,7 @@ int main(int argc, char* argv[])
 
   Mesh mesh2("Sample mesh2");
   MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
-  RenderObject rObj2(0, 0, 0, &mesh2);
+  RenderObject rObj2(atoi(argv[0]), atoi(argv[1]), atoi(argv[1]), &mesh2);
 
   //scene.AddObject(&rObj);
   scene.AddObject(&rObj2);
