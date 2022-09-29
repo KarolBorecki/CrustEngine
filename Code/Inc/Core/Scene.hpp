@@ -8,6 +8,8 @@
 #include <Rendering/Objects/RenderObject.hpp>
 #include <Rendering/Objects/Object.hpp>
 
+#include <Scripting/CrustScript.hpp>
+
 /* For now only objects can be added/changed, camera must stay the same! */
 /**
 * @brief Class holding objects rendered on window and camera, from which the projection will be calculated.
@@ -26,6 +28,10 @@ public:
   */
   Scene(std::string _name, Camera* _mainCamera);
   ~Scene() {};
+
+  void Start();
+
+  void Update(double deltaTime);
 
   /**
   * @brief Getter for #mainCamera field.
@@ -71,6 +77,18 @@ private:
 };
 
 inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {Logger::Log("============Creating Scene============");Logger::Log("============Creating Scene DONE============");}
+
+void Scene::Start() {
+  for(auto obj : objects)
+    for(auto script : obj->GetScripts())
+      script->Start();
+}
+
+void Scene::Update(double deltaTime) {
+  for(auto obj : objects)
+    for(auto script : obj->GetScripts())
+      script->Update(deltaTime);
+}
 
 inline Camera* Scene::GetMainCamera() { return mainCamera; }
 

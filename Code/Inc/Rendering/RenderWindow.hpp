@@ -87,15 +87,18 @@ RenderWindow::~RenderWindow() {
 
 void RenderWindow::Start() {
   Logger::Info("==================Starting drawing process==================");
-  double moveSpeedX = 1;
-  double moveSpeedY = 2;
-  double moveSpeedZ = 0.5;
+  // double moveSpeedX = 1;
+  // double moveSpeedY = 2;
+  // double moveSpeedZ = 0.5;
+  //
+  // int moveDirX = 1;
+  // int moveDirY = 1;
+  // int moveDirZ = 1;
+  //
+  // int maxPos = 2;
 
-  int moveDirX = 1;
-  int moveDirY = 1;
-  int moveDirZ = 1;
+  loadedScene->Start();
 
-  int maxPos = 2;
   while(renderer->IsRunning()) {
     timeProvider->OnFrameStart();
 
@@ -104,17 +107,18 @@ void RenderWindow::Start() {
     for (auto obj : objs) {
       renderer->DrawMesh(obj->GetMesh(), obj->GetPosition());
 
-      if(moveDirX > 0 && obj->GetPosition()->X() >= maxPos) moveDirX = -1;
-      if(moveDirX < 0 && obj->GetPosition()->X() <= -maxPos) moveDirX = 1;
-
-      if(moveDirY > 0 && obj->GetPosition()->Y() >= maxPos) moveDirY = -1;
-      if(moveDirY < 0 && obj->GetPosition()->Y() <= -maxPos) moveDirY = 1;
-
-      if(moveDirZ > 0 && obj->GetPosition()->Z() >= maxPos) moveDirZ = -1;
-      if(moveDirZ < 0 && obj->GetPosition()->Z() <= -maxPos) moveDirZ = 1;
-      obj->Move(moveDirX * moveSpeedX * timeProvider->GetDeltaTime_s(), moveDirY * moveSpeedY * timeProvider->GetDeltaTime_s(), moveDirZ * moveSpeedZ * timeProvider->GetDeltaTime_s());
+      // if(moveDirX > 0 && obj->GetPosition()->X() >= maxPos) moveDirX = -1;
+      // if(moveDirX < 0 && obj->GetPosition()->X() <= -maxPos) moveDirX = 1;
+      //
+      // if(moveDirY > 0 && obj->GetPosition()->Y() >= maxPos) moveDirY = -1;
+      // if(moveDirY < 0 && obj->GetPosition()->Y() <= -maxPos) moveDirY = 1;
+      //
+      // if(moveDirZ > 0 && obj->GetPosition()->Z() >= maxPos) moveDirZ = -1;
+      // if(moveDirZ < 0 && obj->GetPosition()->Z() <= -maxPos) moveDirZ = 1;
+      // obj->Move(moveDirX * moveSpeedX * timeProvider->GetDeltaTime_s(), moveDirY * moveSpeedY * timeProvider->GetDeltaTime_s(), moveDirZ * moveSpeedZ * timeProvider->GetDeltaTime_s());
 
     }
+    loadedScene->Update(timeProvider->GetDeltaTime_s());
 
     renderer->Show();
     renderer->GetEvent();

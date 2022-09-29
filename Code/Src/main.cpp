@@ -13,6 +13,8 @@
 
 #include <Physics/Matrix.hpp>
 
+#include <Scripting/SampleScripts/LoopMove.hpp>
+
 int main(int argc, char* argv[])
 {
   Logger::Info("================STARTING THE ENGINE================");
@@ -23,9 +25,12 @@ int main(int argc, char* argv[])
   MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh);
   RenderObject rObj(0,0,0,&mesh);
 
-  Mesh mesh2("Sample mesh2");
-  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
-  RenderObject rObj2(atoi(argv[0]), atoi(argv[1]), atoi(argv[1]), &mesh2);
+  // Mesh mesh2("Sample mesh2");
+  // MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
+  // RenderObject rObj2(atoi(argv[0]), atoi(argv[1]), atoi(argv[1]), &mesh2);
+
+  LoopMove rObjMove(&rObj, 1, 2, 3, 3, 2, 1);
+  rObj.AttachScript(&rObjMove);
 
   scene.AddObject(&rObj);
   //scene.AddObject(&rObj2);

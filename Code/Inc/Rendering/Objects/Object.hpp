@@ -1,7 +1,11 @@
 #ifndef _OBJECT_HPP_
 #define _OBJECT_HPP_
 
+#include <vector>
+
 #include <Physics/Vector3.hpp>
+
+class CrustScript;
 
 /**
 * @brief Represents object present on the scene.
@@ -46,6 +50,15 @@ public:
   */
   Vector3* GetPosition();
 
+  std::vector<CrustScript*> GetScripts();
+
+  /**
+  * @brief Attaches given script functionality to this object.
+  *
+  * @param script Attached script which will be exectued specificly for this object.
+  */
+  void AttachScript(CrustScript* script);
+
   /**
   * @brief Moves object by given values.
   *
@@ -65,6 +78,8 @@ private:
 
   Vector3* pos; //!< Object position in 3D space.
 
+  std::vector<CrustScript*> scripts; //!< Scripts attached to this object, wchich will be executed.
+
   uint32_t ID; //!< Object's ID.
   static inline uint32_t nextID { 0 }; //!< Next object ID. Also holds amount of objects created on engine work. Only for debug purposes.
 
@@ -77,13 +92,13 @@ private:
   void Init(double posX, double posY, double posZ);
 };
 
-Object::Object() { Init(0.0, 0.0, 0.0); }
+inline Object::Object() { Init(0.0, 0.0, 0.0); }
 
-Object::Object(Vector3* pos) { Init(pos->X(), pos->Y(), pos->Z()); }
+inline Object::Object(Vector3* pos) { Init(pos->X(), pos->Y(), pos->Z()); }
 
-Object::Object(double posX, double posY, double posZ) { Init(posX, posY, posZ); }
+inline Object::Object(double posX, double posY, double posZ) { Init(posX, posY, posZ); }
 
-Object::~Object() {
+inline Object::~Object() {
   Logger::Log("Object destructor<%d>", GetID());
   delete pos;
 }
@@ -92,9 +107,11 @@ inline bool Object::IsActive() { return isActive; }
 
 inline Vector3* Object::GetPosition() { return pos; }
 
-void Object::Move(double x, double y, double z) {
-  Vector3::Add(pos, x, y, z);
-}
+inline std::vector<CrustScript*> Object::GetScripts() { return scripts; }
+
+inline void Object::AttachScript(CrustScript* script) { scripts.push_back(script); }
+
+inline void Object::Move(double x, double y, double z) { Vector3::Add(pos, x, y, z); }
 
 inline uint32_t Object::GetID() { return ID; }
 
