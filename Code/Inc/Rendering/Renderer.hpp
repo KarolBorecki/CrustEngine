@@ -158,6 +158,7 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos) {
   movedP1.SetXYZ(tri->GetPoint(0));
   movedP2.SetXYZ(tri->GetPoint(1));
   movedP3.SetXYZ(tri->GetPoint(2));
+
   Matrix::Add(&movedP1, pos);
   Matrix::Add(&movedP2, pos);
   Matrix::Add(&movedP3, pos);
@@ -205,19 +206,13 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos) {
 inline Matrix* Renderer::GetProjectionMatrix() { return projMatrix; }
 
 void Renderer::RecalculateProjectionMatrix(Camera* cam) {
-  Logger::Log("============Recalculating projection matrix============");
-  double a = aspectRatio;
-  float f = cam->GetFFovRad();
   double q = cam->GetFFar() / (cam->GetFFar() - cam->GetFNear());
-  double zNear = cam->GetFNear();
-  Logger::Log(Logger::FontColor::GREY, "a=%lf, f=%lf, q=%lf, zNear=%lf", a, f, q, zNear);
-  projMatrix->PutValue(0, 0, a * f);
-  projMatrix->PutValue(1, 1, f);
+  projMatrix->PutValue(0, 0, aspectRatio * cam->GetFFovRad());
+  projMatrix->PutValue(1, 1, cam->GetFFovRad());
   projMatrix->PutValue(2, 2, q);
   projMatrix->PutValue(2, 3, 1.0);
-  projMatrix->PutValue(3, 2, -zNear * q);
+  projMatrix->PutValue(3, 2, -cam->GetFNear() * q);
   Logger::Info(projMatrix->ToString().c_str());
-  Logger::Log("============Recalculating projection matrix DONE============");
 }
 
 

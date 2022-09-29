@@ -52,7 +52,7 @@ public:
   */
   static void Log(const char* format, ...);
   /**
-  * @brief Logs onto the console in colorCode color.
+  * @brief Logs onto the console in specified colorCode color.
   */
   static void Log(int colorCode, const char* format, ...);
 

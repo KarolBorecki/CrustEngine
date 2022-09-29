@@ -16,7 +16,7 @@ public:
   Core();
   virtual ~Core() = default;
   /**
-  * @brief Opens new RenderWindow with #width and #height and default loaded scene set to #scene.
+  * @brief Opens new RenderWindow of size #width x #height and default loaded scene set to #scene.
   *
   * @details Creates new object of instance RenderWindow and adds it to #openedWindows array. After this the created window starts using RenderWindow::Start().
   *
@@ -29,7 +29,7 @@ public:
   void OpenNewWindow(int width, int height, Scene* scene);
 
   /**
-  * @brief Closes the specified window #window.
+  * @brief Closes the specified #window.
   *
   * @details Searches for #window inside #openedWindows array and runs RenderWindow::Close method and deletes it's object.
   *

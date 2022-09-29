@@ -1,15 +1,16 @@
 #ifndef _FILEREADER_HPP_
 #define _FILEREADER_HPP_
 
-#include <Core/Logger.hpp>
+#include <Logging/Logger.hpp>
+
+#include <string.h>
 
 #include <cstdarg>
 #include <cstring>
 #include <cstdio>
 
-
 /**
-* @brief Static class used to read datat from file in classic-printf format.
+* @brief Static class used to read data from file in classic-printf format.
 */
 class FileReader {
 public:
@@ -42,11 +43,19 @@ public:
   static uint8_t GetLineFromOpenedFile(uint8_t expectedArgsCount, const char* format, ...);
 
   /**
+  * @brief Returns the filename from specified path.
+  *
+  * @return File's name with exitension.
+  */
+  static std::string GetFileName(const char* filepath);
+
+  /**
   * @brief Getter for #openedFile handler.
   *
   * @return #openedFile field.
   */
   static FILE* GetOpenedFileHanlder();
+
 private:
   static inline FILE* openedFile; //!< Currently opened file's handler.
 };
@@ -78,11 +87,18 @@ uint8_t FileReader::GetLineFromOpenedFile(uint8_t expectedArgsCount, const char 
   }
   va_list args;
   va_start(args, format);
-  uint8_t count = vfscanf(openedFile, format, args);
-  if(expectedArgsCount != count) return 0;
+  uint8_t argCount = vfscanf(openedFile, format, args);
+  if(expectedArgsCount != argCount) return 0;
   va_end(args);
 
-  return count;
+  return argCount;
+}
+
+std::string FileReader::GetFileName(const char* filepath) {
+  uint8_t index = strlen(filepath)-1;
+  while(filepath[index] != '/') index--;
+  std::string result(filepath);
+  return result.substr(index+1, strlen(filepath)-1);
 }
 
 inline FILE* FileReader::GetOpenedFileHanlder() { return openedFile; }

@@ -12,15 +12,18 @@ public:
   * @brief Creates blank vector4 that consists of values zero.
   */
   Vector4();
+
   /**
   * @param valXYZ Value for each X, Y, Z and W fields.
   */
   Vector4(double valXYZW);
+
   /**
   * @param vecXYZ Vector with values for each X, Y and Z.
   * @param w Value for W field.
   */
   Vector4(Vector3* vecXYZ, double w);
+
   /**
   * @param x Value for X field.
   * @param y Value for Y field.
@@ -34,14 +37,17 @@ public:
   * @brief Getter for Vector4 x value.
   */
   double X();
+
   /**
   * @brief Getter for Vector4 y value.
   */
   double Y();
+
   /**
   * @brief Getter for Vector4 z value.
   */
   double Z();
+
   /**
   * @brief Getter for Vector4 z value.
   */
@@ -53,12 +59,14 @@ public:
   * @param valX New value of vector's x.
   */
   void SetX(double valX);
+
   /**
   * @brief Setter for Vector4 y value.
   *
   * @param valY New value of vector's y.
   */
   void SetY(double valY);
+
   /**
   * @brief Setter for Vector4 z value.
   *
@@ -97,6 +105,17 @@ public:
   * @param vecXYZW Vector handling x, y, z, w values.
   */
   void SetXYZW(Vector4* vecXYZW);
+
+  /*
+  * @brief Adds given x, y, z, w values to given vector.
+  *
+  * @param vec Modified vector to which values will be added.
+  * @param x Value added to #vec x field.
+  * @param y Value added to #vec y field.
+  * @param z Value added to #vec z field.
+  * @param w Value added to #vec w field.
+  */
+  static void Add(Vector4* vec, double x, double y, double z, double w);
 
 private:
   void Init(double x, double y, double z, double w);
@@ -147,6 +166,13 @@ void Vector4::SetXYZW(Vector4* vecXYZW) {
   SetY(vecXYZW->Y());
   SetZ(vecXYZW->Z());
   SetW(vecXYZW->W());
+}
+
+void Vector4::Add(Vector4* vec, double x, double y, double z, double w) {
+  vec->SetX(vec->X() + x);
+  vec->SetY(vec->Y() + y);
+  vec->SetZ(vec->Z() + z);
+  vec->SetW(vec->W() + w);
 }
 
 inline void Vector4::Init(double x, double y, double z, double w) {

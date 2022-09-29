@@ -26,34 +26,6 @@ public:
   ~Matrix();
 
   /**
-  * @brief Returns value stored on the given position in matrix.
-  *
-  * @param row The y index of the position in matrix.
-  * @param column The x index of the position in matrix.
-  */
-  double GetValue(uint8_t row, uint8_t column);
-  /**
-  * @brief Puts the given value on the given position.
-  *
-  * @param row The y index of the position in matrix.
-  * @param column The x index of the position in matrix.
-  */
-  void PutValue(uint8_t row, uint8_t column, double value);
-
-  /**
-  * @brief Function resets the matrix so each value of it is the same.
-  *
-  * @param val The value that will be placed on each position in matrix.
-  */
-  void ResetMatrix(double val);
-
-  /**
-  * @brief Getter for #mat field.
-  *
-  * @return Pointer to matrix array.
-  */
-  double* GetMatrixArray();
-  /**
   * @brief Getter for #rows field.
   *
   * @return Amount of rows in matrix.
@@ -65,6 +37,52 @@ public:
   * @return Amount of columns in matrix
   */
   uint8_t Columns();
+
+  /**
+  * @brief Getter for #mat field.
+  *
+  * @return Pointer to matrix array.
+  */
+  double* GetMatrixArray();
+
+  /**
+  * @brief Returns value stored on the given position in matrix.
+  *
+  * @param row The y index of the position in matrix.
+  * @param column The x index of the position in matrix.
+  */
+  double GetValue(uint8_t row, uint8_t column);
+
+  /**
+  * @brief Puts the given value on the given position.
+  *
+  * @param row The y index of the position in matrix.
+  * @param column The x index of the position in matrix.
+  */
+  void PutValue(uint8_t row, uint8_t column, double value);
+
+  /**
+  * @brief Function resets the matrix so each value of it is the same.
+  *
+  * @param value The value that will be placed on each position in matrix.
+  */
+  void ResetMatrix(double value);
+
+  /**
+  * @brief Adds to given matrix #mat1 another matrix #mat2.
+  *
+  * @param mat1 Modifiaed matrix.
+  * @param mat2 Added matrix.
+  */
+  static void Add(Matrix* mat1, Matrix* mat2);
+
+  /**
+  * @brief Adds to given matrix scalar, constant value.
+  *
+  * @param mat Matrix to which values scalar will be added.
+  * @param scalar Value which will be added.
+  */
+  static void Add(Matrix* mat, const double scalar);
 
   /**
   * @brief Multiplies given matrixes.
@@ -94,22 +112,6 @@ public:
   static void Divide(Matrix* mat, const double scalar);
 
   /**
-  * @brief Adds to given matrix #mat1 another matrix #mat2.
-  *
-  * @param mat1 Modifiaed matrix.
-  * @param mat2 Added matrix.
-  */
-  static void Add(Matrix* mat1, Matrix* mat2);
-
-  /**
-  * @brief Adds to given matrix scalar constant value.
-  *
-  * @param mat Matrix to which values scalar will be added.
-  * @param scalar Value which will be added.
-  */
-  static void Add(Matrix* mat, const double scalar);
-
-  /**
   * @brief Converts matrix to std::string, so it can be written on any output.
   *
   * @details The returned string is in a following format:<br>
@@ -133,6 +135,13 @@ private:
   uint32_t ID; //!< Matrix's ID.
   static inline uint32_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
 
+  /**
+  * @brief Init function for Matrix. It creates all necessarry arrays and fills it with #defaultVal.
+  *
+  * @param newRows Amount of rows in created array.
+  * @param newColumns Amount of columns in created array.
+  * @param defaultVal Value that the matrix will be filled with after creation.
+  */
   void Init(uint8_t newRows, uint8_t newColumns, double defaultVal);
   uint8_t GetMatRealIndex(uint8_t row, uint8_t column);
 };
@@ -146,29 +155,40 @@ inline Matrix::~Matrix() {
   delete [] mat;
 }
 
-inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }
-
-inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[GetMatRealIndex(row, column)] = value; }
-
-void Matrix::ResetMatrix(double val) {
-  for(uint8_t i=0; i < Rows(); i++)
-    for(uint8_t j=0; j < Columns(); j++)
-      PutValue(i, j, val);
-}
-
-inline double* Matrix::GetMatrixArray() { return mat; }
-
 inline uint8_t Matrix::Rows() { return rows; }
 
 inline uint8_t Matrix::Columns() { return columns; }
 
+inline double* Matrix::GetMatrixArray() { return mat; }
+
+inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }
+
+inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[GetMatRealIndex(row, column)] = value; }
+
+void Matrix::ResetMatrix(double value) {
+  for(uint8_t i=0; i < rows * columns; i++) mat[i] = value;
+}
+
+void Matrix::Add(Matrix* mat1, Matrix* mat2) {
+  if(mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns()) return;
+  for(uint8_t i=0; i < mat1->Rows(); i++)
+    for(uint8_t j=0; j < mat1->Columns(); j++)
+      mat1->PutValue(i, j, mat1->GetValue(i, j) + mat2->GetValue(i, j));
+}
+
+void Matrix::Add(Matrix* mat, const double scalar) {
+  for(uint8_t i=0; i < mat->Rows(); i++)
+    for(uint8_t j=0; j < mat->Columns(); j++)
+      mat->PutValue(i, j, mat->GetValue(i, j) + scalar);
+}
+
 void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
   uint8_t resultRows = mat1->Rows();
   uint8_t resultColumns = mat2->Columns();
-  //TODO outMat resultMat
+
   if(mat1->Columns() != mat2->Rows()) {
     Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
-    return; // TODO error?? read throw std::runtime_error()
+    throw std::runtime_error("Matrix multiplication failed!");
   }
 
   for(uint8_t r=0; r<resultRows; r++) {
@@ -183,29 +203,16 @@ void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
 }
 
 void Matrix::Multiply(Matrix* mat, const double scalar) {
-  if(scalar == 0.0) return;
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) * scalar);
 }
 
 void Matrix::Divide(Matrix* mat, const double scalar) {
+  if(scalar == 0.0) return;
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) / scalar);
-}
-
-void Matrix::Add(Matrix* mat1, Matrix* mat2) {
-  if(mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns()) return;
-  for(uint8_t i=0; i < mat1->Rows(); i++)
-    for(uint8_t j=0; j < mat1->Columns(); j++)
-      mat1->PutValue(i, j, mat1->GetValue(i, j) + mat2->GetValue(i, j));
-}
-
-void Matrix::Add(Matrix* mat, const double scalar) {
-  for(uint8_t i=0; i < mat->Rows(); i++)
-    for(uint8_t j=0; j < mat->Columns(); j++)
-      mat->PutValue(i, j, mat->GetValue(i, j) + scalar);
 }
 
 std::string Matrix::ToString() {

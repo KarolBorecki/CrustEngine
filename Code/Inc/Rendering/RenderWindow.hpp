@@ -68,11 +68,11 @@ RenderWindow::RenderWindow(int _width, int _height, Scene* _scene) {
 
   if(renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK) {
     Logger::Error("Drawer could not be initialized!");
-    //TODO quit
+    throw std::runtime_error("RenderWindow failed to initzialize");
   }
   if(renderer->CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK) {
     Logger::Error("Drawer could not be created!");
-    //TODO quit
+    throw std::runtime_error("RenderWindow failed to initzialize");
   }
 
   LoadScene(_scene);

@@ -77,8 +77,7 @@ inline Camera* Scene::GetMainCamera() { return mainCamera; }
 void Scene::AddObject(Object* obj) {
   objects.push_back(obj);
   RenderObject* renderObj = static_cast<RenderObject*>(obj);
-  if(renderObj != nullptr)
-    renderObjects.push_back(renderObj);
+  if(renderObj != nullptr) renderObjects.push_back(renderObj);
 }
 
 inline std::vector<RenderObject*> Scene::GetObjectsToRender() { return renderObjects; }
