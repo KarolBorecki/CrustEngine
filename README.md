@@ -8,6 +8,7 @@ Here are listed basic requirements for this project:
 - Possibility to change camera perspective and field of view.
 - Easy compilation process and usage (No need for external installation processes).
 - Fully documented project using deoxygen.
+- Everything written by hande (No code generations).
 
 # Compilation using g++
 Inside CrustEngine folder run command:
