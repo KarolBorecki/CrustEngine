@@ -6,6 +6,7 @@
 
 #include <Core/Camera.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
+#include <Rendering/Objects/LightSource.hpp>
 #include <Rendering/Objects/Object.hpp>
 
 #include <Scripting/CrustScript.hpp>
@@ -45,11 +46,11 @@ public:
   /**
   * @brief Adds the object to the scene.
   *
-  * @details Adds the object to the #objects array and if is type of RenderObject adds it's handler to renderObjects array.
+  * @details Adds the object to the #objects array and if is type of RenderObject or LightSource adds it's handler to #renderObjects or #lightSources array.
   *
   * @param obj Added object.
   *
-  * @sa Object.hpp RenderObject.hpp
+  * @sa Object.hpp RenderObject.hpp LightSource.hpp
   */
   void AddObject(Object* obj);
   /**
@@ -60,6 +61,15 @@ public:
   * @sa RenderObject.hpp
   */
   std::vector<RenderObject*> GetObjectsToRender();
+
+  /**
+  * @brief Getter for #lightSources field.
+  *
+  * @return #lightSources field.
+  *
+  * @sa LightSource.hpp
+  */
+  std::vector<LightSource*> GetLightSources();
 
   /**
   * @brief Getter for #name field.
@@ -74,6 +84,7 @@ private:
 
   std::vector<Object*> objects; //!< Objects present on the scene.
   std::vector<RenderObject*> renderObjects; //!< Renderable objects present on the scene. This array is sub-array of objects.
+  std::vector<LightSource*> lightSources; //!< Light sources in the scene. This array is sub-array of objects.
 };
 
 inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {Logger::Log("============Creating Scene============");Logger::Log("============Creating Scene DONE============");}
@@ -93,12 +104,25 @@ void Scene::Update(double deltaTime) {
 inline Camera* Scene::GetMainCamera() { return mainCamera; }
 
 void Scene::AddObject(Object* obj) {
+  Logger::Info("Adding object<%d>", obj->GetID());
   objects.push_back(obj);
-  RenderObject* renderObj = static_cast<RenderObject*>(obj);
-  if(renderObj != nullptr) renderObjects.push_back(renderObj);
+
+  RenderObject* renderObj = dynamic_cast<RenderObject*>(obj);
+  if(renderObj != nullptr) {
+    Logger::Log("Obj<%d> is renderable!", obj->GetID());
+    renderObjects.push_back(renderObj);
+  }
+
+  LightSource* lightSource = dynamic_cast<LightSource*>(obj);
+  if(lightSource != nullptr) {
+    Logger::Log("Obj<%d> is light!", obj->GetID());
+    lightSources.push_back(lightSource);
+  }
 }
 
 inline std::vector<RenderObject*> Scene::GetObjectsToRender() { return renderObjects; }
+
+inline std::vector<LightSource*> Scene::GetLightSources() { return lightSources; }
 
 inline std::string Scene::GetName() { return name; }
 

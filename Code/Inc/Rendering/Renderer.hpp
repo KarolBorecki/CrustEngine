@@ -1,7 +1,7 @@
-#ifndef _DRAWER_HPP_
-#define _DRAWER_HPP_
+#ifndef _RENDERER_HPP_
+#define _RENDERER_HPP_
 
-#include <math.h> /* cos, sin */
+#include <math.h> /* cos, sin, sqrt */
 
 #include <Physics/Matrix.hpp>
 
@@ -44,18 +44,6 @@ public:
   void DrawTri(Triangle* tri);
 
   /**
-  * @brief Draws triangle with given coordinates on the screen.
-  *
-  * @param p1X Point 1 X.
-  * @param p1Y Point 1 Y.
-  * @param p2X Point 2 X.
-  * @param p2Y Point 2 Y.
-  * @param p3X Point 3 X.
-  * @param p3Y Point 3 Y.
-  */
-  void DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y);
-
-  /**
   * @brief Draws given mesh on the screen
   *
   * @details Class held by RenderWindow.hpp for drawing purposes.
@@ -63,10 +51,11 @@ public:
   *
   * @param mesh Mesh that will be drawn.
   * @param pos Position in 3D space at which the mesh will be drawn.
+  * @param cam Camera, from which perspective the mesh will be projected.
   *
   * @sa Mesh.hpp
   */
-  void DrawMesh(Mesh* mesh, Vector3* pos);
+  void DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam);
 
   /**
   * @brief Projects given triangle using #projMatrix.
@@ -76,10 +65,11 @@ public:
   *
   * @param tri Projected triangle.
   * @param pos Projected triangle's mesh position in 3D space.
+  * @param cam Camera, from which perspective the triangle will be projected.
   *
   * @return Projected triangle.
   */
-  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos);
+  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam);
 
   /**
   * @brief Getter for #projMatrix field.
@@ -123,34 +113,21 @@ Renderer::~Renderer() {
   delete projMatrix;
 }
 
-void Renderer::DrawTri(Triangle* tri) {
-  DrawLine(tri->GetPoint(0)->X(), tri->GetPoint(0)->Y(), tri->GetPoint(1)->X(), tri->GetPoint(1)->Y());
-  DrawLine(tri->GetPoint(1)->X(), tri->GetPoint(1)->Y(), tri->GetPoint(2)->X(), tri->GetPoint(2)->Y());
-  DrawLine(tri->GetPoint(2)->X(), tri->GetPoint(2)->Y(), tri->GetPoint(0)->X(), tri->GetPoint(0)->Y());
-}
-
-void Renderer::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y) {
-  DrawLine(p1X, p1Y, p2X, p2Y);
-  DrawLine(p2X, p2Y, p3X, p3Y);
-  DrawLine(p3X, p3Y, p1X, p1Y);
-}
-
-void Renderer::DrawMesh(Mesh* mesh, Vector3* pos) {
-  Logger::Log("Drawng mesh %s", mesh->GetName().c_str());
+void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam) {
+  Logger::Log("Drawing mesh %s", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
-    DrawTri(ProjectTriangle(mesh->GetTriangle(i), pos));
+    ProjectTriangle(mesh->GetTriangle(i), pos, cam);
   }
+  Logger::Log("Drawing mesh %s DONE!", mesh->GetName().c_str());
 }
 
-Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos) {
+Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam) {
   //DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix* projMat = GetProjectionMatrix();
+  static Triangle result;
 
-  static Vector4 extendedP1;
-  static Vector4 extendedP2;
-  static Vector4 extendedP3;
-
+  /* Moving object's triangle */
   static Vector3 movedP1;
   static Vector3 movedP2;
   static Vector3 movedP3;
@@ -163,43 +140,80 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos) {
   Matrix::Add(&movedP2, pos);
   Matrix::Add(&movedP3, pos);
 
-  extendedP1.SetXYZW(&movedP1, 1.0);
-  extendedP2.SetXYZW(&movedP2, 1.0);
-  extendedP3.SetXYZW(&movedP3, 1.0);
+  /* Normalizing object's triangle */
+  static Vector3 normal;
+  static Vector3 line1;
+  static Vector3 line2;
 
-  static Vector4 outMatP1;
-  static Vector4 outMatP2;
-  static Vector4 outMatP3;
+  line1.SetX(movedP2.X() - movedP1.X());
+  line1.SetY(movedP2.Y() - movedP1.Y());
+  line1.SetZ(movedP2.Z() - movedP1.Z());
 
-  Matrix::Multiply(&extendedP1, projMat, outMatP1);
-  Matrix::Multiply(&extendedP2, projMat, outMatP2);
-  Matrix::Multiply(&extendedP3, projMat, outMatP3);
+  line2.SetX(movedP3.X() - movedP1.X());
+  line2.SetY(movedP3.Y() - movedP1.Y());
+  line2.SetZ(movedP3.Z() - movedP1.Z());
 
-  static Vector3 projectedP1;
-  static Vector3 projectedP2;
-  static Vector3 projectedP3;
-  projectedP1.SetXYZ(outMatP1.GetValue(0,0), outMatP1.GetValue(0,1), outMatP1.GetValue(0,2));
-  projectedP2.SetXYZ(outMatP2.GetValue(0,0), outMatP2.GetValue(0,1), outMatP2.GetValue(0,2));
-  projectedP3.SetXYZ(outMatP3.GetValue(0,0), outMatP3.GetValue(0,1), outMatP3.GetValue(0,2));
+  normal.SetX(line1.Y() * line2.Z() - line1.Z() * line2.Y());
+  normal.SetY(line1.Z() * line2.X() - line1.X() * line2.Z());
+  normal.SetZ(line1.X() * line2.Y() - line1.Y() * line2.X());
 
-  Matrix::Divide(&projectedP1, outMatP1.GetValue(0,3));
-  Matrix::Divide(&projectedP2, outMatP2.GetValue(0,3));
-  Matrix::Divide(&projectedP3, outMatP3.GetValue(0,3));
+  static double normalLen;
+  normalLen = sqrt(normal.X() * normal.X() + normal.Y() * normal.Y() + normal.Z() * normal.Z());
+  Matrix::Divide(&normal, normalLen);
 
-  Matrix::Add(&projectedP1, 1);
-  Matrix::Add(&projectedP2, 1);
-  Matrix::Add(&projectedP3, 1);
+  /* calculate dot product */
+  static double dotProduct;
+  dotProduct = normal.X() * (movedP1.X() - cam->GetPosition()->X()) +
+               normal.Y() * (movedP1.Y() - cam->GetPosition()->Y()) +
+               normal.Z() * (movedP1.Z() - cam->GetPosition()->Z());
 
-  Matrix::Multiply(&projectedP1, 0.5);
-  Matrix::Multiply(&projectedP2, 0.5);
-  Matrix::Multiply(&projectedP3, 0.5);
+  if(dotProduct < 0.0) {
+    /* Projecting object's triangle */
+    static Vector4 extendedP1;
+    static Vector4 extendedP2;
+    static Vector4 extendedP3;
 
-  projectedP1.SetX(projectedP1.X() * Width()); projectedP1.SetY(projectedP1.Y() * Height());
-  projectedP2.SetX(projectedP2.X() * Width()); projectedP2.SetY(projectedP2.Y() * Height());
-  projectedP3.SetX(projectedP3.X() * Width()); projectedP3.SetY(projectedP3.Y() * Height());
+    extendedP1.SetXYZW(&movedP1, 1.0);
+    extendedP2.SetXYZW(&movedP2, 1.0);
+    extendedP3.SetXYZW(&movedP3, 1.0);
 
-  static Triangle result;
-  result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
+    static Vector4 outMatP1;
+    static Vector4 outMatP2;
+    static Vector4 outMatP3;
+
+    Matrix::Multiply(&extendedP1, projMat, outMatP1);
+    Matrix::Multiply(&extendedP2, projMat, outMatP2);
+    Matrix::Multiply(&extendedP3, projMat, outMatP3);
+
+    static Vector3 projectedP1;
+    static Vector3 projectedP2;
+    static Vector3 projectedP3;
+
+    projectedP1.SetXYZ(outMatP1.GetValue(0,0), outMatP1.GetValue(0,1), outMatP1.GetValue(0,2));
+    projectedP2.SetXYZ(outMatP2.GetValue(0,0), outMatP2.GetValue(0,1), outMatP2.GetValue(0,2));
+    projectedP3.SetXYZ(outMatP3.GetValue(0,0), outMatP3.GetValue(0,1), outMatP3.GetValue(0,2));
+
+    /* Scaling object's triangle to world space */
+    Matrix::Divide(&projectedP1, outMatP1.GetValue(0,3));
+    Matrix::Divide(&projectedP2, outMatP2.GetValue(0,3));
+    Matrix::Divide(&projectedP3, outMatP3.GetValue(0,3));
+
+    Matrix::Add(&projectedP1, 1);
+    Matrix::Add(&projectedP2, 1);
+    Matrix::Add(&projectedP3, 1);
+
+    Matrix::Multiply(&projectedP1, 0.5);
+    Matrix::Multiply(&projectedP2, 0.5);
+    Matrix::Multiply(&projectedP3, 0.5);
+
+    projectedP1.SetX(projectedP1.X() * Width()); projectedP1.SetY(projectedP1.Y() * Height());
+    projectedP2.SetX(projectedP2.X() * Width()); projectedP2.SetY(projectedP2.Y() * Height());
+    projectedP3.SetX(projectedP3.X() * Width()); projectedP3.SetY(projectedP3.Y() * Height());
+
+
+    result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
+    DrawFilledTri(result.GetPoint(0)->X(), result.GetPoint(0)->Y(), result.GetPoint(1)->X(), result.GetPoint(1)->Y(), result.GetPoint(2)->X(), result.GetPoint(2)->Y(), RendererWrapper::RendererColor::WHITE);
+  }
   return &result;
 }
 
@@ -216,4 +230,4 @@ void Renderer::RecalculateProjectionMatrix(Camera* cam) {
 }
 
 
-#endif /* _DRAWER_HPP_ */
+#endif /* _RENDERER_HPP_ */

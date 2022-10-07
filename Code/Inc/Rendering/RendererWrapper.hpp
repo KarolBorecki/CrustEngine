@@ -120,6 +120,32 @@ public:
   void DrawLine(int startX, int startY, int endX, int endY);
 
   /**
+  * @brief Draws triangle with given coordinates on the screen.
+  *
+  * @param p1X Point 1 X.
+  * @param p1Y Point 1 Y.
+  * @param p2X Point 2 X.
+  * @param p2Y Point 2 Y.
+  * @param p3X Point 3 X.
+  * @param p3Y Point 3 Y.
+  */
+  void DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y);
+
+  /**
+  * @brief Draws given triangle on the screen.
+  *
+  * @param p1X Point 1 X.
+  * @param p1Y Point 1 Y.
+  * @param p2X Point 2 X.
+  * @param p2Y Point 2 Y.
+  * @param p3X Point 3 X.
+  * @param p3Y Point 3 Y.
+  *
+  * @sa Triangle.hpp
+  */
+  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, int color);
+
+  /**
   * @brief Function called to show everything that has been drawn on the screen after last RendererWrapper::Show call.
   */
   void Show();
@@ -207,6 +233,22 @@ inline void RendererWrapper::SetDrawColor(int color) {
 
 inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY) {
   SDL_RenderDrawLine(renderer, startX, startY, endX, endY);
+}
+
+void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y) {
+  DrawLine(p1X, p1Y, p2X, p2Y);
+  DrawLine(p2X, p2Y, p3X, p3Y);
+  DrawLine(p3X, p3Y, p1X, p1Y);
+}
+
+inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, int color) {
+  const std::vector< SDL_Vertex > verts =
+  {
+      { SDL_FPoint{ static_cast<float>(p1X), static_cast<float>(p1Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
+      { SDL_FPoint{ static_cast<float>(p2X), static_cast<float>(p2Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
+      { SDL_FPoint{ static_cast<float>(p3X), static_cast<float>(p3Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
+  };
+  SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
 }
 
 inline void RendererWrapper::Show() {

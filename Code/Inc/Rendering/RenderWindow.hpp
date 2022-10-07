@@ -105,7 +105,7 @@ void RenderWindow::Start() {
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      renderer->DrawMesh(obj->GetMesh(), obj->GetPosition());
+      renderer->DrawMesh(obj->GetMesh(), obj->GetPosition(), loadedScene->GetMainCamera());
 
       // if(moveDirX > 0 && obj->GetPosition()->X() >= maxPos) moveDirX = -1;
       // if(moveDirX < 0 && obj->GetPosition()->X() <= -maxPos) moveDirX = 1;

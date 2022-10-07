@@ -7,6 +7,7 @@
 #include <Core/Core.hpp>
 
 #include <Rendering/Mesh.hpp>
+#include <Rendering/Objects/LightSource.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
 
 #include <Files/MeshLoader.hpp>
@@ -24,16 +25,19 @@ int main(int argc, char* argv[])
   Mesh mesh("Sample mesh");
   MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh);
   RenderObject rObj(0,0,0,&mesh);
-
-  // Mesh mesh2("Sample mesh2");
-  // MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
-  // RenderObject rObj2(atoi(argv[0]), atoi(argv[1]), atoi(argv[1]), &mesh2);
-
-  LoopMove rObjMove(&rObj, 1, 2, 3, 3, 2, 1);
+  LoopMove rObjMove(&rObj, -2, 2, -3, 3, 3, 7, 1, 2, 3);
   rObj.AttachScript(&rObjMove);
 
+  Mesh mesh2("Sample mesh");
+  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
+  RenderObject rObj2(0,0,0,&mesh2);
+
+  Vector3 lightSourceDir(0.0, 0.0, 1.0);
+  LightSource lightSource(255, &lightSourceDir);
+
   scene.AddObject(&rObj);
-  //scene.AddObject(&rObj2);
+  scene.AddObject(&rObj2);
+  scene.AddObject(&lightSource);
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);

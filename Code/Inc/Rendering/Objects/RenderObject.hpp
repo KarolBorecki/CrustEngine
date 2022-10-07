@@ -30,6 +30,8 @@ public:
   RenderObject(Mesh* _mesh);
   ~RenderObject();
 
+  std::string GetObjectTypeName() override;
+
   /**
   * @brief Getter for #mesh field.
   *
@@ -55,6 +57,8 @@ inline RenderObject::RenderObject(double posX, double posY, double posZ, Mesh* _
 inline RenderObject::RenderObject(Mesh* _mesh) : mesh(_mesh), Object() {}
 
 inline RenderObject::~RenderObject() {}
+
+inline std::string RenderObject::GetObjectTypeName() { return "Render Object"; }
 
 inline Mesh* RenderObject::GetMesh() { return mesh; }
 

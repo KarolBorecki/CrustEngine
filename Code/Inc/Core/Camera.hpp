@@ -3,6 +3,8 @@
 
 #include <math.h>
 
+#include <Rendering/Objects/Object.hpp>
+
 /**
 * @brief Converts #angleInDegrees to radians.
 */
@@ -15,7 +17,7 @@
 /**
 * @brief Class representing the camera on a scene from which's perespective the renderer can render Mesh.
 */
-class Camera {
+class Camera : public Object {
 public:
   /**
   * @details Also calculates the fFovRad for given input.

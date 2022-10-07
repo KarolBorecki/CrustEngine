@@ -36,6 +36,8 @@ public:
 
   ~Object();
 
+  virtual std::string GetObjectTypeName();
+
   /**
   * @brief Getter for #isActive field.
   *
@@ -50,6 +52,11 @@ public:
   */
   Vector3* GetPosition();
 
+  /**
+  * @brief Getter for #scripts field.
+  *
+  * @sa CrustScript.hpp
+  */
   std::vector<CrustScript*> GetScripts();
 
   /**
@@ -102,6 +109,8 @@ inline Object::~Object() {
   Logger::Log("Object destructor<%d>", GetID());
   delete pos;
 }
+
+inline std::string Object::GetObjectTypeName() { return "Object"; }
 
 inline bool Object::IsActive() { return isActive; }
 
