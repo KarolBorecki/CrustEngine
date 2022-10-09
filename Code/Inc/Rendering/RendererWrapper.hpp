@@ -143,7 +143,7 @@ public:
   *
   * @sa Triangle.hpp
   */
-  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, int color);
+  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b);
 
   /**
   * @brief Function called to show everything that has been drawn on the screen after last RendererWrapper::Show call.
@@ -241,12 +241,12 @@ void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, do
   DrawLine(p3X, p3Y, p1X, p1Y);
 }
 
-inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, int color) {
+inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b) {
   const std::vector< SDL_Vertex > verts =
   {
-      { SDL_FPoint{ static_cast<float>(p1X), static_cast<float>(p1Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
-      { SDL_FPoint{ static_cast<float>(p2X), static_cast<float>(p2Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
-      { SDL_FPoint{ static_cast<float>(p3X), static_cast<float>(p3Y) }, SDL_Color{ static_cast<uint8_t>((color & 0xFF0000)>> 16), static_cast<uint8_t>((color & 0x00FF00) >> 8), static_cast<uint8_t>((color & 0x0000FF)), 255 }, SDL_FPoint{ 0 }, },
+      { SDL_FPoint{ static_cast<float>(p1X), static_cast<float>(p1Y) }, SDL_Color{ r, g, b, 255 }, SDL_FPoint{ 0 }, },
+      { SDL_FPoint{ static_cast<float>(p2X), static_cast<float>(p2Y) }, SDL_Color{ r, g, b, 255 }, SDL_FPoint{ 0 }, },
+      { SDL_FPoint{ static_cast<float>(p3X), static_cast<float>(p3Y) }, SDL_Color{ r, g, b, 255 }, SDL_FPoint{ 0 }, },
   };
   SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
 }

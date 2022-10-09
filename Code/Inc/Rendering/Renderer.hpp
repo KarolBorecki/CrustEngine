@@ -55,7 +55,7 @@ public:
   *
   * @sa Mesh.hpp
   */
-  void DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam);
+  void DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam, Vector3* lightDir);
 
   /**
   * @brief Projects given triangle using #projMatrix.
@@ -69,7 +69,7 @@ public:
   *
   * @return Projected triangle.
   */
-  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam);
+  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Vector3* lightDir);
 
   /**
   * @brief Getter for #projMatrix field.
@@ -113,16 +113,16 @@ Renderer::~Renderer() {
   delete projMatrix;
 }
 
-void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam) {
+void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam, Vector3* lightDir) {
   Logger::Log("Drawing mesh %s", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
-    ProjectTriangle(mesh->GetTriangle(i), pos, cam);
+    ProjectTriangle(mesh->GetTriangle(i), pos, cam, lightDir);
   }
   Logger::Log("Drawing mesh %s DONE!", mesh->GetName().c_str());
 }
 
-Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam) {
+Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Vector3* lightDir) {
   //DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix* projMat = GetProjectionMatrix();
   static Triangle result;
@@ -168,6 +168,15 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam) {
                normal.Z() * (movedP1.Z() - cam->GetPosition()->Z());
 
   if(dotProduct < 0.0) {
+    /* Illumination */
+    static double lightDirNormalLen;
+    static Vector3 lightDirNormal;
+    lightDirNormal.SetXYZ(lightDir);
+    lightDirNormalLen = sqrt(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
+    Matrix::Divide(&lightDirNormal, lightDirNormalLen);
+    static double lightDotProduct;
+    lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
+
     /* Projecting object's triangle */
     static Vector4 extendedP1;
     static Vector4 extendedP2;
@@ -212,7 +221,8 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam) {
 
 
     result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
-    DrawFilledTri(result.GetPoint(0)->X(), result.GetPoint(0)->Y(), result.GetPoint(1)->X(), result.GetPoint(1)->Y(), result.GetPoint(2)->X(), result.GetPoint(2)->Y(), RendererWrapper::RendererColor::WHITE);
+    Logger::Log("Dot producy illumination: %lf", lightDotProduct);
+    DrawFilledTri(result.GetPoint(0)->X(), result.GetPoint(0)->Y(), result.GetPoint(1)->X(), result.GetPoint(1)->Y(), result.GetPoint(2)->X(), result.GetPoint(2)->Y(), (uint8_t)(lightDotProduct*255), (uint8_t)(lightDotProduct*255), (uint8_t)(lightDotProduct*255));
   }
   return &result;
 }

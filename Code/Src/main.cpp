@@ -28,15 +28,15 @@ int main(int argc, char* argv[])
   LoopMove rObjMove(&rObj, -2, 2, -3, 3, 3, 7, 1, 2, 3);
   rObj.AttachScript(&rObjMove);
 
-  Mesh mesh2("Sample mesh");
-  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
-  RenderObject rObj2(0,0,0,&mesh2);
+  // Mesh mesh2("Sample mesh");
+  // MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/meshT.txt", &mesh2);
+  // RenderObject rObj2(0,0,0,&mesh2);
 
-  Vector3 lightSourceDir(0.0, 0.0, 1.0);
+  Vector3 lightSourceDir(0.0, 0.0, -1.0);
   LightSource lightSource(255, &lightSourceDir);
 
   scene.AddObject(&rObj);
-  scene.AddObject(&rObj2);
+  // scene.AddObject(&rObj2);
   scene.AddObject(&lightSource);
 
   Core core;
