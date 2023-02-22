@@ -53,6 +53,13 @@ public:
   Vector3* GetPosition();
 
   /**
+  * @brief Getter for #rot field.
+  *
+  * @return #rot field.
+  */
+  Vector3* GetRotation();
+
+  /**
   * @brief Getter for #scripts field.
   *
   * @sa CrustScript.hpp
@@ -74,6 +81,13 @@ public:
   void Move(double x, double y, double z);
 
   /**
+  * @brief Rotates object by given values.
+  *
+  * @details Adds x, y and z to adequate values of #rot vector values.
+  */
+  void Rotate(double x, double y, double z);
+
+  /**
   * @brief Getter for matrix ID.
   *
   * @return Matrix's ID.
@@ -83,7 +97,8 @@ public:
 private:
   bool isActive { true }; //!< Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.
 
-  Vector3* pos; //!< Object position in 3D space.
+  Vector3* pos; //!< Object's position in 3D space.
+  Vector3* rot; //!< Object's Euler roatation in 3D space.
 
   std::vector<CrustScript*> scripts; //!< Scripts attached to this object, wchich will be executed.
 
@@ -108,6 +123,7 @@ inline Object::Object(double posX, double posY, double posZ) { Init(posX, posY, 
 inline Object::~Object() {
   Logger::Log("Object destructor<%d>", GetID());
   delete pos;
+  delete rot;
 }
 
 inline std::string Object::GetObjectTypeName() { return "Object"; }
@@ -116,11 +132,15 @@ inline bool Object::IsActive() { return isActive; }
 
 inline Vector3* Object::GetPosition() { return pos; }
 
+inline Vector3* Object::GetRotation() { return rot; }
+
 inline std::vector<CrustScript*> Object::GetScripts() { return scripts; }
 
 inline void Object::AttachScript(CrustScript* script) { scripts.push_back(script); }
 
 inline void Object::Move(double x, double y, double z) { Vector3::Add(pos, x, y, z); }
+
+inline void Object::Rotate(double x, double y, double z) { Vector3::Add(rot, x, y, z); }
 
 inline uint32_t Object::GetID() { return ID; }
 
@@ -128,6 +148,7 @@ void Object::Init(double posX, double posY, double posZ) {
   ID = nextID++;
   Logger::Log("============Creating object<%d>============", GetID());
   pos = new Vector3(posX, posY, posZ);
+  rot = new Vector3(0.0, 0.0, 0.0); // TODO
   Logger::Log("============Object creation done<%d>============", GetID());
 }
 

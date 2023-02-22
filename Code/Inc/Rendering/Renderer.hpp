@@ -51,11 +51,13 @@ public:
   *
   * @param mesh Mesh that will be drawn.
   * @param pos Position in 3D space at which the mesh will be drawn.
+  * @param rot Rotation in 3D space at which the mesh will be drawn.
   * @param cam Camera, from which perspective the mesh will be projected.
+  * @param projectLight Flag if the light should be proojected.
   *
   * @sa Mesh.hpp
   */
-  void DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam, Vector3* lightDir);
+  void DrawMesh(Mesh* mesh, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight);
 
   /**
   * @brief Projects given triangle using #projMatrix.
@@ -65,11 +67,13 @@ public:
   *
   * @param tri Projected triangle.
   * @param pos Projected triangle's mesh position in 3D space.
+  * @param rot Projected triangle's mesh rotataion in 3D space.
   * @param cam Camera, from which perspective the triangle will be projected.
+  * @param projectLight Flag if the light should be proojected.
   *
   * @return Projected triangle.
   */
-  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Vector3* lightDir);
+  Triangle* ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight);
 
   /**
   * @brief Getter for #projMatrix field.
@@ -113,16 +117,17 @@ Renderer::~Renderer() {
   delete projMatrix;
 }
 
-void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Camera* cam, Vector3* lightDir) {
+void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight) {
   Logger::Log("Drawing mesh %s", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
+
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
-    ProjectTriangle(mesh->GetTriangle(i), pos, cam, lightDir);
+    ProjectTriangle(mesh->GetTriangle(i), pos, rot, cam, lightDir, projectLight);
   }
   Logger::Log("Drawing mesh %s DONE!", mesh->GetName().c_str());
 }
 
-Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Vector3* lightDir) {
+Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight) {
   //DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix* projMat = GetProjectionMatrix();
   static Triangle result;
@@ -171,12 +176,17 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Ve
     /* Illumination */
     static double lightDirNormalLen;
     static Vector3 lightDirNormal;
-    lightDirNormal.SetXYZ(lightDir);
-    lightDirNormalLen = sqrt(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
-    Matrix::Divide(&lightDirNormal, lightDirNormalLen);
     static double lightDotProduct;
-    lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
 
+    if(projectLight) {
+      lightDirNormal.SetXYZ(lightDir);
+      lightDirNormalLen = sqrt(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
+      Matrix::Divide(&lightDirNormal, lightDirNormalLen);
+
+      lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
+    } else {
+      lightDotProduct = 1.0;
+    }
     /* Projecting object's triangle */
     static Vector4 extendedP1;
     static Vector4 extendedP2;
@@ -219,9 +229,7 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Camera* cam, Ve
     projectedP2.SetX(projectedP2.X() * Width()); projectedP2.SetY(projectedP2.Y() * Height());
     projectedP3.SetX(projectedP3.X() * Width()); projectedP3.SetY(projectedP3.Y() * Height());
 
-
     result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
-    Logger::Log("Dot producy illumination: %lf", lightDotProduct);
     DrawFilledTri(result.GetPoint(0)->X(), result.GetPoint(0)->Y(), result.GetPoint(1)->X(), result.GetPoint(1)->Y(), result.GetPoint(2)->X(), result.GetPoint(2)->Y(), (uint8_t)(lightDotProduct*255), (uint8_t)(lightDotProduct*255), (uint8_t)(lightDotProduct*255));
   }
   return &result;

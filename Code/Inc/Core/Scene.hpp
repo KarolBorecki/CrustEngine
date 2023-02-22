@@ -72,6 +72,18 @@ public:
   std::vector<LightSource*> GetLightSources();
 
   /**
+  * @brief Getter for #projectLight field.
+  *
+  * @return #lightSources field, which represents if the lightning is done accordingly to light sources on the scene or set to maximum on each face.
+  */
+  bool IsLightProjected();
+
+  /**
+  * @brief Sets if the light should be projected.
+  */
+  void SetLightProjection(bool project);
+
+  /**
   * @brief Getter for #name field.
   *
   * @return #name field.
@@ -81,6 +93,8 @@ public:
 private:
   std::string name; //!< Scene name, also used as window caption.
   Camera* mainCamera { nullptr }; //!< Main camera from which perspective the projection will be calculated.
+
+  bool projectLight { true }; //!< If true the light will be projected accordingly to light sources, if false all mesh's faces will be projected with maximum lighting.
 
   std::vector<Object*> objects; //!< Objects present on the scene.
   std::vector<RenderObject*> renderObjects; //!< Renderable objects present on the scene. This array is sub-array of objects.
@@ -123,6 +137,10 @@ void Scene::AddObject(Object* obj) {
 inline std::vector<RenderObject*> Scene::GetObjectsToRender() { return renderObjects; }
 
 inline std::vector<LightSource*> Scene::GetLightSources() { return lightSources; }
+
+inline bool Scene::IsLightProjected() { return projectLight; }
+
+inline void Scene::SetLightProjection(bool project) { projectLight = project; }
 
 inline std::string Scene::GetName() { return name; }
 

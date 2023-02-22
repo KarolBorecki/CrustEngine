@@ -105,18 +105,7 @@ void RenderWindow::Start() {
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      renderer->DrawMesh(obj->GetMesh(), obj->GetPosition(), loadedScene->GetMainCamera(), loadedScene->GetLightSources().at(0)->GetDirection());
-
-      // if(moveDirX > 0 && obj->GetPosition()->X() >= maxPos) moveDirX = -1;
-      // if(moveDirX < 0 && obj->GetPosition()->X() <= -maxPos) moveDirX = 1;
-      //
-      // if(moveDirY > 0 && obj->GetPosition()->Y() >= maxPos) moveDirY = -1;
-      // if(moveDirY < 0 && obj->GetPosition()->Y() <= -maxPos) moveDirY = 1;
-      //
-      // if(moveDirZ > 0 && obj->GetPosition()->Z() >= maxPos) moveDirZ = -1;
-      // if(moveDirZ < 0 && obj->GetPosition()->Z() <= -maxPos) moveDirZ = 1;
-      // obj->Move(moveDirX * moveSpeedX * timeProvider->GetDeltaTime_s(), moveDirY * moveSpeedY * timeProvider->GetDeltaTime_s(), moveDirZ * moveSpeedZ * timeProvider->GetDeltaTime_s());
-
+      renderer->DrawMesh(obj->GetMesh(), obj->GetPosition(), obj->GetRotation(), loadedScene->GetMainCamera(), loadedScene->GetLightSources().at(0)->GetDirection(), loadedScene->IsLightProjected());
     }
     loadedScene->Update(timeProvider->GetDeltaTime_s());
 

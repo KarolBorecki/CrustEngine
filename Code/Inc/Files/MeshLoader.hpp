@@ -2,6 +2,7 @@
 #define _MESHLOADER_HPP_
 
 #include <string.h>
+#include <vector>
 
 #include <Files/FileReader.hpp>
 
@@ -56,8 +57,8 @@ void MeshLoader::LoadMeshFromFile(const char* fileName, Mesh* outMesh) {
     Logger::Error("No mathing file extension for file: %s", fileName);
 }
 
-//TODO Need to figure out how to converte vertex to triangles
-void MeshLoader::ReadFromObj(const char* fileName, Mesh* outMesh) {
+void MeshLoader::ReadFromObj(const char *fileName, Mesh *outMesh)
+{
   FileReader::OpenFile(fileName);
 
   char materialName[256];
@@ -68,20 +69,40 @@ void MeshLoader::ReadFromObj(const char* fileName, Mesh* outMesh) {
   outMesh->SetName(objectName);
 
   char vertexType[3] = {'\0'};
-  double d1=1.0,d2=1.0,d3=1.0;
-  while (FileReader::GetLineFromOpenedFile(1, "%s", vertexType) > 0) {
-    if(vertexType[0] == 'v' && vertexType[1] == '\0') {
-      FileReader::GetLineFromOpenedFile(3, " %lf %lf %lf\n", &d1, &d2, &d3);
-      Logger::Log(Logger::FontColor::LIGHT_BLUE, "%s: %lf, %lf, %lf", vertexType, d1, d2, d3);
+
+  double d1 = 1.0, d2 = 1.0, d3 = 1.0;
+  int p1 = 1, p2 = 1, p3 = 1;
+
+  Vector3 *points[20000];
+  Triangle *tri[20000];
+
+  int currentPoint = 0;
+  int currentTri = 0;
+
+  while (FileReader::GetLineFromOpenedFile(1, "%s", vertexType) > 0)
+  {
+    if (vertexType[0] == 'v')
+    {
+      if (FileReader::GetLineFromOpenedFile(3, " %lf %lf %lf\n", &d1, &d2, &d3) == 3)
+      {
+        points[currentPoint] = new Vector3(d1, d2, d3);
+        currentPoint++;
+      }
     }
-    else if(vertexType[0] == 'v' && vertexType[1] == 't') {
-      FileReader::GetLineFromOpenedFile(2, " %lf %lf\n", &d1, &d2);
-      Logger::Log(Logger::FontColor::LIGHT_BLUE, "%s: %lf, %lf", vertexType, d1, d2);
+    else if (vertexType[0] == 'f')
+    {
+      if (FileReader::GetLineFromOpenedFile(3, " %d %d %d\n", &p1, &p2, &p3) == 3)
+      {
+        tri[currentTri] = new Triangle(points[p1 - 1], points[p2 - 1], points[p3 - 1]);
+        currentTri++;
+      }
     }
-    else if(vertexType[0] == 'v' && vertexType[1] == 'n') {
-      FileReader::GetLineFromOpenedFile(3, " %lf %lf %lf\n", &d1, &d2, &d3);
-      Logger::Log(Logger::FontColor::LIGHT_BLUE, "%s: %lf, %lf, %lf", vertexType, d1, d2, d3);
-    }
+  }
+  Logger::Log("Reading mesh end.");
+  for (uint8_t i = 0; i < currentTri; i++)
+  {
+    Logger::Log(Logger::FontColor::LIGHT_BLUE, "Adding tri: %d", i);
+    outMesh->AddTriangle(tri[i]);
   }
 
   FileReader::CloseOpenedFile();
