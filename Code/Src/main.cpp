@@ -7,7 +7,7 @@
 #include <Core/Core.hpp>
 
 #include <Rendering/Mesh.hpp>
-#include <Rendering/Objects/LightSource.hpp>
+#include <Rendering/Objects/Lightining/DirectionalLight.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
 
 #include <Files/MeshLoader.hpp>
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
   
   std::string name = argv[1];
   std::string path = "/Users/karolborecki/Desktop/CrustEngine/meshes/" + name + ".obj";
-  
+
   MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
   RenderObject rObj(0,0,0,&mesh);
 
@@ -38,10 +38,10 @@ int main(int argc, char* argv[])
   // rObj.AttachScript(&rObjRotation);
 
   Vector3 lightSourceDir(0.6, 0.2, -0.5);
-  LightSource lightSource(255, &lightSourceDir);
+  DirectionalLight dirLightSource(255, &lightSourceDir);
 
   scene.AddObject(&rObj);
-  scene.AddObject(&lightSource);
+  scene.AddObject(&dirLightSource);
 
   scene.SetLightProjection(true);
 

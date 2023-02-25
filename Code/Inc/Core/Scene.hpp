@@ -6,7 +6,7 @@
 
 #include <Core/Camera.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
-#include <Rendering/Objects/LightSource.hpp>
+#include <Rendering/Objects/Lightining/LightSource.hpp>
 #include <Rendering/Objects/Object.hpp>
 
 #include <Scripting/CrustScript.hpp>

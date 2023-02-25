@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 
-#include <Files/FileReader.hpp>
-
 /**
  * @brief Class used to read meshes from *.obj file
  */
