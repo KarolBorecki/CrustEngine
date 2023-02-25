@@ -24,11 +24,9 @@ Inheritance diagram for Renderer\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_renderer_aa08362456da3321f246d4de151232e27}{Draw\+Tri}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri)
 \begin{DoxyCompactList}\small\item\em Draws given triangle on the screen. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}{Draw\+Tri}} (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
-\begin{DoxyCompactList}\small\item\em Draws triangle with given coordinates on the screen. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}{Draw\+Mesh}} (\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$mesh, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos)
+void \mbox{\hyperlink{class_renderer_a05d32dacc896f21d4975a0c5655a402d}{Draw\+Mesh}} (\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$mesh, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$rot, \mbox{\hyperlink{class_camera}{Camera}} $\ast$cam, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$light\+Dir, bool project\+Light)
 \begin{DoxyCompactList}\small\item\em Draws given mesh on the screen. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}{Project\+Triangle}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos)
+\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_renderer_ae150d2d3f583b20e971ad60197205e36}{Project\+Triangle}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$rot, \mbox{\hyperlink{class_camera}{Camera}} $\ast$cam, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$light\+Dir, bool project\+Light)
 \begin{DoxyCompactList}\small\item\em Projects given triangle using proj\+Matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{Get\+Projection\+Matrix}} ()
 \begin{DoxyCompactList}\small\item\em Getter for proj\+Matrix field. \end{DoxyCompactList}\item 
@@ -72,11 +70,11 @@ Creates new object of type \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Mat
 If proj\+Matrix is not nullptr deletes it. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}\label{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}} 
+\mbox{\Hypertarget{class_renderer_a05d32dacc896f21d4975a0c5655a402d}\label{class_renderer_a05d32dacc896f21d4975a0c5655a402d}} 
 \index{Renderer@{Renderer}!DrawMesh@{DrawMesh}}
 \index{DrawMesh@{DrawMesh}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{mesh,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{mesh,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
 
 
 
@@ -88,41 +86,22 @@ Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for d
 \begin{DoxyParams}{Parameters}
 {\em mesh} & \mbox{\hyperlink{class_mesh}{Mesh}} that will be drawn. \\
 \hline
-{\em pos} & Position in 3D space at which the mesh will be drawn.\\
+{\em pos} & Position in 3D space at which the mesh will be drawn. \\
+\hline
+{\em rot} & Rotation in 3D space at which the mesh will be drawn. \\
+\hline
+{\em cam} & \mbox{\hyperlink{class_camera}{Camera}}, from which perspective the mesh will be projected. \\
+\hline
+{\em project\+Light} & Flag if the light should be proojected.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}\label{class_renderer_aa784d59b6e5c5bbe005dabd8534911ff}} 
-\index{Renderer@{Renderer}!DrawTri@{DrawTri}}
-\index{DrawTri@{DrawTri}!Renderer@{Renderer}}
-\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p3X,  }\item[{double}]{p3Y }\end{DoxyParamCaption})}
-
-
-
-Draws triangle with given coordinates on the screen. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p1X} & Point 1 X. \\
-\hline
-{\em p1Y} & Point 1 Y. \\
-\hline
-{\em p2X} & Point 2 X. \\
-\hline
-{\em p2Y} & Point 2 Y. \\
-\hline
-{\em p3X} & Point 3 X. \\
-\hline
-{\em p3Y} & Point 3 Y. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_renderer_aa08362456da3321f246d4de151232e27}\label{class_renderer_aa08362456da3321f246d4de151232e27}} 
 \index{Renderer@{Renderer}!DrawTri@{DrawTri}}
 \index{DrawTri@{DrawTri}!Renderer@{Renderer}}
-\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}}
 {\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri }\end{DoxyParamCaption})}
 
 
@@ -150,11 +129,11 @@ Getter for proj\+Matrix field.
 \begin{DoxyReturn}{Returns}
 Handler to proj\+Matrix field. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}\label{class_renderer_ad650d8daefe4a5687dfe56296b3ce0e5}} 
+\mbox{\Hypertarget{class_renderer_ae150d2d3f583b20e971ad60197205e36}\label{class_renderer_ae150d2d3f583b20e971ad60197205e36}} 
 \index{Renderer@{Renderer}!ProjectTriangle@{ProjectTriangle}}
 \index{ProjectTriangle@{ProjectTriangle}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{ProjectTriangle()}{ProjectTriangle()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Renderer\+::\+Project\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Renderer\+::\+Project\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
 
 
 
@@ -166,7 +145,13 @@ Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for d
 \begin{DoxyParams}{Parameters}
 {\em tri} & Projected triangle. \\
 \hline
-{\em pos} & Projected triangle\textquotesingle{}s mesh position in 3D space.\\
+{\em pos} & Projected triangle\textquotesingle{}s mesh position in 3D space. \\
+\hline
+{\em rot} & Projected triangle\textquotesingle{}s mesh rotataion in 3D space. \\
+\hline
+{\em cam} & \mbox{\hyperlink{class_camera}{Camera}}, from which perspective the triangle will be projected. \\
+\hline
+{\em project\+Light} & Flag if the light should be proojected.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -209,4 +194,4 @@ The engine calculation is made based on this formulas.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}

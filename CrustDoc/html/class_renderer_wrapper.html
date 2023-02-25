@@ -166,6 +166,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1c53fa72b0542f272bf45b137e9b647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#ad1c53fa72b0542f272bf45b137e9b647">DrawLine</a> (int startX, int startY, int endX, int endY)</td></tr>
 <tr class="memdesc:ad1c53fa72b0542f272bf45b137e9b647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws straight line on the window from start (x, y) to end (x, y). X and y values are given in pixels.  <a href="class_renderer_wrapper.html#ad1c53fa72b0542f272bf45b137e9b647">More...</a><br /></td></tr>
 <tr class="separator:ad1c53fa72b0542f272bf45b137e9b647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9565e9243bda9121b22ce7c37c96d415"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#a9565e9243bda9121b22ce7c37c96d415">DrawTri</a> (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)</td></tr>
+<tr class="memdesc:a9565e9243bda9121b22ce7c37c96d415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws triangle with given coordinates on the screen.  <a href="class_renderer_wrapper.html#a9565e9243bda9121b22ce7c37c96d415">More...</a><br /></td></tr>
+<tr class="separator:a9565e9243bda9121b22ce7c37c96d415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38eae28dbbd7a9a6ab621040fc88101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#ae38eae28dbbd7a9a6ab621040fc88101">DrawFilledTri</a> (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b)</td></tr>
+<tr class="memdesc:ae38eae28dbbd7a9a6ab621040fc88101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws given triangle on the screen.  <a href="class_renderer_wrapper.html#ae38eae28dbbd7a9a6ab621040fc88101">More...</a><br /></td></tr>
+<tr class="separator:ae38eae28dbbd7a9a6ab621040fc88101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb51647308b1afb0fe1af41b9085e65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer_wrapper.html#a1eb51647308b1afb0fe1af41b9085e65">Show</a> ()</td></tr>
 <tr class="memdesc:a1eb51647308b1afb0fe1af41b9085e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called to show everything that has been drawn on the screen after last <a class="el" href="class_renderer_wrapper.html#a1eb51647308b1afb0fe1af41b9085e65" title="Function called to show everything that has been drawn on the screen after last RendererWrapper::Show...">RendererWrapper::Show</a> call.  <a href="class_renderer_wrapper.html#a1eb51647308b1afb0fe1af41b9085e65">More...</a><br /></td></tr>
 <tr class="separator:a1eb51647308b1afb0fe1af41b9085e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,6 +392,98 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae38eae28dbbd7a9a6ab621040fc88101" name="ae38eae28dbbd7a9a6ab621040fc88101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38eae28dbbd7a9a6ab621040fc88101">&#9670;&#160;</a></span>DrawFilledTri()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RendererWrapper::DrawFilledTri </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws given triangle on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1X</td><td>Point 1 X. </td></tr>
+    <tr><td class="paramname">p1Y</td><td>Point 1 Y. </td></tr>
+    <tr><td class="paramname">p2X</td><td>Point 2 X. </td></tr>
+    <tr><td class="paramname">p2Y</td><td>Point 2 Y. </td></tr>
+    <tr><td class="paramname">p3X</td><td>Point 3 X. </td></tr>
+    <tr><td class="paramname">p3Y</td><td>Point 3 Y.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_triangle_8hpp.html">Triangle.hpp</a> </dd></dl>
+
+</div>
+</div>
 <a id="ad1c53fa72b0542f272bf45b137e9b647" name="ad1c53fa72b0542f272bf45b137e9b647"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1c53fa72b0542f272bf45b137e9b647">&#9670;&#160;</a></span>DrawLine()</h2>
 
@@ -433,6 +531,71 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws straight line on the window from start (x, y) to end (x, y). X and y values are given in pixels. </p>
+
+</div>
+</div>
+<a id="a9565e9243bda9121b22ce7c37c96d415" name="a9565e9243bda9121b22ce7c37c96d415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9565e9243bda9121b22ce7c37c96d415">&#9670;&#160;</a></span>DrawTri()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RendererWrapper::DrawTri </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p1Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p2Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p3Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws triangle with given coordinates on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1X</td><td>Point 1 X. </td></tr>
+    <tr><td class="paramname">p1Y</td><td>Point 1 Y. </td></tr>
+    <tr><td class="paramname">p2X</td><td>Point 2 X. </td></tr>
+    <tr><td class="paramname">p2Y</td><td>Point 2 Y. </td></tr>
+    <tr><td class="paramname">p3X</td><td>Point 3 X. </td></tr>
+    <tr><td class="paramname">p3Y</td><td>Point 3 Y. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -896,7 +1059,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_wrapper_8hpp_source.html">RendererWrapper.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/<a class="el" href="_renderer_wrapper_8hpp_source.html">RendererWrapper.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

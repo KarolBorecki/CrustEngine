@@ -1,5 +1,5 @@
 \hypertarget{_renderer_wrapper_8hpp_source}{}\doxysection{Renderer\+Wrapper.\+hpp}
-\label{_renderer_wrapper_8hpp_source}\index{CrustEngine/Code/Inc/Rendering/RendererWrapper.hpp@{CrustEngine/Code/Inc/Rendering/RendererWrapper.hpp}}
+\label{_renderer_wrapper_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/RendererWrapper.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/RendererWrapper.hpp}}
 \mbox{\hyperlink{_renderer_wrapper_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RENDERERWRAPPER\_HPP\_}}
@@ -53,100 +53,120 @@
 \DoxyCodeLine{116 }
 \DoxyCodeLine{120   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(\textcolor{keywordtype}{int} startX, \textcolor{keywordtype}{int} startY, \textcolor{keywordtype}{int} endX, \textcolor{keywordtype}{int} endY);}
 \DoxyCodeLine{121 }
-\DoxyCodeLine{125   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Show}}();}
-\DoxyCodeLine{129   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}}();}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{136   \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} \mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{IsRunning}}();}
-\DoxyCodeLine{142   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{StopRunning}}();}
-\DoxyCodeLine{146   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{GetEvent}}();}
+\DoxyCodeLine{132   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a9565e9243bda9121b22ce7c37c96d415}{DrawTri}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{146   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_ae38eae28dbbd7a9a6ab621040fc88101}{DrawFilledTri}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, uint8\_t r, uint8\_t g, uint8\_t b);}
 \DoxyCodeLine{147 }
-\DoxyCodeLine{153   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}}();}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{158   \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{GetRenderer}}();}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{163   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{Width}}();}
-\DoxyCodeLine{167   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{Height}}();}
-\DoxyCodeLine{168 }
-\DoxyCodeLine{169 \textcolor{keyword}{private}:}
-\DoxyCodeLine{170   \textcolor{keywordtype}{int} width; }
-\DoxyCodeLine{171   \textcolor{keywordtype}{int} height; }
-\DoxyCodeLine{172 }
-\DoxyCodeLine{173   \mbox{\hyperlink{_renderer_wrapper_8hpp_ae8b47be60271af516c1ddae887a141b2}{LibRendererWindow}}* window; }
-\DoxyCodeLine{174   \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* renderer; }
-\DoxyCodeLine{175 }
-\DoxyCodeLine{176   \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} isRunning; }
-\DoxyCodeLine{177 \};}
-\DoxyCodeLine{178 }
-\DoxyCodeLine{179 \textcolor{keyword}{inline} \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109}{RendererWrapper::RendererStatus}} \mbox{\hyperlink{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}{RendererWrapper::Init}}() \{}
-\DoxyCodeLine{180   \textcolor{keywordflow}{return} SDL\_Init(SDL\_INIT\_VIDEO) == 0 ? \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{STATUS\_OK}} : \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109a96523c4649647a1a2d98a3761126ba8e}{STATUS\_FAIL}};}
-\DoxyCodeLine{181 \}}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183 \textcolor{keyword}{inline} \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109}{RendererWrapper::RendererStatus}} \mbox{\hyperlink{class_renderer_wrapper_aa75e25014c0efd3ff09d9fdf4e8bbff5}{RendererWrapper::CreateWindow}}() \{}
-\DoxyCodeLine{184   isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_a4262a62250555f6547de7aff6da4cc82}{LibRendererTrue}};}
-\DoxyCodeLine{185   \textcolor{keywordflow}{return} SDL\_CreateWindowAndRenderer(width, height, 0, \&window, \&renderer) == 0 ? \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{STATUS\_OK}} : \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109a96523c4649647a1a2d98a3761126ba8e}{STATUS\_FAIL}};}
-\DoxyCodeLine{186 \}}
-\DoxyCodeLine{187 }
-\DoxyCodeLine{188 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a34dd25d862f072d17d0f6a7aedfd2d59}{RendererWrapper::SetWindowTitle}}(std::string title) \{}
-\DoxyCodeLine{189   SDL\_SetWindowTitle(window, title.c\_str());}
-\DoxyCodeLine{190 \}}
-\DoxyCodeLine{191 }
-\DoxyCodeLine{192 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} g, \textcolor{keywordtype}{int} b, \textcolor{keywordtype}{int} a) \{}
-\DoxyCodeLine{193   SDL\_SetRenderDrawColor(renderer, r, g, b, a);}
-\DoxyCodeLine{194 \}}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{196 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} g, \textcolor{keywordtype}{int} b) \{}
-\DoxyCodeLine{197   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(r, g, b, 255);}
-\DoxyCodeLine{198 \}}
-\DoxyCodeLine{199 }
-\DoxyCodeLine{200 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} color, \textcolor{keywordtype}{int} a) \{}
-\DoxyCodeLine{201   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}((color \& 0xFF0000)>> 16, (color \& 0x00FF00) >> 8, (color \& 0x0000FF), a);}
-\DoxyCodeLine{202 \}}
-\DoxyCodeLine{203 }
-\DoxyCodeLine{204 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} color) \{}
-\DoxyCodeLine{205   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(color, 255);}
-\DoxyCodeLine{206 \}}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{208 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{RendererWrapper::DrawLine}}(\textcolor{keywordtype}{int} startX, \textcolor{keywordtype}{int} startY, \textcolor{keywordtype}{int} endX, \textcolor{keywordtype}{int} endY) \{}
-\DoxyCodeLine{209   SDL\_RenderDrawLine(renderer, startX, startY, endX, endY);}
-\DoxyCodeLine{210 \}}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{212 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{RendererWrapper::Show}}() \{}
-\DoxyCodeLine{213   SDL\_RenderPresent(renderer);}
-\DoxyCodeLine{214 \}}
-\DoxyCodeLine{215 }
-\DoxyCodeLine{216 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{RendererWrapper::Clean}}() \{}
-\DoxyCodeLine{217   SDL\_RenderClear(renderer);}
-\DoxyCodeLine{218 \}}
-\DoxyCodeLine{219 }
-\DoxyCodeLine{220 \textcolor{keyword}{inline} \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} \mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{RendererWrapper::IsRunning}}() \{}
-\DoxyCodeLine{221   \textcolor{keywordflow}{return} isRunning;}
-\DoxyCodeLine{222 \}}
-\DoxyCodeLine{223 }
-\DoxyCodeLine{224 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{RendererWrapper::StopRunning}}() \{}
-\DoxyCodeLine{225   isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_ab58498eca2b16ba6caabc4fee5c6eef7}{LibRendererFalse}};}
-\DoxyCodeLine{226 \}}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{228 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{RendererWrapper::GetEvent}}() \{}
-\DoxyCodeLine{229   SDL\_Event event;}
-\DoxyCodeLine{230   \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))}
-\DoxyCodeLine{231     \textcolor{keywordflow}{if}(event.type == SDL\_QUIT) isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_ab58498eca2b16ba6caabc4fee5c6eef7}{LibRendererFalse}};}
+\DoxyCodeLine{151   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Show}}();}
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}}();}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{162   \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} \mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{IsRunning}}();}
+\DoxyCodeLine{168   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{StopRunning}}();}
+\DoxyCodeLine{172   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{GetEvent}}();}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{179   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}}();}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{184   \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{GetRenderer}}();}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{189   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{Width}}();}
+\DoxyCodeLine{193   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{Height}}();}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keyword}{private}:}
+\DoxyCodeLine{196   \textcolor{keywordtype}{int} width; }
+\DoxyCodeLine{197   \textcolor{keywordtype}{int} height; }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199   \mbox{\hyperlink{_renderer_wrapper_8hpp_ae8b47be60271af516c1ddae887a141b2}{LibRendererWindow}}* window; }
+\DoxyCodeLine{200   \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* renderer; }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202   \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} isRunning; }
+\DoxyCodeLine{203 \};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{keyword}{inline} \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109}{RendererWrapper::RendererStatus}} \mbox{\hyperlink{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}{RendererWrapper::Init}}() \{}
+\DoxyCodeLine{206   \textcolor{keywordflow}{return} SDL\_Init(SDL\_INIT\_VIDEO) == 0 ? \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{STATUS\_OK}} : \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109a96523c4649647a1a2d98a3761126ba8e}{STATUS\_FAIL}};}
+\DoxyCodeLine{207 \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{keyword}{inline} \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109}{RendererWrapper::RendererStatus}} \mbox{\hyperlink{class_renderer_wrapper_aa75e25014c0efd3ff09d9fdf4e8bbff5}{RendererWrapper::CreateWindow}}() \{}
+\DoxyCodeLine{210   isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_a4262a62250555f6547de7aff6da4cc82}{LibRendererTrue}};}
+\DoxyCodeLine{211   \textcolor{keywordflow}{return} SDL\_CreateWindowAndRenderer(width, height, 0, \&window, \&renderer) == 0 ? \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{STATUS\_OK}} : \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109a96523c4649647a1a2d98a3761126ba8e}{STATUS\_FAIL}};}
+\DoxyCodeLine{212 \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a34dd25d862f072d17d0f6a7aedfd2d59}{RendererWrapper::SetWindowTitle}}(std::string title) \{}
+\DoxyCodeLine{215   SDL\_SetWindowTitle(window, title.c\_str());}
+\DoxyCodeLine{216 \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} g, \textcolor{keywordtype}{int} b, \textcolor{keywordtype}{int} a) \{}
+\DoxyCodeLine{219   SDL\_SetRenderDrawColor(renderer, r, g, b, a);}
+\DoxyCodeLine{220 \}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} r, \textcolor{keywordtype}{int} g, \textcolor{keywordtype}{int} b) \{}
+\DoxyCodeLine{223   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(r, g, b, 255);}
+\DoxyCodeLine{224 \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} color, \textcolor{keywordtype}{int} a) \{}
+\DoxyCodeLine{227   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}((color \& 0xFF0000)>> 16, (color \& 0x00FF00) >> 8, (color \& 0x0000FF), a);}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{RendererWrapper::SetDrawColor}}(\textcolor{keywordtype}{int} color) \{}
+\DoxyCodeLine{231   \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(color, 255);}
 \DoxyCodeLine{232 \}}
 \DoxyCodeLine{233 }
-\DoxyCodeLine{234 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{RendererWrapper::Quit}}() \{}
-\DoxyCodeLine{235   \textcolor{keywordflow}{if} (renderer) SDL\_DestroyRenderer(renderer);}
-\DoxyCodeLine{236   \textcolor{keywordflow}{if} (window) SDL\_DestroyWindow(window);}
+\DoxyCodeLine{234 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{RendererWrapper::DrawLine}}(\textcolor{keywordtype}{int} startX, \textcolor{keywordtype}{int} startY, \textcolor{keywordtype}{int} endX, \textcolor{keywordtype}{int} endY) \{}
+\DoxyCodeLine{235   SDL\_RenderDrawLine(renderer, startX, startY, endX, endY);}
+\DoxyCodeLine{236 \}}
 \DoxyCodeLine{237 }
-\DoxyCodeLine{238   SDL\_Quit(); \textcolor{comment}{/* TODO should it be here? */}}
-\DoxyCodeLine{239 \}}
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241 \textcolor{keyword}{inline} \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{RendererWrapper::GetRenderer}}() \{}
-\DoxyCodeLine{242   \textcolor{keywordflow}{return} renderer;}
-\DoxyCodeLine{243 \}}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{RendererWrapper::Width}}() \{ \textcolor{keywordflow}{return} width; \}}
-\DoxyCodeLine{246 }
-\DoxyCodeLine{247 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{RendererWrapper::Height}}() \{ \textcolor{keywordflow}{return} height; \}}
-\DoxyCodeLine{248 }
-\DoxyCodeLine{249 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDERERWRAPPER\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{238 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a9565e9243bda9121b22ce7c37c96d415}{RendererWrapper::DrawTri}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y) \{}
+\DoxyCodeLine{239   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(p1X, p1Y, p2X, p2Y);}
+\DoxyCodeLine{240   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(p2X, p2Y, p3X, p3Y);}
+\DoxyCodeLine{241   \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{DrawLine}}(p3X, p3Y, p1X, p1Y);}
+\DoxyCodeLine{242 \}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_ae38eae28dbbd7a9a6ab621040fc88101}{RendererWrapper::DrawFilledTri}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, uint8\_t r, uint8\_t g, uint8\_t b) \{}
+\DoxyCodeLine{245   \textcolor{keyword}{const} std::vector< SDL\_Vertex > verts =}
+\DoxyCodeLine{246   \{}
+\DoxyCodeLine{247       \{ SDL\_FPoint\{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p1X), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p1Y) \}, SDL\_Color\{ r, g, b, 255 \}, SDL\_FPoint\{ 0 \}, \},}
+\DoxyCodeLine{248       \{ SDL\_FPoint\{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p2X), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p2Y) \}, SDL\_Color\{ r, g, b, 255 \}, SDL\_FPoint\{ 0 \}, \},}
+\DoxyCodeLine{249       \{ SDL\_FPoint\{ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p3X), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(p3Y) \}, SDL\_Color\{ r, g, b, 255 \}, SDL\_FPoint\{ 0 \}, \},}
+\DoxyCodeLine{250   \};}
+\DoxyCodeLine{251   SDL\_RenderGeometry(renderer, \textcolor{keyword}{nullptr}, verts.data(), verts.size(), \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{252 \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{RendererWrapper::Show}}() \{}
+\DoxyCodeLine{255   SDL\_RenderPresent(renderer);}
+\DoxyCodeLine{256 \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{RendererWrapper::Clean}}() \{}
+\DoxyCodeLine{259   SDL\_RenderClear(renderer);}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keyword}{inline} \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{LibRendererBool}} \mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{RendererWrapper::IsRunning}}() \{}
+\DoxyCodeLine{263   \textcolor{keywordflow}{return} isRunning;}
+\DoxyCodeLine{264 \}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{RendererWrapper::StopRunning}}() \{}
+\DoxyCodeLine{267   isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_ab58498eca2b16ba6caabc4fee5c6eef7}{LibRendererFalse}};}
+\DoxyCodeLine{268 \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{RendererWrapper::GetEvent}}() \{}
+\DoxyCodeLine{271   SDL\_Event event;}
+\DoxyCodeLine{272   \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))}
+\DoxyCodeLine{273     \textcolor{keywordflow}{if}(event.type == SDL\_QUIT) isRunning = \mbox{\hyperlink{_renderer_wrapper_8hpp_ab58498eca2b16ba6caabc4fee5c6eef7}{LibRendererFalse}};}
+\DoxyCodeLine{274 \}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{RendererWrapper::Quit}}() \{}
+\DoxyCodeLine{277   \textcolor{keywordflow}{if} (renderer) SDL\_DestroyRenderer(renderer);}
+\DoxyCodeLine{278   \textcolor{keywordflow}{if} (window) SDL\_DestroyWindow(window);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280   SDL\_Quit(); \textcolor{comment}{/* TODO should it be here? */}}
+\DoxyCodeLine{281 \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{keyword}{inline} \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{LibRenderer}}* \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{RendererWrapper::GetRenderer}}() \{}
+\DoxyCodeLine{284   \textcolor{keywordflow}{return} renderer;}
+\DoxyCodeLine{285 \}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{RendererWrapper::Width}}() \{ \textcolor{keywordflow}{return} width; \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{RendererWrapper::Height}}() \{ \textcolor{keywordflow}{return} height; \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDERERWRAPPER\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

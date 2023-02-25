@@ -1,0 +1,52 @@
+\hypertarget{_loop_move_8hpp_source}{}\doxysection{Loop\+Move.\+hpp}
+\label{_loop_move_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/SampleScripts/LoopMove.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/SampleScripts/LoopMove.hpp}}
+\mbox{\hyperlink{_loop_move_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_LOOPMOVE\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_LOOPMOVE\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_crust_script_8hpp}{Scripting/CrustScript.hpp}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_loop_move}{LoopMove}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_crust_script}{CrustScript}} \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8   \mbox{\hyperlink{class_loop_move}{LoopMove}}(\mbox{\hyperlink{class_object}{Object}}* \_parentObj, \textcolor{keywordtype}{double} \_minX, \textcolor{keywordtype}{double} \_maxX, \textcolor{keywordtype}{double} \_minY, \textcolor{keywordtype}{double} \_maxY, \textcolor{keywordtype}{double} \_minZ, \textcolor{keywordtype}{double} \_maxZ, \textcolor{keywordtype}{double} \_moveSpeedX, \textcolor{keywordtype}{double} \_moveSpeedY, \textcolor{keywordtype}{double} \_moveSpeedZ);}
+\DoxyCodeLine{9   \mbox{\hyperlink{class_loop_move_a2a02714068ffc9340ac17457385dc756}{\string~LoopMove}}()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e15e4}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{12   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{Update}}(\textcolor{keywordtype}{double} deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14   \textcolor{keywordtype}{double} maxX \{ 0.0 \};}
+\DoxyCodeLine{15   \textcolor{keywordtype}{double} minX \{ 0.0 \};}
+\DoxyCodeLine{16   \textcolor{keywordtype}{double} maxY \{ 0.0 \};}
+\DoxyCodeLine{17   \textcolor{keywordtype}{double} minY \{ 0.0 \};}
+\DoxyCodeLine{18   \textcolor{keywordtype}{double} maxZ \{ 0.0 \};}
+\DoxyCodeLine{19   \textcolor{keywordtype}{double} minZ \{ 0.0 \};}
+\DoxyCodeLine{20   \textcolor{keywordtype}{double} speedX \{ 0.0 \};}
+\DoxyCodeLine{21   \textcolor{keywordtype}{double} speedY \{ 0.0 \};}
+\DoxyCodeLine{22   \textcolor{keywordtype}{double} speedZ \{ 0.0 \};}
+\DoxyCodeLine{23   \textcolor{keywordtype}{int} moveDirX \{ 1 \};}
+\DoxyCodeLine{24   \textcolor{keywordtype}{int} moveDirY \{ 1 \};}
+\DoxyCodeLine{25   \textcolor{keywordtype}{int} moveDirZ \{ 1 \};}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{inline} \mbox{\hyperlink{class_loop_move_a2e2aca41354820ffdfd93a536fc95082}{LoopMove::LoopMove}}(\mbox{\hyperlink{class_object}{Object}}* \_parentObj, \textcolor{keywordtype}{double} \_minX, \textcolor{keywordtype}{double} \_maxX, \textcolor{keywordtype}{double} \_minY, \textcolor{keywordtype}{double} \_maxY, \textcolor{keywordtype}{double} \_minZ, \textcolor{keywordtype}{double} \_maxZ, \textcolor{keywordtype}{double} \_moveSpeedX, \textcolor{keywordtype}{double} \_moveSpeedY, \textcolor{keywordtype}{double} \_moveSpeedZ) :}
+\DoxyCodeLine{29        \mbox{\hyperlink{class_crust_script}{CrustScript}}(\_parentObj), minX(\_minX), maxX(\_maxX), minY(\_minY), maxY(\_maxY), minZ(\_minZ), maxZ(\_maxZ), speedX(\_moveSpeedX), speedY(\_moveSpeedY), speedZ(\_moveSpeedZ) \{\}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e15e4}{LoopMove::Start}}() \{\}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{LoopMove::Update}}(\textcolor{keywordtype}{double} deltaTime) \{}
+\DoxyCodeLine{34   \textcolor{keywordflow}{if}(moveDirX > 0 \&\& \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}-\/>\mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{GetPosition}}()-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}() >= maxX) moveDirX = -\/1;}
+\DoxyCodeLine{35   \textcolor{keywordflow}{if}(moveDirX < 0 \&\& parentObj-\/>GetPosition()-\/>X() <= minX) moveDirX = 1;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordflow}{if}(moveDirY > 0 \&\& \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}-\/>\mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{GetPosition}}()-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}() >= maxY) moveDirY = -\/1;}
+\DoxyCodeLine{38   \textcolor{keywordflow}{if}(moveDirY < 0 \&\& parentObj-\/>GetPosition()-\/>Y() <= minY) moveDirY = 1;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{keywordflow}{if}(moveDirZ > 0 \&\& \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}-\/>\mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{GetPosition}}()-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}() >= maxZ) moveDirZ = -\/1;}
+\DoxyCodeLine{41   \textcolor{keywordflow}{if}(moveDirZ < 0 \&\& parentObj-\/>GetPosition()-\/>Z() <= minZ) moveDirZ = 1;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}-\/>\mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Move}}(moveDirX * speedX * deltaTime, moveDirY * speedY * deltaTime, moveDirZ * speedZ * deltaTime);}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_LOOPMOVE\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

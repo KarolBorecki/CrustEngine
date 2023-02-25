@@ -24,11 +24,15 @@ int main(int argc, char* argv[])
   Scene scene("T Scene", &cam);
 
   Mesh mesh("Sample mesh");
-  MeshLoader::LoadMeshFromFile("/Users/karolborecki/Desktop/CrustEngine/VideoShip.obj", &mesh);
+  
+  std::string name = argv[1];
+  std::string path = "/Users/karolborecki/Desktop/CrustEngine/meshes/" + name + ".obj";
+  
+  MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
   RenderObject rObj(0,0,0,&mesh);
 
 
-  LoopMove rObjMove(&rObj, -2, 2, -3, 3, 3, 7, 1, 2, 3);
+  LoopMove rObjMove(&rObj, -30, 10, -30, 20, -30, 30, 10, 10, 10);
   Rotate rObjRotation(&rObj);
   rObj.AttachScript(&rObjMove);
   // rObj.AttachScript(&rObjRotation);
@@ -39,7 +43,7 @@ int main(int argc, char* argv[])
   scene.AddObject(&rObj);
   scene.AddObject(&lightSource);
 
-  scene.SetLightProjection(false);
+  scene.SetLightProjection(true);
 
   Core core;
   core.OpenNewWindow(1000, 800, &scene);

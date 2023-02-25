@@ -1,5 +1,5 @@
 \hypertarget{_render_window_8hpp_source}{}\doxysection{Render\+Window.\+hpp}
-\label{_render_window_8hpp_source}\index{CrustEngine/Code/Inc/Rendering/RenderWindow.hpp@{CrustEngine/Code/Inc/Rendering/RenderWindow.hpp}}
+\label{_render_window_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/RenderWindow.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/RenderWindow.hpp}}
 \mbox{\hyperlink{_render_window_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RENDERWINDOW\_HPP\_}}
@@ -42,11 +42,11 @@
 \DoxyCodeLine{68 }
 \DoxyCodeLine{69   \textcolor{keywordflow}{if}(renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}{Init}}() != \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{RendererWrapper::RendererStatus::STATUS\_OK}}) \{}
 \DoxyCodeLine{70     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}Drawer could not be initialized!"{}});}
-\DoxyCodeLine{71     \textcolor{comment}{//TODO quit}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}RenderWindow failed to initzialize"{}});}
 \DoxyCodeLine{72   \}}
 \DoxyCodeLine{73   \textcolor{keywordflow}{if}(renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_aa75e25014c0efd3ff09d9fdf4e8bbff5}{CreateWindow}}() != \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee}{RendererWrapper::RendererStatus::STATUS\_OK}}) \{}
 \DoxyCodeLine{74     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}Drawer could not be created!"{}});}
-\DoxyCodeLine{75     \textcolor{comment}{//TODO quit}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}RenderWindow failed to initzialize"{}});}
 \DoxyCodeLine{76   \}}
 \DoxyCodeLine{77 }
 \DoxyCodeLine{78   \mbox{\hyperlink{class_render_window_aff1f326684632bb9e48f19ca7bd85e06}{LoadScene}}(\_scene);}
@@ -61,61 +61,54 @@
 \DoxyCodeLine{87 }
 \DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_window_ace7b6b9d6045bc2b9fbb41c474122cf8}{RenderWindow::Start}}() \{}
 \DoxyCodeLine{89   \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}==================Starting drawing process=================="{}});}
-\DoxyCodeLine{90   \textcolor{keywordtype}{double} moveSpeedX = 1;}
-\DoxyCodeLine{91   \textcolor{keywordtype}{double} moveSpeedY = 2;}
-\DoxyCodeLine{92   \textcolor{keywordtype}{double} moveSpeedZ = 0.5;}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94   \textcolor{keywordtype}{int} moveDirX = 1;}
-\DoxyCodeLine{95   \textcolor{keywordtype}{int} moveDirY = 1;}
-\DoxyCodeLine{96   \textcolor{keywordtype}{int} moveDirZ = 1;}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98   \textcolor{keywordtype}{int} maxPos = 2;}
-\DoxyCodeLine{99   \textcolor{keywordflow}{while}(renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{IsRunning}}()) \{}
-\DoxyCodeLine{100     timeProvider-\/>\mbox{\hyperlink{class_time_provider_ab18014f7eac5c54baedef993c18911b9}{OnFrameStart}}();}
+\DoxyCodeLine{90   \textcolor{comment}{// double moveSpeedX = 1;}}
+\DoxyCodeLine{91   \textcolor{comment}{// double moveSpeedY = 2;}}
+\DoxyCodeLine{92   \textcolor{comment}{// double moveSpeedZ = 0.5;}}
+\DoxyCodeLine{93   \textcolor{comment}{//}}
+\DoxyCodeLine{94   \textcolor{comment}{// int moveDirX = 1;}}
+\DoxyCodeLine{95   \textcolor{comment}{// int moveDirY = 1;}}
+\DoxyCodeLine{96   \textcolor{comment}{// int moveDirZ = 1;}}
+\DoxyCodeLine{97   \textcolor{comment}{//}}
+\DoxyCodeLine{98   \textcolor{comment}{// int maxPos = 2;}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   loadedScene-\/>\mbox{\hyperlink{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}{Start}}();}
 \DoxyCodeLine{101 }
-\DoxyCodeLine{102     Clean();}
-\DoxyCodeLine{103     std::vector<RenderObject*> objs = loadedScene-\/>\mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
-\DoxyCodeLine{104     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} obj : objs) \{}
-\DoxyCodeLine{105       renderer-\/>\mbox{\hyperlink{class_renderer_a0ba8d0ec9772da40147b6a5338dafa57}{DrawMesh}}(obj-\/>GetMesh(), obj-\/>GetPosition());}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107       \textcolor{keywordflow}{if}(moveDirX > 0 \&\& obj-\/>GetPosition()-\/>X() >= maxPos) moveDirX = -\/1;}
-\DoxyCodeLine{108       \textcolor{keywordflow}{if}(moveDirX < 0 \&\& obj-\/>GetPosition()-\/>X() <= -\/maxPos) moveDirX = 1;}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110       \textcolor{keywordflow}{if}(moveDirY > 0 \&\& obj-\/>GetPosition()-\/>Y() >= maxPos) moveDirY = -\/1;}
-\DoxyCodeLine{111       \textcolor{keywordflow}{if}(moveDirY < 0 \&\& obj-\/>GetPosition()-\/>Y() <= -\/maxPos) moveDirY = 1;}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113       \textcolor{keywordflow}{if}(moveDirZ > 0 \&\& obj-\/>GetPosition()-\/>Z() >= maxPos) moveDirZ = -\/1;}
-\DoxyCodeLine{114       \textcolor{keywordflow}{if}(moveDirZ < 0 \&\& obj-\/>GetPosition()-\/>Z() <= -\/maxPos) moveDirZ = 1;}
-\DoxyCodeLine{115       obj-\/>Move(moveDirX * moveSpeedX * timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}(), moveDirY * moveSpeedY * timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}(), moveDirZ * moveSpeedZ * timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}());}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     \}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119     renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Show}}();}
-\DoxyCodeLine{120     renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{GetEvent}}();}
+\DoxyCodeLine{102   \textcolor{keywordflow}{while}(renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{IsRunning}}()) \{}
+\DoxyCodeLine{103     timeProvider-\/>\mbox{\hyperlink{class_time_provider_ab18014f7eac5c54baedef993c18911b9}{OnFrameStart}}();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     Clean();}
+\DoxyCodeLine{106     std::vector<RenderObject*> objs = loadedScene-\/>\mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
+\DoxyCodeLine{107     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} obj : objs) \{}
+\DoxyCodeLine{108       renderer-\/>\mbox{\hyperlink{class_renderer_a05d32dacc896f21d4975a0c5655a402d}{DrawMesh}}(obj-\/>GetMesh(), obj-\/>GetPosition(), obj-\/>GetRotation(), loadedScene-\/>\mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}(), loadedScene-\/>\mbox{\hyperlink{class_scene_a107f300686b73f435f602e7d5c50ef5d}{GetLightSources}}().at(0)-\/>GetDirection(), loadedScene-\/>\mbox{\hyperlink{class_scene_a3052fa786329fa10fca30682cb9f998f}{IsLightProjected}}());}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110     loadedScene-\/>\mbox{\hyperlink{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}{Update}}(timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}());}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Show}}();}
+\DoxyCodeLine{113     renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{GetEvent}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     timeProvider-\/>\mbox{\hyperlink{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}{OnFrameEnd}}();}
+\DoxyCodeLine{116     \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}This frame took: \%lf [s] (\%lf FPS)"{}}, timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}(), timeProvider-\/>\mbox{\hyperlink{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}{GetFPS}}());}
+\DoxyCodeLine{117   \}}
+\DoxyCodeLine{118   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}}();}
+\DoxyCodeLine{119   \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}Avreage frame time: \%lf [s] (\%lf FPS)"{}}, timeProvider-\/>\mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{GetAverageFrameTime\_s}}(), timeProvider-\/>\mbox{\hyperlink{class_time_provider_afd7d0882db911eeb4925f85a2fd5f4c5}{GetAverageFPS}}());}
+\DoxyCodeLine{120 \}}
 \DoxyCodeLine{121 }
-\DoxyCodeLine{122     timeProvider-\/>\mbox{\hyperlink{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}{OnFrameEnd}}();}
-\DoxyCodeLine{123     \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}This frame took: \%lf [s] (\%lf FPS)"{}}, timeProvider-\/>\mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{GetDeltaTime\_s}}(), timeProvider-\/>\mbox{\hyperlink{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}{GetFPS}}());}
-\DoxyCodeLine{124   \}}
-\DoxyCodeLine{125   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}}();}
-\DoxyCodeLine{126   \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}Avreage frame time: \%lf [s] (\%lf FPS)"{}}, timeProvider-\/>\mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{GetAverageFrameTime\_s}}(), timeProvider-\/>\mbox{\hyperlink{class_time_provider_afd7d0882db911eeb4925f85a2fd5f4c5}{GetAverageFPS}}());}
-\DoxyCodeLine{127 \}}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{RenderWindow::Close}}() \{}
-\DoxyCodeLine{130   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{StopRunning}}();}
-\DoxyCodeLine{131 \}}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_window_aff1f326684632bb9e48f19ca7bd85e06}{RenderWindow::LoadScene}}(\mbox{\hyperlink{class_scene}{Scene}}* scene) \{}
-\DoxyCodeLine{134   loadedScene = scene;}
-\DoxyCodeLine{135   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a34dd25d862f072d17d0f6a7aedfd2d59}{SetWindowTitle}}(scene-\/>\mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}());}
-\DoxyCodeLine{136   renderer-\/>\mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{RecalculateProjectionMatrix}}(scene-\/>\mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}());}
-\DoxyCodeLine{137 \}}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139 \textcolor{keywordtype}{void} RenderWindow::Clean() \{}
-\DoxyCodeLine{140   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(0,0,0);}
-\DoxyCodeLine{141   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}}();}
-\DoxyCodeLine{142 \}}
-\DoxyCodeLine{143 }
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDERWINDOW\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{RenderWindow::Close}}() \{}
+\DoxyCodeLine{123   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{StopRunning}}();}
+\DoxyCodeLine{124 \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_render_window_aff1f326684632bb9e48f19ca7bd85e06}{RenderWindow::LoadScene}}(\mbox{\hyperlink{class_scene}{Scene}}* scene) \{}
+\DoxyCodeLine{127   loadedScene = scene;}
+\DoxyCodeLine{128   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a34dd25d862f072d17d0f6a7aedfd2d59}{SetWindowTitle}}(scene-\/>\mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}());}
+\DoxyCodeLine{129   renderer-\/>\mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{RecalculateProjectionMatrix}}(scene-\/>\mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}());}
+\DoxyCodeLine{130 \}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} RenderWindow::Clean() \{}
+\DoxyCodeLine{133   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{SetDrawColor}}(0,0,0);}
+\DoxyCodeLine{134   renderer-\/>\mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}}();}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDERWINDOW\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

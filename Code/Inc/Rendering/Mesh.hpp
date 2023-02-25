@@ -80,7 +80,7 @@ Mesh::~Mesh() {
     delete tri;
 }
 
-inline void Mesh::AddTriangle(Triangle* tri) { triangles.push_back(tri); }
+inline void Mesh::AddTriangle(Triangle* tri) { triangles.push_back(tri); } // TODO hold copies
 
 inline Triangle* Mesh::GetTriangle(uint8_t index) { return triangles[index]; }
 

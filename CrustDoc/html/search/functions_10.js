@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['w_0',['W',['../class_vector4.html#aa4d2c9b57fc0b1c433d97d12dd0e5c8e',1,'Vector4']]],
-  ['warning_1',['Warning',['../class_logger.html#a4947597a5e349e440e3d2ebd164fede7',1,'Logger']]],
-  ['width_2',['Width',['../class_renderer_wrapper.html#ad3b4ab35df9e2f56d31120230ce65660',1,'RendererWrapper']]]
+  ['vector3_0',['Vector3',['../class_vector3.html#a0f49191f7e001e7f7ae1cb49522118b4',1,'Vector3::Vector3()'],['../class_vector3.html#af3ddf3f85d2e8390fa8c297c8448761e',1,'Vector3::Vector3(double valXYZ)'],['../class_vector3.html#a3b370f98c38f1221df9238a9b5f3200c',1,'Vector3::Vector3(double x, double y, double z)']]],
+  ['vector4_1',['Vector4',['../class_vector4.html#a511b4d9c8326c235b76d794eea018921',1,'Vector4::Vector4()'],['../class_vector4.html#a56844fb12dc7d0d3ca3636e858a41d3c',1,'Vector4::Vector4(double valXYZW)'],['../class_vector4.html#a93028e9b623defa4626ceab995ef71ad',1,'Vector4::Vector4(Vector3 *vecXYZ, double w)'],['../class_vector4.html#a6e5895badfb614ee237878c13f709464',1,'Vector4::Vector4(double x, double y, double z, double w)']]]
 ];

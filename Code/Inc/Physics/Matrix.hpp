@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+// TODO reasearch for operands overloading
+// TODO use template to be more flexible
 /**
 * @brief Represents the mathematical matrix and is able to preform matrix calculations.
 */

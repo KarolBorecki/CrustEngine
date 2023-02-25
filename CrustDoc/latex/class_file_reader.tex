@@ -2,7 +2,7 @@
 \label{class_file_reader}\index{FileReader@{FileReader}}
 
 
-Static class used to read datat from file in classic-\/printf format.  
+Static class used to read data from file in classic-\/printf format.  
 
 
 
@@ -18,12 +18,14 @@ static void \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91
 \begin{DoxyCompactList}\small\item\em Method closes opened\+File. \end{DoxyCompactList}\item 
 static uint8\+\_\+t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{Get\+Line\+From\+Opened\+File}} (uint8\+\_\+t expected\+Args\+Count, const char $\ast$format,...)
 \begin{DoxyCompactList}\small\item\em Classic printf format-\/style function for reading opened\+File. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}{Get\+File\+Name}} (const char $\ast$filepath)
+\begin{DoxyCompactList}\small\item\em Returns the filename from specified path. \end{DoxyCompactList}\item 
 static FILE $\ast$ \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{Get\+Opened\+File\+Hanlder}} ()
 \begin{DoxyCompactList}\small\item\em Getter for opened\+File handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Static class used to read datat from file in classic-\/printf format. 
+Static class used to read data from file in classic-\/printf format. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}\label{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}} 
@@ -36,7 +38,20 @@ Static class used to read datat from file in classic-\/printf format.
 
 Method closes opened\+File. 
 
-Method closes opened\+File. If opened\+File is NULL then throws a warning and exits the method. \mbox{\Hypertarget{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}\label{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}} 
+Method closes opened\+File. If opened\+File is NULL then throws a warning and exits the method. \mbox{\Hypertarget{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}\label{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}} 
+\index{FileReader@{FileReader}!GetFileName@{GetFileName}}
+\index{GetFileName@{GetFileName}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{GetFileName()}{GetFileName()}}
+{\footnotesize\ttfamily std\+::string File\+Reader\+::\+Get\+File\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the filename from specified path. 
+
+\begin{DoxyReturn}{Returns}
+File\textquotesingle{}s name with exitension. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}\label{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}} 
 \index{FileReader@{FileReader}!GetLineFromOpenedFile@{GetLineFromOpenedFile}}
 \index{GetLineFromOpenedFile@{GetLineFromOpenedFile}!FileReader@{FileReader}}
 \doxysubsubsection{\texorpdfstring{GetLineFromOpenedFile()}{GetLineFromOpenedFile()}}
@@ -89,4 +104,4 @@ Method opens file and assigns it to opened\+File field. If file with passed path
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Files/\mbox{\hyperlink{_file_reader_8hpp}{File\+Reader.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Files/\mbox{\hyperlink{_file_reader_8hpp}{File\+Reader.\+hpp}}\end{DoxyCompactItemize}

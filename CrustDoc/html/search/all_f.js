@@ -14,6 +14,8 @@ var searchData=
   ['renderobject_2ehpp_11',['RenderObject.hpp',['../_render_object_8hpp.html',1,'']]],
   ['renderwindow_12',['RenderWindow',['../class_render_window.html',1,'RenderWindow'],['../class_render_window.html#aa0bb39f73afbd1bd08426ae115987963',1,'RenderWindow::RenderWindow()']]],
   ['renderwindow_2ehpp_13',['RenderWindow.hpp',['../_render_window_8hpp.html',1,'']]],
-  ['resetmatrix_14',['ResetMatrix',['../class_matrix.html#a9f3054826e39ab3caf223141fe1a128a',1,'Matrix']]],
-  ['rows_15',['Rows',['../class_matrix.html#a9823f552deec6e353ad4b910de873e23',1,'Matrix']]]
+  ['resetmatrix_14',['ResetMatrix',['../class_matrix.html#a7e54b182b691a081e0599e06034b1621',1,'Matrix']]],
+  ['rotate_15',['Rotate',['../class_rotate.html',1,'Rotate'],['../class_object.html#a59643950ef70e2bcc81fb3e53e11dcfe',1,'Object::Rotate()'],['../class_rotate.html#aa641216644cbecd94f4015f8dd82ab0d',1,'Rotate::Rotate()']]],
+  ['rotate_2ehpp_16',['Rotate.hpp',['../_rotate_8hpp.html',1,'']]],
+  ['rows_17',['Rows',['../class_matrix.html#a9823f552deec6e353ad4b910de873e23',1,'Matrix']]]
 ];

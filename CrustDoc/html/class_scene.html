@@ -108,6 +108,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adbb43af1966d0be65f2f80e5c237f45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b8cec2e32546713915f8c6303c951f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1">~Scene</a> ()</td></tr>
 <tr class="separator:a3b8cec2e32546713915f8c6303c951f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a31e0e1b9ce39bd9f5ec160835cc94d44">Start</a> ()</td></tr>
+<tr class="separator:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d8ecc3af6c4153e47fc478e5e3d04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a41d8ecc3af6c4153e47fc478e5e3d04f">Update</a> (double deltaTime)</td></tr>
+<tr class="separator:a41d8ecc3af6c4153e47fc478e5e3d04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5810372744288eac09133bc77241308e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5810372744288eac09133bc77241308e">GetMainCamera</a> ()</td></tr>
 <tr class="memdesc:a5810372744288eac09133bc77241308e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mainCamera field.  <a href="class_scene.html#a5810372744288eac09133bc77241308e">More...</a><br /></td></tr>
 <tr class="separator:a5810372744288eac09133bc77241308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,6 +121,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b43d8fd68804b4db228e17b72be93be"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_render_object.html">RenderObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b43d8fd68804b4db228e17b72be93be">GetObjectsToRender</a> ()</td></tr>
 <tr class="memdesc:a3b43d8fd68804b4db228e17b72be93be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderObjects field.  <a href="class_scene.html#a3b43d8fd68804b4db228e17b72be93be">More...</a><br /></td></tr>
 <tr class="separator:a3b43d8fd68804b4db228e17b72be93be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107f300686b73f435f602e7d5c50ef5d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_light_source.html">LightSource</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a107f300686b73f435f602e7d5c50ef5d">GetLightSources</a> ()</td></tr>
+<tr class="memdesc:a107f300686b73f435f602e7d5c50ef5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for lightSources field.  <a href="class_scene.html#a107f300686b73f435f602e7d5c50ef5d">More...</a><br /></td></tr>
+<tr class="separator:a107f300686b73f435f602e7d5c50ef5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3052fa786329fa10fca30682cb9f998f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3052fa786329fa10fca30682cb9f998f">IsLightProjected</a> ()</td></tr>
+<tr class="memdesc:a3052fa786329fa10fca30682cb9f998f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for projectLight field.  <a href="class_scene.html#a3052fa786329fa10fca30682cb9f998f">More...</a><br /></td></tr>
+<tr class="separator:a3052fa786329fa10fca30682cb9f998f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90165078e5ee14185bbbfd84f56f75a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a90165078e5ee14185bbbfd84f56f75a1">SetLightProjection</a> (bool project)</td></tr>
+<tr class="memdesc:a90165078e5ee14185bbbfd84f56f75a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets if the light should be projected.  <a href="class_scene.html#a90165078e5ee14185bbbfd84f56f75a1">More...</a><br /></td></tr>
+<tr class="separator:a90165078e5ee14185bbbfd84f56f75a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a888574f4eea5fae0674c1c3431cf9421"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a888574f4eea5fae0674c1c3431cf9421">GetName</a> ()</td></tr>
 <tr class="memdesc:a888574f4eea5fae0674c1c3431cf9421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for name field.  <a href="class_scene.html#a888574f4eea5fae0674c1c3431cf9421">More...</a><br /></td></tr>
 <tr class="separator:a888574f4eea5fae0674c1c3431cf9421"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,14 +225,43 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds the object to the scene. </p>
-<p >Adds the object to the objects array and if is type of <a class="el" href="class_render_object.html" title="Represents object present on the scene.">RenderObject</a> adds it's handler to renderObjects array.</p>
+<p >Adds the object to the objects array and if is type of <a class="el" href="class_render_object.html" title="Represents object present on the scene.">RenderObject</a> or <a class="el" href="class_light_source.html" title="Object on the scene representing basic directional light source. It represents parraller light rays.">LightSource</a> adds it's handler to renderObjects or lightSources array.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>Added object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_object_8hpp.html">Object.hpp</a> <a class="el" href="_render_object_8hpp.html">RenderObject.hpp</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_object_8hpp.html">Object.hpp</a> <a class="el" href="_render_object_8hpp.html">RenderObject.hpp</a> <a class="el" href="_light_source_8hpp.html">LightSource.hpp</a> </dd></dl>
+
+</div>
+</div>
+<a id="a107f300686b73f435f602e7d5c50ef5d" name="a107f300686b73f435f602e7d5c50ef5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107f300686b73f435f602e7d5c50ef5d">&#9670;&#160;</a></span>GetLightSources()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_light_source.html">LightSource</a> * &gt; Scene::GetLightSources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for lightSources field. </p>
+<dl class="section return"><dt>Returns</dt><dd>lightSources field.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_light_source_8hpp.html">LightSource.hpp</a> </dd></dl>
 
 </div>
 </div>
@@ -309,8 +351,99 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3052fa786329fa10fca30682cb9f998f" name="a3052fa786329fa10fca30682cb9f998f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3052fa786329fa10fca30682cb9f998f">&#9670;&#160;</a></span>IsLightProjected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scene::IsLightProjected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for projectLight field. </p>
+<dl class="section return"><dt>Returns</dt><dd>lightSources field, which represents if the lightning is done accordingly to light sources on the scene or set to maximum on each face. </dd></dl>
+
+</div>
+</div>
+<a id="a90165078e5ee14185bbbfd84f56f75a1" name="a90165078e5ee14185bbbfd84f56f75a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90165078e5ee14185bbbfd84f56f75a1">&#9670;&#160;</a></span>SetLightProjection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::SetLightProjection </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>project</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets if the light should be projected. </p>
+
+</div>
+</div>
+<a id="a31e0e1b9ce39bd9f5ec160835cc94d44" name="a31e0e1b9ce39bd9f5ec160835cc94d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e0e1b9ce39bd9f5ec160835cc94d44">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41d8ecc3af6c4153e47fc478e5e3d04f" name="a41d8ecc3af6c4153e47fc478e5e3d04f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d8ecc3af6c4153e47fc478e5e3d04f">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::Update </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Core/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

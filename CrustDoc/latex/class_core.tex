@@ -17,9 +17,9 @@ Class, which helds opened windows and manages the engine work.
 virtual \mbox{\hyperlink{class_core_a3259aa546be9c7e12da440ad570f7b39}{$\sim$\+Core}} ()=default
 \item 
 void \mbox{\hyperlink{class_core_af8dfa9a1586b40a8b92d92ceb5435814}{Open\+New\+Window}} (int width, int height, \mbox{\hyperlink{class_scene}{Scene}} $\ast$scene)
-\begin{DoxyCompactList}\small\item\em Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} with \#width and \#height and default loaded scene set to \#scene. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} of size \#width x \#height and default loaded scene set to \#scene. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_core_a37572d86a6f846b22fe2713b6eee272a}{Close\+Window}} (\mbox{\hyperlink{class_render_window}{Render\+Window}} $\ast$window)
-\begin{DoxyCompactList}\small\item\em Closes the specified window \#window. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Closes the specified \#window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{Close\+All\+Windows}} ()
 \begin{DoxyCompactList}\small\item\em Closes all opened windows. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Quit}} ()
@@ -68,7 +68,7 @@ Loops through opened\+Windows array, runs \mbox{\hyperlink{class_render_window_a
 
 
 
-Closes the specified window \#window. 
+Closes the specified \#window. 
 
 Searches for \#window inside opened\+Windows array and runs \mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{Render\+Window\+::\+Close}} method and deletes it\textquotesingle{}s object.
 
@@ -88,7 +88,7 @@ Searches for \#window inside opened\+Windows array and runs \mbox{\hyperlink{cla
 
 
 
-Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} with \#width and \#height and default loaded scene set to \#scene. 
+Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} of size \#width x \#height and default loaded scene set to \#scene. 
 
 Creates new object of instance \mbox{\hyperlink{class_render_window}{Render\+Window}} and adds it to opened\+Windows array. After this the created window starts using \mbox{\hyperlink{class_render_window_ace7b6b9d6045bc2b9fbb41c474122cf8}{Render\+Window\+::\+Start()}}.
 
@@ -118,4 +118,4 @@ Runs Render\+Window\+::\+Close\+All\+Windows.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}}\end{DoxyCompactItemize}

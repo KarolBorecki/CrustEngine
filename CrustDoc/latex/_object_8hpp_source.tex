@@ -1,67 +1,94 @@
 \hypertarget{_object_8hpp_source}{}\doxysection{Object.\+hpp}
-\label{_object_8hpp_source}\index{CrustEngine/Code/Inc/Rendering/Objects/Object.hpp@{CrustEngine/Code/Inc/Rendering/Objects/Object.hpp}}
+\label{_object_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Objects/Object.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Objects/Object.hpp}}
 \mbox{\hyperlink{_object_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_OBJECT\_HPP\_}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_OBJECT\_HPP\_}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Physics/Vector3.hpp}}>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}} \{}
-\DoxyCodeLine{10 \textcolor{keyword}{public}:}
-\DoxyCodeLine{15   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}();}
-\DoxyCodeLine{22   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos);}
-\DoxyCodeLine{31   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33   \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\string~Object}}();}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{40   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{IsActive}}();}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{47   \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{GetPosition}}();}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{54   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Move}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z);}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{61   uint32\_t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}();}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63 \textcolor{keyword}{private}:}
-\DoxyCodeLine{64   \textcolor{keywordtype}{bool} isActive \{ \textcolor{keyword}{true} \}; }
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66   \mbox{\hyperlink{class_vector3}{Vector3}}* pos; }
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68   uint32\_t ID; }
-\DoxyCodeLine{69   \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t nextID \{ 0 \}; }
-\DoxyCodeLine{70 }
-\DoxyCodeLine{77   \textcolor{keywordtype}{void} Init(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ);}
-\DoxyCodeLine{78 \};}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80 \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}() \{ Init(0.0, 0.0, 0.0); \}}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82 \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos) \{ Init(pos-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), pos-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), pos-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}()); \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84 \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ) \{ Init(posX, posY, posZ); \}}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86 \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{Object::\string~Object}}() \{}
-\DoxyCodeLine{87   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Object destructor<\%d>"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
-\DoxyCodeLine{88   \textcolor{keyword}{delete} pos;}
-\DoxyCodeLine{89 \}}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{Object::IsActive}}() \{ \textcolor{keywordflow}{return} isActive; \}}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{Object::GetPosition}}() \{ \textcolor{keywordflow}{return} pos; \}}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Object::Move}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z) \{}
-\DoxyCodeLine{96   \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Vector3::Add}}(pos, x, y, z);}
-\DoxyCodeLine{97 \}}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99 \textcolor{keyword}{inline} uint32\_t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{Object::GetID}}() \{ \textcolor{keywordflow}{return} ID; \}}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101 \textcolor{keywordtype}{void} Object::Init(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ) \{}
-\DoxyCodeLine{102   ID = nextID++;}
-\DoxyCodeLine{103   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating object<\%d>============"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
-\DoxyCodeLine{104   pos = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(posX, posY, posZ);}
-\DoxyCodeLine{105   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Object creation done<\%d>============"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
-\DoxyCodeLine{106 \}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Physics/Vector3.hpp}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_script}{CrustScript}};}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}();}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos);}
+\DoxyCodeLine{35   \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\string~Object}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{class_object_a123add5421e44f839cc564f882e8b497}{GetObjectTypeName}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{IsActive}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53   \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{GetPosition}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60   \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_a6f7ed1b434799c9ce6b7a7dcca56e69d}{GetRotation}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67   std::vector<CrustScript*> \mbox{\hyperlink{class_object_ab6a373b25a3ca54d61e6e63812fe36c4}{GetScripts}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a6bafbad58088d65c769ed1eecad51e44}{AttachScript}}(\mbox{\hyperlink{class_crust_script}{CrustScript}}* script);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Move}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rotate}{Rotate}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95   uint32\_t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{private}:}
+\DoxyCodeLine{98   \textcolor{keywordtype}{bool} isActive \{ \textcolor{keyword}{true} \}; }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100   \mbox{\hyperlink{class_vector3}{Vector3}}* pos; }
+\DoxyCodeLine{101   \mbox{\hyperlink{class_vector3}{Vector3}}* rot; }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   std::vector<CrustScript*> scripts; }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   uint32\_t ID; }
+\DoxyCodeLine{106   \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t nextID \{ 0 \}; }
 \DoxyCodeLine{107 }
-\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_OBJECT\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{114   \textcolor{keywordtype}{void} Init(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ);}
+\DoxyCodeLine{115 \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{keyword}{inline} \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}() \{ Init(0.0, 0.0, 0.0); \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{inline} \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos) \{ Init(pos-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), pos-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), pos-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}()); \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{inline} \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object::Object}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ) \{ Init(posX, posY, posZ); \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{inline} \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{Object::\string~Object}}() \{}
+\DoxyCodeLine{124   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Object destructor<\%d>"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{125   \textcolor{keyword}{delete} pos;}
+\DoxyCodeLine{126   \textcolor{keyword}{delete} rot;}
+\DoxyCodeLine{127 \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_object_a123add5421e44f839cc564f882e8b497}{Object::GetObjectTypeName}}() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Object"{}}; \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{Object::IsActive}}() \{ \textcolor{keywordflow}{return} isActive; \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{Object::GetPosition}}() \{ \textcolor{keywordflow}{return} pos; \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_object_a6f7ed1b434799c9ce6b7a7dcca56e69d}{Object::GetRotation}}() \{ \textcolor{keywordflow}{return} rot; \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{inline} std::vector<CrustScript*> \mbox{\hyperlink{class_object_ab6a373b25a3ca54d61e6e63812fe36c4}{Object::GetScripts}}() \{ \textcolor{keywordflow}{return} scripts; \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a6bafbad58088d65c769ed1eecad51e44}{Object::AttachScript}}(\mbox{\hyperlink{class_crust_script}{CrustScript}}* script) \{ scripts.push\_back(script); \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Object::Move}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z) \{ \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Vector3::Add}}(pos, x, y, z); \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a59643950ef70e2bcc81fb3e53e11dcfe}{Object::Rotate}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z) \{ \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Vector3::Add}}(rot, x, y, z); \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{keyword}{inline} uint32\_t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{Object::GetID}}() \{ \textcolor{keywordflow}{return} ID; \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keywordtype}{void} Object::Init(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ) \{}
+\DoxyCodeLine{148   ID = nextID++;}
+\DoxyCodeLine{149   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating object<\%d>============"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{150   pos = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(posX, posY, posZ);}
+\DoxyCodeLine{151   rot = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(0.0, 0.0, 0.0); \textcolor{comment}{// TODO}}
+\DoxyCodeLine{152   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Object creation done<\%d>============"{}}, \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{153 \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_OBJECT\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

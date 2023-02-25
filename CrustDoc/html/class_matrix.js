@@ -8,7 +8,7 @@ var class_matrix =
     [ "GetMatrixArray", "class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57", null ],
     [ "GetValue", "class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad", null ],
     [ "PutValue", "class_matrix.html#a07a578a33e3d05ab109e35c32f062966", null ],
-    [ "ResetMatrix", "class_matrix.html#a9f3054826e39ab3caf223141fe1a128a", null ],
+    [ "ResetMatrix", "class_matrix.html#a7e54b182b691a081e0599e06034b1621", null ],
     [ "Rows", "class_matrix.html#a9823f552deec6e353ad4b910de873e23", null ],
     [ "ToString", "class_matrix.html#af40af6f88268cbe1850617269d1f80e2", null ]
 ];

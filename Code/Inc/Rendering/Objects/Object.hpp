@@ -53,7 +53,7 @@ public:
   Vector3* GetPosition();
 
   /**
-  * @brief Getter for #rot field.
+  * @brief Getter for #rot field, this returns handler to euler's vector for rotation.
   *
   * @return #rot field.
   */

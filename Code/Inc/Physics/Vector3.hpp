@@ -74,7 +74,7 @@ public:
   */
   void SetXYZ(Vector3* vecXYZ);
 
-  /*
+  /**
   * @brief Adds given x, y, z values to given vector.
   *
   * @param vec Modified vector to which values will be added.

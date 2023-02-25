@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('class_file_reader.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 
-<p>Static class used to read datat from file in classic-printf format.  
+<p>Static class used to read data from file in classic-printf format.  
  <a href="class_file_reader.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_file_reader_8hpp_source.html">FileReader.hpp</a>&gt;</code></p>
@@ -113,12 +113,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9261bdfecae357d219cdc13b4239efa0"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_reader.html#a9261bdfecae357d219cdc13b4239efa0">GetLineFromOpenedFile</a> (uint8_t expectedArgsCount, const char *format,...)</td></tr>
 <tr class="memdesc:a9261bdfecae357d219cdc13b4239efa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classic printf format-style function for reading openedFile.  <a href="class_file_reader.html#a9261bdfecae357d219cdc13b4239efa0">More...</a><br /></td></tr>
 <tr class="separator:a9261bdfecae357d219cdc13b4239efa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1754a6d946596970d10f3ef9fa1f5e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_reader.html#a8a1754a6d946596970d10f3ef9fa1f5e">GetFileName</a> (const char *filepath)</td></tr>
+<tr class="memdesc:a8a1754a6d946596970d10f3ef9fa1f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the filename from specified path.  <a href="class_file_reader.html#a8a1754a6d946596970d10f3ef9fa1f5e">More...</a><br /></td></tr>
+<tr class="separator:a8a1754a6d946596970d10f3ef9fa1f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae31cdff78db5462139cde270f65164e4"><td class="memItemLeft" align="right" valign="top">static FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_reader.html#ae31cdff78db5462139cde270f65164e4">GetOpenedFileHanlder</a> ()</td></tr>
 <tr class="memdesc:ae31cdff78db5462139cde270f65164e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for openedFile handler.  <a href="class_file_reader.html#ae31cdff78db5462139cde270f65164e4">More...</a><br /></td></tr>
 <tr class="separator:ae31cdff78db5462139cde270f65164e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Static class used to read datat from file in classic-printf format. </p>
+<div class="textblock"><p >Static class used to read data from file in classic-printf format. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad463252e12b9ba261cb3e44ce7ecdb91" name="ad463252e12b9ba261cb3e44ce7ecdb91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad463252e12b9ba261cb3e44ce7ecdb91">&#9670;&#160;</a></span>CloseOpenedFile()</h2>
@@ -145,6 +148,35 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Method closes openedFile. </p>
 <p >Method closes openedFile. If openedFile is NULL then throws a warning and exits the method. </p>
+
+</div>
+</div>
+<a id="a8a1754a6d946596970d10f3ef9fa1f5e" name="a8a1754a6d946596970d10f3ef9fa1f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1754a6d946596970d10f3ef9fa1f5e">&#9670;&#160;</a></span>GetFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string FileReader::GetFileName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filepath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the filename from specified path. </p>
+<dl class="section return"><dt>Returns</dt><dd>File's name with exitension. </dd></dl>
 
 </div>
 </div>
@@ -264,7 +296,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Files/<a class="el" href="_file_reader_8hpp_source.html">FileReader.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/<a class="el" href="_file_reader_8hpp_source.html">FileReader.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

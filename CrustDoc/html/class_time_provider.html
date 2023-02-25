@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('class_time_provider.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>Class providing timing data in the engine.  
+ <a href="class_time_provider.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_time_provider_8hpp_source.html">TimeProvider.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -108,27 +111,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa2940b12aa894305fec44de9207fb781"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#aa2940b12aa894305fec44de9207fb781">~TimeProvider</a> ()=default</td></tr>
 <tr class="separator:aa2940b12aa894305fec44de9207fb781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab18014f7eac5c54baedef993c18911b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#ab18014f7eac5c54baedef993c18911b9">OnFrameStart</a> ()</td></tr>
+<tr class="memdesc:ab18014f7eac5c54baedef993c18911b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called on each window's frame start.  <a href="class_time_provider.html#ab18014f7eac5c54baedef993c18911b9">More...</a><br /></td></tr>
 <tr class="separator:ab18014f7eac5c54baedef993c18911b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a570b0ba29dfc81c2166d03cf54b8d1a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#a570b0ba29dfc81c2166d03cf54b8d1a0">OnFrameEnd</a> ()</td></tr>
+<tr class="memdesc:a570b0ba29dfc81c2166d03cf54b8d1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called on each window's frame end.  <a href="class_time_provider.html#a570b0ba29dfc81c2166d03cf54b8d1a0">More...</a><br /></td></tr>
 <tr class="separator:a570b0ba29dfc81c2166d03cf54b8d1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a9b8d0affafdd5dd8f680c33f5841b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#aa5a9b8d0affafdd5dd8f680c33f5841b">GetFPS</a> ()</td></tr>
+<tr class="memdesc:aa5a9b8d0affafdd5dd8f680c33f5841b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns current frames per seconds value based on last frame time.  <a href="class_time_provider.html#aa5a9b8d0affafdd5dd8f680c33f5841b">More...</a><br /></td></tr>
 <tr class="separator:aa5a9b8d0affafdd5dd8f680c33f5841b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd7d0882db911eeb4925f85a2fd5f4c5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#afd7d0882db911eeb4925f85a2fd5f4c5">GetAverageFPS</a> ()</td></tr>
+<tr class="memdesc:afd7d0882db911eeb4925f85a2fd5f4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns current average frames per seconds value based on all frames.  <a href="class_time_provider.html#afd7d0882db911eeb4925f85a2fd5f4c5">More...</a><br /></td></tr>
 <tr class="separator:afd7d0882db911eeb4925f85a2fd5f4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a078a74a279bbbb5f63fc76f4f150b3ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#a078a74a279bbbb5f63fc76f4f150b3ff">GetDeltaTime_s</a> ()</td></tr>
+<tr class="memdesc:a078a74a279bbbb5f63fc76f4f150b3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns last frame time in seconds.  <a href="class_time_provider.html#a078a74a279bbbb5f63fc76f4f150b3ff">More...</a><br /></td></tr>
 <tr class="separator:a078a74a279bbbb5f63fc76f4f150b3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38f7a4d0d891e115a6b48d82af818d39"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#a38f7a4d0d891e115a6b48d82af818d39">GetDeltaTime_ms</a> ()</td></tr>
+<tr class="memdesc:a38f7a4d0d891e115a6b48d82af818d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns last frame time in miliseconds.  <a href="class_time_provider.html#a38f7a4d0d891e115a6b48d82af818d39">More...</a><br /></td></tr>
 <tr class="separator:a38f7a4d0d891e115a6b48d82af818d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb39a50254011ee1c5b3228434f09721"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#abb39a50254011ee1c5b3228434f09721">GetAverageFrameTime_s</a> ()</td></tr>
+<tr class="memdesc:abb39a50254011ee1c5b3228434f09721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns average frame time from engine start in seconds.  <a href="class_time_provider.html#abb39a50254011ee1c5b3228434f09721">More...</a><br /></td></tr>
 <tr class="separator:abb39a50254011ee1c5b3228434f09721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae04680a366faf60db2a88e89b10183a4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#ae04680a366faf60db2a88e89b10183a4">GetTime_ms</a> ()</td></tr>
+<tr class="memdesc:ae04680a366faf60db2a88e89b10183a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time from engine's core start in milliseconds.  <a href="class_time_provider.html#ae04680a366faf60db2a88e89b10183a4">More...</a><br /></td></tr>
 <tr class="separator:ae04680a366faf60db2a88e89b10183a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b5d9a0b234c9506a58637411b215a4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4">GetTime_s</a> ()</td></tr>
+<tr class="memdesc:a95b5d9a0b234c9506a58637411b215a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns time from engine's core start in seconds.  <a href="class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4">More...</a><br /></td></tr>
 <tr class="separator:a95b5d9a0b234c9506a58637411b215a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a865d73e9b56b2dc1ebe2648282f8b4cd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">OnEngineStart</a> ()</td></tr>
+<tr class="memdesc:a865d73e9b56b2dc1ebe2648282f8b4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called on engine's core start.  <a href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">More...</a><br /></td></tr>
 <tr class="separator:a865d73e9b56b2dc1ebe2648282f8b4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -136,7 +149,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:abc5c086c8ef16eb8f9f332a904ea8d41"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_provider.html#abc5c086c8ef16eb8f9f332a904ea8d41">MILISECONDS_TO_SECONDS</a> { 0.001 }</td></tr>
 <tr class="separator:abc5c086c8ef16eb8f9f332a904ea8d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class providing timing data in the engine. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70769e2163712924ac6dfac894ceada2" name="a70769e2163712924ac6dfac894ceada2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70769e2163712924ac6dfac894ceada2">&#9670;&#160;</a></span>TimeProvider()</h2>
 
@@ -203,6 +218,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns current average frames per seconds value based on all frames. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns value of 1.0 / <a class="el" href="class_time_provider.html#abb39a50254011ee1c5b3228434f09721" title="Returns average frame time from engine start in seconds.">TimeProvider::GetAverageFrameTime_s</a>. </dd></dl>
+
 </div>
 </div>
 <a id="abb39a50254011ee1c5b3228434f09721" name="abb39a50254011ee1c5b3228434f09721"></a>
@@ -227,6 +245,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns average frame time from engine start in seconds. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4" title="Returns time from engine&#39;s core start in seconds.">TimeProvider::GetTime_s</a> / framesPassed; </dd></dl>
 
 </div>
 </div>
@@ -253,6 +274,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns last frame time in miliseconds. </p>
+
 </div>
 </div>
 <a id="a078a74a279bbbb5f63fc76f4f150b3ff" name="a078a74a279bbbb5f63fc76f4f150b3ff"></a>
@@ -277,6 +300,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns last frame time in seconds. </p>
 
 </div>
 </div>
@@ -303,6 +328,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns current frames per seconds value based on last frame time. </p>
+
 </div>
 </div>
 <a id="ae04680a366faf60db2a88e89b10183a4" name="ae04680a366faf60db2a88e89b10183a4"></a>
@@ -328,6 +355,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns time from engine's core start in milliseconds. </p>
+
 </div>
 </div>
 <a id="a95b5d9a0b234c9506a58637411b215a4" name="a95b5d9a0b234c9506a58637411b215a4"></a>
@@ -348,10 +377,12 @@ Static Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns time from engine's core start in seconds. </p>
 
 </div>
 </div>
@@ -378,6 +409,10 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Method called on engine's core start. </p>
+<p >Saves engine's core start time point.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_core_8hpp.html">Core.hpp</a> </dd></dl>
+
 </div>
 </div>
 <a id="a570b0ba29dfc81c2166d03cf54b8d1a0" name="a570b0ba29dfc81c2166d03cf54b8d1a0"></a>
@@ -395,6 +430,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Method called on each window's frame end. </p>
+<p >Saves time point of frame end to calculate how long this frame took. </p>
+
 </div>
 </div>
 <a id="ab18014f7eac5c54baedef993c18911b9" name="ab18014f7eac5c54baedef993c18911b9"></a>
@@ -411,6 +449,9 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Method called on each window's frame start. </p>
+<p >Saves time point of frame start to calculate how long this frame will take. </p>
 
 </div>
 </div>
@@ -438,7 +479,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Utils/<a class="el" href="_time_provider_8hpp_source.html">TimeProvider.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Utils/<a class="el" href="_time_provider_8hpp_source.html">TimeProvider.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,65 +1,77 @@
 \hypertarget{_file_reader_8hpp_source}{}\doxysection{File\+Reader.\+hpp}
-\label{_file_reader_8hpp_source}\index{CrustEngine/Code/Inc/Files/FileReader.hpp@{CrustEngine/Code/Inc/Files/FileReader.hpp}}
+\label{_file_reader_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/FileReader.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/FileReader.hpp}}
 \mbox{\hyperlink{_file_reader_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_FILEREADER\_HPP\_}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_FILEREADER\_HPP\_}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_logger_8hpp}{Core/Logger.hpp}}>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_logger_8hpp}{Logging/Logger.hpp}}>}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <cstdarg>}}
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cstring>}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdio>}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 }
-\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_file_reader}{FileReader}} \{}
-\DoxyCodeLine{15 \textcolor{keyword}{public}:}
-\DoxyCodeLine{25   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{OpenFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName);}
-\DoxyCodeLine{32   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{CloseOpenedFile}}();}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{42   \textcolor{keyword}{static} uint8\_t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{GetLineFromOpenedFile}}(uint8\_t expectedArgsCount, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* format, ...);}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{49   \textcolor{keyword}{static} FILE* \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{GetOpenedFileHanlder}}();}
-\DoxyCodeLine{50 \textcolor{keyword}{private}:}
-\DoxyCodeLine{51   \textcolor{keyword}{static} \textcolor{keyword}{inline} FILE* openedFile; }
-\DoxyCodeLine{52 \};}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName) \{}
-\DoxyCodeLine{55   \textcolor{keywordflow}{if}(openedFile != NULL) \{}
-\DoxyCodeLine{56     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to open file \%s, while previous is stil open!"{}}, fileName);}
-\DoxyCodeLine{57     \textcolor{keywordflow}{return};}
-\DoxyCodeLine{58   \}}
-\DoxyCodeLine{59   openedFile = fopen(fileName, \textcolor{stringliteral}{"{}r"{}});}
-\DoxyCodeLine{60   \textcolor{keywordflow}{if} (openedFile == NULL)}
-\DoxyCodeLine{61     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}File \%s could not be opened!"{}}, fileName);}
-\DoxyCodeLine{62 \}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstdarg>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//TODO should not be static! Multi threading will be a big problem}}
+\DoxyCodeLine{16 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_file_reader}{FileReader}} \{}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{OpenFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{34   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{CloseOpenedFile}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{44   \textcolor{keyword}{static} uint8\_t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{GetLineFromOpenedFile}}(uint8\_t expectedArgsCount, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* format, ...);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51   \textcolor{keyword}{static} std::string \mbox{\hyperlink{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}{GetFileName}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filepath);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58   \textcolor{keyword}{static} FILE* \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{GetOpenedFileHanlder}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keyword}{private}:}
+\DoxyCodeLine{61   \textcolor{keyword}{static} \textcolor{keyword}{inline} FILE* openedFile; }
+\DoxyCodeLine{62 \};}
 \DoxyCodeLine{63 }
-\DoxyCodeLine{64 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}() \{}
-\DoxyCodeLine{65   \textcolor{keywordflow}{if}(openedFile == NULL) \{}
-\DoxyCodeLine{66     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to close file, but there is no opened file!"{}});}
+\DoxyCodeLine{64 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName) \{}
+\DoxyCodeLine{65   \textcolor{keywordflow}{if}(openedFile != NULL) \{}
+\DoxyCodeLine{66     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to open file \%s, while previous is stil open!"{}}, fileName);}
 \DoxyCodeLine{67     \textcolor{keywordflow}{return};}
 \DoxyCodeLine{68   \}}
-\DoxyCodeLine{69   fclose(openedFile);}
-\DoxyCodeLine{70   openedFile = NULL;}
-\DoxyCodeLine{71 \}}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 uint8\_t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(uint8\_t expectedArgsCount, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, ...)}
-\DoxyCodeLine{74 \{}
-\DoxyCodeLine{75   \textcolor{keywordflow}{if} (openedFile == NULL) \{}
-\DoxyCodeLine{76     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to read file, but there is no opened file!"{}});}
-\DoxyCodeLine{77     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{69   openedFile = fopen(fileName, \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{70   \textcolor{keywordflow}{if} (openedFile == NULL)}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}File \%s could not be opened!"{}}, fileName);}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}() \{}
+\DoxyCodeLine{75   \textcolor{keywordflow}{if}(openedFile == NULL) \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to close file, but there is no opened file!"{}});}
+\DoxyCodeLine{77     \textcolor{keywordflow}{return};}
 \DoxyCodeLine{78   \}}
-\DoxyCodeLine{79   va\_list args;}
-\DoxyCodeLine{80   va\_start(args, format);}
-\DoxyCodeLine{81   uint8\_t count = vfscanf(openedFile, format, args);}
-\DoxyCodeLine{82   \textcolor{keywordflow}{if}(expectedArgsCount != count) \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{83   va\_end(args);}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85   \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{86 \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88 \textcolor{keyword}{inline} FILE* \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{FileReader::GetOpenedFileHanlder}}() \{ \textcolor{keywordflow}{return} openedFile; \}}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_FILEREADER\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{79   fclose(openedFile);}
+\DoxyCodeLine{80   openedFile = NULL;}
+\DoxyCodeLine{81 \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 uint8\_t \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(uint8\_t expectedArgsCount, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, ...)}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85   \textcolor{keywordflow}{if} (openedFile == NULL) \{}
+\DoxyCodeLine{86     \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{Logger::Warning}}(\textcolor{stringliteral}{"{}Trying to read file, but there is no opened file!"{}});}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{88   \}}
+\DoxyCodeLine{89   va\_list args;}
+\DoxyCodeLine{90   va\_start(args, format);}
+\DoxyCodeLine{91   uint8\_t argCount = vfscanf(openedFile, format, args);}
+\DoxyCodeLine{92   \textcolor{keywordflow}{if}(expectedArgsCount != argCount) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{93   va\_end(args);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95   \textcolor{keywordflow}{return} argCount;}
+\DoxyCodeLine{96 \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 std::string \mbox{\hyperlink{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}{FileReader::GetFileName}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filepath) \{}
+\DoxyCodeLine{99   uint8\_t index = strlen(filepath)-\/1;}
+\DoxyCodeLine{100   \textcolor{keywordflow}{while}(filepath[index] != \textcolor{charliteral}{'/'}) index-\/-\/;}
+\DoxyCodeLine{101   std::string result(filepath);}
+\DoxyCodeLine{102   \textcolor{keywordflow}{return} result.substr(index+1, strlen(filepath)-\/1);}
+\DoxyCodeLine{103 \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{keyword}{inline} FILE* \mbox{\hyperlink{class_file_reader_ae31cdff78db5462139cde270f65164e4}{FileReader::GetOpenedFileHanlder}}() \{ \textcolor{keywordflow}{return} openedFile; \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_FILEREADER\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

@@ -1,0 +1,40 @@
+\hypertarget{_rotate_8hpp_source}{}\doxysection{Rotate.\+hpp}
+\label{_rotate_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/SampleScripts/Rotate.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/SampleScripts/Rotate.hpp}}
+\mbox{\hyperlink{_rotate_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_ROTATE\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_ROTATE\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_crust_script_8hpp}{Scripting/CrustScript.hpp}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_rotate}{Rotate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_crust_script}{CrustScript}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10   \mbox{\hyperlink{class_rotate}{Rotate}}(\mbox{\hyperlink{class_object}{Object}}* \_parentObj);}
+\DoxyCodeLine{11   \mbox{\hyperlink{class_rotate_ab6b74ed039e4504f866912a966c0bebf}{\string~Rotate}}()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rotate_af665dc089286af2172d50fd9969e67d1}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{14   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rotate_a400686375957186ada461df00e913655}{Update}}(\textcolor{keywordtype}{double} deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16   \mbox{\hyperlink{class_matrix}{Matrix}}* rotMatX \{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{17   \mbox{\hyperlink{class_matrix}{Matrix}}* rotMatZ \{ \textcolor{keyword}{nullptr} \};}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{inline} \mbox{\hyperlink{class_rotate_aa641216644cbecd94f4015f8dd82ab0d}{Rotate::Rotate}}(\mbox{\hyperlink{class_object}{Object}}* \_parentObj) : \mbox{\hyperlink{class_crust_script}{CrustScript}}(\_parentObj) \{\}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rotate_af665dc089286af2172d50fd9969e67d1}{Rotate::Start}}() \{}
+\DoxyCodeLine{23   rotMatX = \textcolor{keyword}{new} \mbox{\hyperlink{class_matrix}{Matrix}}(4, 4);}
+\DoxyCodeLine{24   rotMatZ = \textcolor{keyword}{new} \mbox{\hyperlink{class_matrix}{Matrix}}(4, 4);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   rotMatX-\/>\mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{ResetMatrix}}(0.0);}
+\DoxyCodeLine{27   rotMatZ-\/>\mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{ResetMatrix}}(0.0);}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rotate_a400686375957186ada461df00e913655}{Rotate::Update}}(\textcolor{keywordtype}{double} deltaTime) \{}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}-\/>\mbox{\hyperlink{class_object_a59643950ef70e2bcc81fb3e53e11dcfe}{Rotate}}(1 * 1 * deltaTime, 0 * 2 * deltaTime, 1 * 3 * deltaTime); \textcolor{comment}{// TODO}}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_ROTATE\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

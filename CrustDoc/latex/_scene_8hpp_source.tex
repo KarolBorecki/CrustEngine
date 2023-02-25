@@ -1,5 +1,5 @@
 \hypertarget{_scene_8hpp_source}{}\doxysection{Scene.\+hpp}
-\label{_scene_8hpp_source}\index{CrustEngine/Code/Inc/Core/Scene.hpp@{CrustEngine/Code/Inc/Core/Scene.hpp}}
+\label{_scene_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Scene.hpp}}
 \mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_SCENE\_HPP\_}}
@@ -10,44 +10,88 @@
 \DoxyCodeLine{6 }
 \DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_camera_8hpp}{Core/Camera.hpp}}>}}
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_render_object_8hpp}{Rendering/Objects/RenderObject.hpp}}>}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_object_8hpp}{Rendering/Objects/Object.hpp}}>}}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{comment}{/* For now only objects can be added/changed, camera must stay the same! */}}
-\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}} \{}
-\DoxyCodeLine{22 \textcolor{keyword}{public}:}
-\DoxyCodeLine{27   \mbox{\hyperlink{class_scene}{Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera);}
-\DoxyCodeLine{28   \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{\string~Scene}}() \{\};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{37   \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}();}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj);}
-\DoxyCodeLine{56   std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{63   std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}();}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_light_source_8hpp}{Rendering/Objects/LightSource.hpp}}>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_object_8hpp}{Rendering/Objects/Object.hpp}}>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_crust_script_8hpp}{Scripting/CrustScript.hpp}}>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{/* For now only objects can be added/changed, camera must stay the same! */}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}} \{}
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   \mbox{\hyperlink{class_scene}{Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera);}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{\string~Scene}}() \{\};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}{Start}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}{Update}}(\textcolor{keywordtype}{double} deltaTime);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{44   \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{GetMainCamera}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj);}
+\DoxyCodeLine{63   std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{GetObjectsToRender}}();}
 \DoxyCodeLine{64 }
-\DoxyCodeLine{65 \textcolor{keyword}{private}:}
-\DoxyCodeLine{66   std::string name; }
-\DoxyCodeLine{67   \mbox{\hyperlink{class_camera}{Camera}}* mainCamera \{ \textcolor{keyword}{nullptr} \}; }
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69   std::vector<Object*> objects; }
-\DoxyCodeLine{70   std::vector<RenderObject*> renderObjects; }
-\DoxyCodeLine{71 \};}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73 \textcolor{keyword}{inline} \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene::Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera) : name(\_name), mainCamera(\_mainCamera) \{\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene============"{}});\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene DONE============"{}});\}}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75 \textcolor{keyword}{inline} \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Scene::GetMainCamera}}() \{ \textcolor{keywordflow}{return} mainCamera; \}}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Scene::AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj) \{}
-\DoxyCodeLine{78   objects.push\_back(obj);}
-\DoxyCodeLine{79   \mbox{\hyperlink{class_render_object}{RenderObject}}* renderObj = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_render_object}{RenderObject}}*\textcolor{keyword}{>}(obj);}
-\DoxyCodeLine{80   \textcolor{keywordflow}{if}(renderObj != \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{81     renderObjects.push\_back(renderObj);}
-\DoxyCodeLine{82 \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84 \textcolor{keyword}{inline} std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Scene::GetObjectsToRender}}() \{ \textcolor{keywordflow}{return} renderObjects; \}}
+\DoxyCodeLine{72   std::vector<LightSource*> \mbox{\hyperlink{class_scene_a107f300686b73f435f602e7d5c50ef5d}{GetLightSources}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{79   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_a3052fa786329fa10fca30682cb9f998f}{IsLightProjected}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{84   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a90165078e5ee14185bbbfd84f56f75a1}{SetLightProjection}}(\textcolor{keywordtype}{bool} project);}
 \DoxyCodeLine{85 }
-\DoxyCodeLine{86 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{Scene::GetName}}() \{ \textcolor{keywordflow}{return} name; \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SCENE\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91   std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{private}:}
+\DoxyCodeLine{94   std::string name; }
+\DoxyCodeLine{95   \mbox{\hyperlink{class_camera}{Camera}}* mainCamera \{ \textcolor{keyword}{nullptr} \}; }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keywordtype}{bool} projectLight \{ \textcolor{keyword}{true} \}; }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   std::vector<Object*> objects; }
+\DoxyCodeLine{100   std::vector<RenderObject*> renderObjects; }
+\DoxyCodeLine{101   std::vector<LightSource*> lightSources; }
+\DoxyCodeLine{102 \};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{inline} \mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene::Scene}}(std::string \_name, \mbox{\hyperlink{class_camera}{Camera}}* \_mainCamera) : name(\_name), mainCamera(\_mainCamera) \{\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene============"{}});\mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Creating Scene DONE============"{}});\}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}{Scene::Start}}() \{}
+\DoxyCodeLine{107   \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} obj : objects)}
+\DoxyCodeLine{108     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} script : obj-\/>GetScripts())}
+\DoxyCodeLine{109       script-\/>Start();}
+\DoxyCodeLine{110 \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}{Scene::Update}}(\textcolor{keywordtype}{double} deltaTime) \{}
+\DoxyCodeLine{113   \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} obj : objects)}
+\DoxyCodeLine{114     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} script : obj-\/>GetScripts())}
+\DoxyCodeLine{115       script-\/>Update(deltaTime);}
+\DoxyCodeLine{116 \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keyword}{inline} \mbox{\hyperlink{class_camera}{Camera}}* \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Scene::GetMainCamera}}() \{ \textcolor{keywordflow}{return} mainCamera; \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Scene::AddObject}}(\mbox{\hyperlink{class_object}{Object}}* obj) \{}
+\DoxyCodeLine{121   \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}Adding object<\%d>"{}}, obj-\/>\mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{122   objects.push\_back(obj);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   \mbox{\hyperlink{class_render_object}{RenderObject}}* renderObj = \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_render_object}{RenderObject}}*\textcolor{keyword}{>}(obj);}
+\DoxyCodeLine{125   \textcolor{keywordflow}{if}(renderObj != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{126     \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Obj<\%d> is renderable!"{}}, obj-\/>\mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{127     renderObjects.push\_back(renderObj);}
+\DoxyCodeLine{128   \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130   \mbox{\hyperlink{class_light_source}{LightSource}}* lightSource = \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_light_source}{LightSource}}*\textcolor{keyword}{>}(obj);}
+\DoxyCodeLine{131   \textcolor{keywordflow}{if}(lightSource != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{132     \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Obj<\%d> is light!"{}}, obj-\/>\mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{GetID}}());}
+\DoxyCodeLine{133     lightSources.push\_back(lightSource);}
+\DoxyCodeLine{134   \}}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{inline} std::vector<RenderObject*> \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Scene::GetObjectsToRender}}() \{ \textcolor{keywordflow}{return} renderObjects; \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keyword}{inline} std::vector<LightSource*> \mbox{\hyperlink{class_scene_a107f300686b73f435f602e7d5c50ef5d}{Scene::GetLightSources}}() \{ \textcolor{keywordflow}{return} lightSources; \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_a3052fa786329fa10fca30682cb9f998f}{Scene::IsLightProjected}}() \{ \textcolor{keywordflow}{return} projectLight; \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a90165078e5ee14185bbbfd84f56f75a1}{Scene::SetLightProjection}}(\textcolor{keywordtype}{bool} project) \{ projectLight = project; \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{Scene::GetName}}() \{ \textcolor{keywordflow}{return} name; \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_SCENE\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

@@ -1,38 +1,38 @@
 \hypertarget{_mesh_loader_8hpp_source}{}\doxysection{Mesh\+Loader.\+hpp}
-\label{_mesh_loader_8hpp_source}\index{CrustEngine/Code/Inc/Files/MeshLoader.hpp@{CrustEngine/Code/Inc/Files/MeshLoader.hpp}}
+\label{_mesh_loader_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/MeshLoader.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/MeshLoader.hpp}}
 \mbox{\hyperlink{_mesh_loader_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MESHLOADER\_HPP\_}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MESHLOADER\_HPP\_}}
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_file_reader_8hpp}{Files/FileReader.hpp}}>}}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{comment}{// TODO add detection to file extensions}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh_loader}{MeshLoader}} \{}
-\DoxyCodeLine{14 \textcolor{keyword}{public}:}
-\DoxyCodeLine{24   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26 \textcolor{keyword}{private}:}
-\DoxyCodeLine{35   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{47   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{48 \};}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{MeshLoader::LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
-\DoxyCodeLine{51   uint8\_t fileNameLen = strlen(fileName);}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53   \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'j'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'b'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'o'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
-\DoxyCodeLine{54     ReadFromObj(fileName, outMesh);}
-\DoxyCodeLine{55   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'x'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
-\DoxyCodeLine{56     ReadFromTxt(fileName, outMesh);}
-\DoxyCodeLine{57   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{58     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}No mathing file extension for file: \%s"{}}, fileName);}
-\DoxyCodeLine{59 \}}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61 \textcolor{comment}{//TODO Need to figure out how to converte vertex to triangles}}
-\DoxyCodeLine{62 \textcolor{keywordtype}{void} MeshLoader::ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_file_reader_8hpp}{Files/FileReader.hpp}}>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh_loader}{MeshLoader}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
+\DoxyCodeLine{46   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{MeshLoader::LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
+\DoxyCodeLine{50   uint8\_t fileNameLen = strlen(fileName);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'j'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'b'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'o'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{53     ReadFromObj(fileName, outMesh);}
+\DoxyCodeLine{54   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'x'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{55     ReadFromTxt(fileName, outMesh);}
+\DoxyCodeLine{56   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}No mathing file extension for file: \%s"{}}, fileName);}
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{// TODO not fully implemented! Only vectros and faces are read}}
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} MeshLoader::ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh)}
+\DoxyCodeLine{62 \{}
 \DoxyCodeLine{63   \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(fileName);}
 \DoxyCodeLine{64 }
 \DoxyCodeLine{65   \textcolor{keywordtype}{char} materialName[256];}
@@ -43,38 +43,56 @@
 \DoxyCodeLine{70   outMesh-\/>\mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{SetName}}(objectName);}
 \DoxyCodeLine{71 }
 \DoxyCodeLine{72   \textcolor{keywordtype}{char} vertexType[3] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
-\DoxyCodeLine{73   \textcolor{keywordtype}{double} d1=1.0,d2=1.0,d3=1.0;}
-\DoxyCodeLine{74   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(1, \textcolor{stringliteral}{"{}\%s"{}}, vertexType) > 0) \{}
-\DoxyCodeLine{75     \textcolor{keywordflow}{if}(vertexType[0] == \textcolor{charliteral}{'v'} \&\& vertexType[1] == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{76       \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%lf \%lf \%lf\(\backslash\)n"{}}, \&d1, \&d2, \&d3);}
-\DoxyCodeLine{77       \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1}{Logger::FontColor::LIGHT\_BLUE}}, \textcolor{stringliteral}{"{}\%s: \%lf, \%lf, \%lf"{}}, vertexType, d1, d2, d3);}
-\DoxyCodeLine{78     \}}
-\DoxyCodeLine{79     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(vertexType[0] == \textcolor{charliteral}{'v'} \&\& vertexType[1] == \textcolor{charliteral}{'t'}) \{}
-\DoxyCodeLine{80       \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(2, \textcolor{stringliteral}{"{} \%lf \%lf\(\backslash\)n"{}}, \&d1, \&d2);}
-\DoxyCodeLine{81       \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1}{Logger::FontColor::LIGHT\_BLUE}}, \textcolor{stringliteral}{"{}\%s: \%lf, \%lf"{}}, vertexType, d1, d2);}
-\DoxyCodeLine{82     \}}
-\DoxyCodeLine{83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(vertexType[0] == \textcolor{charliteral}{'v'} \&\& vertexType[1] == \textcolor{charliteral}{'n'}) \{}
-\DoxyCodeLine{84       \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%lf \%lf \%lf\(\backslash\)n"{}}, \&d1, \&d2, \&d3);}
-\DoxyCodeLine{85       \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1}{Logger::FontColor::LIGHT\_BLUE}}, \textcolor{stringliteral}{"{}\%s: \%lf, \%lf, \%lf"{}}, vertexType, d1, d2, d3);}
-\DoxyCodeLine{86     \}}
-\DoxyCodeLine{87   \}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
-\DoxyCodeLine{90 \}}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92 \textcolor{keywordtype}{void} MeshLoader::ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
-\DoxyCodeLine{93   \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(fileName);}
-\DoxyCodeLine{94   outMesh-\/>\mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{SetName}}(fileName);}
-\DoxyCodeLine{95   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Loading mesh \%s============"{}}, fileName);}
-\DoxyCodeLine{96   \textcolor{keywordtype}{double} d1,d2,d3,d4,d5,d6,d7,d8,d9;}
-\DoxyCodeLine{97   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(9, \textcolor{stringliteral}{"{}\%lf, \%lf, \%lf; \%lf, \%lf, \%lf; \%lf, \%lf, \%lf;"{}}, \&d1, \&d2, \&d3, \&d4, \&d5, \&d6, \&d7, \&d8, \&d9) == 9) \{}
-\DoxyCodeLine{98     \mbox{\hyperlink{class_triangle}{Triangle}}* tri = \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle}{Triangle}}(d1, d2, d3, d4, d5, d6, d7, d8, d9);}
-\DoxyCodeLine{99     outMesh-\/>\mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{AddTriangle}}(tri);}
-\DoxyCodeLine{100   \}}
-\DoxyCodeLine{101   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}============Mesh \%s loading done.============"{}}, outMesh-\/>\mbox{\hyperlink{class_mesh_a8c8e87bb63f0fd8648effba210ddf082}{GetName}}().c\_str());}
-\DoxyCodeLine{102   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
-\DoxyCodeLine{103 \}}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MESHLOADER\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{double} d1 = 1.0, d2 = 1.0, d3 = 1.0;}
+\DoxyCodeLine{75   \textcolor{keywordtype}{int} p1 = 1, p2 = 1, p3 = 1;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77   \mbox{\hyperlink{class_vector3}{Vector3}} *points[20000];}
+\DoxyCodeLine{78   \mbox{\hyperlink{class_triangle}{Triangle}} *tri[20000];}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{keywordtype}{int} currentPoint = 0;}
+\DoxyCodeLine{81   \textcolor{keywordtype}{int} currentTri = 0;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(1, \textcolor{stringliteral}{"{}\%s"{}}, vertexType) > 0)}
+\DoxyCodeLine{84   \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (vertexType[0] == \textcolor{charliteral}{'v'})}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%lf \%lf \%lf\(\backslash\)n"{}}, \&d1, \&d2, \&d3) == 3)}
+\DoxyCodeLine{88       \{}
+\DoxyCodeLine{89         points[currentPoint] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(d1, d2, d3);}
+\DoxyCodeLine{90         currentPoint++;}
+\DoxyCodeLine{91       \}}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (vertexType[0] == \textcolor{charliteral}{'f'})}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%d \%d \%d\(\backslash\)n"{}}, \&p1, \&p2, \&p3) == 3)}
+\DoxyCodeLine{96       \{}
+\DoxyCodeLine{97         tri[currentTri] = \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle}{Triangle}}(points[p1 -\/ 1], points[p2 -\/ 1], points[p3 -\/ 1]);}
+\DoxyCodeLine{98         currentTri++;}
+\DoxyCodeLine{99       \}}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101   \}}
+\DoxyCodeLine{102   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Reading mesh end."{}});}
+\DoxyCodeLine{103   \textcolor{keywordflow}{for} (uint8\_t i = 0; i < currentTri; i++)}
+\DoxyCodeLine{104   \{}
+\DoxyCodeLine{105     \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1}{Logger::FontColor::LIGHT\_BLUE}}, \textcolor{stringliteral}{"{}Adding tri: \%d"{}}, i);}
+\DoxyCodeLine{106     outMesh-\/>\mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{AddTriangle}}(tri[i]);}
+\DoxyCodeLine{107   \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
+\DoxyCodeLine{110 \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} MeshLoader::ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
+\DoxyCodeLine{113   \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(fileName);}
+\DoxyCodeLine{114   outMesh-\/>\mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{SetName}}(\mbox{\hyperlink{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}{FileReader::GetFileName}}(fileName));}
+\DoxyCodeLine{115   \textcolor{keywordtype}{double} d1,d2,d3,d4,d5,d6,d7,d8,d9;}
+\DoxyCodeLine{116   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(9, \textcolor{stringliteral}{"{}\%lf, \%lf, \%lf; \%lf, \%lf, \%lf; \%lf, \%lf, \%lf;"{}}, \&d1, \&d2, \&d3, \&d4, \&d5, \&d6, \&d7, \&d8, \&d9) == 9) \{}
+\DoxyCodeLine{117     \mbox{\hyperlink{class_triangle}{Triangle}}* tri = \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle}{Triangle}}(d1, d2, d3, d4, d5, d6, d7, d8, d9);}
+\DoxyCodeLine{118     outMesh-\/>\mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{AddTriangle}}(tri);}
+\DoxyCodeLine{119   \}}
+\DoxyCodeLine{120   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MESHLOADER\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

@@ -1,5 +1,5 @@
 \hypertarget{_render_object_8hpp_source}{}\doxysection{Render\+Object.\+hpp}
-\label{_render_object_8hpp_source}\index{CrustEngine/Code/Inc/Rendering/Objects/RenderObject.hpp@{CrustEngine/Code/Inc/Rendering/Objects/RenderObject.hpp}}
+\label{_render_object_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Objects/RenderObject.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Objects/RenderObject.hpp}}
 \mbox{\hyperlink{_render_object_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_RENDEROBJECT\_HPP\_}}
@@ -18,37 +18,41 @@
 \DoxyCodeLine{30   \mbox{\hyperlink{class_render_object}{RenderObject}}(\mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh);}
 \DoxyCodeLine{31   \mbox{\hyperlink{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}{\string~RenderObject}}();}
 \DoxyCodeLine{32 }
-\DoxyCodeLine{38   \mbox{\hyperlink{class_mesh}{Mesh}}* \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{GetMesh}}();}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{45   std::string \mbox{\hyperlink{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}{ToString}}();}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{keyword}{private}:}
-\DoxyCodeLine{48   \mbox{\hyperlink{class_mesh}{Mesh}}* mesh; }
-\DoxyCodeLine{49 \};}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos, \mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}(pos) \{\}}
+\DoxyCodeLine{33   std::string \mbox{\hyperlink{class_render_object_a68ff19a030819e1bab226858a22859b6}{GetObjectTypeName}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{40   \mbox{\hyperlink{class_mesh}{Mesh}}* \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{GetMesh}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47   std::string \mbox{\hyperlink{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}{ToString}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{private}:}
+\DoxyCodeLine{50   \mbox{\hyperlink{class_mesh}{Mesh}}* mesh; }
+\DoxyCodeLine{51 \};}
 \DoxyCodeLine{52 }
-\DoxyCodeLine{53 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ, \mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}(posX, posY, posZ) \{\}}
+\DoxyCodeLine{53 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\mbox{\hyperlink{class_vector3}{Vector3}}* pos, \mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}(pos) \{\}}
 \DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}() \{\}}
+\DoxyCodeLine{55 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\textcolor{keywordtype}{double} posX, \textcolor{keywordtype}{double} posY, \textcolor{keywordtype}{double} posZ, \mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}(posX, posY, posZ) \{\}}
 \DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}{RenderObject::\string~RenderObject}}() \{\}}
+\DoxyCodeLine{57 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_a546733d9fe09e8af26163aaae60c604c}{RenderObject::RenderObject}}(\mbox{\hyperlink{class_mesh}{Mesh}}* \_mesh) : mesh(\_mesh), \mbox{\hyperlink{class_object}{Object}}() \{\}}
 \DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{keyword}{inline} \mbox{\hyperlink{class_mesh}{Mesh}}* \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{RenderObject::GetMesh}}() \{ \textcolor{keywordflow}{return} mesh; \}}
+\DoxyCodeLine{59 \textcolor{keyword}{inline} \mbox{\hyperlink{class_render_object_aac7c52e3e892530e0ca7165a2aab3a00}{RenderObject::\string~RenderObject}}() \{\}}
 \DoxyCodeLine{60 }
-\DoxyCodeLine{61 std::string \mbox{\hyperlink{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}{RenderObject::ToString}}() \{}
-\DoxyCodeLine{62   std::string result = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{63   result += \textcolor{stringliteral}{"{}Mesh:\(\backslash\)n"{}};}
-\DoxyCodeLine{64   \mbox{\hyperlink{class_mesh}{Mesh}}* mesh = \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{GetMesh}}();}
-\DoxyCodeLine{65   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < mesh-\/>\mbox{\hyperlink{class_mesh_a0657100f56c0f80790e4bf8cd57295ed}{GetTrianglesCount}}(); i++) \{}
-\DoxyCodeLine{66     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
-\DoxyCodeLine{67       result += \textcolor{stringliteral}{"{}("{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}()) + \textcolor{stringliteral}{"{}) "{}};}
-\DoxyCodeLine{68     \}}
-\DoxyCodeLine{69     result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{70   \}}
-\DoxyCodeLine{71   \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{72 \}}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDEROBJECT\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_render_object_a68ff19a030819e1bab226858a22859b6}{RenderObject::GetObjectTypeName}}() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Render Object"{}}; \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{inline} \mbox{\hyperlink{class_mesh}{Mesh}}* \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{RenderObject::GetMesh}}() \{ \textcolor{keywordflow}{return} mesh; \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 std::string \mbox{\hyperlink{class_render_object_a75bfe73c0026bd3fe154c7441ee75e8b}{RenderObject::ToString}}() \{}
+\DoxyCodeLine{66   std::string result = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{67   result += \textcolor{stringliteral}{"{}Mesh:\(\backslash\)n"{}};}
+\DoxyCodeLine{68   \mbox{\hyperlink{class_mesh}{Mesh}}* mesh = \mbox{\hyperlink{class_render_object_a6e15e7f53c3bfbe59b674a89d5d051a4}{GetMesh}}();}
+\DoxyCodeLine{69   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < mesh-\/>\mbox{\hyperlink{class_mesh_a0657100f56c0f80790e4bf8cd57295ed}{GetTrianglesCount}}(); i++) \{}
+\DoxyCodeLine{70     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 3; j++) \{}
+\DoxyCodeLine{71       result += \textcolor{stringliteral}{"{}("{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}()) + \textcolor{stringliteral}{"{}, "{}} + std::to\_string(mesh-\/>\mbox{\hyperlink{class_mesh_a2d9e6f92ff35de42a39c305cc2a3181c}{GetPoint}}(i, j)-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}()) + \textcolor{stringliteral}{"{}) "{}};}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73     result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{74   \}}
+\DoxyCodeLine{75   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_RENDEROBJECT\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

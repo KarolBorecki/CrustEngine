@@ -2,6 +2,11 @@
 \label{class_time_provider}\index{TimeProvider@{TimeProvider}}
 
 
+Class providing timing data in the engine.  
+
+
+
+
 {\ttfamily \#include $<$Time\+Provider.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -12,34 +17,37 @@
 virtual \mbox{\hyperlink{class_time_provider_aa2940b12aa894305fec44de9207fb781}{$\sim$\+Time\+Provider}} ()=default
 \item 
 void \mbox{\hyperlink{class_time_provider_ab18014f7eac5c54baedef993c18911b9}{On\+Frame\+Start}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Method called on each window\textquotesingle{}s frame start. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}{On\+Frame\+End}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Method called on each window\textquotesingle{}s frame end. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}{Get\+FPS}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns current frames per seconds value based on last frame time. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_time_provider_afd7d0882db911eeb4925f85a2fd5f4c5}{Get\+Average\+FPS}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns current average frames per seconds value based on all frames. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}{Get\+Delta\+Time\+\_\+s}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns last frame time in seconds. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}{Get\+Delta\+Time\+\_\+ms}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns last frame time in miliseconds. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{Get\+Average\+Frame\+Time\+\_\+s}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns average frame time from engine start in seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static double \mbox{\hyperlink{class_time_provider_ae04680a366faf60db2a88e89b10183a4}{Get\+Time\+\_\+ms}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns time from engine\textquotesingle{}s core start in milliseconds. \end{DoxyCompactList}\item 
 static double \mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{Get\+Time\+\_\+s}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns time from engine\textquotesingle{}s core start in seconds. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}{On\+Engine\+Start}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method called on engine\textquotesingle{}s core start. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}{MILISECONDS\+\_\+\+TO\+\_\+\+SECONDS}} \{ 0.\+001 \}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class providing timing data in the engine. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_time_provider_a70769e2163712924ac6dfac894ceada2}\label{class_time_provider_a70769e2163712924ac6dfac894ceada2}} 
@@ -63,17 +71,35 @@ static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9
 \doxysubsubsection{\texorpdfstring{GetAverageFPS()}{GetAverageFPS()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Average\+FPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Returns current average frames per seconds value based on all frames. 
+
+\begin{DoxyReturn}{Returns}
+Returns value of 1.\+0 / \mbox{\hyperlink{class_time_provider_abb39a50254011ee1c5b3228434f09721}{Time\+Provider\+::\+Get\+Average\+Frame\+Time\+\_\+s}}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_time_provider_abb39a50254011ee1c5b3228434f09721}\label{class_time_provider_abb39a50254011ee1c5b3228434f09721}} 
 \index{TimeProvider@{TimeProvider}!GetAverageFrameTime\_s@{GetAverageFrameTime\_s}}
 \index{GetAverageFrameTime\_s@{GetAverageFrameTime\_s}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{GetAverageFrameTime\_s()}{GetAverageFrameTime\_s()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Average\+Frame\+Time\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Returns average frame time from engine start in seconds. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{Time\+Provider\+::\+Get\+Time\+\_\+s}} / frames\+Passed; 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}\label{class_time_provider_a38f7a4d0d891e115a6b48d82af818d39}} 
 \index{TimeProvider@{TimeProvider}!GetDeltaTime\_ms@{GetDeltaTime\_ms}}
 \index{GetDeltaTime\_ms@{GetDeltaTime\_ms}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{GetDeltaTime\_ms()}{GetDeltaTime\_ms()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Delta\+Time\+\_\+ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns last frame time in miliseconds. 
 
 \mbox{\Hypertarget{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}\label{class_time_provider_a078a74a279bbbb5f63fc76f4f150b3ff}} 
 \index{TimeProvider@{TimeProvider}!GetDeltaTime\_s@{GetDeltaTime\_s}}
@@ -81,11 +107,19 @@ static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9
 \doxysubsubsection{\texorpdfstring{GetDeltaTime\_s()}{GetDeltaTime\_s()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Delta\+Time\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Returns last frame time in seconds. 
+
 \mbox{\Hypertarget{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}\label{class_time_provider_aa5a9b8d0affafdd5dd8f680c33f5841b}} 
 \index{TimeProvider@{TimeProvider}!GetFPS@{GetFPS}}
 \index{GetFPS@{GetFPS}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{GetFPS()}{GetFPS()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+FPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns current frames per seconds value based on last frame time. 
 
 \mbox{\Hypertarget{class_time_provider_ae04680a366faf60db2a88e89b10183a4}\label{class_time_provider_ae04680a366faf60db2a88e89b10183a4}} 
 \index{TimeProvider@{TimeProvider}!GetTime\_ms@{GetTime\_ms}}
@@ -93,11 +127,19 @@ static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9
 \doxysubsubsection{\texorpdfstring{GetTime\_ms()}{GetTime\_ms()}}
 {\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Time\+\_\+ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Returns time from engine\textquotesingle{}s core start in milliseconds. 
+
 \mbox{\Hypertarget{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}\label{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}} 
 \index{TimeProvider@{TimeProvider}!GetTime\_s@{GetTime\_s}}
 \index{GetTime\_s@{GetTime\_s}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{GetTime\_s()}{GetTime\_s()}}
-{\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Time\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily double Time\+Provider\+::\+Get\+Time\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns time from engine\textquotesingle{}s core start in seconds. 
 
 \mbox{\Hypertarget{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}\label{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}} 
 \index{TimeProvider@{TimeProvider}!OnEngineStart@{OnEngineStart}}
@@ -105,19 +147,36 @@ static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9
 \doxysubsubsection{\texorpdfstring{OnEngineStart()}{OnEngineStart()}}
 {\footnotesize\ttfamily void Time\+Provider\+::\+On\+Engine\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Method called on engine\textquotesingle{}s core start. 
+
+Saves engine\textquotesingle{}s core start time point.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}\label{class_time_provider_a570b0ba29dfc81c2166d03cf54b8d1a0}} 
 \index{TimeProvider@{TimeProvider}!OnFrameEnd@{OnFrameEnd}}
 \index{OnFrameEnd@{OnFrameEnd}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{OnFrameEnd()}{OnFrameEnd()}}
 {\footnotesize\ttfamily void Time\+Provider\+::\+On\+Frame\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_time_provider_ab18014f7eac5c54baedef993c18911b9}\label{class_time_provider_ab18014f7eac5c54baedef993c18911b9}} 
+
+
+Method called on each window\textquotesingle{}s frame end. 
+
+Saves time point of frame end to calculate how long this frame took. \mbox{\Hypertarget{class_time_provider_ab18014f7eac5c54baedef993c18911b9}\label{class_time_provider_ab18014f7eac5c54baedef993c18911b9}} 
 \index{TimeProvider@{TimeProvider}!OnFrameStart@{OnFrameStart}}
 \index{OnFrameStart@{OnFrameStart}!TimeProvider@{TimeProvider}}
 \doxysubsubsection{\texorpdfstring{OnFrameStart()}{OnFrameStart()}}
 {\footnotesize\ttfamily void Time\+Provider\+::\+On\+Frame\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Method called on each window\textquotesingle{}s frame start. 
+
+Saves time point of frame start to calculate how long this frame will take. 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}\label{class_time_provider_abc5c086c8ef16eb8f9f332a904ea8d41}} 
@@ -130,4 +189,4 @@ static constexpr double \mbox{\hyperlink{class_time_provider_abc5c086c8ef16eb8f9
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Utils/\mbox{\hyperlink{_time_provider_8hpp}{Time\+Provider.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Utils/\mbox{\hyperlink{_time_provider_8hpp}{Time\+Provider.\+hpp}}\end{DoxyCompactItemize}

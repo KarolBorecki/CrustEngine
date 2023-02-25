@@ -1,7 +1,10 @@
 var hierarchy =
 [
-    [ "Camera", "class_camera.html", null ],
     [ "Core", "class_core.html", null ],
+    [ "CrustScript", "class_crust_script.html", [
+      [ "LoopMove", "class_loop_move.html", null ],
+      [ "Rotate", "class_rotate.html", null ]
+    ] ],
     [ "FileReader", "class_file_reader.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "Matrix", "class_matrix.html", [
@@ -11,6 +14,8 @@ var hierarchy =
     [ "Mesh", "class_mesh.html", null ],
     [ "MeshLoader", "class_mesh_loader.html", null ],
     [ "Object", "class_object.html", [
+      [ "Camera", "class_camera.html", null ],
+      [ "LightSource", "class_light_source.html", null ],
       [ "RenderObject", "class_render_object.html", null ]
     ] ],
     [ "RendererWrapper", "class_renderer_wrapper.html", [

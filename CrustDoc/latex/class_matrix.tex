@@ -24,18 +24,18 @@ Inheritance diagram for Matrix\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{$\sim$\+Matrix}} ()
 \item 
-double \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{Get\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column)
-\begin{DoxyCompactList}\small\item\em Returns value stored on the given position in matrix. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{Put\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column, double value)
-\begin{DoxyCompactList}\small\item\em Puts the given value on the given position. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_matrix_a9f3054826e39ab3caf223141fe1a128a}{Reset\+Matrix}} (double val)
-\begin{DoxyCompactList}\small\item\em Function resets the matrix so each value of it is the same. \end{DoxyCompactList}\item 
-double $\ast$ \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{Get\+Matrix\+Array}} ()
-\begin{DoxyCompactList}\small\item\em Getter for mat field. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}} ()
 \begin{DoxyCompactList}\small\item\em Getter for rows field. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}} ()
 \begin{DoxyCompactList}\small\item\em Getter for columns field. \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{Get\+Matrix\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Getter for mat field. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{Get\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Returns value stored on the given position in matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{Put\+Value}} (uint8\+\_\+t row, uint8\+\_\+t column, double value)
+\begin{DoxyCompactList}\small\item\em Puts the given value on the given position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{Reset\+Matrix}} (double value)
+\begin{DoxyCompactList}\small\item\em Function resets the matrix so each value of it is the same. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{To\+String}} ()
 \begin{DoxyCompactList}\small\item\em Converts matrix to std\+::string, so it can be written on any output. \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{Get\+ID}} ()
@@ -43,16 +43,16 @@ uint32\+\_\+t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{G
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static void \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2)
+\begin{DoxyCompactList}\small\item\em Adds to given matrix \#mat1 another matrix \#mat2. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_matrix_aa8a37e15cc6098b037fe9bbe4c7a7371}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
+\begin{DoxyCompactList}\small\item\em Adds to given matrix scalar, constant value. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2, \mbox{\hyperlink{class_matrix}{Matrix}} \&out\+Mat)
 \begin{DoxyCompactList}\small\item\em Multiplies given matrixes. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_matrix_a08429f5aa98e740e74c27955942b1158}{Multiply}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
 \begin{DoxyCompactList}\small\item\em Multiplies given matrix by scalar constant value. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Divide}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
-\begin{DoxyCompactList}\small\item\em Divides given matrix by scalar constant value. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat1, \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat2)
-\begin{DoxyCompactList}\small\item\em Adds to given matrix \#mat1 another matrix \#mat2. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_matrix_aa8a37e15cc6098b037fe9bbe4c7a7371}{Add}} (\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$mat, const double scalar)
-\begin{DoxyCompactList}\small\item\em Adds to given matrix scalar constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Divides given matrix by scalar constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -104,7 +104,7 @@ If mat is not null deletes it from the heap.
 
 
 
-Adds to given matrix scalar constant value. 
+Adds to given matrix scalar, constant value. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -258,11 +258,11 @@ Puts the given value on the given position.
 {\em column} & The x index of the position in matrix. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_matrix_a9f3054826e39ab3caf223141fe1a128a}\label{class_matrix_a9f3054826e39ab3caf223141fe1a128a}} 
+\mbox{\Hypertarget{class_matrix_a7e54b182b691a081e0599e06034b1621}\label{class_matrix_a7e54b182b691a081e0599e06034b1621}} 
 \index{Matrix@{Matrix}!ResetMatrix@{ResetMatrix}}
 \index{ResetMatrix@{ResetMatrix}!Matrix@{Matrix}}
 \doxysubsubsection{\texorpdfstring{ResetMatrix()}{ResetMatrix()}}
-{\footnotesize\ttfamily void Matrix\+::\+Reset\+Matrix (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Matrix\+::\+Reset\+Matrix (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -270,7 +270,7 @@ Function resets the matrix so each value of it is the same.
 
 
 \begin{DoxyParams}{Parameters}
-{\em val} & The value that will be placed on each position in matrix. \\
+{\em value} & The value that will be placed on each position in matrix. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_matrix_a9823f552deec6e353ad4b910de873e23}\label{class_matrix_a9823f552deec6e353ad4b910de873e23}} 
@@ -302,4 +302,4 @@ The returned string is in a following format\+:~\newline
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_matrix_8hpp}{Matrix.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_matrix_8hpp}{Matrix.\+hpp}}\end{DoxyCompactItemize}

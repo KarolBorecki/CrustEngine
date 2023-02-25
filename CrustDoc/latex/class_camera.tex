@@ -9,15 +9,21 @@ Class representing the camera on a scene from which\textquotesingle{}s perespect
 
 {\ttfamily \#include $<$Camera.\+hpp$>$}
 
+Inheritance diagram for Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_camera_a2254bdb764a2a3c4b7ac9cd3bdf7a759}{Camera}} (int \+\_\+field\+Of\+View, double \+\_\+f\+Near, double \+\_\+f\+Far)
+\mbox{\hyperlink{class_camera_a42bf4f7817a3ac98ce455580719197a2}{Camera}} (int \+\_\+f\+Fov\+Deg, double \+\_\+f\+Near, double \+\_\+f\+Far)
 \item 
 virtual \mbox{\hyperlink{class_camera_ad3ed0c5e02c46f73ba92673598e40514}{$\sim$\+Camera}} ()=default
 \item 
-int \mbox{\hyperlink{class_camera_af7cabb91d3912475e6cec97ee9f21721}{Get\+Field\+Of\+View\+Deg}} ()
-\begin{DoxyCompactList}\small\item\em Getter for field\+Of\+View\+Deg field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_camera_a7d8381a938f6929e6dc9dbaea0fd19a9}{Get\+FFov\+Deg}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#field\+Of\+View\+Deg field. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_camera_a561a0090c008881dd66d3aafc0b1f846}{Get\+FNear}} ()
 \begin{DoxyCompactList}\small\item\em Getter for f\+Near field. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_camera_a47d7606590fc2ab2e971fe2f62d32ab6}{Get\+FFar}} ()
@@ -30,17 +36,17 @@ double \mbox{\hyperlink{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}{Get\+FFo
 Class representing the camera on a scene from which\textquotesingle{}s perespective the renderer can render \mbox{\hyperlink{class_mesh}{Mesh}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_camera_a2254bdb764a2a3c4b7ac9cd3bdf7a759}\label{class_camera_a2254bdb764a2a3c4b7ac9cd3bdf7a759}} 
+\mbox{\Hypertarget{class_camera_a42bf4f7817a3ac98ce455580719197a2}\label{class_camera_a42bf4f7817a3ac98ce455580719197a2}} 
 \index{Camera@{Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!Camera@{Camera}}
 \doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
-{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{\+\_\+field\+Of\+View,  }\item[{double}]{\+\_\+f\+Near,  }\item[{double}]{\+\_\+f\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{\+\_\+f\+Fov\+Deg,  }\item[{double}]{\+\_\+f\+Near,  }\item[{double}]{\+\_\+f\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Also calculates the f\+Fov\+Rad for given input.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+field\+Of\+View} & Field of view in degress. \\
+{\em \+\_\+f\+Fov\+Deg} & Field of view in degress. \\
 \hline
 {\em \+\_\+f\+Near} & f\+Near. \\
 \hline
@@ -69,6 +75,19 @@ Getter for f\+Far field.
 \begin{DoxyReturn}{Returns}
 Value of f\+Far. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_camera_a7d8381a938f6929e6dc9dbaea0fd19a9}\label{class_camera_a7d8381a938f6929e6dc9dbaea0fd19a9}} 
+\index{Camera@{Camera}!GetFFovDeg@{GetFFovDeg}}
+\index{GetFFovDeg@{GetFFovDeg}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetFFovDeg()}{GetFFovDeg()}}
+{\footnotesize\ttfamily int Camera\+::\+Get\+FFov\+Deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for \#field\+Of\+View\+Deg field. 
+
+\begin{DoxyReturn}{Returns}
+Value of \#field\+Of\+View\+Deg. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}\label{class_camera_a062b41dec9ba3a28d2c62a46df1c5dc2}} 
 \index{Camera@{Camera}!GetFFovRad@{GetFFovRad}}
 \index{GetFFovRad@{GetFFovRad}!Camera@{Camera}}
@@ -81,19 +100,6 @@ Getter for f\+Fov\+Rad field.
 
 \begin{DoxyReturn}{Returns}
 Value of f\+Fov\+Rad. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_camera_af7cabb91d3912475e6cec97ee9f21721}\label{class_camera_af7cabb91d3912475e6cec97ee9f21721}} 
-\index{Camera@{Camera}!GetFieldOfViewDeg@{GetFieldOfViewDeg}}
-\index{GetFieldOfViewDeg@{GetFieldOfViewDeg}!Camera@{Camera}}
-\doxysubsubsection{\texorpdfstring{GetFieldOfViewDeg()}{GetFieldOfViewDeg()}}
-{\footnotesize\ttfamily int Camera\+::\+Get\+Field\+Of\+View\+Deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Getter for field\+Of\+View\+Deg field. 
-
-\begin{DoxyReturn}{Returns}
-Value of field\+Of\+View\+Deg. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_camera_a561a0090c008881dd66d3aafc0b1f846}\label{class_camera_a561a0090c008881dd66d3aafc0b1f846}} 
 \index{Camera@{Camera}!GetFNear@{GetFNear}}
@@ -112,4 +118,4 @@ Value of f\+Near.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\end{DoxyCompactItemize}

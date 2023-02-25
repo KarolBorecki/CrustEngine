@@ -26,12 +26,22 @@ Inheritance diagram for Object\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Creates object at position \#posX, \#posY, \#posZ. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object}} ()
 \item 
+virtual std\+::string \mbox{\hyperlink{class_object_a123add5421e44f839cc564f882e8b497}{Get\+Object\+Type\+Name}} ()
+\item 
 bool \mbox{\hyperlink{class_object_a49327b515f7e613c882f33c2b058ab98}{Is\+Active}} ()
 \begin{DoxyCompactList}\small\item\em Getter for is\+Active field. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_object_ab0945360d98dff31603571ff78acb4f7}{Get\+Position}} ()
 \begin{DoxyCompactList}\small\item\em Getter for pos field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_object_a6f7ed1b434799c9ce6b7a7dcca56e69d}{Get\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Getter for rot field, this returns handler to euler\textquotesingle{}s vector for rotation. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_crust_script}{Crust\+Script}} $\ast$ $>$ \mbox{\hyperlink{class_object_ab6a373b25a3ca54d61e6e63812fe36c4}{Get\+Scripts}} ()
+\begin{DoxyCompactList}\small\item\em Getter for scripts field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a6bafbad58088d65c769ed1eecad51e44}{Attach\+Script}} (\mbox{\hyperlink{class_crust_script}{Crust\+Script}} $\ast$script)
+\begin{DoxyCompactList}\small\item\em Attaches given script functionality to this object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_object_a66015f89ae68876a273c8a9c8fc0cc57}{Move}} (double x, double y, double z)
 \begin{DoxyCompactList}\small\item\em Moves object by given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a59643950ef70e2bcc81fb3e53e11dcfe}{Rotate}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Rotates object by given values. \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{class_object_a9103dbe0ba73f056c1981ef8037f029f}{Get\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Getter for matrix ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -44,7 +54,7 @@ Represents object present on the scene.
 \index{Object@{Object}!Object@{Object}}
 \index{Object@{Object}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -54,7 +64,7 @@ Calls Object\+::\+Init method with all values equal to 0.\+0. \mbox{\Hypertarget
 \index{Object@{Object}!Object@{Object}}
 \index{Object@{Object}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -71,7 +81,7 @@ Calls Object\+::\+Init method with values equal to \#posX, \#posY, \#posZ.
 \index{Object@{Object}!Object@{Object}}
 \index{Object@{Object}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{double}]{posX,  }\item[{double}]{posY,  }\item[{double}]{posZ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{double}]{posX,  }\item[{double}]{posY,  }\item[{double}]{posZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -92,11 +102,26 @@ Calls Object\+::\+Init method with values equal to \#posX, \#posY, \#posZ.
 \index{Object@{Object}!````~Object@{$\sim$Object}}
 \index{````~Object@{$\sim$Object}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
-{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object_a6bafbad58088d65c769ed1eecad51e44}\label{class_object_a6bafbad58088d65c769ed1eecad51e44}} 
+\index{Object@{Object}!AttachScript@{AttachScript}}
+\index{AttachScript@{AttachScript}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{AttachScript()}{AttachScript()}}
+{\footnotesize\ttfamily void Object\+::\+Attach\+Script (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_crust_script}{Crust\+Script}} $\ast$}]{script }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Attaches given script functionality to this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em script} & Attached script which will be exectued specificly for this object. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_object_a9103dbe0ba73f056c1981ef8037f029f}\label{class_object_a9103dbe0ba73f056c1981ef8037f029f}} 
 \index{Object@{Object}!GetID@{GetID}}
 \index{GetID@{GetID}!Object@{Object}}
@@ -110,6 +135,16 @@ Getter for matrix ID.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_matrix}{Matrix}}\textquotesingle{}s ID. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_object_a123add5421e44f839cc564f882e8b497}\label{class_object_a123add5421e44f839cc564f882e8b497}} 
+\index{Object@{Object}!GetObjectTypeName@{GetObjectTypeName}}
+\index{GetObjectTypeName@{GetObjectTypeName}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetObjectTypeName()}{GetObjectTypeName()}}
+{\footnotesize\ttfamily std\+::string Object\+::\+Get\+Object\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_light_source_af3981a2c4ba0c41f9c05ef112db722d0}{Light\+Source}}, and \mbox{\hyperlink{class_render_object_a68ff19a030819e1bab226858a22859b6}{Render\+Object}}.
+
 \mbox{\Hypertarget{class_object_ab0945360d98dff31603571ff78acb4f7}\label{class_object_ab0945360d98dff31603571ff78acb4f7}} 
 \index{Object@{Object}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!Object@{Object}}
@@ -123,6 +158,32 @@ Getter for pos field.
 \begin{DoxyReturn}{Returns}
 pos field. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_object_a6f7ed1b434799c9ce6b7a7dcca56e69d}\label{class_object_a6f7ed1b434799c9ce6b7a7dcca56e69d}} 
+\index{Object@{Object}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Object\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for rot field, this returns handler to euler\textquotesingle{}s vector for rotation. 
+
+\begin{DoxyReturn}{Returns}
+rot field. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_object_ab6a373b25a3ca54d61e6e63812fe36c4}\label{class_object_ab6a373b25a3ca54d61e6e63812fe36c4}} 
+\index{Object@{Object}!GetScripts@{GetScripts}}
+\index{GetScripts@{GetScripts}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetScripts()}{GetScripts()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_crust_script}{Crust\+Script}} $\ast$ $>$ Object\+::\+Get\+Scripts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for scripts field. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_crust_script_8hpp}{Crust\+Script.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_object_a49327b515f7e613c882f33c2b058ab98}\label{class_object_a49327b515f7e613c882f33c2b058ab98}} 
 \index{Object@{Object}!IsActive@{IsActive}}
 \index{IsActive@{IsActive}!Object@{Object}}
@@ -140,14 +201,24 @@ is\+Active field.
 \index{Object@{Object}!Move@{Move}}
 \index{Move@{Move}!Object@{Object}}
 \doxysubsubsection{\texorpdfstring{Move()}{Move()}}
-{\footnotesize\ttfamily void Object\+::\+Move (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Object\+::\+Move (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Moves object by given values. 
 
-Adds x, y and z to adequate values of pos vector values. 
+Adds x, y and z to adequate values of pos vector values. \mbox{\Hypertarget{class_object_a59643950ef70e2bcc81fb3e53e11dcfe}\label{class_object_a59643950ef70e2bcc81fb3e53e11dcfe}} 
+\index{Object@{Object}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Object\+::\+Rotate (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates object by given values. 
+
+Adds x, y and z to adequate values of rot vector values. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}}\end{DoxyCompactItemize}

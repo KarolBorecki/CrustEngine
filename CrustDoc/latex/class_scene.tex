@@ -16,12 +16,22 @@ Class holding objects rendered on window and camera, from which the projection w
 \item 
 \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
 \item 
+void \mbox{\hyperlink{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}{Update}} (double delta\+Time)
+\item 
 \mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Get\+Main\+Camera}} ()
 \begin{DoxyCompactList}\small\item\em Getter for main\+Camera field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Add\+Object}} (\mbox{\hyperlink{class_object}{Object}} $\ast$obj)
 \begin{DoxyCompactList}\small\item\em Adds the object to the scene. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_render_object}{Render\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Get\+Objects\+To\+Render}} ()
 \begin{DoxyCompactList}\small\item\em Getter for render\+Objects field. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_light_source}{Light\+Source}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a107f300686b73f435f602e7d5c50ef5d}{Get\+Light\+Sources}} ()
+\begin{DoxyCompactList}\small\item\em Getter for light\+Sources field. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_a3052fa786329fa10fca30682cb9f998f}{Is\+Light\+Projected}} ()
+\begin{DoxyCompactList}\small\item\em Getter for project\+Light field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a90165078e5ee14185bbbfd84f56f75a1}{Set\+Light\+Projection}} (bool project)
+\begin{DoxyCompactList}\small\item\em Sets if the light should be projected. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_scene_a888574f4eea5fae0674c1c3431cf9421}{Get\+Name}} ()
 \begin{DoxyCompactList}\small\item\em Getter for name field. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -69,7 +79,7 @@ This class is passed to render window as the information what to render and how 
 
 Adds the object to the scene. 
 
-Adds the object to the objects array and if is type of \mbox{\hyperlink{class_render_object}{Render\+Object}} adds it\textquotesingle{}s handler to render\+Objects array.
+Adds the object to the objects array and if is type of \mbox{\hyperlink{class_render_object}{Render\+Object}} or \mbox{\hyperlink{class_light_source}{Light\+Source}} adds it\textquotesingle{}s handler to render\+Objects or light\+Sources array.
 
 
 \begin{DoxyParams}{Parameters}
@@ -77,7 +87,23 @@ Adds the object to the objects array and if is type of \mbox{\hyperlink{class_re
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}} \mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}} 
+\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}} \mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}} \mbox{\hyperlink{_light_source_8hpp}{Light\+Source.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_scene_a107f300686b73f435f602e7d5c50ef5d}\label{class_scene_a107f300686b73f435f602e7d5c50ef5d}} 
+\index{Scene@{Scene}!GetLightSources@{GetLightSources}}
+\index{GetLightSources@{GetLightSources}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetLightSources()}{GetLightSources()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_light_source}{Light\+Source}} $\ast$ $>$ Scene\+::\+Get\+Light\+Sources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for light\+Sources field. 
+
+\begin{DoxyReturn}{Returns}
+light\+Sources field.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_light_source_8hpp}{Light\+Source.\+hpp}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_scene_a5810372744288eac09133bc77241308e}\label{class_scene_a5810372744288eac09133bc77241308e}} 
 \index{Scene@{Scene}!GetMainCamera@{GetMainCamera}}
@@ -124,8 +150,43 @@ render\+Objects field.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_render_object_8hpp}{Render\+Object.\+hpp}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_scene_a3052fa786329fa10fca30682cb9f998f}\label{class_scene_a3052fa786329fa10fca30682cb9f998f}} 
+\index{Scene@{Scene}!IsLightProjected@{IsLightProjected}}
+\index{IsLightProjected@{IsLightProjected}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{IsLightProjected()}{IsLightProjected()}}
+{\footnotesize\ttfamily bool Scene\+::\+Is\+Light\+Projected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for project\+Light field. 
+
+\begin{DoxyReturn}{Returns}
+light\+Sources field, which represents if the lightning is done accordingly to light sources on the scene or set to maximum on each face. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a90165078e5ee14185bbbfd84f56f75a1}\label{class_scene_a90165078e5ee14185bbbfd84f56f75a1}} 
+\index{Scene@{Scene}!SetLightProjection@{SetLightProjection}}
+\index{SetLightProjection@{SetLightProjection}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{SetLightProjection()}{SetLightProjection()}}
+{\footnotesize\ttfamily void Scene\+::\+Set\+Light\+Projection (\begin{DoxyParamCaption}\item[{bool}]{project }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets if the light should be projected. 
+
+\mbox{\Hypertarget{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}\label{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}} 
+\index{Scene@{Scene}!Start@{Start}}
+\index{Start@{Start}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Scene\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}\label{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}} 
+\index{Scene@{Scene}!Update@{Update}}
+\index{Update@{Update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Scene\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}

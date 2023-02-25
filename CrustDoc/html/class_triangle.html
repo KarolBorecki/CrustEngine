@@ -111,13 +111,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe8dff6bf83bd56d5d2d038896e4a5c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_triangle.html#abe8dff6bf83bd56d5d2d038896e4a5c6">Triangle</a> (<a class="el" href="class_vector3.html">Vector3</a> *point1, <a class="el" href="class_vector3.html">Vector3</a> *point2, <a class="el" href="class_vector3.html">Vector3</a> *point3)</td></tr>
 <tr class="separator:abe8dff6bf83bd56d5d2d038896e4a5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5199760a17454f4dc94c855a57e3a152"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">~Triangle</a> ()</td></tr>
+<tr class="memdesc:a5199760a17454f4dc94c855a57e3a152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy created vectors representing triangle's points.  <a href="class_triangle.html#a5199760a17454f4dc94c855a57e3a152">More...</a><br /></td></tr>
 <tr class="separator:a5199760a17454f4dc94c855a57e3a152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac054c3c4c13a19ef2f34f23b52cc1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_triangle.html#a6ac054c3c4c13a19ef2f34f23b52cc1c">GetPoint</a> (uint8_t index)</td></tr>
 <tr class="memdesc:a6ac054c3c4c13a19ef2f34f23b52cc1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for triangle <a class="el" href="class_vector3.html" title="Represents mathematical vector3.">Vector3</a> point.  <a href="class_triangle.html#a6ac054c3c4c13a19ef2f34f23b52cc1c">More...</a><br /></td></tr>
 <tr class="separator:a6ac054c3c4c13a19ef2f34f23b52cc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01d55a4d18956260b842ddc4c580b26e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_triangle.html#a01d55a4d18956260b842ddc4c580b26e">SetPoints</a> (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)</td></tr>
+<tr class="memdesc:a01d55a4d18956260b842ddc4c580b26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for all 3 points of triangle x, y and z values.  <a href="class_triangle.html#a01d55a4d18956260b842ddc4c580b26e">More...</a><br /></td></tr>
 <tr class="separator:a01d55a4d18956260b842ddc4c580b26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab15e48058937687f381d00f91ccbd0e7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_triangle.html#ab15e48058937687f381d00f91ccbd0e7">ToString</a> ()</td></tr>
+<tr class="memdesc:ab15e48058937687f381d00f91ccbd0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts triangle to std::string, so it can be written on any output.  <a href="class_triangle.html#ab15e48058937687f381d00f91ccbd0e7">More...</a><br /></td></tr>
 <tr class="separator:ab15e48058937687f381d00f91ccbd0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -128,6 +131,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Triangle::Triangle </td>
@@ -136,6 +142,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -145,6 +156,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Triangle::Triangle </td>
@@ -206,7 +220,26 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1X</td><td>Point 1 x coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p1Y</td><td>Point 1 y coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p1Z</td><td>Point 1 z coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p2X</td><td>Point 2 x coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p2Y</td><td>Point 2 y coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p2Z</td><td>Point 2 z coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p3X</td><td>Point 3 x coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p3Y</td><td>Point 3 y coordinate value in 3D space. </td></tr>
+    <tr><td class="paramname">p3Z</td><td>Point 3 z coordinate value in 3D space. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -215,6 +248,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Triangle::Triangle </td>
@@ -240,6 +276,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -266,6 +307,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy created vectors representing triangle's points. </p>
 
 </div>
 </div>
@@ -372,6 +415,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Setter for all 3 points of triangle x, y and z values. </p>
+
 </div>
 </div>
 <a id="ab15e48058937687f381d00f91ccbd0e7" name="ab15e48058937687f381d00f91ccbd0e7"></a>
@@ -389,10 +434,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Converts triangle to std::string, so it can be written on any output. </p>
+<p >The returned string is in a following format:<br  />
+ First line contains "Triangle:" caption.<br  />
+ Next 3 lines contains written vectors using <a class="el" href="class_matrix.html#af40af6f88268cbe1850617269d1f80e2" title="Converts matrix to std::string, so it can be written on any output.">Vector3::ToString</a> function. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Physics/<a class="el" href="_triangle_8hpp_source.html">Triangle.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/<a class="el" href="_triangle_8hpp_source.html">Triangle.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

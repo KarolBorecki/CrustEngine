@@ -101,16 +101,25 @@ $(document).ready(function(){initNavTree('class_camera.html',''); initResizable(
  <a href="class_camera.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Camera:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_camera.png" usemap="#Camera_map" alt=""/>
+  <map id="Camera_map" name="Camera_map">
+<area href="class_object.html" title="Represents object present on the scene." alt="Object" shape="rect" coords="0,0,56,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2254bdb764a2a3c4b7ac9cd3bdf7a759"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a2254bdb764a2a3c4b7ac9cd3bdf7a759">Camera</a> (int _fieldOfView, double _fNear, double _fFar)</td></tr>
-<tr class="separator:a2254bdb764a2a3c4b7ac9cd3bdf7a759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42bf4f7817a3ac98ce455580719197a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a42bf4f7817a3ac98ce455580719197a2">Camera</a> (int _fFovDeg, double _fNear, double _fFar)</td></tr>
+<tr class="separator:a42bf4f7817a3ac98ce455580719197a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3ed0c5e02c46f73ba92673598e40514"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad3ed0c5e02c46f73ba92673598e40514">~Camera</a> ()=default</td></tr>
 <tr class="separator:ad3ed0c5e02c46f73ba92673598e40514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7cabb91d3912475e6cec97ee9f21721"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#af7cabb91d3912475e6cec97ee9f21721">GetFieldOfViewDeg</a> ()</td></tr>
-<tr class="memdesc:af7cabb91d3912475e6cec97ee9f21721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for fieldOfViewDeg field.  <a href="class_camera.html#af7cabb91d3912475e6cec97ee9f21721">More...</a><br /></td></tr>
-<tr class="separator:af7cabb91d3912475e6cec97ee9f21721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8381a938f6929e6dc9dbaea0fd19a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a7d8381a938f6929e6dc9dbaea0fd19a9">GetFFovDeg</a> ()</td></tr>
+<tr class="memdesc:a7d8381a938f6929e6dc9dbaea0fd19a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for #fieldOfViewDeg field.  <a href="class_camera.html#a7d8381a938f6929e6dc9dbaea0fd19a9">More...</a><br /></td></tr>
+<tr class="separator:a7d8381a938f6929e6dc9dbaea0fd19a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a561a0090c008881dd66d3aafc0b1f846"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a561a0090c008881dd66d3aafc0b1f846">GetFNear</a> ()</td></tr>
 <tr class="memdesc:a561a0090c008881dd66d3aafc0b1f846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for fNear field.  <a href="class_camera.html#a561a0090c008881dd66d3aafc0b1f846">More...</a><br /></td></tr>
 <tr class="separator:a561a0090c008881dd66d3aafc0b1f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,12 +129,50 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a062b41dec9ba3a28d2c62a46df1c5dc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a062b41dec9ba3a28d2c62a46df1c5dc2">GetFFovRad</a> ()</td></tr>
 <tr class="memdesc:a062b41dec9ba3a28d2c62a46df1c5dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for fFovRad field.  <a href="class_camera.html#a062b41dec9ba3a28d2c62a46df1c5dc2">More...</a><br /></td></tr>
 <tr class="separator:a062b41dec9ba3a28d2c62a46df1c5dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_object.html">Object</a></td></tr>
+<tr class="memitem:a40860402e64d8008fb42329df7097cdb inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a40860402e64d8008fb42329df7097cdb">Object</a> ()</td></tr>
+<tr class="memdesc:a40860402e64d8008fb42329df7097cdb inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position 0, 0, 0.  <a href="class_object.html#a40860402e64d8008fb42329df7097cdb">More...</a><br /></td></tr>
+<tr class="separator:a40860402e64d8008fb42329df7097cdb inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebb6c3f94010e2ec8989bc83a70dc9c inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a7ebb6c3f94010e2ec8989bc83a70dc9c">Object</a> (<a class="el" href="class_vector3.html">Vector3</a> *pos)</td></tr>
+<tr class="memdesc:a7ebb6c3f94010e2ec8989bc83a70dc9c inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position #posX, #posY, #posZ.  <a href="class_object.html#a7ebb6c3f94010e2ec8989bc83a70dc9c">More...</a><br /></td></tr>
+<tr class="separator:a7ebb6c3f94010e2ec8989bc83a70dc9c inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ff0fe699c34b951c8bf03a8c3f5808 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#af1ff0fe699c34b951c8bf03a8c3f5808">Object</a> (double posX, double posY, double posZ)</td></tr>
+<tr class="memdesc:af1ff0fe699c34b951c8bf03a8c3f5808 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position #posX, #posY, #posZ.  <a href="class_object.html#af1ff0fe699c34b951c8bf03a8c3f5808">More...</a><br /></td></tr>
+<tr class="separator:af1ff0fe699c34b951c8bf03a8c3f5808 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
+<tr class="separator:ae8f5483f459e46687bd01e6f9977afd3 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123add5421e44f839cc564f882e8b497 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a123add5421e44f839cc564f882e8b497">GetObjectTypeName</a> ()</td></tr>
+<tr class="separator:a123add5421e44f839cc564f882e8b497 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49327b515f7e613c882f33c2b058ab98 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a49327b515f7e613c882f33c2b058ab98">IsActive</a> ()</td></tr>
+<tr class="memdesc:a49327b515f7e613c882f33c2b058ab98 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for isActive field.  <a href="class_object.html#a49327b515f7e613c882f33c2b058ab98">More...</a><br /></td></tr>
+<tr class="separator:a49327b515f7e613c882f33c2b058ab98 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0945360d98dff31603571ff78acb4f7 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab0945360d98dff31603571ff78acb4f7">GetPosition</a> ()</td></tr>
+<tr class="memdesc:ab0945360d98dff31603571ff78acb4f7 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for pos field.  <a href="class_object.html#ab0945360d98dff31603571ff78acb4f7">More...</a><br /></td></tr>
+<tr class="separator:ab0945360d98dff31603571ff78acb4f7 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f7ed1b434799c9ce6b7a7dcca56e69d inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a6f7ed1b434799c9ce6b7a7dcca56e69d">GetRotation</a> ()</td></tr>
+<tr class="memdesc:a6f7ed1b434799c9ce6b7a7dcca56e69d inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rot field, this returns handler to euler's vector for rotation.  <a href="class_object.html#a6f7ed1b434799c9ce6b7a7dcca56e69d">More...</a><br /></td></tr>
+<tr class="separator:a6f7ed1b434799c9ce6b7a7dcca56e69d inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a373b25a3ca54d61e6e63812fe36c4 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_script.html">CrustScript</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4">GetScripts</a> ()</td></tr>
+<tr class="memdesc:ab6a373b25a3ca54d61e6e63812fe36c4 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for scripts field.  <a href="class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4">More...</a><br /></td></tr>
+<tr class="separator:ab6a373b25a3ca54d61e6e63812fe36c4 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bafbad58088d65c769ed1eecad51e44 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a6bafbad58088d65c769ed1eecad51e44">AttachScript</a> (<a class="el" href="class_crust_script.html">CrustScript</a> *script)</td></tr>
+<tr class="memdesc:a6bafbad58088d65c769ed1eecad51e44 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches given script functionality to this object.  <a href="class_object.html#a6bafbad58088d65c769ed1eecad51e44">More...</a><br /></td></tr>
+<tr class="separator:a6bafbad58088d65c769ed1eecad51e44 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66015f89ae68876a273c8a9c8fc0cc57 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a66015f89ae68876a273c8a9c8fc0cc57">Move</a> (double x, double y, double z)</td></tr>
+<tr class="memdesc:a66015f89ae68876a273c8a9c8fc0cc57 inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves object by given values.  <a href="class_object.html#a66015f89ae68876a273c8a9c8fc0cc57">More...</a><br /></td></tr>
+<tr class="separator:a66015f89ae68876a273c8a9c8fc0cc57 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59643950ef70e2bcc81fb3e53e11dcfe inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a59643950ef70e2bcc81fb3e53e11dcfe">Rotate</a> (double x, double y, double z)</td></tr>
+<tr class="memdesc:a59643950ef70e2bcc81fb3e53e11dcfe inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates object by given values.  <a href="class_object.html#a59643950ef70e2bcc81fb3e53e11dcfe">More...</a><br /></td></tr>
+<tr class="separator:a59643950ef70e2bcc81fb3e53e11dcfe inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9103dbe0ba73f056c1981ef8037f029f inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a9103dbe0ba73f056c1981ef8037f029f">GetID</a> ()</td></tr>
+<tr class="memdesc:a9103dbe0ba73f056c1981ef8037f029f inherit pub_methods_class_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for matrix ID.  <a href="class_object.html#a9103dbe0ba73f056c1981ef8037f029f">More...</a><br /></td></tr>
+<tr class="separator:a9103dbe0ba73f056c1981ef8037f029f inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class representing the camera on a scene from which's perespective the renderer can render <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D triangles.">Mesh</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2254bdb764a2a3c4b7ac9cd3bdf7a759" name="a2254bdb764a2a3c4b7ac9cd3bdf7a759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2254bdb764a2a3c4b7ac9cd3bdf7a759">&#9670;&#160;</a></span>Camera()</h2>
+<a id="a42bf4f7817a3ac98ce455580719197a2" name="a42bf4f7817a3ac98ce455580719197a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42bf4f7817a3ac98ce455580719197a2">&#9670;&#160;</a></span>Camera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +184,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Camera::Camera </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_fieldOfView</em>, </td>
+          <td class="paramname"><em>_fFovDeg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -166,7 +213,7 @@ Public Member Functions</h2></td></tr>
 <p >Also calculates the fFovRad for given input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_fieldOfView</td><td>Field of view in degress. </td></tr>
+    <tr><td class="paramname">_fFovDeg</td><td>Field of view in degress. </td></tr>
     <tr><td class="paramname">_fNear</td><td>fNear. </td></tr>
     <tr><td class="paramname">_fFar</td><td>fFar. </td></tr>
   </table>
@@ -229,6 +276,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7d8381a938f6929e6dc9dbaea0fd19a9" name="a7d8381a938f6929e6dc9dbaea0fd19a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8381a938f6929e6dc9dbaea0fd19a9">&#9670;&#160;</a></span>GetFFovDeg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::GetFFovDeg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for #fieldOfViewDeg field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Value of #fieldOfViewDeg. </dd></dl>
+
+</div>
+</div>
 <a id="a062b41dec9ba3a28d2c62a46df1c5dc2" name="a062b41dec9ba3a28d2c62a46df1c5dc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a062b41dec9ba3a28d2c62a46df1c5dc2">&#9670;&#160;</a></span>GetFFovRad()</h2>
 
@@ -254,34 +329,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Getter for fFovRad field. </p>
 <dl class="section return"><dt>Returns</dt><dd>Value of fFovRad. </dd></dl>
-
-</div>
-</div>
-<a id="af7cabb91d3912475e6cec97ee9f21721" name="af7cabb91d3912475e6cec97ee9f21721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7cabb91d3912475e6cec97ee9f21721">&#9670;&#160;</a></span>GetFieldOfViewDeg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Camera::GetFieldOfViewDeg </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Getter for fieldOfViewDeg field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Value of fieldOfViewDeg. </dd></dl>
 
 </div>
 </div>
@@ -314,7 +361,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CrustEngine/Code/Inc/Core/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/<a class="el" href="_camera_8hpp_source.html">Camera.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

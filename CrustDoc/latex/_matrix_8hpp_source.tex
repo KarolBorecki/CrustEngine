@@ -1,5 +1,5 @@
 \hypertarget{_matrix_8hpp_source}{}\doxysection{Matrix.\+hpp}
-\label{_matrix_8hpp_source}\index{CrustEngine/Code/Inc/Physics/Matrix.hpp@{CrustEngine/Code/Inc/Physics/Matrix.hpp}}
+\label{_matrix_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/Matrix.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/Matrix.hpp}}
 \mbox{\hyperlink{_matrix_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MATRIX\_HPP\_}}
@@ -8,142 +8,144 @@
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{6 }
-\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_matrix}{Matrix}} \{}
-\DoxyCodeLine{11 \textcolor{keyword}{public}:}
-\DoxyCodeLine{16   \mbox{\hyperlink{class_matrix}{Matrix}}(uint8\_t rows, uint8\_t columns);}
-\DoxyCodeLine{22   \mbox{\hyperlink{class_matrix}{Matrix}}(uint8\_t rows, uint8\_t columns, \textcolor{keywordtype}{double} defaultVal);}
-\DoxyCodeLine{26   \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{\string~Matrix}}();}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{34   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(uint8\_t row, uint8\_t column);}
-\DoxyCodeLine{41   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(uint8\_t row, uint8\_t column, \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{7 \textcolor{comment}{// TODO reasearch for operands overloading}}
+\DoxyCodeLine{8 \textcolor{comment}{// TODO use template to be more flexible}}
+\DoxyCodeLine{12 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_matrix}{Matrix}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \mbox{\hyperlink{class_matrix}{Matrix}}(uint8\_t rows, uint8\_t columns);}
+\DoxyCodeLine{24   \mbox{\hyperlink{class_matrix}{Matrix}}(uint8\_t rows, uint8\_t columns, \textcolor{keywordtype}{double} defaultVal);}
+\DoxyCodeLine{28   \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{\string~Matrix}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35   uint8\_t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}();}
+\DoxyCodeLine{41   uint8\_t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}();}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a9f3054826e39ab3caf223141fe1a128a}{ResetMatrix}}(\textcolor{keywordtype}{double} val);}
+\DoxyCodeLine{48   \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{GetMatrixArray}}();}
 \DoxyCodeLine{49 }
-\DoxyCodeLine{55   \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{GetMatrixArray}}();}
-\DoxyCodeLine{61   uint8\_t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}();}
-\DoxyCodeLine{67   uint8\_t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}();}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{79   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2, \mbox{\hyperlink{class_matrix}{Matrix}}\& outMat);}
-\DoxyCodeLine{86   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{94   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Divide}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{102   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{110   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{119   std::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}();}
-\DoxyCodeLine{120 }
-\DoxyCodeLine{126   uint32\_t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}();}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128 \textcolor{keyword}{private}:}
-\DoxyCodeLine{129   uint8\_t rows \{ 0 \}; }
-\DoxyCodeLine{130   uint8\_t columns \{ 0 \}; }
-\DoxyCodeLine{131   \textcolor{keywordtype}{double}* mat; }
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133   uint32\_t ID; }
-\DoxyCodeLine{134   \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t nextID \{ 0 \}; }
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136   \textcolor{keywordtype}{void} Init(uint8\_t newRows, uint8\_t newColumns, \textcolor{keywordtype}{double} defaultVal);}
-\DoxyCodeLine{137   uint8\_t GetMatRealIndex(uint8\_t row, uint8\_t column);}
-\DoxyCodeLine{138 \};}
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(uint8\_t row, uint8\_t column);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(uint8\_t row, uint8\_t column, \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{ResetMatrix}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{79   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{87   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{99   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2, \mbox{\hyperlink{class_matrix}{Matrix}}\& outMat);}
+\DoxyCodeLine{106   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{114   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Divide}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{123   std::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}();}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{130   uint32\_t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}();}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{keyword}{private}:}
+\DoxyCodeLine{133   uint8\_t rows \{ 0 \}; }
+\DoxyCodeLine{134   uint8\_t columns \{ 0 \}; }
+\DoxyCodeLine{135   \textcolor{keywordtype}{double}* mat; }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137   uint32\_t ID; }
+\DoxyCodeLine{138   \textcolor{keyword}{static} \textcolor{keyword}{inline} uint32\_t nextID \{ 0 \}; }
 \DoxyCodeLine{139 }
-\DoxyCodeLine{140 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}{Matrix::Matrix}}(uint8\_t rows, uint8\_t columns) : rows(rows), columns(columns) \{ Init(rows, columns, 0.0); \}}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}{Matrix::Matrix}}(uint8\_t rows, uint8\_t columns, \textcolor{keywordtype}{double} defaultVal) : rows(rows), columns(columns) \{ Init(rows, columns, defaultVal); \}}
-\DoxyCodeLine{143 }
-\DoxyCodeLine{144 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{Matrix::\string~Matrix}}() \{}
-\DoxyCodeLine{145   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a6b770862391760346b80b3af14dfd81c}{Logger::FontColor::PINK}}, \textcolor{stringliteral}{"{}[X] Deleting Matrix<\%d> of size \%dx\%d"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}(), \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}());}
-\DoxyCodeLine{146   \textcolor{keyword}{delete} [] mat;}
-\DoxyCodeLine{147 \}}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{Matrix::GetValue}}(uint8\_t row, uint8\_t column) \{ \textcolor{keywordflow}{return} mat[GetMatRealIndex(row, column)]; \}}
+\DoxyCodeLine{147   \textcolor{keywordtype}{void} Init(uint8\_t newRows, uint8\_t newColumns, \textcolor{keywordtype}{double} defaultVal);}
+\DoxyCodeLine{148   uint8\_t GetMatRealIndex(uint8\_t row, uint8\_t column);}
+\DoxyCodeLine{149 \};}
 \DoxyCodeLine{150 }
-\DoxyCodeLine{151 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{Matrix::PutValue}}(uint8\_t row, uint8\_t column, \textcolor{keywordtype}{double} value) \{ mat[GetMatRealIndex(row, column)] = value; \}}
+\DoxyCodeLine{151 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}{Matrix::Matrix}}(uint8\_t rows, uint8\_t columns) : rows(rows), columns(columns) \{ Init(rows, columns, 0.0); \}}
 \DoxyCodeLine{152 }
-\DoxyCodeLine{153 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a9f3054826e39ab3caf223141fe1a128a}{Matrix::ResetMatrix}}(\textcolor{keywordtype}{double} val) \{}
-\DoxyCodeLine{154   \textcolor{keywordflow}{for}(uint8\_t i=0; i < \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
-\DoxyCodeLine{155     \textcolor{keywordflow}{for}(uint8\_t j=0; j < \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
-\DoxyCodeLine{156       \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, val);}
-\DoxyCodeLine{157 \}}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159 \textcolor{keyword}{inline} \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{Matrix::GetMatrixArray}}() \{ \textcolor{keywordflow}{return} mat; \}}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{161 \textcolor{keyword}{inline} uint8\_t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Matrix::Rows}}() \{ \textcolor{keywordflow}{return} rows; \}}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163 \textcolor{keyword}{inline} uint8\_t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Matrix::Columns}}() \{ \textcolor{keywordflow}{return} columns; \}}
-\DoxyCodeLine{164 }
-\DoxyCodeLine{165 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Matrix::Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2, \mbox{\hyperlink{class_matrix}{Matrix}}\& outMat) \{}
-\DoxyCodeLine{166   uint8\_t resultRows = mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}();}
-\DoxyCodeLine{167   uint8\_t resultColumns = mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}();}
-\DoxyCodeLine{168   \textcolor{comment}{//TODO outMat resultMat}}
-\DoxyCodeLine{169   \textcolor{keywordflow}{if}(mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}()) \{}
-\DoxyCodeLine{170     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}Trying to multiply matrix of size \%dx\%d by matrix of size \%dx\%d, which cannot be done!"{}}, mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(), mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}());}
-\DoxyCodeLine{171     \textcolor{keywordflow}{return}; \textcolor{comment}{// TODO error?? read throw std::runtime\_error()}}
-\DoxyCodeLine{172   \}}
+\DoxyCodeLine{153 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a00c52f04b918a0d4a3241eb4cd31c26b}{Matrix::Matrix}}(uint8\_t rows, uint8\_t columns, \textcolor{keywordtype}{double} defaultVal) : rows(rows), columns(columns) \{ Init(rows, columns, defaultVal); \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keyword}{inline} \mbox{\hyperlink{class_matrix_a9b1c3627f573d78a2f08623fdfef990f}{Matrix::\string~Matrix}}() \{}
+\DoxyCodeLine{156   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a6b770862391760346b80b3af14dfd81c}{Logger::FontColor::PINK}}, \textcolor{stringliteral}{"{}[X] Deleting Matrix<\%d> of size \%dx\%d"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}(), \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}());}
+\DoxyCodeLine{157   \textcolor{keyword}{delete} [] mat;}
+\DoxyCodeLine{158 \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keyword}{inline} uint8\_t \mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Matrix::Rows}}() \{ \textcolor{keywordflow}{return} rows; \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keyword}{inline} uint8\_t \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Matrix::Columns}}() \{ \textcolor{keywordflow}{return} columns; \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{keyword}{inline} \textcolor{keywordtype}{double}* \mbox{\hyperlink{class_matrix_aa131b2bbb38e52ca8c39a5f716ac9d57}{Matrix::GetMatrixArray}}() \{ \textcolor{keywordflow}{return} mat; \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{Matrix::GetValue}}(uint8\_t row, uint8\_t column) \{ \textcolor{keywordflow}{return} mat[GetMatRealIndex(row, column)]; \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{Matrix::PutValue}}(uint8\_t row, uint8\_t column, \textcolor{keywordtype}{double} value) \{ mat[GetMatRealIndex(row, column)] = value; \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{Matrix::ResetMatrix}}(\textcolor{keywordtype}{double} value) \{}
+\DoxyCodeLine{171   \textcolor{keywordflow}{for}(uint8\_t i=0; i < rows * columns; i++) mat[i] = value;}
+\DoxyCodeLine{172 \}}
 \DoxyCodeLine{173 }
-\DoxyCodeLine{174   \textcolor{keywordflow}{for}(uint8\_t r=0; r<resultRows; r++) \{}
-\DoxyCodeLine{175     \textcolor{keywordflow}{for}(uint8\_t c=0; c<resultColumns; c++) \{}
-\DoxyCodeLine{176       \textcolor{keywordtype}{double} value = 0;}
-\DoxyCodeLine{177       \textcolor{keywordflow}{for}(uint8\_t i=0; i<mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++) \{}
-\DoxyCodeLine{178         value += mat1-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(r, i) * mat2-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, c);}
-\DoxyCodeLine{179       \}}
-\DoxyCodeLine{180       outMat.\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(r, c, value);}
-\DoxyCodeLine{181     \}}
-\DoxyCodeLine{182   \}}
-\DoxyCodeLine{183 \}}
-\DoxyCodeLine{184 }
-\DoxyCodeLine{185 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Matrix::Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
-\DoxyCodeLine{186   \textcolor{keywordflow}{if}(scalar == 0.0) \textcolor{keywordflow}{return};}
-\DoxyCodeLine{187   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
-\DoxyCodeLine{188     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
-\DoxyCodeLine{189       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) * scalar);}
-\DoxyCodeLine{190 \}}
-\DoxyCodeLine{191 }
-\DoxyCodeLine{192 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Matrix::Divide}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
-\DoxyCodeLine{193   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
-\DoxyCodeLine{194     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
-\DoxyCodeLine{195       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) / scalar);}
-\DoxyCodeLine{196 \}}
-\DoxyCodeLine{197 }
-\DoxyCodeLine{198 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Matrix::Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2) \{}
-\DoxyCodeLine{199   \textcolor{keywordflow}{if}(mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}() || mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}()) \textcolor{keywordflow}{return};}
-\DoxyCodeLine{200   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
-\DoxyCodeLine{201     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
-\DoxyCodeLine{202       mat1-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat1-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) + mat2-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j));}
-\DoxyCodeLine{203 \}}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Matrix::Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
-\DoxyCodeLine{206   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
-\DoxyCodeLine{207     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
-\DoxyCodeLine{208       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) + scalar);}
-\DoxyCodeLine{209 \}}
-\DoxyCodeLine{210 }
-\DoxyCodeLine{211 std::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{Matrix::ToString}}() \{}
-\DoxyCodeLine{212   std::string result = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{213   result += \textcolor{stringliteral}{"{}Matrix<"{}} + std::to\_string(\mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}()) + \textcolor{stringliteral}{"{}> of size: "{}} + std::to\_string(rows) + \textcolor{stringliteral}{"{}x"{}} + std::to\_string(columns) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{214   \textcolor{keywordflow}{if}(rows*columns > 200) \textcolor{keywordflow}{return} result + \textcolor{stringliteral}{"{}Too big to display\(\backslash\)n"{}}; \textcolor{comment}{//TODO move 200 value to variable}}
-\DoxyCodeLine{215   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r=0; r<rows; r++)\{}
-\DoxyCodeLine{216     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} c=0; c<columns; c++)\{}
-\DoxyCodeLine{217       result += \textcolor{stringliteral}{"{}("{}} + std::to\_string(r) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(c) + \textcolor{stringliteral}{"{})"{}} +std::to\_string(\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(r, c)) + \textcolor{stringliteral}{"{} "{}};}
-\DoxyCodeLine{218     \}}
-\DoxyCodeLine{219     result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{220   \}}
-\DoxyCodeLine{221   \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{222 \}}
-\DoxyCodeLine{223 }
-\DoxyCodeLine{224 \textcolor{keyword}{inline} uint32\_t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{Matrix::GetID}}() \{ \textcolor{keywordflow}{return} ID; \}}
-\DoxyCodeLine{225 }
-\DoxyCodeLine{226 \textcolor{keywordtype}{void} Matrix::Init(uint8\_t newRows, uint8\_t newColumns, \textcolor{keywordtype}{double} defaultVal) \{}
-\DoxyCodeLine{227   ID = nextID++;}
-\DoxyCodeLine{228   mat = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[newRows * newColumns];}
-\DoxyCodeLine{229 }
-\DoxyCodeLine{230   \mbox{\hyperlink{class_matrix_a9f3054826e39ab3caf223141fe1a128a}{ResetMatrix}}(defaultVal);}
-\DoxyCodeLine{231   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a861d8909258d9777e002387388c9fd0c}{Logger::FontColor::GREEN}}, \textcolor{stringliteral}{"{}[+] Creating matrix<\%d> of size \%dx\%d"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}(), rows, columns);}
-\DoxyCodeLine{232 \}}
-\DoxyCodeLine{233 }
-\DoxyCodeLine{234 \textcolor{keyword}{inline} uint8\_t Matrix::GetMatRealIndex(uint8\_t row, uint8\_t column) \{ \textcolor{keywordflow}{return} column + \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}()*row;\}}
-\DoxyCodeLine{235 }
-\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MATRIX\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{174 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Matrix::Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2) \{}
+\DoxyCodeLine{175   \textcolor{keywordflow}{if}(mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}() || mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{176   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
+\DoxyCodeLine{177     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
+\DoxyCodeLine{178       mat1-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat1-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) + mat2-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j));}
+\DoxyCodeLine{179 \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4d8417f15dc4e5ebad02321c9fd37e6c}{Matrix::Add}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
+\DoxyCodeLine{182   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
+\DoxyCodeLine{184       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) + scalar);}
+\DoxyCodeLine{185 \}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Matrix::Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat1, \mbox{\hyperlink{class_matrix}{Matrix}}* mat2, \mbox{\hyperlink{class_matrix}{Matrix}}\& outMat) \{}
+\DoxyCodeLine{188   uint8\_t resultRows = mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}();}
+\DoxyCodeLine{189   uint8\_t resultColumns = mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}();}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191   \textcolor{keywordflow}{if}(mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}() != mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}()) \{}
+\DoxyCodeLine{192     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}Trying to multiply matrix of size \%dx\%d by matrix of size \%dx\%d, which cannot be done!"{}}, mat1-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), mat1-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(), mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(), mat2-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}());}
+\DoxyCodeLine{193     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Matrix multiplication failed!"{}});}
+\DoxyCodeLine{194   \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196   \textcolor{keywordflow}{for}(uint8\_t r=0; r<resultRows; r++) \{}
+\DoxyCodeLine{197     \textcolor{keywordflow}{for}(uint8\_t c=0; c<resultColumns; c++) \{}
+\DoxyCodeLine{198       \textcolor{keywordtype}{double} value = 0;}
+\DoxyCodeLine{199       \textcolor{keywordflow}{for}(uint8\_t i=0; i<mat2-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++) \{}
+\DoxyCodeLine{200         value += mat1-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(r, i) * mat2-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, c);}
+\DoxyCodeLine{201       \}}
+\DoxyCodeLine{202       outMat.\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(r, c, value);}
+\DoxyCodeLine{203     \}}
+\DoxyCodeLine{204   \}}
+\DoxyCodeLine{205 \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_ab094af0b0a93d8fa1226139476f69f17}{Matrix::Multiply}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
+\DoxyCodeLine{208   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
+\DoxyCodeLine{209     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
+\DoxyCodeLine{210       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) * scalar);}
+\DoxyCodeLine{211 \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_matrix_a4886451fa27df3c4b4c886642ab27776}{Matrix::Divide}}(\mbox{\hyperlink{class_matrix}{Matrix}}* mat, \textcolor{keyword}{const} \textcolor{keywordtype}{double} scalar) \{}
+\DoxyCodeLine{214   \textcolor{keywordflow}{if}(scalar == 0.0) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{215   \textcolor{keywordflow}{for}(uint8\_t i=0; i < mat-\/>\mbox{\hyperlink{class_matrix_a9823f552deec6e353ad4b910de873e23}{Rows}}(); i++)}
+\DoxyCodeLine{216     \textcolor{keywordflow}{for}(uint8\_t j=0; j < mat-\/>\mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}(); j++)}
+\DoxyCodeLine{217       mat-\/>\mbox{\hyperlink{class_matrix_a07a578a33e3d05ab109e35c32f062966}{PutValue}}(i, j, mat-\/>\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(i, j) / scalar);}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 std::string \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{Matrix::ToString}}() \{}
+\DoxyCodeLine{221   std::string result = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{222   result += \textcolor{stringliteral}{"{}Matrix<"{}} + std::to\_string(\mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}()) + \textcolor{stringliteral}{"{}> of size: "{}} + std::to\_string(rows) + \textcolor{stringliteral}{"{}x"{}} + std::to\_string(columns) + \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{223   \textcolor{keywordflow}{if}(rows*columns > 200) \textcolor{keywordflow}{return} result + \textcolor{stringliteral}{"{}Too big to display\(\backslash\)n"{}}; \textcolor{comment}{//TODO move 200 value to variable}}
+\DoxyCodeLine{224   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} r=0; r<rows; r++)\{}
+\DoxyCodeLine{225     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} c=0; c<columns; c++)\{}
+\DoxyCodeLine{226       result += \textcolor{stringliteral}{"{}("{}} + std::to\_string(r) + \textcolor{stringliteral}{"{},"{}} + std::to\_string(c) + \textcolor{stringliteral}{"{})"{}} +std::to\_string(\mbox{\hyperlink{class_matrix_a729ff19a49e3661c9da642d9b619b4ad}{GetValue}}(r, c)) + \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{227     \}}
+\DoxyCodeLine{228     result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{229   \}}
+\DoxyCodeLine{230   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{231 \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keyword}{inline} uint32\_t \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{Matrix::GetID}}() \{ \textcolor{keywordflow}{return} ID; \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{keywordtype}{void} Matrix::Init(uint8\_t newRows, uint8\_t newColumns, \textcolor{keywordtype}{double} defaultVal) \{}
+\DoxyCodeLine{236   ID = nextID++;}
+\DoxyCodeLine{237   mat = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[newRows * newColumns];}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239   \mbox{\hyperlink{class_matrix_a7e54b182b691a081e0599e06034b1621}{ResetMatrix}}(defaultVal);}
+\DoxyCodeLine{240   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a861d8909258d9777e002387388c9fd0c}{Logger::FontColor::GREEN}}, \textcolor{stringliteral}{"{}[+] Creating matrix<\%d> of size \%dx\%d"{}}, \mbox{\hyperlink{class_matrix_ad7bf491631a12f9e68018a95bea2135f}{GetID}}(), rows, columns);}
+\DoxyCodeLine{241 \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keyword}{inline} uint8\_t Matrix::GetMatRealIndex(uint8\_t row, uint8\_t column) \{ \textcolor{keywordflow}{return} column + \mbox{\hyperlink{class_matrix_a9604bef87537aeb194d6a708d8d8174a}{Columns}}()*row;\}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MATRIX\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

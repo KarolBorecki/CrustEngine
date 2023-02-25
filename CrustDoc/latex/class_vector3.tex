@@ -46,7 +46,11 @@ void \mbox{\hyperlink{class_vector3_adce5ef38969238e909fcddcada3b423e}{Set\+XYZ}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec, double x, double y, double z)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds given x, y, z values to given vector. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec, double scalar)
+\begin{DoxyCompactList}\small\item\em Adds given value to given vector. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec1, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec2)
+\begin{DoxyCompactList}\small\item\em Adds given x, y, z values to given vector from another vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -98,12 +102,61 @@ Creates blank vector that consists of values zero.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}\label{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}} 
+\index{Vector3@{Vector3}!Add@{Add}}
+\index{Add@{Add}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec,  }\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adds given value to given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Modified vector to which values will be added. \\
+\hline
+{\em scalar} & The value added to vector. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_vector3_ae919b64e71a55266e36d054ce77a03ea}\label{class_vector3_ae919b64e71a55266e36d054ce77a03ea}} 
 \index{Vector3@{Vector3}!Add@{Add}}
 \index{Add@{Add}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Adds given x, y, z values to given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Modified vector to which values will be added. \\
+\hline
+{\em x} & Value added to \#vec x field. \\
+\hline
+{\em y} & Value added to \#vec y field. \\
+\hline
+{\em z} & Value added to \#vec z field. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}\label{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}} 
+\index{Vector3@{Vector3}!Add@{Add}}
+\index{Add@{Add}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec1,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adds given x, y, z values to given vector from another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec1} & Modified vector to which values will be added. \\
+\hline
+{\em vec2} & Origin of values that will be added to \#vec1. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_vector3_adefc004f13762e3386de5cb557692408}\label{class_vector3_adefc004f13762e3386de5cb557692408}} 
 \index{Vector3@{Vector3}!SetX@{SetX}}
 \index{SetX@{SetX}!Vector3@{Vector3}}
@@ -217,4 +270,4 @@ Getter for \mbox{\hyperlink{class_vector3}{Vector3}} z value.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}

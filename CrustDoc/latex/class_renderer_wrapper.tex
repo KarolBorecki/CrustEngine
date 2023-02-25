@@ -58,6 +58,10 @@ void \mbox{\hyperlink{class_renderer_wrapper_a540c5ee48a4d95a131289e0c34856e9c}{
 \begin{DoxyCompactList}\small\item\em Sets drawing color to given value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{Draw\+Line}} (int startX, int startY, int endX, int endY)
 \begin{DoxyCompactList}\small\item\em Draws straight line on the window from start (x, y) to end (x, y). X and y values are given in pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_wrapper_a9565e9243bda9121b22ce7c37c96d415}{Draw\+Tri}} (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
+\begin{DoxyCompactList}\small\item\em Draws triangle with given coordinates on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_wrapper_ae38eae28dbbd7a9a6ab621040fc88101}{Draw\+Filled\+Tri}} (double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Draws given triangle on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Show}} ()
 \begin{DoxyCompactList}\small\item\em Function called to show everything that has been drawn on the screen after last \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Renderer\+Wrapper\+::\+Show}} call. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}} ()
@@ -204,6 +208,34 @@ Runs SDL create window and renderer function. Mus be called after Rednerer\+Wrap
 \begin{DoxyReturn}{Returns}
 STATUS\+\_\+\+OK if everyting is fine and STATUS\+\_\+\+FAIL is something failed and graphic interface cannot open new window. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_renderer_wrapper_ae38eae28dbbd7a9a6ab621040fc88101}\label{class_renderer_wrapper_ae38eae28dbbd7a9a6ab621040fc88101}} 
+\index{RendererWrapper@{RendererWrapper}!DrawFilledTri@{DrawFilledTri}}
+\index{DrawFilledTri@{DrawFilledTri}!RendererWrapper@{RendererWrapper}}
+\doxysubsubsection{\texorpdfstring{DrawFilledTri()}{DrawFilledTri()}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Draw\+Filled\+Tri (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p3X,  }\item[{double}]{p3Y,  }\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws given triangle on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1X} & Point 1 X. \\
+\hline
+{\em p1Y} & Point 1 Y. \\
+\hline
+{\em p2X} & Point 2 X. \\
+\hline
+{\em p2Y} & Point 2 Y. \\
+\hline
+{\em p3X} & Point 3 X. \\
+\hline
+{\em p3Y} & Point 3 Y.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}\label{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}} 
 \index{RendererWrapper@{RendererWrapper}!DrawLine@{DrawLine}}
 \index{DrawLine@{DrawLine}!RendererWrapper@{RendererWrapper}}
@@ -214,6 +246,31 @@ STATUS\+\_\+\+OK if everyting is fine and STATUS\+\_\+\+FAIL is something failed
 
 Draws straight line on the window from start (x, y) to end (x, y). X and y values are given in pixels. 
 
+\mbox{\Hypertarget{class_renderer_wrapper_a9565e9243bda9121b22ce7c37c96d415}\label{class_renderer_wrapper_a9565e9243bda9121b22ce7c37c96d415}} 
+\index{RendererWrapper@{RendererWrapper}!DrawTri@{DrawTri}}
+\index{DrawTri@{DrawTri}!RendererWrapper@{RendererWrapper}}
+\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p3X,  }\item[{double}]{p3Y }\end{DoxyParamCaption})}
+
+
+
+Draws triangle with given coordinates on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1X} & Point 1 X. \\
+\hline
+{\em p1Y} & Point 1 Y. \\
+\hline
+{\em p2X} & Point 2 X. \\
+\hline
+{\em p2Y} & Point 2 Y. \\
+\hline
+{\em p3X} & Point 3 X. \\
+\hline
+{\em p3Y} & Point 3 Y. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}\label{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}} 
 \index{RendererWrapper@{RendererWrapper}!GetEvent@{GetEvent}}
 \index{GetEvent@{GetEvent}!RendererWrapper@{RendererWrapper}}
@@ -411,4 +468,4 @@ Getter for renderer width.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}
