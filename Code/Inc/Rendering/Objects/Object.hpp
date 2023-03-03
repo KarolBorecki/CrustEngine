@@ -121,7 +121,6 @@ inline Object::Object(Vector3* pos) { Init(pos->X(), pos->Y(), pos->Z()); }
 inline Object::Object(double posX, double posY, double posZ) { Init(posX, posY, posZ); }
 
 inline Object::~Object() {
-  Logger::Log("Object destructor<%d>", GetID());
   delete pos;
   delete rot;
 }
@@ -136,7 +135,7 @@ inline Vector3* Object::GetRotation() { return rot; }
 
 inline std::vector<CrustScript*> Object::GetScripts() { return scripts; }
 
-inline void Object::AttachScript(CrustScript* script) { scripts.push_back(script); }
+inline void Object::AttachScript(CrustScript* script) { scripts.push_back(script); } //TODO run attach obj on CrustScript
 
 inline void Object::Move(double x, double y, double z) { Vector3::Add(pos, x, y, z); }
 
@@ -146,10 +145,8 @@ inline uint32_t Object::GetID() { return ID; }
 
 void Object::Init(double posX, double posY, double posZ) {
   ID = nextID++;
-  Logger::Log("============Creating object<%d>============", GetID());
   pos = new Vector3(posX, posY, posZ);
   rot = new Vector3(0.0, 0.0, 0.0); // TODO
-  Logger::Log("============Object creation done<%d>============", GetID());
 }
 
 #endif /* _OBJECT_HPP_ */

@@ -86,17 +86,6 @@ RenderWindow::~RenderWindow() {
 }
 
 void RenderWindow::Start() {
-  Logger::Info("==================Starting drawing process==================");
-  // double moveSpeedX = 1;
-  // double moveSpeedY = 2;
-  // double moveSpeedZ = 0.5;
-  //
-  // int moveDirX = 1;
-  // int moveDirY = 1;
-  // int moveDirZ = 1;
-  //
-  // int maxPos = 2;
-
   loadedScene->Start();
 
   while(renderer->IsRunning()) {
@@ -123,7 +112,7 @@ void RenderWindow::Close() {
   renderer->StopRunning();
 }
 
-void RenderWindow::LoadScene(Scene* scene) {
+void RenderWindow::LoadScene(Scene* scene) { //TODO does not run start of newly loaded scene. Should stop this window and reload scene TODO - add stop window method
   loadedScene = scene;
   renderer->SetWindowTitle(scene->GetName());
   renderer->RecalculateProjectionMatrix(scene->GetMainCamera());

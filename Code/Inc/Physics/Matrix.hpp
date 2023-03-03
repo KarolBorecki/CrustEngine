@@ -73,7 +73,7 @@ public:
   /**
   * @brief Adds to given matrix #mat1 another matrix #mat2.
   *
-  * @param mat1 Modifiaed matrix.
+  * @param mat1 Modified matrix.
   * @param mat2 Added matrix.
   */
   static void Add(Matrix* mat1, Matrix* mat2);
@@ -85,6 +85,14 @@ public:
   * @param scalar Value which will be added.
   */
   static void Add(Matrix* mat, const double scalar);
+
+  /**
+   * @brief Substracts from given matrix #mat1 another matrix #mat2.
+   *
+   * @param mat1 Modified matrix.
+   * @param mat2 Added matrix.
+   */
+  static void Substract(Matrix *mat1, Matrix *mat2);
 
   /**
   * @brief Multiplies given matrixes.
@@ -153,7 +161,6 @@ inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(colum
 inline Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
 
 inline Matrix::~Matrix() {
-  Logger::Log(Logger::FontColor::PINK, "[X] Deleting Matrix<%d> of size %dx%d", GetID(), Rows(), Columns());
   delete [] mat;
 }
 
@@ -171,11 +178,22 @@ void Matrix::ResetMatrix(double value) {
   for(uint8_t i=0; i < rows * columns; i++) mat[i] = value;
 }
 
-void Matrix::Add(Matrix* mat1, Matrix* mat2) {
-  if(mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns()) return;
-  for(uint8_t i=0; i < mat1->Rows(); i++)
-    for(uint8_t j=0; j < mat1->Columns(); j++)
+void Matrix::Add(Matrix *mat1, Matrix *mat2)
+{
+  if (mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns())
+    return;
+  for (uint8_t i = 0; i < mat1->Rows(); i++)
+    for (uint8_t j = 0; j < mat1->Columns(); j++)
       mat1->PutValue(i, j, mat1->GetValue(i, j) + mat2->GetValue(i, j));
+}
+
+void Matrix::Substract(Matrix *mat1, Matrix *mat2)
+{
+  if (mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns())
+    return;
+  for (uint8_t i = 0; i < mat1->Rows(); i++)
+    for (uint8_t j = 0; j < mat1->Columns(); j++)
+      mat1->PutValue(i, j, mat1->GetValue(i, j) - mat2->GetValue(i, j));
 }
 
 void Matrix::Add(Matrix* mat, const double scalar) {
@@ -190,7 +208,7 @@ void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
 
   if(mat1->Columns() != mat2->Rows()) {
     Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
-    throw std::runtime_error("Matrix multiplication failed!");
+    throw std::runtime_error("Matrix multiplication failed!"); //TODO use my own error handler
   }
 
   for(uint8_t r=0; r<resultRows; r++) {
@@ -237,7 +255,6 @@ void Matrix::Init(uint8_t newRows, uint8_t newColumns, double defaultVal) {
   mat = new double[newRows * newColumns];
 
   ResetMatrix(defaultVal);
-  Logger::Log(Logger::FontColor::GREEN, "[+] Creating matrix<%d> of size %dx%d", GetID(), rows, columns);
 }
 
 inline uint8_t Matrix::GetMatRealIndex(uint8_t row, uint8_t column) { return column + Columns()*row;}

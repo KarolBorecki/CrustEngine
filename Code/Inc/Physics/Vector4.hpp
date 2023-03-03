@@ -129,7 +129,7 @@ inline Vector4::Vector4(Vector3* vecXYZ, double w) : Matrix(1, 4) { Init(vecXYZ-
 
 inline Vector4::Vector4(double x, double y, double z, double w) : Matrix(1, 4) { Init(x, y, z, w); }
 
-inline Vector4::~Vector4() { Logger::Log(Logger::FontColor::PINK, "   [X] Deleting Vec4<%d>", GetID()); }
+inline Vector4::~Vector4() { }
 
 inline double Vector4::X() { return GetValue(0, 0); }
 
@@ -177,7 +177,6 @@ void Vector4::Add(Vector4* vec, double x, double y, double z, double w) {
 
 inline void Vector4::Init(double x, double y, double z, double w) {
   SetXYZW(x, y, z, w);
-  Logger::Log(Logger::FontColor::GREEN, "   [+] Vector4 of id: %d initzialized", GetID());
 }
 
 #endif /* _Vector4_HPP_ */

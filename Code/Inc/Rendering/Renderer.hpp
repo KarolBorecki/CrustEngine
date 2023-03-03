@@ -105,11 +105,8 @@ private:
 };
 
 Renderer::Renderer(int _width, int _height) : RendererWrapper(_width, _height) {
-  Logger::Log("============Rednerer creation============");
   aspectRatio = ((double)_height / (double)_width);
-  Logger::Info("ASPECT RATIO: %lf", aspectRatio);
   projMatrix = new Matrix(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0);
-  Logger::Log("============Rednerer creation DONE============");
 }
 
 Renderer::~Renderer() {
@@ -118,13 +115,10 @@ Renderer::~Renderer() {
 }
 
 void Renderer::DrawMesh(Mesh* mesh, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight) {
-  Logger::Log("Drawing mesh %s", mesh->GetName().c_str());
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-
   for(int i=0; i < mesh->GetTrianglesCount(); i++) {
     ProjectTriangle(mesh->GetTriangle(i), pos, rot, cam, lightDir, projectLight);
   }
-  Logger::Log("Drawing mesh %s DONE!", mesh->GetName().c_str());
 }
 
 Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, Camera* cam, Vector3* lightDir, bool projectLight) {
@@ -144,6 +138,10 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, C
   Matrix::Add(&movedP1, pos);
   Matrix::Add(&movedP2, pos);
   Matrix::Add(&movedP3, pos);
+
+  Matrix::Substract(&movedP1, cam->GetPosition());
+  Matrix::Substract(&movedP2, cam->GetPosition());
+  Matrix::Substract(&movedP3, cam->GetPosition());
 
   /* Normalizing object's triangle */
   static Vector3 normal;
@@ -187,6 +185,7 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, C
     } else {
       lightDotProduct = 1.0;
     }
+
     /* Projecting object's triangle */
     static Vector4 extendedP1;
     static Vector4 extendedP2;
@@ -244,7 +243,6 @@ void Renderer::RecalculateProjectionMatrix(Camera* cam) {
   projMatrix->PutValue(2, 2, q);
   projMatrix->PutValue(2, 3, 1.0);
   projMatrix->PutValue(3, 2, -cam->GetFNear() * q);
-  Logger::Info(projMatrix->ToString().c_str());
 }
 
 

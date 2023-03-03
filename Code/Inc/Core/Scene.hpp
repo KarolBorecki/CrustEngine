@@ -101,7 +101,9 @@ private:
   std::vector<LightSource*> lightSources; //!< Light sources in the scene. This array is sub-array of objects.
 };
 
-inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {Logger::Log("============Creating Scene============");Logger::Log("============Creating Scene DONE============");}
+inline Scene::Scene(std::string _name, Camera* _mainCamera) : name(_name), mainCamera(_mainCamera) {
+  AddObject(_mainCamera);
+}
 
 void Scene::Start() {
   for(auto obj : objects)
@@ -115,21 +117,19 @@ void Scene::Update(double deltaTime) {
       script->Update(deltaTime);
 }
 
+//Add set main camera
 inline Camera* Scene::GetMainCamera() { return mainCamera; }
 
 void Scene::AddObject(Object* obj) {
-  Logger::Info("Adding object<%d>", obj->GetID());
   objects.push_back(obj);
 
   RenderObject* renderObj = dynamic_cast<RenderObject*>(obj);
   if(renderObj != nullptr) {
-    Logger::Log("Obj<%d> is renderable!", obj->GetID());
     renderObjects.push_back(renderObj);
   }
 
   LightSource* lightSource = dynamic_cast<LightSource*>(obj);
   if(lightSource != nullptr) {
-    Logger::Log("Obj<%d> is light!", obj->GetID());
     lightSources.push_back(lightSource);
   }
 }

@@ -110,7 +110,7 @@ inline Vector3::Vector3(double valXYZ) : Matrix(1, 3) { Init(valXYZ, valXYZ, val
 
 inline Vector3::Vector3(double x, double y, double z) : Matrix(1, 3) { Init(x, y, z); }
 
-inline Vector3::~Vector3() { Logger::Log(Logger::FontColor::PINK, "   [X] Deleting Vec3D<%d>", GetID()); }
+inline Vector3::~Vector3() { }
 
 inline double Vector3::X() { return GetValue(0, 0); }
 
@@ -148,7 +148,6 @@ inline void Vector3::Add(Vector3* vec1, Vector3* vec2) { Vector3::Add(vec1, vec2
 
 inline void Vector3::Init(double x, double y, double z) {
   SetXYZ(x, y, z);
-  Logger::Log(Logger::FontColor::GREEN, "   [+] Vector3 of id: %d initzialized", GetID());
 }
 
 #endif /* _VECTOR3_HPP_ */

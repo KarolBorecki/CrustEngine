@@ -63,11 +63,6 @@ private:
 
 inline Camera::Camera(int _fFovDeg, double _fNear, double _fFar) : fFovDeg(_fFovDeg), fNear(_fNear), fFar(_fFar) {
   fFovRad = (1.0 / tan(degToRad(fFovDeg) * 0.5));
-  Logger::Info("Camera created with values:");
-  Logger::Info("fFov=%lf", fFovDeg);
-  Logger::Info("fFovRad=%lf", fFovRad);
-  Logger::Info("fNear=%lf", fNear);
-  Logger::Info("fFar=%lf", fFar);
 }
 
 inline int Camera::GetFFovDeg() { return fFovDeg; }

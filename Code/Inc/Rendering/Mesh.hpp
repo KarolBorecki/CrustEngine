@@ -69,13 +69,12 @@ private:
   std::vector<Triangle*> triangles; //!< Triangles, from which the mesh consists.
 };
 
-inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) { Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str()); }
+inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) { }
 
-inline Mesh::Mesh(std::string meshName) : name(meshName) { Logger::Log(Logger::FontColor::GREEN, "[+] Crating mesh %s", GetName().c_str()); }
+inline Mesh::Mesh(std::string meshName) : name(meshName) { }
 
 Mesh::~Mesh() {
   // TODO not created? Then dont delete!
-  Logger::Log(Logger::FontColor::PINK, "[x] Deleting mesh %s", GetName().c_str());
   for(auto tri : triangles)
     delete tri;
 }

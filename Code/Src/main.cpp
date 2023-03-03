@@ -19,7 +19,6 @@
 
 int main(int argc, char* argv[])
 {
-  Logger::Info("================STARTING THE ENGINE================");
   Camera cam(90, 0.1, 1000.0);
   Scene scene("T Scene", &cam);
 
@@ -29,12 +28,12 @@ int main(int argc, char* argv[])
   std::string path = "/Users/karolborecki/Desktop/CrustEngine/meshes/" + name + ".obj";
 
   MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
-  RenderObject rObj(0,0,0,&mesh);
+  RenderObject rObj(0,0,-20,&mesh);
 
-
-  LoopMove rObjMove(&rObj, -30, 10, -30, 20, -30, 30, 10, 10, 10);
-  Rotate rObjRotation(&rObj);
-  rObj.AttachScript(&rObjMove);
+  LoopMove rObjMove(&cam, -10, 10, 0, 0, 0, 0, 10, 0, 0);
+  cam.AttachScript(&rObjMove);
+  // Rotate rObjRotation(&rObj);
+  // rObj.AttachScript(&rObjMove);
   // rObj.AttachScript(&rObjRotation);
 
   Vector3 lightSourceDir(0.6, 0.2, -0.5);
@@ -49,7 +48,6 @@ int main(int argc, char* argv[])
   core.OpenNewWindow(1000, 800, &scene);
 
   core.Quit();
-  Logger::Info("================ENGINE DONE================");
 
   return 0;
 }

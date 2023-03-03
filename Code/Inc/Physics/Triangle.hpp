@@ -113,7 +113,6 @@ void Triangle::Init(double p1X, double p1Y, double p1Z, double p2X, double p2Y, 
   point[0] = new Vector3(p1X, p1Y, p1Z);
   point[1] = new Vector3(p2X, p2Y, p2Z);
   point[2] = new Vector3(p3X, p3Y, p3Z);
-  Logger::Log(Logger::FontColor::GREEN, "[+] Creating Triangle");
 }
 
 #endif /* _TRIANGLE_HPP_ */
