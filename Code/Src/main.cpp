@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
   MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
   RenderObject rObj(&mesh);
 
-  LoopMove rObjMove(&cam, -100, 0, -100, 0, -100, 0, 10, 5, 7);
+  LoopMove rObjMove(-100, 0, -100, 0, -100, 0, 10, 5, 7);
   cam.AttachScript(&rObjMove);
   // Rotate rObjRotation(&rObj);
   // rObj.AttachScript(&rObjMove);

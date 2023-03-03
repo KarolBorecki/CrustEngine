@@ -3,9 +3,11 @@
 
 #include <Scripting/CrustScript.hpp>
 
+#include <Rendering/Objects/Object.hpp>
+
 class LoopMove : public CrustScript {
 public:
-  LoopMove(Object* _parentObj, double _minX, double _maxX, double _minY, double _maxY, double _minZ, double _maxZ, double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ);
+  LoopMove(double _minX, double _maxX, double _minY, double _maxY, double _minZ, double _maxZ, double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ);
   ~LoopMove() override {}
 
   void Start() override;
@@ -25,8 +27,8 @@ private:
   int moveDirZ { 1 };
 };
 
-inline LoopMove::LoopMove(Object* _parentObj, double _minX, double _maxX, double _minY, double _maxY, double _minZ, double _maxZ, double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) :
-       CrustScript(_parentObj), minX(_minX), maxX(_maxX), minY(_minY), maxY(_maxY), minZ(_minZ), maxZ(_maxZ), speedX(_moveSpeedX), speedY(_moveSpeedY), speedZ(_moveSpeedZ) {}
+inline LoopMove::LoopMove(double _minX, double _maxX, double _minY, double _maxY, double _minZ, double _maxZ, double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) :
+       minX(_minX), maxX(_maxX), minY(_minY), maxY(_maxY), minZ(_minZ), maxZ(_maxZ), speedX(_moveSpeedX), speedY(_moveSpeedY), speedZ(_moveSpeedZ) {}
 
 inline void LoopMove::Start() {}
 

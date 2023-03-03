@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include <Scripting/CrustScript.hpp>
 #include <Rendering/Objects/Transform.hpp>
 
 class CrustScript;
@@ -85,7 +86,10 @@ inline Transform *Object::GetTransform() { return transform; }
 
 inline std::vector<CrustScript*> Object::GetScripts() { return scripts; }
 
-inline void Object::AttachScript(CrustScript* script) { scripts.push_back(script); } //TODO run attach obj on CrustScript
+inline void Object::AttachScript(CrustScript* script) { 
+  scripts.push_back(script); 
+  script->AttachTo(this);
+}
 
 inline uint32_t Object::GetID() { return ID; }
 

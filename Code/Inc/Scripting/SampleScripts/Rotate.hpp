@@ -5,10 +5,11 @@
 
 #include <Scripting/CrustScript.hpp>
 
+#include <Rendering/Objects/Object.hpp>
+
 class Rotate : public CrustScript {
 public:
-  Rotate(Object* _parentObj);
-  ~Rotate() override {}
+  using CrustScript::CrustScript;
 
   void Start() override;
   void Update(double deltaTime) override;
@@ -16,8 +17,6 @@ private:
   Matrix* rotMatX { nullptr };
   Matrix* rotMatZ { nullptr };
 };
-
-inline Rotate::Rotate(Object* _parentObj) : CrustScript(_parentObj) {}
 
 inline void Rotate::Start() {
   rotMatX = new Matrix(4, 4);
