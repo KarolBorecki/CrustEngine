@@ -28,7 +28,7 @@ inline void Rotate::Start() {
 }
 
 void Rotate::Update(double deltaTime) {
-  parentObj->Rotate(1 * 1 * deltaTime, 0 * 2 * deltaTime, 1 * 3 * deltaTime); // TODO
+  parentObj->GetTransform()->Rotate(1 * 1 * deltaTime, 0 * 2 * deltaTime, 1 * 3 * deltaTime); // TODO
 }
 
 #endif /* _ROTATE_HPP_ */

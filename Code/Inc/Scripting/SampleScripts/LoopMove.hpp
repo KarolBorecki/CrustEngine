@@ -31,16 +31,21 @@ inline LoopMove::LoopMove(Object* _parentObj, double _minX, double _maxX, double
 inline void LoopMove::Start() {}
 
 void LoopMove::Update(double deltaTime) {
-  if(moveDirX > 0 && parentObj->GetPosition()->X() >= maxX) moveDirX = -1;
-  if(moveDirX < 0 && parentObj->GetPosition()->X() <= minX) moveDirX = 1;
+  if(moveDirX > 0 && parentObj->GetTransform()->GetPosition()->X() >= maxX) moveDirX = -1;
+  if (moveDirX < 0 && parentObj->GetTransform()->GetPosition()->X() <= minX)
+    moveDirX = 1;
 
-  if(moveDirY > 0 && parentObj->GetPosition()->Y() >= maxY) moveDirY = -1;
-  if(moveDirY < 0 && parentObj->GetPosition()->Y() <= minY) moveDirY = 1;
+  if (moveDirY > 0 && parentObj->GetTransform()->GetPosition()->Y() >= maxY)
+    moveDirY = -1;
+  if (moveDirY < 0 && parentObj->GetTransform()->GetPosition()->Y() <= minY)
+    moveDirY = 1;
 
-  if(moveDirZ > 0 && parentObj->GetPosition()->Z() >= maxZ) moveDirZ = -1;
-  if(moveDirZ < 0 && parentObj->GetPosition()->Z() <= minZ) moveDirZ = 1;
+  if (moveDirZ > 0 && parentObj->GetTransform()->GetPosition()->Z() >= maxZ)
+    moveDirZ = -1;
+  if (moveDirZ < 0 && parentObj->GetTransform()->GetPosition()->Z() <= minZ)
+    moveDirZ = 1;
 
-  parentObj->Move(moveDirX * speedX * deltaTime, moveDirY * speedY * deltaTime, moveDirZ * speedZ * deltaTime);
+  parentObj->GetTransform()->Translate(moveDirX * speedX * deltaTime, moveDirY * speedY * deltaTime, moveDirZ * speedZ * deltaTime);
 }
 
 #endif /* _LOOPMOVE_HPP_ */

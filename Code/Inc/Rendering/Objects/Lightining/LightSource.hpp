@@ -39,8 +39,8 @@ public:
 protected:
   LightSource(double _intensivity, Vector3 *_direction);
 
-  uint8_t intesivity{255};     //!< Light's intensivity. Value between 0 and 255, where 255 represent brightest light.
-  Vector3 *direction{nullptr}; //!< Lights direction in 3D space.
+  uint8_t intesivity { 255 };     //!< Light's intensivity. Value between 0 and 255, where 255 represent brightest light.
+  Vector3 *direction { nullptr }; //!< Lights direction in 3D space. // TODO move to directional ligth
 };
 
 inline LightSource::LightSource(double _intensivity) : intesivity(_intensivity) {}

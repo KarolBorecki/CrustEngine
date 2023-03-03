@@ -28,9 +28,9 @@ int main(int argc, char* argv[])
   std::string path = "/Users/karolborecki/Desktop/CrustEngine/meshes/" + name + ".obj";
 
   MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
-  RenderObject rObj(0,0,-20,&mesh);
+  RenderObject rObj(&mesh);
 
-  LoopMove rObjMove(&cam, -10, 10, 0, 0, 0, 0, 10, 0, 0);
+  LoopMove rObjMove(&cam, -100, 0, -100, 0, -100, 0, 10, 5, 7);
   cam.AttachScript(&rObjMove);
   // Rotate rObjRotation(&rObj);
   // rObj.AttachScript(&rObjMove);

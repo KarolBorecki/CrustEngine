@@ -139,9 +139,9 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, C
   Matrix::Add(&movedP2, pos);
   Matrix::Add(&movedP3, pos);
 
-  Matrix::Substract(&movedP1, cam->GetPosition());
-  Matrix::Substract(&movedP2, cam->GetPosition());
-  Matrix::Substract(&movedP3, cam->GetPosition());
+  Matrix::Substract(&movedP1, cam->GetTransform()->GetPosition());
+  Matrix::Substract(&movedP2, cam->GetTransform()->GetPosition());
+  Matrix::Substract(&movedP3, cam->GetTransform()->GetPosition());
 
   /* Normalizing object's triangle */
   static Vector3 normal;
@@ -166,9 +166,9 @@ Triangle* Renderer::ProjectTriangle(Triangle* tri, Vector3* pos, Vector3* rot, C
 
   /* calculate dot product */
   static double dotProduct;
-  dotProduct = normal.X() * (movedP1.X() - cam->GetPosition()->X()) +
-               normal.Y() * (movedP1.Y() - cam->GetPosition()->Y()) +
-               normal.Z() * (movedP1.Z() - cam->GetPosition()->Z());
+  dotProduct = normal.X() * (movedP1.X() - cam->GetTransform()->GetPosition()->X()) +
+               normal.Y() * (movedP1.Y() - cam->GetTransform()->GetPosition()->Y()) +
+               normal.Z() * (movedP1.Z() - cam->GetTransform()->GetPosition()->Z());
 
   if(dotProduct < 0.0) {
     /* Illumination */
