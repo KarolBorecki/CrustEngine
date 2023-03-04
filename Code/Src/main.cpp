@@ -17,6 +17,7 @@
 #include <Scripting/SampleScripts/LoopMove.hpp>
 #include <Scripting/SampleScripts/Rotate.hpp>
 
+// TODO move all implementation to src files
 int main(int argc, char* argv[])
 {
   Camera cam(90, 0.1, 1000.0);

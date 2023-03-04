@@ -5,7 +5,6 @@
 #include <string>
 
 // TODO reasearch for operands overloading
-// TODO use template to be more flexible
 /**
 * @brief Represents the mathematical matrix and is able to preform matrix calculations.
 */
@@ -154,7 +153,16 @@ private:
   * @param defaultVal Value that the matrix will be filled with after creation.
   */
   void Init(uint8_t newRows, uint8_t newColumns, const T defaultVal);
-  // TODO add doc
+  
+  /**
+   * @brief Returns matrix's index in array of indexes x=row and y=column.
+   * 
+   * @details Matrix holds linear array (In order to save space and for it to be more reliable and less time-consuming). 
+   * But we use 2-dimensional array in the interface so values are accessed by their's xs and ys (As it is in regular matrixes), This method maps x and y to linear space. 
+   * 
+   * @param row - searched value's index's x.
+   * @param column - searched value's index's y.
+  */
   uint8_t GetMatRealIndex(uint8_t row, uint8_t column);
 };
 
