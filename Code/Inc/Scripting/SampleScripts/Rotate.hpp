@@ -14,13 +14,13 @@ public:
   void Start() override;
   void Update(double deltaTime) override;
 private:
-  Matrix* rotMatX { nullptr };
-  Matrix* rotMatZ { nullptr };
+  Matrix<double> *rotMatX{nullptr};
+  Matrix<double>* rotMatZ { nullptr };
 };
 
 inline void Rotate::Start() {
-  rotMatX = new Matrix(4, 4);
-  rotMatZ = new Matrix(4, 4);
+  rotMatX = new Matrix<double>(4, 4);
+  rotMatZ = new Matrix<double>(4, 4);
 
   rotMatX->ResetMatrix(0.0);
   rotMatZ->ResetMatrix(0.0);

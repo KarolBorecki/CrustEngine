@@ -6,7 +6,7 @@
 /**
 * @brief Represents mathematical vector4.
 */
-class Vector4 : public Matrix {
+class Vector4 : public Matrix<double> {
 public:
   /**
   * @brief Creates blank vector4 that consists of values zero.

@@ -9,6 +9,7 @@
 /**
 * @brief Represents the mathematical matrix and is able to preform matrix calculations.
 */
+template<class T>
 class Matrix {
 public:
   /**
@@ -21,7 +22,7 @@ public:
   * @param columns Amount of columns in the matrix.
   * @param defaultVal The value that will be placed on each position in matrix.
   */
-  Matrix(uint8_t rows, uint8_t columns, double defaultVal);
+  Matrix(uint8_t rows, uint8_t columns, T defaultVal);
   /**
   * @details If #mat is not null deletes it from the heap.
   */
@@ -61,14 +62,14 @@ public:
   * @param row The y index of the position in matrix.
   * @param column The x index of the position in matrix.
   */
-  void PutValue(uint8_t row, uint8_t column, double value);
+  void PutValue(uint8_t row, uint8_t column, T value);
 
   /**
   * @brief Function resets the matrix so each value of it is the same.
   *
   * @param value The value that will be placed on each position in matrix.
   */
-  void ResetMatrix(double value);
+  void ResetMatrix(T value);
 
   /**
   * @brief Adds to given matrix #mat1 another matrix #mat2.
@@ -76,7 +77,7 @@ public:
   * @param mat1 Modified matrix.
   * @param mat2 Added matrix.
   */
-  static void Add(Matrix* mat1, Matrix* mat2);
+  static void Add(Matrix<T>* mat1, Matrix<T>* mat2);
 
   /**
   * @brief Adds to given matrix scalar, constant value.
@@ -84,7 +85,7 @@ public:
   * @param mat Matrix to which values scalar will be added.
   * @param scalar Value which will be added.
   */
-  static void Add(Matrix* mat, const double scalar);
+  static void Add(Matrix<T> *mat, const T scalar);
 
   /**
    * @brief Substracts from given matrix #mat1 another matrix #mat2.
@@ -92,7 +93,7 @@ public:
    * @param mat1 Modified matrix.
    * @param mat2 Added matrix.
    */
-  static void Substract(Matrix *mat1, Matrix *mat2);
+  static void Substract(Matrix<T> *mat1, Matrix<T> *mat2);
 
   /**
   * @brief Multiplies given matrixes.
@@ -104,14 +105,14 @@ public:
   * @param mat2 Second matrix, by which first is being multiplied.
   * @param outMat The output matrix.
   */
-  static void Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat);
+  static void Multiply(Matrix<T> *mat1, Matrix<T> *mat2, Matrix<T> &outMat);
   /**
   * @brief Multiplies given matrix by scalar constant value.
   *
   * @param mat Multiplied Matrix.
   * @param scalar Value by which matrix is being multiplied.
   */
-  static void Multiply(Matrix* mat, const double scalar);
+  static void Multiply(Matrix<T> *mat, const T scalar);
 
   /**
   * @brief Divides given matrix by scalar constant value.
@@ -119,7 +120,7 @@ public:
   * @param mat Divided Matrix.
   * @param scalar Value by which matrix is being divided.
   */
-  static void Divide(Matrix* mat, const double scalar);
+  static void Divide(Matrix<T> *mat, const T scalar);
 
   /**
   * @brief Converts matrix to std::string, so it can be written on any output.
@@ -140,7 +141,7 @@ public:
 private:
   uint8_t rows { 0 }; //!< Amount of rows in the matrix.
   uint8_t columns { 0 }; //!< Amount of columns in the matrix.
-  double* mat; //!< Array of matrix's values.
+  T* mat; //!< Array of matrix's values.
 
   uint32_t ID; //!< Matrix's ID.
   static inline uint32_t nextID { 0 }; //!< Next matrix ID. Also holds amount of matrixes created on engine work. Only for debug purposes.
@@ -152,33 +153,46 @@ private:
   * @param newColumns Amount of columns in created array.
   * @param defaultVal Value that the matrix will be filled with after creation.
   */
-  void Init(uint8_t newRows, uint8_t newColumns, double defaultVal);
+  void Init(uint8_t newRows, uint8_t newColumns, const T defaultVal);
+  // TODO add doc
   uint8_t GetMatRealIndex(uint8_t row, uint8_t column);
 };
 
-inline Matrix::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(columns) { Init(rows, columns, 0.0); }
+template<class E>
+inline Matrix<E>::Matrix(uint8_t rows, uint8_t columns) : rows(rows), columns(columns) { Init(rows, columns, 0.0); }
 
-inline Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
+template <class E>
+inline Matrix<E>::Matrix(uint8_t rows, uint8_t columns, E defaultVal) : rows(rows), columns(columns) { Init(rows, columns, defaultVal); }
 
-inline Matrix::~Matrix() {
+template <class E>
+inline Matrix<E>::~Matrix()
+{
   delete [] mat;
 }
 
-inline uint8_t Matrix::Rows() { return rows; }
+template <class E>
+inline uint8_t Matrix<E>::Rows() { return rows; }
 
-inline uint8_t Matrix::Columns() { return columns; }
+template<class E>
+inline uint8_t Matrix<E>::Columns() { return columns; }
 
-inline double* Matrix::GetMatrixArray() { return mat; }
+template<class E>
+inline double* Matrix<E>::GetMatrixArray() { return mat; }
 
-inline double Matrix::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }
+template <class E>
+inline double Matrix<E>::GetValue(uint8_t row, uint8_t column) { return mat[GetMatRealIndex(row, column)]; }
 
-inline void Matrix::PutValue(uint8_t row, uint8_t column, double value) { mat[GetMatRealIndex(row, column)] = value; }
+template<class E>
+inline void Matrix<E>::PutValue(uint8_t row, uint8_t column, E value) { mat[GetMatRealIndex(row, column)] = value; }
 
-void Matrix::ResetMatrix(double value) {
+template <class E>
+void Matrix<E>::ResetMatrix(E value)
+{
   for(uint8_t i=0; i < rows * columns; i++) mat[i] = value;
 }
 
-void Matrix::Add(Matrix *mat1, Matrix *mat2)
+template <class E>
+void Matrix<E>::Add(Matrix<E> *mat1, Matrix<E> *mat2)
 {
   if (mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns())
     return;
@@ -187,7 +201,8 @@ void Matrix::Add(Matrix *mat1, Matrix *mat2)
       mat1->PutValue(i, j, mat1->GetValue(i, j) + mat2->GetValue(i, j));
 }
 
-void Matrix::Substract(Matrix *mat1, Matrix *mat2)
+template <class E>
+void Matrix<E>::Substract(Matrix<E> *mat1, Matrix<E> *mat2)
 {
   if (mat1->Rows() != mat2->Rows() || mat1->Columns() != mat2->Columns())
     return;
@@ -196,13 +211,17 @@ void Matrix::Substract(Matrix *mat1, Matrix *mat2)
       mat1->PutValue(i, j, mat1->GetValue(i, j) - mat2->GetValue(i, j));
 }
 
-void Matrix::Add(Matrix* mat, const double scalar) {
+template <class E>
+void Matrix<E>::Add(Matrix<E> *mat, const E scalar)
+{
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) + scalar);
 }
 
-void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
+template <class E>
+void Matrix<E>::Multiply(Matrix<E> *mat1, Matrix<E> *mat2, Matrix<E> &outMat)
+{
   uint8_t resultRows = mat1->Rows();
   uint8_t resultColumns = mat2->Columns();
 
@@ -222,20 +241,26 @@ void Matrix::Multiply(Matrix* mat1, Matrix* mat2, Matrix& outMat) {
   }
 }
 
-void Matrix::Multiply(Matrix* mat, const double scalar) {
+template <class E>
+void Matrix<E>::Multiply(Matrix<E> *mat, const E scalar)
+{
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) * scalar);
 }
 
-void Matrix::Divide(Matrix* mat, const double scalar) {
+template <class E>
+void Matrix<E>::Divide(Matrix<E> *mat, const E scalar)
+{
   if(scalar == 0.0) return;
   for(uint8_t i=0; i < mat->Rows(); i++)
     for(uint8_t j=0; j < mat->Columns(); j++)
       mat->PutValue(i, j, mat->GetValue(i, j) / scalar);
 }
 
-std::string Matrix::ToString() {
+template <class E>
+std::string Matrix<E>::ToString()
+{
   std::string result = "";
   result += "Matrix<" + std::to_string(GetID()) + "> of size: " + std::to_string(rows) + "x" + std::to_string(columns) + "\n";
   if(rows*columns > 200) return result + "Too big to display\n"; //TODO move 200 value to variable
@@ -248,15 +273,19 @@ std::string Matrix::ToString() {
   return result;
 }
 
-inline uint32_t Matrix::GetID() { return ID; }
+template <class E>
+inline uint32_t Matrix<E>::GetID() { return ID; }
 
-void Matrix::Init(uint8_t newRows, uint8_t newColumns, double defaultVal) {
+template <class E>
+void Matrix<E>::Init(uint8_t newRows, uint8_t newColumns, const E defaultVal)
+{
   ID = nextID++;
-  mat = new double[newRows * newColumns];
+  mat = new E[newRows * newColumns];
 
   ResetMatrix(defaultVal);
 }
 
-inline uint8_t Matrix::GetMatRealIndex(uint8_t row, uint8_t column) { return column + Columns()*row;}
+template <class E>
+inline uint8_t Matrix<E>::GetMatRealIndex(uint8_t row, uint8_t column) { return column + Columns() * row; }
 
 #endif /* _MATRIX_HPP_ */
