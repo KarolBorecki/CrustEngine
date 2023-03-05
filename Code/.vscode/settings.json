@@ -78,6 +78,11 @@
         "utility": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "__memory": "cpp",
+        "filesystem": "cpp",
+        "strstream": "cpp",
+        "source_location": "cpp",
+        "iostream": "cpp"
     }
 }
