@@ -48,20 +48,6 @@ public:
   uint8_t Width() const;
 
   /**
-   * @brief Function resets the matrix so each value of it is the same.
-   *
-   * @param value The value that will be placed on each position in matrix.
-   */
-  void ResetMatrix(T value);
-
-  /**
-   * @brief Getter for matrix ID.
-   *
-   * @return Matrix's ID.
-   */
-  uint32_t GetID();
-
-  /**
    * @brief Converts matrix to std::string, so it can be written on any output.
    *
    * @details The returned string is in a following format:<br>
@@ -102,9 +88,11 @@ public:
 
   Matrix<T> &operator=(const Matrix<T> &other) noexcept;
 
+  Matrix<T> &operator=(std::initializer_list<T> l) noexcept;
+
   T *operator[](int x) const noexcept;
 
-private:
+protected:
   uint32_t height{0}; //!< Amount of Height in the matrix.
   uint32_t width{0};  //!< Amount of Width in the matrix.
   uint32_t totalSize{0};
@@ -135,7 +123,7 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : hei
     return;
   mat = new E[totalSize];
 
-  ResetMatrix(_defaultVal);
+  *this = { _defaultVal };
 }
 
 template <class E>
@@ -149,13 +137,6 @@ inline uint8_t Matrix<E>::Height() const { return height; }
 
 template <class E>
 inline uint8_t Matrix<E>::Width() const { return width; }
-
-template <class E>
-void Matrix<E>::ResetMatrix(E value)
-{
-  for (uint32_t i = 0; i < height * width; i++)
-    mat[i] = value;
-}
 
 template <class E>
 Matrix<E> &Matrix<E>::operator+(const Matrix<E> &other) noexcept
@@ -371,16 +352,34 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
   if (this == &other)
     return *this;
 
-  delete[] mat;
-  mat = nullptr;
+  if (totalSize != (other.Height() * other.Width()))
+  {
+    delete[] mat;
+    mat = nullptr;
+    mat = new E[other.totalSize];
+  }
 
   height = other.Height();
   width = other.Width();
   totalSize = width * height;
-  mat = new E[totalSize];
 
   memcpy(mat, other.mat, sizeof(E) * totalSize);
 
+  return *this;
+}
+template <class E>
+Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
+{
+  const double *ptL = l.begin();
+  if (l.size() == 1)
+  {
+    for (uint32_t i = 0; i < totalSize; i++)
+      mat[i] = *l.begin();
+  }
+  else if (l.size() == totalSize)
+  {
+    memcpy(mat, l.begin(), totalSize * sizeof(E));
+  }
   return *this;
 }
 

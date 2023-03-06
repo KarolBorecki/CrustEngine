@@ -14,7 +14,7 @@ class RenderObject : public Object {
 public:
   /**
   * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
-  */
+  */ //TODO allow nullptr mesh
   RenderObject(Mesh* _mesh);
   ~RenderObject();
 
