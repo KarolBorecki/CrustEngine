@@ -1,7 +1,7 @@
 #ifndef _VECTOR3_HPP_
 #define _VECTOR3_HPP_
 
-#include <Physics/Matrix.hpp>
+#include <Math/Matrix.hpp>
 
 /**
  * @brief Represents mathematical vector3.

@@ -1,7 +1,7 @@
 #ifndef _Vector4_HPP_
 #define _Vector4_HPP_
 
-#include <Physics/Vector3.hpp>
+#include <Math/Vector3.hpp>
 
 /**
  * @brief Represents mathematical vector4.

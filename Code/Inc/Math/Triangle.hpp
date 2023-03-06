@@ -3,7 +3,7 @@
 
 #include <string.h>
 
-#include <Physics/Vector3.hpp>
+#include <Math/Vector3.hpp>
 
 /**
 * @brief Represents flat triangled plane in 3D space as 3 points.
