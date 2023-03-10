@@ -145,9 +145,9 @@ Triangle *Renderer::ProjectTriangle(Triangle *tri, Vector3 *pos, Vector3 *rot, C
   movedP2 = *(tri->GetPoint(1));
   movedP3 = *(tri->GetPoint(2));
 
-  movedP1 += *pos;
-  movedP2 += *pos;
-  movedP3 += *pos;
+  // movedP1 += *pos;
+  // movedP2 += *pos;
+  // movedP3 += *pos;
 
   movedP1 -= (cam->GetTransform()->GetPosition());
   movedP2 -= (cam->GetTransform()->GetPosition());

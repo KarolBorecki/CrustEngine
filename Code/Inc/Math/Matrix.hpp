@@ -380,12 +380,12 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   if (width != other.height)
     return *this; // TODO add warning
 
-  Matrix<E> result(other.width, height, 0.0);
-  for (int x = 0; x < other.width; x++)
+  Matrix<E> result(width, other.height, 0.0);
+  for (int y = 0; y < height; y++)
   {
-    for (int y = 0; y < height; y++)
+    for (int x = 0; x < other.Height(); x++)
     {
-      for (int i = 0; i < other.height; i++)
+      for (int i = 0; i < other.Height(); i++)
       {
         result[x][y] += (*this)[i][y] * other[x][i];
       }
@@ -395,6 +395,24 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   *this = result; // TODO it is kinda not good
   return *this;
 }
+
+
+// if (this->Width() != other->Height())
+// {
+//   Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
+//   throw std::runtime_error("Matrix multiplication failed!"); // TODO use my own error handler
+// }
+
+// for (uint8_t r = 0; r < this->Height(); r++)
+// {
+//   for (uint8_t c = 0; c < other->Width(); c++)
+//   {
+//     for (uint8_t i = 0; i < other->Height(); i++)
+//     {
+//       outMat[x][y] += this->GetValue(r, i) * other->GetValue(i, c);
+//     }
+//   }
+// }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
