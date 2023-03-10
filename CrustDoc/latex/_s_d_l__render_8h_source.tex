@@ -1,0 +1,384 @@
+\hypertarget{_s_d_l__render_8h_source}{}\doxysection{SDL\+\_\+render.\+h}
+\label{_s_d_l__render_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_render.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_render.h}}
+\mbox{\hyperlink{_s_d_l__render_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifndef SDL\_render\_h\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define SDL\_render\_h\_}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__rect_8h}{SDL\_rect.h}}"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{56 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{58 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{65 \{}
+\DoxyCodeLine{66     \mbox{\hyperlink{_s_d_l__render_8h_a3a6e51bbee5fd3f8ee0c9f7504ae4130a02efc6cb7656c03d7a7d0164aced7e84}{SDL\_RENDERER\_SOFTWARE}} = 0x00000001,         }
+\DoxyCodeLine{67     \mbox{\hyperlink{_s_d_l__render_8h_a3a6e51bbee5fd3f8ee0c9f7504ae4130a1268ba2faaf6d9c7c7b71fc550f4248a}{SDL\_RENDERER\_ACCELERATED}} = 0x00000002,      }
+\DoxyCodeLine{69     \mbox{\hyperlink{_s_d_l__render_8h_a3a6e51bbee5fd3f8ee0c9f7504ae4130a12abcfe685ff444f0fc727db981a0c83}{SDL\_RENDERER\_PRESENTVSYNC}} = 0x00000004,     }
+\DoxyCodeLine{71     \mbox{\hyperlink{_s_d_l__render_8h_a3a6e51bbee5fd3f8ee0c9f7504ae4130a77aa48df9c4f56f0b1c66c406da3ab81}{SDL\_RENDERER\_TARGETTEXTURE}} = 0x00000008     }
+\DoxyCodeLine{73 \} \mbox{\hyperlink{_s_d_l__render_8h_a3a6e51bbee5fd3f8ee0c9f7504ae4130}{SDL\_RendererFlags}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___renderer_info}{SDL\_RendererInfo}}}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_s_d_l___renderer_info_a433ecb2865c81ba9f28038e56a4ae6f3}{name}};           }
+\DoxyCodeLine{81     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___renderer_info_a95cf0ffd1704fd0a4dd8ceac6c9f0542}{flags}};               }
+\DoxyCodeLine{82     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___renderer_info_acdec165b2053b914313f5996983ec6b8}{num\_texture\_formats}}; }
+\DoxyCodeLine{83     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___renderer_info_a88450f9d48e593ec4571e3ba7cc3427d}{texture\_formats}}[16]; }
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l___renderer_info_a6e6757e3d5c1f0922adaba39380edfa6}{max\_texture\_width}};      }
+\DoxyCodeLine{85     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l___renderer_info_a87c6a13e8d535c2148f8913c05e13102}{max\_texture\_height}};     }
+\DoxyCodeLine{86 \} \mbox{\hyperlink{struct_s_d_l___renderer_info}{SDL\_RendererInfo}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___vertex}{SDL\_Vertex}}}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     \mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}} \mbox{\hyperlink{struct_s_d_l___vertex_ace816a77e2a2abe41a8c712686250577}{position}};        }
+\DoxyCodeLine{94     \mbox{\hyperlink{struct_s_d_l___color}{SDL\_Color}}  \mbox{\hyperlink{struct_s_d_l___vertex_ace543def50f0b3f3f87a86c47caab53f}{color}};           }
+\DoxyCodeLine{95     \mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}} \mbox{\hyperlink{struct_s_d_l___vertex_a613ca86679cbd0f84041298ffcde5bc4}{tex\_coord}};       }
+\DoxyCodeLine{96 \} \mbox{\hyperlink{struct_s_d_l___vertex}{SDL\_Vertex}};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{101 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{102 \{}
+\DoxyCodeLine{103     \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71af7de2943791eb2a873139506d40a305d}{SDL\_ScaleModeNearest}}, }
+\DoxyCodeLine{104     \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71a9558b9559ab5d26ac398bb18cc731365}{SDL\_ScaleModeLinear}},  }
+\DoxyCodeLine{105     \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71adaae98d92cef330646363f08cdef6f9e}{SDL\_ScaleModeBest}}     }
+\DoxyCodeLine{106 \} \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71}{SDL\_ScaleMode}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{112 \{}
+\DoxyCodeLine{113     \mbox{\hyperlink{_s_d_l__render_8h_a6b8417d7af279e8a0d4a51233da99bc9a07c9015fe5cf4e0737d2836acdf00a34}{SDL\_TEXTUREACCESS\_STATIC}},    }
+\DoxyCodeLine{114     \mbox{\hyperlink{_s_d_l__render_8h_a6b8417d7af279e8a0d4a51233da99bc9a19a4751f16e6b411aeb9c835d6c061b4}{SDL\_TEXTUREACCESS\_STREAMING}}, }
+\DoxyCodeLine{115     \mbox{\hyperlink{_s_d_l__render_8h_a6b8417d7af279e8a0d4a51233da99bc9a52249f41ca2ec4971ec96ee395868a9a}{SDL\_TEXTUREACCESS\_TARGET}}     }
+\DoxyCodeLine{116 \} \mbox{\hyperlink{_s_d_l__render_8h_a6b8417d7af279e8a0d4a51233da99bc9}{SDL\_TextureAccess}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123     \mbox{\hyperlink{_s_d_l__render_8h_a8d8aacd15cb2cb24e61ae1905e7a5ab5a3c1a49753bd4e0a8cfa7c64ed5a4b0df}{SDL\_TEXTUREMODULATE\_NONE}} = 0x00000000,     }
+\DoxyCodeLine{124     \mbox{\hyperlink{_s_d_l__render_8h_a8d8aacd15cb2cb24e61ae1905e7a5ab5a5a9d122094526405306483d856caa21e}{SDL\_TEXTUREMODULATE\_COLOR}} = 0x00000001,    }
+\DoxyCodeLine{125     \mbox{\hyperlink{_s_d_l__render_8h_a8d8aacd15cb2cb24e61ae1905e7a5ab5a431abaf1e024cd43df94a967ba1e836f}{SDL\_TEXTUREMODULATE\_ALPHA}} = 0x00000002     }
+\DoxyCodeLine{126 \} \mbox{\hyperlink{_s_d_l__render_8h_a8d8aacd15cb2cb24e61ae1905e7a5ab5}{SDL\_TextureModulate}};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{131 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{132 \{}
+\DoxyCodeLine{133     \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12a580b026a6ad4e3493677ad47f3bd939a}{SDL\_FLIP\_NONE}} = 0x00000000,     }
+\DoxyCodeLine{134     \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12acfc2af6936e75fa246c98d316425c0ce}{SDL\_FLIP\_HORIZONTAL}} = 0x00000001,    }
+\DoxyCodeLine{135     \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12a27ec807eec1d9adffced6a70cd85ef01}{SDL\_FLIP\_VERTICAL}} = 0x00000002     }
+\DoxyCodeLine{136 \} \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12}{SDL\_RendererFlip}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{141 \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}};}
+\DoxyCodeLine{142 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{147 \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}};}
+\DoxyCodeLine{148 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{169 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a4dd8a7e6e6f0948541a1ff6b2ecff192}{SDL\_GetNumRenderDrivers}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{185 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa9a7e1ca629863212c2c1b17112f65bd}{SDL\_GetRenderDriverInfo}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}},}
+\DoxyCodeLine{186                                                     \mbox{\hyperlink{struct_s_d_l___renderer_info}{SDL\_RendererInfo}} * info);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{205 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ac3aa070e5cda5bab246621f7efc9f143}{SDL\_CreateWindowAndRenderer}}(}
+\DoxyCodeLine{206                                 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a9a82cf3caff84cabc4598e2619faac17}{width}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_aa352f2804b9902ac30769c00dde75d5f}{height}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} window\_flags,}
+\DoxyCodeLine{207                                 \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} **window, \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} **renderer);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{227 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a4acc54236013e4ef625dcc362cc8b7d5}{SDL\_CreateRenderer}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{228                                                \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac7ba7d3cce3d19ca020e056b37231289}{flags}});}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{249 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aeb5644ee43c35ed27e54e312a1cd954b}{SDL\_CreateSoftwareRenderer}}(\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} * surface);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{262 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a6c60ba0582abbdf342e1d305e3c52362}{SDL\_GetRenderer}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{273 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ac43b1fdc65fefdb6915d2b6db262430b}{SDL\_RenderGetWindow}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer);}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{288 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_afdc8a35ce033f5111843ac9518dc47a4}{SDL\_GetRendererInfo}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{289                                                 \mbox{\hyperlink{struct_s_d_l___renderer_info}{SDL\_RendererInfo}} * info);}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{308 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_abfc0c9a50d9d1870ab7d271b7a73d8ab}{SDL\_GetRendererOutputSize}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{309                                                       \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{333 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a7995b80913eedffe824a5bf1e81e80ed}{SDL\_CreateTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{334                                                         \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_a71a65ffd977afe9c3fef116a5bc9ee27}{format}},}
+\DoxyCodeLine{335                                                         \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a9fb81ef401f3cb865f7b2f1bb059f7d7}{access}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},}
+\DoxyCodeLine{336                                                         \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{362 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a5c0f3b4f6fdb462e4292cd45e72719fb}{SDL\_CreateTextureFromSurface}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer, \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} * surface);}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{386 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aade777757bfc3b98bf3ef742b1d8a052}{SDL\_QueryTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{387                                              \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} * \mbox{\hyperlink{_s_d_l__opengl_8h_a71a65ffd977afe9c3fef116a5bc9ee27}{format}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a9fb81ef401f3cb865f7b2f1bb059f7d7}{access}},}
+\DoxyCodeLine{388                                              \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{414 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a348399db33c03a7882cef0c6e6c1756f}{SDL\_SetTextureColorMod}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{415                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl_8h_a42ce7cdc612e53abee15043f80220d97}{r}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_acaceb3a655ff28b75259860bcb868f9f}{g}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}});}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 }
+\DoxyCodeLine{433 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa70e4ce3a875399d4291dca23e687b11}{SDL\_GetTextureColorMod}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{434                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl_8h_a42ce7cdc612e53abee15043f80220d97}{r}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_acaceb3a655ff28b75259860bcb868f9f}{g}},}
+\DoxyCodeLine{435                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}});}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{458 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a1cc3302a4c7fb3b37e8fd5263a80758b}{SDL\_SetTextureAlphaMod}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{459                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac03904b1f7e359bb2acf10a755e97c5a}{alpha}});}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{474 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a4d9a9e945ec95f30e5c48ce305de33ad}{SDL\_GetTextureAlphaMod}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{475                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac03904b1f7e359bb2acf10a755e97c5a}{alpha}});}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{493 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_af8b9cb77ca18f76c18f39d29ed960de8}{SDL\_SetTextureBlendMode}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{494                                                     \mbox{\hyperlink{_s_d_l__blendmode_8h_a850d3c67a878fd6698a1c8dbb1eabf1e}{SDL\_BlendMode}} blendMode);}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{508 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a2595ee57e6f3a4882f3ae4062ca420c4}{SDL\_GetTextureBlendMode}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{509                                                     \mbox{\hyperlink{_s_d_l__blendmode_8h_a850d3c67a878fd6698a1c8dbb1eabf1e}{SDL\_BlendMode}} *blendMode);}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{524 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aac58837d42510e6e0472538dbcbc2ffe}{SDL\_SetTextureScaleMode}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{525                                                     \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71}{SDL\_ScaleMode}} scaleMode);}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{538 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a51603afa1350164679baad97b77fb3b5}{SDL\_GetTextureScaleMode}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{539                                                     \mbox{\hyperlink{_s_d_l__render_8h_a7cee9cc7b0b54027860fde346ea26c71}{SDL\_ScaleMode}} *scaleMode);}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{552 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a969ee973fd8f686777f151aa2d9275bc}{SDL\_SetTextureUserData}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{553                                                    \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{566 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a6601680fa2e4a7c2c46d503392fc1afc}{SDL\_GetTextureUserData}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}});}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{597 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a7aab41a7058997590095e5568d065c11}{SDL\_UpdateTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{598                                               \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect,}
+\DoxyCodeLine{599                                               \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl_8h_ada7ad693ea2e311b8103f4693fc35f80}{pixels}}, \textcolor{keywordtype}{int} pitch);}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{628 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aad2bf04e82a6fb8df44c0b6791321cb5}{SDL\_UpdateYUVTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{629                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect,}
+\DoxyCodeLine{630                                                  \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} *Yplane, \textcolor{keywordtype}{int} Ypitch,}
+\DoxyCodeLine{631                                                  \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} *Uplane, \textcolor{keywordtype}{int} Upitch,}
+\DoxyCodeLine{632                                                  \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} *Vplane, \textcolor{keywordtype}{int} Vpitch);}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{654 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ab911a179c321d62e7659b8111f457723}{SDL\_UpdateNVTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{655                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect,}
+\DoxyCodeLine{656                                                  \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} *Yplane, \textcolor{keywordtype}{int} Ypitch,}
+\DoxyCodeLine{657                                                  \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} *UVplane, \textcolor{keywordtype}{int} UVpitch);}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{686 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_af64adcd12e4e9d41d48031fd3da7b913}{SDL\_LockTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{687                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect,}
+\DoxyCodeLine{688                                             \textcolor{keywordtype}{void} **\mbox{\hyperlink{_s_d_l__opengl_8h_ada7ad693ea2e311b8103f4693fc35f80}{pixels}}, \textcolor{keywordtype}{int} *pitch);}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{722 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_af1f12f5baf50ec8c86235dd4528a4e0c}{SDL\_LockTextureToSurface}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{723                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *rect,}
+\DoxyCodeLine{724                                             \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} **surface);}
+\DoxyCodeLine{725 }
+\DoxyCodeLine{743 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a7fc9db6cde77fc9c95a4f65bc7d30073}{SDL\_UnlockTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}});}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{755 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a126c5e0fb7abb3aa1bbfe60ac0102857}{SDL\_RenderTargetSupported}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer);}
+\DoxyCodeLine{756 }
+\DoxyCodeLine{779 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a2479163b0f2909cc50cef7af3c279000}{SDL\_SetRenderTarget}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer,}
+\DoxyCodeLine{780                                                 \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}});}
+\DoxyCodeLine{781 }
+\DoxyCodeLine{795 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a130a89bac84d075c44c3e9814238a658}{SDL\_GetRenderTarget}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer);}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{823 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ad0596fd507c9bf9f8f9594cd9064860c}{SDL\_RenderSetLogicalSize}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{824 }
+\DoxyCodeLine{844 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa566ba52ac01bd13f6fdfcdfc3af217f}{SDL\_RenderGetLogicalSize}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{863 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a62c3f8273280e5795075d2921d4ea30f}{SDL\_RenderSetIntegerScale}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{864                                                       \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab0b5c7de20095d30091485d2c60a3dd5}{enable}});}
+\DoxyCodeLine{865 }
+\DoxyCodeLine{877 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a435c61d9f048550388198478e8fdeaa0}{SDL\_RenderGetIntegerScale}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{878 }
+\DoxyCodeLine{895 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a27bad6dceb9d5e08d41506260dfc1c71}{SDL\_RenderSetViewport}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{896                                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{908 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a60a7a6cb31b64f9f13c923fe44ba4d6f}{SDL\_RenderGetViewport}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{909                                                    \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{910 }
+\DoxyCodeLine{926 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a2788c24590fd26bcf0d5be2ffcb85c04}{SDL\_RenderSetClipRect}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{927                                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{942 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_af91e64e2b473a5eb7e93caf253fb760c}{SDL\_RenderGetClipRect}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{943                                                    \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{944 }
+\DoxyCodeLine{957 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ab8125c772a65956fbb259389b6563523}{SDL\_RenderIsClipEnabled}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{958 }
+\DoxyCodeLine{959 }
+\DoxyCodeLine{982 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa52b062e271226c5ec8cdb8aa6dc69eb}{SDL\_RenderSetScale}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{983                                                \textcolor{keywordtype}{float} scaleX, \textcolor{keywordtype}{float} scaleY);}
+\DoxyCodeLine{984 }
+\DoxyCodeLine{996 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a0271c4a8d32cacaff54de9aa7b5a797d}{SDL\_RenderGetScale}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{997                                                \textcolor{keywordtype}{float} *scaleX, \textcolor{keywordtype}{float} *scaleY);}
+\DoxyCodeLine{998 }
+\DoxyCodeLine{1020 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa4497fd1ab833b5b6badd2a086603b19}{SDL\_RenderWindowToLogical}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer, }
+\DoxyCodeLine{1021                                                             \textcolor{keywordtype}{int} windowX, \textcolor{keywordtype}{int} windowY, }
+\DoxyCodeLine{1022                                                             \textcolor{keywordtype}{float} *logicalX, \textcolor{keywordtype}{float} *logicalY);}
+\DoxyCodeLine{1023                                                   }
+\DoxyCodeLine{1024 }
+\DoxyCodeLine{1046 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ae0a927b5b2d8c797dfa06e4226a5c840}{SDL\_RenderLogicalToWindow}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer, }
+\DoxyCodeLine{1047                                                             \textcolor{keywordtype}{float} logicalX, \textcolor{keywordtype}{float} logicalY,}
+\DoxyCodeLine{1048                                                             \textcolor{keywordtype}{int} *windowX, \textcolor{keywordtype}{int} *windowY);}
+\DoxyCodeLine{1049 }
+\DoxyCodeLine{1079 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa26234da40f87f4b16d715564242a341}{SDL\_SetRenderDrawColor}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1080                                            \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl_8h_a42ce7cdc612e53abee15043f80220d97}{r}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_acaceb3a655ff28b75259860bcb868f9f}{g}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}},}
+\DoxyCodeLine{1081                                            \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}});}
+\DoxyCodeLine{1082 }
+\DoxyCodeLine{1102 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a1b8e6544c3fc23ddd9b0f0bfb14cef39}{SDL\_GetRenderDrawColor}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1103                                            \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl_8h_a42ce7cdc612e53abee15043f80220d97}{r}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_acaceb3a655ff28b75259860bcb868f9f}{g}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}},}
+\DoxyCodeLine{1104                                            \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}});}
+\DoxyCodeLine{1105 }
+\DoxyCodeLine{1128 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a37e6e440b995756c9cc8a20fe3ca2385}{SDL\_SetRenderDrawBlendMode}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1129                                                        \mbox{\hyperlink{_s_d_l__blendmode_8h_a850d3c67a878fd6698a1c8dbb1eabf1e}{SDL\_BlendMode}} blendMode);}
+\DoxyCodeLine{1130 }
+\DoxyCodeLine{1143 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a384109767532e9703652233571a0d3cf}{SDL\_GetRenderDrawBlendMode}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1144                                                        \mbox{\hyperlink{_s_d_l__blendmode_8h_a850d3c67a878fd6698a1c8dbb1eabf1e}{SDL\_BlendMode}} *blendMode);}
+\DoxyCodeLine{1145 }
+\DoxyCodeLine{1160 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a473b4abbb29c60e98876eb68ad850f79}{SDL\_RenderClear}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1161 }
+\DoxyCodeLine{1187 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ab576a09c91675dbd8dba9d05dd2fc0bc}{SDL\_RenderDrawPoint}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1188                                                 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{1189 }
+\DoxyCodeLine{1213 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a8ff1a991e7a2599cfc9ea43dfa920d0b}{SDL\_RenderDrawPoints}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1214                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0c0cc65d03e264ad2c5262927b620d3f}{points}},}
+\DoxyCodeLine{1215                                                  \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1244 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a6d50e252f15e0c6c14639bdd343285fd}{SDL\_RenderDrawLine}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1245                                                \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a49825216c96caaeb09237b36651181c5}{x1}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3af6c78fcdfccea028a5878bc747ef39}{y1}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a7b907a03236685c534d89d604cff23c8}{x2}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a2be1135ed68e8d80fa9e130c7814f8c2}{y2}});}
+\DoxyCodeLine{1246 }
+\DoxyCodeLine{1270 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a556f150677bb965448b7b361bceb7a76}{SDL\_RenderDrawLines}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1271                                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0c0cc65d03e264ad2c5262927b620d3f}{points}},}
+\DoxyCodeLine{1272                                                 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1273 }
+\DoxyCodeLine{1296 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ab2a89b5a0c25adb6abdb9aeff28f177c}{SDL\_RenderDrawRect}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1297                                                \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{1298 }
+\DoxyCodeLine{1322 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ae56460fe1b478a55916650e695145cbf}{SDL\_RenderDrawRects}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1323                                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rects,}
+\DoxyCodeLine{1324                                                 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1325 }
+\DoxyCodeLine{1352 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a3b5098c1944441034d2c5cff419f93cc}{SDL\_RenderFillRect}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1353                                                \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{1354 }
+\DoxyCodeLine{1377 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a987fe30e64168702f1dfa6407fbe8bec}{SDL\_RenderFillRects}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1378                                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rects,}
+\DoxyCodeLine{1379                                                 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1380 }
+\DoxyCodeLine{1409 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a4b6c2353384c7b7128fd5960b24f2ae6}{SDL\_RenderCopy}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1410                                            \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1411                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * srcrect,}
+\DoxyCodeLine{1412                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * dstrect);}
+\DoxyCodeLine{1413 }
+\DoxyCodeLine{1453 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ac2c665c1ce910413272a004cdb52e28e}{SDL\_RenderCopyEx}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1454                                            \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1455                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * srcrect,}
+\DoxyCodeLine{1456                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * dstrect,}
+\DoxyCodeLine{1457                                            \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a9e06c1f76a20fed54ca742cd25cb02c4}{angle}},}
+\DoxyCodeLine{1458                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} *center,}
+\DoxyCodeLine{1459                                            \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12}{SDL\_RendererFlip}} flip);}
+\DoxyCodeLine{1460 }
+\DoxyCodeLine{1461 }
+\DoxyCodeLine{1472 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aa62bd2597d5a7650e7ad666c2a15e688}{SDL\_RenderDrawPointF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1473                                                  \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{1474 }
+\DoxyCodeLine{1485 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a94cef2f19a261a175e3a748dd95bec69}{SDL\_RenderDrawPointsF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1486                                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0c0cc65d03e264ad2c5262927b620d3f}{points}},}
+\DoxyCodeLine{1487                                                   \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1488 }
+\DoxyCodeLine{1501 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a05ad434757513f4b98de29aaee8f70e3}{SDL\_RenderDrawLineF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1502                                                 \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a49825216c96caaeb09237b36651181c5}{x1}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3af6c78fcdfccea028a5878bc747ef39}{y1}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a7b907a03236685c534d89d604cff23c8}{x2}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a2be1135ed68e8d80fa9e130c7814f8c2}{y2}});}
+\DoxyCodeLine{1503 }
+\DoxyCodeLine{1515 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a60727a3df49c84428e486cc067107406}{SDL\_RenderDrawLinesF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1516                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0c0cc65d03e264ad2c5262927b620d3f}{points}},}
+\DoxyCodeLine{1517                                                  \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1518 }
+\DoxyCodeLine{1529 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ae6ca4e63fe1189d44a42eb831c4f9dc2}{SDL\_RenderDrawRectF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1530                                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * rect);}
+\DoxyCodeLine{1531 }
+\DoxyCodeLine{1543 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ac0be470fecfd02a348d017ef4dcac2e5}{SDL\_RenderDrawRectsF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1544                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * rects,}
+\DoxyCodeLine{1545                                                  \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1546 }
+\DoxyCodeLine{1558 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_afc08075c669fffd2ab7808ffedad3edc}{SDL\_RenderFillRectF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1559                                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * rect);}
+\DoxyCodeLine{1560 }
+\DoxyCodeLine{1572 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a599b48b93c5f6e55f7c12c766205f8a1}{SDL\_RenderFillRectsF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1573                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * rects,}
+\DoxyCodeLine{1574                                                  \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}});}
+\DoxyCodeLine{1575 }
+\DoxyCodeLine{1590 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a4514e3254853776f9c5202d8808e5354}{SDL\_RenderCopyF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1591                                             \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1592                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * srcrect,}
+\DoxyCodeLine{1593                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * dstrect);}
+\DoxyCodeLine{1594 }
+\DoxyCodeLine{1616 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ac7f9810c9b14afb97cd9b0bbc68ac73d}{SDL\_RenderCopyExF}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1617                                             \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1618                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * srcrect,}
+\DoxyCodeLine{1619                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}} * dstrect,}
+\DoxyCodeLine{1620                                             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a9e06c1f76a20fed54ca742cd25cb02c4}{angle}},}
+\DoxyCodeLine{1621                                             \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}} *center,}
+\DoxyCodeLine{1622                                             \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__render_8h_a6280e56838e0e684caa0869c7c973c12}{SDL\_RendererFlip}} flip);}
+\DoxyCodeLine{1623 }
+\DoxyCodeLine{1644 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a7b2ac666852256d171a50e3af815a910}{SDL\_RenderGeometry}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer,}
+\DoxyCodeLine{1645                                                \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1646                                                \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___vertex}{SDL\_Vertex}} *vertices, \textcolor{keywordtype}{int} num\_vertices,}
+\DoxyCodeLine{1647                                                \textcolor{keyword}{const} \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_adbd1b09d60fa0a569e6873aa161d44c7}{indices}}, \textcolor{keywordtype}{int} num\_indices);}
+\DoxyCodeLine{1648 }
+\DoxyCodeLine{1674 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a7b20020e712422db59f9e76be9abc04f}{SDL\_RenderGeometryRaw}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *renderer,}
+\DoxyCodeLine{1675                                                \mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}},}
+\DoxyCodeLine{1676                                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} *xy, \textcolor{keywordtype}{int} xy\_stride,}
+\DoxyCodeLine{1677                                                \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___color}{SDL\_Color}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3ea846f998d64f079b86052b6c4193a8}{color}}, \textcolor{keywordtype}{int} color\_stride,}
+\DoxyCodeLine{1678                                                \textcolor{keyword}{const} \textcolor{keywordtype}{float} *uv, \textcolor{keywordtype}{int} uv\_stride,}
+\DoxyCodeLine{1679                                                \textcolor{keywordtype}{int} num\_vertices,}
+\DoxyCodeLine{1680                                                \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl_8h_adbd1b09d60fa0a569e6873aa161d44c7}{indices}}, \textcolor{keywordtype}{int} num\_indices, \textcolor{keywordtype}{int} size\_indices);}
+\DoxyCodeLine{1681 }
+\DoxyCodeLine{1708 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a6aa7797b165275f1bdd76c3188a784f9}{SDL\_RenderReadPixels}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer,}
+\DoxyCodeLine{1709                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect,}
+\DoxyCodeLine{1710                                                  \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_a71a65ffd977afe9c3fef116a5bc9ee27}{format}},}
+\DoxyCodeLine{1711                                                  \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl_8h_ada7ad693ea2e311b8103f4693fc35f80}{pixels}}, \textcolor{keywordtype}{int} pitch);}
+\DoxyCodeLine{1712 }
+\DoxyCodeLine{1748 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a48fa9d24395f3610746988ecca2aae86}{SDL\_RenderPresent}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1749 }
+\DoxyCodeLine{1763 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a078c0a925e24542d356a02183a306be6}{SDL\_DestroyTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}});}
+\DoxyCodeLine{1764 }
+\DoxyCodeLine{1774 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_ab1f096742fa9c882c3f1555ee62c4ac2}{SDL\_DestroyRenderer}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1775 }
+\DoxyCodeLine{1805 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a1b874552e4d5dcfa069256e49c6c2ae4}{SDL\_RenderFlush}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1806 }
+\DoxyCodeLine{1807 }
+\DoxyCodeLine{1843 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a00a25a5b53d11a363aa8dac1120cd274}{SDL\_GL\_BindTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}}, \textcolor{keywordtype}{float} *texw, \textcolor{keywordtype}{float} *texh);}
+\DoxyCodeLine{1844 }
+\DoxyCodeLine{1858 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_aaf7df600fe205822dea3a9e56f6c78ad}{SDL\_GL\_UnbindTexture}}(\mbox{\hyperlink{_s_d_l__render_8h_a17850d7f1f5de457727cb3cf66b3a7f5}{SDL\_Texture}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8f486379aef534669f4f06f515e7ce6c}{texture}});}
+\DoxyCodeLine{1859 }
+\DoxyCodeLine{1874 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a40ee6191edf8a60c9cb1adc00a10aefb}{SDL\_RenderGetMetalLayer}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1875 }
+\DoxyCodeLine{1895 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_a17c520ab4254564e2dddff455ecf9eb8}{SDL\_RenderGetMetalCommandEncoder}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} * renderer);}
+\DoxyCodeLine{1896 }
+\DoxyCodeLine{1906 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__render_8h_afe68207df287bda5b85a4bb84e720522}{SDL\_RenderSetVSync}}(\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}}* renderer, \textcolor{keywordtype}{int} vsync);}
+\DoxyCodeLine{1907 }
+\DoxyCodeLine{1908 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{1909 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1910 \}}
+\DoxyCodeLine{1911 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1912 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{1913 }
+\DoxyCodeLine{1914 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_render\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1915 }
+\DoxyCodeLine{1916 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

@@ -1,0 +1,179 @@
+\hypertarget{_s_d_l__atomic_8h_source}{}\doxysection{SDL\+\_\+atomic.\+h}
+\label{_s_d_l__atomic_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_atomic.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_atomic.h}}
+\mbox{\hyperlink{_s_d_l__atomic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef SDL\_atomic\_h\_}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define SDL\_atomic\_h\_}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__platform_8h}{SDL\_platform.h}}"{}}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{69 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{87 \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81}{SDL\_SpinLock}};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{106 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a5410c5f832f0d862282cd65fc432fc0b}{SDL\_AtomicTryLock}}(\mbox{\hyperlink{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81}{SDL\_SpinLock}} *lock);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{121 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a95ecd72190ba8e5ed6ed78d5d1b36509}{SDL\_AtomicLock}}(\mbox{\hyperlink{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81}{SDL\_SpinLock}} *lock);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{138 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a3fb14c56b17347349ac2fb5300205bac}{SDL\_AtomicUnlock}}(\mbox{\hyperlink{_s_d_l__atomic_8h_a59179ff8d21c65b9d9a544f3c2088e81}{SDL\_SpinLock}} *lock);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{/* @\} */}\textcolor{comment}{/* SDL AtomicLock */}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER > 1200) \&\& !defined(\_\_clang\_\_)}}
+\DoxyCodeLine{148 \textcolor{keywordtype}{void} \_ReadWriteBarrier(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#pragma intrinsic(\_ReadWriteBarrier)}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define SDL\_CompilerBarrier()   \_ReadWriteBarrier()}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#elif (defined(\_\_GNUC\_\_) \&\& !defined(\_\_EMSCRIPTEN\_\_)) || (defined(\_\_SUNPRO\_C) \&\& (\_\_SUNPRO\_C >= 0x5120))}}
+\DoxyCodeLine{152 \textcolor{comment}{/* This is correct for all CPUs when using GCC or Solaris Studio 12.1+. */}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define SDL\_CompilerBarrier()   \_\_asm\_\_ \_\_volatile\_\_ ("{}"{}} : : : "{}memory"{})}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#elif defined(\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{155 \textcolor{keyword}{extern} \_\_inline \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__atomic_8h_a36d435d444dc115a5cc11fa7027576ec}{SDL\_CompilerBarrier}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#pragma aux SDL\_CompilerBarrier = "{}"{}} parm [] modify exact [];}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define SDL\_CompilerBarrier()   \(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\{ SDL\_SpinLock \_tmp = 0; SDL\_AtomicLock(\&\_tmp); SDL\_AtomicUnlock(\&\_tmp); \}}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{183 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a4bec96c1fc632536952c309513a0258e}{SDL\_MemoryBarrierReleaseFunction}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{184 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_ae911d7eb425a9e83fd34ab1303412cba}{SDL\_MemoryBarrierAcquireFunction}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& (defined(\_\_powerpc\_\_) || defined(\_\_ppc\_\_))}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_asm\_\_ \_\_volatile\_\_ ("{}lwsync"{}} : : : "{}memory"{})}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_asm\_\_ \_\_volatile\_\_ ("{}lwsync"{}} : : : "{}memory"{})}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_) \&\& defined(\_\_aarch64\_\_)}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_asm\_\_ \_\_volatile\_\_ ("{}dmb ish"{}} : : : "{}memory"{})}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_asm\_\_ \_\_volatile\_\_ ("{}dmb ish"{}} : : : "{}memory"{})}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_) \&\& defined(\_\_arm\_\_)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#if 0 }\textcolor{comment}{/* defined(\_\_LINUX\_\_) || defined(\_\_ANDROID\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{194 \textcolor{comment}{/* Information from:}}
+\DoxyCodeLine{195 \textcolor{comment}{   https://chromium.googlesource.com/chromium/chromium/+/trunk/base/atomicops\_internals\_arm\_gcc.h\#19}}
+\DoxyCodeLine{196 \textcolor{comment}{}}
+\DoxyCodeLine{197 \textcolor{comment}{   The Linux kernel provides a helper function which provides the right code for a memory barrier,}}
+\DoxyCodeLine{198 \textcolor{comment}{   hard-\/coded at address 0xffff0fa0}}
+\DoxyCodeLine{199 \textcolor{comment}{*/}}
+\DoxyCodeLine{200 \textcolor{keyword}{typedef} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} (*SDL\_KernelMemoryBarrierFunc)();}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()  ((SDL\_KernelMemoryBarrierFunc)0xffff0fa0)()}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()  ((SDL\_KernelMemoryBarrierFunc)0xffff0fa0)()}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#elif 0 }\textcolor{comment}{/* defined(\_\_QNXNTO\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#include <sys/cpuinline.h>}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_cpu\_membarrier()}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_cpu\_membarrier()}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#if defined(\_\_ARM\_ARCH\_7\_\_) || defined(\_\_ARM\_ARCH\_7A\_\_) || defined(\_\_ARM\_ARCH\_7EM\_\_) || defined(\_\_ARM\_ARCH\_7R\_\_) || defined(\_\_ARM\_ARCH\_7M\_\_) || defined(\_\_ARM\_ARCH\_7S\_\_) || defined(\_\_ARM\_ARCH\_8A\_\_)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_asm\_\_ \_\_volatile\_\_ ("{}dmb ish"{}} : : : "{}memory"{})}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_asm\_\_ \_\_volatile\_\_ ("{}dmb ish"{}} : : : "{}memory"{})}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#elif defined(\_\_ARM\_ARCH\_6\_\_) || defined(\_\_ARM\_ARCH\_6J\_\_) || defined(\_\_ARM\_ARCH\_6K\_\_) || defined(\_\_ARM\_ARCH\_6T2\_\_) || defined(\_\_ARM\_ARCH\_6Z\_\_) || defined(\_\_ARM\_ARCH\_6ZK\_\_) || defined(\_\_ARM\_ARCH\_5TE\_\_)}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#ifdef \_\_thumb\_\_}}
+\DoxyCodeLine{214 \textcolor{comment}{/* The mcr instruction isn't available in thumb mode, use real functions */}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define SDL\_MEMORY\_BARRIER\_USES\_FUNCTION}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   SDL\_MemoryBarrierReleaseFunction()}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   SDL\_MemoryBarrierAcquireFunction()}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_asm\_\_ \_\_volatile\_\_ ("{}mcr p15, 0, \%0, c7, c10, 5"{}} : : "{}r"{}(0) : "{}memory"{})}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_asm\_\_ \_\_volatile\_\_ ("{}mcr p15, 0, \%0, c7, c10, 5"{}} : : "{}r"{}(0) : "{}memory"{})}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_thumb\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()   \_\_asm\_\_ \_\_volatile\_\_ ("{}"{}} : : : "{}memory"{})}
+\DoxyCodeLine{224 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()   \_\_asm\_\_ \_\_volatile\_\_ ("{}"{}} : : : "{}memory"{})}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_LINUX\_\_ || \_\_ANDROID\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_GNUC\_\_ \&\& \_\_arm\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#if (defined(\_\_SUNPRO\_C) \&\& (\_\_SUNPRO\_C >= 0x5120))}}
+\DoxyCodeLine{229 \textcolor{comment}{/* This is correct for all CPUs on Solaris when using Solaris Studio 12.1+. */}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#include <mbarrier.h>}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()  \_\_machine\_rel\_barrier()}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()  \_\_machine\_acq\_barrier()}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{234 \textcolor{comment}{/* This is correct for the x86 and x64 CPUs, and we'll expand this over time. */}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierRelease()  SDL\_CompilerBarrier()}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define SDL\_MemoryBarrierAcquire()  SDL\_CompilerBarrier()}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{comment}{/* "{}REP NOP"{} is PAUSE, coded for tools that don't know it by that name. */}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#if (defined(\_\_GNUC\_\_) || defined(\_\_clang\_\_)) \&\& (defined(\_\_i386\_\_) || defined(\_\_x86\_64\_\_))}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction() \_\_asm\_\_ \_\_volatile\_\_("{}pause\(\backslash\)n"{}})  \textcolor{comment}{/* Some assemblers can't do REP NOP, so go with PAUSE. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#elif (defined(\_\_arm\_\_) \&\& \_\_ARM\_ARCH\_\_ >= 7) || defined(\_\_aarch64\_\_)}}
+\DoxyCodeLine{244 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction() \_\_asm\_\_ \_\_volatile\_\_("{}yield"{}} ::: "{}memory"{})}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#elif (defined(\_\_powerpc\_\_) || defined(\_\_powerpc64\_\_))}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction() \_\_asm\_\_ \_\_volatile\_\_("{}or 27,27,27"{}});}
+\DoxyCodeLine{247 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) \&\& (defined(\_M\_IX86) || defined(\_M\_X64))}}
+\DoxyCodeLine{248 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction() \_mm\_pause()  }\textcolor{comment}{/* this is actually "{}rep nop"{} and not a SIMD instruction. No inline asm in MSVC x86-\/64! */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) \&\& (defined(\_M\_ARM) || defined(\_M\_ARM64))}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction() \_\_yield()}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#elif defined(\_\_WATCOMC\_\_) \&\& defined(\_\_386\_\_)}}
+\DoxyCodeLine{252     \textcolor{comment}{/* watcom assembler rejects PAUSE if CPU < i686, and it refuses REP NOP as an invalid combination. Hardcode the bytes.  */}}
+\DoxyCodeLine{253     \textcolor{keyword}{extern} \_\_inline \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__atomic_8h_a6aa8f8635b3a07f02fe26e5cc052a5f6}{SDL\_CPUPauseInstruction}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{254 \textcolor{preprocessor}{    \#pragma aux SDL\_CPUPauseInstruction = "{}db 0f3h,90h"{}}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{    \#define SDL\_CPUPauseInstruction()}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 }
+\DoxyCodeLine{264 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{ \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l__atomic__t_a0d09ddf3cc5798c709edb7cea104203a}{value}}; \} \mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\_atomic\_t}};}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{283 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_ad6b90be91abb896260930d3908c0437b}{SDL\_AtomicCAS}}(\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\_atomic\_t}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keywordtype}{int} oldval, \textcolor{keywordtype}{int} newval);}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{301 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a95b659308ebb16226d5c0cbf2188e51d}{SDL\_AtomicSet}}(\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\_atomic\_t}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}});}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{316 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a633c2661709f59c98f128f99aea36d96}{SDL\_AtomicGet}}(\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\_atomic\_t}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}});}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{335 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a36cadfcf8e2bda1974fbce6afdc6d529}{SDL\_AtomicAdd}}(\mbox{\hyperlink{struct_s_d_l__atomic__t}{SDL\_atomic\_t}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}});}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#ifndef SDL\_AtomicIncRef}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define SDL\_AtomicIncRef(a)    SDL\_AtomicAdd(a, 1)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#ifndef SDL\_AtomicDecRef}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define SDL\_AtomicDecRef(a)    (SDL\_AtomicAdd(a, -\/1) == 1)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{371 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_aa3070cf7f391b522e08595822c2f0eba}{SDL\_AtomicCASPtr}}(\textcolor{keywordtype}{void} **\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keywordtype}{void} *oldval, \textcolor{keywordtype}{void} *newval);}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{388 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_a3207340e57c812760328fa4f15198919}{SDL\_AtomicSetPtr}}(\textcolor{keywordtype}{void} **\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keywordtype}{void}* \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}});}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{404 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__atomic_8h_abbfdbca42b03cce91ab5a5f7f5078d4d}{SDL\_AtomicGetPtr}}(\textcolor{keywordtype}{void} **\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}});}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{408 \}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_atomic\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

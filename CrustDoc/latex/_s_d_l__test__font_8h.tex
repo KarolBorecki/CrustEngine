@@ -1,0 +1,271 @@
+\hypertarget{_s_d_l__test__font_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+test\+\_\+font.h File Reference}
+\label{_s_d_l__test__font_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_font.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_font.h}}
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}}
+\begin{DoxyCompactList}\small\item\em Data used for multi-\/line text output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}{FONT\+\_\+\+CHARACTER\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__font_8h_a258281584238b8e9e4a5807983fd5ca8}{FONT\+\_\+\+LINE\+\_\+\+HEIGHT}}~(\mbox{\hyperlink{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}{FONT\+\_\+\+CHARACTER\+\_\+\+SIZE}} + 2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} \mbox{\hyperlink{_s_d_l__test__font_8h_a4ee3f9a6ea1833ab7433b9c5ff611b21}{SDLTest\+\_\+\+Text\+Window}}
+\begin{DoxyCompactList}\small\item\em Data used for multi-\/line text output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_s_d_l__test__font_8h_ab388a5186016a830aff147df1a57c433}{SDLTest\+\_\+\+Draw\+Character}} (\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$renderer, int \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, int \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}})
+\begin{DoxyCompactList}\small\item\em Draw a string in the currently set font. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}{SDLTest\+\_\+\+Draw\+String}} (\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$renderer, int \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, int \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a4af680a6c683f88ed67b76f207f2e6e4}{s}})
+\begin{DoxyCompactList}\small\item\em Draw a UTF-\/8 string in the currently set font. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$ \mbox{\hyperlink{_s_d_l__test__font_8h_ad177d2299387cfb809dee14aead9a69a}{SDLTest\+\_\+\+Text\+Window\+Create}} (int \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, int \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\begin{DoxyCompactList}\small\item\em Create a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_abbf887eb11c3983ee21df845654e446b}{SDLTest\+\_\+\+Text\+Window\+Display}} (\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$textwin, \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Display a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_a18c3ec20c2c76a85d3fd78a9d0335a24}{SDLTest\+\_\+\+Text\+Window\+Add\+Text}} (\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$textwin, \mbox{\hyperlink{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}{SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING}} const char $\ast$fmt,...) \mbox{\hyperlink{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a}{SDL\+\_\+\+PRINTF\+\_\+\+VARARG\+\_\+\+FUNC}}(2)
+\begin{DoxyCompactList}\small\item\em Add text to a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_a90c1152cf2a14c604588a72e077555cf}{SDLTest\+\_\+\+Text\+Window\+Add\+Text\+With\+Length}} (\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$textwin, const char $\ast$text, size\+\_\+t \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a652168017ea9a8bbcead03d5c16269fb}{len}})
+\begin{DoxyCompactList}\small\item\em Add text to a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_a21ea5263f935c133afd8920a74f0ee88}{SDLTest\+\_\+\+Text\+Window\+Clear}} (\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$textwin)
+\begin{DoxyCompactList}\small\item\em Clear the text in a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_a2b4efe6ed26d78ba2f1e83af26eabdf6}{SDLTest\+\_\+\+Text\+Window\+Destroy}} (\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$textwin)
+\begin{DoxyCompactList}\small\item\em Free the storage associated with a multi-\/line text output window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}{SDLTest\+\_\+\+Cleanup\+Text\+Drawing}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\begin{DoxyCompactList}\small\item\em Cleanup textures used by font drawing functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}\label{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!FONT\_CHARACTER\_SIZE@{FONT\_CHARACTER\_SIZE}}
+\index{FONT\_CHARACTER\_SIZE@{FONT\_CHARACTER\_SIZE}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{FONT\_CHARACTER\_SIZE}{FONT\_CHARACTER\_SIZE}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+CHARACTER\+\_\+\+SIZE~8}
+
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a258281584238b8e9e4a5807983fd5ca8}\label{_s_d_l__test__font_8h_a258281584238b8e9e4a5807983fd5ca8}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!FONT\_LINE\_HEIGHT@{FONT\_LINE\_HEIGHT}}
+\index{FONT\_LINE\_HEIGHT@{FONT\_LINE\_HEIGHT}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{FONT\_LINE\_HEIGHT}{FONT\_LINE\_HEIGHT}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+LINE\+\_\+\+HEIGHT~(\mbox{\hyperlink{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}{FONT\+\_\+\+CHARACTER\+\_\+\+SIZE}} + 2)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a4ee3f9a6ea1833ab7433b9c5ff611b21}\label{_s_d_l__test__font_8h_a4ee3f9a6ea1833ab7433b9c5ff611b21}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindow@{SDLTest\_TextWindow}}
+\index{SDLTest\_TextWindow@{SDLTest\_TextWindow}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindow}{SDLTest\_TextWindow}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} \mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}}}
+
+
+
+Data used for multi-\/line text output. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}\label{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_CleanupTextDrawing@{SDLTest\_CleanupTextDrawing}}
+\index{SDLTest\_CleanupTextDrawing@{SDLTest\_CleanupTextDrawing}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_CleanupTextDrawing()}{SDLTest\_CleanupTextDrawing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Cleanup\+Text\+Drawing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Cleanup textures used by font drawing functions. 
+
+\mbox{\Hypertarget{_s_d_l__test__font_8h_ab388a5186016a830aff147df1a57c433}\label{_s_d_l__test__font_8h_ab388a5186016a830aff147df1a57c433}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_DrawCharacter@{SDLTest\_DrawCharacter}}
+\index{SDLTest\_DrawCharacter@{SDLTest\_DrawCharacter}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_DrawCharacter()}{SDLTest\_DrawCharacter()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Draw\+Character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Draw a string in the currently set font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer to draw on. \\
+\hline
+{\em x} & The X coordinate of the upper left corner of the character. \\
+\hline
+{\em y} & The Y coordinate of the upper left corner of the character. \\
+\hline
+{\em c} & The character to draw.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}\label{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_DrawString@{SDLTest\_DrawString}}
+\index{SDLTest\_DrawString@{SDLTest\_DrawString}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_DrawString()}{SDLTest\_DrawString()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Draw\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Draw a UTF-\/8 string in the currently set font. 
+
+The font currently only supports characters in the Basic Latin and Latin-\/1 Supplement sets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer to draw on. \\
+\hline
+{\em x} & The X coordinate of the upper left corner of the string. \\
+\hline
+{\em y} & The Y coordinate of the upper left corner of the string. \\
+\hline
+{\em s} & The string to draw.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a18c3ec20c2c76a85d3fd78a9d0335a24}\label{_s_d_l__test__font_8h_a18c3ec20c2c76a85d3fd78a9d0335a24}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowAddText@{SDLTest\_TextWindowAddText}}
+\index{SDLTest\_TextWindowAddText@{SDLTest\_TextWindowAddText}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowAddText()}{SDLTest\_TextWindowAddText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Text\+Window\+Add\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$}]{textwin,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}{SDL\+\_\+\+PRINTF\+\_\+\+FORMAT\+\_\+\+STRING}} const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Add text to a multi-\/line text output window. 
+
+Adds UTF-\/8 text to the end of the current text. The newline character starts a new line of text. The backspace character deletes the last character or, if the line is empty, deletes the line and goes to the end of the previous line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em textwin} & The text output window \\
+\hline
+{\em fmt} & A printf() style format string \\
+\hline
+{\em ...} & additional parameters matching \% tokens in the {\ttfamily fmt} string, if any\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a90c1152cf2a14c604588a72e077555cf}\label{_s_d_l__test__font_8h_a90c1152cf2a14c604588a72e077555cf}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowAddTextWithLength@{SDLTest\_TextWindowAddTextWithLength}}
+\index{SDLTest\_TextWindowAddTextWithLength@{SDLTest\_TextWindowAddTextWithLength}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowAddTextWithLength()}{SDLTest\_TextWindowAddTextWithLength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Text\+Window\+Add\+Text\+With\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$}]{textwin,  }\item[{const char $\ast$}]{text,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Add text to a multi-\/line text output window. 
+
+Adds UTF-\/8 text to the end of the current text. The newline character starts a new line of text. The backspace character deletes the last character or, if the line is empty, deletes the line and goes to the end of the previous line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em textwin} & The text output window \\
+\hline
+{\em text} & The text to add to the window \\
+\hline
+{\em len} & The length, in bytes, of the text to add to the window\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a21ea5263f935c133afd8920a74f0ee88}\label{_s_d_l__test__font_8h_a21ea5263f935c133afd8920a74f0ee88}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowClear@{SDLTest\_TextWindowClear}}
+\index{SDLTest\_TextWindowClear@{SDLTest\_TextWindowClear}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowClear()}{SDLTest\_TextWindowClear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Text\+Window\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$}]{textwin }\end{DoxyParamCaption})}
+
+
+
+Clear the text in a multi-\/line text output window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em textwin} & The text output window\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_ad177d2299387cfb809dee14aead9a69a}\label{_s_d_l__test__font_8h_ad177d2299387cfb809dee14aead9a69a}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowCreate@{SDLTest\_TextWindowCreate}}
+\index{SDLTest\_TextWindowCreate@{SDLTest\_TextWindowCreate}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowCreate()}{SDLTest\_TextWindowCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$ SDLTest\+\_\+\+Text\+Window\+Create (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Create a multi-\/line text output window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the upper left corner of the window. \\
+\hline
+{\em y} & The Y coordinate of the upper left corner of the window. \\
+\hline
+{\em w} & The width of the window (currently ignored) \\
+\hline
+{\em h} & The height of the window (currently ignored)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new window, or NULL on failure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a2b4efe6ed26d78ba2f1e83af26eabdf6}\label{_s_d_l__test__font_8h_a2b4efe6ed26d78ba2f1e83af26eabdf6}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowDestroy@{SDLTest\_TextWindowDestroy}}
+\index{SDLTest\_TextWindowDestroy@{SDLTest\_TextWindowDestroy}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowDestroy()}{SDLTest\_TextWindowDestroy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Text\+Window\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$}]{textwin }\end{DoxyParamCaption})}
+
+
+
+Free the storage associated with a multi-\/line text output window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em textwin} & The text output window\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_abbf887eb11c3983ee21df845654e446b}\label{_s_d_l__test__font_8h_abbf887eb11c3983ee21df845654e446b}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_TextWindowDisplay@{SDLTest\_TextWindowDisplay}}
+\index{SDLTest\_TextWindowDisplay@{SDLTest\_TextWindowDisplay}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TextWindowDisplay()}{SDLTest\_TextWindowDisplay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Text\+Window\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___text_window}{SDLTest\+\_\+\+Text\+Window}} $\ast$}]{textwin,  }\item[{\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Display a multi-\/line text output window. 
+
+This function should be called every frame to display the text
+
+
+\begin{DoxyParams}{Parameters}
+{\em textwin} & The text output window \\
+\hline
+{\em renderer} & The renderer to use for display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0 
+\end{DoxySince}

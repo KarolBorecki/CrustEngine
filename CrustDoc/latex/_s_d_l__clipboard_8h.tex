@@ -1,0 +1,84 @@
+\hypertarget{_s_d_l__clipboard_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+clipboard.h File Reference}
+\label{_s_d_l__clipboard_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_clipboard.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_clipboard.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__clipboard_8h_a36d97ed867cc1a6a4f015aaa5972ed46}{SDL\+\_\+\+Set\+Clipboard\+Text}} (const char $\ast$text)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} char $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__clipboard_8h_a9d0253e99db153d85cbe5e5a3008b1d5}{SDL\+\_\+\+Get\+Clipboard\+Text}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\+\_\+bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__clipboard_8h_a415fa85de093cf6117626a9415394509}{SDL\+\_\+\+Has\+Clipboard\+Text}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL clipboard handling 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__clipboard_8h_a9d0253e99db153d85cbe5e5a3008b1d5}\label{_s_d_l__clipboard_8h_a9d0253e99db153d85cbe5e5a3008b1d5}} 
+\index{SDL\_clipboard.h@{SDL\_clipboard.h}!SDL\_GetClipboardText@{SDL\_GetClipboardText}}
+\index{SDL\_GetClipboardText@{SDL\_GetClipboardText}!SDL\_clipboard.h@{SDL\_clipboard.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetClipboardText()}{SDL\_GetClipboardText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} char $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Get\+Clipboard\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+Get UTF-\/8 text from the clipboard, which must be freed with \mbox{\hyperlink{_s_d_l__stdinc_8h_a0e4ade894d550ada1fa19dc2d46e88b8}{SDL\+\_\+free()}}.
+
+This functions returns empty string if there was not enough memory left for a copy of the clipboard\textquotesingle{}s content.
+
+\begin{DoxyReturn}{Returns}
+the clipboard text on success or an empty string on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information. Caller must call \mbox{\hyperlink{_s_d_l__stdinc_8h_a0e4ade894d550ada1fa19dc2d46e88b8}{SDL\+\_\+free()}} on the returned pointer when done with it (even if there was an error).
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a415fa85de093cf6117626a9415394509}{SDL\+\_\+\+Has\+Clipboard\+Text}} 
+
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a36d97ed867cc1a6a4f015aaa5972ed46}{SDL\+\_\+\+Set\+Clipboard\+Text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__clipboard_8h_a415fa85de093cf6117626a9415394509}\label{_s_d_l__clipboard_8h_a415fa85de093cf6117626a9415394509}} 
+\index{SDL\_clipboard.h@{SDL\_clipboard.h}!SDL\_HasClipboardText@{SDL\_HasClipboardText}}
+\index{SDL\_HasClipboardText@{SDL\_HasClipboardText}!SDL\_clipboard.h@{SDL\_clipboard.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_HasClipboardText()}{SDL\_HasClipboardText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\+\_\+bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Has\+Clipboard\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+Query whether the clipboard exists and contains a non-\/empty text string.
+
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the clipboard has text, or SDL\+\_\+\+FALSE if it does not.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a9d0253e99db153d85cbe5e5a3008b1d5}{SDL\+\_\+\+Get\+Clipboard\+Text}} 
+
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a36d97ed867cc1a6a4f015aaa5972ed46}{SDL\+\_\+\+Set\+Clipboard\+Text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__clipboard_8h_a36d97ed867cc1a6a4f015aaa5972ed46}\label{_s_d_l__clipboard_8h_a36d97ed867cc1a6a4f015aaa5972ed46}} 
+\index{SDL\_clipboard.h@{SDL\_clipboard.h}!SDL\_SetClipboardText@{SDL\_SetClipboardText}}
+\index{SDL\_SetClipboardText@{SDL\_SetClipboardText}!SDL\_clipboard.h@{SDL\_clipboard.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetClipboardText()}{SDL\_SetClipboardText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Set\+Clipboard\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text }\end{DoxyParamCaption})}
+
+Put UTF-\/8 text into the clipboard.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to store in the clipboard \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a9d0253e99db153d85cbe5e5a3008b1d5}{SDL\+\_\+\+Get\+Clipboard\+Text}} 
+
+\mbox{\hyperlink{_s_d_l__clipboard_8h_a415fa85de093cf6117626a9415394509}{SDL\+\_\+\+Has\+Clipboard\+Text}} 
+\end{DoxySeeAlso}

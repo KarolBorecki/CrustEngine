@@ -1,0 +1,107 @@
+\hypertarget{_matrix_tests_8hpp_source}{}\doxysection{Matrix\+Tests.\+hpp}
+\label{_matrix_tests_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Tests/Math/MatrixTests.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Tests/Math/MatrixTests.hpp}}
+\mbox{\hyperlink{_matrix_tests_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MATRIXTESTS\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MATRIXTESTS\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <CrustTesting.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_matrix_8hpp}{Math/Matrix.hpp}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{// \#include "{}boost/lexical\_cast.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{comment}{// void print\_mat(Matrix<double> \&mat)}}
+\DoxyCodeLine{10 \textcolor{comment}{// \{}}
+\DoxyCodeLine{11 \textcolor{comment}{//     std::string result = "{}"{};}}
+\DoxyCodeLine{12 \textcolor{comment}{//     for (int r = 0; r < mat.Height(); r++)}}
+\DoxyCodeLine{13 \textcolor{comment}{//     \{}}
+\DoxyCodeLine{14 \textcolor{comment}{//         for (int c = 0; c < mat.Width(); c++)}}
+\DoxyCodeLine{15 \textcolor{comment}{//         \{}}
+\DoxyCodeLine{16 \textcolor{comment}{//             result += "{}("{} + std::to\_string(r) + "{},"{} + std::to\_string(c) + "{})"{} + boost::lexical\_cast<std::string>(mat[c][r]) + "{} "{};}}
+\DoxyCodeLine{17 \textcolor{comment}{//         \}}}
+\DoxyCodeLine{18 \textcolor{comment}{//         result += "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{19 \textcolor{comment}{//     \}}}
+\DoxyCodeLine{20 \textcolor{comment}{//     Logger::Info("{}\%s"{}, result.c\_str());}}
+\DoxyCodeLine{21 \textcolor{comment}{// \}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_matrix_tests}{MatrixTests}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a775be0fd41a59f4892685a77621e19c4}{test\_constructor\_noparameters}}()}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_matrix}{Matrix<double>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}};}
+\DoxyCodeLine{28         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Width(), 0);}
+\DoxyCodeLine{29         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Height(), 0);}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a92e9367bd36a90f8c3e6112142eb8959}{test\_constructor\_2parameters}}()}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_matrix}{Matrix<double>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}(10, 10);}
+\DoxyCodeLine{35         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Width(), 10);}
+\DoxyCodeLine{36         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Height(), 10);}
+\DoxyCodeLine{37         \_NOTNULLPTR(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}[0]);}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a5323ae3c6ccbdd2b6dc80caa0083291e}{test\_constructor\_3parameters}}()}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_matrix}{Matrix<double>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}(10, 10, 10.0);}
+\DoxyCodeLine{43         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Width(), 10);}
+\DoxyCodeLine{44         \_EQUALS(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}.Height(), 10);}
+\DoxyCodeLine{45         \_NOTNULLPTR(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}[0]);}
+\DoxyCodeLine{46         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}=0; \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}<10; \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}++)}
+\DoxyCodeLine{47             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}=0; \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}<10; \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}++)}
+\DoxyCodeLine{48                 \_EQUALSDET(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_af593500c283bf1a787a6f947f503a5c2}{m}}[\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}][\mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}], 10.0, 0.00001);}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a42fc09dc60d29044c64c68555c8ddda9}{test\_adding}}() }
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \mbox{\hyperlink{class_matrix}{Matrix<double>}} m1(3, 3);}
+\DoxyCodeLine{54         \mbox{\hyperlink{class_matrix}{Matrix<double>}} m2(3,3);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         m1 = \{1, 3, 7, 2, 4, 8, 3, 5, 9\};}
+\DoxyCodeLine{57         m2 = \{9, 5, 3, 8, 4, 2, 7, 3, 1\};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \mbox{\hyperlink{class_matrix}{Matrix<double>}} expected(3, 3);}
+\DoxyCodeLine{60         expected = \{30, 84, 138, 24, 69, 114, 18, 54, 90\};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \mbox{\hyperlink{class_matrix}{Matrix<double>}} got;}
+\DoxyCodeLine{63         got = m1 * m2;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \_EQUALS(got, expected);}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a80ebea6d7e431b4e086d5419aef088b8}{test\_substracting}}()}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a93ae9fa7cb8f56d97fd42375c84fa0d8}{test\_multiplying}}()}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_aba4a9da12d49d2b83ed9a5476ef5ad8f}{test\_dividing}}()}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a8a3075ba143a8e9db6364bfed738485b}{test\_equals}}()}
+\DoxyCodeLine{83     \{}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_matrix_tests_a3f9755277e5edde3bd21a783d21b287d}{call\_all}}()}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89         \mbox{\hyperlink{namespace_matrix_tests_a775be0fd41a59f4892685a77621e19c4}{test\_constructor\_noparameters}}();}
+\DoxyCodeLine{90         \mbox{\hyperlink{namespace_matrix_tests_a92e9367bd36a90f8c3e6112142eb8959}{test\_constructor\_2parameters}}();}
+\DoxyCodeLine{91         \mbox{\hyperlink{namespace_matrix_tests_a5323ae3c6ccbdd2b6dc80caa0083291e}{test\_constructor\_3parameters}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \mbox{\hyperlink{namespace_matrix_tests_a42fc09dc60d29044c64c68555c8ddda9}{test\_adding}}();}
+\DoxyCodeLine{94         \mbox{\hyperlink{namespace_matrix_tests_a80ebea6d7e431b4e086d5419aef088b8}{test\_substracting}}();}
+\DoxyCodeLine{95         \mbox{\hyperlink{namespace_matrix_tests_a93ae9fa7cb8f56d97fd42375c84fa0d8}{test\_multiplying}}();}
+\DoxyCodeLine{96         \mbox{\hyperlink{namespace_matrix_tests_aba4a9da12d49d2b83ed9a5476ef5ad8f}{test\_dividing}}();}
+\DoxyCodeLine{97         \mbox{\hyperlink{namespace_matrix_tests_a8a3075ba143a8e9db6364bfed738485b}{test\_equals}}();}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99 \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

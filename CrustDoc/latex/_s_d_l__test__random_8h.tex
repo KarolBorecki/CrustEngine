@@ -1,0 +1,96 @@
+\hypertarget{_s_d_l__test__random_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+test\+\_\+random.h File Reference}
+\label{_s_d_l__test__random_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_random.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_random.h}}
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__random_8h_a10ad442c3a8b85d202b6ac306bfe04cc}{SDLTest\+\_\+\+Random\+Int}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}})~((int)\mbox{\hyperlink{_s_d_l__test__random_8h_a7a64ae98b2b7034bf7c38ef5cbc39ead}{SDLTest\+\_\+\+Random}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__random_8h_ac02d87003e18791250a4f762f8779c4f}{SDLTest\+\_\+\+Random\+Init}} (\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$rnd\+Context, unsigned int xi, unsigned int ci)
+\begin{DoxyCompactList}\small\item\em Initialize random number generator with two integers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{_s_d_l__test__random_8h_a1d1378845f65b7e471f13cb4f3b1a54e}{SDLTest\+\_\+\+Random\+Init\+Time}} (\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$rnd\+Context)
+\begin{DoxyCompactList}\small\item\em Initialize random number generator based on current system time. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{_s_d_l__test__random_8h_a7a64ae98b2b7034bf7c38ef5cbc39ead}{SDLTest\+\_\+\+Random}} (\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$rnd\+Context)
+\begin{DoxyCompactList}\small\item\em Initialize random number generator based on current system time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__test__random_8h_a10ad442c3a8b85d202b6ac306bfe04cc}\label{_s_d_l__test__random_8h_a10ad442c3a8b85d202b6ac306bfe04cc}} 
+\index{SDL\_test\_random.h@{SDL\_test\_random.h}!SDLTest\_RandomInt@{SDLTest\_RandomInt}}
+\index{SDLTest\_RandomInt@{SDLTest\_RandomInt}!SDL\_test\_random.h@{SDL\_test\_random.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_RandomInt}{SDLTest\_RandomInt}}
+{\footnotesize\ttfamily \#define SDLTest\+\_\+\+Random\+Int(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}} }\end{DoxyParamCaption})~((int)\mbox{\hyperlink{_s_d_l__test__random_8h_a7a64ae98b2b7034bf7c38ef5cbc39ead}{SDLTest\+\_\+\+Random}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}}))}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__test__random_8h_a7a64ae98b2b7034bf7c38ef5cbc39ead}\label{_s_d_l__test__random_8h_a7a64ae98b2b7034bf7c38ef5cbc39ead}} 
+\index{SDL\_test\_random.h@{SDL\_test\_random.h}!SDLTest\_Random@{SDLTest\_Random}}
+\index{SDLTest\_Random@{SDLTest\_Random}!SDL\_test\_random.h@{SDL\_test\_random.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Random()}{SDLTest\_Random()}}
+{\footnotesize\ttfamily unsigned int SDLTest\+\_\+\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$}]{rnd\+Context }\end{DoxyParamCaption})}
+
+
+
+Initialize random number generator based on current system time. 
+
+Note\+: ...Random\+Init() or ...Random\+Init\+Time() must have been called before using this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rnd\+Context} & pointer to context structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random number (32bit unsigned integer) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__random_8h_ac02d87003e18791250a4f762f8779c4f}\label{_s_d_l__test__random_8h_ac02d87003e18791250a4f762f8779c4f}} 
+\index{SDL\_test\_random.h@{SDL\_test\_random.h}!SDLTest\_RandomInit@{SDLTest\_RandomInit}}
+\index{SDLTest\_RandomInit@{SDLTest\_RandomInit}!SDL\_test\_random.h@{SDL\_test\_random.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_RandomInit()}{SDLTest\_RandomInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Random\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$}]{rnd\+Context,  }\item[{unsigned int}]{xi,  }\item[{unsigned int}]{ci }\end{DoxyParamCaption})}
+
+
+
+Initialize random number generator with two integers. 
+
+Note\+: The random sequence of numbers returned by ...Random() is the same for the same two integers and has a period of 2$^\wedge$31.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rnd\+Context} & pointer to context structure \\
+\hline
+{\em xi} & integer that defines the random sequence \\
+\hline
+{\em ci} & integer that defines the random sequence \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_s_d_l__test__random_8h_a1d1378845f65b7e471f13cb4f3b1a54e}\label{_s_d_l__test__random_8h_a1d1378845f65b7e471f13cb4f3b1a54e}} 
+\index{SDL\_test\_random.h@{SDL\_test\_random.h}!SDLTest\_RandomInitTime@{SDLTest\_RandomInitTime}}
+\index{SDLTest\_RandomInitTime@{SDLTest\_RandomInitTime}!SDL\_test\_random.h@{SDL\_test\_random.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_RandomInitTime()}{SDLTest\_RandomInitTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} SDLTest\+\_\+\+Random\+Init\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___random_context}{SDLTest\+\_\+\+Random\+Context}} $\ast$}]{rnd\+Context }\end{DoxyParamCaption})}
+
+
+
+Initialize random number generator based on current system time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rnd\+Context} & pointer to context structure \\
+\hline
+\end{DoxyParams}

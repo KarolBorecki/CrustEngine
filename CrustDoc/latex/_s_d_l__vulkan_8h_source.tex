@@ -1,0 +1,87 @@
+\hypertarget{_s_d_l__vulkan_8h_source}{}\doxysection{SDL\+\_\+vulkan.\+h}
+\label{_s_d_l__vulkan_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_vulkan.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_vulkan.h}}
+\mbox{\hyperlink{_s_d_l__vulkan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 2017, Mark Callow}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_vulkan\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_vulkan\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{36 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* Avoid including vulkan.h, don't define VkInstance if it's already included */}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifdef VULKAN\_H\_}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define NO\_SDL\_VULKAN\_TYPEDEFS}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef NO\_SDL\_VULKAN\_TYPEDEFS}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define VK\_DEFINE\_HANDLE(object) typedef struct object\#\#\_T* object;}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#if defined(\_\_LP64\_\_) || defined(\_WIN64) || defined(\_\_x86\_64\_\_) || defined(\_M\_X64) || defined(\_\_ia64) || defined (\_M\_IA64) || defined(\_\_aarch64\_\_) || defined(\_\_powerpc64\_\_)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define VK\_DEFINE\_NON\_DISPATCHABLE\_HANDLE(object) typedef struct object\#\#\_T *object;}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define VK\_DEFINE\_NON\_DISPATCHABLE\_HANDLE(object) typedef uint64\_t object;}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \mbox{\hyperlink{_s_d_l__vulkan_8h_a2c83a74883be356d314441ccc41e7768}{VK\_DEFINE\_HANDLE}}(VkInstance)}
+\DoxyCodeLine{53 \mbox{\hyperlink{_s_d_l__vulkan_8h_a04d8504e79be7e7ff48e313ed88a54ad}{VK\_DEFINE\_NON\_DISPATCHABLE\_HANDLE}}(VkSurfaceKHR)}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !NO\_SDL\_VULKAN\_TYPEDEFS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} VkInstance \mbox{\hyperlink{_s_d_l__vulkan_8h_a8e23cebc65f7965cf8e90ae275bc8808}{SDL\_vulkanInstance}};}
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} VkSurfaceKHR \mbox{\hyperlink{_s_d_l__vulkan_8h_a974edccc428069558c705abf6d302dee}{SDL\_vulkanSurface}}; \textcolor{comment}{/* for compatibility with Tizen */}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{66 \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{109 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_a9fcc0942c8eaa67c3eff2e3526304b5b}{SDL\_Vulkan\_LoadLibrary}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab25d8cd967ccbd19b630d7100ff8f67e}{path}});}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{121 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_ad44f46b6b48f2f58d08e0f7894d02667}{SDL\_Vulkan\_GetVkGetInstanceProcAddr}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{130 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_a92970fb6bc833a8cc65217638d599ff2}{SDL\_Vulkan\_UnloadLibrary}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{160 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_a46d6b686f9154e972d6254fc3757bd0d}{SDL\_Vulkan\_GetInstanceExtensions}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *window,}
+\DoxyCodeLine{161                                                                   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *pCount,}
+\DoxyCodeLine{162                                                                   \textcolor{keyword}{const} \textcolor{keywordtype}{char} **pNames);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{182 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_a1613884948ea2b2671cea8f43462642b}{SDL\_Vulkan\_CreateSurface}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *window,}
+\DoxyCodeLine{183                                                           VkInstance instance,}
+\DoxyCodeLine{184                                                           VkSurfaceKHR* surface);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{204 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__vulkan_8h_a170ea51b623cbda9f945b37c037d7974}{SDL\_Vulkan\_GetDrawableSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{205                                                         \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{comment}{/* @\} */}\textcolor{comment}{/* Vulkan support functions */}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{211 \}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_vulkan\_h\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

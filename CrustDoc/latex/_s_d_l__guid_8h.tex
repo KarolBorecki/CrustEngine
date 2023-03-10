@@ -1,0 +1,73 @@
+\hypertarget{_s_d_l__guid_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+guid.h File Reference}
+\label{_s_d_l__guid_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_guid.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_guid.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__guid_8h_ac45f2a78da7a4ac7beae6f3ded687b58}{SDL\+\_\+\+GUIDTo\+String}} (\mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} guid, char $\ast$psz\+GUID, int cb\+GUID)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__guid_8h_ab432a2a76d325f885dfcd45344c6384b}{SDL\+\_\+\+GUIDFrom\+String}} (const char $\ast$pch\+GUID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for handling \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} values. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__guid_8h_ab432a2a76d325f885dfcd45344c6384b}\label{_s_d_l__guid_8h_ab432a2a76d325f885dfcd45344c6384b}} 
+\index{SDL\_guid.h@{SDL\_guid.h}!SDL\_GUIDFromString@{SDL\_GUIDFromString}}
+\index{SDL\_GUIDFromString@{SDL\_GUIDFromString}!SDL\_guid.h@{SDL\_guid.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GUIDFromString()}{SDL\_GUIDFromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+GUIDFrom\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pch\+GUID }\end{DoxyParamCaption})}
+
+Convert a GUID string into a \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} structure.
+
+Performs no error checking. If this function is given a string containing an invalid GUID, the function will silently succeed, but the GUID generated will not be useful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pch\+GUID} & string containing an ASCII representation of a GUID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} structure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__guid_8h_ac45f2a78da7a4ac7beae6f3ded687b58}{SDL\+\_\+\+GUIDTo\+String}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__guid_8h_ac45f2a78da7a4ac7beae6f3ded687b58}\label{_s_d_l__guid_8h_ac45f2a78da7a4ac7beae6f3ded687b58}} 
+\index{SDL\_guid.h@{SDL\_guid.h}!SDL\_GUIDToString@{SDL\_GUIDToString}}
+\index{SDL\_GUIDToString@{SDL\_GUIDToString}!SDL\_guid.h@{SDL\_guid.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GUIDToString()}{SDL\_GUIDToString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+GUIDTo\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}}}]{guid,  }\item[{char $\ast$}]{psz\+GUID,  }\item[{int}]{cb\+GUID }\end{DoxyParamCaption})}
+
+Get an ASCII string representation for a given \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}}.
+
+You should supply at least 33 bytes for psz\+GUID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em guid} & the \mbox{\hyperlink{struct_s_d_l___g_u_i_d}{SDL\+\_\+\+GUID}} you wish to convert to string \\
+\hline
+{\em psz\+GUID} & buffer in which to write the ASCII string \\
+\hline
+{\em cb\+GUID} & the size of psz\+GUID\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+24.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__guid_8h_ab432a2a76d325f885dfcd45344c6384b}{SDL\+\_\+\+GUIDFrom\+String}} 
+\end{DoxySeeAlso}

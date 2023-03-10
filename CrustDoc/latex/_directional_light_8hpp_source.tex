@@ -1,0 +1,28 @@
+\hypertarget{_directional_light_8hpp_source}{}\doxysection{Directional\+Light.\+hpp}
+\label{_directional_light_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/Objects/Lightining/DirectionalLight.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/Objects/Lightining/DirectionalLight.hpp}}
+\mbox{\hyperlink{_directional_light_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_DURECTIONALLIGHT\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_DURECTIONALLIGHT\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_light_source_8hpp}{Rendering/Objects/Lightining/LightSource.hpp}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Math/Vector3.hpp}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_directional_light}{DirectionalLight}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_light_source}{LightSource}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_directional_light}{DirectionalLight}}(\textcolor{keywordtype}{double} \_intensivity, \mbox{\hyperlink{class_vector3}{Vector3}} *\_direction);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     std::string \mbox{\hyperlink{class_directional_light_a3d7db7f09dce8b2df12675c16e1cbdbf}{GetObjectTypeName}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{inline} \mbox{\hyperlink{class_directional_light_a1820314477360e8f8c8af43d28858986}{DirectionalLight::DirectionalLight}}(\textcolor{keywordtype}{double} \_intensivity, \mbox{\hyperlink{class_vector3}{Vector3}} *\_dir) : \mbox{\hyperlink{class_light_source}{LightSource}}(\_intensivity, \_dir) \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{inline} std::string \mbox{\hyperlink{class_directional_light_a3d7db7f09dce8b2df12675c16e1cbdbf}{DirectionalLight::GetObjectTypeName}}() \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Directional Light Source"{}}; \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_DURECTIONALLIGHT\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

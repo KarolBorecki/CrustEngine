@@ -1,0 +1,30 @@
+\hypertarget{_s_d_l__quit_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+quit.h File Reference}
+\label{_s_d_l__quit_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_quit.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_quit.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+error.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__quit_8h_a28f0e45d1be91312001526ec45d9dc83}{SDL\+\_\+\+Quit\+Requested}}()~        (\mbox{\hyperlink{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}{SDL\+\_\+\+Pump\+Events}}(), (\mbox{\hyperlink{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75}{SDL\+\_\+\+Peep\+Events}}(\mbox{\hyperlink{begin__code_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},0,\mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179a75469beff07bfd6aa7fa4f54674ce34d}{SDL\+\_\+\+PEEKEVENT}},\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}},\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}}) $>$ 0))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL quit event handling.
+
+An \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}} event is generated when the user tries to close the application window. If it is ignored or filtered out, the window will remain open. If it is not ignored or filtered, it is queued normally and the window is allowed to close. When the window is closed, screen updates will complete, but have no effect.
+
+\mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}} installs signal handlers for SIGINT (keyboard interrupt) and SIGTERM (system termination request), if handlers do not already exist, that generate \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}} events as well. There is no way to determine the cause of an \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}} event, but setting a signal handler in your application will override the default generation of quit events for that signal.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l_8h_afdabaf714781099083592051f2d9ac11}{SDL\+\_\+\+Quit()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__quit_8h_a28f0e45d1be91312001526ec45d9dc83}\label{_s_d_l__quit_8h_a28f0e45d1be91312001526ec45d9dc83}} 
+\index{SDL\_quit.h@{SDL\_quit.h}!SDL\_QuitRequested@{SDL\_QuitRequested}}
+\index{SDL\_QuitRequested@{SDL\_QuitRequested}!SDL\_quit.h@{SDL\_quit.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_QuitRequested}{SDL\_QuitRequested}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+Quit\+Requested(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~        (\mbox{\hyperlink{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}{SDL\+\_\+\+Pump\+Events}}(), (\mbox{\hyperlink{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75}{SDL\+\_\+\+Peep\+Events}}(\mbox{\hyperlink{begin__code_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},0,\mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179a75469beff07bfd6aa7fa4f54674ce34d}{SDL\+\_\+\+PEEKEVENT}},\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}},\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\+\_\+\+QUIT}}) $>$ 0))}
+

@@ -1,0 +1,462 @@
+\hypertarget{_s_d_l__thread_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+thread.h File Reference}
+\label{_s_d_l__thread_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_thread.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_thread.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+atomic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+mutex.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}}
+\item 
+typedef unsigned long \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}}
+\item 
+typedef unsigned int \mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}}
+\item 
+typedef int(\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} $\ast$ \mbox{\hyperlink{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}{SDL\+\_\+\+Thread\+Function}}) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}{SDL\+\_\+\+Thread\+Priority}} \{ \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878}{SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+LOW}}
+, \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae}{SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d}{SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+HIGH}}
+, \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca}{SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+TIME\+\_\+\+CRITICAL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread}} (\mbox{\hyperlink{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}{SDL\+\_\+\+Thread\+Function}} fn, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a9ab0d63052abb2afdbb14042cee4dbdf}{SDL\+\_\+\+Create\+Thread\+With\+Stack\+Size}} (\mbox{\hyperlink{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}{SDL\+\_\+\+Thread\+Function}} fn, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, const size\+\_\+t stacksize, \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} const char $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a5c1e3618f2be2e3af69d615055defa5a}{SDL\+\_\+\+Get\+Thread\+Name}} (\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$thread)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a341933eef1470789de20b05c1392b9ae}{SDL\+\_\+\+Thread\+ID}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a0bf5d93ed5cb25ea59307472c62c66db}{SDL\+\_\+\+Get\+Thread\+ID}} (\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$thread)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_adf4da9c0e6a6833bef9741344b09699d}{SDL\+\_\+\+Set\+Thread\+Priority}} (\mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}{SDL\+\_\+\+Thread\+Priority}} priority)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread}} (\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$thread, int $\ast$status)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}{SDL\+\_\+\+Detach\+Thread}} (\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$thread)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_ac7ed1ec8dec5b902da25b60da2b728fa}{SDL\+\_\+\+TLSCreate}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a1915755c7215e59e1b218b9b94dbf8fd}{SDL\+\_\+\+TLSGet}} (\mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a58c2a664503e14ffb8f21012aabff3e9}{id}})
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}{SDL\+\_\+\+TLSSet}} (\mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a58c2a664503e14ffb8f21012aabff3e9}{id}}, const \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}}, \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}(\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} $\ast$destructor)(\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$))
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__thread_8h_addd72a8ba431ef92685bbc9c89c5c67c}{SDL\+\_\+\+TLSCleanup}} (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the SDL thread management routines. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}\label{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_Thread@{SDL\_Thread}}
+\index{SDL\_Thread@{SDL\_Thread}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Thread}{SDL\_Thread}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}}}
+
+\mbox{\Hypertarget{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}\label{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_ThreadFunction@{SDL\_ThreadFunction}}
+\index{SDL\_ThreadFunction@{SDL\_ThreadFunction}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ThreadFunction}{SDL\_ThreadFunction}}
+{\footnotesize\ttfamily typedef int(\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} $\ast$ SDL\+\_\+\+Thread\+Function) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}})}
+
+The function passed to \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & what was passed as {\ttfamily data} to \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a value that can be reported through \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}\label{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_threadID@{SDL\_threadID}}
+\index{SDL\_threadID@{SDL\_threadID}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_threadID}{SDL\_threadID}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}}}
+
+\mbox{\Hypertarget{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}\label{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_TLSID@{SDL\_TLSID}}
+\index{SDL\_TLSID@{SDL\_TLSID}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_TLSID}{SDL\_TLSID}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}\label{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_ThreadPriority@{SDL\_ThreadPriority}}
+\index{SDL\_ThreadPriority@{SDL\_ThreadPriority}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ThreadPriority}{SDL\_ThreadPriority}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}{SDL\+\_\+\+Thread\+Priority}}}
+
+The SDL thread priority.
+
+SDL will make system changes as necessary in order to apply the thread priority. Code which attempts to control thread state related to priority should be aware that calling SDL\+\_\+\+Set\+Thread\+Priority may alter such state. SDL\+\_\+\+HINT\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+POLICY can be used to control aspects of this behavior.
+
+\begin{DoxyNote}{Note}
+On many systems you require special privileges to set high or time critical priority. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_THREAD\_PRIORITY\_LOW@{SDL\_THREAD\_PRIORITY\_LOW}!SDL\_thread.h@{SDL\_thread.h}}\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_THREAD\_PRIORITY\_LOW@{SDL\_THREAD\_PRIORITY\_LOW}}}\mbox{\Hypertarget{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878}\label{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878}} 
+SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_THREAD\_PRIORITY\_NORMAL@{SDL\_THREAD\_PRIORITY\_NORMAL}!SDL\_thread.h@{SDL\_thread.h}}\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_THREAD\_PRIORITY\_NORMAL@{SDL\_THREAD\_PRIORITY\_NORMAL}}}\mbox{\Hypertarget{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae}\label{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae}} 
+SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_THREAD\_PRIORITY\_HIGH@{SDL\_THREAD\_PRIORITY\_HIGH}!SDL\_thread.h@{SDL\_thread.h}}\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_THREAD\_PRIORITY\_HIGH@{SDL\_THREAD\_PRIORITY\_HIGH}}}\mbox{\Hypertarget{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d}\label{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d}} 
+SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_THREAD\_PRIORITY\_TIME\_CRITICAL@{SDL\_THREAD\_PRIORITY\_TIME\_CRITICAL}!SDL\_thread.h@{SDL\_thread.h}}\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_THREAD\_PRIORITY\_TIME\_CRITICAL@{SDL\_THREAD\_PRIORITY\_TIME\_CRITICAL}}}\mbox{\Hypertarget{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca}\label{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca}} 
+SDL\+\_\+\+THREAD\+\_\+\+PRIORITY\+\_\+\+TIME\+\_\+\+CRITICAL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}\label{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_CreateThread@{SDL\_CreateThread}}
+\index{SDL\_CreateThread@{SDL\_CreateThread}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CreateThread()}{SDL\_CreateThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Create\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}{SDL\+\_\+\+Thread\+Function}}}]{fn,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Create a new thread with a default stack size.
+
+This is equivalent to calling\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_s_d_l__thread_8h_a9ab0d63052abb2afdbb14042cee4dbdf}{SDL\_CreateThreadWithStackSize}}(fn, \mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, 0, \mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the SDL\+\_\+\+Thread\+Function function to call in the new thread \\
+\hline
+{\em name} & the name of the thread \\
+\hline
+{\em data} & a pointer that is passed to {\ttfamily fn} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an opaque pointer to the new thread object on success, NULL if the new thread could not be created; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_a9ab0d63052abb2afdbb14042cee4dbdf}{SDL\+\_\+\+Create\+Thread\+With\+Stack\+Size}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a9ab0d63052abb2afdbb14042cee4dbdf}\label{_s_d_l__thread_8h_a9ab0d63052abb2afdbb14042cee4dbdf}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_CreateThreadWithStackSize@{SDL\_CreateThreadWithStackSize}}
+\index{SDL\_CreateThreadWithStackSize@{SDL\_CreateThreadWithStackSize}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_CreateThreadWithStackSize()}{SDL\_CreateThreadWithStackSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Create\+Thread\+With\+Stack\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a35d10c50423c326b20abea6a486f53e0}{SDL\+\_\+\+Thread\+Function}}}]{fn,  }\item[{const char $\ast$}]{name,  }\item[{const size\+\_\+t}]{stacksize,  }\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Create a new thread with a specific stack size.
+
+SDL makes an attempt to report {\ttfamily name} to the system, so that debuggers can display it. Not all platforms support this.
+
+Thread naming is a little complicated\+: Most systems have very small limits for the string length (Haiku has 32 bytes, Linux currently has 16, Visual C++ 6.\+0 has {\itshape nine}!), and possibly other arbitrary rules. You\textquotesingle{}ll have to see what happens with your system\textquotesingle{}s debugger. The name should be UTF-\/8 (but using the naming limits of C identifiers is a better bet). There are no requirements for thread naming conventions, so long as the string is null-\/terminated UTF-\/8, but these guidelines are helpful in choosing a name\+:
+
+\href{https://stackoverflow.com/questions/149932/naming-conventions-for-threads}{\texttt{ https\+://stackoverflow.\+com/questions/149932/naming-\/conventions-\/for-\/threads}}
+
+If a system imposes requirements, SDL will try to munge the string for it (truncate, etc), but the original string contents will be available from \mbox{\hyperlink{_s_d_l__thread_8h_a5c1e3618f2be2e3af69d615055defa5a}{SDL\+\_\+\+Get\+Thread\+Name()}}.
+
+The size (in bytes) of the new stack can be specified. Zero means \char`\"{}use the system default\char`\"{} which might be wildly different between platforms. x86 Linux generally defaults to eight megabytes, an embedded device might be a few kilobytes instead. You generally need to specify a stack that is a multiple of the system\textquotesingle{}s page size (in many cases, this is 4 kilobytes, but check your system documentation).
+
+In SDL 2.\+1, stack size will be folded into the original SDL\+\_\+\+Create\+Thread function, but for backwards compatibility, this is currently a separate function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the SDL\+\_\+\+Thread\+Function function to call in the new thread \\
+\hline
+{\em name} & the name of the thread \\
+\hline
+{\em stacksize} & the size, in bytes, to allocate for the new thread stack. \\
+\hline
+{\em data} & a pointer that is passed to {\ttfamily fn} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an opaque pointer to the new thread object on success, NULL if the new thread could not be created; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+9.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}\label{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_DetachThread@{SDL\_DetachThread}}
+\index{SDL\_DetachThread@{SDL\_DetachThread}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_DetachThread()}{SDL\_DetachThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Detach\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$}]{thread }\end{DoxyParamCaption})}
+
+Let a thread clean up on exit without intervention.
+
+A thread may be \char`\"{}detached\char`\"{} to signify that it should not remain until another thread has called \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}} on it. Detaching a thread is useful for long-\/running threads that nothing needs to synchronize with or further manage. When a detached thread is done, it simply goes away.
+
+There is no way to recover the return code of a detached thread. If you need this, don\textquotesingle{}t detach the thread and instead use \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}}.
+
+Once a thread is detached, you should usually assume the SDL\+\_\+\+Thread isn\textquotesingle{}t safe to reference again, as it will become invalid immediately upon the detached thread\textquotesingle{}s exit, instead of remaining until someone has called \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}} to finally clean it up. As such, don\textquotesingle{}t detach the same thread more than once.
+
+If a thread has already exited when passed to \mbox{\hyperlink{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}{SDL\+\_\+\+Detach\+Thread()}}, it will stop waiting for a call to \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}} and clean up immediately. It is not safe to detach a thread that might be used with \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}}.
+
+You may not call \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}} on a thread that has been detached. Use either that function or this one, but not both, or behavior is undefined.
+
+It is safe to pass NULL to this function; it is a no-\/op.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & the SDL\+\_\+\+Thread pointer that was returned from the \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread()}} call that started this thread\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+2.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a0bf5d93ed5cb25ea59307472c62c66db}\label{_s_d_l__thread_8h_a0bf5d93ed5cb25ea59307472c62c66db}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_GetThreadID@{SDL\_GetThreadID}}
+\index{SDL\_GetThreadID@{SDL\_GetThreadID}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetThreadID()}{SDL\_GetThreadID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Get\+Thread\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$}]{thread }\end{DoxyParamCaption})}
+
+Get the thread identifier for the specified thread.
+
+This thread identifier is as reported by the underlying operating system. If SDL is running on a platform that does not support threads the return value will always be zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & the thread to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ID of the specified thread, or the ID of the current thread if {\ttfamily thread} is NULL.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_a341933eef1470789de20b05c1392b9ae}{SDL\+\_\+\+Thread\+ID}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a5c1e3618f2be2e3af69d615055defa5a}\label{_s_d_l__thread_8h_a5c1e3618f2be2e3af69d615055defa5a}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_GetThreadName@{SDL\_GetThreadName}}
+\index{SDL\_GetThreadName@{SDL\_GetThreadName}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetThreadName()}{SDL\_GetThreadName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} const char $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Get\+Thread\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$}]{thread }\end{DoxyParamCaption})}
+
+Get the thread name as it was specified in \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread()}}.
+
+This is internal memory, not to be freed by the caller, and remains valid until the specified thread is cleaned up by \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & the thread to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a UTF-\/8 string that names the specified thread, or NULL if it doesn\textquotesingle{}t have a name.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_adf4da9c0e6a6833bef9741344b09699d}\label{_s_d_l__thread_8h_adf4da9c0e6a6833bef9741344b09699d}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_SetThreadPriority@{SDL\_SetThreadPriority}}
+\index{SDL\_SetThreadPriority@{SDL\_SetThreadPriority}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SetThreadPriority()}{SDL\_SetThreadPriority()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Set\+Thread\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_acce8dea56f6b307fadd2949b64e3ebda}{SDL\+\_\+\+Thread\+Priority}}}]{priority }\end{DoxyParamCaption})}
+
+Set the priority for the current thread.
+
+Note that some platforms will not let you alter the priority (or at least, promote the thread to a higher priority) at all, and some require you to be an administrator account. Be prepared for this to fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em priority} & the SDL\+\_\+\+Thread\+Priority to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0. 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a341933eef1470789de20b05c1392b9ae}\label{_s_d_l__thread_8h_a341933eef1470789de20b05c1392b9ae}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_ThreadID@{SDL\_ThreadID}}
+\index{SDL\_ThreadID@{SDL\_ThreadID}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ThreadID()}{SDL\_ThreadID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_ac4db699531ce9f18f5a8547aa988b88e}{SDL\+\_\+thread\+ID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Thread\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+Get the thread identifier for the current thread.
+
+This thread identifier is as reported by the underlying operating system. If SDL is running on a platform that does not support threads the return value will always be zero.
+
+This function also returns a valid thread ID when called from the main thread.
+
+\begin{DoxyReturn}{Returns}
+the ID of the current thread.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_a0bf5d93ed5cb25ea59307472c62c66db}{SDL\+\_\+\+Get\+Thread\+ID}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_addd72a8ba431ef92685bbc9c89c5c67c}\label{_s_d_l__thread_8h_addd72a8ba431ef92685bbc9c89c5c67c}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_TLSCleanup@{SDL\_TLSCleanup}}
+\index{SDL\_TLSCleanup@{SDL\_TLSCleanup}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_TLSCleanup()}{SDL\_TLSCleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+TLSCleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+Cleanup all TLS data for this thread.
+
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+16. 
+\end{DoxySince}
+\mbox{\Hypertarget{_s_d_l__thread_8h_ac7ed1ec8dec5b902da25b60da2b728fa}\label{_s_d_l__thread_8h_ac7ed1ec8dec5b902da25b60da2b728fa}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_TLSCreate@{SDL\_TLSCreate}}
+\index{SDL\_TLSCreate@{SDL\_TLSCreate}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_TLSCreate()}{SDL\_TLSCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+TLSCreate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}}]{ }\end{DoxyParamCaption})}
+
+Create a piece of thread-\/local storage.
+
+This creates an identifier that is globally visible to all threads but refers to data that is thread-\/specific.
+
+\begin{DoxyReturn}{Returns}
+the newly created thread local storage identifier or 0 on error.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_a1915755c7215e59e1b218b9b94dbf8fd}{SDL\+\_\+\+TLSGet}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}{SDL\+\_\+\+TLSSet}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a1915755c7215e59e1b218b9b94dbf8fd}\label{_s_d_l__thread_8h_a1915755c7215e59e1b218b9b94dbf8fd}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_TLSGet@{SDL\_TLSGet}}
+\index{SDL\_TLSGet@{SDL\_TLSGet}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_TLSGet()}{SDL\_TLSGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+TLSGet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}}}]{id }\end{DoxyParamCaption})}
+
+Get the current thread\textquotesingle{}s value associated with a thread local storage ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the thread local storage ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value associated with the ID for the current thread or NULL if no value has been set; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac7ed1ec8dec5b902da25b60da2b728fa}{SDL\+\_\+\+TLSCreate}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}{SDL\+\_\+\+TLSSet}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}\label{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_TLSSet@{SDL\_TLSSet}}
+\index{SDL\_TLSSet@{SDL\_TLSSet}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_TLSSet()}{SDL\_TLSSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+TLSSet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a07ce005c35ad6ac377d6124db7296026}{SDL\+\_\+\+TLSID}}}]{id,  }\item[{const \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$}]{value,  }\item[{\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}(\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} $\ast$destructor)(\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$)}]{ }\end{DoxyParamCaption})}
+
+Set the current thread\textquotesingle{}s value associated with a thread local storage ID.
+
+The function prototype for {\ttfamily destructor} is\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} destructor(\textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}})}
+
+\end{DoxyCode}
+
+
+where its parameter {\ttfamily value} is what was passed as {\ttfamily value} to \mbox{\hyperlink{_s_d_l__thread_8h_a807c8306201205c7c3ac0cb34ac7cd77}{SDL\+\_\+\+TLSSet()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the thread local storage ID \\
+\hline
+{\em value} & the value to associate with the ID for the current thread \\
+\hline
+{\em destructor} & a function called when the thread exits, to free the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac7ed1ec8dec5b902da25b60da2b728fa}{SDL\+\_\+\+TLSCreate}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_a1915755c7215e59e1b218b9b94dbf8fd}{SDL\+\_\+\+TLSGet}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}\label{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}} 
+\index{SDL\_thread.h@{SDL\_thread.h}!SDL\_WaitThread@{SDL\_WaitThread}}
+\index{SDL\_WaitThread@{SDL\_WaitThread}!SDL\_thread.h@{SDL\_thread.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_WaitThread()}{SDL\_WaitThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Wait\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__thread_8h_a97cd1dc60cea74b74273affb1a974db5}{SDL\+\_\+\+Thread}} $\ast$}]{thread,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+Wait for a thread to finish.
+
+Threads that haven\textquotesingle{}t been detached will remain (as a \char`\"{}zombie\char`\"{}) until this function cleans them up. Not doing so is a resource leak.
+
+Once a thread has been cleaned up through this function, the SDL\+\_\+\+Thread that references it becomes invalid and should not be referenced again. As such, only one thread may call \mbox{\hyperlink{_s_d_l__thread_8h_ac96743626ed21d2cdb0868a23cca9705}{SDL\+\_\+\+Wait\+Thread()}} on another.
+
+The return code for the thread function is placed in the area pointed to by {\ttfamily status}, if {\ttfamily status} is not NULL.
+
+You may not wait on a thread that has been used in a call to \mbox{\hyperlink{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}{SDL\+\_\+\+Detach\+Thread()}}. Use either that function or this one, but not both, or behavior is undefined.
+
+It is safe to pass a NULL thread to this function; it is a no-\/op.
+
+Note that the thread pointer is freed by this function and is not valid afterward.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & the SDL\+\_\+\+Thread pointer that was returned from the \mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread()}} call that started this thread \\
+\hline
+{\em status} & pointer to an integer that will receive the value returned from the thread function by its \textquotesingle{}return\textquotesingle{}, or NULL to not receive such value back.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__thread_8h_ac36c70a33975a8c9399962f8ac310377}{SDL\+\_\+\+Create\+Thread}} 
+
+\mbox{\hyperlink{_s_d_l__thread_8h_af90602c51ef5a62f26ed9931af484906}{SDL\+\_\+\+Detach\+Thread}} 
+\end{DoxySeeAlso}

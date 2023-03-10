@@ -1,0 +1,182 @@
+\hypertarget{_s_d_l__syswm_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+syswm.h File Reference}
+\label{_s_d_l__syswm_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_syswm.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_syswm.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+version.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\+\_\+\+Sys\+WMmsg}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__syswm_8h_a86f85c397b71a424eb062f295b995115}{SDL\+\_\+\+METALVIEW\+\_\+\+TAG}}~255
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \+\_\+\+NSWindow \mbox{\hyperlink{_s_d_l__syswm_8h_acdc50a3c7569e5419370b3dbafd7131a}{NSWindow}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}} \mbox{\hyperlink{_s_d_l__syswm_8h_a25c885f5150c5d1202a70a6a4a135a4a}{SDL\+\_\+\+Sys\+WMinfo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\+\_\+\+SYSWM\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2092ff1b6f64c9425c2671fc8d2a41a3}{SDL\+\_\+\+SYSWM\+\_\+\+UNKNOWN}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a742b98a86d65f462c8e71761f0d94cc8}{SDL\+\_\+\+SYSWM\+\_\+\+WINDOWS}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a058ec6dbf52ef47653898a98fad28f98}{SDL\+\_\+\+SYSWM\+\_\+\+X11}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0a1dd75758eee6a20c1563eb353fc60b}{SDL\+\_\+\+SYSWM\+\_\+\+DIRECTFB}}
+, \newline
+\mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aaa5db40b547b1f26ad9929aeea898951}{SDL\+\_\+\+SYSWM\+\_\+\+COCOA}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a9a3ed7d8a77990281a88e87c69ad7bf8}{SDL\+\_\+\+SYSWM\+\_\+\+UIKIT}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aadd4f69005f2b67dec9d59c93b967d99}{SDL\+\_\+\+SYSWM\+\_\+\+WAYLAND}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad247a114ba9ad8c6d7e9cead6d151ef7}{SDL\+\_\+\+SYSWM\+\_\+\+MIR}}
+, \newline
+\mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7adbfa1e5eb411358b409099b87c8ada40}{SDL\+\_\+\+SYSWM\+\_\+\+WINRT}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad171b4f9e1c8819a5c08f8290d3533b2}{SDL\+\_\+\+SYSWM\+\_\+\+ANDROID}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ab66656fc6b88f7ae88397b10f9dff28f}{SDL\+\_\+\+SYSWM\+\_\+\+VIVANTE}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2191fbd3981b985a2a34a2566f9c9624}{SDL\+\_\+\+SYSWM\+\_\+\+OS2}}
+, \newline
+\mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a318014a08c7b8b2a7eae808e6da8fe39}{SDL\+\_\+\+SYSWM\+\_\+\+HAIKU}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a506c6fa3c1763310f051362b3d7e60e8}{SDL\+\_\+\+SYSWM\+\_\+\+KMSDRM}}
+, \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0baf5f6eb1ce77e5fc1b32d502a05206}{SDL\+\_\+\+SYSWM\+\_\+\+RISCOS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\+\_\+bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__syswm_8h_ad6e40121a96c88af20d9469a04706fef}{SDL\+\_\+\+Get\+Window\+WMInfo}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$window, \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}} $\ast$info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL custom system window manager hooks. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__syswm_8h_a86f85c397b71a424eb062f295b995115}\label{_s_d_l__syswm_8h_a86f85c397b71a424eb062f295b995115}} 
+\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_METALVIEW\_TAG@{SDL\_METALVIEW\_TAG}}
+\index{SDL\_METALVIEW\_TAG@{SDL\_METALVIEW\_TAG}!SDL\_syswm.h@{SDL\_syswm.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_METALVIEW\_TAG}{SDL\_METALVIEW\_TAG}}
+{\footnotesize\ttfamily \#define SDL\+\_\+\+METALVIEW\+\_\+\+TAG~255}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_d_l__syswm_8h_acdc50a3c7569e5419370b3dbafd7131a}\label{_s_d_l__syswm_8h_acdc50a3c7569e5419370b3dbafd7131a}} 
+\index{SDL\_syswm.h@{SDL\_syswm.h}!NSWindow@{NSWindow}}
+\index{NSWindow@{NSWindow}!SDL\_syswm.h@{SDL\_syswm.h}}
+\doxysubsubsection{\texorpdfstring{NSWindow}{NSWindow}}
+{\footnotesize\ttfamily typedef struct \+\_\+\+NSWindow \mbox{\hyperlink{_s_d_l__syswm_8h_acdc50a3c7569e5419370b3dbafd7131a}{NSWindow}}}
+
+\mbox{\Hypertarget{_s_d_l__syswm_8h_a25c885f5150c5d1202a70a6a4a135a4a}\label{_s_d_l__syswm_8h_a25c885f5150c5d1202a70a6a4a135a4a}} 
+\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!SDL\_syswm.h@{SDL\_syswm.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SysWMinfo}{SDL\_SysWMinfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}} 
+\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_TYPE@{SDL\_SYSWM\_TYPE}}
+\index{SDL\_SYSWM\_TYPE@{SDL\_SYSWM\_TYPE}!SDL\_syswm.h@{SDL\_syswm.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_SYSWM\_TYPE}{SDL\_SYSWM\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\+\_\+\+SYSWM\+\_\+\+TYPE}}}
+
+These are the various supported windowing subsystems \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_UNKNOWN@{SDL\_SYSWM\_UNKNOWN}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_UNKNOWN@{SDL\_SYSWM\_UNKNOWN}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2092ff1b6f64c9425c2671fc8d2a41a3}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2092ff1b6f64c9425c2671fc8d2a41a3}} 
+SDL\+\_\+\+SYSWM\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_WINDOWS@{SDL\_SYSWM\_WINDOWS}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_WINDOWS@{SDL\_SYSWM\_WINDOWS}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a742b98a86d65f462c8e71761f0d94cc8}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a742b98a86d65f462c8e71761f0d94cc8}} 
+SDL\+\_\+\+SYSWM\+\_\+\+WINDOWS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_X11@{SDL\_SYSWM\_X11}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_X11@{SDL\_SYSWM\_X11}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a058ec6dbf52ef47653898a98fad28f98}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a058ec6dbf52ef47653898a98fad28f98}} 
+SDL\+\_\+\+SYSWM\+\_\+\+X11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_DIRECTFB@{SDL\_SYSWM\_DIRECTFB}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_DIRECTFB@{SDL\_SYSWM\_DIRECTFB}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0a1dd75758eee6a20c1563eb353fc60b}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0a1dd75758eee6a20c1563eb353fc60b}} 
+SDL\+\_\+\+SYSWM\+\_\+\+DIRECTFB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_COCOA@{SDL\_SYSWM\_COCOA}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_COCOA@{SDL\_SYSWM\_COCOA}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aaa5db40b547b1f26ad9929aeea898951}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aaa5db40b547b1f26ad9929aeea898951}} 
+SDL\+\_\+\+SYSWM\+\_\+\+COCOA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_UIKIT@{SDL\_SYSWM\_UIKIT}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_UIKIT@{SDL\_SYSWM\_UIKIT}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a9a3ed7d8a77990281a88e87c69ad7bf8}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a9a3ed7d8a77990281a88e87c69ad7bf8}} 
+SDL\+\_\+\+SYSWM\+\_\+\+UIKIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_WAYLAND@{SDL\_SYSWM\_WAYLAND}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_WAYLAND@{SDL\_SYSWM\_WAYLAND}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aadd4f69005f2b67dec9d59c93b967d99}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7aadd4f69005f2b67dec9d59c93b967d99}} 
+SDL\+\_\+\+SYSWM\+\_\+\+WAYLAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_MIR@{SDL\_SYSWM\_MIR}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_MIR@{SDL\_SYSWM\_MIR}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad247a114ba9ad8c6d7e9cead6d151ef7}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad247a114ba9ad8c6d7e9cead6d151ef7}} 
+SDL\+\_\+\+SYSWM\+\_\+\+MIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_WINRT@{SDL\_SYSWM\_WINRT}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_WINRT@{SDL\_SYSWM\_WINRT}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7adbfa1e5eb411358b409099b87c8ada40}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7adbfa1e5eb411358b409099b87c8ada40}} 
+SDL\+\_\+\+SYSWM\+\_\+\+WINRT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_ANDROID@{SDL\_SYSWM\_ANDROID}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_ANDROID@{SDL\_SYSWM\_ANDROID}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad171b4f9e1c8819a5c08f8290d3533b2}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ad171b4f9e1c8819a5c08f8290d3533b2}} 
+SDL\+\_\+\+SYSWM\+\_\+\+ANDROID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_VIVANTE@{SDL\_SYSWM\_VIVANTE}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_VIVANTE@{SDL\_SYSWM\_VIVANTE}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ab66656fc6b88f7ae88397b10f9dff28f}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7ab66656fc6b88f7ae88397b10f9dff28f}} 
+SDL\+\_\+\+SYSWM\+\_\+\+VIVANTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_OS2@{SDL\_SYSWM\_OS2}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_OS2@{SDL\_SYSWM\_OS2}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2191fbd3981b985a2a34a2566f9c9624}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a2191fbd3981b985a2a34a2566f9c9624}} 
+SDL\+\_\+\+SYSWM\+\_\+\+OS2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_HAIKU@{SDL\_SYSWM\_HAIKU}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_HAIKU@{SDL\_SYSWM\_HAIKU}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a318014a08c7b8b2a7eae808e6da8fe39}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a318014a08c7b8b2a7eae808e6da8fe39}} 
+SDL\+\_\+\+SYSWM\+\_\+\+HAIKU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_KMSDRM@{SDL\_SYSWM\_KMSDRM}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_KMSDRM@{SDL\_SYSWM\_KMSDRM}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a506c6fa3c1763310f051362b3d7e60e8}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a506c6fa3c1763310f051362b3d7e60e8}} 
+SDL\+\_\+\+SYSWM\+\_\+\+KMSDRM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_SYSWM\_RISCOS@{SDL\_SYSWM\_RISCOS}!SDL\_syswm.h@{SDL\_syswm.h}}\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_SYSWM\_RISCOS@{SDL\_SYSWM\_RISCOS}}}\mbox{\Hypertarget{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0baf5f6eb1ce77e5fc1b32d502a05206}\label{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7a0baf5f6eb1ce77e5fc1b32d502a05206}} 
+SDL\+\_\+\+SYSWM\+\_\+\+RISCOS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__syswm_8h_ad6e40121a96c88af20d9469a04706fef}\label{_s_d_l__syswm_8h_ad6e40121a96c88af20d9469a04706fef}} 
+\index{SDL\_syswm.h@{SDL\_syswm.h}!SDL\_GetWindowWMInfo@{SDL\_GetWindowWMInfo}}
+\index{SDL\_GetWindowWMInfo@{SDL\_GetWindowWMInfo}!SDL\_syswm.h@{SDL\_syswm.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_GetWindowWMInfo()}{SDL\_GetWindowWMInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\+\_\+bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Get\+Window\+WMInfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$}]{window,  }\item[{\mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+Get driver-\/specific information about a window.
+
+You must include \mbox{\hyperlink{_s_d_l__syswm_8h}{SDL\+\_\+syswm.\+h}} for the declaration of \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}}.
+
+The caller must initialize the {\ttfamily info} structure\textquotesingle{}s version by using {\ttfamily SDL\+\_\+\+VERSION(\&info.\+version)}, and then this function will fill in the rest of the structure with information about the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & the window about which information is being requested \\
+\hline
+{\em info} & an \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\+\_\+\+Sys\+WMinfo}} structure filled in with window information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+TRUE if the function is implemented and the {\ttfamily version} member of the {\ttfamily info} struct is valid, or SDL\+\_\+\+FALSE if the information could not be retrieved; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0. 
+\end{DoxySince}

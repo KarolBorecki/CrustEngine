@@ -1,0 +1,67 @@
+\hypertarget{_s_d_l__test__assert_8h_source}{}\doxysection{SDL\+\_\+test\+\_\+assert.\+h}
+\label{_s_d_l__test__assert_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_assert.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_assert.h}}
+\mbox{\hyperlink{_s_d_l__test__assert_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * Assert API for test code and test cases}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ */}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SDL\_test\_assert\_h\_}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SDL\_test\_assert\_h\_}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{42 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define ASSERT\_FAIL     0}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define ASSERT\_PASS     1}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__assert_8h_a633252c9cb122f42c502ca43d6f842ad}{SDLTest\_Assert}}(\textcolor{keywordtype}{int} assertCondition, \mbox{\hyperlink{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}{SDL\_PRINTF\_FORMAT\_STRING}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *assertDescription, ...) \mbox{\hyperlink{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a}{SDL\_PRINTF\_VARARG\_FUNC}}(2);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__test__assert_8h_a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab}{SDLTest\_AssertCheck}}(\textcolor{keywordtype}{int} assertCondition, \mbox{\hyperlink{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}{SDL\_PRINTF\_FORMAT\_STRING}} const \textcolor{keywordtype}{char} *assertDescription, ...) \mbox{\hyperlink{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a}{SDL\_PRINTF\_VARARG\_FUNC}}(2);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__assert_8h_a2156b479e33af1aa7e2c7d03c5cbb4c9}{SDLTest\_AssertPass}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_ab13a729d2e3e2d1e1b3b2dc0bfb858eb}{SDL\_PRINTF\_FORMAT\_STRING}} const \textcolor{keywordtype}{char} *assertDescription, ...) \mbox{\hyperlink{_s_d_l__stdinc_8h_ab974676e45d9edeef6598d601d4fdd6a}{SDL\_PRINTF\_VARARG\_FUNC}}(1);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__assert_8h_a1f78edbf1f7a38ebfeb2a2c76e3a5e60}{SDLTest\_ResetAssertSummary}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__assert_8h_a7e34c7c9d66a164ed785de905c75ab54}{SDLTest\_LogAssertSummary}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__test__assert_8h_ad8cea91b1ce4db4fdea8ebab455c2190}{SDLTest\_AssertSummaryToTestResult}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{99 \}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_test\_assert\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

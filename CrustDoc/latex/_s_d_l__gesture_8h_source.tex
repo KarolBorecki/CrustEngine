@@ -1,0 +1,66 @@
+\hypertarget{_s_d_l__gesture_8h_source}{}\doxysection{SDL\+\_\+gesture.\+h}
+\label{_s_d_l__gesture_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_gesture.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_gesture.h}}
+\mbox{\hyperlink{_s_d_l__gesture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_gesture\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_gesture\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__touch_8h}{SDL\_touch.h}}"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{39 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{41 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} \mbox{\hyperlink{_s_d_l__gesture_8h_a6c06ab0de82701c94809da9739ff8ac3}{SDL\_GestureID}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{61 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__gesture_8h_ad06776e2e199d5d48e466a0ecbbb06c3}{SDL\_RecordGesture}}(\mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} touchId);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{76 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__gesture_8h_ad37b554c91a5fffe3fc1dc3094db1b89}{SDL\_SaveAllDollarTemplates}}(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a92034251bfd455d524a9b5610cddba00}{dst}});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{91 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__gesture_8h_acef0242f4c4b7401509bc533864629ad}{SDL\_SaveDollarTemplate}}(\mbox{\hyperlink{_s_d_l__gesture_8h_a6c06ab0de82701c94809da9739ff8ac3}{SDL\_GestureID}} gestureId,\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a92034251bfd455d524a9b5610cddba00}{dst}});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{107 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__gesture_8h_a83cbaebec0c418b2fc08bbfeeed7d526}{SDL\_LoadDollarTemplates}}(\mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} touchId, \mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a72e0fdf0f845ded60b1fada9e9195cd7}{src}});}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_gesture\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

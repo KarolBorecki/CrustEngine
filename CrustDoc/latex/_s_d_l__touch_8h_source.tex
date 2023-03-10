@@ -1,0 +1,87 @@
+\hypertarget{_s_d_l__touch_8h_source}{}\doxysection{SDL\+\_\+touch.\+h}
+\label{_s_d_l__touch_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_touch.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_touch.h}}
+\mbox{\hyperlink{_s_d_l__touch_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_touch\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_touch\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} \mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}};}
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2c1a61d5c466bb74680be0a8cc1b455d}{Sint64}} \mbox{\hyperlink{_s_d_l__touch_8h_a5fa58141f78415ca09645af359ad2250}{SDL\_FingerID}};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cffae544a4f823bceaa24188c6ab960da300}{SDL\_TOUCH\_DEVICE\_INVALID}} = -\/1,}
+\DoxyCodeLine{47     \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cffab39ea53b15fce0d49c796c8ca5515863}{SDL\_TOUCH\_DEVICE\_DIRECT}},            \textcolor{comment}{/* touch screen with window-\/relative coordinates */}}
+\DoxyCodeLine{48     \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cffa0715f9019e2a5180a76eb3a8f90d4f5e}{SDL\_TOUCH\_DEVICE\_INDIRECT\_ABSOLUTE}}, \textcolor{comment}{/* trackpad with absolute device coordinates */}}
+\DoxyCodeLine{49     \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cffad8c3585eabc32e6dcccc7726f4c99505}{SDL\_TOUCH\_DEVICE\_INDIRECT\_RELATIVE}}  \textcolor{comment}{/* trackpad with screen cursor-\/relative coordinates */}}
+\DoxyCodeLine{50 \} \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cff}{SDL\_TouchDeviceType}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___finger}{SDL\_Finger}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \mbox{\hyperlink{_s_d_l__touch_8h_a5fa58141f78415ca09645af359ad2250}{SDL\_FingerID}} \mbox{\hyperlink{struct_s_d_l___finger_a3cec630146eeec5bd6299a9387a6f16a}{id}};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___finger_ab91dfbd03c3215560457fef44e1c7755}{x}};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___finger_a0a2c7a06ae641940111e03801c672cf9}{y}};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___finger_a0ecb50c7fd699d59899ac60c941bdee6}{pressure}};}
+\DoxyCodeLine{58 \} \mbox{\hyperlink{struct_s_d_l___finger}{SDL\_Finger}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{/* Used as the device ID for mouse events simulated with touch input */}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define SDL\_TOUCH\_MOUSEID ((Uint32)-\/1)}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* Used as the SDL\_TouchID for touch events simulated with mouse input */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define SDL\_MOUSE\_TOUCHID ((Sint64)-\/1)}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{83 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_a14a41a2964ddf868a180e42ccfd441d1}{SDL\_GetNumTouchDevices}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{96 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_af23f09dc79eace93cdc8dd770eed0d0a}{SDL\_GetTouchDevice}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_a21e16f91980d0ae35cca3ce571ca50d3}{SDL\_GetTouchName}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{111 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__touch_8h_a63f6b605841f681e036a96d9b2790cff}{SDL\_TouchDeviceType}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_acb47d9bf9103c6c039127cea040d89a7}{SDL\_GetTouchDeviceType}}(\mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} touchID);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_a7dcd1494c8dd433b7ef7b24c2926e721}{SDL\_GetNumTouchFingers}}(\mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} touchID);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{140 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l___finger}{SDL\_Finger}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__touch_8h_a51f8b790d3c82f53215796d9a043ef90}{SDL\_GetTouchFinger}}(\mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} touchID, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_touch\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

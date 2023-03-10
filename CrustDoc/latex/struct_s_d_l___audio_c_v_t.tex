@@ -1,0 +1,115 @@
+\hypertarget{struct_s_d_l___audio_c_v_t}{}\doxysection{SDL\+\_\+\+Audio\+CVT Struct Reference}
+\label{struct_s_d_l___audio_c_v_t}\index{SDL\_AudioCVT@{SDL\_AudioCVT}}
+
+
+A structure to hold a set of audio conversion filters and buffers.  
+
+
+
+
+{\ttfamily \#include $<$SDL\+\_\+audio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_ac600a035a48df05e14d3712fd6953ad4}{needed}}
+\item 
+\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a6ae81231e017105e6d5e745a51732e16}{src\+\_\+format}}
+\item 
+\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a8f890d017be857a3b048bf00525736c6}{dst\+\_\+format}}
+\item 
+double \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_ad886122c23a6673073baace31bff3b6c}{rate\+\_\+incr}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} $\ast$ \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a080db27b929efa983c5161360ffce310}{buf}}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_aeaeb8c5a63c3ab96471fbfdf412c78ff}{len}}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a5c60163f34d1947e5b166c23aba9879d}{len\+\_\+cvt}}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_ac9662d47cf2348b82b27b151150116b0}{len\+\_\+mult}}
+\item 
+double \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a5628ff5ccf711de9d77c0a4a9f57d2f0}{len\+\_\+ratio}}
+\item 
+\mbox{\hyperlink{_s_d_l__audio_8h_a55a1f0fd6570cebb7d0180b6056032cf}{SDL\+\_\+\+Audio\+Filter}} \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_afeb8dc60716644de3b681653442de1db}{filters}} \mbox{[}\mbox{\hyperlink{_s_d_l__audio_8h_a3d38380ac4a45a68a0e1c1a7a02bd290}{SDL\+\_\+\+AUDIOCVT\+\_\+\+MAX\+\_\+\+FILTERS}}+1\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_c_v_t_a35093b3ad3331c17416c593a76012b63}{filter\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure to hold a set of audio conversion filters and buffers. 
+
+Note that various parts of the conversion pipeline can take advantage of SIMD operations (like SSE2, for example). \mbox{\hyperlink{struct_s_d_l___audio_c_v_t}{SDL\+\_\+\+Audio\+CVT}} doesn\textquotesingle{}t require you to pass it aligned data, but can possibly run much faster if you set both its (buf) field to a pointer that is aligned to 16 bytes, and its (len) field to something that\textquotesingle{}s a multiple of 16, if possible. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a080db27b929efa983c5161360ffce310}\label{struct_s_d_l___audio_c_v_t_a080db27b929efa983c5161360ffce310}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!buf@{buf}}
+\index{buf@{buf}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{buf}{buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}}$\ast$ SDL\+\_\+\+Audio\+CVT\+::buf}
+
+Buffer to hold entire audio data \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a8f890d017be857a3b048bf00525736c6}\label{struct_s_d_l___audio_c_v_t_a8f890d017be857a3b048bf00525736c6}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!dst\_format@{dst\_format}}
+\index{dst\_format@{dst\_format}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{dst\_format}{dst\_format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} SDL\+\_\+\+Audio\+CVT\+::dst\+\_\+format}
+
+Target audio format \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a35093b3ad3331c17416c593a76012b63}\label{struct_s_d_l___audio_c_v_t_a35093b3ad3331c17416c593a76012b63}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!filter\_index@{filter\_index}}
+\index{filter\_index@{filter\_index}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{filter\_index}{filter\_index}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+CVT\+::filter\+\_\+index}
+
+Current audio conversion function \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_afeb8dc60716644de3b681653442de1db}\label{struct_s_d_l___audio_c_v_t_afeb8dc60716644de3b681653442de1db}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!filters@{filters}}
+\index{filters@{filters}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{filters}{filters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__audio_8h_a55a1f0fd6570cebb7d0180b6056032cf}{SDL\+\_\+\+Audio\+Filter}} SDL\+\_\+\+Audio\+CVT\+::filters\mbox{[}\mbox{\hyperlink{_s_d_l__audio_8h_a3d38380ac4a45a68a0e1c1a7a02bd290}{SDL\+\_\+\+AUDIOCVT\+\_\+\+MAX\+\_\+\+FILTERS}}+1\mbox{]}}
+
+NULL-\/terminated list of filter functions \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_aeaeb8c5a63c3ab96471fbfdf412c78ff}\label{struct_s_d_l___audio_c_v_t_aeaeb8c5a63c3ab96471fbfdf412c78ff}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!len@{len}}
+\index{len@{len}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+CVT\+::len}
+
+Length of original audio buffer \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a5c60163f34d1947e5b166c23aba9879d}\label{struct_s_d_l___audio_c_v_t_a5c60163f34d1947e5b166c23aba9879d}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!len\_cvt@{len\_cvt}}
+\index{len\_cvt@{len\_cvt}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{len\_cvt}{len\_cvt}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+CVT\+::len\+\_\+cvt}
+
+Length of converted audio buffer \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_ac9662d47cf2348b82b27b151150116b0}\label{struct_s_d_l___audio_c_v_t_ac9662d47cf2348b82b27b151150116b0}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!len\_mult@{len\_mult}}
+\index{len\_mult@{len\_mult}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{len\_mult}{len\_mult}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+CVT\+::len\+\_\+mult}
+
+buffer must be len$\ast$len\+\_\+mult big \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a5628ff5ccf711de9d77c0a4a9f57d2f0}\label{struct_s_d_l___audio_c_v_t_a5628ff5ccf711de9d77c0a4a9f57d2f0}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!len\_ratio@{len\_ratio}}
+\index{len\_ratio@{len\_ratio}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{len\_ratio}{len\_ratio}}
+{\footnotesize\ttfamily double SDL\+\_\+\+Audio\+CVT\+::len\+\_\+ratio}
+
+Given len, final size is len$\ast$len\+\_\+ratio \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_ac600a035a48df05e14d3712fd6953ad4}\label{struct_s_d_l___audio_c_v_t_ac600a035a48df05e14d3712fd6953ad4}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!needed@{needed}}
+\index{needed@{needed}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{needed}{needed}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+CVT\+::needed}
+
+Set to 1 if conversion possible \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_ad886122c23a6673073baace31bff3b6c}\label{struct_s_d_l___audio_c_v_t_ad886122c23a6673073baace31bff3b6c}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!rate\_incr@{rate\_incr}}
+\index{rate\_incr@{rate\_incr}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{rate\_incr}{rate\_incr}}
+{\footnotesize\ttfamily double SDL\+\_\+\+Audio\+CVT\+::rate\+\_\+incr}
+
+Rate conversion increment \mbox{\Hypertarget{struct_s_d_l___audio_c_v_t_a6ae81231e017105e6d5e745a51732e16}\label{struct_s_d_l___audio_c_v_t_a6ae81231e017105e6d5e745a51732e16}} 
+\index{SDL\_AudioCVT@{SDL\_AudioCVT}!src\_format@{src\_format}}
+\index{src\_format@{src\_format}!SDL\_AudioCVT@{SDL\_AudioCVT}}
+\doxysubsubsection{\texorpdfstring{src\_format}{src\_format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} SDL\+\_\+\+Audio\+CVT\+::src\+\_\+format}
+
+Source audio format 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\mbox{\hyperlink{_s_d_l__audio_8h}{SDL\+\_\+audio.\+h}}\end{DoxyCompactItemize}

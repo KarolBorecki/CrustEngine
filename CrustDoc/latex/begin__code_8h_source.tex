@@ -1,0 +1,185 @@
+\hypertarget{begin__code_8h_source}{}\doxysection{begin\+\_\+code.\+h}
+\label{begin__code_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/begin\_code.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/begin\_code.h}}
+\mbox{\hyperlink{begin__code_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{30 \textcolor{comment}{/* This shouldn't be nested -\/-\/ included it around code only. */}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef \_begin\_code\_h}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#error Nested inclusion of begin\_code.h}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define \_begin\_code\_h}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#ifndef SDL\_DEPRECATED}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#  if defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ >= 4)  }\textcolor{comment}{/* technically, this arrived in gcc 3.1, but oh well. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#    define SDL\_DEPRECATED \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#    define SDL\_DEPRECATED}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifndef SDL\_UNUSED}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#  ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#    define SDL\_UNUSED \_\_attribute\_\_((unused))}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#    define SDL\_UNUSED}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{/* Some compilers use a special export keyword */}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifndef DECLSPEC}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\# if defined(\_\_WIN32\_\_) || defined(\_\_WINRT\_\_) || defined(\_\_CYGWIN\_\_) || defined(\_\_GDK\_\_)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#  ifdef DLL\_EXPORT}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#   define DECLSPEC \_\_declspec(dllexport)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#   define DECLSPEC}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\# elif defined(\_\_OS2\_\_)}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#   ifdef BUILD\_SDL}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#    define DECLSPEC    \_\_declspec(dllexport)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#    define DECLSPEC}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\# else}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#  if defined(\_\_GNUC\_\_) \&\& \_\_GNUC\_\_ >= 4}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#   define DECLSPEC \_\_attribute\_\_ ((visibility("{}default"{}})))}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#   define DECLSPEC}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{/* By default SDL uses the C calling convention */}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#ifndef SDLCALL}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#if (defined(\_\_WIN32\_\_) || defined(\_\_WINRT\_\_) || defined(\_\_GDK\_\_)) \&\& !defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define SDLCALL \_\_cdecl}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#elif defined(\_\_OS2\_\_) || defined(\_\_EMX\_\_)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define SDLCALL \_System}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\# if defined (\_\_GNUC\_\_) \&\& !defined(\_System)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#  define \_System }\textcolor{comment}{/* for old EMX/GCC compat.  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define SDLCALL}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDLCALL */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{comment}{/* Removed DECLSPEC on Symbian OS because SDL cannot be a DLL in EPOC */}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#ifdef \_\_SYMBIAN32\_\_}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#undef DECLSPEC}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define DECLSPEC}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_SYMBIAN32\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{comment}{/* Force structure packing at 4 byte alignment.}}
+\DoxyCodeLine{96 \textcolor{comment}{   This is necessary if the header is included in code which has structure}}
+\DoxyCodeLine{97 \textcolor{comment}{   packing set to an alternate value, say for loading structures from disk.}}
+\DoxyCodeLine{98 \textcolor{comment}{   The packing is reset to the previous value in close\_code.h}}
+\DoxyCodeLine{99 \textcolor{comment}{ */}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) || defined(\_\_MWERKS\_\_) || defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#pragma warning(disable: 4103)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#ifdef \_\_clang\_\_}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#pragma clang diagnostic ignored "{}-\/Wpragma-\/pack"{}}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#ifdef \_\_BORLANDC\_\_}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#pragma nopackwarning}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#ifdef \_WIN64}}
+\DoxyCodeLine{111 \textcolor{comment}{/* Use 8-\/byte alignment on 64-\/bit architectures, so pointers are aligned */}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#pragma pack(push,8)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#pragma pack(push,4)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* Compiler needs structure packing set */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#ifndef SDL\_INLINE}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define SDL\_INLINE \_\_inline\_\_}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) || defined(\_\_BORLANDC\_\_) || \(\backslash\)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{      defined(\_\_DMC\_\_) || defined(\_\_SC\_\_) || \(\backslash\)}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{      defined(\_\_WATCOMC\_\_) || defined(\_\_LCC\_\_) || \(\backslash\)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{      defined(\_\_DECC) || defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define SDL\_INLINE \_\_inline}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#ifndef \_\_inline\_\_}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define \_\_inline\_\_ \_\_inline}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define SDL\_INLINE inline}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#ifndef \_\_inline\_\_}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define \_\_inline\_\_ inline}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_INLINE not defined */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#ifndef SDL\_FORCE\_INLINE}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define SDL\_FORCE\_INLINE \_\_forceinline}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#elif ( (defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ >= 4)) || defined(\_\_clang\_\_) )}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define SDL\_FORCE\_INLINE \_\_attribute\_\_((always\_inline)) static \_\_inline\_\_}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define SDL\_FORCE\_INLINE static SDL\_INLINE}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_FORCE\_INLINE not defined */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#ifndef SDL\_NORETURN}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define SDL\_NORETURN \_\_attribute\_\_((noreturn))}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define SDL\_NORETURN \_\_declspec(noreturn)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define SDL\_NORETURN}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_NORETURN not defined */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{comment}{/* Apparently this is needed by several Windows compilers */}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#if !defined(\_\_MACH\_\_)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#ifndef NULL}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define NULL 0}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define NULL ((void *)0)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* NULL */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ! Mac OS X -\/ breaks precompiled headers */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#ifndef SDL\_FALLTHROUGH}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#if (defined(\_\_cplusplus) \&\& \_\_cplusplus >= 201703L) || \(\backslash\)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{    (defined(\_\_STDC\_VERSION\_\_) \&\& \_\_STDC\_VERSION\_\_ >= 202000L)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define SDL\_FALLTHROUGH [[fallthrough]]}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#if defined(\_\_has\_attribute)}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define \_HAS\_FALLTHROUGH \_\_has\_attribute(\_\_fallthrough\_\_)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define \_HAS\_FALLTHROUGH 0}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_has\_attribute */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#if \_HAS\_FALLTHROUGH \&\& \(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{   ((defined(\_\_GNUC\_\_) \&\& \_\_GNUC\_\_ >= 7) || \(\backslash\)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{    (defined(\_\_clang\_major\_\_) \&\& \_\_clang\_major\_\_ >= 10))}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define SDL\_FALLTHROUGH \_\_attribute\_\_((\_\_fallthrough\_\_))}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define SDL\_FALLTHROUGH do \{\} while (0) }\textcolor{comment}{/* fallthrough */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_HAS\_FALLTHROUGH */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#undef \_HAS\_FALLTHROUGH}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* C++17 or C2x */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_FALLTHROUGH not defined */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

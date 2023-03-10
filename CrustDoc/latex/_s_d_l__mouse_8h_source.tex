@@ -1,0 +1,127 @@
+\hypertarget{_s_d_l__mouse_8h_source}{}\doxysection{SDL\+\_\+mouse.\+h}
+\label{_s_d_l__mouse_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_mouse.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_mouse.h}}
+\mbox{\hyperlink{_s_d_l__mouse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_mouse\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_mouse\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{38 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}};   }
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a0ea5055b7ef96598a39570abf365b9f9}{SDL\_SYSTEM\_CURSOR\_ARROW}},     }
+\DoxyCodeLine{49     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a5f3b85170a85ffb62aa477f9c31987fb}{SDL\_SYSTEM\_CURSOR\_IBEAM}},     }
+\DoxyCodeLine{50     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a8ce5ae38a754042575234c8da72417e6}{SDL\_SYSTEM\_CURSOR\_WAIT}},      }
+\DoxyCodeLine{51     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732ae18ee52eb9724301950db552c953e48e}{SDL\_SYSTEM\_CURSOR\_CROSSHAIR}}, }
+\DoxyCodeLine{52     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a71fe25cd68c411ca52370bacc40b2764}{SDL\_SYSTEM\_CURSOR\_WAITARROW}}, }
+\DoxyCodeLine{53     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a0eb8a498162417265c0ec79c1eacb30e}{SDL\_SYSTEM\_CURSOR\_SIZENWSE}},  }
+\DoxyCodeLine{54     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a5b70e5fee565ccf9a6a99f92c571b4ed}{SDL\_SYSTEM\_CURSOR\_SIZENESW}},  }
+\DoxyCodeLine{55     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732aa2f663333ca851ce0f40f8f8d2c2a731}{SDL\_SYSTEM\_CURSOR\_SIZEWE}},    }
+\DoxyCodeLine{56     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a04d6abe3f01b1c4b8d77af1b2ef5e4e9}{SDL\_SYSTEM\_CURSOR\_SIZENS}},    }
+\DoxyCodeLine{57     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a88849f7320ea2bf629e05a06c6ff8e20}{SDL\_SYSTEM\_CURSOR\_SIZEALL}},   }
+\DoxyCodeLine{58     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a70a8b0dec44a0f63d7af72e649de3b62}{SDL\_SYSTEM\_CURSOR\_NO}},        }
+\DoxyCodeLine{59     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732a09cd11742bffaafbd1073afeea03f7bc}{SDL\_SYSTEM\_CURSOR\_HAND}},      }
+\DoxyCodeLine{60     \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732aa19cf5bcb79a35e1c34beb243f9a7a7b}{SDL\_NUM\_SYSTEM\_CURSORS}}}
+\DoxyCodeLine{61 \} \mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732}{SDL\_SystemCursor}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \mbox{\hyperlink{_s_d_l__mouse_8h_ac65151e54bea0e005902790c68e738f3a8778fa74ec64be00b8b6c48d10f6e984}{SDL\_MOUSEWHEEL\_NORMAL}},    }
+\DoxyCodeLine{69     \mbox{\hyperlink{_s_d_l__mouse_8h_ac65151e54bea0e005902790c68e738f3a8e744c7abe1563a5fb219d32f413af1a}{SDL\_MOUSEWHEEL\_FLIPPED}}    }
+\DoxyCodeLine{70 \} \mbox{\hyperlink{_s_d_l__mouse_8h_ac65151e54bea0e005902790c68e738f3}{SDL\_MouseWheelDirection}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{81 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a1ca19fb9815f7b80ab15ab597e2eef06}{SDL\_GetMouseFocus}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{104 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a1561f413546c0e4f5f44a8f094926575}{SDL\_GetMouseState}}(\textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_ab0f5adcf42e5074315b8a01f325d8f53}{SDL\_GetGlobalMouseState}}(\textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{152 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a8cf9b519050e3e871f5e59f03b38b6e1}{SDL\_GetRelativeMouseState}}(\textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{173 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a2f2259cdf30272b3c4cc1e3236cb8071}{SDL\_WarpMouseInWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{174                                                    \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{196 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a200c3d105a0a30fb465760ab870b3ce3}{SDL\_WarpMouseGlobal}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{221 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_ad7b3533784e0aa34cdf1c5f232817206}{SDL\_SetRelativeMouseMode}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0455a397ab5468d21c3021f2efa6dd3c}{enabled}});}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{267 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a8829359c04d0d7835b4330dd21fdd051}{SDL\_CaptureMouse}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0455a397ab5468d21c3021f2efa6dd3c}{enabled}});}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{278 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_ae97aaf1682b3a6b62214dda1dda9b212}{SDL\_GetRelativeMouseMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{321 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a15e754481ab3bb8e94a36ea33829a4ba}{SDL\_CreateCursor}}(\textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}},}
+\DoxyCodeLine{322                                                      \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a2e8825c19147a8250013df8e4275f5b6}{mask}},}
+\DoxyCodeLine{323                                                      \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \textcolor{keywordtype}{int} hot\_x,}
+\DoxyCodeLine{324                                                      \textcolor{keywordtype}{int} hot\_y);}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{340 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_aa875cf002af55d61daa50d1c4eadd8ca}{SDL\_CreateColorCursor}}(\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} *surface,}
+\DoxyCodeLine{341                                                           \textcolor{keywordtype}{int} hot\_x,}
+\DoxyCodeLine{342                                                           \textcolor{keywordtype}{int} hot\_y);}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{355 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_aa3c78c8d7501b33db7839a49d3d6eb38}{SDL\_CreateSystemCursor}}(\mbox{\hyperlink{_s_d_l__mouse_8h_a3e8083d1d8ce4c5a1ba76bfc2be8e732}{SDL\_SystemCursor}} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{373 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a7c2971901f9a772be22152420aee275c}{SDL\_SetCursor}}(\mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} * cursor);}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{387 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a98d7b811cebffcdd9afb3b65288d715c}{SDL\_GetCursor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{398 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a395cc3d18523a9240cb132f1c5d0034a}{SDL\_GetDefaultCursor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{414 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_ac17a8282f93d9d31e8e087236f0ecdd8}{SDL\_FreeCursor}}(\mbox{\hyperlink{_s_d_l__mouse_8h_a63b6e9cd23bbe26b8fa00dc8fba7623d}{SDL\_Cursor}} * cursor);}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{436 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__mouse_8h_a00286ec15cd56dee1fd71ed4e6e7a585}{SDL\_ShowCursor}}(\textcolor{keywordtype}{int} toggle);}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{445 \textcolor{preprocessor}{\#define SDL\_BUTTON(X)       (1 << ((X)-\/1))}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define SDL\_BUTTON\_LEFT     1}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define SDL\_BUTTON\_MIDDLE   2}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{\#define SDL\_BUTTON\_RIGHT    3}}
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define SDL\_BUTTON\_X1       4}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define SDL\_BUTTON\_X2       5}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{\#define SDL\_BUTTON\_LMASK    SDL\_BUTTON(SDL\_BUTTON\_LEFT)}}
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define SDL\_BUTTON\_MMASK    SDL\_BUTTON(SDL\_BUTTON\_MIDDLE)}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define SDL\_BUTTON\_RMASK    SDL\_BUTTON(SDL\_BUTTON\_RIGHT)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{\#define SDL\_BUTTON\_X1MASK   SDL\_BUTTON(SDL\_BUTTON\_X1)}}
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define SDL\_BUTTON\_X2MASK   SDL\_BUTTON(SDL\_BUTTON\_X2)}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{458 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{459 \}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{461 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_mouse\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

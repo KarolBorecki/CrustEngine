@@ -1,0 +1,31 @@
+\hypertarget{_math_8hpp_source}{}\doxysection{Math.\+hpp}
+\label{_math_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Math/Math.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Math/Math.hpp}}
+\mbox{\hyperlink{_math_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MATH\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MATH\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_math}{Math}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_math_aad545cc846717f163d9bd06db85482b6}{Abs}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}});}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_math_a5aa90009368994c44a0426ad668908aa}{DoubleEquals}}(\textcolor{keywordtype}{double} val1, \textcolor{keywordtype}{double} val2, \textcolor{keywordtype}{double} delta = DOUBLE\_DEFAULT\_DELTA);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} DOUBLE\_DEFAULT\_DELTA \{ 0.0000001 \};}
+\DoxyCodeLine{13 \};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_math_aad545cc846717f163d9bd06db85482b6}{Math::Abs}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}})}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{return} (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}} >= 0 ? \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}} : -\/\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}});}
+\DoxyCodeLine{18 \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_math_a5aa90009368994c44a0426ad668908aa}{Math::DoubleEquals}}(\textcolor{keywordtype}{double} val1, \textcolor{keywordtype}{double} val2, \textcolor{keywordtype}{double} delta)}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} (\mbox{\hyperlink{class_math_aad545cc846717f163d9bd06db85482b6}{Math::Abs}}(val1 -\/ val2) <= delta);}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MATH\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

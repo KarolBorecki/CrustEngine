@@ -1,0 +1,120 @@
+\hypertarget{_s_d_l__metal_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+metal.h File Reference}
+\label{_s_d_l__metal_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_metal.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_metal.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$ \mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}}
+\begin{DoxyCompactList}\small\item\em A handle to a CAMetal\+Layer-\/backed NSView (mac\+OS) or UIView (i\+OS/tv\+OS). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Metal support functions}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__metal_8h_a3dad1f90d67b2e72ec2f5bfc9e20f54c}{SDL\+\_\+\+Metal\+\_\+\+Create\+View}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$window)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__metal_8h_a262167b535f38dd12f022df81fddb8f5}{SDL\+\_\+\+Metal\+\_\+\+Destroy\+View}} (\mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}} view)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__metal_8h_acb0b7609463a8ad97a694213eec68bdc}{SDL\+\_\+\+Metal\+\_\+\+Get\+Layer}} (\mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}} view)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__metal_8h_a57af6bc34b5686963397add6e383eb17}{SDL\+\_\+\+Metal\+\_\+\+Get\+Drawable\+Size}} (\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$window, int $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, int $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Header file for functions to creating Metal layers and views on SDL windows. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}\label{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}} 
+\index{SDL\_metal.h@{SDL\_metal.h}!SDL\_MetalView@{SDL\_MetalView}}
+\index{SDL\_MetalView@{SDL\_MetalView}!SDL\_metal.h@{SDL\_metal.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MetalView}{SDL\_MetalView}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}$\ast$ \mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}}}
+
+
+
+A handle to a CAMetal\+Layer-\/backed NSView (mac\+OS) or UIView (i\+OS/tv\+OS). 
+
+\begin{DoxyNote}{Note}
+This can be cast directly to an NSView or UIView. 
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__metal_8h_a3dad1f90d67b2e72ec2f5bfc9e20f54c}\label{_s_d_l__metal_8h_a3dad1f90d67b2e72ec2f5bfc9e20f54c}} 
+\index{SDL\_metal.h@{SDL\_metal.h}!SDL\_Metal\_CreateView@{SDL\_Metal\_CreateView}}
+\index{SDL\_Metal\_CreateView@{SDL\_Metal\_CreateView}!SDL\_metal.h@{SDL\_metal.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Metal\_CreateView()}{SDL\_Metal\_CreateView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Metal\+\_\+\+Create\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$}]{window }\end{DoxyParamCaption})}
+
+Create a CAMetal\+Layer-\/backed NSView/\+UIView and attach it to the specified window.
+
+On mac\+OS, this does {\itshape not} associate a MTLDevice with the CAMetal\+Layer on its own. It is up to user code to do that.
+
+The returned handle can be casted directly to a NSView or UIView. To access the backing CAMetal\+Layer, call \mbox{\hyperlink{_s_d_l__metal_8h_acb0b7609463a8ad97a694213eec68bdc}{SDL\+\_\+\+Metal\+\_\+\+Get\+Layer()}}.
+
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+12.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__metal_8h_a262167b535f38dd12f022df81fddb8f5}{SDL\+\_\+\+Metal\+\_\+\+Destroy\+View}} 
+
+\mbox{\hyperlink{_s_d_l__metal_8h_acb0b7609463a8ad97a694213eec68bdc}{SDL\+\_\+\+Metal\+\_\+\+Get\+Layer}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__metal_8h_a262167b535f38dd12f022df81fddb8f5}\label{_s_d_l__metal_8h_a262167b535f38dd12f022df81fddb8f5}} 
+\index{SDL\_metal.h@{SDL\_metal.h}!SDL\_Metal\_DestroyView@{SDL\_Metal\_DestroyView}}
+\index{SDL\_Metal\_DestroyView@{SDL\_Metal\_DestroyView}!SDL\_metal.h@{SDL\_metal.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Metal\_DestroyView()}{SDL\_Metal\_DestroyView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Metal\+\_\+\+Destroy\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}}}]{view }\end{DoxyParamCaption})}
+
+Destroy an existing SDL\+\_\+\+Metal\+View object.
+
+This should be called before SDL\+\_\+\+Destroy\+Window, if SDL\+\_\+\+Metal\+\_\+\+Create\+View was called after SDL\+\_\+\+Create\+Window.
+
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+12.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__metal_8h_a3dad1f90d67b2e72ec2f5bfc9e20f54c}{SDL\+\_\+\+Metal\+\_\+\+Create\+View}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__metal_8h_a57af6bc34b5686963397add6e383eb17}\label{_s_d_l__metal_8h_a57af6bc34b5686963397add6e383eb17}} 
+\index{SDL\_metal.h@{SDL\_metal.h}!SDL\_Metal\_GetDrawableSize@{SDL\_Metal\_GetDrawableSize}}
+\index{SDL\_Metal\_GetDrawableSize@{SDL\_Metal\_GetDrawableSize}!SDL\_metal.h@{SDL\_metal.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Metal\_GetDrawableSize()}{SDL\_Metal\_GetDrawableSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Metal\+\_\+\+Get\+Drawable\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$}]{window,  }\item[{int $\ast$}]{w,  }\item[{int $\ast$}]{h }\end{DoxyParamCaption})}
+
+Get the size of a window\textquotesingle{}s underlying drawable in pixels (for use with setting viewport, scissor \& etc).
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & SDL\+\_\+\+Window from which the drawable size should be queried \\
+\hline
+{\em w} & Pointer to variable for storing the width in pixels, may be NULL \\
+\hline
+{\em h} & Pointer to variable for storing the height in pixels, may be NULL\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+14.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size}} 
+
+\mbox{\hyperlink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\+\_\+\+Create\+Window}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__metal_8h_acb0b7609463a8ad97a694213eec68bdc}\label{_s_d_l__metal_8h_acb0b7609463a8ad97a694213eec68bdc}} 
+\index{SDL\_metal.h@{SDL\_metal.h}!SDL\_Metal\_GetLayer@{SDL\_Metal\_GetLayer}}
+\index{SDL\_Metal\_GetLayer@{SDL\_Metal\_GetLayer}!SDL\_metal.h@{SDL\_metal.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_Metal\_GetLayer()}{SDL\_Metal\_GetLayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Metal\+\_\+\+Get\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__metal_8h_a0d6413e2d369fbf22f0a2e4ec15bf412}{SDL\+\_\+\+Metal\+View}}}]{view }\end{DoxyParamCaption})}
+
+Get a pointer to the backing CAMetal\+Layer for the given view.
+
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+14.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+SDL\+\_\+\+Metal\+Create\+View 
+\end{DoxySeeAlso}

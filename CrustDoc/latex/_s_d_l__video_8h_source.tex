@@ -1,0 +1,466 @@
+\hypertarget{_s_d_l__video_8h_source}{}\doxysection{SDL\+\_\+video.\+h}
+\label{_s_d_l__video_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_video.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_video.h}}
+\mbox{\hyperlink{_s_d_l__video_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_video\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_video\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__pixels_8h}{SDL\_pixels.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__rect_8h}{SDL\_rect.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__surface_8h}{SDL\_surface.h}}"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{39 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___display_mode_ae8120e0a18a99992f039756e1b503680}{format}};              }
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l___display_mode_a504bb5e21950b719a0df43be51199046}{w}};                      }
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l___display_mode_a0d9eabed50a560ed553af772c26632d7}{h}};                      }
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l___display_mode_ad1b5783c9b292ebf24ad4e0e7a98e540}{refresh\_rate}};           }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_s_d_l___display_mode_a411f93025411da873f37a384ae62bbcf}{driverdata}};           }
+\DoxyCodeLine{60 \} \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923}{SDL\_WINDOW\_FULLSCREEN}} = 0x00000001,         }
+\DoxyCodeLine{105     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a5cf8af096f1870b0c2b12267cabd1f7a}{SDL\_WINDOW\_OPENGL}} = 0x00000002,             }
+\DoxyCodeLine{106     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4300d051290adcb71c1b5e82e2553c4d}{SDL\_WINDOW\_SHOWN}} = 0x00000004,              }
+\DoxyCodeLine{107     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18adda25e98e54964c0c2ec9ac31f5e629c}{SDL\_WINDOW\_HIDDEN}} = 0x00000008,             }
+\DoxyCodeLine{108     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18af7baea7dc9c0e4f09b28793504b02e4c}{SDL\_WINDOW\_BORDERLESS}} = 0x00000010,         }
+\DoxyCodeLine{109     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf59a5e2f762aa2b6d2e49b0ca220fd8}{SDL\_WINDOW\_RESIZABLE}} = 0x00000020,          }
+\DoxyCodeLine{110     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a7f08ee26b5773412a212233ddc168c5a}{SDL\_WINDOW\_MINIMIZED}} = 0x00000040,          }
+\DoxyCodeLine{111     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18acd8063a617f2ce05f694ecdbf56f811a}{SDL\_WINDOW\_MAXIMIZED}} = 0x00000080,          }
+\DoxyCodeLine{112     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ae0d26c938ff5e806166f5f44d2ffcf70}{SDL\_WINDOW\_MOUSE\_GRABBED}} = 0x00000100,      }
+\DoxyCodeLine{113     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18afcbb682c0942bc106af1474c1d34bb53}{SDL\_WINDOW\_INPUT\_FOCUS}} = 0x00000200,        }
+\DoxyCodeLine{114     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aa722d0955c297fc60c09b10e1679684c}{SDL\_WINDOW\_MOUSE\_FOCUS}} = 0x00000400,        }
+\DoxyCodeLine{115     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18abfb8eeb3dc7f1844aa55dfdee3d4d7b8}{SDL\_WINDOW\_FULLSCREEN\_DESKTOP}} = ( \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ac7b8279bdf5e22a0b4a95aae3d846923}{SDL\_WINDOW\_FULLSCREEN}} | 0x00001000 ),}
+\DoxyCodeLine{116     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a1ac8e0ef2237a089cf487d7e7fcc6e23}{SDL\_WINDOW\_FOREIGN}} = 0x00000800,            }
+\DoxyCodeLine{117     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a03ec21b04fa4e5c8cc868aa01a0c1bf3}{SDL\_WINDOW\_ALLOW\_HIGHDPI}} = 0x00002000,      }
+\DoxyCodeLine{120     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4c16b51a323741bf5c492adce34e5882}{SDL\_WINDOW\_MOUSE\_CAPTURE}}    = 0x00004000,   }
+\DoxyCodeLine{121     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a318e8aee0e3fddcfe2257757c6eb3128}{SDL\_WINDOW\_ALWAYS\_ON\_TOP}}    = 0x00008000,   }
+\DoxyCodeLine{122     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a4bd52941a63adc993271579d52fb6641}{SDL\_WINDOW\_SKIP\_TASKBAR}}     = 0x00010000,   }
+\DoxyCodeLine{123     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a94224404de009a2fb6856a6a69d20d85}{SDL\_WINDOW\_UTILITY}}          = 0x00020000,   }
+\DoxyCodeLine{124     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a226509512aeab3c2c01deb75c182adf5}{SDL\_WINDOW\_TOOLTIP}}          = 0x00040000,   }
+\DoxyCodeLine{125     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aeb1e21d5d8ed10b5d65ab0909b5c8c0d}{SDL\_WINDOW\_POPUP\_MENU}}       = 0x00080000,   }
+\DoxyCodeLine{126     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ab323e087b24b6034070bbc825287cf18}{SDL\_WINDOW\_KEYBOARD\_GRABBED}} = 0x00100000,   }
+\DoxyCodeLine{127     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18a55d2d1e92b96050c5a9cd8280d78f26c}{SDL\_WINDOW\_VULKAN}}           = 0x10000000,   }
+\DoxyCodeLine{128     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ad63da27122aeaa0c8986dbb7014ce76d}{SDL\_WINDOW\_METAL}}            = 0x20000000,   }
+\DoxyCodeLine{130     \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18aaf410e1082e45a55ef9176163610dba2}{SDL\_WINDOW\_INPUT\_GRABBED}} = \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18ae0d26c938ff5e806166f5f44d2ffcf70}{SDL\_WINDOW\_MOUSE\_GRABBED}} }
+\DoxyCodeLine{131 \} \mbox{\hyperlink{_s_d_l__video_8h_ab10f4fd6a082ef06fcae96860c95fb18}{SDL\_WindowFlags}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_UNDEFINED\_MASK    0x1FFF0000u}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_UNDEFINED\_DISPLAY(X)  (SDL\_WINDOWPOS\_UNDEFINED\_MASK|(X))}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_UNDEFINED         SDL\_WINDOWPOS\_UNDEFINED\_DISPLAY(0)}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_ISUNDEFINED(X)    \(\backslash\)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{            (((X)\&0xFFFF0000) == SDL\_WINDOWPOS\_UNDEFINED\_MASK)}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_CENTERED\_MASK    0x2FFF0000u}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_CENTERED\_DISPLAY(X)  (SDL\_WINDOWPOS\_CENTERED\_MASK|(X))}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_CENTERED         SDL\_WINDOWPOS\_CENTERED\_DISPLAY(0)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define SDL\_WINDOWPOS\_ISCENTERED(X)    \(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{            (((X)\&0xFFFF0000) == SDL\_WINDOWPOS\_CENTERED\_MASK)}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{154 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babaee1301eee7ad982c50cd310607f968b7}{SDL\_WINDOWEVENT\_NONE}},           }
+\DoxyCodeLine{157     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba5e91fe11ed6a24a377a77d024c9639d5}{SDL\_WINDOWEVENT\_SHOWN}},          }
+\DoxyCodeLine{158     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba04e5bd277e03b61a6e4b577f2a3fda55}{SDL\_WINDOWEVENT\_HIDDEN}},         }
+\DoxyCodeLine{159     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac37af5c3ce56fe0956bc310821d59489}{SDL\_WINDOWEVENT\_EXPOSED}},        }
+\DoxyCodeLine{161     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba64da80af7b0a58689f07c7196de23da5}{SDL\_WINDOWEVENT\_MOVED}},          }
+\DoxyCodeLine{163     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba26096363b1a5a1eccc56a00d5f61948d}{SDL\_WINDOWEVENT\_RESIZED}},        }
+\DoxyCodeLine{164     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba98e76df5341be0a05c7461e32c7835f0}{SDL\_WINDOWEVENT\_SIZE\_CHANGED}},   }
+\DoxyCodeLine{167     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba70577b21b05c509d0342a5649092928d}{SDL\_WINDOWEVENT\_MINIMIZED}},      }
+\DoxyCodeLine{168     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba83593cf9ef16d0eaeeaac19b32a86a05}{SDL\_WINDOWEVENT\_MAXIMIZED}},      }
+\DoxyCodeLine{169     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba9ebe8fbb15f1bf06521d6b5484de3d89}{SDL\_WINDOWEVENT\_RESTORED}},       }
+\DoxyCodeLine{171     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3babac6990e7537a4cc6cc7aaabc3376b9eb5}{SDL\_WINDOWEVENT\_ENTER}},          }
+\DoxyCodeLine{172     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba7e1afdd5cfea592a59e129419b431bd5}{SDL\_WINDOWEVENT\_LEAVE}},          }
+\DoxyCodeLine{173     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba529d1b574e559ee46892024e1c2e6c92}{SDL\_WINDOWEVENT\_FOCUS\_GAINED}},   }
+\DoxyCodeLine{174     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba239e734c6ba478fb2f694fc7cde30c31}{SDL\_WINDOWEVENT\_FOCUS\_LOST}},     }
+\DoxyCodeLine{175     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba2483911a3a2a20dbb1c88a15ffb9a360}{SDL\_WINDOWEVENT\_CLOSE}},          }
+\DoxyCodeLine{176     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba69ee247e6859b1d5d7dfffb7c1a99b4e}{SDL\_WINDOWEVENT\_TAKE\_FOCUS}},     }
+\DoxyCodeLine{177     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba425a0e4dca5ba339eed8166248eeef8e}{SDL\_WINDOWEVENT\_HIT\_TEST}},       }
+\DoxyCodeLine{178     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba9fd10380e9447afc2a43ca1682ca8f67}{SDL\_WINDOWEVENT\_ICCPROF\_CHANGED}},}
+\DoxyCodeLine{179     \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3baba79f1c661b605adb4390be30a4f217080}{SDL\_WINDOWEVENT\_DISPLAY\_CHANGED}} }
+\DoxyCodeLine{180 \} \mbox{\hyperlink{_s_d_l__video_8h_ac486b40a4860d980dbc74d0b4adf3bab}{SDL\_WindowEventID}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{185 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{186 \{}
+\DoxyCodeLine{187     \mbox{\hyperlink{_s_d_l__video_8h_ad671b39d95c255af51db93cb54512ffca0f22fc5951aac829337807e4238110e5}{SDL\_DISPLAYEVENT\_NONE}},          }
+\DoxyCodeLine{188     \mbox{\hyperlink{_s_d_l__video_8h_ad671b39d95c255af51db93cb54512ffca79af38ade27966e9e53476f5d3755f04}{SDL\_DISPLAYEVENT\_ORIENTATION}},   }
+\DoxyCodeLine{189     \mbox{\hyperlink{_s_d_l__video_8h_ad671b39d95c255af51db93cb54512ffcaf5929ccf80049ecabbd5e50f2fc8485b}{SDL\_DISPLAYEVENT\_CONNECTED}},     }
+\DoxyCodeLine{190     \mbox{\hyperlink{_s_d_l__video_8h_ad671b39d95c255af51db93cb54512ffcaeeb05c4066d71e3d5fc4774879d7540d}{SDL\_DISPLAYEVENT\_DISCONNECTED}}   }
+\DoxyCodeLine{191 \} \mbox{\hyperlink{_s_d_l__video_8h_ad671b39d95c255af51db93cb54512ffc}{SDL\_DisplayEventID}};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{196 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{197 \{}
+\DoxyCodeLine{198     \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbdeacb20982c4f82c7271a66a76b98eda731}{SDL\_ORIENTATION\_UNKNOWN}},            }
+\DoxyCodeLine{199     \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbdea5b1e627bf8f8be31d62292681f42694b}{SDL\_ORIENTATION\_LANDSCAPE}},          }
+\DoxyCodeLine{200     \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbdea6cd1294f411220564276f85c32616c6a}{SDL\_ORIENTATION\_LANDSCAPE\_FLIPPED}},  }
+\DoxyCodeLine{201     \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbdea5fb622ac90f47a799d7d7f660d7c860b}{SDL\_ORIENTATION\_PORTRAIT}},           }
+\DoxyCodeLine{202     \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbdea66727ec5e93a1112a254b4d3b8e867db}{SDL\_ORIENTATION\_PORTRAIT\_FLIPPED}}    }
+\DoxyCodeLine{203 \} \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbde}{SDL\_DisplayOrientation}};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{208 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{209 \{}
+\DoxyCodeLine{210     \mbox{\hyperlink{_s_d_l__video_8h_a32391ac4af019aac0e487845adb5baafa9164bc961f90c240d737dfa4e5877080}{SDL\_FLASH\_CANCEL}},                   }
+\DoxyCodeLine{211     \mbox{\hyperlink{_s_d_l__video_8h_a32391ac4af019aac0e487845adb5baafa337fa7e6aa90ea2873d0243b2654aae4}{SDL\_FLASH\_BRIEFLY}},                  }
+\DoxyCodeLine{212     \mbox{\hyperlink{_s_d_l__video_8h_a32391ac4af019aac0e487845adb5baafa000ab7f97a52e7bbf062ef847ba6556f}{SDL\_FLASH\_UNTIL\_FOCUSED}}             }
+\DoxyCodeLine{213 \} \mbox{\hyperlink{_s_d_l__video_8h_a32391ac4af019aac0e487845adb5baaf}{SDL\_FlashOperation}};}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{218 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\_GLContext}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{223 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{224 \{}
+\DoxyCodeLine{225     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ab91e9b7978b6d2c62291b9d7e88a1903}{SDL\_GL\_RED\_SIZE}},}
+\DoxyCodeLine{226     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4af32b5125f656487de9d3c1600c6e4eb9}{SDL\_GL\_GREEN\_SIZE}},}
+\DoxyCodeLine{227     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4aa7f058249f389ebba59f5d3cb00d7806}{SDL\_GL\_BLUE\_SIZE}},}
+\DoxyCodeLine{228     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4abe24aa11a8007880290835e7eb07d5d7}{SDL\_GL\_ALPHA\_SIZE}},}
+\DoxyCodeLine{229     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ac41c21ee24979f52471afd0712ee08c4}{SDL\_GL\_BUFFER\_SIZE}},}
+\DoxyCodeLine{230     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a28c3841afe3b66ab86a267bf5d0a28e0}{SDL\_GL\_DOUBLEBUFFER}},}
+\DoxyCodeLine{231     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4addf8f9d5c6d217954b14ece543dcbf17}{SDL\_GL\_DEPTH\_SIZE}},}
+\DoxyCodeLine{232     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a29dc7e9872be52f3327a452b6875c102}{SDL\_GL\_STENCIL\_SIZE}},}
+\DoxyCodeLine{233     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ae43ed10c33a2cc5b98a8c3d71e94ba43}{SDL\_GL\_ACCUM\_RED\_SIZE}},}
+\DoxyCodeLine{234     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a901dce8f81e72cd6c0efa1f32ac96c2d}{SDL\_GL\_ACCUM\_GREEN\_SIZE}},}
+\DoxyCodeLine{235     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4acc5dc0cb2c0e9e16d64dbdbde177d775}{SDL\_GL\_ACCUM\_BLUE\_SIZE}},}
+\DoxyCodeLine{236     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a4c35a77fa9c78ac60997b3c15e158b2e}{SDL\_GL\_ACCUM\_ALPHA\_SIZE}},}
+\DoxyCodeLine{237     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a7d51f1f66a480883c5e7a7d58f668d72}{SDL\_GL\_STEREO}},}
+\DoxyCodeLine{238     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a83d7d3086480baed28bed6be4dadc8bf}{SDL\_GL\_MULTISAMPLEBUFFERS}},}
+\DoxyCodeLine{239     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a54761551da12a1de15e2f844c70d19ad}{SDL\_GL\_MULTISAMPLESAMPLES}},}
+\DoxyCodeLine{240     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ac48c7a4cf9eff0fa154878988b6697db}{SDL\_GL\_ACCELERATED\_VISUAL}},}
+\DoxyCodeLine{241     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ab2409f43111e32a7233602976d8fb588}{SDL\_GL\_RETAINED\_BACKING}},}
+\DoxyCodeLine{242     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a3102858c17eea157bdfcd245695fe0e8}{SDL\_GL\_CONTEXT\_MAJOR\_VERSION}},}
+\DoxyCodeLine{243     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a5aa38fec236a59f29def7cbc26e0a459}{SDL\_GL\_CONTEXT\_MINOR\_VERSION}},}
+\DoxyCodeLine{244     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a40f4b0ae113a8f384490d685f9d48de8}{SDL\_GL\_CONTEXT\_EGL}},}
+\DoxyCodeLine{245     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4aec49ddd5d7f32394faa0bd9bf119657c}{SDL\_GL\_CONTEXT\_FLAGS}},}
+\DoxyCodeLine{246     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4aec99ff71cb16785eb431311c59bd97e0}{SDL\_GL\_CONTEXT\_PROFILE\_MASK}},}
+\DoxyCodeLine{247     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4ab162bed722047d9cd09b984a5c7e1277}{SDL\_GL\_SHARE\_WITH\_CURRENT\_CONTEXT}},}
+\DoxyCodeLine{248     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a1c7c3def7beea2c0aa8794d9da5003f4}{SDL\_GL\_FRAMEBUFFER\_SRGB\_CAPABLE}},}
+\DoxyCodeLine{249     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a1ff3378ded0143863f908062afd0c17b}{SDL\_GL\_CONTEXT\_RELEASE\_BEHAVIOR}},}
+\DoxyCodeLine{250     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a3822f24741078433542b649fac5eddb7}{SDL\_GL\_CONTEXT\_RESET\_NOTIFICATION}},}
+\DoxyCodeLine{251     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4aee607d4cdab39620c3dcc6e108b62a73}{SDL\_GL\_CONTEXT\_NO\_ERROR}},}
+\DoxyCodeLine{252     \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4a610bb0aadbc3302326e6097340deac66}{SDL\_GL\_FLOATBUFFERS}}}
+\DoxyCodeLine{253 \} \mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\_GLattr}};}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{256 \{}
+\DoxyCodeLine{257     \mbox{\hyperlink{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5fa7fae54c64a26a0e2a8dac6d47a1c510a}{SDL\_GL\_CONTEXT\_PROFILE\_CORE}}           = 0x0001,}
+\DoxyCodeLine{258     \mbox{\hyperlink{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5fa6db21ad6da230fb961fe0190a9e3398f}{SDL\_GL\_CONTEXT\_PROFILE\_COMPATIBILITY}}  = 0x0002,}
+\DoxyCodeLine{259     \mbox{\hyperlink{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5fa721fa797743fb228d804532cab8b8faa}{SDL\_GL\_CONTEXT\_PROFILE\_ES}}             = 0x0004 }
+\DoxyCodeLine{260 \} \mbox{\hyperlink{_s_d_l__video_8h_ad5ea1835b83fe139bcc182c3326d7a5f}{SDL\_GLprofile}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{263 \{}
+\DoxyCodeLine{264     \mbox{\hyperlink{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5daf47902af7f161e63161b2b2489072173}{SDL\_GL\_CONTEXT\_DEBUG\_FLAG}}              = 0x0001,}
+\DoxyCodeLine{265     \mbox{\hyperlink{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5da127c5bc8035c20dabeb006d98a8da63e}{SDL\_GL\_CONTEXT\_FORWARD\_COMPATIBLE\_FLAG}} = 0x0002,}
+\DoxyCodeLine{266     \mbox{\hyperlink{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5dac25c11305e0eb9f5e047529bd5ce3b5d}{SDL\_GL\_CONTEXT\_ROBUST\_ACCESS\_FLAG}}      = 0x0004,}
+\DoxyCodeLine{267     \mbox{\hyperlink{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5da8f39abd1936a704f37ba8162e02bbb25}{SDL\_GL\_CONTEXT\_RESET\_ISOLATION\_FLAG}}    = 0x0008}
+\DoxyCodeLine{268 \} \mbox{\hyperlink{_s_d_l__video_8h_abd0baef2bdd92997a9436f5b62b18f5d}{SDL\_GLcontextFlag}};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{271 \{}
+\DoxyCodeLine{272     \mbox{\hyperlink{_s_d_l__video_8h_a9a34b07d44a580ac7216b6c842663aeda7f6f5f576fc1fa56dcb6e8d30f4d1941}{SDL\_GL\_CONTEXT\_RELEASE\_BEHAVIOR\_NONE}}   = 0x0000,}
+\DoxyCodeLine{273     \mbox{\hyperlink{_s_d_l__video_8h_a9a34b07d44a580ac7216b6c842663aedab0f0d7285f42906890a1cfc3d5240ebe}{SDL\_GL\_CONTEXT\_RELEASE\_BEHAVIOR\_FLUSH}}  = 0x0001}
+\DoxyCodeLine{274 \} \mbox{\hyperlink{_s_d_l__video_8h_a9a34b07d44a580ac7216b6c842663aed}{SDL\_GLcontextReleaseFlag}};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{277 \{}
+\DoxyCodeLine{278     \mbox{\hyperlink{_s_d_l__video_8h_af68cd1e823f43af61bbeb1701c641375a9395326b54fec0667f99e5c081eb8bf7}{SDL\_GL\_CONTEXT\_RESET\_NO\_NOTIFICATION}} = 0x0000,}
+\DoxyCodeLine{279     \mbox{\hyperlink{_s_d_l__video_8h_af68cd1e823f43af61bbeb1701c641375a9d8b7f4f987dfe5c7f6e2ae4227a41f4}{SDL\_GL\_CONTEXT\_RESET\_LOSE\_CONTEXT}}    = 0x0001}
+\DoxyCodeLine{280 \} \mbox{\hyperlink{_s_d_l__video_8h_af68cd1e823f43af61bbeb1701c641375}{SDL\_GLContextResetNotification}};}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{294 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ac6f3250a95bd027fd1a374d7ed15fc57}{SDL\_GetNumVideoDrivers}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{309 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae88ab2c7515c52b180ef0238f8965b4b}{SDL\_GetVideoDriver}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{340 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a05244b30716f0339dcd140c6f92017b7}{SDL\_VideoInit}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *driver\_name);}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{351 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ade5fc4847320fb235f17265b683fa013}{SDL\_VideoQuit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{364 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aec2f46152701003e12689dac7de79eb9}{SDL\_GetCurrentVideoDriver}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{376 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a074d185b7ef04e0305acdeeb049dd2be}{SDL\_GetNumVideoDisplays}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{390 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a3c8523dad11fceab8a8029239185529b}{SDL\_GetDisplayName}}(\textcolor{keywordtype}{int} displayIndex);}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{406 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ac05213009395c10ae40bede2de8e08a1}{SDL\_GetDisplayBounds}}(\textcolor{keywordtype}{int} displayIndex, \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{437 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a9898f2e51cd90ace84cb0c6ea65d7051}{SDL\_GetDisplayUsableBounds}}(\textcolor{keywordtype}{int} displayIndex, \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{472 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a8207ec5d13bd87158cbb42ef76e33216}{SDL\_GetDisplayDPI}}(\textcolor{keywordtype}{int} displayIndex, \textcolor{keywordtype}{float} * ddpi, \textcolor{keywordtype}{float} * hdpi, \textcolor{keywordtype}{float} * vdpi);}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{485 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_af2b86ebfae9cd2f87ea6c18dd109dbde}{SDL\_DisplayOrientation}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a6540db01a424ced1847376e583361ecb}{SDL\_GetDisplayOrientation}}(\textcolor{keywordtype}{int} displayIndex);}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{502 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a5abcf18592f00019c517e791f8ba53fc}{SDL\_GetNumDisplayModes}}(\textcolor{keywordtype}{int} displayIndex);}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{526 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a0a53e003ec6ad24dd2bbbcd0ad297311}{SDL\_GetDisplayMode}}(\textcolor{keywordtype}{int} displayIndex, \textcolor{keywordtype}{int} modeIndex,}
+\DoxyCodeLine{527                                                \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}});}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{549 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ab97bca68fc068a6ecc3db473c4c0defd}{SDL\_GetDesktopDisplayMode}}(\textcolor{keywordtype}{int} displayIndex, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}});}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{572 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a14dce1cb33085b36f08d27b3d8f2335b}{SDL\_GetCurrentDisplayMode}}(\textcolor{keywordtype}{int} displayIndex, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}});}
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574 }
+\DoxyCodeLine{598 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a912994189211554bdd0b264e3f6d8e9f}{SDL\_GetClosestDisplayMode}}(\textcolor{keywordtype}{int} displayIndex, \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}}, \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * closest);}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{612 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a9305b50111e5d09ed2f856465abb1a45}{SDL\_GetPointDisplayIndex}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} * point);}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{627 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae9e9c75c0f9cea6db82dab980bdc9800}{SDL\_GetRectDisplayIndex}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{642 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a0be1d0a4d1f9a0da23b78db2f55871b5}{SDL\_GetWindowDisplayIndex}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{663 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a2ca17d1e857d1560738e002c9935088a}{SDL\_SetWindowDisplayMode}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{664                                                      \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}});}
+\DoxyCodeLine{665 }
+\DoxyCodeLine{680 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a8185547bc7cb0bbeb400f459792d081a}{SDL\_GetWindowDisplayMode}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{681                                                      \mbox{\hyperlink{struct_s_d_l___display_mode}{SDL\_DisplayMode}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}});}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{695 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a191991d151bc02a17b7f1b4b80a61795}{SDL\_GetWindowICCProfile}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{size\_t}* \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3d1e3edfcf61ca2d831883e1afbad89e}{size}});}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{707 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a3abb4a27f109ac055eb2a82227a9d11f}{SDL\_GetWindowPixelFormat}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{780 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\_CreateWindow}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *title,}
+\DoxyCodeLine{781                                                       \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},}
+\DoxyCodeLine{782                                                       \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac7ba7d3cce3d19ca020e056b37231289}{flags}});}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{801 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aa5ba5ca928613b022e9872dc19197f6e}{SDL\_CreateWindowFrom}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}});}
+\DoxyCodeLine{802 }
+\DoxyCodeLine{817 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a1f6c1c22ced1564ffd0d54bbf9824134}{SDL\_GetWindowID}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{833 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a61016989f88ade9a0f331c63fd200d78}{SDL\_GetWindowFromID}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{834 }
+\DoxyCodeLine{851 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a4445733f04a1a9dd0e063cd4738f285f}{SDL\_GetWindowFlags}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{852 }
+\DoxyCodeLine{865 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a41aabc4b68f75f41d97995e02eb9deb6}{SDL\_SetWindowTitle}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{866                                                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *title);}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{879 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a631b117f2c3712a55706d7fd60013536}{SDL\_GetWindowTitle}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{889 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a0b6910b5d5aa2df0aeda257e445a472e}{SDL\_SetWindowIcon}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{890                                                \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} * icon);}
+\DoxyCodeLine{891 }
+\DoxyCodeLine{906 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a4d2831ad431f59e3a5a5e472599f6c0a}{SDL\_SetWindowData}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{907                                                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}},}
+\DoxyCodeLine{908                                                 \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{909 }
+\DoxyCodeLine{921 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae2b358354dfad5523efadb95adc59ce4}{SDL\_GetWindowData}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{922                                                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}});}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{939 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ab200a53e01ddc697fd6b8e017cc4e6dd}{SDL\_SetWindowPosition}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{940                                                    \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{941 }
+\DoxyCodeLine{958 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a03adfc1ed4aaf57da4af00bd247ac99c}{SDL\_GetWindowPosition}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{959                                                    \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}});}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{983 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a29b118c6932ccb94d85b5435ae1e0a19}{SDL\_SetWindowSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},}
+\DoxyCodeLine{984                                                \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{985 }
+\DoxyCodeLine{1010 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\_GetWindowSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},}
+\DoxyCodeLine{1011                                                \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{1012 }
+\DoxyCodeLine{1045 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a1f309d151c3526b1ac3a7cb9c1a231ae}{SDL\_GetWindowBordersSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1046                                                      \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a5ab323daeacf8dfdb8f91132fecdca23}{top}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a85b8f6c07fbc1fb5d77c2ae090f21995}{left}},}
+\DoxyCodeLine{1047                                                      \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a95fc257e5ddf46f7db9d5e898cdf1991}{bottom}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a5ffadbbacc6b89cf6218bc43b384d3fe}{right}});}
+\DoxyCodeLine{1048 }
+\DoxyCodeLine{1061 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a1b6dd546d8dec383be411f98926335ae}{SDL\_SetWindowMinimumSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1062                                                       \textcolor{keywordtype}{int} min\_w, \textcolor{keywordtype}{int} min\_h);}
+\DoxyCodeLine{1063 }
+\DoxyCodeLine{1078 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_afe1c6ca08d5b8c336b1276236559287a}{SDL\_GetWindowMinimumSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1079                                                       \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{1080 }
+\DoxyCodeLine{1093 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aaf95e53a3b70d55d71d7b2cf822ea77e}{SDL\_SetWindowMaximumSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1094                                                       \textcolor{keywordtype}{int} max\_w, \textcolor{keywordtype}{int} max\_h);}
+\DoxyCodeLine{1095 }
+\DoxyCodeLine{1110 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a38d65795da3feacfec1c392c101e92fd}{SDL\_GetWindowMaximumSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1111                                                       \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}}, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{1112 }
+\DoxyCodeLine{1129 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_afb4b868e2cc0107ed6bcf5ba7aa376e0}{SDL\_SetWindowBordered}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1130                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} bordered);}
+\DoxyCodeLine{1131 }
+\DoxyCodeLine{1148 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a42d2451050ae01aaf2974344b9d4a812}{SDL\_SetWindowResizable}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1149                                                     \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} resizable);}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1165 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae6e6eed29cdb84d7c2e3b359273667a1}{SDL\_SetWindowAlwaysOnTop}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1166                                                       \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} on\_top);}
+\DoxyCodeLine{1167 }
+\DoxyCodeLine{1178 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a6051ce26885b32b80bc7285b4facd0a1}{SDL\_ShowWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1179 }
+\DoxyCodeLine{1189 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aa3cbe663e0bd62aa7a747a6c11781766}{SDL\_HideWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1190 }
+\DoxyCodeLine{1198 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a4b66b90f95780276addc14bc573c9f3c}{SDL\_RaiseWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1199 }
+\DoxyCodeLine{1210 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a8d969b660fee270f84cb403c8b75ded6}{SDL\_MaximizeWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1211 }
+\DoxyCodeLine{1222 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a9f802f6c7952552b1cb26958fad3f2a6}{SDL\_MinimizeWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1223 }
+\DoxyCodeLine{1234 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_afea37fca3b12f454e7f91d919fc99fbd}{SDL\_RestoreWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1235 }
+\DoxyCodeLine{1253 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ab4aa48f0a29f0868ce4e0422c02ed2fa}{SDL\_SetWindowFullscreen}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1254                                                     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac7ba7d3cce3d19ca020e056b37231289}{flags}});}
+\DoxyCodeLine{1255 }
+\DoxyCodeLine{1279 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a53fd405291238e8677632165afad3ea0}{SDL\_GetWindowSurface}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1280 }
+\DoxyCodeLine{1298 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a7bbfee05788dc85a1d67218cf3006653}{SDL\_UpdateWindowSurface}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1299 }
+\DoxyCodeLine{1320 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae6b0c6cf354beb87291887bfa02385b1}{SDL\_UpdateWindowSurfaceRects}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1321                                                          \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rects,}
+\DoxyCodeLine{1322                                                          \textcolor{keywordtype}{int} numrects);}
+\DoxyCodeLine{1323 }
+\DoxyCodeLine{1342 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_abe7fd559e9d6da046c5984dea679a89b}{SDL\_SetWindowGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1343                                                \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} grabbed);}
+\DoxyCodeLine{1344 }
+\DoxyCodeLine{1373 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a474b4cf41f81e65f88243b7616ad1789}{SDL\_SetWindowKeyboardGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1374                                                        \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} grabbed);}
+\DoxyCodeLine{1375 }
+\DoxyCodeLine{1390 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a1777999c919b478bc736f4a444c65381}{SDL\_SetWindowMouseGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1391                                                     \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} grabbed);}
+\DoxyCodeLine{1392 }
+\DoxyCodeLine{1403 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ad4e451db3880b6e0dd6647cbc351c6c0}{SDL\_GetWindowGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1404 }
+\DoxyCodeLine{1416 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_af34c1a3d017f800f3266257eeda19a61}{SDL\_GetWindowKeyboardGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1417 }
+\DoxyCodeLine{1429 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a2aaf67c9351b65a6517c78a32f651e46}{SDL\_GetWindowMouseGrab}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1430 }
+\DoxyCodeLine{1441 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a6d0a45787b2a383bed8ed56133b04eab}{SDL\_GetGrabbedWindow}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1442 }
+\DoxyCodeLine{1460 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aa4fe6c9f78691def921be2882e8e1747}{SDL\_SetWindowMouseRect}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * rect);}
+\DoxyCodeLine{1461 }
+\DoxyCodeLine{1473 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae41bb7764e10f1a8f189a49690ea1528}{SDL\_GetWindowMouseRect}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1474 }
+\DoxyCodeLine{1501 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a896972250b4d2e0f75888fa44fa792ec}{SDL\_SetWindowBrightness}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{float} brightness);}
+\DoxyCodeLine{1502 }
+\DoxyCodeLine{1520 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{float} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a21c10969331c89e8d0e6a8f998a3c319}{SDL\_GetWindowBrightness}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1521 }
+\DoxyCodeLine{1539 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ac10be8659aa8b5bdefb8ce43b6961f7f}{SDL\_SetWindowOpacity}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{float} opacity);}
+\DoxyCodeLine{1540 }
+\DoxyCodeLine{1560 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a9a85fb11978adecf13a04976efe6ceca}{SDL\_GetWindowOpacity}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{float} * out\_opacity);}
+\DoxyCodeLine{1561 }
+\DoxyCodeLine{1572 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_afb7627a0ede24c28453857fff4f02aca}{SDL\_SetWindowModalFor}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * modal\_window, \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * parent\_window);}
+\DoxyCodeLine{1573 }
+\DoxyCodeLine{1589 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aa77986a0f56e51f216af57d829bca896}{SDL\_SetWindowInputFocus}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1590 }
+\DoxyCodeLine{1621 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a6799acf235454f519ac209ccf14caa67}{SDL\_SetWindowGammaRamp}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1622                                                    \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * red,}
+\DoxyCodeLine{1623                                                    \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac14cda87cf6c751d53b65a3cd41c35a1}{green}},}
+\DoxyCodeLine{1624                                                    \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1853b32584a90fa75432925f3e26d0e8}{blue}});}
+\DoxyCodeLine{1625 }
+\DoxyCodeLine{1649 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_af4d647be3bb21a33586d69d5cad87ead}{SDL\_GetWindowGammaRamp}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1650                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * red,}
+\DoxyCodeLine{1651                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac14cda87cf6c751d53b65a3cd41c35a1}{green}},}
+\DoxyCodeLine{1652                                                    \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1853b32584a90fa75432925f3e26d0e8}{blue}});}
+\DoxyCodeLine{1653 }
+\DoxyCodeLine{1659 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{1660 \{}
+\DoxyCodeLine{1661     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a3eb7be45c88e40366315d453f3bf721e}{SDL\_HITTEST\_NORMAL}},  }
+\DoxyCodeLine{1662     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a078a028af8c26848cf3576bd0c4d8fc9}{SDL\_HITTEST\_DRAGGABLE}},  }
+\DoxyCodeLine{1663     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5acbfbe2bde22d4fdce5b19f327fd26798}{SDL\_HITTEST\_RESIZE\_TOPLEFT}},}
+\DoxyCodeLine{1664     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a19edd2ad7c4f276d13a21aaf61672fcd}{SDL\_HITTEST\_RESIZE\_TOP}},}
+\DoxyCodeLine{1665     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a2119a0469719b69f16a1f35ab810aff3}{SDL\_HITTEST\_RESIZE\_TOPRIGHT}},}
+\DoxyCodeLine{1666     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5ac8c0e2ed653a7b69243e317867d8ac42}{SDL\_HITTEST\_RESIZE\_RIGHT}},}
+\DoxyCodeLine{1667     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a7be4783a68f0c51166dbd289d9a42c51}{SDL\_HITTEST\_RESIZE\_BOTTOMRIGHT}},}
+\DoxyCodeLine{1668     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a689ac09305aee5ee819aa39625f848db}{SDL\_HITTEST\_RESIZE\_BOTTOM}},}
+\DoxyCodeLine{1669     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a94f9165ed48fb13d6996eae2a83154bf}{SDL\_HITTEST\_RESIZE\_BOTTOMLEFT}},}
+\DoxyCodeLine{1670     \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5a09656621305e2f938a864fc425fe0869}{SDL\_HITTEST\_RESIZE\_LEFT}}}
+\DoxyCodeLine{1671 \} \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\_HitTestResult}};}
+\DoxyCodeLine{1672 }
+\DoxyCodeLine{1683 \textcolor{keyword}{typedef} \mbox{\hyperlink{_s_d_l__video_8h_a0415a108581752b68c6aca800ff3bad5}{SDL\_HitTestResult}} (\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} *\mbox{\hyperlink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\_HitTest}})(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *win,}
+\DoxyCodeLine{1684                                                  \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} *area,}
+\DoxyCodeLine{1685                                                  \textcolor{keywordtype}{void} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}});}
+\DoxyCodeLine{1686 }
+\DoxyCodeLine{1727 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a23e14e1f21f7fb3727f38fd9b0711186}{SDL\_SetWindowHitTest}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1728                                                  \mbox{\hyperlink{_s_d_l__video_8h_a247c7fd43bb60b20630945a5bd9e4957}{SDL\_HitTest}} callback,}
+\DoxyCodeLine{1729                                                  \textcolor{keywordtype}{void} *callback\_data);}
+\DoxyCodeLine{1730 }
+\DoxyCodeLine{1741 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a20c2c00579bb4b1fa6c15124621bbc6e}{SDL\_FlashWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \mbox{\hyperlink{_s_d_l__video_8h_a32391ac4af019aac0e487845adb5baaf}{SDL\_FlashOperation}} operation);}
+\DoxyCodeLine{1742 }
+\DoxyCodeLine{1756 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a72609295a4faee0587268339ccff80c2}{SDL\_DestroyWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{1757 }
+\DoxyCodeLine{1758 }
+\DoxyCodeLine{1775 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a4b5c116d57947bf508c13b21aac49cbf}{SDL\_IsScreenSaverEnabled}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1776 }
+\DoxyCodeLine{1785 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a17846c713066aa29a86e1be205a7fc3e}{SDL\_EnableScreenSaver}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1786 }
+\DoxyCodeLine{1798 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a68eb0d850934fa1c7ac12c30f2d56a84}{SDL\_DisableScreenSaver}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1799 }
+\DoxyCodeLine{1800 }
+\DoxyCodeLine{1804 \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{1805 }
+\DoxyCodeLine{1826 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a398df9aaf43a69dc2cfaab5b306b8f91}{SDL\_GL\_LoadLibrary}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab25d8cd967ccbd19b630d7100ff8f67e}{path}});}
+\DoxyCodeLine{1827 }
+\DoxyCodeLine{1879 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} *\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a6500d698e7dbe6799250a626a8b42359}{SDL\_GL\_GetProcAddress}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *proc);}
+\DoxyCodeLine{1880 }
+\DoxyCodeLine{1888 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a92103adf9637ec2dc471714076872bdc}{SDL\_GL\_UnloadLibrary}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1889 }
+\DoxyCodeLine{1909 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a1fa0cc176fbc16db139b40a121e9cfa7}{SDL\_GL\_ExtensionSupported}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}}
+\DoxyCodeLine{1910                                                            *extension);}
+\DoxyCodeLine{1911 }
+\DoxyCodeLine{1920 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ac96f25a7a6b28387d2813d8db71921ff}{SDL\_GL\_ResetAttributes}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{1921 }
+\DoxyCodeLine{1940 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aed4d4347f2d5def1532bc22893e0e0d9}{SDL\_GL\_SetAttribute}}(\mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\_GLattr}} attr, \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}});}
+\DoxyCodeLine{1941 }
+\DoxyCodeLine{1955 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a611bbed6c7374329e1d1b9c31b06976d}{SDL\_GL\_GetAttribute}}(\mbox{\hyperlink{_s_d_l__video_8h_a2de24951bbc6626dc259ec0db5ae8ed4}{SDL\_GLattr}} attr, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}});}
+\DoxyCodeLine{1956 }
+\DoxyCodeLine{1977 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\_GLContext}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a0e14c935cf304133278893bf6c1d2691}{SDL\_GL\_CreateContext}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *}
+\DoxyCodeLine{1978                                                            window);}
+\DoxyCodeLine{1979 }
+\DoxyCodeLine{1994 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a5a2ad98e8920f8069bf89eb3f9bbc377}{SDL\_GL\_MakeCurrent}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window,}
+\DoxyCodeLine{1995                                                \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\_GLContext}} context);}
+\DoxyCodeLine{1996 }
+\DoxyCodeLine{2005 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}}* \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a98181cae6b6d56f3bdbe9f83e46482de}{SDL\_GL\_GetCurrentWindow}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{2006 }
+\DoxyCodeLine{2017 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\_GLContext}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a742f600404b9090bd64f8e863ece98c8}{SDL\_GL\_GetCurrentContext}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{2018 }
+\DoxyCodeLine{2039 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\_GL\_GetDrawableSize}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},}
+\DoxyCodeLine{2040                                                     \textcolor{keywordtype}{int} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}});}
+\DoxyCodeLine{2041 }
+\DoxyCodeLine{2069 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a68b0d06595d086d9244fd49afe3e8360}{SDL\_GL\_SetSwapInterval}}(\textcolor{keywordtype}{int} interval);}
+\DoxyCodeLine{2070 }
+\DoxyCodeLine{2086 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_ae96490db6285ed0df44a9b1c0f498605}{SDL\_GL\_GetSwapInterval}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{2087 }
+\DoxyCodeLine{2102 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_a11d1245662f49f6af257627119f22835}{SDL\_GL\_SwapWindow}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window);}
+\DoxyCodeLine{2103 }
+\DoxyCodeLine{2113 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__video_8h_aa64ab050e0bd3a61057c3dffe953aa9f}{SDL\_GL\_DeleteContext}}(\mbox{\hyperlink{_s_d_l__video_8h_a0d64dcf67c9685d09cbe051448e1b3f3}{SDL\_GLContext}} context);}
+\DoxyCodeLine{2114 }
+\DoxyCodeLine{2115 \textcolor{comment}{/* @\} */}\textcolor{comment}{/* OpenGL support functions */}}
+\DoxyCodeLine{2116 }
+\DoxyCodeLine{2117 }
+\DoxyCodeLine{2118 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{2119 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{2120 \}}
+\DoxyCodeLine{2121 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{2122 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{2123 }
+\DoxyCodeLine{2124 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_video\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{2125 }
+\DoxyCodeLine{2126 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

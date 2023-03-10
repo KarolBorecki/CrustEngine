@@ -1,0 +1,167 @@
+\hypertarget{_s_d_l__main_8h_source}{}\doxysection{SDL\+\_\+main.\+h}
+\label{_s_d_l__main_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_main.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_main.h}}
+\mbox{\hyperlink{_s_d_l__main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_main\_h\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_main\_h\_}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#if defined(\_\_WIN32\_\_)}}
+\DoxyCodeLine{35 \textcolor{comment}{/* On Windows SDL provides WinMain(), which parses the command line and passes}}
+\DoxyCodeLine{36 \textcolor{comment}{   the arguments to your main function.}}
+\DoxyCodeLine{37 \textcolor{comment}{}}
+\DoxyCodeLine{38 \textcolor{comment}{   If you provide your own WinMain(), you may define SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define SDL\_MAIN\_AVAILABLE}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#elif defined(\_\_WINRT\_\_)}}
+\DoxyCodeLine{43 \textcolor{comment}{/* On WinRT, SDL provides a main function that initializes CoreApplication,}}
+\DoxyCodeLine{44 \textcolor{comment}{   creating an instance of IFrameworkView in the process.}}
+\DoxyCodeLine{45 \textcolor{comment}{}}
+\DoxyCodeLine{46 \textcolor{comment}{   Please note that \#include'ing SDL\_main.h is not enough to get a main()}}
+\DoxyCodeLine{47 \textcolor{comment}{   function working.  In non-\/XAML apps, the file,}}
+\DoxyCodeLine{48 \textcolor{comment}{   src/main/winrt/SDL\_WinRT\_main\_NonXAML.cpp, or a copy of it, must be compiled}}
+\DoxyCodeLine{49 \textcolor{comment}{   into the app itself.  In XAML apps, the function, SDL\_WinRTRunApp must be}}
+\DoxyCodeLine{50 \textcolor{comment}{   called, with a pointer to the Direct3D-\/hosted XAML control passed in.}}
+\DoxyCodeLine{51 \textcolor{comment}{*/}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#elif defined(\_\_GDK\_\_)}}
+\DoxyCodeLine{55 \textcolor{comment}{/* On GDK, SDL provides a main function that initializes the game runtime.}}
+\DoxyCodeLine{56 \textcolor{comment}{}}
+\DoxyCodeLine{57 \textcolor{comment}{   Please note that \#include'ing SDL\_main.h is not enough to get a main()}}
+\DoxyCodeLine{58 \textcolor{comment}{   function working. You must either link against SDL2main or, if not possible,}}
+\DoxyCodeLine{59 \textcolor{comment}{   call the SDL\_GDKRunApp function from your entry point.}}
+\DoxyCodeLine{60 \textcolor{comment}{*/}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#elif defined(\_\_IPHONEOS\_\_)}}
+\DoxyCodeLine{64 \textcolor{comment}{/* On iOS SDL provides a main function that creates an application delegate}}
+\DoxyCodeLine{65 \textcolor{comment}{   and starts the iOS application run loop.}}
+\DoxyCodeLine{66 \textcolor{comment}{}}
+\DoxyCodeLine{67 \textcolor{comment}{   If you link with SDL dynamically on iOS, the main function can't be in a}}
+\DoxyCodeLine{68 \textcolor{comment}{   shared library, so you need to link with libSDLmain.a, which includes a}}
+\DoxyCodeLine{69 \textcolor{comment}{   stub main function that calls into the shared library to start execution.}}
+\DoxyCodeLine{70 \textcolor{comment}{}}
+\DoxyCodeLine{71 \textcolor{comment}{   See src/video/uikit/SDL\_uikitappdelegate.m for more details.}}
+\DoxyCodeLine{72 \textcolor{comment}{ */}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#elif defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{76 \textcolor{comment}{/* On Android SDL provides a Java class in SDLActivity.java that is the}}
+\DoxyCodeLine{77 \textcolor{comment}{   main activity entry point.}}
+\DoxyCodeLine{78 \textcolor{comment}{}}
+\DoxyCodeLine{79 \textcolor{comment}{   See docs/README-\/android.md for more details on extending that class.}}
+\DoxyCodeLine{80 \textcolor{comment}{ */}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{comment}{/* We need to export SDL\_main so it can be launched from Java */}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define SDLMAIN\_DECLSPEC    DECLSPEC}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#elif defined(\_\_NACL\_\_)}}
+\DoxyCodeLine{87 \textcolor{comment}{/* On NACL we use ppapi\_simple to set up the application helper code,}}
+\DoxyCodeLine{88 \textcolor{comment}{   then wait for the first PSE\_INSTANCE\_DIDCHANGEVIEW event before }}
+\DoxyCodeLine{89 \textcolor{comment}{   starting the user main function.}}
+\DoxyCodeLine{90 \textcolor{comment}{   All user code is run in a separate thread by ppapi\_simple, thus }}
+\DoxyCodeLine{91 \textcolor{comment}{   allowing for blocking io to take place via nacl\_io}}
+\DoxyCodeLine{92 \textcolor{comment}{*/}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define SDL\_MAIN\_NEEDED}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#elif defined(\_\_PSP\_\_)}}
+\DoxyCodeLine{96 \textcolor{comment}{/* On PSP SDL provides a main function that sets the module info,}}
+\DoxyCodeLine{97 \textcolor{comment}{   activates the GPU and starts the thread required to be able to exit}}
+\DoxyCodeLine{98 \textcolor{comment}{   the software.}}
+\DoxyCodeLine{99 \textcolor{comment}{}}
+\DoxyCodeLine{100 \textcolor{comment}{   If you provide this yourself, you may define SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{101 \textcolor{comment}{ */}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define SDL\_MAIN\_AVAILABLE}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#elif defined(\_\_PS2\_\_)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define SDL\_MAIN\_AVAILABLE}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define SDL\_PS2\_SKIP\_IOP\_RESET() \(\backslash\)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{   void reset\_IOP(); \(\backslash\)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{   void reset\_IOP() \{\}}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_MAIN\_HANDLED */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#ifndef SDLMAIN\_DECLSPEC}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define SDLMAIN\_DECLSPEC}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#if defined(SDL\_MAIN\_NEEDED) || defined(SDL\_MAIN\_AVAILABLE)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define main    SDL\_main}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{145 \textcolor{keyword}{typedef} int (*\mbox{\hyperlink{_s_d_l__main_8h_a824db1a8625cd44144b424017466c4f9}{SDL\_main\_func}})(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[]);}
+\DoxyCodeLine{146 \textcolor{keyword}{extern} \mbox{\hyperlink{_s_d_l__main_8h_a3934e9a3a2bfa70c194144202edf41bb}{SDLMAIN\_DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__main_8h_a35282508ae396e1fd5711ff3d85e08a7}{SDL\_main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[]);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{162 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__main_8h_a6a4bb5ffb489bf0956bc1b813397306d}{SDL\_SetMainReady}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#if defined(\_\_WIN32\_\_) || defined(\_\_GDK\_\_)}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{189 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\_RegisterApp(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} style, \textcolor{keywordtype}{void} *hInst);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{206 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\_UnregisterApp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* defined(\_\_WIN32\_\_) || defined(\_\_GDK\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#ifdef \_\_WINRT\_\_}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{223 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\_WinRTRunApp(\mbox{\hyperlink{_s_d_l__main_8h_a824db1a8625cd44144b424017466c4f9}{SDL\_main\_func}} mainFunction, \textcolor{keywordtype}{void} * reserved);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_WINRT\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#if defined(\_\_IPHONEOS\_\_)}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{239 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\_UIKitRunApp(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[], \mbox{\hyperlink{_s_d_l__main_8h_a824db1a8625cd44144b424017466c4f9}{SDL\_main\_func}} mainFunction);}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_IPHONEOS\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#ifdef \_\_GDK\_\_}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{255 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\_GDKRunApp(\mbox{\hyperlink{_s_d_l__main_8h_a824db1a8625cd44144b424017466c4f9}{SDL\_main\_func}} mainFunction, \textcolor{keywordtype}{void} *reserved);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_GDK\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_main\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

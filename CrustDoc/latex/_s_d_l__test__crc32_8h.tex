@@ -1,0 +1,142 @@
+\hypertarget{_s_d_l__test__crc32_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+test\+\_\+crc32.h File Reference}
+\label{_s_d_l__test__crc32_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_crc32.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_crc32.h}}
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}}~unsigned int
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}{Crc\+Uint8}}~unsigned char
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__crc32_8h_a39e1b7cfc3c0d80ea907e6486d288796}{CRC32\+\_\+\+POLY}}~0x\+EDB88320   /$\ast$ Perl String\+::\+CRC32 compatible $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a06655d4056d1992fa85a1849b4f3eeeb}{SDLTest\+\_\+\+Crc32\+Init}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context)
+\begin{DoxyCompactList}\small\item\em Initialize the CRC context. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a0397333489338ed3fca5dc0f892070cd}{SDLTest\+\_\+\+Crc32\+Calc}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context, \mbox{\hyperlink{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}{Crc\+Uint8}} $\ast$in\+Buf, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} in\+Len, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$crc32)
+\begin{DoxyCompactList}\small\item\em calculate a crc32 from a data block \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a4f78079f5b6871a22dc955b3593731d0}{SDLTest\+\_\+\+Crc32\+Calc\+Start}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$crc32)
+\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a8e41b3f8fe2e0d8ff591f6a492c6d5b8}{SDLTest\+\_\+\+Crc32\+Calc\+End}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$crc32)
+\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a19e6816b8d3c2d11214308a301c7164f}{SDLTest\+\_\+\+Crc32\+Calc\+Buffer}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context, \mbox{\hyperlink{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}{Crc\+Uint8}} $\ast$in\+Buf, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} in\+Len, \mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$crc32)
+\item 
+int \mbox{\hyperlink{_s_d_l__test__crc32_8h_a020b58aa3d188466b41b7c9e526c18ec}{SDLTest\+\_\+\+Crc32\+Done}} (\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$crc\+Context)
+\begin{DoxyCompactList}\small\item\em clean up CRC context \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a39e1b7cfc3c0d80ea907e6486d288796}\label{_s_d_l__test__crc32_8h_a39e1b7cfc3c0d80ea907e6486d288796}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!CRC32\_POLY@{CRC32\_POLY}}
+\index{CRC32\_POLY@{CRC32\_POLY}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{CRC32\_POLY}{CRC32\_POLY}}
+{\footnotesize\ttfamily \#define CRC32\+\_\+\+POLY~0x\+EDB88320   /$\ast$ Perl String\+::\+CRC32 compatible $\ast$/}
+
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}\label{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!CrcUint32@{CrcUint32}}
+\index{CrcUint32@{CrcUint32}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{CrcUint32}{CrcUint32}}
+{\footnotesize\ttfamily \#define Crc\+Uint32~unsigned int}
+
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}\label{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!CrcUint8@{CrcUint8}}
+\index{CrcUint8@{CrcUint8}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{CrcUint8}{CrcUint8}}
+{\footnotesize\ttfamily \#define Crc\+Uint8~unsigned char}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a0397333489338ed3fca5dc0f892070cd}\label{_s_d_l__test__crc32_8h_a0397333489338ed3fca5dc0f892070cd}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32Calc@{SDLTest\_Crc32Calc}}
+\index{SDLTest\_Crc32Calc@{SDLTest\_Crc32Calc}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32Calc()}{SDLTest\_Crc32Calc()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Calc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}{Crc\+Uint8}} $\ast$}]{in\+Buf,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}}}]{in\+Len,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$}]{crc32 }\end{DoxyParamCaption})}
+
+
+
+calculate a crc32 from a data block 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crc\+Context} & pointer to context variable \\
+\hline
+{\em in\+Buf} & input buffer to checksum \\
+\hline
+{\em in\+Len} & length of input buffer \\
+\hline
+{\em crc32} & pointer to Uint32 to store the final CRC into\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for OK, -\/1 on error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a19e6816b8d3c2d11214308a301c7164f}\label{_s_d_l__test__crc32_8h_a19e6816b8d3c2d11214308a301c7164f}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32CalcBuffer@{SDLTest\_Crc32CalcBuffer}}
+\index{SDLTest\_Crc32CalcBuffer@{SDLTest\_Crc32CalcBuffer}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32CalcBuffer()}{SDLTest\_Crc32CalcBuffer()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Calc\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_a8f6936196be4a985dadbb0c0549aacf2}{Crc\+Uint8}} $\ast$}]{in\+Buf,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}}}]{in\+Len,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$}]{crc32 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a8e41b3f8fe2e0d8ff591f6a492c6d5b8}\label{_s_d_l__test__crc32_8h_a8e41b3f8fe2e0d8ff591f6a492c6d5b8}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32CalcEnd@{SDLTest\_Crc32CalcEnd}}
+\index{SDLTest\_Crc32CalcEnd@{SDLTest\_Crc32CalcEnd}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32CalcEnd()}{SDLTest\_Crc32CalcEnd()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Calc\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$}]{crc32 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a4f78079f5b6871a22dc955b3593731d0}\label{_s_d_l__test__crc32_8h_a4f78079f5b6871a22dc955b3593731d0}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32CalcStart@{SDLTest\_Crc32CalcStart}}
+\index{SDLTest\_Crc32CalcStart@{SDLTest\_Crc32CalcStart}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32CalcStart()}{SDLTest\_Crc32CalcStart()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Calc\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context,  }\item[{\mbox{\hyperlink{_s_d_l__test__crc32_8h_ac0e8fe38fa91e9aa4b32957420795387}{Crc\+Uint32}} $\ast$}]{crc32 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a020b58aa3d188466b41b7c9e526c18ec}\label{_s_d_l__test__crc32_8h_a020b58aa3d188466b41b7c9e526c18ec}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32Done@{SDLTest\_Crc32Done}}
+\index{SDLTest\_Crc32Done@{SDLTest\_Crc32Done}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32Done()}{SDLTest\_Crc32Done()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context }\end{DoxyParamCaption})}
+
+
+
+clean up CRC context 
+
+
+\begin{DoxyParams}{Parameters}
+{\em crc\+Context} & pointer to context variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for OK, -\/1 on error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__crc32_8h_a06655d4056d1992fa85a1849b4f3eeeb}\label{_s_d_l__test__crc32_8h_a06655d4056d1992fa85a1849b4f3eeeb}} 
+\index{SDL\_test\_crc32.h@{SDL\_test\_crc32.h}!SDLTest\_Crc32Init@{SDLTest\_Crc32Init}}
+\index{SDLTest\_Crc32Init@{SDLTest\_Crc32Init}!SDL\_test\_crc32.h@{SDL\_test\_crc32.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_Crc32Init()}{SDLTest\_Crc32Init()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Crc32\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___crc32_context}{SDLTest\+\_\+\+Crc32\+Context}} $\ast$}]{crc\+Context }\end{DoxyParamCaption})}
+
+
+
+Initialize the CRC context. 
+
+Note\+: The function initializes the crc table required for all crc calculations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em crc\+Context} & pointer to context variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for OK, -\/1 on error 
+\end{DoxyReturn}

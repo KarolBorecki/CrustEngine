@@ -1,0 +1,96 @@
+\hypertarget{_s_d_l__test__md5_8h_source}{}\doxysection{SDL\+\_\+test\+\_\+md5.\+h}
+\label{_s_d_l__test__md5_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_md5.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_md5.h}}
+\mbox{\hyperlink{_s_d_l__test__md5_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ ***********************************************************************}}
+\DoxyCodeLine{32 \textcolor{comment}{ ** Header file for implementation of MD5                             **}}
+\DoxyCodeLine{33 \textcolor{comment}{ ** RSA Data Security, Inc. MD5 Message-\/Digest Algorithm              **}}
+\DoxyCodeLine{34 \textcolor{comment}{ ** Created: 2/17/90 RLR                                              **}}
+\DoxyCodeLine{35 \textcolor{comment}{ ** Revised: 12/27/90 SRD,AJ,BSK,JT Reference C version               **}}
+\DoxyCodeLine{36 \textcolor{comment}{ ** Revised (for MD5): RLR 4/27/91                                    **}}
+\DoxyCodeLine{37 \textcolor{comment}{ **   -\/-\/ G modified to have y\&\string~z instead of y\&z                       **}}
+\DoxyCodeLine{38 \textcolor{comment}{ **   -\/-\/ FF, GG, HH modified to add in last register done             **}}
+\DoxyCodeLine{39 \textcolor{comment}{ **   -\/-\/ Access pattern: round 2 works mod 5, round 3 works mod 3     **}}
+\DoxyCodeLine{40 \textcolor{comment}{ **   -\/-\/ distinct additive constant for each step                     **}}
+\DoxyCodeLine{41 \textcolor{comment}{ **   -\/-\/ round 4 added, working mod 7                                 **}}
+\DoxyCodeLine{42 \textcolor{comment}{ ***********************************************************************}}
+\DoxyCodeLine{43 \textcolor{comment}{*/}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{/*}}
+\DoxyCodeLine{46 \textcolor{comment}{ ***********************************************************************}}
+\DoxyCodeLine{47 \textcolor{comment}{ **  Message-\/digest routines:                                         **}}
+\DoxyCodeLine{48 \textcolor{comment}{ **  To form the message digest for a message M                       **}}
+\DoxyCodeLine{49 \textcolor{comment}{ **    (1) Initialize a context buffer mdContext using MD5Init        **}}
+\DoxyCodeLine{50 \textcolor{comment}{ **    (2) Call MD5Update on mdContext and M                          **}}
+\DoxyCodeLine{51 \textcolor{comment}{ **    (3) Call MD5Final on mdContext                                 **}}
+\DoxyCodeLine{52 \textcolor{comment}{ **  The message digest is now in mdContext-\/>digest[0...15]           **}}
+\DoxyCodeLine{53 \textcolor{comment}{ ***********************************************************************}}
+\DoxyCodeLine{54 \textcolor{comment}{*/}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifndef SDL\_test\_md5\_h\_}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define SDL\_test\_md5\_h\_}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{60 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{62 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* typedef a 32-\/bit type */}}
+\DoxyCodeLine{68   \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__test__md5_8h_a2bdcfd1b3373be8191c70eb4a7cb84c6}{MD5UINT4}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/* Data structure for MD5 (Message-\/Digest) computation */}}
+\DoxyCodeLine{71   \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{72     \mbox{\hyperlink{_s_d_l__test__md5_8h_a2bdcfd1b3373be8191c70eb4a7cb84c6}{MD5UINT4}}  i[2];     \textcolor{comment}{/* number of \_bits\_ handled mod 2\string^64 */}}
+\DoxyCodeLine{73     \mbox{\hyperlink{_s_d_l__test__md5_8h_a2bdcfd1b3373be8191c70eb4a7cb84c6}{MD5UINT4}}  \mbox{\hyperlink{_s_d_l__opengl__glext_8h_aa3b73d9ca9f2e2396cbeae1ce6ce14be}{buf}}[4];       \textcolor{comment}{/* scratch buffer */}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a83ad0ee7f1e06b59c90271716e689080}{in}}[64];   \textcolor{comment}{/* input buffer */}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} digest[16];   \textcolor{comment}{/* actual digest after Md5Final call */}}
+\DoxyCodeLine{76   \} \mbox{\hyperlink{struct_s_d_l_test___md5_context}{SDLTest\_Md5Context}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Function Prototypes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{89  \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__md5_8h_add801a5f4162ed3bb0211d0e7b5829ec}{SDLTest\_Md5Init}}(\mbox{\hyperlink{struct_s_d_l_test___md5_context}{SDLTest\_Md5Context}} * mdContext);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{104  \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__md5_8h_a435607e2ee1bf1ce09686ef97c21a7d5}{SDLTest\_Md5Update}}(\mbox{\hyperlink{struct_s_d_l_test___md5_context}{SDLTest\_Md5Context}} * mdContext, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *inBuf,}
+\DoxyCodeLine{105                  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} inLen);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{118  \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__md5_8h_a3f0bd1fb177aea21d09b3ff7b3323e77}{SDLTest\_Md5Final}}(\mbox{\hyperlink{struct_s_d_l_test___md5_context}{SDLTest\_Md5Context}} * mdContext);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{123 \}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_test\_md5\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

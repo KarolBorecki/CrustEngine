@@ -1,0 +1,115 @@
+\hypertarget{_s_d_l__bits_8h_source}{}\doxysection{SDL\+\_\+bits.\+h}
+\label{_s_d_l__bits_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_bits.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_bits.h}}
+\mbox{\hyperlink{_s_d_l__bits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_bits\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_bits\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{36 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#if defined(\_\_WATCOMC\_\_) \&\& defined(\_\_386\_\_)}}
+\DoxyCodeLine{51 \textcolor{keyword}{extern} \_\_inline \textcolor{keywordtype}{int} \_SDL\_bsr\_watcom(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}});}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma aux \_SDL\_bsr\_watcom = \(\backslash\)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    "{}bsr eax, eax"{}} \(\backslash\)}
+\DoxyCodeLine{54     parm [eax] nomemory \(\backslash\)}
+\DoxyCodeLine{55     value [eax] \(\backslash\)}
+\DoxyCodeLine{56     modify exact [eax] nomemory;}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \mbox{\hyperlink{begin__code_8h_addf1f12c70f89102cc187297860c5961}{SDL\_FORCE\_INLINE}} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{60 \mbox{\hyperlink{_s_d_l__bits_8h_ada8cd16089cc635936dfe1a6884729a4}{SDL\_MostSignificantBitIndex32}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}})}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& (\_\_GNUC\_\_ >= 4 || (\_\_GNUC\_\_ == 3 \&\& \_\_GNUC\_MINOR\_\_ >= 4))}}
+\DoxyCodeLine{63     \textcolor{comment}{/* Count Leading Zeroes builtin in GCC.}}
+\DoxyCodeLine{64 \textcolor{comment}{     * http://gcc.gnu.org/onlinedocs/gcc-\/4.3.4/gcc/Other-\/Builtins.html}}
+\DoxyCodeLine{65 \textcolor{comment}{     */}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} == 0) \{}
+\DoxyCodeLine{67         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} 31 -\/ \_\_builtin\_clz(\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}});}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#elif defined(\_\_WATCOMC\_\_) \&\& defined(\_\_386\_\_)}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} == 0) \{}
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} \_SDL\_bsr\_watcom(\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}});}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER)}}
+\DoxyCodeLine{76     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}};}
+\DoxyCodeLine{77     \textcolor{keywordflow}{if} (\_BitScanReverse(\&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}})) \{}
+\DoxyCodeLine{78         \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}};}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{82     \textcolor{comment}{/* Based off of Bit Twiddling Hacks by Sean Eron Anderson}}
+\DoxyCodeLine{83 \textcolor{comment}{     * <seander@cs.stanford.edu>, released in the public domain.}}
+\DoxyCodeLine{84 \textcolor{comment}{     * http://graphics.stanford.edu/\string~seander/bithacks.html\#IntegerLog}}
+\DoxyCodeLine{85 \textcolor{comment}{     */}}
+\DoxyCodeLine{86     \textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}[] = \{0x2, 0xC, 0xF0, 0xFF00, 0xFFFF0000\};}
+\DoxyCodeLine{87     \textcolor{keyword}{const} \textcolor{keywordtype}{int}    S[] = \{1, 2, 4, 8, 16\};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} msbIndex = 0;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} == 0) \{}
+\DoxyCodeLine{93         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordflow}{for} (i = 4; i >= 0; i-\/-\/)}
+\DoxyCodeLine{97     \{}
+\DoxyCodeLine{98         \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} \& \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}[i])}
+\DoxyCodeLine{99         \{}
+\DoxyCodeLine{100             \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} >>= S[i];}
+\DoxyCodeLine{101             msbIndex |= S[i];}
+\DoxyCodeLine{102         \}}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} msbIndex;}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \mbox{\hyperlink{begin__code_8h_addf1f12c70f89102cc187297860c5961}{SDL\_FORCE\_INLINE}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}}}
+\DoxyCodeLine{110 \mbox{\hyperlink{_s_d_l__bits_8h_a9ca9ab50814f9cfbce5c1cba379b001d}{SDL\_HasExactlyOneBitSet32}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}})}
+\DoxyCodeLine{111 \{}
+\DoxyCodeLine{112     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} \&\& !(\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} \& (\mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}} -\/ 1))) \{}
+\DoxyCodeLine{113         \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74}{SDL\_TRUE}};}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2}{SDL\_FALSE}};}
+\DoxyCodeLine{116 \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{120 \}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_bits\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

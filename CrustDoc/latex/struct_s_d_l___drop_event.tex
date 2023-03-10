@@ -1,0 +1,62 @@
+\hypertarget{struct_s_d_l___drop_event}{}\doxysection{SDL\+\_\+\+Drop\+Event Struct Reference}
+\label{struct_s_d_l___drop_event}\index{SDL\_DropEvent@{SDL\_DropEvent}}
+
+
+An event used to request a file open by the system (event.\+drop.$\ast$) This event is enabled by default, you can disable it with \mbox{\hyperlink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()}}.  
+
+
+
+
+{\ttfamily \#include $<$SDL\+\_\+events.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a5ea27cfaa5f8d4940e9a69b68b3cc035}{type}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a02d2c81bb22db632a40cd0021ff751ab}{timestamp}}
+\item 
+char $\ast$ \mbox{\hyperlink{struct_s_d_l___drop_event_abc41ef4beb62e1d8b56827128b29585f}{file}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a8cecd2178cdc04118bf852e7cf7bf647}{window\+ID}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An event used to request a file open by the system (event.\+drop.$\ast$) This event is enabled by default, you can disable it with \mbox{\hyperlink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\+\_\+\+Event\+State()}}. 
+
+\begin{DoxyNote}{Note}
+If this event is enabled, you must free the filename in the event. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_l___drop_event_abc41ef4beb62e1d8b56827128b29585f}\label{struct_s_d_l___drop_event_abc41ef4beb62e1d8b56827128b29585f}} 
+\index{SDL\_DropEvent@{SDL\_DropEvent}!file@{file}}
+\index{file@{file}!SDL\_DropEvent@{SDL\_DropEvent}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily char$\ast$ SDL\+\_\+\+Drop\+Event\+::file}
+
+The file name, which should be freed with \mbox{\hyperlink{_s_d_l__stdinc_8h_a0e4ade894d550ada1fa19dc2d46e88b8}{SDL\+\_\+free()}}, is NULL on begin/complete \mbox{\Hypertarget{struct_s_d_l___drop_event_a02d2c81bb22db632a40cd0021ff751ab}\label{struct_s_d_l___drop_event_a02d2c81bb22db632a40cd0021ff751ab}} 
+\index{SDL\_DropEvent@{SDL\_DropEvent}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!SDL\_DropEvent@{SDL\_DropEvent}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDL\+\_\+\+Drop\+Event\+::timestamp}
+
+In milliseconds, populated using \mbox{\hyperlink{_s_d_l__timer_8h_a0b9bc71d6287e0ffafdc3419760fe2b3}{SDL\+\_\+\+Get\+Ticks()}} \mbox{\Hypertarget{struct_s_d_l___drop_event_a5ea27cfaa5f8d4940e9a69b68b3cc035}\label{struct_s_d_l___drop_event_a5ea27cfaa5f8d4940e9a69b68b3cc035}} 
+\index{SDL\_DropEvent@{SDL\_DropEvent}!type@{type}}
+\index{type@{type}!SDL\_DropEvent@{SDL\_DropEvent}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDL\+\_\+\+Drop\+Event\+::type}
+
+\mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0809886c132aaf734fff6f2abf466912}{SDL\+\_\+\+DROPBEGIN}} or \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad9238862d7aeaebff88be6453ee0fbab}{SDL\+\_\+\+DROPFILE}} or \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1d97f901333e40b0ccc4dff1a319213f}{SDL\+\_\+\+DROPTEXT}} or \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa83e80a89d5c4ff14889d07dddc402ef}{SDL\+\_\+\+DROPCOMPLETE}} \mbox{\Hypertarget{struct_s_d_l___drop_event_a8cecd2178cdc04118bf852e7cf7bf647}\label{struct_s_d_l___drop_event_a8cecd2178cdc04118bf852e7cf7bf647}} 
+\index{SDL\_DropEvent@{SDL\_DropEvent}!windowID@{windowID}}
+\index{windowID@{windowID}!SDL\_DropEvent@{SDL\_DropEvent}}
+\doxysubsubsection{\texorpdfstring{windowID}{windowID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDL\+\_\+\+Drop\+Event\+::window\+ID}
+
+The window that was dropped on, if any 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\mbox{\hyperlink{_s_d_l__events_8h}{SDL\+\_\+events.\+h}}\end{DoxyCompactItemize}

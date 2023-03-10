@@ -1,0 +1,213 @@
+\hypertarget{_s_d_l__messagebox_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+messagebox.h File Reference}
+\label{_s_d_l__messagebox_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_messagebox.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_messagebox.h}}
+{\ttfamily \#include \char`\"{}SDL\+\_\+stdinc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___message_box_button_data}{SDL\+\_\+\+Message\+Box\+Button\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___message_box_color}{SDL\+\_\+\+Message\+Box\+Color}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___message_box_color_scheme}{SDL\+\_\+\+Message\+Box\+Color\+Scheme}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l___message_box_data}{SDL\+\_\+\+Message\+Box\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37}{SDL\+\_\+\+Message\+Box\+Flags}} \{ \newline
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+ERROR}} = 0x00000010
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+WARNING}} = 0x00000020
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+INFORMATION}} = 0x00000040
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTONS\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+RIGHT}} = 0x00000080
+, \newline
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTONS\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+LEFT}} = 0x00000100
+ \}
+\item 
+enum \mbox{\hyperlink{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0}{SDL\+\_\+\+Message\+Box\+Button\+Flags}} \{ \mbox{\hyperlink{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTON\+\_\+\+RETURNKEY\+\_\+\+DEFAULT}} = 0x00000001
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTON\+\_\+\+ESCAPEKEY\+\_\+\+DEFAULT}} = 0x00000002
+ \}
+\item 
+enum \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567}{SDL\+\_\+\+Message\+Box\+Color\+Type}} \{ \newline
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BACKGROUND}}
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+TEXT}}
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+BORDER}}
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+BACKGROUND}}
+, \newline
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+SELECTED}}
+, \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89}{SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+MAX}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__messagebox_8h_a5100de0969e90cc8f82c256287136e05}{SDL\+\_\+\+Show\+Message\+Box}} (const \mbox{\hyperlink{struct_s_d_l___message_box_data}{SDL\+\_\+\+Message\+Box\+Data}} $\ast$messageboxdata, int $\ast$buttonid)
+\item 
+\mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__messagebox_8h_a34d06cce5c7b8d25812da0306696de32}{SDL\+\_\+\+Show\+Simple\+Message\+Box}} (\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac7ba7d3cce3d19ca020e056b37231289}{flags}}, const char $\ast$title, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a7b6161cffb9b8aee272b3b916183d28c}{message}}, \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$window)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0}\label{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0}} 
+\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MessageBoxButtonFlags@{SDL\_MessageBoxButtonFlags}}
+\index{SDL\_MessageBoxButtonFlags@{SDL\_MessageBoxButtonFlags}!SDL\_messagebox.h@{SDL\_messagebox.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MessageBoxButtonFlags}{SDL\_MessageBoxButtonFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0}{SDL\+\_\+\+Message\+Box\+Button\+Flags}}}
+
+Flags for \mbox{\hyperlink{struct_s_d_l___message_box_button_data}{SDL\+\_\+\+Message\+Box\+Button\+Data}}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_BUTTON\_RETURNKEY\_DEFAULT@{SDL\_MESSAGEBOX\_BUTTON\_RETURNKEY\_DEFAULT}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_BUTTON\_RETURNKEY\_DEFAULT@{SDL\_MESSAGEBOX\_BUTTON\_RETURNKEY\_DEFAULT}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842}\label{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTON\+\_\+\+RETURNKEY\+\_\+\+DEFAULT&Marks the default button when return is hit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_BUTTON\_ESCAPEKEY\_DEFAULT@{SDL\_MESSAGEBOX\_BUTTON\_ESCAPEKEY\_DEFAULT}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_BUTTON\_ESCAPEKEY\_DEFAULT@{SDL\_MESSAGEBOX\_BUTTON\_ESCAPEKEY\_DEFAULT}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b}\label{_s_d_l__messagebox_8h_ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTON\+\_\+\+ESCAPEKEY\+\_\+\+DEFAULT&Marks the default button when escape is hit \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567}} 
+\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MessageBoxColorType@{SDL\_MessageBoxColorType}}
+\index{SDL\_MessageBoxColorType@{SDL\_MessageBoxColorType}!SDL\_messagebox.h@{SDL\_messagebox.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MessageBoxColorType}{SDL\_MessageBoxColorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567}{SDL\+\_\+\+Message\+Box\+Color\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_BACKGROUND@{SDL\_MESSAGEBOX\_COLOR\_BACKGROUND}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_BACKGROUND@{SDL\_MESSAGEBOX\_COLOR\_BACKGROUND}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BACKGROUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_TEXT@{SDL\_MESSAGEBOX\_COLOR\_TEXT}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_TEXT@{SDL\_MESSAGEBOX\_COLOR\_TEXT}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+TEXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BORDER@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BORDER}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BORDER@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BORDER}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+BORDER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BACKGROUND@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BACKGROUND}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BACKGROUND@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_BACKGROUND}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+BACKGROUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_SELECTED@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_SELECTED}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_BUTTON\_SELECTED@{SDL\_MESSAGEBOX\_COLOR\_BUTTON\_SELECTED}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+BUTTON\+\_\+\+SELECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_COLOR\_MAX@{SDL\_MESSAGEBOX\_COLOR\_MAX}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_COLOR\_MAX@{SDL\_MESSAGEBOX\_COLOR\_MAX}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89}\label{_s_d_l__messagebox_8h_a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+COLOR\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37}} 
+\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MessageBoxFlags@{SDL\_MessageBoxFlags}}
+\index{SDL\_MessageBoxFlags@{SDL\_MessageBoxFlags}!SDL\_messagebox.h@{SDL\_messagebox.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_MessageBoxFlags}{SDL\_MessageBoxFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37}{SDL\+\_\+\+Message\+Box\+Flags}}}
+
+SDL\+\_\+\+Message\+Box flags. If supported will display warning icon, etc. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_ERROR@{SDL\_MESSAGEBOX\_ERROR}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_ERROR@{SDL\_MESSAGEBOX\_ERROR}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+ERROR&error dialog \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_WARNING@{SDL\_MESSAGEBOX\_WARNING}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_WARNING@{SDL\_MESSAGEBOX\_WARNING}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+WARNING&warning dialog \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_INFORMATION@{SDL\_MESSAGEBOX\_INFORMATION}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_INFORMATION@{SDL\_MESSAGEBOX\_INFORMATION}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+INFORMATION&informational dialog \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_BUTTONS\_LEFT\_TO\_RIGHT@{SDL\_MESSAGEBOX\_BUTTONS\_LEFT\_TO\_RIGHT}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_BUTTONS\_LEFT\_TO\_RIGHT@{SDL\_MESSAGEBOX\_BUTTONS\_LEFT\_TO\_RIGHT}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTONS\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+RIGHT&buttons placed left to right \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SDL\_MESSAGEBOX\_BUTTONS\_RIGHT\_TO\_LEFT@{SDL\_MESSAGEBOX\_BUTTONS\_RIGHT\_TO\_LEFT}!SDL\_messagebox.h@{SDL\_messagebox.h}}\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_MESSAGEBOX\_BUTTONS\_RIGHT\_TO\_LEFT@{SDL\_MESSAGEBOX\_BUTTONS\_RIGHT\_TO\_LEFT}}}\mbox{\Hypertarget{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d}\label{_s_d_l__messagebox_8h_a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d}} 
+SDL\+\_\+\+MESSAGEBOX\+\_\+\+BUTTONS\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+LEFT&buttons placed right to left \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__messagebox_8h_a5100de0969e90cc8f82c256287136e05}\label{_s_d_l__messagebox_8h_a5100de0969e90cc8f82c256287136e05}} 
+\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_ShowMessageBox@{SDL\_ShowMessageBox}}
+\index{SDL\_ShowMessageBox@{SDL\_ShowMessageBox}!SDL\_messagebox.h@{SDL\_messagebox.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ShowMessageBox()}{SDL\_ShowMessageBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Show\+Message\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_s_d_l___message_box_data}{SDL\+\_\+\+Message\+Box\+Data}} $\ast$}]{messageboxdata,  }\item[{int $\ast$}]{buttonid }\end{DoxyParamCaption})}
+
+Create a modal message box.
+
+If your needs aren\textquotesingle{}t complex, it might be easier to use SDL\+\_\+\+Show\+Simple\+Message\+Box.
+
+This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent. It will block execution of that thread until the user clicks a button or closes the messagebox.
+
+This function may be called at any time, even before \mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}}. This makes it useful for reporting errors like a failure to create a renderer or Open\+GL context.
+
+On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt.
+
+Note that if \mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}} would fail because there isn\textquotesingle{}t any available video target, this function is likely to fail for the same reasons. If this is a concern, check the return value from this function and fall back to writing to stderr if you can.
+
+
+\begin{DoxyParams}{Parameters}
+{\em messageboxdata} & the \mbox{\hyperlink{struct_s_d_l___message_box_data}{SDL\+\_\+\+Message\+Box\+Data}} structure with title, text and other options \\
+\hline
+{\em buttonid} & the pointer to which user id of hit button should be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a34d06cce5c7b8d25812da0306696de32}{SDL\+\_\+\+Show\+Simple\+Message\+Box}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_s_d_l__messagebox_8h_a34d06cce5c7b8d25812da0306696de32}\label{_s_d_l__messagebox_8h_a34d06cce5c7b8d25812da0306696de32}} 
+\index{SDL\_messagebox.h@{SDL\_messagebox.h}!SDL\_ShowSimpleMessageBox@{SDL\_ShowSimpleMessageBox}}
+\index{SDL\_ShowSimpleMessageBox@{SDL\_ShowSimpleMessageBox}!SDL\_messagebox.h@{SDL\_messagebox.h}}
+\doxysubsubsection{\texorpdfstring{SDL\_ShowSimpleMessageBox()}{SDL\_ShowSimpleMessageBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} int \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} SDL\+\_\+\+Show\+Simple\+Message\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}}}]{flags,  }\item[{const char $\ast$}]{title,  }\item[{const char $\ast$}]{message,  }\item[{\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\+\_\+\+Window}} $\ast$}]{window }\end{DoxyParamCaption})}
+
+Display a simple modal message box.
+
+If your needs aren\textquotesingle{}t complex, this function is preferred over SDL\+\_\+\+Show\+Message\+Box.
+
+{\ttfamily flags} may be any of the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily SDL\+\_\+\+MESSAGEBOX\+\_\+\+ERROR}\+: error dialog
+\item {\ttfamily SDL\+\_\+\+MESSAGEBOX\+\_\+\+WARNING}\+: warning dialog
+\item {\ttfamily SDL\+\_\+\+MESSAGEBOX\+\_\+\+INFORMATION}\+: informational dialog
+\end{DoxyItemize}
+
+This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent. It will block execution of that thread until the user clicks a button or closes the messagebox.
+
+This function may be called at any time, even before \mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}}. This makes it useful for reporting errors like a failure to create a renderer or Open\+GL context.
+
+On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt.
+
+Note that if \mbox{\hyperlink{_s_d_l_8h_a8fc8d35348d7c74bad8392d776c937b8}{SDL\+\_\+\+Init()}} would fail because there isn\textquotesingle{}t any available video target, this function is likely to fail for the same reasons. If this is a concern, check the return value from this function and fall back to writing to stderr if you can.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & an SDL\+\_\+\+Message\+Box\+Flags value \\
+\hline
+{\em title} & UTF-\/8 title text \\
+\hline
+{\em message} & UTF-\/8 message text \\
+\hline
+{\em window} & the parent window, or NULL for no parent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code on failure; call \mbox{\hyperlink{_s_d_l__error_8h_adaef317de186f072f8328798de29d51a}{SDL\+\_\+\+Get\+Error()}} for more information.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+This function is available since SDL 2.\+0.\+0.
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_s_d_l__messagebox_8h_a5100de0969e90cc8f82c256287136e05}{SDL\+\_\+\+Show\+Message\+Box}} 
+\end{DoxySeeAlso}

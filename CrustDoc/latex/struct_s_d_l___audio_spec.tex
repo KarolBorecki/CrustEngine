@@ -1,0 +1,94 @@
+\hypertarget{struct_s_d_l___audio_spec}{}\doxysection{SDL\+\_\+\+Audio\+Spec Struct Reference}
+\label{struct_s_d_l___audio_spec}\index{SDL\_AudioSpec@{SDL\_AudioSpec}}
+
+
+{\ttfamily \#include $<$SDL\+\_\+audio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_s_d_l___audio_spec_a8b823ce46fc2e448cf7e6fc141aff6b2}{freq}}
+\item 
+\mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} \mbox{\hyperlink{struct_s_d_l___audio_spec_ae37c634cac5807762f184c8d5d49fc2d}{format}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_spec_a31fe8b3710cf23bbef24be8a1749fe46}{channels}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_spec_addc462c8a806e6c122eccf63482048f6}{silence}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___audio_spec_a2cdf5e885808c10bfa2810b706e69f95}{samples}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___audio_spec_a738371fc13b54cefef4db16994abeeb6}{padding}}
+\item 
+\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___audio_spec_a154cf44743ecec78c36dc6c827dd2fdb}{size}}
+\item 
+\mbox{\hyperlink{_s_d_l__audio_8h_a379fcc25845e46bfa80cb3619fc2821c}{SDL\+\_\+\+Audio\+Callback}} \mbox{\hyperlink{struct_s_d_l___audio_spec_a1f8d05139f1679dcf359f49251233eac}{callback}}
+\item 
+\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$ \mbox{\hyperlink{struct_s_d_l___audio_spec_aeec9481666f5f0982c98d3878f175d9b}{userdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The calculated values in this structure are calculated by \mbox{\hyperlink{_s_d_l__audio_8h_a2edf30e7747584e28041b4986f89f440}{SDL\+\_\+\+Open\+Audio()}}.
+
+For multi-\/channel audio, the default SDL channel mapping is\+: 2\+: FL FR (stereo) 3\+: FL FR LFE (2.\+1 surround) 4\+: FL FR BL BR (quad) 5\+: FL FR LFE BL BR (4.\+1 surround) 6\+: FL FR FC LFE SL SR (5.\+1 surround -\/ last two can also be BL BR) 7\+: FL FR FC LFE BC SL SR (6.\+1 surround) 8\+: FL FR FC LFE BL BR SL SR (7.\+1 surround) 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_l___audio_spec_a1f8d05139f1679dcf359f49251233eac}\label{struct_s_d_l___audio_spec_a1f8d05139f1679dcf359f49251233eac}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!callback@{callback}}
+\index{callback@{callback}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__audio_8h_a379fcc25845e46bfa80cb3619fc2821c}{SDL\+\_\+\+Audio\+Callback}} SDL\+\_\+\+Audio\+Spec\+::callback}
+
+Callback that feeds the audio device (NULL to use \mbox{\hyperlink{_s_d_l__audio_8h_a19ef6fa2396f581aaf4d9a9512972268}{SDL\+\_\+\+Queue\+Audio()}}). \mbox{\Hypertarget{struct_s_d_l___audio_spec_a31fe8b3710cf23bbef24be8a1749fe46}\label{struct_s_d_l___audio_spec_a31fe8b3710cf23bbef24be8a1749fe46}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!channels@{channels}}
+\index{channels@{channels}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDL\+\_\+\+Audio\+Spec\+::channels}
+
+Number of channels\+: 1 mono, 2 stereo \mbox{\Hypertarget{struct_s_d_l___audio_spec_ae37c634cac5807762f184c8d5d49fc2d}\label{struct_s_d_l___audio_spec_ae37c634cac5807762f184c8d5d49fc2d}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!format@{format}}
+\index{format@{format}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__audio_8h_a491ed103fd25d920c4e6b7495217ce66}{SDL\+\_\+\+Audio\+Format}} SDL\+\_\+\+Audio\+Spec\+::format}
+
+Audio data format \mbox{\Hypertarget{struct_s_d_l___audio_spec_a8b823ce46fc2e448cf7e6fc141aff6b2}\label{struct_s_d_l___audio_spec_a8b823ce46fc2e448cf7e6fc141aff6b2}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!freq@{freq}}
+\index{freq@{freq}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{freq}{freq}}
+{\footnotesize\ttfamily int SDL\+\_\+\+Audio\+Spec\+::freq}
+
+DSP frequency -- samples per second \mbox{\Hypertarget{struct_s_d_l___audio_spec_a738371fc13b54cefef4db16994abeeb6}\label{struct_s_d_l___audio_spec_a738371fc13b54cefef4db16994abeeb6}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!padding@{padding}}
+\index{padding@{padding}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{padding}{padding}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} SDL\+\_\+\+Audio\+Spec\+::padding}
+
+Necessary for some compile environments \mbox{\Hypertarget{struct_s_d_l___audio_spec_a2cdf5e885808c10bfa2810b706e69f95}\label{struct_s_d_l___audio_spec_a2cdf5e885808c10bfa2810b706e69f95}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!samples@{samples}}
+\index{samples@{samples}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} SDL\+\_\+\+Audio\+Spec\+::samples}
+
+Audio buffer size in sample FRAMES (total samples divided by channel count) \mbox{\Hypertarget{struct_s_d_l___audio_spec_addc462c8a806e6c122eccf63482048f6}\label{struct_s_d_l___audio_spec_addc462c8a806e6c122eccf63482048f6}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!silence@{silence}}
+\index{silence@{silence}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{silence}{silence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDL\+\_\+\+Audio\+Spec\+::silence}
+
+Audio buffer silence value (calculated) \mbox{\Hypertarget{struct_s_d_l___audio_spec_a154cf44743ecec78c36dc6c827dd2fdb}\label{struct_s_d_l___audio_spec_a154cf44743ecec78c36dc6c827dd2fdb}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!size@{size}}
+\index{size@{size}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} SDL\+\_\+\+Audio\+Spec\+::size}
+
+Audio buffer size in bytes (calculated) \mbox{\Hypertarget{struct_s_d_l___audio_spec_aeec9481666f5f0982c98d3878f175d9b}\label{struct_s_d_l___audio_spec_aeec9481666f5f0982c98d3878f175d9b}} 
+\index{SDL\_AudioSpec@{SDL\_AudioSpec}!userdata@{userdata}}
+\index{userdata@{userdata}!SDL\_AudioSpec@{SDL\_AudioSpec}}
+\doxysubsubsection{\texorpdfstring{userdata}{userdata}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}$\ast$ SDL\+\_\+\+Audio\+Spec\+::userdata}
+
+Userdata passed to callback (ignored for NULL callbacks). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\mbox{\hyperlink{_s_d_l__audio_8h}{SDL\+\_\+audio.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,212 @@
+\hypertarget{_s_d_l__test__harness_8h}{}\doxysection{/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Externals/\+SDL/include/\+SDL2/\+SDL\+\_\+test\+\_\+harness.h File Reference}
+\label{_s_d_l__test__harness_8h}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_harness.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test\_harness.h}}
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l_test___test_case_reference}{SDLTest\+\_\+\+Test\+Case\+Reference}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_a4404f2feb87e68e20e31bd86ec1728b1}{TEST\+\_\+\+ENABLED}}~1
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_ac7b13b8aefdada941436332f7559e5f0}{TEST\+\_\+\+DISABLED}}~0
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_ad1b0d362df8510a4a917442ae7173aa1}{TEST\+\_\+\+ABORTED}}~-\/1
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_a24c50cc9207eee59e73f95faff5ef07a}{TEST\+\_\+\+STARTED}}~0
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_aa1fcd18bba2a887390bb7e032f177716}{TEST\+\_\+\+COMPLETED}}~1
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_adc53d81b0aba42f8a5773a4bd1c3da88}{TEST\+\_\+\+SKIPPED}}~2
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_accbb9396b61c19b746505b685275ce82}{TEST\+\_\+\+RESULT\+\_\+\+PASSED}}~0
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_a25cadd1b04d9f8f342919a53e2b984b7}{TEST\+\_\+\+RESULT\+\_\+\+FAILED}}~1
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_ab560e79979c20b68710cc24585a2f78f}{TEST\+\_\+\+RESULT\+\_\+\+NO\+\_\+\+ASSERT}}~2
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_aadce13b4d24fe4ac2b58578167e53846}{TEST\+\_\+\+RESULT\+\_\+\+SKIPPED}}~3
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__harness_8h_aff94de0de0428e277e9c660d755adb1a}{TEST\+\_\+\+RESULT\+\_\+\+SETUP\+\_\+\+FAILURE}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}($\ast$ \mbox{\hyperlink{_s_d_l__test__harness_8h_acf5b8d5c6dcbf946fdf7bdb1ceb03e45}{SDLTest\+\_\+\+Test\+Case\+Set\+Up\+Fp}}) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{_s_d_l__test__harness_8h_ae1a62d8f725d57dc95faddcc5409afbb}{SDLTest\+\_\+\+Test\+Case\+Fp}}) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)
+\item 
+typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}($\ast$ \mbox{\hyperlink{_s_d_l__test__harness_8h_a146292b699bf0c95e1c4bcfaced3b1dc}{SDLTest\+\_\+\+Test\+Case\+Tear\+Down\+Fp}}) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)
+\item 
+typedef struct \mbox{\hyperlink{struct_s_d_l_test___test_case_reference}{SDLTest\+\_\+\+Test\+Case\+Reference}} \mbox{\hyperlink{_s_d_l__test__harness_8h_ae02b9535633a86200d7bce94686d1545}{SDLTest\+\_\+\+Test\+Case\+Reference}}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}} \mbox{\hyperlink{_s_d_l__test__harness_8h_ae52f136004f974251df5cde2152fc5ad}{SDLTest\+\_\+\+Test\+Suite\+Reference}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_d_l__test__harness_8h_a44e422204aa15c9a33e17ea74b2442ab}{SDLTest\+\_\+\+Generate\+Run\+Seed}} (const int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}})
+\begin{DoxyCompactList}\small\item\em Generates a random run seed string for the harness. The generated seed will contain alphanumeric characters (0-\/9A-\/Z). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__harness_8h_a4999be460499b1cb45e2b2b3bbb582b2}{SDLTest\+\_\+\+Run\+Suites}} (\mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}} $\ast$test\+Suites\mbox{[}$\,$\mbox{]}, const char $\ast$user\+Run\+Seed, \mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}} user\+Exec\+Key, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}}, int test\+Iterations)
+\begin{DoxyCompactList}\small\item\em Execute a test suite using the given run seed and execution key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ad1b0d362df8510a4a917442ae7173aa1}\label{_s_d_l__test__harness_8h_ad1b0d362df8510a4a917442ae7173aa1}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_ABORTED@{TEST\_ABORTED}}
+\index{TEST\_ABORTED@{TEST\_ABORTED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_ABORTED}{TEST\_ABORTED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+ABORTED~-\/1}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_aa1fcd18bba2a887390bb7e032f177716}\label{_s_d_l__test__harness_8h_aa1fcd18bba2a887390bb7e032f177716}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_COMPLETED@{TEST\_COMPLETED}}
+\index{TEST\_COMPLETED@{TEST\_COMPLETED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_COMPLETED}{TEST\_COMPLETED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+COMPLETED~1}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ac7b13b8aefdada941436332f7559e5f0}\label{_s_d_l__test__harness_8h_ac7b13b8aefdada941436332f7559e5f0}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_DISABLED@{TEST\_DISABLED}}
+\index{TEST\_DISABLED@{TEST\_DISABLED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_DISABLED}{TEST\_DISABLED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+DISABLED~0}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a4404f2feb87e68e20e31bd86ec1728b1}\label{_s_d_l__test__harness_8h_a4404f2feb87e68e20e31bd86ec1728b1}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_ENABLED@{TEST\_ENABLED}}
+\index{TEST\_ENABLED@{TEST\_ENABLED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_ENABLED}{TEST\_ENABLED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+ENABLED~1}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a25cadd1b04d9f8f342919a53e2b984b7}\label{_s_d_l__test__harness_8h_a25cadd1b04d9f8f342919a53e2b984b7}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_RESULT\_FAILED@{TEST\_RESULT\_FAILED}}
+\index{TEST\_RESULT\_FAILED@{TEST\_RESULT\_FAILED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_RESULT\_FAILED}{TEST\_RESULT\_FAILED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+RESULT\+\_\+\+FAILED~1}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ab560e79979c20b68710cc24585a2f78f}\label{_s_d_l__test__harness_8h_ab560e79979c20b68710cc24585a2f78f}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_RESULT\_NO\_ASSERT@{TEST\_RESULT\_NO\_ASSERT}}
+\index{TEST\_RESULT\_NO\_ASSERT@{TEST\_RESULT\_NO\_ASSERT}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_RESULT\_NO\_ASSERT}{TEST\_RESULT\_NO\_ASSERT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+RESULT\+\_\+\+NO\+\_\+\+ASSERT~2}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_accbb9396b61c19b746505b685275ce82}\label{_s_d_l__test__harness_8h_accbb9396b61c19b746505b685275ce82}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_RESULT\_PASSED@{TEST\_RESULT\_PASSED}}
+\index{TEST\_RESULT\_PASSED@{TEST\_RESULT\_PASSED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_RESULT\_PASSED}{TEST\_RESULT\_PASSED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+RESULT\+\_\+\+PASSED~0}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_aff94de0de0428e277e9c660d755adb1a}\label{_s_d_l__test__harness_8h_aff94de0de0428e277e9c660d755adb1a}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_RESULT\_SETUP\_FAILURE@{TEST\_RESULT\_SETUP\_FAILURE}}
+\index{TEST\_RESULT\_SETUP\_FAILURE@{TEST\_RESULT\_SETUP\_FAILURE}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_RESULT\_SETUP\_FAILURE}{TEST\_RESULT\_SETUP\_FAILURE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+RESULT\+\_\+\+SETUP\+\_\+\+FAILURE~4}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_aadce13b4d24fe4ac2b58578167e53846}\label{_s_d_l__test__harness_8h_aadce13b4d24fe4ac2b58578167e53846}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_RESULT\_SKIPPED@{TEST\_RESULT\_SKIPPED}}
+\index{TEST\_RESULT\_SKIPPED@{TEST\_RESULT\_SKIPPED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_RESULT\_SKIPPED}{TEST\_RESULT\_SKIPPED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+RESULT\+\_\+\+SKIPPED~3}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_adc53d81b0aba42f8a5773a4bd1c3da88}\label{_s_d_l__test__harness_8h_adc53d81b0aba42f8a5773a4bd1c3da88}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_SKIPPED@{TEST\_SKIPPED}}
+\index{TEST\_SKIPPED@{TEST\_SKIPPED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_SKIPPED}{TEST\_SKIPPED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+SKIPPED~2}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a24c50cc9207eee59e73f95faff5ef07a}\label{_s_d_l__test__harness_8h_a24c50cc9207eee59e73f95faff5ef07a}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!TEST\_STARTED@{TEST\_STARTED}}
+\index{TEST\_STARTED@{TEST\_STARTED}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_STARTED}{TEST\_STARTED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+STARTED~0}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ae1a62d8f725d57dc95faddcc5409afbb}\label{_s_d_l__test__harness_8h_ae1a62d8f725d57dc95faddcc5409afbb}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_TestCaseFp@{SDLTest\_TestCaseFp}}
+\index{SDLTest\_TestCaseFp@{SDLTest\_TestCaseFp}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TestCaseFp}{SDLTest\_TestCaseFp}}
+{\footnotesize\ttfamily typedef int($\ast$ SDLTest\+\_\+\+Test\+Case\+Fp) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ae02b9535633a86200d7bce94686d1545}\label{_s_d_l__test__harness_8h_ae02b9535633a86200d7bce94686d1545}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_TestCaseReference@{SDLTest\_TestCaseReference}}
+\index{SDLTest\_TestCaseReference@{SDLTest\_TestCaseReference}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TestCaseReference}{SDLTest\_TestCaseReference}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_d_l_test___test_case_reference}{SDLTest\+\_\+\+Test\+Case\+Reference}} \mbox{\hyperlink{struct_s_d_l_test___test_case_reference}{SDLTest\+\_\+\+Test\+Case\+Reference}}}
+
+Holds information about a single test case. \mbox{\Hypertarget{_s_d_l__test__harness_8h_acf5b8d5c6dcbf946fdf7bdb1ceb03e45}\label{_s_d_l__test__harness_8h_acf5b8d5c6dcbf946fdf7bdb1ceb03e45}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_TestCaseSetUpFp@{SDLTest\_TestCaseSetUpFp}}
+\index{SDLTest\_TestCaseSetUpFp@{SDLTest\_TestCaseSetUpFp}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TestCaseSetUpFp}{SDLTest\_TestCaseSetUpFp}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}($\ast$ SDLTest\+\_\+\+Test\+Case\+Set\+Up\+Fp) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a146292b699bf0c95e1c4bcfaced3b1dc}\label{_s_d_l__test__harness_8h_a146292b699bf0c95e1c4bcfaced3b1dc}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_TestCaseTearDownFp@{SDLTest\_TestCaseTearDownFp}}
+\index{SDLTest\_TestCaseTearDownFp@{SDLTest\_TestCaseTearDownFp}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TestCaseTearDownFp}{SDLTest\_TestCaseTearDownFp}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}}($\ast$ SDLTest\+\_\+\+Test\+Case\+Tear\+Down\+Fp) (\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} $\ast$arg)}
+
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_ae52f136004f974251df5cde2152fc5ad}\label{_s_d_l__test__harness_8h_ae52f136004f974251df5cde2152fc5ad}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_TestSuiteReference@{SDLTest\_TestSuiteReference}}
+\index{SDLTest\_TestSuiteReference@{SDLTest\_TestSuiteReference}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_TestSuiteReference}{SDLTest\_TestSuiteReference}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}} \mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}}}
+
+Holds information about a test suite (multiple test cases). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a44e422204aa15c9a33e17ea74b2442ab}\label{_s_d_l__test__harness_8h_a44e422204aa15c9a33e17ea74b2442ab}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_GenerateRunSeed@{SDLTest\_GenerateRunSeed}}
+\index{SDLTest\_GenerateRunSeed@{SDLTest\_GenerateRunSeed}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_GenerateRunSeed()}{SDLTest\_GenerateRunSeed()}}
+{\footnotesize\ttfamily char $\ast$ SDLTest\+\_\+\+Generate\+Run\+Seed (\begin{DoxyParamCaption}\item[{const int}]{length }\end{DoxyParamCaption})}
+
+
+
+Generates a random run seed string for the harness. The generated seed will contain alphanumeric characters (0-\/9A-\/Z). 
+
+Note\+: The returned string needs to be deallocated by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & The length of the seed string to generate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated seed string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__harness_8h_a4999be460499b1cb45e2b2b3bbb582b2}\label{_s_d_l__test__harness_8h_a4999be460499b1cb45e2b2b3bbb582b2}} 
+\index{SDL\_test\_harness.h@{SDL\_test\_harness.h}!SDLTest\_RunSuites@{SDLTest\_RunSuites}}
+\index{SDLTest\_RunSuites@{SDLTest\_RunSuites}!SDL\_test\_harness.h@{SDL\_test\_harness.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_RunSuites()}{SDLTest\_RunSuites()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Run\+Suites (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d_l_test___test_suite_reference}{SDLTest\+\_\+\+Test\+Suite\+Reference}} $\ast$}]{test\+Suites\mbox{[}$\,$\mbox{]},  }\item[{const char $\ast$}]{user\+Run\+Seed,  }\item[{\mbox{\hyperlink{_s_d_l__stdinc_8h_ac006cf2bd55a42a9cc8ae9f123aa7e13}{Uint64}}}]{user\+Exec\+Key,  }\item[{const char $\ast$}]{filter,  }\item[{int}]{test\+Iterations }\end{DoxyParamCaption})}
+
+
+
+Execute a test suite using the given run seed and execution key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+Suites} & Suites containing the test case. \\
+\hline
+{\em user\+Run\+Seed} & Custom run seed provided by user, or NULL to autogenerate one. \\
+\hline
+{\em user\+Exec\+Key} & Custom execution key provided by user, or 0 to autogenerate one. \\
+\hline
+{\em filter} & Filter specification. NULL disables. Case sensitive. \\
+\hline
+{\em test\+Iterations} & Number of iterations to run each test case.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the test run result\+: 0 when all tests passed, 1 if any tests failed. 
+\end{DoxyReturn}

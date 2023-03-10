@@ -1,0 +1,593 @@
+\hypertarget{_s_d_l__events_8h_source}{}\doxysection{SDL\+\_\+events.\+h}
+\label{_s_d_l__events_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_events.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_events.h}}
+\mbox{\hyperlink{_s_d_l__events_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_events\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_events\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__keyboard_8h}{SDL\_keyboard.h}}"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__mouse_8h}{SDL\_mouse.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__joystick_8h}{SDL\_joystick.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__gamecontroller_8h}{SDL\_gamecontroller.h}}"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__quit_8h}{SDL\_quit.h}}"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__gesture_8h}{SDL\_gesture.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__touch_8h}{SDL\_touch.h}}"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{43 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{45 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/* General keyboard/mouse state definitions */}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define SDL\_RELEASED    0}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define SDL\_PRESSED 1}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafd64b483c47e93576b91bf5b227d04c2}{SDL\_FIRSTEVENT}}     = 0,     }
+\DoxyCodeLine{59     \textcolor{comment}{/* Application events */}}
+\DoxyCodeLine{60     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603}{SDL\_QUIT}}           = 0x100, }
+\DoxyCodeLine{62     \textcolor{comment}{/* These application events have special meaning on iOS, see README-\/ios.md for details */}}
+\DoxyCodeLine{63     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaac9c2c9870db9d109959ae68ec64cf67e}{SDL\_APP\_TERMINATING}},        }
+\DoxyCodeLine{67     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa32bc310f9370245fa086e42c69d76c40}{SDL\_APP\_LOWMEMORY}},          }
+\DoxyCodeLine{71     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa0c6280f19f3c307fd2e0c7b1d5f5461}{SDL\_APP\_WILLENTERBACKGROUND}}, }
+\DoxyCodeLine{75     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaab2a804d0e9d91a604f4a03e49f5ab7c1}{SDL\_APP\_DIDENTERBACKGROUND}}, }
+\DoxyCodeLine{79     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa406151c433bc968c46591bde396c987f}{SDL\_APP\_WILLENTERFOREGROUND}}, }
+\DoxyCodeLine{83     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa964e90265b0910f3a52619cc460699d7}{SDL\_APP\_DIDENTERFOREGROUND}}, }
+\DoxyCodeLine{88     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa758ba7218366518e82ffe0e0f4a5e691}{SDL\_LOCALECHANGED}},  }
+\DoxyCodeLine{90     \textcolor{comment}{/* Display events */}}
+\DoxyCodeLine{91     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa825818ce6265316146d7288601fd5974}{SDL\_DISPLAYEVENT}}   = 0x150,  }
+\DoxyCodeLine{93     \textcolor{comment}{/* Window events */}}
+\DoxyCodeLine{94     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa5ff4e41f0d8b5def11cfe6a69ec0b698}{SDL\_WINDOWEVENT}}    = 0x200, }
+\DoxyCodeLine{95     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa73749d735a18ce6ef17a09ee70d5dbe7}{SDL\_SYSWMEVENT}},             }
+\DoxyCodeLine{97     \textcolor{comment}{/* Keyboard events */}}
+\DoxyCodeLine{98     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc}{SDL\_KEYDOWN}}        = 0x300, }
+\DoxyCodeLine{99     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadefb8866b9d28be21c2c33c35cc66c4b}{SDL\_KEYUP}},                  }
+\DoxyCodeLine{100     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1b80c465df69c0b6d06f026ce7a230e3}{SDL\_TEXTEDITING}},            }
+\DoxyCodeLine{101     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4fa2570088f6b9cbd109ae91b511368f}{SDL\_TEXTINPUT}},              }
+\DoxyCodeLine{102     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaacd473484a07dfdc628c4a02fbf9f83c9}{SDL\_KEYMAPCHANGED}},          }
+\DoxyCodeLine{105     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa82b00114dac2216df84b4c5cc6fe9c88}{SDL\_TEXTEDITING\_EXT}},       }
+\DoxyCodeLine{107     \textcolor{comment}{/* Mouse events */}}
+\DoxyCodeLine{108     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa04c436ef80fef38fb77a89e0e9124c30}{SDL\_MOUSEMOTION}}    = 0x400, }
+\DoxyCodeLine{109     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9267166e1536dfa8b0daa98c0afa9052}{SDL\_MOUSEBUTTONDOWN}},        }
+\DoxyCodeLine{110     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4ab85278398d29b9e50f500aad2b952b}{SDL\_MOUSEBUTTONUP}},          }
+\DoxyCodeLine{111     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa63135c2e0aea2286f05066f3c0bc5c4e}{SDL\_MOUSEWHEEL}},             }
+\DoxyCodeLine{113     \textcolor{comment}{/* Joystick events */}}
+\DoxyCodeLine{114     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaf0803b3f8a12de3d85f81ebd7b514cd1}{SDL\_JOYAXISMOTION}}  = 0x600, }
+\DoxyCodeLine{115     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa78f859489cfd565c305c7f6f9d5b25c1}{SDL\_JOYBALLMOTION}},          }
+\DoxyCodeLine{116     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafba4080bfbad335e520097b2024f0dff}{SDL\_JOYHATMOTION}},           }
+\DoxyCodeLine{117     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa386ac978bc145a45883fe0adab70710b}{SDL\_JOYBUTTONDOWN}},          }
+\DoxyCodeLine{118     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa76f91c81110f012e3a47cbbc0449e3c3}{SDL\_JOYBUTTONUP}},            }
+\DoxyCodeLine{119     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0500c4e830a1822e6d0a90294c3f1393}{SDL\_JOYDEVICEADDED}},         }
+\DoxyCodeLine{120     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4e2d7a1067dc56abeee393d46309ecd0}{SDL\_JOYDEVICEREMOVED}},       }
+\DoxyCodeLine{121     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaba4d43a2b97acab561fec0eef4a8a2cd}{SDL\_JOYBATTERYUPDATED}},      }
+\DoxyCodeLine{123     \textcolor{comment}{/* Game controller events */}}
+\DoxyCodeLine{124     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaca6330126f4126f6a45454fa046c25f3}{SDL\_CONTROLLERAXISMOTION}}  = 0x650, }
+\DoxyCodeLine{125     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaafe044d5f92ac9608ded473218569474}{SDL\_CONTROLLERBUTTONDOWN}},          }
+\DoxyCodeLine{126     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa8cb5a10b1ae0e185ef69a321d3d2d1be}{SDL\_CONTROLLERBUTTONUP}},            }
+\DoxyCodeLine{127     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9642de478348da1aba4fb5791e8c5314}{SDL\_CONTROLLERDEVICEADDED}},         }
+\DoxyCodeLine{128     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae00ac6995dfb7b92bfae68b9f47ae07a}{SDL\_CONTROLLERDEVICEREMOVED}},       }
+\DoxyCodeLine{129     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaeca87c7b5bb21915d444298449a78ee6}{SDL\_CONTROLLERDEVICEREMAPPED}},      }
+\DoxyCodeLine{130     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa156ec1564f07159355de8137bdab406d}{SDL\_CONTROLLERTOUCHPADDOWN}},        }
+\DoxyCodeLine{131     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa6652ad594ff8306ded63b2e16a0d507f}{SDL\_CONTROLLERTOUCHPADMOTION}},      }
+\DoxyCodeLine{132     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae94c3ab09ae94c2b83c386eae4e56810}{SDL\_CONTROLLERTOUCHPADUP}},          }
+\DoxyCodeLine{133     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaafa7a5589ea54330547713f4c80b4437e}{SDL\_CONTROLLERSENSORUPDATE}},        }
+\DoxyCodeLine{135     \textcolor{comment}{/* Touch events */}}
+\DoxyCodeLine{136     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa712d1fa8bb69f6042e24a31e835a9ec}{SDL\_FINGERDOWN}}      = 0x700,}
+\DoxyCodeLine{137     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa8266a108a628cc698c5172e72c1fc1e6}{SDL\_FINGERUP}},}
+\DoxyCodeLine{138     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1862d7d009ade2c79b2f1fe4a30c9dd2}{SDL\_FINGERMOTION}},}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{/* Gesture events */}}
+\DoxyCodeLine{141     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaac5b40f77c7e1eba688d536d465989c6}{SDL\_DOLLARGESTURE}}   = 0x800,}
+\DoxyCodeLine{142     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa9ce9b2a0e8fd0e130d8ac8499704a277}{SDL\_DOLLARRECORD}},}
+\DoxyCodeLine{143     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa225e29d8bf6e619dda824c81826c929}{SDL\_MULTIGESTURE}},}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{/* Clipboard events */}}
+\DoxyCodeLine{146     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa6ba1fed7d9fec95993eeb74abd96f64a}{SDL\_CLIPBOARDUPDATE}} = 0x900, }
+\DoxyCodeLine{148     \textcolor{comment}{/* Drag and drop events */}}
+\DoxyCodeLine{149     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad9238862d7aeaebff88be6453ee0fbab}{SDL\_DROPFILE}}        = 0x1000, }
+\DoxyCodeLine{150     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1d97f901333e40b0ccc4dff1a319213f}{SDL\_DROPTEXT}},                 }
+\DoxyCodeLine{151     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa0809886c132aaf734fff6f2abf466912}{SDL\_DROPBEGIN}},                }
+\DoxyCodeLine{152     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaa83e80a89d5c4ff14889d07dddc402ef}{SDL\_DROPCOMPLETE}},             }
+\DoxyCodeLine{154     \textcolor{comment}{/* Audio hotplug events */}}
+\DoxyCodeLine{155     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaadb3154654baf003910e75d74b507a82b}{SDL\_AUDIODEVICEADDED}} = 0x1100, }
+\DoxyCodeLine{156     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaad56f8934fe24ee4c0cd9329e3c57c0c2}{SDL\_AUDIODEVICEREMOVED}},        }
+\DoxyCodeLine{158     \textcolor{comment}{/* Sensor events */}}
+\DoxyCodeLine{159     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa1536ed6dfb1cdb20da84b7e2c602c022}{SDL\_SENSORUPDATE}} = 0x1200,     }
+\DoxyCodeLine{161     \textcolor{comment}{/* Render events */}}
+\DoxyCodeLine{162     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaae8971f362076f4844d953ea57702108a}{SDL\_RENDER\_TARGETS\_RESET}} = 0x2000, }
+\DoxyCodeLine{163     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa88e4a52a73047416133b179ba0fd7db0}{SDL\_RENDER\_DEVICE\_RESET}}, }
+\DoxyCodeLine{165     \textcolor{comment}{/* Internal events */}}
+\DoxyCodeLine{166     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa3f831e6423f957738190a8c5e180124a}{SDL\_POLLSENTINEL}} = 0x7F00, }
+\DoxyCodeLine{171     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaa4364c23f54802309e83fdb9b1c07c719}{SDL\_USEREVENT}}    = 0x8000,}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{176     \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fccaaffeac40a4ff366717c0ebc74118ea2ae}{SDL\_LASTEVENT}}    = 0xFFFF}
+\DoxyCodeLine{177 \} \mbox{\hyperlink{_s_d_l__events_8h_a3b589e89be6b35c02e0dd34a55f3fcca}{SDL\_EventType}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{182 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___common_event}{SDL\_CommonEvent}}}
+\DoxyCodeLine{183 \{}
+\DoxyCodeLine{184     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___common_event_a4ecd888325355321b42b2e2956f27453}{type}};}
+\DoxyCodeLine{185     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___common_event_a7d9046abb021ffc88dd5d32978289e65}{timestamp}};   }
+\DoxyCodeLine{186 \} \mbox{\hyperlink{struct_s_d_l___common_event}{SDL\_CommonEvent}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{191 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___display_event}{SDL\_DisplayEvent}}}
+\DoxyCodeLine{192 \{}
+\DoxyCodeLine{193     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___display_event_a5f4993ce9c5289a2ac046ae7a6dff544}{type}};        }
+\DoxyCodeLine{194     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___display_event_a6c4cd9f63a2ff62032602193c9bf605d}{timestamp}};   }
+\DoxyCodeLine{195     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___display_event_af7159e813fb168a2fdfe5070e6026a39}{display}};     }
+\DoxyCodeLine{196     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___display_event_a4850a90c06e18146d6a2ac235cdd7336}{event}};        }
+\DoxyCodeLine{197     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___display_event_a8a6937d7483828f3b9ac68fb79963e33}{padding1}};}
+\DoxyCodeLine{198     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___display_event_afe4ffe1364f1a29457636c8b74c7a3ce}{padding2}};}
+\DoxyCodeLine{199     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___display_event_aa4de9fba8f58fedb949894741ab0552b}{padding3}};}
+\DoxyCodeLine{200     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___display_event_a4feb7329af16a060cc16d539e5cb13b5}{data1}};       }
+\DoxyCodeLine{201 \} \mbox{\hyperlink{struct_s_d_l___display_event}{SDL\_DisplayEvent}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{206 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___window_event}{SDL\_WindowEvent}}}
+\DoxyCodeLine{207 \{}
+\DoxyCodeLine{208     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___window_event_a01c8c8fbe8564e690f958d2db560f657}{type}};        }
+\DoxyCodeLine{209     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___window_event_a7b0bf569b20cfa4e3fb76e3301d616f9}{timestamp}};   }
+\DoxyCodeLine{210     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___window_event_a4b31796ffc84fbb7f6e9ba33e127619a}{windowID}};    }
+\DoxyCodeLine{211     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___window_event_a485cd1f07f0f22fdb9f4c4bf214011dc}{event}};        }
+\DoxyCodeLine{212     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___window_event_a09ee59114246eceed4a281033ec6609b}{padding1}};}
+\DoxyCodeLine{213     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___window_event_a6bcf773b690b894e8c04c591826d0c8a}{padding2}};}
+\DoxyCodeLine{214     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___window_event_ac352263b5fa4ba6dbd64a48062d5e29f}{padding3}};}
+\DoxyCodeLine{215     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___window_event_a01da0025428d3434c80021f3e4089fec}{data1}};       }
+\DoxyCodeLine{216     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___window_event_af6cd0a21bc9ecadfee42f6a0147d7171}{data2}};       }
+\DoxyCodeLine{217 \} \mbox{\hyperlink{struct_s_d_l___window_event}{SDL\_WindowEvent}};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{222 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___keyboard_event}{SDL\_KeyboardEvent}}}
+\DoxyCodeLine{223 \{}
+\DoxyCodeLine{224     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_ae0b2f2aace6f80c1f47e5a14350d409a}{type}};        }
+\DoxyCodeLine{225     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_a3da1d8f6892e7f6ee28d9eafdb5e7d02}{timestamp}};   }
+\DoxyCodeLine{226     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_a56efb6780b96acd5b50d8f797efb3546}{windowID}};    }
+\DoxyCodeLine{227     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_a110558eb96c113c86cfa31a7018c2346}{state}};        }
+\DoxyCodeLine{228     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_a3edac3b36304812d533795c9df4ed4c1}{repeat}};       }
+\DoxyCodeLine{229     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_ae270122f757f76171318294afd2c95e6}{padding2}};}
+\DoxyCodeLine{230     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_ae1831035ef556a7b09efcd2469f26f7a}{padding3}};}
+\DoxyCodeLine{231     \mbox{\hyperlink{struct_s_d_l___keysym}{SDL\_Keysym}} \mbox{\hyperlink{struct_s_d_l___keyboard_event_a2a57ba820a298f2c02ad5d41fd2b1aa8}{keysym}};  }
+\DoxyCodeLine{232 \} \mbox{\hyperlink{struct_s_d_l___keyboard_event}{SDL\_KeyboardEvent}};}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define SDL\_TEXTEDITINGEVENT\_TEXT\_SIZE (32)}}
+\DoxyCodeLine{238 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___text_editing_event}{SDL\_TextEditingEvent}}}
+\DoxyCodeLine{239 \{}
+\DoxyCodeLine{240     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_event_a198e6df194a3bf12cf5f82553e84c7cb}{type}};                                }
+\DoxyCodeLine{241     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_event_afc164f40abee6fd8e72e01b589210c75}{timestamp}};                           }
+\DoxyCodeLine{242     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_event_a23b3e414cf7a7ccc547b7595ca930049}{windowID}};                            }
+\DoxyCodeLine{243     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_s_d_l___text_editing_event_a29848c2e7819ea98ae8fb08543e6d420}{text}}[\mbox{\hyperlink{_s_d_l__events_8h_a2399de7b94f0570b853f5da9c5db7e82}{SDL\_TEXTEDITINGEVENT\_TEXT\_SIZE}}];  }
+\DoxyCodeLine{244     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_event_ac6c6a00835d92b12c0ba5b78b5ad676d}{start}};                               }
+\DoxyCodeLine{245     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_event_adca95505c0bf212834930df58f6d1aa5}{length}};                              }
+\DoxyCodeLine{246 \} \mbox{\hyperlink{struct_s_d_l___text_editing_event}{SDL\_TextEditingEvent}};}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{252 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___text_editing_ext_event}{SDL\_TextEditingExtEvent}}}
+\DoxyCodeLine{253 \{}
+\DoxyCodeLine{254     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_a476ffaedf535eb226bb2e405a1672a1e}{type}};                                }
+\DoxyCodeLine{255     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_a34e0f54b5388da54bcf946b103e93711}{timestamp}};                           }
+\DoxyCodeLine{256     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_ab8ab98c13bf8e4528f6734d5db37731a}{windowID}};                            }
+\DoxyCodeLine{257     \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_ad53a771c359bea32e623699deccaa779}{text}};                                 }
+\DoxyCodeLine{258     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_a404d784703abd48fb71e1099bde114a3}{start}};                               }
+\DoxyCodeLine{259     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event_afd96e3974e222f777383ce8558e9e4ce}{length}};                              }
+\DoxyCodeLine{260 \} \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event}{SDL\_TextEditingExtEvent}};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#define SDL\_TEXTINPUTEVENT\_TEXT\_SIZE (32)}}
+\DoxyCodeLine{266 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___text_input_event}{SDL\_TextInputEvent}}}
+\DoxyCodeLine{267 \{}
+\DoxyCodeLine{268     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_input_event_a90576be2ea52e694deff40d0586654f5}{type}};                              }
+\DoxyCodeLine{269     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_input_event_a20b190a96494918690ea7f99187be948}{timestamp}};                         }
+\DoxyCodeLine{270     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___text_input_event_aeb4f7a939353990ca40261ffbfbeb3d0}{windowID}};                          }
+\DoxyCodeLine{271     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_s_d_l___text_input_event_a1a95531f466dff01c2f108f53ff24554}{text}}[\mbox{\hyperlink{_s_d_l__events_8h_a43822437fd5e89c1da1841a813cad4aa}{SDL\_TEXTINPUTEVENT\_TEXT\_SIZE}}];  }
+\DoxyCodeLine{272 \} \mbox{\hyperlink{struct_s_d_l___text_input_event}{SDL\_TextInputEvent}};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{277 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___mouse_motion_event}{SDL\_MouseMotionEvent}}}
+\DoxyCodeLine{278 \{}
+\DoxyCodeLine{279     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a431dd28cd6db6a7335cf633dbeb80cfb}{type}};        }
+\DoxyCodeLine{280     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_af530bc0ef327ea6d497c5b1da119841c}{timestamp}};   }
+\DoxyCodeLine{281     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_aa9976725242ada93a9e18e7fdf5796e6}{windowID}};    }
+\DoxyCodeLine{282     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a6f04c17b4305683915e2fd2dc3c36dbc}{which}};       }
+\DoxyCodeLine{283     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a3f6e9bad9d959b824881ba09e05b7024}{state}};       }
+\DoxyCodeLine{284     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a36398bb4a5308446a262b0bfc8baa80a}{x}};           }
+\DoxyCodeLine{285     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a7e6a7b1f8713d1968dc913908e8ea448}{y}};           }
+\DoxyCodeLine{286     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a1c01d9aba2a20778fb45a15dca39ef58}{xrel}};        }
+\DoxyCodeLine{287     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event_a7674c8b92d039ab948f671a180fa7b30}{yrel}};        }
+\DoxyCodeLine{288 \} \mbox{\hyperlink{struct_s_d_l___mouse_motion_event}{SDL\_MouseMotionEvent}};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{293 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___mouse_button_event}{SDL\_MouseButtonEvent}}}
+\DoxyCodeLine{294 \{}
+\DoxyCodeLine{295     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_af64cb09ea68b8081ecc8ee498552e3d7}{type}};        }
+\DoxyCodeLine{296     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_ab05e8a454692608ff56c502e95799c56}{timestamp}};   }
+\DoxyCodeLine{297     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_ab3b855d4b543b5d02fcf5d56e4421393}{windowID}};    }
+\DoxyCodeLine{298     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a366aef59a0f393afc8a3561e741825df}{which}};       }
+\DoxyCodeLine{299     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a1a4680e19ae06d02d2093f0bcba1b24c}{button}};       }
+\DoxyCodeLine{300     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a8809cef85cfffad4f2059f2ba4fc6a3d}{state}};        }
+\DoxyCodeLine{301     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_aa606bebcbc3ffc7e932016039c2a36a1}{clicks}};       }
+\DoxyCodeLine{302     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a765957d218d16fa00558fa4d20e80689}{padding1}};}
+\DoxyCodeLine{303     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a5bb9c61b86e999f58637511e32e3a076}{x}};           }
+\DoxyCodeLine{304     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_button_event_a7ccb5c55a7ddadce723f4ea6d5269540}{y}};           }
+\DoxyCodeLine{305 \} \mbox{\hyperlink{struct_s_d_l___mouse_button_event}{SDL\_MouseButtonEvent}};}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{310 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___mouse_wheel_event}{SDL\_MouseWheelEvent}}}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_aa6b741e99df708c6f9550ee0f520fb70}{type}};        }
+\DoxyCodeLine{313     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a83ad52c80ff49a8e75dc6c33bba65fa0}{timestamp}};   }
+\DoxyCodeLine{314     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_ab45eb1895217214ecb773fc555e08f6c}{windowID}};    }
+\DoxyCodeLine{315     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a014dc767d52e8b75ba26a5f12e1704e8}{which}};       }
+\DoxyCodeLine{316     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a6d904eef474ea45a5b1828fcb5b0f859}{x}};           }
+\DoxyCodeLine{317     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a53fdf77a464426bc8b30e629795f044b}{y}};           }
+\DoxyCodeLine{318     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a9fc46552d116499e5b8ca89d66df932c}{direction}};   }
+\DoxyCodeLine{319     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_af3ac35797c76ffd8fce0fe917d3cba50}{preciseX}};     }
+\DoxyCodeLine{320     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event_a64b89ea00f054854f0fef03efc60d332}{preciseY}};     }
+\DoxyCodeLine{321 \} \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event}{SDL\_MouseWheelEvent}};}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{326 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_axis_event}{SDL\_JoyAxisEvent}}}
+\DoxyCodeLine{327 \{}
+\DoxyCodeLine{328     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_aed1c873fb90ba58194e65f972933c67d}{type}};        }
+\DoxyCodeLine{329     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a60ecfc70df9eeef8e33b5dd7dc060389}{timestamp}};   }
+\DoxyCodeLine{330     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a965719f4703a7091bcc5f07f79fcf7e1}{which}}; }
+\DoxyCodeLine{331     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a0beac2fb161e45771c424bd0b6daeabb}{axis}};         }
+\DoxyCodeLine{332     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_ae8e17bced478530638982f0382a0dafa}{padding1}};}
+\DoxyCodeLine{333     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_ad5407250032f618fde7437ac5f229257}{padding2}};}
+\DoxyCodeLine{334     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a8bf5144fddc19686c2003add1f0e1565}{padding3}};}
+\DoxyCodeLine{335     \mbox{\hyperlink{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5}{Sint16}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a53ee73e7c367934dd6edb69963be5556}{value}};       }
+\DoxyCodeLine{336     \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___joy_axis_event_a604b258940a8cd8beaa5efeb55d6f825}{padding4}};}
+\DoxyCodeLine{337 \} \mbox{\hyperlink{struct_s_d_l___joy_axis_event}{SDL\_JoyAxisEvent}};}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{342 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_ball_event}{SDL\_JoyBallEvent}}}
+\DoxyCodeLine{343 \{}
+\DoxyCodeLine{344     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_a0b192b95a043cb494b27ed9b27e84db1}{type}};        }
+\DoxyCodeLine{345     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_aa8e4fb91af62e316bb9a3219ab76148d}{timestamp}};   }
+\DoxyCodeLine{346     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_a4e2e185717d529167cd0bea21093c454}{which}}; }
+\DoxyCodeLine{347     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_add4eb0daeaf95ae56e8c7cfcec560242}{ball}};         }
+\DoxyCodeLine{348     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_aff75a6519ca2a19cffdc14ebf4626613}{padding1}};}
+\DoxyCodeLine{349     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_a0ea3071b99ac096b0157714f01ff04f8}{padding2}};}
+\DoxyCodeLine{350     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_acb700712f1a4070bc114ef9d55b00640}{padding3}};}
+\DoxyCodeLine{351     \mbox{\hyperlink{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5}{Sint16}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_a959a8473aa1964e5e1778c27a9ffd261}{xrel}};        }
+\DoxyCodeLine{352     \mbox{\hyperlink{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5}{Sint16}} \mbox{\hyperlink{struct_s_d_l___joy_ball_event_a28ad48a9eb7a5d3ff62ccba09fcead76}{yrel}};        }
+\DoxyCodeLine{353 \} \mbox{\hyperlink{struct_s_d_l___joy_ball_event}{SDL\_JoyBallEvent}};}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{358 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_hat_event}{SDL\_JoyHatEvent}}}
+\DoxyCodeLine{359 \{}
+\DoxyCodeLine{360     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_ac583dafab46c44354e210a542aff57cc}{type}};        }
+\DoxyCodeLine{361     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_ade58ecb3e75aad4ef9809f040519a021}{timestamp}};   }
+\DoxyCodeLine{362     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_ac9d9bb179f9116d16b3da47cacd74b55}{which}}; }
+\DoxyCodeLine{363     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_ab1b54a6d1091e583e856f86b5af1e2f6}{hat}};          }
+\DoxyCodeLine{364     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_a52b179a34407449941b61d988ca72ef4}{value}};        }
+\DoxyCodeLine{371     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_afbe72b6702cf7f70ccbe206737ab2e49}{padding1}};}
+\DoxyCodeLine{372     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_hat_event_adaca3e99773130ae456690ba83feb420}{padding2}};}
+\DoxyCodeLine{373 \} \mbox{\hyperlink{struct_s_d_l___joy_hat_event}{SDL\_JoyHatEvent}};}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{378 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_button_event}{SDL\_JoyButtonEvent}}}
+\DoxyCodeLine{379 \{}
+\DoxyCodeLine{380     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_a8f3312a046d37fa2884b93f69c4cb655}{type}};        }
+\DoxyCodeLine{381     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_ab50b6f7d1ab3ac53df69fc2d6cf5fa2a}{timestamp}};   }
+\DoxyCodeLine{382     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_a1679049adad7242b28420948fdc79044}{which}}; }
+\DoxyCodeLine{383     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_a73ebe4261cf80564052af9c1af737a4d}{button}};       }
+\DoxyCodeLine{384     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_ad3b6f8d9aa2c5e694f664b97d12bcd2b}{state}};        }
+\DoxyCodeLine{385     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_a3e7ca473fb7783d755d64598529b1ff9}{padding1}};}
+\DoxyCodeLine{386     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___joy_button_event_a77a78bee38f4bf0682ccd97bbf8f9ab9}{padding2}};}
+\DoxyCodeLine{387 \} \mbox{\hyperlink{struct_s_d_l___joy_button_event}{SDL\_JoyButtonEvent}};}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{392 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_device_event}{SDL\_JoyDeviceEvent}}}
+\DoxyCodeLine{393 \{}
+\DoxyCodeLine{394     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_device_event_a51f060ba1dd5669b458e9c97aece667e}{type}};        }
+\DoxyCodeLine{395     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_device_event_a5c4a9271bfff5d5c2e09a0dc732df8f3}{timestamp}};   }
+\DoxyCodeLine{396     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___joy_device_event_af9b295798f033b799ebbda7de6cb5a7e}{which}};       }
+\DoxyCodeLine{397 \} \mbox{\hyperlink{struct_s_d_l___joy_device_event}{SDL\_JoyDeviceEvent}};}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{402 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___joy_battery_event}{SDL\_JoyBatteryEvent}}}
+\DoxyCodeLine{403 \{}
+\DoxyCodeLine{404     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_battery_event_a6769e3e7e9907a9b214e88abcba12bb8}{type}};        }
+\DoxyCodeLine{405     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___joy_battery_event_aa135e2661c9cf8a65bd535a66a667ab4}{timestamp}};   }
+\DoxyCodeLine{406     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___joy_battery_event_a08e013a06c59ad74897a84b0b29e8426}{which}}; }
+\DoxyCodeLine{407     \mbox{\hyperlink{_s_d_l__joystick_8h_a293471a907265fb92ea12caf5bcc8065}{SDL\_JoystickPowerLevel}} \mbox{\hyperlink{struct_s_d_l___joy_battery_event_a035f2b336030c875ab0393dc2b3f3c9d}{level}}; }
+\DoxyCodeLine{408 \} \mbox{\hyperlink{struct_s_d_l___joy_battery_event}{SDL\_JoyBatteryEvent}};}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{413 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___controller_axis_event}{SDL\_ControllerAxisEvent}}}
+\DoxyCodeLine{414 \{}
+\DoxyCodeLine{415     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_aa904b61e4763d28d887cf8afcc3cbb7c}{type}};        }
+\DoxyCodeLine{416     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_afc92dba0b4d1652a1ecf9e85606d1f14}{timestamp}};   }
+\DoxyCodeLine{417     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_a07087f68ea9d64b50047d65312ee7b94}{which}}; }
+\DoxyCodeLine{418     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_aba6543c143521aebce06a41a8cf79db0}{axis}};         }
+\DoxyCodeLine{419     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_af980495b1e24f9a868f2ccb25ce9629b}{padding1}};}
+\DoxyCodeLine{420     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_a4a04fcd20a54db21c5258ab0e40c6ab5}{padding2}};}
+\DoxyCodeLine{421     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_ab82598fe5621dca9b1a41f7b2ca1e9a0}{padding3}};}
+\DoxyCodeLine{422     \mbox{\hyperlink{_s_d_l__stdinc_8h_a9d0257032c0e146ab6121bf0122712f5}{Sint16}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_a1ed7f14255ed01b982d40a38791d475a}{value}};       }
+\DoxyCodeLine{423     \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___controller_axis_event_ae0ad0f279b9978bbbac9f5b22ae8020b}{padding4}};}
+\DoxyCodeLine{424 \} \mbox{\hyperlink{struct_s_d_l___controller_axis_event}{SDL\_ControllerAxisEvent}};}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 }
+\DoxyCodeLine{430 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___controller_button_event}{SDL\_ControllerButtonEvent}}}
+\DoxyCodeLine{431 \{}
+\DoxyCodeLine{432     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a09869d792031e47a88673d85915c209f}{type}};        }
+\DoxyCodeLine{433     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a73003712734c4d2f966db3d7c2ce826b}{timestamp}};   }
+\DoxyCodeLine{434     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a98777e88b5d5cae83eef16ffd4bcacc1}{which}}; }
+\DoxyCodeLine{435     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a039da6cd31c3c62e62a3ae17cc64d0db}{button}};       }
+\DoxyCodeLine{436     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a00c46683f86674c2a4f74404ee3e857c}{state}};        }
+\DoxyCodeLine{437     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a34d3e43fc1994288b9b083c874bc0899}{padding1}};}
+\DoxyCodeLine{438     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___controller_button_event_a8caf56a3921227913cfb652d5de1eec4}{padding2}};}
+\DoxyCodeLine{439 \} \mbox{\hyperlink{struct_s_d_l___controller_button_event}{SDL\_ControllerButtonEvent}};}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 }
+\DoxyCodeLine{445 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___controller_device_event}{SDL\_ControllerDeviceEvent}}}
+\DoxyCodeLine{446 \{}
+\DoxyCodeLine{447     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_device_event_a45b3807eaf70a5f5cf712455da277536}{type}};        }
+\DoxyCodeLine{448     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_device_event_a62945795fc17f5000fddc80e2cf921b8}{timestamp}};   }
+\DoxyCodeLine{449     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___controller_device_event_accb80de1619c1e790cffb6c888c915db}{which}};       }
+\DoxyCodeLine{450 \} \mbox{\hyperlink{struct_s_d_l___controller_device_event}{SDL\_ControllerDeviceEvent}};}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{455 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___controller_touchpad_event}{SDL\_ControllerTouchpadEvent}}}
+\DoxyCodeLine{456 \{}
+\DoxyCodeLine{457     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_ac33536046a3481953246b22a0371c109}{type}};        }
+\DoxyCodeLine{458     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a2b80663393965edfc666f364f07631da}{timestamp}};   }
+\DoxyCodeLine{459     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a0eccc1247f8924b2e495a2afd4f2daf4}{which}}; }
+\DoxyCodeLine{460     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a47ebc5c7897b57bda7fe7c2fa553eb7f}{touchpad}};    }
+\DoxyCodeLine{461     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a0e88fa90ee264c841170cf199a4e57c9}{finger}};      }
+\DoxyCodeLine{462     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_adb5d612ba132f5dc0278a27da9f2e310}{x}};            }
+\DoxyCodeLine{463     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a7d7bb07fbb017e8d832f04a0bb80c333}{y}};            }
+\DoxyCodeLine{464     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event_a63f7ea4e43a032d8a64c2022761ba5e1}{pressure}};     }
+\DoxyCodeLine{465 \} \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event}{SDL\_ControllerTouchpadEvent}};}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{470 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___controller_sensor_event}{SDL\_ControllerSensorEvent}}}
+\DoxyCodeLine{471 \{}
+\DoxyCodeLine{472     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_sensor_event_a553d55d13d9b118679a3f208c41e96cb}{type}};        }
+\DoxyCodeLine{473     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___controller_sensor_event_a67f4b70a91f347130928f1c91d120e95}{timestamp}};   }
+\DoxyCodeLine{474     \mbox{\hyperlink{_s_d_l__joystick_8h_a3c3d32500cb08f76ee8077983912c0bd}{SDL\_JoystickID}} \mbox{\hyperlink{struct_s_d_l___controller_sensor_event_acf40e0528d7147725dfc94cc96618d4d}{which}}; }
+\DoxyCodeLine{475     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___controller_sensor_event_aac19e4034212a30d64066a122d5db2a8}{sensor}};      }
+\DoxyCodeLine{476     \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}[3];      }
+\DoxyCodeLine{477 \} \mbox{\hyperlink{struct_s_d_l___controller_sensor_event}{SDL\_ControllerSensorEvent}};}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{482 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___audio_device_event}{SDL\_AudioDeviceEvent}}}
+\DoxyCodeLine{483 \{}
+\DoxyCodeLine{484     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_ae68c3bd49b49608711a17395c7cbfe58}{type}};        }
+\DoxyCodeLine{485     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_aa471680486a6103eafc9af569016df57}{timestamp}};   }
+\DoxyCodeLine{486     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_ac91d70fd4e1dd596185fed061388896c}{which}};       }
+\DoxyCodeLine{487     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_a1482dcd50b47046ef8e9bfa7cc7457d9}{iscapture}};    }
+\DoxyCodeLine{488     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_ad6efdec7189e735f4a05fc123c0cb723}{padding1}};}
+\DoxyCodeLine{489     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_adf9bebd56d707860045d31359535a2a4}{padding2}};}
+\DoxyCodeLine{490     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___audio_device_event_af3163ba92c77f08a4f0d8f043f24c96c}{padding3}};}
+\DoxyCodeLine{491 \} \mbox{\hyperlink{struct_s_d_l___audio_device_event}{SDL\_AudioDeviceEvent}};}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493 }
+\DoxyCodeLine{497 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___touch_finger_event}{SDL\_TouchFingerEvent}}}
+\DoxyCodeLine{498 \{}
+\DoxyCodeLine{499     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_a3883218fa3426065ca66086c100edbfa}{type}};        }
+\DoxyCodeLine{500     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_abde2ab5cb013bbd21e37a65e2f8fa666}{timestamp}};   }
+\DoxyCodeLine{501     \mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_ad7a6f39ec9af1bf47b160d18314edd70}{touchId}}; }
+\DoxyCodeLine{502     \mbox{\hyperlink{_s_d_l__touch_8h_a5fa58141f78415ca09645af359ad2250}{SDL\_FingerID}} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_a8616d46ed19906e3ee90a4d481d3a284}{fingerId}};}
+\DoxyCodeLine{503     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_a0ce44b1342220fa17e9b9b4a77c2c906}{x}};            }
+\DoxyCodeLine{504     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_ac2bb8af638d2927a8e13f6ffe8f9384e}{y}};            }
+\DoxyCodeLine{505     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_ac6acac209d6e2bd659fdb6760081393d}{dx}};           }
+\DoxyCodeLine{506     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_a9c0320c5f18a6b9d10da657e166608c9}{dy}};           }
+\DoxyCodeLine{507     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_ab4fca822d0807b5748dbae8d3cc56524}{pressure}};     }
+\DoxyCodeLine{508     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___touch_finger_event_a3dd6c668612f197dcb1e2b69d8c5e0e7}{windowID}};    }
+\DoxyCodeLine{509 \} \mbox{\hyperlink{struct_s_d_l___touch_finger_event}{SDL\_TouchFingerEvent}};}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511 }
+\DoxyCodeLine{515 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___multi_gesture_event}{SDL\_MultiGestureEvent}}}
+\DoxyCodeLine{516 \{}
+\DoxyCodeLine{517     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_ab0c7adc9a3f71cc3532bfe0ff8cc6120}{type}};        }
+\DoxyCodeLine{518     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a7e99a98debf3ce11f6d2a2fbb3637175}{timestamp}};   }
+\DoxyCodeLine{519     \mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_aa15d1201559a3c9277082af71a972dc1}{touchId}}; }
+\DoxyCodeLine{520     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a4f4a920dcf5205baa24a140df56f3153}{dTheta}};}
+\DoxyCodeLine{521     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a351c29785c5ce3f68c4591a427265f14}{dDist}};}
+\DoxyCodeLine{522     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a1708fc3c788fd12cc0beb5dc05cf31ca}{x}};}
+\DoxyCodeLine{523     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a264602b9c5cc027eb6a283adda428454}{y}};}
+\DoxyCodeLine{524     \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a6b06cf80372ce3cad40110fdb6ef0353}{numFingers}};}
+\DoxyCodeLine{525     \mbox{\hyperlink{_s_d_l__stdinc_8h_a31fcc0a076c9068668173ee26d33e42b}{Uint16}} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event_a4804ec87789e697aba138c4888bb304b}{padding}};}
+\DoxyCodeLine{526 \} \mbox{\hyperlink{struct_s_d_l___multi_gesture_event}{SDL\_MultiGestureEvent}};}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528 }
+\DoxyCodeLine{532 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___dollar_gesture_event}{SDL\_DollarGestureEvent}}}
+\DoxyCodeLine{533 \{}
+\DoxyCodeLine{534     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_ac7f6948754a1b2eb36edde043bf75ce9}{type}};        }
+\DoxyCodeLine{535     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a3bccd8ebdf30b79c0f4074f6471ec583}{timestamp}};   }
+\DoxyCodeLine{536     \mbox{\hyperlink{_s_d_l__touch_8h_a10f5f86abe4ea8308a8706bd5d3b337a}{SDL\_TouchID}} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a40402f6911ed0dba48e6b23aa02bd83d}{touchId}}; }
+\DoxyCodeLine{537     \mbox{\hyperlink{_s_d_l__gesture_8h_a6c06ab0de82701c94809da9739ff8ac3}{SDL\_GestureID}} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a68968438eae9e58208b14e8c954dec31}{gestureId}};}
+\DoxyCodeLine{538     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a14160d8bad8569f53dd18ed8f64d253f}{numFingers}};}
+\DoxyCodeLine{539     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a30aaa8fe0df93615e6692aa20e9c13eb}{error}};}
+\DoxyCodeLine{540     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a9888449bd8842ed96494b4db16a6097b}{x}};            }
+\DoxyCodeLine{541     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event_a293b2303acc1cfc63c167c5525e6eab5}{y}};            }
+\DoxyCodeLine{542 \} \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event}{SDL\_DollarGestureEvent}};}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544 }
+\DoxyCodeLine{550 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___drop_event}{SDL\_DropEvent}}}
+\DoxyCodeLine{551 \{}
+\DoxyCodeLine{552     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a5ea27cfaa5f8d4940e9a69b68b3cc035}{type}};        }
+\DoxyCodeLine{553     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a02d2c81bb22db632a40cd0021ff751ab}{timestamp}};   }
+\DoxyCodeLine{554     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_s_d_l___drop_event_abc41ef4beb62e1d8b56827128b29585f}{file}};         }
+\DoxyCodeLine{555     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___drop_event_a8cecd2178cdc04118bf852e7cf7bf647}{windowID}};    }
+\DoxyCodeLine{556 \} \mbox{\hyperlink{struct_s_d_l___drop_event}{SDL\_DropEvent}};}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558 }
+\DoxyCodeLine{562 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sensor_event}{SDL\_SensorEvent}}}
+\DoxyCodeLine{563 \{}
+\DoxyCodeLine{564     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___sensor_event_a0173d64fbe5299cad956298faf3fb0f9}{type}};        }
+\DoxyCodeLine{565     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___sensor_event_a7de6c2b4d4791f5553b5de225293ceb5}{timestamp}};   }
+\DoxyCodeLine{566     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___sensor_event_aa1c130192bad9b316f811f2d138b3b22}{which}};       }
+\DoxyCodeLine{567     \textcolor{keywordtype}{float} \mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}[6];      }
+\DoxyCodeLine{568 \} \mbox{\hyperlink{struct_s_d_l___sensor_event}{SDL\_SensorEvent}};}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{573 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___quit_event}{SDL\_QuitEvent}}}
+\DoxyCodeLine{574 \{}
+\DoxyCodeLine{575     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___quit_event_a51ab0279e6de40249ba93971a8757cf0}{type}};        }
+\DoxyCodeLine{576     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___quit_event_a7acd4fa42ca96da8edac146baaa0b433}{timestamp}};   }
+\DoxyCodeLine{577 \} \mbox{\hyperlink{struct_s_d_l___quit_event}{SDL\_QuitEvent}};}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{582 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___o_s_event}{SDL\_OSEvent}}}
+\DoxyCodeLine{583 \{}
+\DoxyCodeLine{584     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___o_s_event_a85a600619ebebc8db007fc757b3895a5}{type}};        }
+\DoxyCodeLine{585     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___o_s_event_a8b2480eefadad9f3f8c94f8e550b7fb0}{timestamp}};   }
+\DoxyCodeLine{586 \} \mbox{\hyperlink{struct_s_d_l___o_s_event}{SDL\_OSEvent}};}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{591 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___user_event}{SDL\_UserEvent}}}
+\DoxyCodeLine{592 \{}
+\DoxyCodeLine{593     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___user_event_ab7afa8b98dbd7b52bef41155e10f7340}{type}};        }
+\DoxyCodeLine{594     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___user_event_adbf1d34c73138a0c549310e5d4ad0c35}{timestamp}};   }
+\DoxyCodeLine{595     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___user_event_abccefa10e0e0e3a0801bc6d836a08da7}{windowID}};    }
+\DoxyCodeLine{596     \mbox{\hyperlink{_s_d_l__stdinc_8h_a7a90b941db9d4582e9ad7abb9940ff7e}{Sint32}} \mbox{\hyperlink{struct_s_d_l___user_event_aef47976781ee82b527a353c5acfa0a34}{code}};        }
+\DoxyCodeLine{597     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_s_d_l___user_event_ab2893a12be2f97195f16463a23107913}{data1}};        }
+\DoxyCodeLine{598     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_s_d_l___user_event_aae4dbf65c34d654c9edf519eb061b7cf}{data2}};        }
+\DoxyCodeLine{599 \} \mbox{\hyperlink{struct_s_d_l___user_event}{SDL\_UserEvent}};}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 }
+\DoxyCodeLine{602 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\_SysWMmsg}};}
+\DoxyCodeLine{603 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\_SysWMmsg}} \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\_SysWMmsg}};}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{611 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_m_event}{SDL\_SysWMEvent}}}
+\DoxyCodeLine{612 \{}
+\DoxyCodeLine{613     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___sys_w_m_event_a84697e96cb16bf6a570e10b5bfdcd392}{type}};        }
+\DoxyCodeLine{614     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{struct_s_d_l___sys_w_m_event_a5d3cb97006d99b620c2671c27bd82c06}{timestamp}};   }
+\DoxyCodeLine{615     \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\_SysWMmsg}} *\mbox{\hyperlink{struct_s_d_l___sys_w_m_event_ad5e3dc68aa15582cd0641847d41c74e8}{msg}};  }
+\DoxyCodeLine{616 \} \mbox{\hyperlink{struct_s_d_l___sys_w_m_event}{SDL\_SysWMEvent}};}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{621 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}}}
+\DoxyCodeLine{622 \{}
+\DoxyCodeLine{623     \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{union_s_d_l___event_a237648bec242d2d5835f1a4250ddfa46}{type}};                            }
+\DoxyCodeLine{624     \mbox{\hyperlink{struct_s_d_l___common_event}{SDL\_CommonEvent}} \mbox{\hyperlink{union_s_d_l___event_abe5cb8767f93de55163c8ddd4562a7f2}{common}};                 }
+\DoxyCodeLine{625     \mbox{\hyperlink{struct_s_d_l___display_event}{SDL\_DisplayEvent}} \mbox{\hyperlink{union_s_d_l___event_afe513d46e191a9791988b9adab705ef6}{display}};               }
+\DoxyCodeLine{626     \mbox{\hyperlink{struct_s_d_l___window_event}{SDL\_WindowEvent}} \mbox{\hyperlink{union_s_d_l___event_a826936b3275406d857bc6654669fae71}{window}};                 }
+\DoxyCodeLine{627     \mbox{\hyperlink{struct_s_d_l___keyboard_event}{SDL\_KeyboardEvent}} \mbox{\hyperlink{union_s_d_l___event_ab99927835cc77a9b6bb50b419b4a27df}{key}};                  }
+\DoxyCodeLine{628     \mbox{\hyperlink{struct_s_d_l___text_editing_event}{SDL\_TextEditingEvent}} \mbox{\hyperlink{union_s_d_l___event_a9a7e3b67b2654d4c5fc509676c6a7183}{edit}};              }
+\DoxyCodeLine{629     \mbox{\hyperlink{struct_s_d_l___text_editing_ext_event}{SDL\_TextEditingExtEvent}} \mbox{\hyperlink{union_s_d_l___event_aba47e2f2bb21424ef153f484b6ce02bd}{editExt}};        }
+\DoxyCodeLine{630     \mbox{\hyperlink{struct_s_d_l___text_input_event}{SDL\_TextInputEvent}} \mbox{\hyperlink{union_s_d_l___event_aa4fc65c559d69f33c057c0c23d8414b8}{text}};                }
+\DoxyCodeLine{631     \mbox{\hyperlink{struct_s_d_l___mouse_motion_event}{SDL\_MouseMotionEvent}} \mbox{\hyperlink{union_s_d_l___event_ac3c89e190faacbe84280cd539453bab6}{motion}};            }
+\DoxyCodeLine{632     \mbox{\hyperlink{struct_s_d_l___mouse_button_event}{SDL\_MouseButtonEvent}} \mbox{\hyperlink{union_s_d_l___event_ab6da2fa2687e5f849f270adecc64785f}{button}};            }
+\DoxyCodeLine{633     \mbox{\hyperlink{struct_s_d_l___mouse_wheel_event}{SDL\_MouseWheelEvent}} \mbox{\hyperlink{union_s_d_l___event_a267d3f550715519ec90a81ccd0e6cbda}{wheel}};              }
+\DoxyCodeLine{634     \mbox{\hyperlink{struct_s_d_l___joy_axis_event}{SDL\_JoyAxisEvent}} \mbox{\hyperlink{union_s_d_l___event_ac4611acd0e9c675e67dc20919f0accb4}{jaxis}};                 }
+\DoxyCodeLine{635     \mbox{\hyperlink{struct_s_d_l___joy_ball_event}{SDL\_JoyBallEvent}} \mbox{\hyperlink{union_s_d_l___event_ae433f511e3383d17f8fe02df745ee8f8}{jball}};                 }
+\DoxyCodeLine{636     \mbox{\hyperlink{struct_s_d_l___joy_hat_event}{SDL\_JoyHatEvent}} \mbox{\hyperlink{union_s_d_l___event_a421b40e0f8e01f181c8d5548cff1dd1d}{jhat}};                   }
+\DoxyCodeLine{637     \mbox{\hyperlink{struct_s_d_l___joy_button_event}{SDL\_JoyButtonEvent}} \mbox{\hyperlink{union_s_d_l___event_a591104d64903ae1cf70874fb5d3124ff}{jbutton}};             }
+\DoxyCodeLine{638     \mbox{\hyperlink{struct_s_d_l___joy_device_event}{SDL\_JoyDeviceEvent}} \mbox{\hyperlink{union_s_d_l___event_a17514dc19a846ea1b5fbe44123700c4c}{jdevice}};             }
+\DoxyCodeLine{639     \mbox{\hyperlink{struct_s_d_l___joy_battery_event}{SDL\_JoyBatteryEvent}} \mbox{\hyperlink{union_s_d_l___event_ae774914091336743c6c9154a13a8bd27}{jbattery}};           }
+\DoxyCodeLine{640     \mbox{\hyperlink{struct_s_d_l___controller_axis_event}{SDL\_ControllerAxisEvent}} \mbox{\hyperlink{union_s_d_l___event_aa8f6df0f2716fae56204b12ab4a4c289}{caxis}};          }
+\DoxyCodeLine{641     \mbox{\hyperlink{struct_s_d_l___controller_button_event}{SDL\_ControllerButtonEvent}} \mbox{\hyperlink{union_s_d_l___event_aee2b5671c8dcdb447023715cc21593cb}{cbutton}};      }
+\DoxyCodeLine{642     \mbox{\hyperlink{struct_s_d_l___controller_device_event}{SDL\_ControllerDeviceEvent}} \mbox{\hyperlink{union_s_d_l___event_ad3beed01e690b885728e0b0e1d636378}{cdevice}};      }
+\DoxyCodeLine{643     \mbox{\hyperlink{struct_s_d_l___controller_touchpad_event}{SDL\_ControllerTouchpadEvent}} \mbox{\hyperlink{union_s_d_l___event_af380462bb505815bd9cb19c2d9c5a61c}{ctouchpad}};  }
+\DoxyCodeLine{644     \mbox{\hyperlink{struct_s_d_l___controller_sensor_event}{SDL\_ControllerSensorEvent}} \mbox{\hyperlink{union_s_d_l___event_adcfd6caae4067c338ddd6570ddb37417}{csensor}};      }
+\DoxyCodeLine{645     \mbox{\hyperlink{struct_s_d_l___audio_device_event}{SDL\_AudioDeviceEvent}} \mbox{\hyperlink{union_s_d_l___event_a111e01fcac4fd8e251a6058ff9f17e72}{adevice}};           }
+\DoxyCodeLine{646     \mbox{\hyperlink{struct_s_d_l___sensor_event}{SDL\_SensorEvent}} \mbox{\hyperlink{union_s_d_l___event_af0da8e4a59228360984595125062eb2f}{sensor}};                 }
+\DoxyCodeLine{647     \mbox{\hyperlink{struct_s_d_l___quit_event}{SDL\_QuitEvent}} \mbox{\hyperlink{union_s_d_l___event_a102a3008afe67a1c02ae7504e232dcef}{quit}};                     }
+\DoxyCodeLine{648     \mbox{\hyperlink{struct_s_d_l___user_event}{SDL\_UserEvent}} \mbox{\hyperlink{union_s_d_l___event_ab7c394e3ce7bf1e4f8d68bc0e9f1b042}{user}};                     }
+\DoxyCodeLine{649     \mbox{\hyperlink{struct_s_d_l___sys_w_m_event}{SDL\_SysWMEvent}} \mbox{\hyperlink{union_s_d_l___event_ab3b2eaf5348d4c50a51b1f297fdef537}{syswm}};                   }
+\DoxyCodeLine{650     \mbox{\hyperlink{struct_s_d_l___touch_finger_event}{SDL\_TouchFingerEvent}} \mbox{\hyperlink{union_s_d_l___event_ab18d7d60794cb056948ffa58541bc3c5}{tfinger}};           }
+\DoxyCodeLine{651     \mbox{\hyperlink{struct_s_d_l___multi_gesture_event}{SDL\_MultiGestureEvent}} \mbox{\hyperlink{union_s_d_l___event_ac19b3c6a6b5181a51eb4fbe2cbe726a9}{mgesture}};         }
+\DoxyCodeLine{652     \mbox{\hyperlink{struct_s_d_l___dollar_gesture_event}{SDL\_DollarGestureEvent}} \mbox{\hyperlink{union_s_d_l___event_a4481167b9f8549aeb254e97ca812e74d}{dgesture}};        }
+\DoxyCodeLine{653     \mbox{\hyperlink{struct_s_d_l___drop_event}{SDL\_DropEvent}} \mbox{\hyperlink{union_s_d_l___event_acff77bccbca65abbb876360a3f5209c9}{drop}};                     }
+\DoxyCodeLine{655     \textcolor{comment}{/* This is necessary for ABI compatibility between Visual C++ and GCC.}}
+\DoxyCodeLine{656 \textcolor{comment}{       Visual C++ will respect the push pack pragma and use 52 bytes (size of}}
+\DoxyCodeLine{657 \textcolor{comment}{       SDL\_TextEditingEvent, the largest structure for 32-\/bit and 64-\/bit}}
+\DoxyCodeLine{658 \textcolor{comment}{       architectures) for this union, and GCC will use the alignment of the}}
+\DoxyCodeLine{659 \textcolor{comment}{       largest datatype within the union, which is 8 bytes on 64-\/bit}}
+\DoxyCodeLine{660 \textcolor{comment}{       architectures.}}
+\DoxyCodeLine{661 \textcolor{comment}{}}
+\DoxyCodeLine{662 \textcolor{comment}{       So... we'll add padding to force the size to be 56 bytes for both.}}
+\DoxyCodeLine{663 \textcolor{comment}{}}
+\DoxyCodeLine{664 \textcolor{comment}{       On architectures where pointers are 16 bytes, this needs rounding up to}}
+\DoxyCodeLine{665 \textcolor{comment}{       the next multiple of 16, 64, and on architectures where pointers are}}
+\DoxyCodeLine{666 \textcolor{comment}{       even larger the size of SDL\_UserEvent will dominate as being 3 pointers.}}
+\DoxyCodeLine{667 \textcolor{comment}{    */}}
+\DoxyCodeLine{668     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{union_s_d_l___event_ae27e7f611365572c00500563a706eaa2}{padding}}[\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void} *) <= 8 ? 56 : \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void} *) == 16 ? 64 : 3 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void} *)];}
+\DoxyCodeLine{669 \} \mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}};}
+\DoxyCodeLine{670 }
+\DoxyCodeLine{671 \textcolor{comment}{/* Make sure we haven't broken binary compatibility */}}
+\DoxyCodeLine{672 \mbox{\hyperlink{_s_d_l__stdinc_8h_aba1f23ae531b67b0455a2e254bdad09b}{SDL\_COMPILE\_TIME\_ASSERT}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}}) == \textcolor{keyword}{sizeof}(((\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} *)\mbox{\hyperlink{begin__code_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})-\/>padding));}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{699 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_aa15403d1c8fc341cd9cf750e27a66d19}{SDL\_PumpEvents}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701 \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{702 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{703 \{}
+\DoxyCodeLine{704     \mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179a3cfcf139ec3d85b9ed46931b3ee5542f}{SDL\_ADDEVENT}},}
+\DoxyCodeLine{705     \mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179a75469beff07bfd6aa7fa4f54674ce34d}{SDL\_PEEKEVENT}},}
+\DoxyCodeLine{706     \mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179ae5f9b281fd90b9a836b50bfa5c520333}{SDL\_GETEVENT}}}
+\DoxyCodeLine{707 \} \mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179}{SDL\_eventaction}};}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{747 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a83618a672f963892ddd0eef74a402e75}{SDL\_PeepEvents}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * events, \textcolor{keywordtype}{int} numevents,}
+\DoxyCodeLine{748                                            \mbox{\hyperlink{_s_d_l__events_8h_a8fdf1485b0419bb77b89e745267dc179}{SDL\_eventaction}} action,}
+\DoxyCodeLine{749                                            \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} minType, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} maxType);}
+\DoxyCodeLine{750 \textcolor{comment}{/* @\} */}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{766 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_ac424563975b92f98c6175543e8f41012}{SDL\_HasEvent}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_ad5ddf6fca7b585646515660e810e0188}{type}});}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768 }
+\DoxyCodeLine{785 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a74336e7d6e86f06171814eccbc1e2157}{SDL\_HasEvents}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} minType, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} maxType);}
+\DoxyCodeLine{786 }
+\DoxyCodeLine{807 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a4225727df385885e999784f416410cc9}{SDL\_FlushEvent}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_ad5ddf6fca7b585646515660e810e0188}{type}});}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{832 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_aa0e3ec5d83d38af1dfea722d4b741f3e}{SDL\_FlushEvents}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} minType, \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} maxType);}
+\DoxyCodeLine{833 }
+\DoxyCodeLine{879 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_acfa517963c25f8b71acc6b56721c5d9b}{SDL\_PollEvent}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}});}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{901 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_af37c266ea979ba39b82079d9eb401003}{SDL\_WaitEvent}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}});}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{927 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a54285ab4f6e2d6d1a01df6a1dd78294a}{SDL\_WaitEventTimeout}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}},}
+\DoxyCodeLine{928                                                  \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ad29bb0d8468b264a4e3d9204366cfaab}{timeout}});}
+\DoxyCodeLine{929 }
+\DoxyCodeLine{962 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_adced45c8816620846a6fde2a7d54b446}{SDL\_PushEvent}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}});}
+\DoxyCodeLine{963 }
+\DoxyCodeLine{976 \textcolor{keyword}{typedef} int (\mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} * \mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}}) (\textcolor{keywordtype}{void} *userdata, \mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}});}
+\DoxyCodeLine{977 }
+\DoxyCodeLine{1020 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_ac02d22efa3a02407ec1f3b4f303b0bfb}{SDL\_SetEventFilter}}(\mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}},}
+\DoxyCodeLine{1021                                                 \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{1022 }
+\DoxyCodeLine{1038 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a9cc48009a4dc4464594213ca45b26c27}{SDL\_GetEventFilter}}(\mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}} * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}},}
+\DoxyCodeLine{1039                                                     \textcolor{keywordtype}{void} **userdata);}
+\DoxyCodeLine{1040 }
+\DoxyCodeLine{1067 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_ad81eba7df9eae4fd0acd046b7f983202}{SDL\_AddEventWatch}}(\mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}},}
+\DoxyCodeLine{1068                                                \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{1069 }
+\DoxyCodeLine{1083 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a05a54ccb07f32fe31b73e93ac238e20a}{SDL\_DelEventWatch}}(\mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}},}
+\DoxyCodeLine{1084                                                \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{1085 }
+\DoxyCodeLine{1102 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_a37e4458a58164455f53ed35d633c4bb5}{SDL\_FilterEvents}}(\mbox{\hyperlink{_s_d_l__events_8h_a8f371e5b06361baa576bdb1289595d95}{SDL\_EventFilter}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8bed50656d87c3eeed9d8f5e539c6b3e}{filter}},}
+\DoxyCodeLine{1103                                               \textcolor{keywordtype}{void} *userdata);}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105 \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{1106 \textcolor{preprocessor}{\#define SDL\_QUERY   -\/1}}
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#define SDL\_IGNORE   0}}
+\DoxyCodeLine{1108 \textcolor{preprocessor}{\#define SDL\_DISABLE  0}}
+\DoxyCodeLine{1109 \textcolor{preprocessor}{\#define SDL\_ENABLE   1}}
+\DoxyCodeLine{1110 }
+\DoxyCodeLine{1130 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_afb772893e1c46f186fa39a4defe76df3}{SDL\_EventState}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl_8h_ad5ddf6fca7b585646515660e810e0188}{type}}, \textcolor{keywordtype}{int} state);}
+\DoxyCodeLine{1131 \textcolor{comment}{/* @\} */}}
+\DoxyCodeLine{1132 \textcolor{preprocessor}{\#define SDL\_GetEventState(type) SDL\_EventState(type, SDL\_QUERY)}}
+\DoxyCodeLine{1133 }
+\DoxyCodeLine{1152 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__events_8h_af99e29fafb9e4773b70f68cec08681fc}{SDL\_RegisterEvents}}(\textcolor{keywordtype}{int} numevents);}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{1155 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1156 \}}
+\DoxyCodeLine{1157 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1158 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{1159 }
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_events\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1161 }
+\DoxyCodeLine{1162 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

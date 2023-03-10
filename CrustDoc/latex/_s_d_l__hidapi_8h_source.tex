@@ -1,0 +1,108 @@
+\hypertarget{_s_d_l__hidapi_8h_source}{}\doxysection{SDL\+\_\+hidapi.\+h}
+\label{_s_d_l__hidapi_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_hidapi.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_hidapi.h}}
+\mbox{\hyperlink{_s_d_l__hidapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#ifndef SDL\_hidapi\_h\_}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define SDL\_hidapi\_h\_}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{68 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{70 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76 \textcolor{keyword}{struct }SDL\_hid\_device\_;}
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }SDL\_hid\_device\_ \mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}}; }
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l__hid__device__info}{SDL\_hid\_device\_info}}}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{86     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_aa66ffa58c4a37986285dee7d0adad766}{path}};}
+\DoxyCodeLine{88     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a7bb9b5c173278a6699b3191953fcfe77}{vendor\_id}};}
+\DoxyCodeLine{90     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a78b8d7cefcc61d786256280da7159dbc}{product\_id}};}
+\DoxyCodeLine{92     \textcolor{keywordtype}{wchar\_t} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_af60f9bc8de63c26113cca7e60158b91d}{serial\_number}};}
+\DoxyCodeLine{95     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_ad6eb1e9cafd756ef89cd427cccc89da8}{release\_number}};}
+\DoxyCodeLine{97     \textcolor{keywordtype}{wchar\_t} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_ac874d63dbfe581736033f266f08fd51a}{manufacturer\_string}};}
+\DoxyCodeLine{99     \textcolor{keywordtype}{wchar\_t} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_a80f37d1aaae118285bec4442a8c9b1d0}{product\_string}};}
+\DoxyCodeLine{102     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_ace00a62000be5a947106f04d0dd5efc4}{usage\_page}};}
+\DoxyCodeLine{105     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_ab5851e5c55c1903b63ecf8bb736c4249}{usage}};}
+\DoxyCodeLine{112     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l__hid__device__info_ae1450dccd0f426357f6b95422645a0e3}{interface\_number}};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a3816985c4cc4210c750da3a9720a28f6}{interface\_class}};}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a7dff2f9edbe860f476fdaf5e91614038}{interface\_subclass}};}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a7ad2c1748503188c35a8a306a8abd55b}{interface\_protocol}};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l__hid__device__info}{SDL\_hid\_device\_info}} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_aa8da06646522138690bec6e5fba7540f}{next}};}
+\DoxyCodeLine{122 \} \mbox{\hyperlink{struct_s_d_l__hid__device__info}{SDL\_hid\_device\_info}};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{142 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_afab0dc5913a3e90ed4434bd2778fe1bf}{SDL\_hid\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{156 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a795ed5c8ed4410b5962742d1c92774c9}{SDL\_hid\_exit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{177 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a1d7587010cbd25a9fcf77e26682de356}{SDL\_hid\_device\_change\_count}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{199 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{struct_s_d_l__hid__device__info}{SDL\_hid\_device\_info}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a5a0a8a98f734167ad2272c0152f51c92}{SDL\_hid\_enumerate}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a7bb9b5c173278a6699b3191953fcfe77}{vendor\_id}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a78b8d7cefcc61d786256280da7159dbc}{product\_id}});}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{211 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_af2f46b6c5b92e35724b2bd3116e2eb1e}{SDL\_hid\_free\_enumeration}}(\mbox{\hyperlink{struct_s_d_l__hid__device__info}{SDL\_hid\_device\_info}} *devs);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{229 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_ae44777e4b49c6f9887a3d892102bd491}{SDL\_hid\_open}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a7bb9b5c173278a6699b3191953fcfe77}{vendor\_id}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_s_d_l__hid__device__info_a78b8d7cefcc61d786256280da7159dbc}{product\_id}}, \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t} *\mbox{\hyperlink{struct_s_d_l__hid__device__info_af60f9bc8de63c26113cca7e60158b91d}{serial\_number}});}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{243 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a8c16ac973dc4dee19687484f97e5bc79}{SDL\_hid\_open\_path}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab25d8cd967ccbd19b630d7100ff8f67e}{path}}, \textcolor{keywordtype}{int} bExclusive \textcolor{comment}{/* = false */});}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{269 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a6f20cc83879d21bad4306f540475dd8f}{SDL\_hid\_write}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{290 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a2aa5d9a34cd1200e566d4ec47fc5dc5f}{SDL\_hid\_read\_timeout}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}}, \textcolor{keywordtype}{int} milliseconds);}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{310 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a6f41a95bea290df5a73b97e4bf5212a0}{SDL\_hid\_read}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}});}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{328 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a1f66ac734a1786884cb4f2b6309a60e7}{SDL\_hid\_set\_nonblocking}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{int} nonblock);}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{352 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a5349c62d24338025552c6f244956699f}{SDL\_hid\_send\_feature\_report}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}});}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{374 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_ab955370e07dc09c62367ab70d1784793}{SDL\_hid\_get\_feature\_report}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__opengl_8h_a2e335d56e2846b0fea47eed068b2d34a}{data}}, \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ab9c919755bde3b34349e23a32b4e0fa7}{length}});}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{383 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a0e402a95d523c439b3a55be0c05dd6ba}{SDL\_hid\_close}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev);}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{395 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_abc79c19d7d67a361bb39b5ae4704c950}{SDL\_hid\_get\_manufacturer\_string}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{wchar\_t} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t} maxlen);}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{407 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_abfc7382b9200805fea25b4483a3cb224}{SDL\_hid\_get\_product\_string}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{wchar\_t} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t} maxlen);}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{419 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a06110655bc7e7c8a3a8e1d43a5af998b}{SDL\_hid\_get\_serial\_number\_string}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{wchar\_t} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t} maxlen);}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{432 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a8c58e5c7c4ce4920507e316da2ca07ea}{SDL\_hid\_get\_indexed\_string}}(\mbox{\hyperlink{_s_d_l__hidapi_8h_a01e37a76f52ebe32810eae8de7ffad85}{SDL\_hid\_device}} *dev, \textcolor{keywordtype}{int} string\_index, \textcolor{keywordtype}{wchar\_t} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t} maxlen);}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{441 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__hidapi_8h_a472eb84a7526e0c9fb6b696b2fa7a039}{SDL\_hid\_ble\_scan}}(\mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} active);}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{445 \}}
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_hidapi\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{comment}{/* vi: set sts=4 ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

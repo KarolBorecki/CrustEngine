@@ -1,0 +1,80 @@
+\hypertarget{_s_d_l__shape_8h_source}{}\doxysection{SDL\+\_\+shape.\+h}
+\label{_s_d_l__shape_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_shape.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_shape.h}}
+\mbox{\hyperlink{_s_d_l__shape_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_shape\_h\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_shape\_h\_}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__pixels_8h}{SDL\_pixels.h}}"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__rect_8h}{SDL\_rect.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__surface_8h}{SDL\_surface.h}}"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{34 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define SDL\_NONSHAPEABLE\_WINDOW -\/1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define SDL\_INVALID\_SHAPE\_ARGUMENT -\/2}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define SDL\_WINDOW\_LACKS\_SHAPE -\/3}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{69 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__shape_8h_aa3fd07ce85c885b4124e855875c1f52a}{SDL\_CreateShapedWindow}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *title,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}},\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}},\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a6ee8f168a7ab6785a9bb57c6715dad99}{w}},\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}},\mbox{\hyperlink{_s_d_l__stdinc_8h_add440eff171ea5f55cb00c4a9ab8672d}{Uint32}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ac7ba7d3cce3d19ca020e056b37231289}{flags}});}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{82 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \mbox{\hyperlink{_s_d_l__stdinc_8h_a8fca68df0f976765230fe589a7c7733b}{SDL\_bool}} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__shape_8h_a28630f0f6b298bac4d0efe850d7d327e}{SDL\_IsShapedWindow}}(\textcolor{keyword}{const} \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *window);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{87     \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20aca1bc38c9b5179cbed0e9e176cd84d9e}{ShapeModeDefault}},}
+\DoxyCodeLine{89     \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20a0ba1cff6129858a1136728ffdc787926}{ShapeModeBinarizeAlpha}},}
+\DoxyCodeLine{91     \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20ae478c81ede522586674806541e145993}{ShapeModeReverseBinarizeAlpha}},}
+\DoxyCodeLine{93     \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20a1d3ca52e90d5b3086e22120c2899f214}{ShapeModeColorKey}}}
+\DoxyCodeLine{94 \} \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20}{WindowShapeMode}};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define SDL\_SHAPEMODEALPHA(mode) (mode == ShapeModeDefault || mode == ShapeModeBinarizeAlpha || mode == ShapeModeReverseBinarizeAlpha)}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{}
+\DoxyCodeLine{101     \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{union_s_d_l___window_shape_params_a534c40b09588a8075c0a70227753dc56}{binarizationCutoff}};}
+\DoxyCodeLine{102     \mbox{\hyperlink{struct_s_d_l___color}{SDL\_Color}} \mbox{\hyperlink{union_s_d_l___window_shape_params_a8bf3e442a51a1bbf452cfec7c1ed5318}{colorKey}};}
+\DoxyCodeLine{103 \} \mbox{\hyperlink{union_s_d_l___window_shape_params}{SDL\_WindowShapeParams}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{106 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___window_shape_mode}{SDL\_WindowShapeMode}} \{}
+\DoxyCodeLine{108     \mbox{\hyperlink{_s_d_l__shape_8h_aa30948f2699e316a43b740eccebe5c20}{WindowShapeMode}} \mbox{\hyperlink{struct_s_d_l___window_shape_mode_a40ebd8b9a76d982cbd87563386cc05de}{mode}};}
+\DoxyCodeLine{110     \mbox{\hyperlink{union_s_d_l___window_shape_params}{SDL\_WindowShapeParams}} \mbox{\hyperlink{struct_s_d_l___window_shape_mode_a2f79bb294034156207fa6d88d3a8c819}{parameters}};}
+\DoxyCodeLine{111 \} \mbox{\hyperlink{struct_s_d_l___window_shape_mode}{SDL\_WindowShapeMode}};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{128 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__shape_8h_a90d52818802235df9689922be5a4cf5a}{SDL\_SetWindowShape}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *window,\mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} *shape,\mbox{\hyperlink{struct_s_d_l___window_shape_mode}{SDL\_WindowShapeMode}} *shape\_mode);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{147 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keywordtype}{int} \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__shape_8h_a64dba6f6440cf6984d8da868fd758711}{SDL\_GetShapedWindowMode}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *window,\mbox{\hyperlink{struct_s_d_l___window_shape_mode}{SDL\_WindowShapeMode}} *shape\_mode);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_shape\_h\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

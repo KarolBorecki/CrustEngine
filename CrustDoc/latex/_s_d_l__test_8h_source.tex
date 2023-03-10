@@ -1,0 +1,67 @@
+\hypertarget{_s_d_l__test_8h_source}{}\doxysection{SDL\+\_\+test.\+h}
+\label{_s_d_l__test_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test.h@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Externals/SDL/include/SDL2/SDL\_test.h}}
+\mbox{\hyperlink{_s_d_l__test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifndef SDL\_test\_h\_}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define SDL\_test\_h\_}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l_8h}{SDL.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__assert_8h}{SDL\_test\_assert.h}}"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__common_8h}{SDL\_test\_common.h}}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__compare_8h}{SDL\_test\_compare.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__crc32_8h}{SDL\_test\_crc32.h}}"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__font_8h}{SDL\_test\_font.h}}"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__fuzzer_8h}{SDL\_test\_fuzzer.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__harness_8h}{SDL\_test\_harness.h}}"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__images_8h}{SDL\_test\_images.h}}"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__log_8h}{SDL\_test\_log.h}}"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__md5_8h}{SDL\_test\_md5.h}}"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__memory_8h}{SDL\_test\_memory.h}}"{}}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__test__random_8h}{SDL\_test\_random.h}}"{}}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{48 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{50 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* Global definitions */}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/*}}
+\DoxyCodeLine{56 \textcolor{comment}{ * Note: Maximum size of SDLTest log message is less than SDL's limit}}
+\DoxyCodeLine{57 \textcolor{comment}{ * to ensure we can fit additional information such as the timestamp.}}
+\DoxyCodeLine{58 \textcolor{comment}{ */}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define SDLTEST\_MAX\_LOGMESSAGE\_LENGTH   3584}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{63 \}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_test\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}
