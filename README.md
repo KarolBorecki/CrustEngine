@@ -56,8 +56,9 @@ As an argument You are ought to pass the starting mesh (*.obj) file, that will b
 
 I am documenting this project using deoxygen software. The setting and compiled documentation is placed inside `CrustDoc/` folder. I encourage You to open HTML output and read the documentation. I try to keep it as current as possible by compiling it often, but until first beta release I would advise You to use documentation placed inside the code. 
 
-## CrustEngine screenshot
+## CrustEngine on work
 Here is example of how it looks like now.
+
 <img src="Commercial/Show/BasicProjection.jpg" alt="BasicProjection" width=450/>
 
 ## CrustEngine's test framework
