@@ -56,6 +56,10 @@ As an argument You are ought to pass the starting mesh (*.obj) file, that will b
 
 I am documenting this project using deoxygen software. The setting and compiled documentation is placed inside `CrustDoc/` folder. I encourage You to open HTML output and read the documentation. I try to keep it as current as possible by compiling it often, but until first beta release I would advise You to use documentation placed inside the code. 
 
+## CrustEngine screenshot
+Here is example of how it looks like now.
+<img src="Commercial/Show/BasicProjection.jpg" alt="BasicProjection" width=450/>
+
 ## CrustEngine's test framework
 During development of this project I came across the choice of an c++ testing framework. As c++ does not offer very much support for testing (unlike java, which is compiled to byte-code and can be quicjly tested) and as I did not required much from this framwework I decided to create my own. It is placed inside  `CrustTestingFramework` folder and is as simple as possible. Feel free to use it.
 
