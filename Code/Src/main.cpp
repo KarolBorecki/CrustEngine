@@ -10,7 +10,7 @@
 
 #include <Files/MeshLoader.hpp>
 
-#include <Physics/Matrix.hpp>
+#include <Math/Matrix.hpp>
 
 #include <Scripting/SampleScripts/LoopMove.hpp>
 // #include <Scripting/SampleScripts/Rotate.hpp>
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     RenderObject l(nullptr);
 
-    LoopMove rObjMove(-100, 0, -100, 0, -100, 0, 10, 5, 7);
+    LoopMove rObjMove(-50, 50, 0, 0, 0, 0, 10, 0, 0);
     cam.AttachScript(&rObjMove);
     // Rotate rObjRotation(&rObj);
     // rObj.AttachScript(&rObjMove);
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     scene.AddObject(&rObj);
     scene.AddObject(&dirLightSource);
 
-    scene.SetLightProjection(true);
+    scene.SetLightProjection(false);
 
     Core core;
     core.OpenNewWindow(1000, 800, &scene);

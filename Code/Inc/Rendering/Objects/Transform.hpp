@@ -1,7 +1,7 @@
 #ifndef _TRANSFORM_HPP_
 #define _TRANSFORM_HPP_
 
-#include <Physics/Vector3.hpp>
+#include <Math/Vector3.hpp>
 
 class Transform {
 public:
@@ -14,14 +14,14 @@ public:
      *
      * @return #pos field.
      */
-    Vector3 *GetPosition();
+    Vector3 &GetPosition() const;
 
     /**
      * @brief Getter for #rot field, this returns handler to euler's vector for rotation.
      *
      * @return #rot field.
      */
-    Vector3 *GetRotation();
+    Vector3 &GetRotation() const;
 
     void SetPosition(double x, double y, double z);
 
@@ -40,8 +40,8 @@ public:
     void Rotate(double dX, double dY, double dZ);
 
 private:
-    Vector3 *pos; //!< Object's position in 3D space.
-    Vector3 *rot; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
+    Vector3 *pos { nullptr }; //!< Object's position in 3D space.
+    Vector3 *rot { nullptr }; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
 };
 
 inline Transform::Transform() {
@@ -54,18 +54,14 @@ inline Transform::~Transform() {
     delete rot;
 }
 
-inline Vector3 *Transform::GetPosition() { return pos; }
+inline Vector3& Transform::GetPosition() const { return *pos; }
 
-inline Vector3 *Transform::GetRotation() { return rot; }
+inline Vector3 & Transform::GetRotation() const { return *rot; }
 
-inline void Transform::SetPosition(double x, double y, double z) {
-    pos->PutValue(0, 0, x);
-    pos->PutValue(0, 1, y);
-    pos->PutValue(0, 2, 1);
-}
+inline void Transform::SetPosition(double x, double y, double z) { (*pos) = {x, y, z}; }
 
-inline void Transform::Translate(double dX, double dY, double dZ) { Vector3::Add(pos, dX, dY, dZ); }
+inline void Transform::Translate(double dX, double dY, double dZ) { (*pos) += {dX, dY, dZ}; }
 
-inline void Transform::Rotate(double dX, double dY, double dZ) { Vector3::Add(rot, dX, dY, dZ); }
+inline void Transform::Rotate(double dX, double dY, double dZ) { (*rot) += {dX, dY, dZ}; }
 
 #endif /* _TRANSFORM_HPP_ */

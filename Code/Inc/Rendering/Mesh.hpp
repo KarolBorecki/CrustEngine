@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include <Physics/Triangle.hpp>
+#include <Math/Triangle.hpp>
 
 #define DEFAULT_MESH_NAME "NO NAME"
 

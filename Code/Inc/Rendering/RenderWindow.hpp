@@ -94,7 +94,7 @@ void RenderWindow::Start() {
     Clean();
     std::vector<RenderObject*> objs = loadedScene->GetObjectsToRender();
     for (auto obj : objs) {
-      renderer->DrawMesh(obj->GetMesh(), obj->GetTransform()->GetPosition(), obj->GetTransform()->GetRotation(), loadedScene->GetMainCamera(), loadedScene->GetLightSources().at(0)->GetDirection(), loadedScene->IsLightProjected());
+      renderer->DrawMesh(obj->GetMesh(), &(obj->GetTransform()->GetPosition()), &(obj->GetTransform()->GetRotation()), loadedScene->GetMainCamera(), loadedScene->GetLightSources().at(0)->GetDirection(), loadedScene->IsLightProjected());
     }
     loadedScene->Update(timeProvider->GetDeltaTime_s());
 

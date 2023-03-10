@@ -46,15 +46,6 @@ public:
   */
   void SetPoints(double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z);
 
-  /**
-  * @brief Converts triangle to std::string, so it can be written on any output.
-  *
-  * @details The returned string is in a following format:<br>
-  * First line contains "Triangle:" caption.<br>
-  * Next 3 lines contains written vectors using Vector3::ToString function.
-  */
-  std::string ToString();
-
 
 private:
   Vector3* point[3]; //!< Three points representing the triangle in 3D space.
@@ -94,19 +85,9 @@ Triangle::~Triangle() {
 inline Vector3* Triangle::GetPoint(uint8_t index) { return point[index]; }
 
 void Triangle::SetPoints(double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z) {
-  point[0]->SetXYZ(p1X, p1Y, p1Z);
-  point[1]->SetXYZ(p2X, p2Y, p2Z);
-  point[2]->SetXYZ(p3X, p3Y, p3Z);
-}
-
-std::string Triangle::ToString() {
-  std::string result = "";
-  result += "Triangle:\n";
-  result += GetPoint(0)->ToString();
-  result += GetPoint(1)->ToString();
-  result += GetPoint(2)->ToString();
-  result += "\n";
-  return result;
+  (*point[0]) = {p1X, p1Y, p1Z};
+  (*point[1]) = {p2X, p2Y, p2Z};
+  (*point[2]) = {p3X, p3Y, p3Z};
 }
 
 void Triangle::Init(double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z) {

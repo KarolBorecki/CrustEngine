@@ -48,9 +48,13 @@ public:
   static void Info(const char* format, ...);
 
   /**
-  * @brief Logs onto the console.
-  */
-  static void Log(const char* format, ...);
+   * @brief Logs onto the console.
+   */
+  static void Log(const char *format, ...);
+  /**
+   * @brief Logs onto the console.
+   */
+  static void LogInline(const char *format, ...);
   /**
   * @brief Logs onto the console in specified colorCode color.
   */
@@ -97,13 +101,23 @@ inline void Logger::Info(const char* format, ...) {
   SetFont(FontColor::WHITE);
 }
 
-inline void Logger::Log(const char* format, ...){
-    SetFont(FontColor::WHITE);
-    va_list args;
-    va_start(args, format);
-    vprintf(format, args);
-    printf("\n");
-    va_end(args);
+inline void Logger::Log(const char *format, ...)
+{
+  SetFont(FontColor::WHITE);
+  va_list args;
+  va_start(args, format);
+  vprintf(format, args);
+  printf("\n");
+  va_end(args);
+}
+
+inline void Logger::LogInline(const char *format, ...)
+{
+  SetFont(FontColor::WHITE);
+  va_list args;
+  va_start(args, format);
+  vprintf(format, args);
+  va_end(args);
 }
 
 inline void Logger::Log(int colorCode, const char* format, ...){

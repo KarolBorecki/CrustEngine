@@ -3,7 +3,6 @@
 
 #include <vector>
 
-#include <Physics/Vector3.hpp>
 #include <Rendering/Objects/Object.hpp>
 #include <Rendering/Mesh.hpp>
 

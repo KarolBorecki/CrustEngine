@@ -3,7 +3,7 @@
 
 #include <Rendering/Objects/Lightining/LightSource.hpp>
 
-#include <Physics/Vector3.hpp>
+#include <Math/Vector3.hpp>
 
 /**
  * @brief Object on the scene representing basic directional light source. It represents parraller light rays.
