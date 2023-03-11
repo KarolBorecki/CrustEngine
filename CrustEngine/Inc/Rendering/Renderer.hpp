@@ -72,7 +72,7 @@ public:
    *
    * @return Projected triangle.
    */
-  Triangle *ProjectTriangle(Triangle *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight);
+  Triangle *ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight);
 
   /**
    * @brief Getter for #projMatrix field.
@@ -118,13 +118,13 @@ Renderer::~Renderer()
 void Renderer::DrawMesh(Mesh *mesh, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight)
 {
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-  for (int i = 0; i < mesh->GetTrianglesCount(); i++)
+  for (int i = 0; i < mesh->GetPolygonsCount(); i++)
   {
-    ProjectTriangle(mesh->GetTriangle(i), pos, rot, cam, lightDir, projectLight);
+    ProjectTriangle(&(mesh->GetPolygon(i)), pos, rot, cam, lightDir, projectLight);
   }
 }
 
-Triangle *Renderer::ProjectTriangle(Triangle *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight)
+Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight)
 {
 
   // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((

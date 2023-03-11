@@ -3,7 +3,8 @@
 
 #include <Math/Vector3.hpp>
 
-class Transform {
+class Transform
+{
 public:
     Transform();
 
@@ -40,23 +41,25 @@ public:
     void Rotate(double dX, double dY, double dZ);
 
 private:
-    Vector3 *pos { nullptr }; //!< Object's position in 3D space.
-    Vector3 *rot { nullptr }; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
+    Vector3 *pos{nullptr}; //!< Object's position in 3D space.
+    Vector3 *rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
 };
 
-inline Transform::Transform() {
+inline Transform::Transform()
+{
     pos = new Vector3();
-    rot = new Vector3(); 
+    rot = new Vector3();
 }
 
-inline Transform::~Transform() {
+inline Transform::~Transform()
+{
     delete pos;
     delete rot;
 }
 
-inline Vector3& Transform::GetPosition() const { return *pos; }
+inline Vector3 &Transform::GetPosition() const { return *pos; }
 
-inline Vector3 & Transform::GetRotation() const { return *rot; }
+inline Vector3 &Transform::GetRotation() const { return *rot; }
 
 inline void Transform::SetPosition(double x, double y, double z) { (*pos) = {x, y, z}; }
 
