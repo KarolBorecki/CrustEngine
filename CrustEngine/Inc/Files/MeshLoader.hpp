@@ -58,7 +58,7 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
   int n1_index = 1, n2_index = 1, n3_index = 1; // Normals indexes
 
   std::vector<Vector3*> points;
-  std::vector<Triangle*> tri;
+  std::vector<Polygon*> poli;
 
   int currentPoint = 0;
   int currentTri = 0;
@@ -81,15 +81,15 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     }
     else if (sscanf(analysed_line, "f %d %d %d", &p1_index, &p2_index, &p3_index) == 3)
     {
-      tri.push_back(new Triangle(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
+      poli.push_back(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
     }
     else if (sscanf(analysed_line, "f %d/%d %d/%d %d/%d", &p1_index, &t1_index, &p2_index, &t2_index, &p3_index, &t3_index) == 6)
     {
-      tri.push_back(new Triangle(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
+      poli.push_back(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
     }
     else if (sscanf(analysed_line, "f %d/%d/%d %d/%d/%d %d/%d/%d", &p1_index, &t1_index, &n1_index, &p2_index, &t2_index, &n2_index, &p3_index, &t3_index, &n3_index) == 9)
     {
-      tri.push_back(new Triangle(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
+      poli.push_back(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1]));
     }
     else if (sscanf(analysed_line, "usemtl %s", str) == 1)
     {
@@ -101,9 +101,9 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     }
   }
 
-  for (int i = 0; i < tri.size(); i++)
+  for (int i = 0; i < poli.size(); i++)
   {
-    outMesh->AddTriangle(tri.at(i));
+    outMesh->AddPolygon(*poli.at(i));
   }
 }
 
