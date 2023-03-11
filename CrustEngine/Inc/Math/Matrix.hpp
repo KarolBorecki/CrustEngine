@@ -49,22 +49,11 @@ public:
    */
   uint8_t Width() const;
 
-  Matrix<T> &operator+(const Matrix<T> &other) noexcept;
-
-  Matrix<T> &operator+(std::initializer_list<T> l) noexcept;
-
-  Matrix<T> &operator+(const T value) noexcept;
-
   Matrix<T> &operator+=(const Matrix<T> &other) noexcept;
 
   Matrix<T> &operator+=(std::initializer_list<T> l) noexcept;
 
   Matrix<T> &operator+=(const T value) noexcept;
-
-  Matrix<T> &operator-(const Matrix<T> &other) noexcept;
-  Matrix<T> &operator-(std::initializer_list<T> l) noexcept;
-
-  Matrix<T> &operator-(const T value) noexcept;
 
   Matrix<T> &operator-=(const Matrix<T> &other) noexcept;
 
@@ -72,19 +61,11 @@ public:
 
   Matrix<T> &operator-=(const T value) noexcept;
 
-  Matrix<T> &operator*(const Matrix<T> &other) noexcept;
-
-  Matrix<T> &operator*(std::initializer_list<T> l) noexcept;
-
-  Matrix<T> &operator*(const T value) noexcept;
-
   Matrix<T> &operator*=(const Matrix<T> &other) noexcept;
 
   Matrix<T> &operator*=(std::initializer_list<T> l) noexcept;
 
   Matrix<T> &operator*=(const T value) noexcept;
-
-  Matrix<T> &operator/(const T value) noexcept;
 
   Matrix<T> &operator/=(const Matrix<T> &other) noexcept;
 
@@ -103,9 +84,9 @@ public:
 protected:
   uint32_t height{0}; //!< Amount of Height in the matrix.
   uint32_t width{0};  //!< Amount of Width in the matrix.
-  uint32_t totalSize{0};
+  uint32_t totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
 
-  T *mat { nullptr }; //!< Array of matrix's values.
+  T *mat { nullptr }; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 };
 
 template <class E>
@@ -148,47 +129,6 @@ template <class E>
 inline uint8_t Matrix<E>::Width() const { return width; }
 
 template <class E>
-Matrix<E> &Matrix<E>::operator+(const Matrix<E> &other) noexcept
-{
-  if (height != other.Height() || width != other.Width())
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] + other.mat[i];
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator+(std::initializer_list<E> l) noexcept
-{
-  if (totalSize != l.size())
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] + l.begin()[i];
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator+(const E value) noexcept
-{
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] + value;
-  }
-  return *result;
-}
-
-template <class E>
 Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 {
   if (height != other.Height() || width != other.Width())
@@ -224,48 +164,6 @@ Matrix<E> &Matrix<E>::operator+=(const E value) noexcept
     mat[i] += value;
   }
   return *this;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator-(const Matrix<E> &other) noexcept
-{
-  if (height != other.height || width != other.width)
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] - other.mat[i];
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator-(std::initializer_list<E> l) noexcept
-{
-  if (totalSize != l.size())
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] - l.begin()[i];
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator-(const E value) noexcept
-{
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] - value;
-  }
-
-  return *result;
 }
 
 template <class E>
@@ -307,74 +205,6 @@ Matrix<E> &Matrix<E>::operator-=(const E value) noexcept
 }
 
 template <class E>
-Matrix<E> &Matrix<E>::operator*(const Matrix<E> &other) noexcept
-{
-  if (width != other.height)
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, other.width);
-
-  E *matPointer;
-  for (int x = 0; x < other.width; x++)
-  {
-    matPointer = (*result)[x];
-    for (int y = 0; y < height; y++)
-    {
-      E value;
-      value *= 0; // TODO should be zero
-      for (int i = 0; i < other.height; i++)
-      {
-        value += *this[i][y] * other[x][i];
-      }
-      matPointer[y] = value;
-    }
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator*(std::initializer_list<E> l) noexcept
-{
-  Matrix<E> other(l.size() / height, l.size() / width);
-  other = l;
-
-  if (width != other.height)
-    return *this; // TODO add warning
-
-  Matrix<E> *result = new Matrix<E>(height, other.width);
-
-  E *matPointer;
-  for (int x = 0; x < other.width; x++)
-  {
-    matPointer = (*result)[x];
-    for (int y = 0; y < height; y++)
-    {
-      E value;
-      value *= 0; // TODO should be zero
-      for (int i = 0; i < other.height; i++)
-      {
-        value += *this[i][y] * other[x][i];
-      }
-      matPointer[y] = value;
-    }
-  }
-
-  return *result;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator*(const E value) noexcept
-{
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] * value;
-  }
-  return *result;
-}
-
-template <class E>
 Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (width != other.height)
@@ -395,24 +225,6 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   *this = result; // TODO it is kinda not good
   return *this;
 }
-
-
-// if (this->Width() != other->Height())
-// {
-//   Logger::Error("Trying to multiply matrix of size %dx%d by matrix of size %dx%d, which cannot be done!", mat1->Rows(), mat1->Columns(), mat2->Rows(), mat2->Columns());
-//   throw std::runtime_error("Matrix multiplication failed!"); // TODO use my own error handler
-// }
-
-// for (uint8_t r = 0; r < this->Height(); r++)
-// {
-//   for (uint8_t c = 0; c < other->Width(); c++)
-//   {
-//     for (uint8_t i = 0; i < other->Height(); i++)
-//     {
-//       outMat[x][y] += this->GetValue(r, i) * other->GetValue(i, c);
-//     }
-//   }
-// }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
@@ -449,17 +261,6 @@ Matrix<E> &Matrix<E>::operator*=(const E value) noexcept
     mat[i] *= value;
   }
   return *this;
-}
-
-template <class E>
-Matrix<E> &Matrix<E>::operator/(const E value) noexcept
-{
-  Matrix<E> *result = new Matrix<E>(height, width);
-  for (int i = 0; i < totalSize; i++)
-  {
-    result->mat[i] = mat[i] / value;
-  }
-  return *result;
 }
 
 template <class E>
