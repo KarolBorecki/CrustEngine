@@ -1,8 +1,6 @@
 #ifndef _RENDERER_HPP_
 #define _RENDERER_HPP_
 
-#include <math.h> /* cos, sin, sqrt */
-
 #include <Math/Matrix.hpp>
 
 #include <Core/Camera.hpp>
@@ -166,7 +164,7 @@ Triangle *Renderer::ProjectTriangle(Triangle *tri, Vector3 *pos, Vector3 *rot, C
   normal.SetZ(line1.X() * line2.Y() - line1.Y() * line2.X());
 
   static double normalLen;
-  normalLen = sqrt(normal.X() * normal.X() + normal.Y() * normal.Y() + normal.Z() * normal.Z());
+  normalLen = Math::SquareRoot(normal.X() * normal.X() + normal.Y() * normal.Y() + normal.Z() * normal.Z());
   normal /= normalLen;
 
   /* calculate dot product */
@@ -186,7 +184,7 @@ Triangle *Renderer::ProjectTriangle(Triangle *tri, Vector3 *pos, Vector3 *rot, C
     if (projectLight)
     {
       lightDirNormal = *lightDir;
-      lightDirNormalLen = sqrt(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
+      lightDirNormalLen = Math::SquareRoot(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
       lightDirNormal /= lightDirNormalLen;
 
       lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
