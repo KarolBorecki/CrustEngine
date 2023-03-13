@@ -82,11 +82,11 @@ public:
   T *operator[](int x) const noexcept;
 
 protected:
-  uint32_t height{0}; //!< Amount of Height in the matrix.
-  uint32_t width{0};  //!< Amount of Width in the matrix.
+  uint32_t height{0};    //!< Amount of Height in the matrix.
+  uint32_t width{0};     //!< Amount of Width in the matrix.
   uint32_t totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
 
-  T *mat { nullptr }; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
+  T *mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 };
 
 template <class E>
@@ -112,13 +112,13 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : hei
     return;
   mat = new E[totalSize];
 
-  *this = { _defaultVal };
+  *this = {_defaultVal};
 }
 
 template <class E>
 inline Matrix<E>::~Matrix()
 {
-  if(mat != nullptr) 
+  if (mat != nullptr)
     delete[] mat;
 }
 
@@ -210,18 +210,20 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   if (width != other.height)
     return *this; // TODO add warning
 
-  Matrix<E> result(width, other.height, 0.0);
+  static Matrix<E> result(width, other.height, 0.0);
+  // static E value;
   for (int y = 0; y < height; y++)
   {
     for (int x = 0; x < other.Height(); x++)
     {
+      // value *= 0.0;
       for (int i = 0; i < other.Height(); i++)
       {
         result[x][y] += (*this)[i][y] * other[x][i];
       }
     }
   }
-  
+
   *this = result; // TODO it is kinda not good
   return *this;
 }
@@ -231,25 +233,25 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 {
   Matrix<E> other(l.size() / height, l.size() / width);
   other = l;
-
   if (width != other.height)
     return *this; // TODO add warning
 
-  Matrix<E> result(height, other.width);
-  E *matPointer;
-  for (int x = 0; x < other.width; x++)
+  static Matrix<E> result(width, other.height, 0.0);
+  // static E value;
+  for (int y = 0; y < height; y++)
   {
-    matPointer = *this[x];
-    for (int y = 0; y < height; y++)
+    for (int x = 0; x < other.Height(); x++)
     {
-      result[x][y] *= 0;
-      for (int i = 0; i < other.height; i++)
+      // value *= 0.0;
+      for (int i = 0; i < other.Height(); i++)
       {
-        result[x][y] += *this[i][y] * other[x][i];
+        result[x][y] += (*this)[i][y] * other[x][i];
       }
     }
   }
-  *this = result; // TODO it is kind not good
+
+  *this = result; // TODO it is kinda not good
+
   return *this;
 }
 
@@ -295,7 +297,8 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
 
   if (totalSize != (other.Height() * other.Width()))
   {
-    delete[] mat;
+    if (mat != nullptr)
+      delete[] mat;
     mat = nullptr;
     mat = new E[other.totalSize];
   }
@@ -321,7 +324,7 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
   else if (l.size() == totalSize)
   {
     memcpy(mat, l.begin(), totalSize * sizeof(E));
-  }
+  } 
   return *this;
 }
 
@@ -352,7 +355,7 @@ bool Matrix<E>::operator==(const Matrix<E> &other) noexcept
 template <class E>
 bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
 {
-  if(height != other.Height() || width != other.Width())
+  if (height != other.Height() || width != other.Width())
     return true;
 
   for (uint32_t x = 0; x < width; x++)
