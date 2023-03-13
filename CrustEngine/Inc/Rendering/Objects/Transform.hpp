@@ -22,9 +22,11 @@ public:
      *
      * @return #rot field.
      */
-    Vector3 &GetRotation() const;
+    Vector3 &GetEulerRotation() const;
 
     void SetPosition(double x, double y, double z);
+
+    void SetEulerRotation(double x, double y, double z);
 
     /**
      * @brief Moves object by given values.
@@ -38,7 +40,7 @@ public:
      *
      * @details Adds dX, dY and dZ to adequate values of #rot vector values.
      */
-    void Rotate(double dX, double dY, double dZ);
+    void RotateEuler(double dX, double dY, double dZ);
 
 private:
     Vector3 *pos{nullptr}; //!< Object's position in 3D space.
@@ -59,12 +61,14 @@ inline Transform::~Transform()
 
 inline Vector3 &Transform::GetPosition() const { return *pos; }
 
-inline Vector3 &Transform::GetRotation() const { return *rot; }
+inline Vector3 &Transform::GetEulerRotation() const { return *rot; }
 
 inline void Transform::SetPosition(double x, double y, double z) { (*pos) = {x, y, z}; }
 
+inline void Transform::SetEulerRotation(double x, double y, double z) { (*rot) = {x, y, z}; }
+
 inline void Transform::Translate(double dX, double dY, double dZ) { (*pos) += {dX, dY, dZ}; }
 
-inline void Transform::Rotate(double dX, double dY, double dZ) { (*rot) += {dX, dY, dZ}; }
+inline void Transform::RotateEuler(double dX, double dY, double dZ) { (*rot) += {dX, dY, dZ}; }
 
 #endif /* _TRANSFORM_HPP_ */

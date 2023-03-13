@@ -68,7 +68,7 @@ public:
 private:
   std::string name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path.
 
-  std::vector<Polygon*> polygons; //!< Polygons, of which the mesh consists.
+  std::vector<Polygon *> polygons; //!< Polygons, of which the mesh consists.
 };
 
 inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) {}
@@ -78,15 +78,17 @@ inline Mesh::Mesh(std::string meshName) : name(meshName) {}
 Mesh::~Mesh()
 {
   // TODO not created? Then dont delete!
-  for (auto tri : polygons)
-    delete tri;
+  Logger::Log("Polygon 1");
+  for (auto poli : polygons)
+    delete poli;
+  Logger::Log("Polygon 2");
 }
 
-inline void Mesh::AddPolygon(Polygon &tri) { polygons.push_back(&tri); } // TODO hold copies
+inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); } // TODO hold copies
 
 inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(polygons[index]); }
 
-inline Vector3 &Mesh::GetPoint(const uint32_t triIndex, const uint32_t pointIndex) const { return *(polygons[triIndex]->GetPoint(pointIndex)); }
+inline Vector3 &Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const { return polygons[poliIndex]->GetPoint(pointIndex); }
 
 inline uint32_t Mesh::GetPolygonsCount() const { return polygons.size(); }
 

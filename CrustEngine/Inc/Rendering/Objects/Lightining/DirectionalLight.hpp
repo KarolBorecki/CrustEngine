@@ -11,14 +11,14 @@
 class DirectionalLight : public LightSource
 {
 public:
-    DirectionalLight(double _intensivity, Vector3 *_direction);
+    DirectionalLight(double _intensivity, Vector3 &_direction);
 
     std::string GetObjectTypeName() override;
-
-private:
 };
 
-inline DirectionalLight::DirectionalLight(double _intensivity, Vector3 *_dir) : LightSource(_intensivity, _dir) {}
+inline DirectionalLight::DirectionalLight(double _intensivity, Vector3 &_dir) : LightSource(_intensivity) {
+    transform->SetEulerRotation(_dir.X(), _dir.Y(), _dir.Z());
+}
 
 inline std::string DirectionalLight::GetObjectTypeName() { return "Directional Light Source"; }
 

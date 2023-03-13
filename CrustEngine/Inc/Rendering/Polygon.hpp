@@ -8,26 +8,36 @@ class Polygon : public Triangle
 {
 public:
     using Triangle::Triangle;
+    ~Polygon();
 
-    Vector3& Normal();
+    Vector3 &Normal();
+
 private:
-    Vector3* normal {nullptr};
+    Vector3 *normal{nullptr};
 };
 
-Vector3& Polygon::Normal() 
+Polygon::~Polygon()
 {
-    if(normal != nullptr)
+    if (normal == nullptr)
+        return;
+    delete normal;
+}
+
+Vector3 &Polygon::Normal()
+{
+    if (normal != nullptr)
         return *normal;
 
+    // TODO After rotation this is ought to be recalculated - this will generate bugs, but for now it is good enough
     normal = new Vector3();
     static Vector3 line1;
     static Vector3 line2;
 
-    line1 = *GetPoint(1);
-    line1 -= *GetPoint(0);
+    line1 = GetPoint(1);
+    line1 -= GetPoint(0);
 
-    line2 = *GetPoint(2);
-    line2 -= *GetPoint(0);
+    line2 = GetPoint(2);
+    line2 -= GetPoint(0);
 
     normal->SetX(line1.Y() * line2.Z() - line1.Z() * line2.Y());
     normal->SetY(line1.Z() * line2.X() - line1.X() * line2.Z());

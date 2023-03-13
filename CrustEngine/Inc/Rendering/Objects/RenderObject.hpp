@@ -14,7 +14,7 @@ public:
   /**
   * @param _mesh Mesh that will be rendered for this object on the scene that contains this object.
   */ //TODO allow nullptr mesh
-  RenderObject(Mesh* _mesh);
+  RenderObject(Mesh& _mesh);
   ~RenderObject();
 
   std::string GetObjectTypeName() override;
@@ -24,18 +24,18 @@ public:
   *
   * @return Handler to #mesh field.
   */
-  Mesh* GetMesh();
+  Mesh& GetMesh();
 
 private:
-  Mesh* mesh; //!< Mesh that is rendered in this object position.
+  Mesh& mesh; //!< Mesh that is rendered in this object position.
 };
 
-inline RenderObject::RenderObject(Mesh* _mesh) : mesh(_mesh), Object() {}
+inline RenderObject::RenderObject(Mesh& _mesh) : mesh(_mesh), Object() {}
 
 inline RenderObject::~RenderObject() {}
 
 inline std::string RenderObject::GetObjectTypeName() { return "Render Object"; }
 
-inline Mesh* RenderObject::GetMesh() { return mesh; }
+inline Mesh& RenderObject::GetMesh() { return mesh; }
 
 #endif /* _RENDEROBJECT_HPP_ */

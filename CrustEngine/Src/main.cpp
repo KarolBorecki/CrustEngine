@@ -13,13 +13,12 @@
 #include <Math/Matrix.hpp>
 
 #include <Scripting/SampleScripts/LoopMove.hpp>
-// #include <Scripting/SampleScripts/Rotate.hpp>
 
 int main(int argc, char *argv[])
 {
     Camera cam(90, 0.1, 1000.0);
-    cam.GetTransform()->SetPosition(-4, -5, -10);
-    Scene scene("T Scene", &cam);
+    cam.GetTransform().SetPosition(-4, -5, -10);
+    Scene scene("T Scene", cam);
 
     Mesh mesh("Sample mesh");
 
@@ -27,9 +26,7 @@ int main(int argc, char *argv[])
     std::string path = "/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Tmp/meshes/" + name + ".obj";
 
     MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
-    RenderObject rObj(&mesh);
-
-    RenderObject l(nullptr);
+    RenderObject rObj(mesh);
 
     // LoopMove rObjMove(-50, 50, 0, 0, 0, 0, 10, 0, 0);
     // cam.AttachScript(&rObjMove);
@@ -38,15 +35,15 @@ int main(int argc, char *argv[])
     // rObj.AttachScript(&rObjRotation);
 
     Vector3 lightSourceDir(0.6, 0.2, -0.5);
-    DirectionalLight dirLightSource(255, &lightSourceDir);
+    DirectionalLight dirLightSource(255, lightSourceDir);
 
-    scene.AddObject(&rObj);
-    scene.AddObject(&dirLightSource);
+    scene.AddObject(rObj);
+    scene.AddObject(dirLightSource);
 
     scene.SetLightProjection(true);
 
     Core core;
-    core.OpenNewWindow(1000, 800, &scene);
+    core.OpenNewWindow(1000, 800, scene);
 
     core.Quit();
 
