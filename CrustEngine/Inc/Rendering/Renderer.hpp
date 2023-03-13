@@ -27,7 +27,7 @@ public:
    * @param _width Width of the window that this Renderer is applied to.
    * @param _height Height of the window that this Renderer is applied to.
    */
-  Renderer(int _width, int _height);
+  Renderer(uint32_t _width, uint32_t _height);
   /**
    * @details If projMatrix is not nullptr deletes it.
    */
@@ -40,7 +40,7 @@ public:
    *
    * @sa Triangle.hpp
    */
-  void DrawTri(Triangle *tri);
+  void DrawPolygon(Polygon& tri);
 
   /**
    * @brief Draws given mesh on the screen
@@ -56,7 +56,7 @@ public:
    *
    * @sa Mesh.hpp
    */
-  void DrawMesh(Mesh *mesh, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight);
+  void DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight);
 
   /**
    * @brief Projects given triangle using #projMatrix.
@@ -72,14 +72,14 @@ public:
    *
    * @return Projected triangle.
    */
-  Triangle *ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight);
+  Polygon &ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight);
 
   /**
    * @brief Getter for #projMatrix field.
    *
    * @return Handler to #projMatrix field.
    */
-  Matrix<double> *GetProjectionMatrix();
+  Matrix<double> &GetProjectionMatrix() const;
 
   /**
    * @brief Recalculates the projection matrix for given camera.
@@ -92,7 +92,7 @@ public:
    *
    * @sa Camera.hpp RenderObject.hpp
    */
-  void RecalculateProjectionMatrix(Camera *cam);
+  void RecalculateProjectionMatrix(Camera &cam);
 
   /* This value should not be changed without full understanding of this change! */
   static constexpr int PROJ_MATRIX_SIZE{4};
@@ -102,7 +102,7 @@ private:
   Matrix<double> *projMatrix; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
 };
 
-Renderer::Renderer(int _width, int _height) : RendererWrapper(_width, _height)
+Renderer::Renderer(uint32_t _width, uint32_t _height) : RendererWrapper(_width, _height)
 {
   aspectRatio = ((double)_height / (double)_width);
   projMatrix = new Matrix<double>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0);
@@ -115,38 +115,38 @@ Renderer::~Renderer()
   delete projMatrix;
 }
 
-void Renderer::DrawMesh(Mesh *mesh, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight)
+void Renderer::DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-  for (int i = 0; i < mesh->GetPolygonsCount(); i++)
+  for (int i = 0; i < mesh.GetPolygonsCount(); i++)
   {
-    ProjectTriangle(&(mesh->GetPolygon(i)), pos, rot, cam, lightDir, projectLight);
+    ProjectPolygon(mesh.GetPolygon(i), pos, rot, cam, lightDir, projectLight);
   }
 }
 
-Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Camera *cam, Vector3 *lightDir, bool projectLight)
+Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
 
   // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
-  static Matrix<double> *projMat = GetProjectionMatrix();
-  static Triangle result;
+  static Matrix<double> projMat = GetProjectionMatrix();
+  static Polygon result;
 
   /* Moving object's triangle */
   static Vector3 movedP1;
   static Vector3 movedP2;
   static Vector3 movedP3;
 
-  movedP1 = *(tri->GetPoint(0));
-  movedP2 = *(tri->GetPoint(1));
-  movedP3 = *(tri->GetPoint(2));
+  movedP1 = poli.GetPoint(0);
+  movedP2 = poli.GetPoint(1);
+  movedP3 = poli.GetPoint(2);
 
-  movedP1 += *pos;
-  movedP2 += *pos;
-  movedP3 += *pos;
+  movedP1 += pos;
+  movedP2 += pos;
+  movedP3 += pos;
 
-  movedP1 -= (cam->GetTransform()->GetPosition());
-  movedP2 -= (cam->GetTransform()->GetPosition());
-  movedP3 -= (cam->GetTransform()->GetPosition());
+  movedP1 -= cam.GetTransform().GetPosition(); //TODO move to local variable
+  movedP2 -= cam.GetTransform().GetPosition();
+  movedP3 -= cam.GetTransform().GetPosition();
 
   /* Normalizing object's triangle */
   static Vector3 normal;
@@ -169,9 +169,9 @@ Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Ca
 
   /* calculate dot product */
   static double dotProduct;
-  dotProduct = normal.X() * (movedP1.X() - cam->GetTransform()->GetPosition().X()) +
-               normal.Y() * (movedP1.Y() - cam->GetTransform()->GetPosition().Y()) +
-               normal.Z() * (movedP1.Z() - cam->GetTransform()->GetPosition().Z());
+  dotProduct = normal.X() * (movedP1.X() - cam.GetTransform().GetPosition().X()) +
+               normal.Y() * (movedP1.Y() - cam.GetTransform().GetPosition().Y()) +
+               normal.Z() * (movedP1.Z() - cam.GetTransform().GetPosition().Z());
 
 
   if (dotProduct < 0.0)
@@ -183,8 +183,8 @@ Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Ca
 
     if (projectLight)
     {
-      lightDirNormal = *lightDir;
-      lightDirNormalLen = Math::SquareRoot(lightDir->X() * lightDir->X() + lightDir->Y() * lightDir->Y() + lightDir->Z() * lightDir->Z());
+      lightDirNormal = lightDir;
+      lightDirNormalLen = Math::SquareRoot(lightDir.X() * lightDir.X() + lightDir.Y() * lightDir.Y() + lightDir.Z() * lightDir.Z());
       lightDirNormal /= lightDirNormalLen;
 
       lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
@@ -203,9 +203,9 @@ Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Ca
     extendedP2 = {movedP2.X(), movedP2.Y(), movedP2.Z(), 1.0};
     extendedP3 = {movedP3.X(), movedP3.Y(), movedP3.Z(), 1.0};
  
-    extendedP1 *= *projMat; // Wynik tego mnozenia jest zly
-    extendedP2 *= *projMat;
-    extendedP3 *= *projMat;
+    extendedP1 *= projMat; // Wynik tego mnozenia jest zly
+    extendedP2 *= projMat;
+    extendedP3 *= projMat;
 
     static Vector3 projectedP1;
     static Vector3 projectedP2;
@@ -236,21 +236,21 @@ Triangle *Renderer::ProjectTriangle(Polygon *tri, Vector3 *pos, Vector3 *rot, Ca
     projectedP3.SetY(projectedP3.Y() * Height());
 
     result.SetPoints(projectedP1.X(), projectedP1.Y(), projectedP1.Z(), projectedP2.X(), projectedP2.Y(), projectedP2.Z(), projectedP3.X(), projectedP3.Y(), projectedP3.Z());
-    DrawFilledTri(result.GetPoint(0)->X(), result.GetPoint(0)->Y(), result.GetPoint(1)->X(), result.GetPoint(1)->Y(), result.GetPoint(2)->X(), result.GetPoint(2)->Y(), (uint8_t)(lightDotProduct * 255), (uint8_t)(lightDotProduct * 255), (uint8_t)(lightDotProduct * 255));
+    DrawFilledTri(result.GetPoint(0).X(), result.GetPoint(0).Y(), result.GetPoint(1).X(), result.GetPoint(1).Y(), result.GetPoint(2).X(), result.GetPoint(2).Y(), (uint8_t)(lightDotProduct * 255), (uint8_t)(lightDotProduct * 255), (uint8_t)(lightDotProduct * 255));
   }
-  return &result;
+  return result;
 }
 
-inline Matrix<double> *Renderer::GetProjectionMatrix() { return projMatrix; }
+inline Matrix<double> &Renderer::GetProjectionMatrix() const { return *projMatrix; }
 
-void Renderer::RecalculateProjectionMatrix(Camera *cam)
+void Renderer::RecalculateProjectionMatrix(Camera &cam)
 {
-  double q = cam->GetFFar() / (cam->GetFFar() - cam->GetFNear());
-  (*projMatrix)[0][0] = aspectRatio * cam->GetFFovRad();
-  (*projMatrix)[1][1] = cam->GetFFovRad();
+  double q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
+  (*projMatrix)[0][0] = aspectRatio * cam.GetFFovRad();
+  (*projMatrix)[1][1] = cam.GetFFovRad();
   (*projMatrix)[2][2] = q;
   (*projMatrix)[3][2] = 1.0;
-  (*projMatrix)[2][3] = -cam->GetFNear() * q;
+  (*projMatrix)[2][3] = -cam.GetFNear() * q;
 }
 
 #endif /* _RENDERER_HPP_ */

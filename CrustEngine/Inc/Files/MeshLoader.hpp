@@ -32,7 +32,6 @@ private:
    * @sa FileReader.hpp <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">*.obj file extensions</a>
    */
   static void ParseObjToMesh(const char *fileName, Mesh *outMesh);
-
 };
 
 void MeshLoader::LoadMeshFromFile(const char *fileName, Mesh *outMesh)
@@ -57,7 +56,7 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
   int t1_index = 1, t2_index = 1, t3_index = 1; // Textures indexes
   int n1_index = 1, n2_index = 1, n3_index = 1; // Normals indexes
 
-  std::vector<Vector3*> points;
+  std::vector<double> points;
 
   int currentPoint = 0;
   int currentTri = 0;
@@ -68,7 +67,9 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     analysed_line = line.c_str();
     if (sscanf(analysed_line, "v %lf %lf %lf", &x, &y, &z) == 3)
     {
-      points.push_back(new Vector3(x, y, z));
+      points.push_back(x);
+      points.push_back(y);
+      points.push_back(z);
     }
     else if (sscanf(analysed_line, "vn %lf %lf %lf", &x, &y, &z) == 3)
     {
@@ -80,15 +81,22 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     }
     else if (sscanf(analysed_line, "f %d %d %d", &p1_index, &p2_index, &p3_index) == 3)
     {
-      outMesh->AddPolygon(*(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1])));
+      // TODO rework this
+      outMesh->AddPolygon(*(new Polygon(points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2], // TODO make static polygon and pass it as copy
+                                        points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2],
+                                        points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2])));
     }
     else if (sscanf(analysed_line, "f %d/%d %d/%d %d/%d", &p1_index, &t1_index, &p2_index, &t2_index, &p3_index, &t3_index) == 6)
     {
-      outMesh->AddPolygon(*(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1])));
+      outMesh->AddPolygon(*(new Polygon(points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2],
+                                        points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2],
+                                        points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2])));
     }
     else if (sscanf(analysed_line, "f %d/%d/%d %d/%d/%d %d/%d/%d", &p1_index, &t1_index, &n1_index, &p2_index, &t2_index, &n2_index, &p3_index, &t3_index, &n3_index) == 9)
     {
-      outMesh->AddPolygon(*(new Polygon(points[p1_index - 1], points[p2_index - 1], points[p3_index - 1])));
+      outMesh->AddPolygon(*(new Polygon(points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2],
+                                        points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2],
+                                        points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2])));
     }
     else if (sscanf(analysed_line, "usemtl %s", str) == 1)
     {

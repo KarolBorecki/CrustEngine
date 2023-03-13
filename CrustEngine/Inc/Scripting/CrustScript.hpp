@@ -3,23 +3,25 @@
 
 class Object;
 
-class CrustScript {
+class CrustScript
+{
 public:
   CrustScript() {}
-  virtual ~CrustScript() {};
+  virtual ~CrustScript(){};
 
   virtual void Start();
   virtual void Update(double deltaTime);
 
-  void AttachTo(Object* _parentObj);
+  void AttachTo(Object &_parentObj);
+
 protected:
-  Object* parentObj;
+  Object *parentObj;
 };
 
 inline void CrustScript::Start() {}
 
 inline void CrustScript::Update(double deltaTime) {}
 
-inline void CrustScript::AttachTo(Object *_parentObj) { parentObj = _parentObj; }
+inline void CrustScript::AttachTo(Object &_parentObj) { parentObj = &_parentObj; }
 
 #endif /* _CRUSTSCRIPT_HPP_ */

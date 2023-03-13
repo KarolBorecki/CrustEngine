@@ -31,28 +31,16 @@ public:
    */
   virtual double GetNormalisedIntensivity();
 
-  /**
-   * @brief Getter for light's #direction field.
-   */
-  Vector3 *GetDirection();
-
 protected:
-  LightSource(double _intensivity, Vector3 *_direction);
-
-  uint8_t intesivity { 255 };     //!< Light's intensivity. Value between 0 and 255, where 255 represent brightest light.
-  Vector3 *direction { nullptr }; //!< Lights direction in 3D space. // TODO move to directional ligth
+  uint8_t intesivity{255}; //!< Light's intensivity. Value between 0 and 255, where 255 represent the brightest light.
 };
 
-inline LightSource::LightSource(double _intensivity) : intesivity(_intensivity) {}
-
-inline LightSource::LightSource(double _intensivity, Vector3 *_direction) : intesivity(_intensivity), direction(_direction) {}
+inline LightSource::LightSource(double _intensivity) : intesivity(_intensivity), Object() {}
 
 inline std::string LightSource::GetObjectTypeName() { return "Light Source"; }
 
 inline uint8_t LightSource::GetIntensivity() { return intesivity; }
 
 inline double LightSource::GetNormalisedIntensivity() { return intesivity / 255; }
-
-inline Vector3 *LightSource::GetDirection() { return direction; }
 
 #endif /* _LIGHTSOURCE_HPP_ */
