@@ -46,6 +46,5 @@ int main(int argc, char *argv[])
     core.OpenNewWindow(1000, 800, scene);
 
     core.Quit();
-
     return 0;
 }
