@@ -31,6 +31,8 @@ public:
    * @param defaultVal The value that will be placed on each position in matrix.
    */
   Matrix(uint32_t height, uint32_t width, T defaultVal);
+
+  Matrix(Matrix<T>& other); // Rule of 3/5/0
   /**
    * @details If #mat is not null deletes it from the heap.
    */
@@ -87,17 +89,25 @@ protected:
   uint32_t totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
 
   T *mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
+
+  inline static T *tmpMat{nullptr};
+  static constexpr uint32_t MAX_MATRIX_SIZE{4096};
 };
 
 template <class E>
 inline Matrix<E>::Matrix() : height(0), width(0)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = 0;
 }
 
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), width(_width)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
+
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
@@ -107,6 +117,8 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), w
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : height(_height), width(_width)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
@@ -116,10 +128,30 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : hei
 }
 
 template <class E>
+Matrix<E>::Matrix(Matrix<E>& other) : height(other.Height()), width(other.Width())
+{
+  Logger::Log("Wywołalo copy c onstructor");
+  if (totalSize != (other.Height() * other.Width()))
+  {
+    if (mat != nullptr)
+      delete[] mat;
+    mat = nullptr;
+    mat = new E[other.totalSize]; // TODO use realloc!!!!
+  }
+
+  totalSize = width * height;
+
+  memcpy(mat, other.mat, sizeof(E) * totalSize);
+}
+
+template <class E>
 inline Matrix<E>::~Matrix()
 {
+  Logger::Log("Matrix delete");
   if (mat != nullptr)
     delete[] mat;
+
+  // Logger::Log("Matrix 2");
 }
 
 template <class E>
@@ -204,53 +236,64 @@ Matrix<E> &Matrix<E>::operator-=(const E value) noexcept
   return *this;
 }
 
-template <class E>
+template <class E> // TODO refactor
 Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (width != other.height)
     return *this; // TODO add warning
 
-  static Matrix<E> result(width, other.height, 0.0);
-  // static E value;
   for (int y = 0; y < height; y++)
   {
     for (int x = 0; x < other.Height(); x++)
     {
-      // value *= 0.0;
+      *(tmpMat + (x * width) + y) *= 0.0;
       for (int i = 0; i < other.Height(); i++)
       {
-        result[x][y] += (*this)[i][y] * other[x][i];
+        *(tmpMat + (x * width) + y) += (*this)[i][y] * other[x][i];
       }
     }
   }
 
-  *this = result; // TODO it is kinda not good
+  height = width;
+  width = other.height;
+  if (height * width > totalSize)
+  {
+    delete[] mat;
+    mat = new E[height * width];
+  }
+  totalSize = width * height;
+  memcpy(mat, tmpMat, totalSize * sizeof(E));
+  Logger::Log("Chce zwrcić ten obiekt...");
   return *this;
 }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 {
-  Matrix<E> other(l.size() / height, l.size() / width);
-  other = l;
-  if (width != other.height)
+  static uint32_t otherWidth;
+  static uint32_t otherHeight;
+  otherWidth = l.size() / width;
+  otherHeight = l.size() / height;
+
+  if (width != otherHeight)
     return *this; // TODO add warning
 
-  static Matrix<E> result(width, other.height, 0.0);
-  // static E value;
   for (int y = 0; y < height; y++)
   {
-    for (int x = 0; x < other.Height(); x++)
+    for (int x = 0; x < otherHeight; x++)
     {
-      // value *= 0.0;
-      for (int i = 0; i < other.Height(); i++)
+      *(tmpMat + (x * width) + y) *= 0.0;
+      for (int i = 0; i < otherHeight; i++)
       {
-        result[x][y] += (*this)[i][y] * other[x][i];
+        *(tmpMat + (x * width) + y) += (*this)[i][y] * (*(l.begin() + (x * otherHeight) + i));
       }
     }
   }
 
-  *this = result; // TODO it is kinda not good
+  height = width;
+  width = otherHeight;
+  totalSize = width * height;
+  memcpy(mat, tmpMat, totalSize * sizeof(E));
 
   return *this;
 }
@@ -300,7 +343,7 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
     if (mat != nullptr)
       delete[] mat;
     mat = nullptr;
-    mat = new E[other.totalSize];
+    mat = new E[other.totalSize]; // TODO use realloc!!!!
   }
 
   height = other.Height();
@@ -316,6 +359,7 @@ template <class E>
 Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 {
   const double *ptL = l.begin();
+
   if (l.size() == 1)
   {
     for (uint32_t i = 0; i < totalSize; i++)
@@ -324,7 +368,7 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
   else if (l.size() == totalSize)
   {
     memcpy(mat, l.begin(), totalSize * sizeof(E));
-  } 
+  }
   return *this;
 }
 

@@ -126,9 +126,10 @@ void Renderer::DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vec
 
 Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
-
+Logger::Log("Nowy poligin");
   // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
-  static Matrix<double> projMat = GetProjectionMatrix();
+  static Matrix<double> projMat;
+  projMat = GetProjectionMatrix();
   static Polygon result;
 
   /* Moving object's triangle */
@@ -173,7 +174,6 @@ Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Cam
                normal.Y() * (movedP1.Y() - cam.GetTransform().GetPosition().Y()) +
                normal.Z() * (movedP1.Z() - cam.GetTransform().GetPosition().Z());
 
-
   if (dotProduct < 0.0)
   {
     /* Illumination */
@@ -202,7 +202,7 @@ Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Cam
     extendedP1 = {movedP1.X(), movedP1.Y(), movedP1.Z(), 1.0};
     extendedP2 = {movedP2.X(), movedP2.Y(), movedP2.Z(), 1.0};
     extendedP3 = {movedP3.X(), movedP3.Y(), movedP3.Z(), 1.0};
- 
+
     extendedP1 *= projMat; // Wynik tego mnozenia jest zly
     extendedP2 *= projMat;
     extendedP3 *= projMat;
