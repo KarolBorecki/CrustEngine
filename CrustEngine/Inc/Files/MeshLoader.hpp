@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+#include <Logging/ExceptionsHandler.hpp>
+
 /**
  * @brief Class used to read meshes from *.obj file
  */
@@ -41,7 +43,7 @@ void MeshLoader::LoadMeshFromFile(const char *fileName, Mesh *outMesh)
   if (fileName[fileNameLen - 1] == 'j' && fileName[fileNameLen - 2] == 'b' && fileName[fileNameLen - 3] == 'o' && fileName[fileNameLen - 4] == '.')
     ParseObjToMesh(fileName, outMesh);
   else
-    Logger::Error("No mathing file extension for file: %s", fileName); // TODO use my own error handler
+    ExceptionsHandler::ThrowWarning("No mathing file extension for file: %s - The mesh will not be loaded.", fileName);
 }
 
 void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)

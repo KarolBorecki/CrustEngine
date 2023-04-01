@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+#include <Logging/ExceptionsHandler.hpp>
 #include <Math/Math.hpp>
 
 /**
@@ -23,7 +24,7 @@ public:
    * @param Height Amount of Height in the matrix.
    * @param Width Amount of Width in the matrix.
    */
-  Matrix(uint32_t height, uint32_t width); // TODO 8bits for matrix size is too low
+  Matrix(uint32_t height, uint32_t width);
   /**
    * @brief If width or height argument is zero then no space for matrix's array will be allocated.
    * @param Height Amount of Height in the matrix.
@@ -32,7 +33,7 @@ public:
    */
   Matrix(uint32_t height, uint32_t width, T defaultVal);
 
-  Matrix(Matrix<T>& other); // Rule of 3/5/0
+  Matrix(Matrix<T> &other); // Rule of 3/5/0
   /**
    * @details If #mat is not null deletes it from the heap.
    */
@@ -43,13 +44,13 @@ public:
    *
    * @return Amount of Height in matrix.
    */
-  uint8_t Height() const;
+  uint32_t Height() const;
   /**
    * @brief Getter for #Width field.
    *
    * @return Amount of Width in matrix
    */
-  uint8_t Width() const;
+  uint32_t Width() const;
 
   Matrix<T> &operator+=(const Matrix<T> &other) noexcept;
 
@@ -128,9 +129,8 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : hei
 }
 
 template <class E>
-Matrix<E>::Matrix(Matrix<E>& other) : height(other.Height()), width(other.Width())
+Matrix<E>::Matrix(Matrix<E> &other) : height(other.Height()), width(other.Width())
 {
-  Logger::Log("Wywołalo copy c onstructor");
   if (totalSize != (other.Height() * other.Width()))
   {
     if (mat != nullptr)
@@ -147,24 +147,24 @@ Matrix<E>::Matrix(Matrix<E>& other) : height(other.Height()), width(other.Width(
 template <class E>
 inline Matrix<E>::~Matrix()
 {
-  Logger::Log("Matrix delete");
   if (mat != nullptr)
     delete[] mat;
-
-  // Logger::Log("Matrix 2");
 }
 
 template <class E>
-inline uint8_t Matrix<E>::Height() const { return height; }
+inline uint32_t Matrix<E>::Height() const { return height; }
 
 template <class E>
-inline uint8_t Matrix<E>::Width() const { return width; }
+inline uint32_t Matrix<E>::Width() const { return width; }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 {
   if (height != other.Height() || width != other.Width())
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes!");
+    return *this;
+  }
 
   for (int i = 0; i < totalSize; i++)
   {
@@ -178,7 +178,10 @@ template <class E>
 Matrix<E> &Matrix<E>::operator+=(std::initializer_list<E> l) noexcept
 {
   if (totalSize != l.size())
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes!");
+    return *this;
+  }
 
   for (int i = 0; i < totalSize; i++)
   {
@@ -202,7 +205,10 @@ template <class E>
 Matrix<E> &Matrix<E>::operator-=(const Matrix<E> &other) noexcept
 {
   if (height != other.height || width != other.width)
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes!");
+    return *this;
+  }
 
   for (int i = 0; i < totalSize; i++)
   {
@@ -216,7 +222,10 @@ template <class E>
 Matrix<E> &Matrix<E>::operator-=(std::initializer_list<E> l) noexcept
 {
   if (totalSize != l.size())
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes!");
+    return *this;
+  }
 
   for (int i = 0; i < totalSize; i++)
   {
@@ -240,7 +249,10 @@ template <class E> // TODO refactor
 Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (width != other.height)
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes!");
+    return *this;
+  }
 
   for (int y = 0; y < height; y++)
   {
@@ -263,7 +275,6 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   }
   totalSize = width * height;
   memcpy(mat, tmpMat, totalSize * sizeof(E));
-  Logger::Log("Chce zwrcić ten obiekt...");
   return *this;
 }
 
@@ -276,7 +287,10 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
   otherHeight = l.size() / height;
 
   if (width != otherHeight)
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes!");
+    return *this;
+  }
 
   for (int y = 0; y < height; y++)
   {
@@ -295,7 +309,7 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
   totalSize = width * height;
   memcpy(mat, tmpMat, totalSize * sizeof(E));
 
-  return *this;
+  return *this; // TODO wywołujepowstanie nowej macierzy
 }
 
 template <class E>
@@ -312,7 +326,10 @@ template <class E>
 Matrix<E> &Matrix<E>::operator/=(const Matrix<E> &other) noexcept
 {
   if (height != other.height || width != other.width)
-    return *this; // TODO add warning
+  {
+    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes!");
+    return *this;
+  }
 
   for (int i = 0; i < totalSize; i++)
   {
@@ -335,6 +352,7 @@ Matrix<E> &Matrix<E>::operator/=(const E value) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
 {
+  Logger::Log("Start = with matrix");
   if (this == &other)
     return *this;
 
@@ -351,13 +369,14 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
   totalSize = width * height;
 
   memcpy(mat, other.mat, sizeof(E) * totalSize);
-
+  Logger::Log("End = with matrix");
   return *this;
 }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 {
+  Logger::Log("Start = with init list");
   const double *ptL = l.begin();
 
   if (l.size() == 1)
@@ -369,6 +388,7 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
   {
     memcpy(mat, l.begin(), totalSize * sizeof(E));
   }
+  Logger::Log("End = with init list");
   return *this;
 }
 
