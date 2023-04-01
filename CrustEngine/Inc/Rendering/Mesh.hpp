@@ -78,13 +78,11 @@ inline Mesh::Mesh(std::string meshName) : name(meshName) {}
 Mesh::~Mesh()
 {
   // TODO not created? Then dont delete!
-  Logger::Log("Polygon 1");
   for (auto poli : polygons)
     delete poli;
-  Logger::Log("Polygon 2");
 }
 
-inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); } // TODO hold copies
+inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); } // TODO hold copies - should I?
 
 inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(polygons[index]); }
 

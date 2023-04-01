@@ -8,6 +8,7 @@
 #include <Core/Scene.hpp>
 #include <Rendering/Renderer.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
+#include <Logging/ExceptionsHandler.hpp>
 
 /**
  * @brief Class responsible to open window, load scene, manage renderer thread and pass render objects to rendering.
@@ -65,22 +66,16 @@ inline RenderWindow::RenderWindow(uint32_t _width, uint32_t _height, Scene &_sce
 {
   width = _width;
   height = _height;
-
   renderer = new Renderer(_width, _height);
-
   if (renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK)
   {
-    Logger::Error("Drawer could not be initialized!");
-    throw std::runtime_error("RenderWindow failed to initzialize"); // TODO use my own error handler
+    ExceptionsHandler::ThrowError("RenderWindow failed to initzialize!");
   }
   if (renderer->CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK)
   {
-    Logger::Error("Drawer could not be created!");
-    throw std::runtime_error("RenderWindow failed to initzialize"); // TODO use my own error handler
+    ExceptionsHandler::ThrowError("RenderWindow failed to be created!");
   }
-
   LoadScene(_scene);
-
   timeProvider = new TimeProvider();
 }
 

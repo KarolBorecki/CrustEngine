@@ -126,7 +126,7 @@ void Renderer::DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vec
 
 Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
-Logger::Log("Nowy poligin");
+Logger::Log("--------------------------Nowy poligin");
   // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix<double> projMat;
   projMat = GetProjectionMatrix();
@@ -211,7 +211,7 @@ Logger::Log("Nowy poligin");
     static Vector3 projectedP2;
     static Vector3 projectedP3;
 
-    projectedP1 = {extendedP1.X(), extendedP1.Y(), extendedP1.Z()};
+    projectedP1 = {extendedP1.X(), extendedP1.Y(), extendedP1.Z()}; // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
     projectedP2 = {extendedP2.X(), extendedP2.Y(), extendedP2.Z()};
     projectedP3 = {extendedP3.X(), extendedP3.Y(), extendedP3.Z()};
 

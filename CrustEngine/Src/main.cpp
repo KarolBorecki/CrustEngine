@@ -16,6 +16,7 @@
 
 int main(int argc, char *argv[])
 {
+    Logger::Info("Engine Start");
     Camera cam(90, 0.1, 1000.0);
     cam.GetTransform().SetPosition(-4, -5, -10);
     Scene scene("T Scene", cam);
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
     scene.SetLightProjection(true);
 
     Core core;
+    Logger::Info("Opening new window");
     core.OpenNewWindow(1000, 800, scene);
 
     core.Quit();

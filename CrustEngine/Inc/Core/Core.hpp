@@ -63,7 +63,6 @@ inline Core::Core() { TimeProvider::OnEngineStart(); }
 void Core::OpenNewWindow(uint32_t width, uint32_t height, Scene &scene)
 {
   RenderWindow *window = new RenderWindow(width, height, scene);
-
   window->Start(); // TODO: run on new thread
 
   openedWindows.push_back(window);

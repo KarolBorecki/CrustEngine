@@ -5,8 +5,6 @@
 #include <cstring>
 #include <cstdio>
 
-// TODO add log destreuctor?? - Debug
-
 /**
  * @brief Static class allowing to log with certain color and style on classic console with well-known printf() arguments.
  */
@@ -51,9 +49,15 @@ public:
   static void Info(const char *format, ...);
 
   /**
-   * @brief Logs onto the console.
-   */ //TODO overload so we can call without arguments and print blank line
+   * @brief Logs onto the console with standard printf-like interface.
+   */ 
   static void Log(const char *format, ...);
+
+  /**
+   * @brief Prints empty line onto the console.
+   */ 
+  static void Log();
+
   /**
    * @brief Logs onto the console.
    */
@@ -114,6 +118,11 @@ inline void Logger::Log(const char *format, ...)
   vprintf(format, args);
   printf("\n");
   va_end(args);
+}
+
+inline void Logger::Log()
+{
+  printf("\n");
 }
 
 inline void Logger::LogInline(const char *format, ...)
