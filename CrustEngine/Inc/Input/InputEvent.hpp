@@ -1,57 +1,91 @@
 #ifndef _INPUTEVENT_HPP_
 #define _INPUTEVENT_HPP_
 
-enum KeyCode : int32_t // TODO Make this enum same mapping as SDL's Keycode!
+namespace Key
 {
-  KEY_0 = 0, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9,
+  constexpr uint8_t KEYS_COUNT=70; // Remember to update this value when updating KeyCode enum
+  constexpr uint8_t KEYS_STATE_ARRAY_SIZE=127;
 
-  KEY_A, KEY_B, KEY_C, KEY_D, KEY_E, KEY_F, KEY_G, KEY_H, KEY_I, KEY_J, KEY_K, KEY_L, KEY_M, 
-  KEY_N, KEY_O, KEY_P, KEY_Q, KEY_R, KEY_S, KEY_T, KEY_U, KEY_V, KEY_W, KEY_X, KEY_Y, KEY_Z,
+  enum KeyCode : int32_t 
+  {
+    KEY_NONE = 0,
 
-  KEY_SPACEBA,
-  KEY_ARROW_UP, KEY_ARROW_DOWN,
-  KEY_ARROW_LEFT, KEY_ARROW_RIGHT,
+    KEY_A = 4,
+    KEY_B = 5,
+    KEY_C = 6,
+    KEY_D = 7,
+    KEY_E = 8,
+    KEY_F = 9,
+    KEY_G = 10,
+    KEY_H = 11,
+    KEY_I = 12,
+    KEY_J = 13,
+    KEY_K = 14,
+    KEY_L = 15,
+    KEY_M = 16,
+    KEY_N = 17,
+    KEY_O = 18,
+    KEY_P = 19,
+    KEY_Q = 20,
+    KEY_R = 21,
+    KEY_S = 22,
+    KEY_T = 23,
+    KEY_U = 24,
+    KEY_V = 25,
+    KEY_W = 26,
+    KEY_X = 27,
+    KEY_Y = 28,
+    KEY_Z = 29,
 
-  KET_LCTRL, KEY_LSHIFT, 
-  KEY_RCTRL, KEY_RSHIFT,  
-  KEY_CAPSLOCK, KEY_TAB, KEY_RETURN,
+    KEY_1 = 30,
+    KEY_2 = 31,
+    KEY_3 = 32,
+    KEY_4 = 33,
+    KEY_5 = 34,
+    KEY_6 = 35,
+    KEY_7 = 36,
+    KEY_8 = 37,
+    KEY_9 = 38,
+    KEY_0 = 39,
 
-  MOUSE_L,
-  MOUSE_R,
-  MOUSE_SCROLL,
+    KEY_RETURN = 40,
+    KEY_ESCAPE = 41,
+    KEY_BACKSPACE = 42,
+    KEY_TAB = 43,
+    KEY_SPACE = 44,
 
-  KEY_LSQB, // [
-  KEY_BACKSLASH,
-  KEY_RSQB, // ]
-  KEY_CIRC, // ^
-  KEY_LOWBAR, // _
-  KEY_GRAVE, // '
+    KEY_MINUS = 45,
+    KEY_EQUALS = 46,
+    KEY_LEFTBRACKET = 47,
+    KEY_RIGHTBRACKET = 48,
+    KEY_BACKSLASH = 49, 
+    KEY_NONUSHASH = 50, 
+    KEY_SEMICOLON = 51,
+    KEY_APOSTROPHE = 52,
+    KEY_GRAVE = 53,
+    KEY_COMMA = 54,
+    KEY_PERIOD = 55,
+    KEY_SLASH = 56,
+  };
+}
+namespace Event {
+  constexpr uint8_t EVENTS_COUNT=7; // Remember to update this value when updating EventType enum
 
-  KEY_COLON, // :
-  KEY_EQUALS, // =
-  KEY_LOWER_THAN, // <
-  KEY_GREATER_THAN, // >
-  KEY_QUESTIONMARK, // =
-  KEY_AT, // @
-
-  KEY_NONE,
-};
-
-enum EventType : int8_t
+  enum EventType : uint8_t
+  {
+    EVENT_UNKNOWN = 0,
+    EVENT_WINDOW_QUIT,
+    EVENT_KEY_DOWN,
+    EVENT_KEY_UP,
+    EVENT_MOUSE_DOWN,
+    EVENT_MOUSE_UP,
+    EVENT_WHEEL,
+  };
+}
+typedef struct InputEvent
 {
-  EVENT_WINDOW_QUIT = 0,
-  EVENT_KEY_DOWN,
-  EVENT_KEY_UP,
-  EVENT_MOUSE_DOWN,
-  EVENT_MOUSE_UP,
-  EVENT_WHEEL,
-  EVENT_UNKNOWN,
-};
-
-typedef union InputEvent
-{
-  KeyCode keyCode;
-  EventType type;
+  Key::KeyCode keyCode;
+  Event::EventType type;
 } InputEvent;
 
 #endif /* _INPUTEVENT_HPP_ */

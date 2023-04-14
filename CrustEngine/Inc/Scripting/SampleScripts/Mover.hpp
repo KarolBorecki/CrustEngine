@@ -29,21 +29,39 @@ inline void Mover::Start() {}
 
 void Mover::Update(double deltaTime)
 {
-  if (InputHandler::GetEvent().type == EVENT_KEY_DOWN)
+  Logger::Log("MOVER");
+
+  if (InputHandler::IsPressed(Key::KEY_D))
   {
-    if (InputHandler::GetEvent().keyCode == KEY_0)
-    {
-      GetObject().GetTransform().Translate(speedX * deltaTime, 0, 0);
-    } else if (InputHandler::GetEvent().keyCode == KEY_1)
-    {
-      GetObject().GetTransform().Translate(-speedX * deltaTime, 0, 0);
-    }else if (InputHandler::GetEvent().keyCode == KEY_3)
-    {
-      GetObject().GetTransform().Translate(0, speedY * deltaTime, 0);
-    }else if (InputHandler::GetEvent().keyCode == KEY_4)
-    {
-      GetObject().GetTransform().Translate(0, -speedY * deltaTime, 0);
-    }
+    Logger::Log("Moving +X");
+    GetObject().GetTransform().Translate(speedX * deltaTime, 0, 0);
+  }
+  if (InputHandler::IsPressed(Key::KEY_A))
+  {
+    Logger::Log("Moving -X");
+    GetObject().GetTransform().Translate(-speedX * deltaTime, 0, 0);
+  }
+  if (InputHandler::IsPressed(Key::KEY_W))
+  {
+    Logger::Log("Moving +Z");
+    GetObject().GetTransform().Translate(0, 0, speedY * deltaTime);
+  }
+  if (InputHandler::IsPressed(Key::KEY_S))
+  {
+    Logger::Log("Moving -Z");
+    GetObject().GetTransform().Translate(0, 0, -speedY * deltaTime);
+  }
+
+  if (InputHandler::IsPressed(Key::KEY_Q))
+  {
+    Logger::Log("Moving +Y");
+    GetObject().GetTransform().Translate(0, speedY * deltaTime, 0);
+  }
+
+  if (InputHandler::IsPressed(Key::KEY_E))
+  {
+    Logger::Log("Moving -Y");
+    GetObject().GetTransform().Translate(0, -speedY * deltaTime, 0);
   }
 }
 
