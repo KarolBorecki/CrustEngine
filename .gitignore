@@ -36,3 +36,6 @@
 
 # Mac
 .DS_Store
+
+# Hidden file - some file system use it 
+.*

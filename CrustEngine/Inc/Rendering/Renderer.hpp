@@ -126,7 +126,7 @@ void Renderer::DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vec
 
 Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
-Logger::Log("--------------------------Nowy poligin");
+// Logger::Log("--------------------------Nowy poligin");
   // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix<double> projMat;
   projMat = GetProjectionMatrix();
