@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     // rObj.AttachScript(&rObjMove);
     // rObj.AttachScript(&rObjRotation);
 
-    Mover mover(1, 1, 1);
+    Mover mover(12, 12, 12);
     rObj.AttachScript(mover);
 
     Vector3 lightSourceDir(0.6, 0.2, -0.5);
