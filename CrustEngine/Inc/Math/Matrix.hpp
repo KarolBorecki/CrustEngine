@@ -352,7 +352,7 @@ Matrix<E> &Matrix<E>::operator/=(const E value) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
 {
-  Logger::Log("Start = with matrix");
+  // Logger::Log("Start = with matrix");
   if (this == &other)
     return *this;
 
@@ -369,14 +369,14 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
   totalSize = width * height;
 
   memcpy(mat, other.mat, sizeof(E) * totalSize);
-  Logger::Log("End = with matrix");
+  // Logger::Log("End = with matrix");
   return *this;
 }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 {
-  Logger::Log("Start = with init list");
+  // Logger::Log("Start = with init list");
   const double *ptL = l.begin();
 
   if (l.size() == 1)
@@ -388,7 +388,7 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
   {
     memcpy(mat, l.begin(), totalSize * sizeof(E));
   }
-  Logger::Log("End = with init list");
+  // Logger::Log("End = with init list");
   return *this;
 }
 

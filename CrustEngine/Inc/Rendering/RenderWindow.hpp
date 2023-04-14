@@ -7,6 +7,7 @@
 
 #include <Core/Scene.hpp>
 #include <Rendering/Renderer.hpp>
+#include <Input/InputHandler.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
 #include <Logging/ExceptionsHandler.hpp>
 
@@ -89,6 +90,9 @@ void RenderWindow::Start()
 {
   loadedScene->Start();
 
+
+  InputHandler::BeginInputMonitoring();
+
   while (renderer->IsRunning())
   {
     timeProvider->OnFrameStart();
@@ -102,10 +106,19 @@ void RenderWindow::Start()
     loadedScene->Update(timeProvider->GetDeltaTime_s());
 
     renderer->Show();
-    renderer->GetEvent();
+    InputHandler::PollEvent();
+    if(InputHandler::GetEvent().type == EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
+      {
+        Logger::Log("QUIT - from render window");
+        renderer->StopRunning();
+      }else if(InputHandler::GetEvent().type == EVENT_KEY_DOWN) {
+        Logger::Log("PRESSED - from render window");
+      } else {
+        Logger::Log("OTHER - from render window");
+      }
 
     timeProvider->OnFrameEnd();
-    Logger::Info("This frame took: %lf [s] (%lf FPS)", timeProvider->GetDeltaTime_s(), timeProvider->GetFPS());
+    // Logger::Info("This frame took: %lf [s] (%lf FPS)", timeProvider->GetDeltaTime_s(), timeProvider->GetFPS());
   }
   renderer->Quit();
   Logger::Info("Avreage frame time: %lf [s] (%lf FPS)", timeProvider->GetAverageFrameTime_s(), timeProvider->GetAverageFPS());

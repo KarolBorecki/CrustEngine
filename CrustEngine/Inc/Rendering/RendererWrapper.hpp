@@ -171,10 +171,6 @@ public:
    * @details This function sets #isRunning field to LibRendererFalse in order to stop the main thread of this renderer.
    */
   void StopRunning();
-  /**
-   * @brief Checks for events from user and calls methods accordingly.
-   */
-  void GetEvent();
 
   /**
    * @brief Quits the graphic library.
@@ -296,14 +292,6 @@ inline LibRendererBool RendererWrapper::IsRunning() const
 inline void RendererWrapper::StopRunning()
 {
   isRunning = LibRendererFalse;
-}
-
-void RendererWrapper::GetEvent()
-{
-  SDL_Event event;
-  while (SDL_PollEvent(&event))
-    if (event.type == SDL_QUIT)
-      isRunning = LibRendererFalse; // TODO Create event system
 }
 
 void RendererWrapper::Quit()
