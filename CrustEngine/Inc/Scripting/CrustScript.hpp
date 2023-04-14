@@ -2,6 +2,7 @@
 #define _CRUSTSCRIPT_HPP_
 
 class Object;
+class Transform;
 
 class CrustScript
 {
@@ -14,7 +15,9 @@ public:
 
   void AttachTo(Object &_parentObj);
 
-protected:
+  Object& GetObject();
+
+private:
   Object *parentObj;
 };
 
@@ -23,5 +26,7 @@ inline void CrustScript::Start() {}
 inline void CrustScript::Update(double deltaTime) {}
 
 inline void CrustScript::AttachTo(Object &_parentObj) { parentObj = &_parentObj; }
+
+inline Object& CrustScript::GetObject() { return *parentObj; }
 
 #endif /* _CRUSTSCRIPT_HPP_ */

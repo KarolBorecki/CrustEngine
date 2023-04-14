@@ -13,6 +13,7 @@
 #include <Math/Matrix.hpp>
 
 #include <Scripting/SampleScripts/LoopMove.hpp>
+#include <Scripting/SampleScripts/Mover.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -34,6 +35,9 @@ int main(int argc, char *argv[])
     // Rotate rObjRotation(&rObj);
     // rObj.AttachScript(&rObjMove);
     // rObj.AttachScript(&rObjRotation);
+
+    Mover mover(1, 1, 1);
+    rObj.AttachScript(mover);
 
     Vector3 lightSourceDir(0.6, 0.2, -0.5);
     DirectionalLight dirLightSource(255, lightSourceDir);
