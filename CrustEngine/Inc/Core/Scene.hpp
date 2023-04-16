@@ -153,9 +153,11 @@ void Scene::Start()
 {
   if (started)
     return;
+
   for (auto obj : objects)
     for (auto script : obj->GetScripts())
       script->Start();
+
   started = true;
 }
 
@@ -165,6 +167,8 @@ void Scene::Update(double deltaTime)
   {
     for (auto script : obj->GetScripts())
     {
+      if (script == nullptr)
+        continue;
       script->Update(deltaTime);
     }
   }

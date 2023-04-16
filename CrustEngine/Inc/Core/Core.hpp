@@ -62,6 +62,9 @@ inline Core::Core() { TimeProvider::OnEngineStart(); }
 
 void Core::OpenNewWindow(uint32_t width, uint32_t height, Scene &scene)
 {
+  if(width == 0 || height == 0)
+    ExceptionsHandler::ThrowError("Error while opening new window: Width or Height cannot be equal to 0!");
+
   RenderWindow *window = new RenderWindow(width, height, scene);
   window->Start(); // TODO: run on new thread
 
@@ -79,6 +82,7 @@ void Core::CloseAllWindows()
 {
   for (auto &window : openedWindows)
   {
+    if(window == nullptr) continue;
     window->Close();
     delete window;
   }
