@@ -57,6 +57,12 @@ public:
    */
   void LoadScene(Scene &scene);
 
+    /**
+   * @brief Un loads currently loaded scene. After tyhis operation nothing will be rendered onto the screen.
+   * @details Unloads loaded scene by calling #OnUnLoad and by setting #loadedScene to nullptr. Also fills Renderer's #projMatrix with zeros.
+   */
+  void UnLoadScene();
+
 private:
   uint32_t width{0};           //!< Width of this window.
   uint32_t height{0};          //!< Height of this window.
@@ -96,6 +102,9 @@ inline RenderWindow::~RenderWindow()
 
 void RenderWindow::Start()
 {
+  if (renderer == nullptr || timeProvider == nullptr)
+    ExceptionsHandler::ThrowError("Cannot start renderer window - It was not properly initialized!");
+
   static std::vector<RenderObject *> objs;
   loadedScene->Start();
 
@@ -107,16 +116,18 @@ void RenderWindow::Start()
 
     InputHandler::PollEvent();
 
-    loadedScene->Update(timeProvider->GetDeltaTime_s());
-
     if (InputHandler::GetLastEvent().type == Event::EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
       Close();
 
     Clean();
-    objs = loadedScene->GetObjectsToRender();
-    for (auto obj : objs)
+    if (loadedScene != nullptr)
     {
-      renderer->DrawMesh(obj->GetMesh(), obj->GetTransform().GetPosition(), obj->GetTransform().GetEulerRotation(), loadedScene->GetMainCamera(), loadedScene->GetLightSources()[0]->GetTransform().GetEulerRotation(), loadedScene->IsLightProjected());
+      loadedScene->Update(timeProvider->GetDeltaTime_s());
+      objs = loadedScene->GetObjectsToRender();
+      for (auto obj : objs)
+      {
+        renderer->DrawMesh(obj->GetMesh(), obj->GetTransform().GetPosition(), obj->GetTransform().GetEulerRotation(), loadedScene->GetMainCamera(), loadedScene->GetLightSources()[0]->GetTransform().GetEulerRotation(), loadedScene->IsLightProjected());
+      }
     }
 
     renderer->Show();
@@ -133,7 +144,7 @@ inline void RenderWindow::Close()
   renderer->StopRunning();
 }
 
-inline void RenderWindow::LoadScene(Scene &scene)
+void RenderWindow::LoadScene(Scene &scene)
 {
   if (loadedScene != nullptr)
     loadedScene->OnUnLoad();
@@ -141,6 +152,16 @@ inline void RenderWindow::LoadScene(Scene &scene)
   renderer->SetWindowTitle(loadedScene->GetName());
   renderer->RecalculateProjectionMatrix(loadedScene->GetMainCamera());
   loadedScene->OnLoad();
+}
+
+void RenderWindow::UnLoadScene()
+{
+  if (loadedScene == nullptr) return;
+  
+  loadedScene->OnUnLoad();
+  loadedScene = nullptr;
+  renderer->SetWindowTitle("No scene");
+  renderer->GetProjectionMatrix() = {0};
 }
 
 inline void RenderWindow::Clean()
