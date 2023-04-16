@@ -1,14 +1,14 @@
 <div align="center">
-    <img src="Commercial/Logo/logo.png" alt="Logo" width=300/>
+    <img src="Commercial/Logo/logo.png" alt="Logo" width=220/>
 
-  <h3 align="center"><strong>CrustEngine</strong><br/>Simple engine rendering 3D files using 2D renderer SDL2.</h3>
-
+  <h1 align="center"><strong>CrustEngine</strong></h1>
+    <h4>Simple engine rendering 3D files using 2D renderer SDL2.</h4>
   <p align="center">
     <a href="https://github.com/KarolBorecki/CrustEngine/commits/main">Commits</a>
     ·
-    <a href="https://github.com/KarolBorecki/CrustEngine/branches">Branches</a>
+    <a href="https://karolborecki.github.io/CrustEngine/index.html">Documentation</a>
     ·
-    <a href="https://github.com/KarolBorecki/CrustEngine/issues">Issues</a>
+    <a href="https://github.com/KarolBorecki/CrustEngine/branches">Branches</a>
   </p>
 </div>
 
