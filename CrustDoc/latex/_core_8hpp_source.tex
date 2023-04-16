@@ -1,5 +1,5 @@
 \hypertarget{_core_8hpp_source}{}\doxysection{Core.\+hpp}
-\label{_core_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Core.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Core.hpp}}
+\label{_core_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Core/Core.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Core/Core.hpp}}
 \mbox{\hyperlink{_core_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_CORE\_HPP\_}}
@@ -12,49 +12,53 @@
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_scene_8hpp}{Core/Scene.hpp}}>}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_render_window_8hpp}{Rendering/RenderWindow.hpp}}>}}
 \DoxyCodeLine{10 }
-\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_core}{Core}} \{}
-\DoxyCodeLine{15 \textcolor{keyword}{public}:}
-\DoxyCodeLine{16   \mbox{\hyperlink{class_core_a14e63188e0aa7c4a6f72d5501384d1f9}{Core}}();}
-\DoxyCodeLine{17   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_core_a3259aa546be9c7e12da440ad570f7b39}{\string~Core}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{29   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_af8dfa9a1586b40a8b92d92ceb5435814}{OpenNewWindow}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \mbox{\hyperlink{class_scene}{Scene}}* scene);}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{40   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a37572d86a6f846b22fe2713b6eee272a}{CloseWindow}}(\mbox{\hyperlink{class_render_window}{RenderWindow}}* window);}
-\DoxyCodeLine{48   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{CloseAllWindows}}();}
-\DoxyCodeLine{54   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Quit}}();}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{keyword}{private}:}
-\DoxyCodeLine{57   std::vector<RenderWindow*> openedWindows; }
-\DoxyCodeLine{58 \};}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{keyword}{inline} \mbox{\hyperlink{class_core_a14e63188e0aa7c4a6f72d5501384d1f9}{Core::Core}}() \{ \mbox{\hyperlink{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}{TimeProvider::OnEngineStart}}(); \}}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_af8dfa9a1586b40a8b92d92ceb5435814}{Core::OpenNewWindow}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \mbox{\hyperlink{class_scene}{Scene}}* scene) \{}
-\DoxyCodeLine{63   \mbox{\hyperlink{class_render_window}{RenderWindow}}* window = \textcolor{keyword}{new} \mbox{\hyperlink{class_render_window}{RenderWindow}}(width, height, scene);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65   window-\/>\mbox{\hyperlink{class_render_window_ace7b6b9d6045bc2b9fbb41c474122cf8}{Start}}(); \textcolor{comment}{// TODO: run on new thread}}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67   openedWindows.push\_back(window);}
-\DoxyCodeLine{68 \}}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a37572d86a6f846b22fe2713b6eee272a}{Core::CloseWindow}}(\mbox{\hyperlink{class_render_window}{RenderWindow}}* window) \{}
-\DoxyCodeLine{71   window-\/>\mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{Close}}();}
-\DoxyCodeLine{72   remove(openedWindows.begin(), openedWindows.end(), window);}
-\DoxyCodeLine{73   \textcolor{keyword}{delete} window;}
-\DoxyCodeLine{74 \}}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{Core::CloseAllWindows}}() \{}
-\DoxyCodeLine{77   \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&window : openedWindows)\{}
-\DoxyCodeLine{78     window-\/>Close();}
-\DoxyCodeLine{79     \textcolor{keyword}{delete} window;}
-\DoxyCodeLine{80   \}}
-\DoxyCodeLine{81   openedWindows.clear();}
-\DoxyCodeLine{82 \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Core::Quit}}() \{}
-\DoxyCodeLine{85   \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Logger::Info}}(\textcolor{stringliteral}{"{}Engine work time: \%lf [s]"{}}, \mbox{\hyperlink{class_time_provider_a95b5d9a0b234c9506a58637411b215a4}{TimeProvider::GetTime\_s}}());}
-\DoxyCodeLine{86   \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{CloseAllWindows}}();}
-\DoxyCodeLine{87 \}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_CORE\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_core}{Core}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17   \mbox{\hyperlink{class_core_a14e63188e0aa7c4a6f72d5501384d1f9}{Core}}();}
+\DoxyCodeLine{18   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_core_a3259aa546be9c7e12da440ad570f7b39}{\string~Core}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a17a3358b487ae2d2b83044c449ebb45b}{OpenNewWindow}}(uint32\_t width, uint32\_t uint32\_t, \mbox{\hyperlink{class_scene}{Scene}} \&scene);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{41   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aaf31dbcac2b4fa11118c70aa0c759f62}{CloseWindow}}(\mbox{\hyperlink{class_render_window}{RenderWindow}} \&window);}
+\DoxyCodeLine{49   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{CloseAllWindows}}();}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Quit}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{private}:}
+\DoxyCodeLine{58   std::vector<RenderWindow *> openedWindows; }
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{inline} \mbox{\hyperlink{class_core_a14e63188e0aa7c4a6f72d5501384d1f9}{Core::Core}}() \{ \mbox{\hyperlink{class_time_provider_a865d73e9b56b2dc1ebe2648282f8b4cd}{TimeProvider::OnEngineStart}}(); \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a17a3358b487ae2d2b83044c449ebb45b}{Core::OpenNewWindow}}(uint32\_t width, uint32\_t height, \mbox{\hyperlink{class_scene}{Scene}} \&scene)}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65   \mbox{\hyperlink{class_render_window}{RenderWindow}} *window = \textcolor{keyword}{new} \mbox{\hyperlink{class_render_window}{RenderWindow}}(width, height, scene);}
+\DoxyCodeLine{66   window-\/>\mbox{\hyperlink{class_render_window_ace7b6b9d6045bc2b9fbb41c474122cf8}{Start}}(); \textcolor{comment}{// TODO: run on new thread}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   openedWindows.push\_back(window);}
+\DoxyCodeLine{69 \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aaf31dbcac2b4fa11118c70aa0c759f62}{Core::CloseWindow}}(\mbox{\hyperlink{class_render_window}{RenderWindow}} \&window)}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73   window.\mbox{\hyperlink{class_render_window_a0e9fd523d9888ca17333e50216ba096c}{Close}}();}
+\DoxyCodeLine{74   remove(openedWindows.begin(), openedWindows.end(), \&window);}
+\DoxyCodeLine{75   \textcolor{keyword}{delete} \&window;}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{Core::CloseAllWindows}}()}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80   \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&window : openedWindows)}
+\DoxyCodeLine{81   \{}
+\DoxyCodeLine{82     window-\/>Close();}
+\DoxyCodeLine{83     \textcolor{keyword}{delete} window;}
+\DoxyCodeLine{84   \}}
+\DoxyCodeLine{85   openedWindows.clear();}
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_core_a41b241ecdc132a508a97944ea5044265}{Core::Quit}}()}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90   \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{CloseAllWindows}}();}
+\DoxyCodeLine{91 \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_CORE\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

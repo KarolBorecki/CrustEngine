@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrustEngine: /Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Camera.hpp File Reference</title>
+<title>CrustEngine: /Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Core/Camera.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,78 +91,27 @@ $(document).ready(function(){initNavTree('_camera_8hpp.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">Camera.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="_object_8hpp_source.html">Rendering/Objects/Object.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_object_8hpp_source.html">Rendering/Objects/Object.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_math_8hpp_source.html">Math/Math.hpp</a>&gt;</code><br />
 </div>
 <p><a href="_camera_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html">Camera</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing the camera on a scene from which's perespective the renderer can render <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D triangles.">Mesh</a>.  <a href="class_camera.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing the camera on a scene from which's perespective the renderer can render <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a>.  <a href="class_camera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ae9b10e0d9166f7a4fac6502bba06b47d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_camera_8hpp.html#ae9b10e0d9166f7a4fac6502bba06b47d">degToRad</a>(angleInDegrees)&#160;&#160;&#160;((angleInDegrees) * M_PI / 180.0)</td></tr>
-<tr class="memdesc:ae9b10e0d9166f7a4fac6502bba06b47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts #angleInDegrees to radians.  <a href="_camera_8hpp.html#ae9b10e0d9166f7a4fac6502bba06b47d">More...</a><br /></td></tr>
-<tr class="separator:ae9b10e0d9166f7a4fac6502bba06b47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1b651d5cbae978c9e1bfe00ef54f5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_camera_8hpp.html#a6a1b651d5cbae978c9e1bfe00ef54f5d">radToDeg</a>(angleInRadians)&#160;&#160;&#160;((angleInRadians) * 180.0 / M_PI)</td></tr>
-<tr class="memdesc:a6a1b651d5cbae978c9e1bfe00ef54f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts #angleInRadians to degrees.  <a href="_camera_8hpp.html#a6a1b651d5cbae978c9e1bfe00ef54f5d">More...</a><br /></td></tr>
-<tr class="separator:a6a1b651d5cbae978c9e1bfe00ef54f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ae9b10e0d9166f7a4fac6502bba06b47d" name="ae9b10e0d9166f7a4fac6502bba06b47d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9b10e0d9166f7a4fac6502bba06b47d">&#9670;&#160;</a></span>degToRad</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define degToRad</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">angleInDegrees</td><td>)</td>
-          <td>&#160;&#160;&#160;((angleInDegrees) * M_PI / 180.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Converts #angleInDegrees to radians. </p>
-
-</div>
-</div>
-<a id="a6a1b651d5cbae978c9e1bfe00ef54f5d" name="a6a1b651d5cbae978c9e1bfe00ef54f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a1b651d5cbae978c9e1bfe00ef54f5d">&#9670;&#160;</a></span>radToDeg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define radToDeg</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">angleInRadians</td><td>)</td>
-          <td>&#160;&#160;&#160;((angleInRadians) * 180.0 / M_PI)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Converts #angleInRadians to degrees. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_23fdee2f6995db16c755697cdf620cf4.html">Code</a></li><li class="navelem"><a class="el" href="dir_d4220d8c9360161864d2ed0ae52386e3.html">Inc</a></li><li class="navelem"><a class="el" href="dir_c38393593bab3e57ff0677c69bbbf217.html">Core</a></li><li class="navelem"><a class="el" href="_camera_8hpp.html">Camera.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_0855f742691d218dce9c0e2bee1fbd03.html">CrustEngine</a></li><li class="navelem"><a class="el" href="dir_84f0353f9b03c40a4493788ca07ad4a2.html">Inc</a></li><li class="navelem"><a class="el" href="dir_4ed581a0684b513c1b5f83dfa8954f89.html">Core</a></li><li class="navelem"><a class="el" href="_camera_8hpp.html">Camera.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

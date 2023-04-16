@@ -97,16 +97,44 @@ $(document).ready(function(){initNavTree('class_math.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
+<p>Static class that wrapps all math's algorithm used in the engine.  
+ <a href="class_math.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_math_8hpp_source.html">Math.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aad545cc846717f163d9bd06db85482b6"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#aad545cc846717f163d9bd06db85482b6">Abs</a> (double <a class="el" href="_s_d_l__opengl__glext_8h.html#a8ad81492d410ff2ac11f754f4042150f">value</a>)</td></tr>
+<tr class="memitem:aad545cc846717f163d9bd06db85482b6"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#aad545cc846717f163d9bd06db85482b6">Abs</a> (double value)</td></tr>
+<tr class="memdesc:aad545cc846717f163d9bd06db85482b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates absolute of a given value.  <a href="class_math.html#aad545cc846717f163d9bd06db85482b6">More...</a><br /></td></tr>
 <tr class="separator:aad545cc846717f163d9bd06db85482b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29df732d1fd8bf452a1570b9866f61f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#ab29df732d1fd8bf452a1570b9866f61f">SquareRoot</a> (double radicand)</td></tr>
+<tr class="memdesc:ab29df732d1fd8bf452a1570b9866f61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates square root of a given value.  <a href="class_math.html#ab29df732d1fd8bf452a1570b9866f61f">More...</a><br /></td></tr>
+<tr class="separator:ab29df732d1fd8bf452a1570b9866f61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0cd5accea822762c7e6467029da21c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a8a0cd5accea822762c7e6467029da21c">InverseSquareRoot</a> (double radicand)</td></tr>
+<tr class="memdesc:a8a0cd5accea822762c7e6467029da21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates 1/sqrt(radicand). This is highly useful during projection.  <a href="class_math.html#a8a0cd5accea822762c7e6467029da21c">More...</a><br /></td></tr>
+<tr class="separator:a8a0cd5accea822762c7e6467029da21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55a949d487e8edf5c18725bc8de9a87"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#ac55a949d487e8edf5c18725bc8de9a87">Cos</a> (double t)</td></tr>
+<tr class="memdesc:ac55a949d487e8edf5c18725bc8de9a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates cos for t value.  <a href="class_math.html#ac55a949d487e8edf5c18725bc8de9a87">More...</a><br /></td></tr>
+<tr class="separator:ac55a949d487e8edf5c18725bc8de9a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9564ec0aa839a9729b20a9ad3c937a28"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a9564ec0aa839a9729b20a9ad3c937a28">Sin</a> (double t)</td></tr>
+<tr class="memdesc:a9564ec0aa839a9729b20a9ad3c937a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates sin for t value.  <a href="class_math.html#a9564ec0aa839a9729b20a9ad3c937a28">More...</a><br /></td></tr>
+<tr class="separator:a9564ec0aa839a9729b20a9ad3c937a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb47fd253b967546d0698850d9124875"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#acb47fd253b967546d0698850d9124875">Tan</a> (double t)</td></tr>
+<tr class="memdesc:acb47fd253b967546d0698850d9124875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates tan for t value.  <a href="class_math.html#acb47fd253b967546d0698850d9124875">More...</a><br /></td></tr>
+<tr class="separator:acb47fd253b967546d0698850d9124875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abfa07a5a65576c732355c2b2a857b3"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a4abfa07a5a65576c732355c2b2a857b3">RadiansToDegrees</a> (double radians)</td></tr>
+<tr class="memdesc:a4abfa07a5a65576c732355c2b2a857b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts #radians to degrees.  <a href="class_math.html#a4abfa07a5a65576c732355c2b2a857b3">More...</a><br /></td></tr>
+<tr class="separator:a4abfa07a5a65576c732355c2b2a857b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad427c62078fffe46c465c7b99bc9a3de"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#ad427c62078fffe46c465c7b99bc9a3de">DegreesToRadians</a> (uint16_t degrees)</td></tr>
+<tr class="memdesc:ad427c62078fffe46c465c7b99bc9a3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts #angleInDegrees to radians.  <a href="class_math.html#ad427c62078fffe46c465c7b99bc9a3de">More...</a><br /></td></tr>
+<tr class="separator:ad427c62078fffe46c465c7b99bc9a3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aa90009368994c44a0426ad668908aa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a5aa90009368994c44a0426ad668908aa">DoubleEquals</a> (double val1, double val2, double delta=DOUBLE_DEFAULT_DELTA)</td></tr>
+<tr class="memdesc:a5aa90009368994c44a0426ad668908aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given values are equal within accepted margin #delta.  <a href="class_math.html#a5aa90009368994c44a0426ad668908aa">More...</a><br /></td></tr>
 <tr class="separator:a5aa90009368994c44a0426ad668908aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Static class that wrapps all math's algorithm used in the engine. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aad545cc846717f163d9bd06db85482b6" name="aad545cc846717f163d9bd06db85482b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aad545cc846717f163d9bd06db85482b6">&#9670;&#160;</a></span>Abs()</h2>
 
@@ -130,6 +158,85 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Method that calculates absolute of a given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value that will be converted to absolute. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Abosulute value. </dd></dl>
+
+</div>
+</div>
+<a id="ac55a949d487e8edf5c18725bc8de9a87" name="ac55a949d487e8edf5c18725bc8de9a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55a949d487e8edf5c18725bc8de9a87">&#9670;&#160;</a></span>Cos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::Cos </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method that calculates cos for t value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>x variable for cos(x). In radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Value of a cos for #t. </dd></dl>
+
+</div>
+</div>
+<a id="ad427c62078fffe46c465c7b99bc9a3de" name="ad427c62078fffe46c465c7b99bc9a3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad427c62078fffe46c465c7b99bc9a3de">&#9670;&#160;</a></span>DegreesToRadians()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::DegreesToRadians </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>degrees</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts #angleInDegrees to radians. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">degrees</td><td>Value in degrees that will be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Converted value in radians. </dd></dl>
 
 </div>
 </div>
@@ -172,6 +279,194 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if given values are equal within accepted margin #delta. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>First compared value. </td></tr>
+    <tr><td class="paramname">val2</td><td>Second compared value. </td></tr>
+    <tr><td class="paramname">delta</td><td>Accepted margin that will be tolerated even if the value are not exact. Default is DOUBLE_DEFAULT_DELTA. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Values are equal within accepted margin. </dd>
+<dd>
+false Values are not equal within accepted margin. </dd></dl>
+
+</div>
+</div>
+<a id="a8a0cd5accea822762c7e6467029da21c" name="a8a0cd5accea822762c7e6467029da21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0cd5accea822762c7e6467029da21c">&#9670;&#160;</a></span>InverseSquareRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::InverseSquareRoot </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radicand</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method that calculates 1/sqrt(radicand). This is highly useful during projection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radicand</td><td>Value that square root will be calculated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Inversed of a square root of a #radicand. </dd></dl>
+
+</div>
+</div>
+<a id="a4abfa07a5a65576c732355c2b2a857b3" name="a4abfa07a5a65576c732355c2b2a857b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4abfa07a5a65576c732355c2b2a857b3">&#9670;&#160;</a></span>RadiansToDegrees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Math::RadiansToDegrees </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radians</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts #radians to degrees. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radians</td><td>Value in radians that will be converted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t Converted value in degrees. </dd></dl>
+
+</div>
+</div>
+<a id="a9564ec0aa839a9729b20a9ad3c937a28" name="a9564ec0aa839a9729b20a9ad3c937a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9564ec0aa839a9729b20a9ad3c937a28">&#9670;&#160;</a></span>Sin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::Sin </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method that calculates sin for t value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>x variable for sin(x). In radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Value of a sin for #t. </dd></dl>
+
+</div>
+</div>
+<a id="ab29df732d1fd8bf452a1570b9866f61f" name="ab29df732d1fd8bf452a1570b9866f61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29df732d1fd8bf452a1570b9866f61f">&#9670;&#160;</a></span>SquareRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::SquareRoot </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radicand</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method that calculates square root of a given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radicand</td><td>Value that square root will be calculated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Square root of #radicand. </dd></dl>
+
+</div>
+</div>
+<a id="acb47fd253b967546d0698850d9124875" name="acb47fd253b967546d0698850d9124875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb47fd253b967546d0698850d9124875">&#9670;&#160;</a></span>Tan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math::Tan </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method that calculates tan for t value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>x variable for tan(x). In radians. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double Value of a tan for #t. </dd></dl>
 
 </div>
 </div>

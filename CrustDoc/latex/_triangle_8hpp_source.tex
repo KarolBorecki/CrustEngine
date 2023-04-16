@@ -1,5 +1,5 @@
 \hypertarget{_triangle_8hpp_source}{}\doxysection{Triangle.\+hpp}
-\label{_triangle_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/Triangle.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/Triangle.hpp}}
+\label{_triangle_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Math/Triangle.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Math/Triangle.hpp}}
 \mbox{\hyperlink{_triangle_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_TRIANGLE\_HPP\_}}
@@ -7,69 +7,49 @@
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string.h>}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Physics/Vector3.hpp}}>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Math/Vector3.hpp}}>}}
 \DoxyCodeLine{7 }
-\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_triangle}{Triangle}} \{}
-\DoxyCodeLine{12 \textcolor{keyword}{public}:}
-\DoxyCodeLine{13   \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}}();}
-\DoxyCodeLine{25   \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z);}
-\DoxyCodeLine{31   \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}}(\mbox{\hyperlink{class_vector3}{Vector3}}* point1, \mbox{\hyperlink{class_vector3}{Vector3}}* point2, \mbox{\hyperlink{class_vector3}{Vector3}}* point3);}
-\DoxyCodeLine{35   \mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{\string~Triangle}}();}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{42   \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{GetPoint}}(uint8\_t index);}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{47   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{SetPoints}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z);}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_triangle}{Triangle}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14   \mbox{\hyperlink{class_polygon_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}}();}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31   \mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{\string~Triangle}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38   \mbox{\hyperlink{class_vector3}{Vector3}} \&\mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{GetPoint}}(uint8\_t index);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{SetPoints}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{private}:}
+\DoxyCodeLine{46   \mbox{\hyperlink{class_vector3}{Vector3}} *point[3]; }
+\DoxyCodeLine{47 \};}
 \DoxyCodeLine{48 }
-\DoxyCodeLine{56   std::string \mbox{\hyperlink{class_triangle_ab15e48058937687f381d00f91ccbd0e7}{ToString}}();}
+\DoxyCodeLine{49 \textcolor{keyword}{inline} \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}}() : \mbox{\hyperlink{class_triangle}{Triangle}}(0, 0, 0, 0, 0, 0, 0, 0, 0) \{\}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{inline} \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z)}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53   point[0] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p1X, p1Y, p1Z);}
+\DoxyCodeLine{54   point[1] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p2X, p2Y, p2Z);}
+\DoxyCodeLine{55   point[2] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p3X, p3Y, p3Z);}
+\DoxyCodeLine{56 \}}
 \DoxyCodeLine{57 }
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{keyword}{private}:}
-\DoxyCodeLine{60   \mbox{\hyperlink{class_vector3}{Vector3}}* point[3]; }
-\DoxyCodeLine{61 }
-\DoxyCodeLine{75   \textcolor{keywordtype}{void} Init(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z);}
-\DoxyCodeLine{76 \};}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78 \textcolor{keyword}{inline} \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}}() \{ Init(0, 0, 0, 0, 0, 0, 0, 0, 0); \}}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80 \textcolor{keyword}{inline} \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z) \{}
-\DoxyCodeLine{81   Init(p1X, p1Y, p1Z, p2X, p2Y, p2Z, p3X, p3Y, p3Z);}
-\DoxyCodeLine{82 \}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84 \textcolor{keyword}{inline} \mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}}(\mbox{\hyperlink{class_vector3}{Vector3}}* point1, \mbox{\hyperlink{class_vector3}{Vector3}}* point2, \mbox{\hyperlink{class_vector3}{Vector3}}* point3) \{}
-\DoxyCodeLine{85   Init(point1-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), point1-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), point1-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}(), point2-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), point2-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), point2-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}(), point3-\/>\mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}}(), point3-\/>\mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}}(), point3-\/>\mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}}());}
-\DoxyCodeLine{86 \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88 \mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{Triangle::\string~Triangle}}() \{}
-\DoxyCodeLine{89   \textcolor{keyword}{delete} point[0];}
-\DoxyCodeLine{90   \textcolor{keyword}{delete} point[1];}
-\DoxyCodeLine{91   \textcolor{keyword}{delete} point[2];}
-\DoxyCodeLine{92 \}}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector3}{Vector3}}* \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{Triangle::GetPoint}}(uint8\_t index) \{ \textcolor{keywordflow}{return} point[index]; \}}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{Triangle::SetPoints}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z) \{}
-\DoxyCodeLine{97   point[0]-\/>\mbox{\hyperlink{class_vector3_a96424507ccf818dd9582f648c646a71a}{SetXYZ}}(p1X, p1Y, p1Z);}
-\DoxyCodeLine{98   point[1]-\/>\mbox{\hyperlink{class_vector3_a96424507ccf818dd9582f648c646a71a}{SetXYZ}}(p2X, p2Y, p2Z);}
-\DoxyCodeLine{99   point[2]-\/>\mbox{\hyperlink{class_vector3_a96424507ccf818dd9582f648c646a71a}{SetXYZ}}(p3X, p3Y, p3Z);}
-\DoxyCodeLine{100 \}}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102 std::string \mbox{\hyperlink{class_triangle_ab15e48058937687f381d00f91ccbd0e7}{Triangle::ToString}}() \{}
-\DoxyCodeLine{103   std::string result = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{104   result += \textcolor{stringliteral}{"{}Triangle:\(\backslash\)n"{}};}
-\DoxyCodeLine{105   result += \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{GetPoint}}(0)-\/>\mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}();}
-\DoxyCodeLine{106   result += \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{GetPoint}}(1)-\/>\mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}();}
-\DoxyCodeLine{107   result += \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{GetPoint}}(2)-\/>\mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{ToString}}();}
-\DoxyCodeLine{108   result += \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{109   \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{110 \}}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112 \textcolor{keywordtype}{void} Triangle::Init(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z) \{}
-\DoxyCodeLine{113   point[0] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p1X, p1Y, p1Z);}
-\DoxyCodeLine{114   point[1] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p2X, p2Y, p2Z);}
-\DoxyCodeLine{115   point[2] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(p3X, p3Y, p3Z);}
-\DoxyCodeLine{116   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a861d8909258d9777e002387388c9fd0c}{Logger::FontColor::GREEN}}, \textcolor{stringliteral}{"{}[+] Creating Triangle"{}});}
-\DoxyCodeLine{117 \}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_TRIANGLE\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{58 \mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{Triangle::\string~Triangle}}()}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60   \textcolor{keyword}{delete} point[0];}
+\DoxyCodeLine{61   \textcolor{keyword}{delete} point[1];}
+\DoxyCodeLine{62   \textcolor{keyword}{delete} point[2];}
+\DoxyCodeLine{63 \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{inline} \mbox{\hyperlink{class_vector3}{Vector3}} \&\mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{Triangle::GetPoint}}(uint8\_t index) \{ \textcolor{keywordflow}{return} *(point[index]); \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{Triangle::SetPoints}}(\textcolor{keywordtype}{double} p1X, \textcolor{keywordtype}{double} p1Y, \textcolor{keywordtype}{double} p1Z, \textcolor{keywordtype}{double} p2X, \textcolor{keywordtype}{double} p2Y, \textcolor{keywordtype}{double} p2Z, \textcolor{keywordtype}{double} p3X, \textcolor{keywordtype}{double} p3Y, \textcolor{keywordtype}{double} p3Z)}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69   (*point[0]) = \{p1X, p1Y, p1Z\};}
+\DoxyCodeLine{70   (*point[1]) = \{p2X, p2Y, p2Z\};}
+\DoxyCodeLine{71   (*point[2]) = \{p3X, p3Y, p3Z\};}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_TRIANGLE\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

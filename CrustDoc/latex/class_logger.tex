@@ -23,11 +23,11 @@ enum \mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1}{Font\+Colo
 , \mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a3262e8247b44dc739eb27e09ede7e08a}{RED}} = 31
 , \mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a92a5400c95ca3438b76744cd2c319a2d}{YELLOW}} = 33
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em representing console color codes. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_logger_af06203835bf4572c91b1c4ec1229732e}{Font\+Style}} \{ \mbox{\hyperlink{class_logger_af06203835bf4572c91b1c4ec1229732ea5b1b3368723dd7a7a8e64a13e45f27a3}{NORMAL}} = 0
 , \mbox{\hyperlink{class_logger_af06203835bf4572c91b1c4ec1229732ea8cbfa1d9f3d2cbf0964dcd965199591d}{BOLD}} = 1
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumeration representing console font styles codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,6 +38,10 @@ static void \mbox{\hyperlink{class_logger_a4947597a5e349e440e3d2ebd164fede7}{War
 static void \mbox{\hyperlink{class_logger_aae69f0478dbd5d719e70a8af3b154761}{Info}} (const char $\ast$format,...)
 \begin{DoxyCompactList}\small\item\em Logs onto the console in blue color. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Log}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console with standard printf-\/like interface. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_logger_a211ceb8f080d6088a6b2db5e966a0608}{Log}} ()
+\begin{DoxyCompactList}\small\item\em Prints empty line onto the console. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_logger_a4ec5d46dea2702a3101dee7988a7fff3}{Log\+Inline}} (const char $\ast$format,...)
 \begin{DoxyCompactList}\small\item\em Logs onto the console. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_logger_a56cc303e45fe5ceb8e74e55cda9cd291}{Log}} (int color\+Code, const char $\ast$format,...)
 \begin{DoxyCompactList}\small\item\em Logs onto the console in specified color\+Code color. \end{DoxyCompactList}\item 
@@ -57,7 +61,11 @@ Static class allowing to log with certain color and style on classic console wit
 \doxysubsubsection{\texorpdfstring{FontColor}{FontColor}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1}{Logger\+::\+Font\+Color}}}
 
-Enumeration representing console color codes. \begin{DoxyEnumFields}{Enumerator}
+
+
+representing console color codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!Logger@{Logger}}\index{Logger@{Logger}!WHITE@{WHITE}}}\mbox{\Hypertarget{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a363cdfedb6f64ef7ecdc5010d1c93617}\label{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a363cdfedb6f64ef7ecdc5010d1c93617}} 
 WHITE&\\
 \hline
@@ -97,7 +105,11 @@ YELLOW&\\
 \doxysubsubsection{\texorpdfstring{FontStyle}{FontStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_logger_af06203835bf4572c91b1c4ec1229732e}{Logger\+::\+Font\+Style}}}
 
-Enumeration representing console font styles codes. \begin{DoxyEnumFields}{Enumerator}
+
+
+Enumeration representing console font styles codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL@{NORMAL}!Logger@{Logger}}\index{Logger@{Logger}!NORMAL@{NORMAL}}}\mbox{\Hypertarget{class_logger_af06203835bf4572c91b1c4ec1229732ea5b1b3368723dd7a7a8e64a13e45f27a3}\label{class_logger_af06203835bf4572c91b1c4ec1229732ea5b1b3368723dd7a7a8e64a13e45f27a3}} 
 NORMAL&\\
 \hline
@@ -130,25 +142,45 @@ Logs onto the console in red color.
 
 Logs onto the console in blue color. 
 
+\mbox{\Hypertarget{class_logger_a211ceb8f080d6088a6b2db5e966a0608}\label{class_logger_a211ceb8f080d6088a6b2db5e966a0608}} 
+\index{Logger@{Logger}!Log@{Log}}
+\index{Log@{Log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Logger\+::\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints empty line onto the console. 
+
 \mbox{\Hypertarget{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}\label{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}} 
 \index{Logger@{Logger}!Log@{Log}}
 \index{Log@{Log}!Logger@{Logger}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily void Logger\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
-Logs onto the console. 
+Logs onto the console with standard printf-\/like interface. 
 
 \mbox{\Hypertarget{class_logger_a56cc303e45fe5ceb8e74e55cda9cd291}\label{class_logger_a56cc303e45fe5ceb8e74e55cda9cd291}} 
 \index{Logger@{Logger}!Log@{Log}}
 \index{Log@{Log}!Logger@{Logger}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily void Logger\+::\+Log (\begin{DoxyParamCaption}\item[{int}]{color\+Code,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
 Logs onto the console in specified color\+Code color. 
+
+\mbox{\Hypertarget{class_logger_a4ec5d46dea2702a3101dee7988a7fff3}\label{class_logger_a4ec5d46dea2702a3101dee7988a7fff3}} 
+\index{Logger@{Logger}!LogInline@{LogInline}}
+\index{LogInline@{LogInline}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{LogInline()}{LogInline()}}
+{\footnotesize\ttfamily void Logger\+::\+Log\+Inline (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console. 
 
 \mbox{\Hypertarget{class_logger_aa85f1ffbe7076c5290eff219d2115cf9}\label{class_logger_aa85f1ffbe7076c5290eff219d2115cf9}} 
 \index{Logger@{Logger}!SetFont@{SetFont}}
@@ -184,4 +216,4 @@ Logs onto the console in yellow color.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Logging/\mbox{\hyperlink{_logger_8hpp}{Logger.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Logging/\mbox{\hyperlink{_logger_8hpp}{Logger.\+hpp}}\end{DoxyCompactItemize}

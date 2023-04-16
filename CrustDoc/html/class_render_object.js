@@ -1,10 +1,5 @@
 var class_render_object =
 [
-    [ "RenderObject", "class_render_object.html#a546733d9fe09e8af26163aaae60c604c", null ],
-    [ "RenderObject", "class_render_object.html#afdbd4674136b38b774969de742c3c40b", null ],
-    [ "RenderObject", "class_render_object.html#a61730888295064e57f3de7c31695954a", null ],
-    [ "~RenderObject", "class_render_object.html#aac7c52e3e892530e0ca7165a2aab3a00", null ],
-    [ "GetMesh", "class_render_object.html#a6e15e7f53c3bfbe59b674a89d5d051a4", null ],
-    [ "GetObjectTypeName", "class_render_object.html#a68ff19a030819e1bab226858a22859b6", null ],
-    [ "ToString", "class_render_object.html#a75bfe73c0026bd3fe154c7441ee75e8b", null ]
+    [ "RenderObject", "class_render_object.html#a9bf7b34d8db9cd5f2c2ca29e5ca1afdb", null ],
+    [ "GetMesh", "class_render_object.html#af89095b2154a40c1a74c25e33467a04c", null ]
 ];

@@ -6,7 +6,7 @@
 #include <Math/Vector3.hpp>
 #include <Rendering/Polygon.hpp>
 
-#define DEFAULT_MESH_NAME "NO NAME"
+#define DEFAULT_MESH_NAME "NO NAME" //!< Default polygon name that is given when no name was provided.
 
 class Vector3;
 
@@ -16,33 +16,41 @@ class Vector3;
 class Mesh
 {
 public:
-  Mesh();
-  Mesh(std::string name);
   /**
-   * @brief Deletes all of the polygons of this mesh
+   * @brief Construct a new Mesh object with name set to #Mesh::DEFAULT_MESH_NAME.
+   */
+  Mesh();
+  /**
+   * @brief Construct a new Mesh object with name set to #name.
+   */
+  Mesh(std::string name);
+
+  /**
+   * @brief Deletes all of the polygons of this mesh.
    */
   ~Mesh();
 
   /**
-   * @brief Adds the triangle to mesh.
+   * @brief Adds the polygon to mesh. It holds the originals so given polygon should be allocated on stack. It will be then deleted in Mesh's destructor.
    *
-   * @param tri Handler to added triangle.
+   * @param poli Handler to added triangle.
    */
-  void AddPolygon(Polygon &tri);
+  void AddPolygon(Polygon &poli);
 
   /**
-   * @brief Getter for triangle.
+   * @brief Getter for polygon.
    *
-   * @param index The index in #polygons for got triangle.
+   * @param index The index in #polygons for got polygon.
    */
   Polygon &GetPolygon(const uint32_t index) const;
+
   /**
-   * @brief Getter for point of triangle of specified index.
+   * @brief Getter for point of polygon of specified index.
    *
-   * @param triIndex Triangle index.
+   * @param poliIndex Triangle index.
    * @param pointIndex Triangle's point index.
    */
-  Vector3 &GetPoint(const uint32_t triIndex, const uint32_t pointIndex) const;
+  Vector3 &GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const;
 
   /**
    * @brief Getter for polygons count.
@@ -59,16 +67,16 @@ public:
   void SetName(std::string newName);
 
   /**
-   * @brief Getter fir #name field.
+   * @brief Getter for #name field.
    *
    * @return The mesh's file name.
    */
   std::string GetName() const;
 
 private:
-  std::string name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path.
+  std::string name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path. It is just representative and has no influence on mesh rendering.
 
-  std::vector<Polygon *> polygons; //!< Polygons, of which the mesh consists.
+  std::vector<Polygon *> polygons; //!< Polygons, of which the mesh consists. Each of it will be then projected onto the scene.
 };
 
 inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) {}
@@ -77,12 +85,11 @@ inline Mesh::Mesh(std::string meshName) : name(meshName) {}
 
 Mesh::~Mesh()
 {
-  // TODO not created? Then dont delete!
   for (auto poli : polygons)
     delete poli;
 }
 
-inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); } // TODO hold copies - should I?
+inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); }
 
 inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(polygons[index]); }
 

@@ -4,12 +4,21 @@
 #include <Math/Vector3.hpp>
 #include <Math/Triangle.hpp>
 
+/**
+ * @brief This class represents renderable piece of an mesh.
+ * @details It is a wrapper for a mathematical shape that represents renderable plane. Obj type uses a triangle so mostly it will be it. But it if we need anything else we can just modify this class.
+ */
 class Polygon : public Triangle
 {
 public:
     using Triangle::Triangle;
     ~Polygon();
 
+    /**
+     * @brief Calculates normal vector of plane that this polygon represents.
+     *
+     * @return Vector3& Normal vector of this plane.
+     */
     Vector3 &Normal();
 
 private:
@@ -25,10 +34,9 @@ Polygon::~Polygon()
 
 Vector3 &Polygon::Normal()
 {
-    if (normal != nullptr)
+    if (normal != nullptr) // FIXME After rotation this is ought to be recalculated - this will generate bugs, but for now it is good enough as it is faster
         return *normal;
 
-    // TODO After rotation this is ought to be recalculated - this will generate bugs, but for now it is good enough
     normal = new Vector3();
     static Vector3 line1;
     static Vector3 line2;

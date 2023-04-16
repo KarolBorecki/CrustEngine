@@ -26,6 +26,7 @@ public:
     STATUS_OK = 0,
     STATUS_FAIL
   };
+
   /**
    * @brief Represents type of event occured on the graphic window.
    */
@@ -34,6 +35,7 @@ public:
     EVENT_QUIT = 0,
     EVENT_UNKNOWN
   };
+
   /**
    * @brief Represents color in classic web hexadecimal values.
    */
@@ -45,10 +47,15 @@ public:
     GREEN = 0x00FF00,
     BLUE = 0x0000FF
   };
-  // TODO CONTINUE REWORK
+
   /**
+   * @brief Creates new renderer. Does not create window.
+   * @details This class should not be used. It is ought to be used through #Renderer class. Please refer to that class for more information.
+   *
    * @param _width Width of graphic window.
    * @param _height Height of graphic window.
+   *
+   * @sa Renderer.hpp
    */
   RendererWrapper(uint32_t _width, uint32_t _height) : width(_width), height(_height)
   {
@@ -92,6 +99,7 @@ public:
    * @param a Alpha/transparency value (0-255).
    */
   void SetDrawColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+
   /**
    * @brief Sets drawing color to given values.
    *
@@ -101,6 +109,7 @@ public:
    * @param a Alpha/transparency value (0-255).
    */
   void SetDrawColor(uint8_t r, uint8_t g, uint8_t b);
+
   /**
    * @brief Sets drawing color to given values.
    *
@@ -110,6 +119,7 @@ public:
    * @sa RendererColor
    */
   void SetDrawColor(uint32_t color, uint8_t a);
+
   /**
    * @brief Sets drawing color to given value.
    *
@@ -186,10 +196,15 @@ public:
 
   /**
    * @brief Getter for renderer width.
+   *
+   * @return uint32_t Width in pixels.
    */
   uint32_t Width() const;
+
   /**
    * @brief Getter for renderer height.
+   *
+   * @return uint32_t Height in pixels.
    */
   uint32_t Height() const;
 
@@ -301,7 +316,7 @@ void RendererWrapper::Quit()
   if (window)
     SDL_DestroyWindow(window);
 
-  SDL_Quit(); /* TODO should it be here? */
+  SDL_Quit();
 }
 
 inline LibRenderer &RendererWrapper::GetRenderer() const { return *renderer; }

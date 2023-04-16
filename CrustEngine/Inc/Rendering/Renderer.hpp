@@ -17,12 +17,17 @@
  *
  * @details Class held by RenderWindow.hpp for drawing purposes.
  * It is able to render all shapes that is needed to show mesh on the flat screen.
+ * It is able to render renderable objects on the screen with given lightning. Refer to #RenderWindow class for more information as this class itself is more low level.
+ *
+ * @sa RenderWindow.hpp
  */
 class Renderer : public RendererWrapper
 {
 public:
   /**
-   * @details Creates new object of type Matrix for #projMatrix field.
+   * @details Creates new object of type Renderer allocates Matrix for #projMatrix field.
+   * @details Constructor does not initalize new Renderer properly. In order to init a renderer You need to call #Init and #CreateWindow methods.
+   * Also remember to load new scene so that renderer has something to render.
    *
    * @param _width Width of the window that this Renderer is applied to.
    * @param _height Height of the window that this Renderer is applied to.
@@ -34,24 +39,26 @@ public:
   ~Renderer();
 
   /**
-   * @brief Draws given triangle on the screen.
+   * @brief Draws given polygon on the screen.
    *
-   * @param tri Triangle that will be drawn.
+   * @param poli Polygon that will be drawn.
    *
-   * @sa Triangle.hpp
+   * @sa Polygon.hpp Triangle.hpp
    */
-  void DrawPolygon(Polygon& tri);
+  void DrawPolygon(Polygon &poli);
 
   /**
    * @brief Draws given mesh on the screen
    *
    * @details Class held by RenderWindow.hpp for drawing purposes.
    * It is able to render all shapes that is needed to show mesh on the flat screen.
+   * It also considers lightning and object's postion (In future also rotation).
    *
    * @param mesh Mesh that will be drawn.
    * @param pos Position in 3D space at which the mesh will be drawn.
    * @param rot Rotation in 3D space at which the mesh will be drawn.
    * @param cam Camera, from which perspective the mesh will be projected.
+   * @param lightDir lightning direction on the scene. Right now Crust engine only supports 1 directional light on the scene //TODO
    * @param projectLight Flag if the light should be proojected.
    *
    * @sa Mesh.hpp
@@ -59,32 +66,31 @@ public:
   void DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight);
 
   /**
-   * @brief Projects given triangle using #projMatrix.
+   * @brief Projects given polygon using #projMatrix.
    *
-   * @details Class held by RenderWindow.hpp for drawing purposes.
-   * It is able to render all shapes that is needed to show mesh on the flat screen.
+   * @details Class used in #DrawMesh method. It takes 3D space parameters and projects given #poli accordingly to it's position (in future also rotation) and scene's lightining.
    *
-   * @param tri Projected triangle.
-   * @param pos Projected triangle's mesh position in 3D space.
-   * @param rot Projected triangle's mesh rotataion in 3D space.
-   * @param cam Camera, from which perspective the triangle will be projected.
+   * @param poli Projected polygon.
+   * @param pos Projected polygon's mesh position in 3D space.
+   * @param rot Projected polygon's mesh rotataion in 3D space.
+   * @param cam Camera, from which perspective the polygon will be projected.
    * @param projectLight Flag if the light should be proojected.
    *
-   * @return Projected triangle.
+   * @return Projected polygon.
    */
   Polygon &ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight);
 
   /**
    * @brief Getter for #projMatrix field.
    *
-   * @return Handler to #projMatrix field.
+   * @return Reference to #projMatrix field.
    */
   Matrix<double> &GetProjectionMatrix() const;
 
   /**
    * @brief Recalculates the projection matrix for given camera.
    *
-   * @details The projection matrix is calculated as here is explained: <a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">Projection matrix</a> <br>
+   * @details The projection matrix is calculated as here is explained: <a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">Projection matrix on wikipedia</a> <br>
    *
    * @note The engine calculation is made based on <a link="https://www.youtube.com/watch?v=ih20l3pJoeU">this formulas</a>.
    *
@@ -95,7 +101,7 @@ public:
   void RecalculateProjectionMatrix(Camera &cam);
 
   /* This value should not be changed without full understanding of this change! */
-  static constexpr int PROJ_MATRIX_SIZE{4};
+  static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
 
 private:
   double aspectRatio{0.0};    //!< Assigned window aspect ration. Calulated on Renderer creation.
@@ -118,16 +124,15 @@ Renderer::~Renderer()
 void Renderer::DrawMesh(Mesh &mesh, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-  for (int i = 0; i < mesh.GetPolygonsCount(); i++)
+  for (int i = 0; i < mesh.GetPolygonsCount(); i++) // TODO use auto for
   {
     ProjectPolygon(mesh.GetPolygon(i), pos, rot, cam, lightDir, projectLight);
   }
 }
 
+// TODO divide!!!!
 Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
 {
-// Logger::Log("--------------------------Nowy poligin");
-  // DOBIERA Pamięci!!!! Jednak nie XD Jednak tak :((((
   static Matrix<double> projMat;
   projMat = GetProjectionMatrix();
   static Polygon result;
@@ -145,7 +150,7 @@ Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Cam
   movedP2 += pos;
   movedP3 += pos;
 
-  movedP1 -= cam.GetTransform().GetPosition(); //TODO move to local variable
+  movedP1 -= cam.GetTransform().GetPosition(); // TODO move to local variable
   movedP2 -= cam.GetTransform().GetPosition();
   movedP3 -= cam.GetTransform().GetPosition();
 
@@ -212,7 +217,7 @@ Polygon &Renderer::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Cam
     static Vector3 projectedP3;
 
     projectedP1 = {extendedP1.X(), extendedP1.Y(), extendedP1.Z()}; // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
-    projectedP2 = {extendedP2.X(), extendedP2.Y(), extendedP2.Z()};
+    projectedP2 = {extendedP2.X(), extendedP2.Y(), extendedP2.Z()}; // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
     projectedP3 = {extendedP3.X(), extendedP3.Y(), extendedP3.Z()};
 
     /* Scaling object's triangle to world space */

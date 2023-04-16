@@ -10,7 +10,7 @@ class Vector3 : public Matrix<double>
 {
 public:
   /**
-   * @brief Creates blank vector that consists of values zero.
+   * @brief Creates blank vector that consists of zeros.
    */
   Vector3();
   /**
@@ -58,6 +58,10 @@ public:
    * @param valZ New value of vector's z.
    */
   void SetZ(double valZ);
+
+private:
+  static inline constexpr uint8_t VECTOR3_WIDTH{3};
+  static inline constexpr uint8_t VECTOR3_HEIGHT{1};
 };
 
 inline Vector3::Vector3() : Vector3(0, 0, 0) {}
@@ -66,10 +70,10 @@ inline Vector3::Vector3(double valXYZ) : Vector3(valXYZ, valXYZ, valXYZ) {}
 
 inline Vector3::Vector3(double x, double y, double z)
 {
-  width = 3;
-  height = 1;
-  totalSize = 3;
-  mat = new double[3];
+  width = VECTOR3_WIDTH;
+  height = VECTOR3_HEIGHT;
+  totalSize = VECTOR3_WIDTH;
+  mat = new double[VECTOR3_WIDTH];
 
   SetX(x);
   SetY(y);

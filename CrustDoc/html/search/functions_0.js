@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['add_0',['Add',['../class_matrix.html#a4d8417f15dc4e5ebad02321c9fd37e6c',1,'Matrix::Add(Matrix *mat1, Matrix *mat2)'],['../class_matrix.html#aa8a37e15cc6098b037fe9bbe4c7a7371',1,'Matrix::Add(Matrix *mat, const double scalar)'],['../class_vector3.html#ae919b64e71a55266e36d054ce77a03ea',1,'Vector3::Add(Vector3 *vec, double x, double y, double z)'],['../class_vector3.html#a9fc3c0a1ab2857d4468c0ae761bf0cbe',1,'Vector3::Add(Vector3 *vec, double scalar)'],['../class_vector3.html#a8b75ad7da558f27ad8393ed947367eb4',1,'Vector3::Add(Vector3 *vec1, Vector3 *vec2)'],['../class_vector4.html#af60da26479fe57305d900becc960f199',1,'Vector4::Add()']]],
-  ['addobject_1',['AddObject',['../class_scene.html#a165e38b1c743b1db60b2ba1e42213726',1,'Scene']]],
-  ['addtriangle_2',['AddTriangle',['../class_mesh.html#a64d0401e240cb2befe5a275578bf7aae',1,'Mesh']]],
-  ['attachscript_3',['AttachScript',['../class_object.html#a6bafbad58088d65c769ed1eecad51e44',1,'Object']]]
+  ['abs_0',['Abs',['../class_math.html#aad545cc846717f163d9bd06db85482b6',1,'Math']]],
+  ['addobject_1',['AddObject',['../class_scene.html#aab9ad66bea29441cab72ee58ec9b3917',1,'Scene']]],
+  ['addpolygon_2',['AddPolygon',['../class_mesh.html#ac3b13bffa35d0d581ffe1e0dc8479584',1,'Mesh']]],
+  ['attachscript_3',['AttachScript',['../class_object.html#a2fbd7872006c074445b88970ae148e62',1,'Object']]],
+  ['attachto_4',['AttachTo',['../class_crust_script.html#a4342d644329a50d1a03517ee2fd9f689',1,'CrustScript']]]
 ];

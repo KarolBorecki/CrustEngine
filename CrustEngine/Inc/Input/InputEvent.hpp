@@ -3,10 +3,15 @@
 
 namespace Key
 {
-  constexpr uint8_t KEYS_COUNT=70; // Remember to update this value when updating KeyCode enum
-  constexpr uint8_t KEYS_STATE_ARRAY_SIZE=127;
+  constexpr uint8_t KEYS_COUNT = 70; // Remember to update this value when updating KeyCode enum
+  constexpr uint8_t KEYS_STATE_ARRAY_SIZE = 127;
 
-  enum KeyCode : int32_t 
+  /**
+   * @brief Types of keys. Each represents key on a keyboard that can be pressed and called with EVENT_KEY_DOWN or EVENT_KEY_UP.
+   *
+   * @sa InputHandler.hpp
+   */
+  enum KeyCode : int32_t
   {
     KEY_NONE = 0,
 
@@ -58,8 +63,8 @@ namespace Key
     KEY_EQUALS = 46,
     KEY_LEFTBRACKET = 47,
     KEY_RIGHTBRACKET = 48,
-    KEY_BACKSLASH = 49, 
-    KEY_NONUSHASH = 50, 
+    KEY_BACKSLASH = 49,
+    KEY_NONUSHASH = 50,
     KEY_SEMICOLON = 51,
     KEY_APOSTROPHE = 52,
     KEY_GRAVE = 53,
@@ -68,9 +73,15 @@ namespace Key
     KEY_SLASH = 56,
   };
 }
-namespace Event {
-  constexpr uint8_t EVENTS_COUNT=7; // Remember to update this value when updating EventType enum
+namespace Event
+{
+  constexpr uint8_t EVENTS_COUNT = 7; // Remember to update this value when updating EventType enum
 
+  /**
+   * @brief Types of an event. Each represents single event that can occur during engine work time.
+   *
+   * @sa InputHandler.hpp
+   */
   enum EventType : uint8_t
   {
     EVENT_UNKNOWN = 0,
@@ -82,6 +93,11 @@ namespace Event {
     EVENT_WHEEL,
   };
 }
+
+/**
+ * @brief Struct of an event. Engine at each event checks what type of an event occured and what key was pressed (If EVENT_KEY_DOWN or EVENT_KEY_UP occured).
+ *
+ */
 typedef struct InputEvent
 {
   Key::KeyCode keyCode;

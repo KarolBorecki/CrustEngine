@@ -1,27 +1,47 @@
 \hypertarget{_crust_script_8hpp_source}{}\doxysection{Crust\+Script.\+hpp}
-\label{_crust_script_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/CrustScript.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Scripting/CrustScript.hpp}}
+\label{_crust_script_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Scripting/CrustScript.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Scripting/CrustScript.hpp}}
 \mbox{\hyperlink{_crust_script_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_CRUSTSCRIPT\_HPP\_}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_CRUSTSCRIPT\_HPP\_}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_object_8hpp}{Rendering/Objects/Object.hpp}}>}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_script}{CrustScript}} \{}
-\DoxyCodeLine{7 \textcolor{keyword}{public}:}
-\DoxyCodeLine{8   \mbox{\hyperlink{class_crust_script_a1b1fe5bc2b6e16c3f098484e8acc577c}{CrustScript}}(\mbox{\hyperlink{class_object}{Object}}* \_parentObj) : \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}}(\_parentObj) \{\}}
-\DoxyCodeLine{9   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_crust_script_ac6ad2879105f990db45593dafa5b2140}{\string~CrustScript}}() \{\};}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{Start}}();}
-\DoxyCodeLine{12   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{Update}}(\textcolor{keywordtype}{double} deltaTime);}
-\DoxyCodeLine{13 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{14   \mbox{\hyperlink{class_object}{Object}}* \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parentObj}};}
-\DoxyCodeLine{15 \};}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{CrustScript::Start}}() \{\}}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{19 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{CrustScript::Update}}(\textcolor{keywordtype}{double} deltaTime) \{\}}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_CRUSTSCRIPT\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_transform}{Transform}};}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_script}{CrustScript}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10   \mbox{\hyperlink{class_crust_script_a6f24d55094ea3a8956508cbca0e15c4b}{CrustScript}}() \{\}}
+\DoxyCodeLine{11   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_crust_script_ac6ad2879105f990db45593dafa5b2140}{\string~CrustScript}}()\{\};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{Start}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{23   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{Update}}(\textcolor{keywordtype}{double} deltaTime);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{32   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a4342d644329a50d1a03517ee2fd9f689}{AttachTo}}(\mbox{\hyperlink{class_object}{Object}} \&\_parentObj);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{39   \mbox{\hyperlink{class_object}{Object}} \&\mbox{\hyperlink{class_crust_script_aa79919d3db0732975670a5ca1fbc4988}{GetObject}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{private}:}
+\DoxyCodeLine{42   \mbox{\hyperlink{class_object}{Object}} *parentObj\{\textcolor{keyword}{nullptr}\}; }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keywordtype}{bool} isAttached\{\textcolor{keyword}{false}\}; }
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{CrustScript::Start}}() \{\}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{CrustScript::Update}}(\textcolor{keywordtype}{double} deltaTime) \{\}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_script_a4342d644329a50d1a03517ee2fd9f689}{CrustScript::AttachTo}}(\mbox{\hyperlink{class_object}{Object}} \&\_parentObj)}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53   \textcolor{keywordflow}{if} (isAttached)}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{55   parentObj = \&\_parentObj;}
+\DoxyCodeLine{56   isAttached = (parentObj != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{57 \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{inline} \mbox{\hyperlink{class_object}{Object}} \&\mbox{\hyperlink{class_crust_script_aa79919d3db0732975670a5ca1fbc4988}{CrustScript::GetObject}}() \{ \textcolor{keywordflow}{return} *parentObj; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_CRUSTSCRIPT\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

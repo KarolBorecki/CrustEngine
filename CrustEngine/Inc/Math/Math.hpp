@@ -3,36 +3,88 @@
 
 #include <math.h> /* cos, sin, sqrt */
 
+/**
+ * @brief Static class that wrapps all math's algorithm used in the engine.
+ */
 class Math
 {
 public:
+    /**
+     * @brief Method that calculates absolute of a given value.
+     *
+     * @param value Value that will be converted to absolute.
+     * @return double Abosulute value.
+     */
     static double Abs(double value);
 
+    /**
+     * @brief Method that calculates square root of a given value.
+     *
+     * @param radicand Value that square root will be calculated.
+     * @return double Square root of #radicand.
+     */
     static double SquareRoot(double radicand);
+    /**
+     * @brief Method that calculates 1/sqrt(radicand). This is highly useful during projection.
+     *
+     * @param radicand Value that square root will be calculated.
+     * @return double Inversed of a square root of a #radicand.
+     */
     static double InverseSquareRoot(double radicand);
 
+    /**
+     * @brief Method that calculates cos for t value.
+     *
+     * @param t x variable for cos(x). In radians.
+     * @return double Value of a cos for #t.
+     */
     static double Cos(double t);
+    /**
+     * @brief Method that calculates sin for t value.
+     *
+     * @param t x variable for sin(x). In radians.
+     * @return double Value of a sin for #t.
+     */
     static double Sin(double t);
+    /**
+     * @brief Method that calculates tan for t value.
+     *
+     * @param t x variable for tan(x). In radians.
+     * @return double Value of a tan for #t.
+     */
     static double Tan(double t);
 
     /**
      * @brief Converts #radians to degrees.
+     *
+     * @param radians Value in radians that will be converted.
+     * @return uint16_t Converted value in degrees.
      */
-
     static uint16_t RadiansToDegrees(double radians);
 
     /**
      * @brief Converts #angleInDegrees to radians.
+     *
+     * @param degrees Value in degrees that will be converted
+     * @return double Converted value in radians.
      */
-
     static double DegreesToRadians(uint16_t degrees);
 
+    /**
+     * @brief Checks if given values are equal within accepted margin #delta.
+     *
+     * @param val1 First compared value.
+     * @param val2 Second compared value.
+     * @param delta Accepted margin that will be tolerated even if the value are not exact. Default is #DOUBLE_DEFAULT_DELTA.
+     * @return true Values are equal within accepted margin.
+     * @return false Values are not equal within accepted margin.
+     */
     static bool DoubleEquals(double val1, double val2, double delta = DOUBLE_DEFAULT_DELTA);
 
 private:
-    static constexpr double PI{M_PI};
+    static constexpr double PI{M_PI}; //!< The value of PI
 
-    static constexpr double DOUBLE_DEFAULT_DELTA{0.0000001};
+    static constexpr double DOUBLE_DEFAULT_DELTA{0.0000001}; //!< Default accepted margin for double values.
 };
 
 inline double Math::Abs(double value)

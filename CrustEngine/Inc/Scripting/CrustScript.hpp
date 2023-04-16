@@ -10,23 +10,52 @@ public:
   CrustScript() {}
   virtual ~CrustScript(){};
 
+  /**
+   * @brief Function called when script is being attached to the object.
+   */
   virtual void Start();
+
+  /**
+   * @brief Function called once per frame.
+   *
+   * @param deltaTime Time that passed since last frame - it represents how much seconds does the last frame took to render.
+   */
   virtual void Update(double deltaTime);
 
+  /**
+   * @brief Function that should only be called once. This is only called from Object::AttachScript and should not be called by the user.
+   *
+   * @param _parentObj Object that holds this script.
+   *
+   * @sa Object.hpp
+   */
   void AttachTo(Object &_parentObj);
 
-  Object& GetObject();
+  /**
+   * @brief Get the object of an parent class that holds this sctipt. It is highly useful to perform any action on parent object.
+   *
+   * @return Object& Parent object reference.
+   */
+  Object &GetObject();
 
 private:
-  Object *parentObj;
+  Object *parentObj{nullptr}; //!< Object that holds this script and on which this script's functionallity will be performed.
+
+  bool isAttached{false}; //!< Flag that represents if given script was already attached to it's parent. If equal to yes method #AttachTo will do no action.
 };
 
 inline void CrustScript::Start() {}
 
 inline void CrustScript::Update(double deltaTime) {}
 
-inline void CrustScript::AttachTo(Object &_parentObj) { parentObj = &_parentObj; }
+inline void CrustScript::AttachTo(Object &_parentObj)
+{
+  if (isAttached)
+    return;
+  parentObj = &_parentObj;
+  isAttached = (parentObj != nullptr);
+}
 
-inline Object& CrustScript::GetObject() { return *parentObj; }
+inline Object &CrustScript::GetObject() { return *parentObj; }
 
 #endif /* _CRUSTSCRIPT_HPP_ */

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal_0',['NORMAL',['../class_logger.html#af06203835bf4572c91b1c4ec1229732ea5b1b3368723dd7a7a8e64a13e45f27a3',1,'Logger']]]
+  ['light_5fblue_0',['LIGHT_BLUE',['../class_logger.html#aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1',1,'Logger']]]
 ];

@@ -12,7 +12,7 @@ class Logger
 {
 public:
   /**
-   * Enumeration representing console color codes.
+   * @brief representing console color codes.
    */
   enum FontColor
   {
@@ -27,7 +27,7 @@ public:
   };
 
   /**
-   * Enumeration representing console font styles codes.
+   * @brief Enumeration representing console font styles codes.
    */
   enum FontStyle
   {
@@ -50,12 +50,12 @@ public:
 
   /**
    * @brief Logs onto the console with standard printf-like interface.
-   */ 
+   */
   static void Log(const char *format, ...);
 
   /**
    * @brief Prints empty line onto the console.
-   */ 
+   */
   static void Log();
 
   /**

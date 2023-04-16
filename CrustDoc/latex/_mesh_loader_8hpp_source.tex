@@ -1,98 +1,100 @@
 \hypertarget{_mesh_loader_8hpp_source}{}\doxysection{Mesh\+Loader.\+hpp}
-\label{_mesh_loader_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/MeshLoader.hpp@{/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Files/MeshLoader.hpp}}
+\label{_mesh_loader_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Files/MeshLoader.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Files/MeshLoader.hpp}}
 \mbox{\hyperlink{_mesh_loader_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_MESHLOADER\_HPP\_}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_MESHLOADER\_HPP\_}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_file_reader_8hpp}{Files/FileReader.hpp}}>}}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh_loader}{MeshLoader}} \{}
-\DoxyCodeLine{13 \textcolor{keyword}{public}:}
-\DoxyCodeLine{23   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25 \textcolor{keyword}{private}:}
-\DoxyCodeLine{34   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{46   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh);}
-\DoxyCodeLine{47 \};}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_exceptions_handler_8hpp}{Logging/ExceptionsHandler.hpp}}>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_mesh_loader}{MeshLoader}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ParseObjToMesh(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh);}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{MeshLoader::LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh)}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41   uint8\_t fileNameLen = strlen(fileName);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \textcolor{keywordflow}{if} (fileName[fileNameLen -\/ 1] == \textcolor{charliteral}{'j'} \&\& fileName[fileNameLen -\/ 2] == \textcolor{charliteral}{'b'} \&\& fileName[fileNameLen -\/ 3] == \textcolor{charliteral}{'o'} \&\& fileName[fileNameLen -\/ 4] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{44     ParseObjToMesh(fileName, outMesh);}
+\DoxyCodeLine{45   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_exceptions_handler_a86c95e07ec62093a3183476202e464bc}{ExceptionsHandler::ThrowWarning}}(\textcolor{stringliteral}{"{}No mathing file extension for file: \%s -\/ The mesh will not be loaded."{}}, fileName);}
+\DoxyCodeLine{47 \}}
 \DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mesh_loader_a79900851f6165bcdca8eecae4c5b452b}{MeshLoader::LoadMeshFromFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
-\DoxyCodeLine{50   uint8\_t fileNameLen = strlen(fileName);}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52   \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'j'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'b'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'o'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
-\DoxyCodeLine{53     ReadFromObj(fileName, outMesh);}
-\DoxyCodeLine{54   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fileName[fileNameLen-\/1] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/2] == \textcolor{charliteral}{'x'} \&\& fileName[fileNameLen-\/3] == \textcolor{charliteral}{'t'} \&\& fileName[fileNameLen-\/4] == \textcolor{charliteral}{'.'})}
-\DoxyCodeLine{55     ReadFromTxt(fileName, outMesh);}
-\DoxyCodeLine{56   \textcolor{keywordflow}{else}}
-\DoxyCodeLine{57     \mbox{\hyperlink{class_logger_a618b81914d1e3fe6eff17cee0be5ee22}{Logger::Error}}(\textcolor{stringliteral}{"{}No mathing file extension for file: \%s"{}}, fileName);}
-\DoxyCodeLine{58 \}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60 \textcolor{comment}{// TODO not fully implemented! Only vectros and faces are read}}
-\DoxyCodeLine{61 \textcolor{keywordtype}{void} MeshLoader::ReadFromObj(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh)}
-\DoxyCodeLine{62 \{}
-\DoxyCodeLine{63   \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(fileName);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65   \textcolor{keywordtype}{char} materialName[256];}
-\DoxyCodeLine{66   \textcolor{keywordtype}{char} objectName[256];}
-\DoxyCodeLine{67   \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(1, \textcolor{stringliteral}{"{}mtllib \%s\(\backslash\)n"{}}, materialName);}
-\DoxyCodeLine{68   \mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(1, \textcolor{stringliteral}{"{}o \%s\(\backslash\)n"{}}, objectName);}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70   outMesh-\/>\mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{SetName}}(objectName);}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72   \textcolor{keywordtype}{char} vertexType[3] = \{\textcolor{charliteral}{'\(\backslash\)0'}\};}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74   \textcolor{keywordtype}{double} d1 = 1.0, d2 = 1.0, d3 = 1.0;}
-\DoxyCodeLine{75   \textcolor{keywordtype}{int} p1 = 1, p2 = 1, p3 = 1;}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77   \mbox{\hyperlink{class_vector3}{Vector3}} *points[20000];}
-\DoxyCodeLine{78   \mbox{\hyperlink{class_triangle}{Triangle}} *tri[20000];}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80   \textcolor{keywordtype}{int} currentPoint = 0;}
-\DoxyCodeLine{81   \textcolor{keywordtype}{int} currentTri = 0;}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(1, \textcolor{stringliteral}{"{}\%s"{}}, vertexType) > 0)}
-\DoxyCodeLine{84   \{}
-\DoxyCodeLine{85     \textcolor{keywordflow}{if} (vertexType[0] == \textcolor{charliteral}{'v'})}
-\DoxyCodeLine{86     \{}
-\DoxyCodeLine{87       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%lf \%lf \%lf\(\backslash\)n"{}}, \&d1, \&d2, \&d3) == 3)}
-\DoxyCodeLine{88       \{}
-\DoxyCodeLine{89         points[currentPoint] = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}(d1, d2, d3);}
-\DoxyCodeLine{90         currentPoint++;}
-\DoxyCodeLine{91       \}}
-\DoxyCodeLine{92     \}}
-\DoxyCodeLine{93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (vertexType[0] == \textcolor{charliteral}{'f'})}
-\DoxyCodeLine{94     \{}
-\DoxyCodeLine{95       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(3, \textcolor{stringliteral}{"{} \%d \%d \%d\(\backslash\)n"{}}, \&p1, \&p2, \&p3) == 3)}
-\DoxyCodeLine{96       \{}
-\DoxyCodeLine{97         tri[currentTri] = \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle}{Triangle}}(points[p1 -\/ 1], points[p2 -\/ 1], points[p3 -\/ 1]);}
-\DoxyCodeLine{98         currentTri++;}
-\DoxyCodeLine{99       \}}
-\DoxyCodeLine{100     \}}
-\DoxyCodeLine{101   \}}
-\DoxyCodeLine{102   \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\textcolor{stringliteral}{"{}Reading mesh end."{}});}
-\DoxyCodeLine{103   \textcolor{keywordflow}{for} (uint8\_t i = 0; i < currentTri; i++)}
-\DoxyCodeLine{104   \{}
-\DoxyCodeLine{105     \mbox{\hyperlink{class_logger_ae9cc87d3a78f21600b1c5f98c43cd3b8}{Logger::Log}}(\mbox{\hyperlink{class_logger_aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1}{Logger::FontColor::LIGHT\_BLUE}}, \textcolor{stringliteral}{"{}Adding tri: \%d"{}}, i);}
-\DoxyCodeLine{106     outMesh-\/>\mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{AddTriangle}}(tri[i]);}
-\DoxyCodeLine{107   \}}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
-\DoxyCodeLine{110 \}}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112 \textcolor{keywordtype}{void} MeshLoader::ReadFromTxt(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{class_mesh}{Mesh}}* outMesh) \{}
-\DoxyCodeLine{113   \mbox{\hyperlink{class_file_reader_aff8f7f042d3b785207e6f5e806c35f88}{FileReader::OpenFile}}(fileName);}
-\DoxyCodeLine{114   outMesh-\/>\mbox{\hyperlink{class_mesh_acd25fc39bfa8e74103191d36529f1841}{SetName}}(\mbox{\hyperlink{class_file_reader_a8a1754a6d946596970d10f3ef9fa1f5e}{FileReader::GetFileName}}(fileName));}
-\DoxyCodeLine{115   \textcolor{keywordtype}{double} d1,d2,d3,d4,d5,d6,d7,d8,d9;}
-\DoxyCodeLine{116   \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_file_reader_a9261bdfecae357d219cdc13b4239efa0}{FileReader::GetLineFromOpenedFile}}(9, \textcolor{stringliteral}{"{}\%lf, \%lf, \%lf; \%lf, \%lf, \%lf; \%lf, \%lf, \%lf;"{}}, \&d1, \&d2, \&d3, \&d4, \&d5, \&d6, \&d7, \&d8, \&d9) == 9) \{}
-\DoxyCodeLine{117     \mbox{\hyperlink{class_triangle}{Triangle}}* tri = \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle}{Triangle}}(d1, d2, d3, d4, d5, d6, d7, d8, d9);}
-\DoxyCodeLine{118     outMesh-\/>\mbox{\hyperlink{class_mesh_a64d0401e240cb2befe5a275578bf7aae}{AddTriangle}}(tri);}
-\DoxyCodeLine{119   \}}
-\DoxyCodeLine{120   \mbox{\hyperlink{class_file_reader_ad463252e12b9ba261cb3e44ce7ecdb91}{FileReader::CloseOpenedFile}}();}
-\DoxyCodeLine{121 \}}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MESHLOADER\_HPP\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} MeshLoader::ParseObjToMesh(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \mbox{\hyperlink{class_mesh}{Mesh}} *outMesh)}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51   std::ifstream file(fileName);}
+\DoxyCodeLine{52   std::string line;}
+\DoxyCodeLine{53   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *analysed\_line;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55   \textcolor{keywordtype}{char} str[256];}
+\DoxyCodeLine{56   \textcolor{keywordtype}{double} x = 1.0, y = 1.0, z = 1.0;             \textcolor{comment}{// Points values}}
+\DoxyCodeLine{57   \textcolor{keywordtype}{int} p1\_index = 1, p2\_index = 1, p3\_index = 1; \textcolor{comment}{// Points indexes}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{int} t1\_index = 1, t2\_index = 1, t3\_index = 1; \textcolor{comment}{// Textures indexes}}
+\DoxyCodeLine{59   \textcolor{keywordtype}{int} n1\_index = 1, n2\_index = 1, n3\_index = 1; \textcolor{comment}{// Normals indexes}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61   std::vector<double> points;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{int} currentPoint = 0;}
+\DoxyCodeLine{64   \textcolor{keywordtype}{int} currentTri = 0;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordflow}{while} (std::getline(file, line))}
+\DoxyCodeLine{67   \{}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     analysed\_line = line.c\_str();}
+\DoxyCodeLine{70     \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}v \%lf \%lf \%lf"{}}, \&x, \&y, \&z) == 3)}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72       points.push\_back(x);}
+\DoxyCodeLine{73       points.push\_back(y);}
+\DoxyCodeLine{74       points.push\_back(z);}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}vn \%lf \%lf \%lf"{}}, \&x, \&y, \&z) == 3)}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78       \textcolor{comment}{// TODO mesh obj loader -\/ usage for vn data}}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}vt \%lf \%lf \%lf"{}}, \&x, \&y, \&z) == 3)}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82       \textcolor{comment}{// TODO mesh obj loader -\/ usage for vt data}}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}f \%d \%d \%d"{}}, \&p1\_index, \&p2\_index, \&p3\_index) == 3)}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86       \textcolor{comment}{// TODO rework this}}
+\DoxyCodeLine{87       outMesh-\/>\mbox{\hyperlink{class_mesh_ac3b13bffa35d0d581ffe1e0dc8479584}{AddPolygon}}(*(\textcolor{keyword}{new} \mbox{\hyperlink{class_polygon}{Polygon}}(points[(p1\_index -\/ 1) * 3], points[(p1\_index -\/ 1) * 3 + 1], points[(p1\_index -\/ 1) * 3 + 2], \textcolor{comment}{// TODO make static polygon and pass it as copy}}
+\DoxyCodeLine{88                                         points[(p2\_index -\/ 1) * 3], points[(p2\_index -\/ 1) * 3 + 1], points[(p2\_index -\/ 1) * 3 + 2],}
+\DoxyCodeLine{89                                         points[(p3\_index -\/ 1) * 3], points[(p3\_index -\/ 1) * 3 + 1], points[(p3\_index -\/ 1) * 3 + 2])));}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}f \%d/\%d \%d/\%d \%d/\%d"{}}, \&p1\_index, \&t1\_index, \&p2\_index, \&t2\_index, \&p3\_index, \&t3\_index) == 6)}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93       outMesh-\/>\mbox{\hyperlink{class_mesh_ac3b13bffa35d0d581ffe1e0dc8479584}{AddPolygon}}(*(\textcolor{keyword}{new} \mbox{\hyperlink{class_polygon}{Polygon}}(points[(p1\_index -\/ 1) * 3], points[(p1\_index -\/ 1) * 3 + 1], points[(p1\_index -\/ 1) * 3 + 2],}
+\DoxyCodeLine{94                                         points[(p2\_index -\/ 1) * 3], points[(p2\_index -\/ 1) * 3 + 1], points[(p2\_index -\/ 1) * 3 + 2],}
+\DoxyCodeLine{95                                         points[(p3\_index -\/ 1) * 3], points[(p3\_index -\/ 1) * 3 + 1], points[(p3\_index -\/ 1) * 3 + 2])));}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}f \%d/\%d/\%d \%d/\%d/\%d \%d/\%d/\%d"{}}, \&p1\_index, \&t1\_index, \&n1\_index, \&p2\_index, \&t2\_index, \&n2\_index, \&p3\_index, \&t3\_index, \&n3\_index) == 9)}
+\DoxyCodeLine{98     \{}
+\DoxyCodeLine{99       outMesh-\/>\mbox{\hyperlink{class_mesh_ac3b13bffa35d0d581ffe1e0dc8479584}{AddPolygon}}(*(\textcolor{keyword}{new} \mbox{\hyperlink{class_polygon}{Polygon}}(points[(p1\_index -\/ 1) * 3], points[(p1\_index -\/ 1) * 3 + 1], points[(p1\_index -\/ 1) * 3 + 2],}
+\DoxyCodeLine{100                                         points[(p2\_index -\/ 1) * 3], points[(p2\_index -\/ 1) * 3 + 1], points[(p2\_index -\/ 1) * 3 + 2],}
+\DoxyCodeLine{101                                         points[(p3\_index -\/ 1) * 3], points[(p3\_index -\/ 1) * 3 + 1], points[(p3\_index -\/ 1) * 3 + 2])));}
+\DoxyCodeLine{102     \}}
+\DoxyCodeLine{103     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}usemtl \%s"{}}, str) == 1)}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105       \textcolor{comment}{// TODO mesh obj loader -\/ usage for usemtl data}}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sscanf(analysed\_line, \textcolor{stringliteral}{"{}s \%s"{}}, str) == 1)}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109       \textcolor{comment}{// TODO mesh obj loader -\/ usage for s off}}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111   \}}
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_MESHLOADER\_HPP\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}
