@@ -19,14 +19,13 @@ public:
    * @details Recognizes the file's extension by 4 last characters and calls MeshLoader::ReadFromObj or MeshLoader::ReadFromTxt method.
    * If no match for file extension was found then logs an error and returns blank mesh. <br>
    * Supported file extensions: <br>
-   *   - *.txt <br>
    *   - *.obj <br>
    */
   static void LoadMeshFromFile(const char *fileName, Mesh *outMesh);
 
 private:
   /**
-   * @brief Reads mesh from *.obj file and returns Mesh object.
+   * @brief Reads mesh from *.obj file and saves it to Mesh object.
    *
    * @details Opens file of #filename, reads the content in *.obj convention and creates Mesh object.
    * Before returning it closes the opened file.
@@ -107,6 +106,10 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     else if (sscanf(analysed_line, "s %s", str) == 1)
     {
       // TODO mesh obj loader - usage for s off
+    }
+    else
+    {
+      ExceptionsHandler::ThrowWarning("No matching rule for line: %s in obj's file %s", analysed_line, fileName);
     }
   }
 }
