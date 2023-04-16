@@ -6,6 +6,9 @@
 class Transform
 {
 public:
+    /**
+     * @brief Construct a new transform object with position at (0,0,0) and rotation at (0,0,0). Allocates space for position and rotation vectors.
+     */
     Transform();
 
     ~Transform();
@@ -24,8 +27,14 @@ public:
      */
     Vector3 &GetEulerRotation() const;
 
+    /**
+     * @brief Set the position of this object to given vector (x, y, z).
+     */
     void SetPosition(double x, double y, double z);
 
+    /**
+     * @brief Set the euler's rotation of this object to given vector (x, y, z) in degrees.
+     */
     void SetEulerRotation(double x, double y, double z);
 
     /**

@@ -87,7 +87,6 @@ void Core::CloseAllWindows()
 
 void Core::Quit()
 {
-  Logger::Info("Engine work time: %lf [s]", TimeProvider::GetTime_s());
   CloseAllWindows();
 }
 

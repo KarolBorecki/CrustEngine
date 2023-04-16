@@ -31,8 +31,27 @@ public:
   Scene(std::string _name, Camera &_mainCamera);
   ~Scene(){};
 
+  /**
+   * @brief Loads the scene. Performs cleanup and gets the scene ready for rendering. Should be called on load from render window (It is done by render window).
+   */
+  void OnLoad();
+
+  /**
+   * @brief Unloads the scene. Performs cleanup and gets the scene ready for new load. Should be called after the scene was unlaoded from render window (It is done by render window).
+   *
+   */
+  void OnUnLoad();
+
+  /**
+   * @brief Starts the scene. Loads all scripts, calls Start on it and performs cleanup. Should be called before rendering of this scene happens (It is done by render window).
+   */
   void Start();
 
+  /**
+   * @brief Updates the scene. Calls update for each script. Should be called once per frame (It is done by render window).
+   *
+   * @param deltaTime Time that passed since last frame was rendered.
+   */
   void Update(double deltaTime);
 
   /**
@@ -43,6 +62,15 @@ public:
    * @sa Camera.hpp
    */
   Camera &GetMainCamera();
+
+  /**
+   * @brief Setter for #mainCamera field.
+   *
+   * @return Reference to camera, which will be new main camera (From it's perspective the world will be rendered).
+   *
+   * @sa Camera.hpp
+   */
+  void SetMainCamera(Camera &newMainCamera);
 
   /**
    * @brief Adds the object to the scene.
@@ -92,7 +120,9 @@ public:
   std::string GetName();
 
 private:
-  std::string name;            //!< Scene name, also used as window caption.
+  std::string name;            //!< Scene name, also used as window caption on top of the renderer window.
+  bool started{false};         //!< Flag that says if given scene already started - was loaded or performed Start on every script in this scene.
+  bool loaded{false};          //!< Flag that says if given scene is currently loaded on any render window.
   Camera *mainCamera{nullptr}; //!< Main camera from which perspective the projection will be calculated.
 
   bool projectLight{true}; //!< If true the light will be projected accordingly to light sources, if false all mesh's faces will be projected with maximum lighting.
@@ -107,22 +137,42 @@ inline Scene::Scene(std::string _name, Camera &_mainCamera) : name(_name), mainC
   AddObject(_mainCamera);
 }
 
+void Scene::OnLoad()
+{
+  loaded = true;
+  Start();
+}
+
+void Scene::OnUnLoad()
+{
+  loaded = false;
+  started = false;
+}
+
 void Scene::Start()
 {
+  if (started)
+    return;
   for (auto obj : objects)
     for (auto script : obj->GetScripts())
       script->Start();
+  started = true;
 }
 
 void Scene::Update(double deltaTime)
 {
   for (auto obj : objects)
+  {
     for (auto script : obj->GetScripts())
+    {
       script->Update(deltaTime);
+    }
+  }
 }
 
-// Add set main camera
 inline Camera &Scene::GetMainCamera() { return *mainCamera; }
+
+inline void Scene::SetMainCamera(Camera &newMainCamera) { mainCamera = &newMainCamera; }
 
 void Scene::AddObject(Object &obj)
 {

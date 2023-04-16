@@ -6,7 +6,7 @@
 #include <Math/Vector3.hpp>
 
 /**
- * @brief Represents flat triangled plane in 3D space as 3 points.
+ * @brief Represents flat triangular plane in 3D space as 3 points.
  */
 class Triangle
 {

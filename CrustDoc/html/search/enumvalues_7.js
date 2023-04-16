@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['status_5ffail_0',['STATUS_FAIL',['../class_renderer_wrapper.html#a9a70ebe118828e5430332dc83fe75109a96523c4649647a1a2d98a3761126ba8e',1,'RendererWrapper']]],
-  ['status_5fok_1',['STATUS_OK',['../class_renderer_wrapper.html#a9a70ebe118828e5430332dc83fe75109ae5b675664974f079bc559fd8ec4463ee',1,'RendererWrapper']]]
+  ['red_0',['RED',['../class_logger.html#aab46cf9d0c4d9b36533adb210f3aa7a1a3262e8247b44dc739eb27e09ede7e08a',1,'Logger::RED()'],['../class_renderer_wrapper.html#a9a3cfe775f88bf5b58b293618c1fe8cea6639b4197c12a8a50b3918d17b3d8613',1,'RendererWrapper::RED()']]]
 ];

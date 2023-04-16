@@ -13,23 +13,22 @@ Inheritance diagram for Loop\+Move\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_loop_move_a2e2aca41354820ffdfd93a536fc95082}{Loop\+Move}} (\mbox{\hyperlink{class_object}{Object}} $\ast$\+\_\+parent\+Obj, double \+\_\+minX, double \+\_\+maxX, double \+\_\+minY, double \+\_\+maxY, double \+\_\+minZ, double \+\_\+maxZ, double \+\_\+move\+SpeedX, double \+\_\+move\+SpeedY, double \+\_\+move\+SpeedZ)
+\mbox{\hyperlink{class_loop_move_a8d2e5be10a471fc4f9eb9f4e55f731d0}{Loop\+Move}} (double \+\_\+minX, double \+\_\+maxX, double \+\_\+minY, double \+\_\+maxY, double \+\_\+minZ, double \+\_\+maxZ, double \+\_\+move\+SpeedX, double \+\_\+move\+SpeedY, double \+\_\+move\+SpeedZ)
 \item 
 \mbox{\hyperlink{class_loop_move_a2a02714068ffc9340ac17457385dc756}{$\sim$\+Loop\+Move}} () override
 \item 
 void \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e15e4}{Start}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Function called when script is being attached to the object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{Update}} (double delta\+Time) override
-\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\begin{DoxyCompactList}\small\item\em Function called once per frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_loop_move_a2e2aca41354820ffdfd93a536fc95082}\label{class_loop_move_a2e2aca41354820ffdfd93a536fc95082}} 
+\mbox{\Hypertarget{class_loop_move_a8d2e5be10a471fc4f9eb9f4e55f731d0}\label{class_loop_move_a8d2e5be10a471fc4f9eb9f4e55f731d0}} 
 \index{LoopMove@{LoopMove}!LoopMove@{LoopMove}}
 \index{LoopMove@{LoopMove}!LoopMove@{LoopMove}}
 \doxysubsubsection{\texorpdfstring{LoopMove()}{LoopMove()}}
-{\footnotesize\ttfamily Loop\+Move\+::\+Loop\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{\+\_\+parent\+Obj,  }\item[{double}]{\+\_\+minX,  }\item[{double}]{\+\_\+maxX,  }\item[{double}]{\+\_\+minY,  }\item[{double}]{\+\_\+maxY,  }\item[{double}]{\+\_\+minZ,  }\item[{double}]{\+\_\+maxZ,  }\item[{double}]{\+\_\+move\+SpeedX,  }\item[{double}]{\+\_\+move\+SpeedY,  }\item[{double}]{\+\_\+move\+SpeedZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Loop\+Move\+::\+Loop\+Move (\begin{DoxyParamCaption}\item[{double}]{\+\_\+minX,  }\item[{double}]{\+\_\+maxX,  }\item[{double}]{\+\_\+minY,  }\item[{double}]{\+\_\+maxY,  }\item[{double}]{\+\_\+minZ,  }\item[{double}]{\+\_\+maxZ,  }\item[{double}]{\+\_\+move\+SpeedX,  }\item[{double}]{\+\_\+move\+SpeedY,  }\item[{double}]{\+\_\+move\+SpeedZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_loop_move_a2a02714068ffc9340ac17457385dc756}\label{class_loop_move_a2a02714068ffc9340ac17457385dc756}} 
 \index{LoopMove@{LoopMove}!````~LoopMove@{$\sim$LoopMove}}
@@ -48,6 +47,10 @@ void \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{Update}
 
 
 
+Function called when script is being attached to the object. 
+
+
+
 Reimplemented from \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{Crust\+Script}}.
 
 \mbox{\Hypertarget{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}\label{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}} 
@@ -58,10 +61,19 @@ Reimplemented from \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cc
 
 
 
+Function called once per frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time that passed since last frame -\/ it represents how much seconds does the last frame took to render. \\
+\hline
+\end{DoxyParams}
+
+
 Reimplemented from \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{Crust\+Script}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Scripting/\+Sample\+Scripts/\mbox{\hyperlink{_loop_move_8hpp}{Loop\+Move.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Scripting/\+Sample\+Scripts/\mbox{\hyperlink{_loop_move_8hpp}{Loop\+Move.\+hpp}}\end{DoxyCompactItemize}

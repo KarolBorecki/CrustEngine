@@ -2,7 +2,7 @@
 \label{class_light_source}\index{LightSource@{LightSource}}
 
 
-\mbox{\hyperlink{class_object}{Object}} on the scene representing basic directional light source. It represents parraller light rays.  
+Virtual class for light sources.  
 
 
 
@@ -12,97 +12,82 @@
 Inheritance diagram for Light\+Source\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_light_source}
+\includegraphics[height=3.000000cm]{class_light_source}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_light_source_a80aae65d52c5b04e1a9256f3078f2cfe}{Light\+Source}} (double \+\_\+intensivity, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$\+\_\+dir)
+\mbox{\hyperlink{class_light_source_aea31dec629e642b2071c5790eca3a4c6}{Light\+Source}} (double \+\_\+intensivity)
 \item 
-\mbox{\hyperlink{class_light_source_a55e5876407fd4af9e9b4ede7ff46cc85}{$\sim$\+Light\+Source}} ()
+virtual uint8\+\_\+t \mbox{\hyperlink{class_light_source_a63906087f62f5fee4d0ea294a2f29dc0}{Get\+Intensivity}} ()
+\begin{DoxyCompactList}\small\item\em Getter for light\textquotesingle{}s \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} field. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_light_source_a4d22b2f23fe354c613318fc0b7cc5bda}{Get\+Normalised\+Intensivity}} ()
+\begin{DoxyCompactList}\small\item\em Getter for light\textquotesingle{}s normalised \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
 \item 
-std\+::string \mbox{\hyperlink{class_light_source_af3981a2c4ba0c41f9c05ef112db722d0}{Get\+Object\+Type\+Name}} () override
-\item 
-uint8\+\_\+t \mbox{\hyperlink{class_light_source_a63906087f62f5fee4d0ea294a2f29dc0}{Get\+Intensivity}} ()
-\begin{DoxyCompactList}\small\item\em Getter for light\textquotesingle{}s intesivity field. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_light_source_a4d22b2f23fe354c613318fc0b7cc5bda}{Get\+Normalised\+Intensivity}} ()
-\begin{DoxyCompactList}\small\item\em Getter for light\textquotesingle{}s normalised intesivity field. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_light_source_a4e4aa41c689860b24a8e1deb3cb47007}{Get\+Direction}} ()
-\begin{DoxyCompactList}\small\item\em Getter for light\textquotesingle{}s direction field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} \{255\}
+\begin{DoxyCompactList}\small\item\em Light\textquotesingle{}s intensivity. Value between 0 and 255, where 255 represent the brightest light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{class_object}{Object}} on the scene representing basic directional light source. It represents parraller light rays. 
+Virtual class for light sources. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_light_source_a80aae65d52c5b04e1a9256f3078f2cfe}\label{class_light_source_a80aae65d52c5b04e1a9256f3078f2cfe}} 
+\mbox{\Hypertarget{class_light_source_aea31dec629e642b2071c5790eca3a4c6}\label{class_light_source_aea31dec629e642b2071c5790eca3a4c6}} 
 \index{LightSource@{LightSource}!LightSource@{LightSource}}
 \index{LightSource@{LightSource}!LightSource@{LightSource}}
 \doxysubsubsection{\texorpdfstring{LightSource()}{LightSource()}}
-{\footnotesize\ttfamily Light\+Source\+::\+Light\+Source (\begin{DoxyParamCaption}\item[{double}]{\+\_\+intensivity,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{\+\_\+dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Light\+Source\+::\+Light\+Source (\begin{DoxyParamCaption}\item[{double}]{\+\_\+intensivity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+intensivity} & Light\textquotesingle{}s intensivity. \\
 \hline
-{\em \+\_\+dir} & Light\textquotesingle{}s direction. \\
-\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_light_source_a55e5876407fd4af9e9b4ede7ff46cc85}\label{class_light_source_a55e5876407fd4af9e9b4ede7ff46cc85}} 
-\index{LightSource@{LightSource}!````~LightSource@{$\sim$LightSource}}
-\index{````~LightSource@{$\sim$LightSource}!LightSource@{LightSource}}
-\doxysubsubsection{\texorpdfstring{$\sim$LightSource()}{~LightSource()}}
-{\footnotesize\ttfamily Light\+Source\+::$\sim$\+Light\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_light_source_a4e4aa41c689860b24a8e1deb3cb47007}\label{class_light_source_a4e4aa41c689860b24a8e1deb3cb47007}} 
-\index{LightSource@{LightSource}!GetDirection@{GetDirection}}
-\index{GetDirection@{GetDirection}!LightSource@{LightSource}}
-\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Light\+Source\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Getter for light\textquotesingle{}s direction field. 
-
 \mbox{\Hypertarget{class_light_source_a63906087f62f5fee4d0ea294a2f29dc0}\label{class_light_source_a63906087f62f5fee4d0ea294a2f29dc0}} 
 \index{LightSource@{LightSource}!GetIntensivity@{GetIntensivity}}
 \index{GetIntensivity@{GetIntensivity}!LightSource@{LightSource}}
 \doxysubsubsection{\texorpdfstring{GetIntensivity()}{GetIntensivity()}}
-{\footnotesize\ttfamily uint8\+\_\+t Light\+Source\+::\+Get\+Intensivity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily uint8\+\_\+t Light\+Source\+::\+Get\+Intensivity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Getter for light\textquotesingle{}s intesivity field. 
+Getter for light\textquotesingle{}s \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} field. 
 
 \mbox{\Hypertarget{class_light_source_a4d22b2f23fe354c613318fc0b7cc5bda}\label{class_light_source_a4d22b2f23fe354c613318fc0b7cc5bda}} 
 \index{LightSource@{LightSource}!GetNormalisedIntensivity@{GetNormalisedIntensivity}}
 \index{GetNormalisedIntensivity@{GetNormalisedIntensivity}!LightSource@{LightSource}}
 \doxysubsubsection{\texorpdfstring{GetNormalisedIntensivity()}{GetNormalisedIntensivity()}}
-{\footnotesize\ttfamily double Light\+Source\+::\+Get\+Normalised\+Intensivity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Light\+Source\+::\+Get\+Normalised\+Intensivity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Getter for light\textquotesingle{}s normalised intesivity field. 
+Getter for light\textquotesingle{}s normalised \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} field. 
 
 \begin{DoxyReturn}{Returns}
-Value of intesivity divided by 255 (Normalised to value from 0.\+0 to 1.\+0). 
+Value of \mbox{\hyperlink{class_light_source_acbf141ae33486082c5b9ce0d988be124}{intesivity}} divided by 255 (Normalised to value from 0.\+0 to 1.\+0). 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_light_source_af3981a2c4ba0c41f9c05ef112db722d0}\label{class_light_source_af3981a2c4ba0c41f9c05ef112db722d0}} 
-\index{LightSource@{LightSource}!GetObjectTypeName@{GetObjectTypeName}}
-\index{GetObjectTypeName@{GetObjectTypeName}!LightSource@{LightSource}}
-\doxysubsubsection{\texorpdfstring{GetObjectTypeName()}{GetObjectTypeName()}}
-{\footnotesize\ttfamily std\+::string Light\+Source\+::\+Get\+Object\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_light_source_acbf141ae33486082c5b9ce0d988be124}\label{class_light_source_acbf141ae33486082c5b9ce0d988be124}} 
+\index{LightSource@{LightSource}!intesivity@{intesivity}}
+\index{intesivity@{intesivity}!LightSource@{LightSource}}
+\doxysubsubsection{\texorpdfstring{intesivity}{intesivity}}
+{\footnotesize\ttfamily uint8\+\_\+t Light\+Source\+::intesivity \{255\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Reimplemented from \mbox{\hyperlink{class_object_a123add5421e44f839cc564f882e8b497}{Object}}.
+Light\textquotesingle{}s intensivity. Value between 0 and 255, where 255 represent the brightest light. 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\+Objects/\mbox{\hyperlink{_light_source_8hpp}{Light\+Source.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Rendering/\+Objects/\+Lightining/\mbox{\hyperlink{_light_source_8hpp}{Light\+Source.\+hpp}}\end{DoxyCompactItemize}

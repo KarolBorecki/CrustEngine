@@ -102,23 +102,28 @@ $(document).ready(function(){initNavTree('class_transform.html',''); initResizab
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa08ca4266efabc768973cdeea51945ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aa08ca4266efabc768973cdeea51945ab">Transform</a> ()</td></tr>
+<tr class="memdesc:aa08ca4266efabc768973cdeea51945ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new transform object with position at (0,0,0) and rotation at (0,0,0). Allocates space for position and rotation vectors.  <a href="class_transform.html#aa08ca4266efabc768973cdeea51945ab">More...</a><br /></td></tr>
 <tr class="separator:aa08ca4266efabc768973cdeea51945ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa72e286c069850db80927b0e6554cd3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#aa72e286c069850db80927b0e6554cd3e">~Transform</a> ()</td></tr>
 <tr class="separator:aa72e286c069850db80927b0e6554cd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbbbd89160c4be2736176b4d59b68823"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#abbbbd89160c4be2736176b4d59b68823">GetPosition</a> () const</td></tr>
 <tr class="memdesc:abbbbd89160c4be2736176b4d59b68823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for pos field.  <a href="class_transform.html#abbbbd89160c4be2736176b4d59b68823">More...</a><br /></td></tr>
 <tr class="separator:abbbbd89160c4be2736176b4d59b68823"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f8a9073d7ca064175bec2ed692bae04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a1f8a9073d7ca064175bec2ed692bae04">GetRotation</a> () const</td></tr>
-<tr class="memdesc:a1f8a9073d7ca064175bec2ed692bae04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rot field, this returns handler to euler's vector for rotation.  <a href="class_transform.html#a1f8a9073d7ca064175bec2ed692bae04">More...</a><br /></td></tr>
-<tr class="separator:a1f8a9073d7ca064175bec2ed692bae04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a041962c1715080a013ef4945ce49ff18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a041962c1715080a013ef4945ce49ff18">SetPosition</a> (double <a class="el" href="_s_d_l__opengl_8h.html#ad0e63d0edcdbd3d79554076bf309fd47">x</a>, double <a class="el" href="_s_d_l__opengl_8h.html#a1675d9d7bb68e1657ff028643b4037e3">y</a>, double <a class="el" href="_s_d_l__opengl__glext_8h.html#a5e74030ebb3297ce1b37ff716fedd68f">z</a>)</td></tr>
+<tr class="memitem:a9eb9569becfe65ffe4a89ea6b600d592"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a9eb9569becfe65ffe4a89ea6b600d592">GetEulerRotation</a> () const</td></tr>
+<tr class="memdesc:a9eb9569becfe65ffe4a89ea6b600d592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rot field, this returns handler to euler's vector for rotation.  <a href="class_transform.html#a9eb9569becfe65ffe4a89ea6b600d592">More...</a><br /></td></tr>
+<tr class="separator:a9eb9569becfe65ffe4a89ea6b600d592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041962c1715080a013ef4945ce49ff18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a041962c1715080a013ef4945ce49ff18">SetPosition</a> (double x, double y, double z)</td></tr>
+<tr class="memdesc:a041962c1715080a013ef4945ce49ff18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the position of this object to given vector (x, y, z).  <a href="class_transform.html#a041962c1715080a013ef4945ce49ff18">More...</a><br /></td></tr>
 <tr class="separator:a041962c1715080a013ef4945ce49ff18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9bdd31080a7e04968f38f674ad3e96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae9bdd31080a7e04968f38f674ad3e96c">Translate</a> (double dX, double dY, double dZ)</td></tr>
+<tr class="memitem:ae8149b2b9307c44e1cfc2f074273b4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae8149b2b9307c44e1cfc2f074273b4c1">SetEulerRotation</a> (double x, double y, double z)</td></tr>
+<tr class="memdesc:ae8149b2b9307c44e1cfc2f074273b4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the euler's rotation of this object to given vector (x, y, z) in degrees.  <a href="class_transform.html#ae8149b2b9307c44e1cfc2f074273b4c1">More...</a><br /></td></tr>
+<tr class="separator:ae8149b2b9307c44e1cfc2f074273b4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bdd31080a7e04968f38f674ad3e96c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ae9bdd31080a7e04968f38f674ad3e96c">Translate</a> (double dX, double dY, double dZ)</td></tr>
 <tr class="memdesc:ae9bdd31080a7e04968f38f674ad3e96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves object by given values.  <a href="class_transform.html#ae9bdd31080a7e04968f38f674ad3e96c">More...</a><br /></td></tr>
 <tr class="separator:ae9bdd31080a7e04968f38f674ad3e96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2d6c7d8959b196b29d6848016182b9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#ac2d6c7d8959b196b29d6848016182b9d">Rotate</a> (double dX, double dY, double dZ)</td></tr>
-<tr class="memdesc:ac2d6c7d8959b196b29d6848016182b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates object by given values.  <a href="class_transform.html#ac2d6c7d8959b196b29d6848016182b9d">More...</a><br /></td></tr>
-<tr class="separator:ac2d6c7d8959b196b29d6848016182b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a921571b811212ea4958fecc626271f70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a921571b811212ea4958fecc626271f70">RotateEuler</a> (double dX, double dY, double dZ)</td></tr>
+<tr class="memdesc:a921571b811212ea4958fecc626271f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates object by given values.  <a href="class_transform.html#a921571b811212ea4958fecc626271f70">More...</a><br /></td></tr>
+<tr class="separator:a921571b811212ea4958fecc626271f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa08ca4266efabc768973cdeea51945ab" name="aa08ca4266efabc768973cdeea51945ab"></a>
@@ -143,6 +148,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a new transform object with position at (0,0,0) and rotation at (0,0,0). Allocates space for position and rotation vectors. </p>
 
 </div>
 </div>
@@ -172,6 +179,34 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9eb9569becfe65ffe4a89ea6b600d592" name="a9eb9569becfe65ffe4a89ea6b600d592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eb9569becfe65ffe4a89ea6b600d592">&#9670;&#160;</a></span>GetEulerRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> &amp; Transform::GetEulerRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for rot field, this returns handler to euler's vector for rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>rot field. </dd></dl>
+
+</div>
+</div>
 <a id="abbbbd89160c4be2736176b4d59b68823" name="abbbbd89160c4be2736176b4d59b68823"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abbbbd89160c4be2736176b4d59b68823">&#9670;&#160;</a></span>GetPosition()</h2>
 
@@ -200,8 +235,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1f8a9073d7ca064175bec2ed692bae04" name="a1f8a9073d7ca064175bec2ed692bae04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f8a9073d7ca064175bec2ed692bae04">&#9670;&#160;</a></span>GetRotation()</h2>
+<a id="a921571b811212ea4958fecc626271f70" name="a921571b811212ea4958fecc626271f70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921571b811212ea4958fecc626271f70">&#9670;&#160;</a></span>RotateEuler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,35 +245,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> &amp; Transform::GetRotation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Getter for rot field, this returns handler to euler's vector for rotation. </p>
-<dl class="section return"><dt>Returns</dt><dd>rot field. </dd></dl>
-
-</div>
-</div>
-<a id="ac2d6c7d8959b196b29d6848016182b9d" name="ac2d6c7d8959b196b29d6848016182b9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2d6c7d8959b196b29d6848016182b9d">&#9670;&#160;</a></span>Rotate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> Transform::Rotate </td>
+          <td class="memname">void Transform::RotateEuler </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dX</em>, </td>
@@ -273,8 +280,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a041962c1715080a013ef4945ce49ff18" name="a041962c1715080a013ef4945ce49ff18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a041962c1715080a013ef4945ce49ff18">&#9670;&#160;</a></span>SetPosition()</h2>
+<a id="ae8149b2b9307c44e1cfc2f074273b4c1" name="ae8149b2b9307c44e1cfc2f074273b4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8149b2b9307c44e1cfc2f074273b4c1">&#9670;&#160;</a></span>SetEulerRotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +290,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> Transform::SetPosition </td>
+          <td class="memname">void Transform::SetEulerRotation </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -313,6 +320,52 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the euler's rotation of this object to given vector (x, y, z) in degrees. </p>
+
+</div>
+</div>
+<a id="a041962c1715080a013ef4945ce49ff18" name="a041962c1715080a013ef4945ce49ff18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041962c1715080a013ef4945ce49ff18">&#9670;&#160;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Transform::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the position of this object to given vector (x, y, z). </p>
+
 </div>
 </div>
 <a id="ae9bdd31080a7e04968f38f674ad3e96c" name="ae9bdd31080a7e04968f38f674ad3e96c"></a>
@@ -325,7 +378,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499">void</a> Transform::Translate </td>
+          <td class="memname">void Transform::Translate </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dX</em>, </td>

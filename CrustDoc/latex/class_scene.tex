@@ -12,17 +12,23 @@ Class holding objects rendered on window and camera, from which the projection w
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_scene_adbb43af1966d0be65f2f80e5c237f45a}{Scene}} (std\+::string \+\_\+name, \mbox{\hyperlink{class_camera}{Camera}} $\ast$\+\_\+main\+Camera)
+\mbox{\hyperlink{class_scene_a7db3a9c24b3a5a82e340fe38e5475cbd}{Scene}} (std\+::string \+\_\+name, \mbox{\hyperlink{class_camera}{Camera}} \&\+\_\+main\+Camera)
 \item 
 \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
 \item 
+void \mbox{\hyperlink{class_scene_a01e433e73e8aac5c1c5d57ba0e58be0c}{On\+Load}} ()
+\begin{DoxyCompactList}\small\item\em Loads the scene. Performs cleanup and gets the scene ready for rendering. Should be called on load from render window (It is done by render window). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a8a4650a6bd3622671bf761b0a600509d}{On\+Un\+Load}} ()
+\begin{DoxyCompactList}\small\item\em Unloads the scene. Performs cleanup and gets the scene ready for new load. Should be called after the scene was unlaoded from render window (It is done by render window). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}{Start}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Starts the scene. Loads all scripts, calls Start on it and performs cleanup. Should be called before rendering of this scene happens (It is done by render window). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}{Update}} (double delta\+Time)
-\item 
-\mbox{\hyperlink{class_camera}{Camera}} $\ast$ \mbox{\hyperlink{class_scene_a5810372744288eac09133bc77241308e}{Get\+Main\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Updates the scene. Calls update for each script. Should be called once per frame (It is done by render window). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera}{Camera}} \& \mbox{\hyperlink{class_scene_a8a1cf007ae56eefd29e4d364f5f4ed69}{Get\+Main\+Camera}} ()
 \begin{DoxyCompactList}\small\item\em Getter for main\+Camera field. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_scene_a165e38b1c743b1db60b2ba1e42213726}{Add\+Object}} (\mbox{\hyperlink{class_object}{Object}} $\ast$obj)
+void \mbox{\hyperlink{class_scene_acc023b5549678db2c2d2ba7e9ddefe62}{Set\+Main\+Camera}} (\mbox{\hyperlink{class_camera}{Camera}} \&new\+Main\+Camera)
+\begin{DoxyCompactList}\small\item\em Setter for main\+Camera field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_aab9ad66bea29441cab72ee58ec9b3917}{Add\+Object}} (\mbox{\hyperlink{class_object}{Object}} \&obj)
 \begin{DoxyCompactList}\small\item\em Adds the object to the scene. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_render_object}{Render\+Object}} $\ast$ $>$ \mbox{\hyperlink{class_scene_a3b43d8fd68804b4db228e17b72be93be}{Get\+Objects\+To\+Render}} ()
 \begin{DoxyCompactList}\small\item\em Getter for render\+Objects field. \end{DoxyCompactList}\item 
@@ -47,11 +53,11 @@ This class is passed to render window as the information what to render and how 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_scene_adbb43af1966d0be65f2f80e5c237f45a}\label{class_scene_adbb43af1966d0be65f2f80e5c237f45a}} 
+\mbox{\Hypertarget{class_scene_a7db3a9c24b3a5a82e340fe38e5475cbd}\label{class_scene_a7db3a9c24b3a5a82e340fe38e5475cbd}} 
 \index{Scene@{Scene}!Scene@{Scene}}
 \index{Scene@{Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
-{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{\+\_\+main\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} \&}]{\+\_\+main\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -69,11 +75,11 @@ This class is passed to render window as the information what to render and how 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_scene_a165e38b1c743b1db60b2ba1e42213726}\label{class_scene_a165e38b1c743b1db60b2ba1e42213726}} 
+\mbox{\Hypertarget{class_scene_aab9ad66bea29441cab72ee58ec9b3917}\label{class_scene_aab9ad66bea29441cab72ee58ec9b3917}} 
 \index{Scene@{Scene}!AddObject@{AddObject}}
 \index{AddObject@{AddObject}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}}
-{\footnotesize\ttfamily void Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} \&}]{obj }\end{DoxyParamCaption})}
 
 
 
@@ -105,11 +111,11 @@ light\+Sources field.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_light_source_8hpp}{Light\+Source.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_scene_a5810372744288eac09133bc77241308e}\label{class_scene_a5810372744288eac09133bc77241308e}} 
+\mbox{\Hypertarget{class_scene_a8a1cf007ae56eefd29e4d364f5f4ed69}\label{class_scene_a8a1cf007ae56eefd29e4d364f5f4ed69}} 
 \index{Scene@{Scene}!GetMainCamera@{GetMainCamera}}
 \index{GetMainCamera@{GetMainCamera}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{GetMainCamera()}{GetMainCamera()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}} $\ast$ Scene\+::\+Get\+Main\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera}{Camera}} \& Scene\+::\+Get\+Main\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -163,6 +169,26 @@ Getter for project\+Light field.
 \begin{DoxyReturn}{Returns}
 light\+Sources field, which represents if the lightning is done accordingly to light sources on the scene or set to maximum on each face. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a01e433e73e8aac5c1c5d57ba0e58be0c}\label{class_scene_a01e433e73e8aac5c1c5d57ba0e58be0c}} 
+\index{Scene@{Scene}!OnLoad@{OnLoad}}
+\index{OnLoad@{OnLoad}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{OnLoad()}{OnLoad()}}
+{\footnotesize\ttfamily void Scene\+::\+On\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the scene. Performs cleanup and gets the scene ready for rendering. Should be called on load from render window (It is done by render window). 
+
+\mbox{\Hypertarget{class_scene_a8a4650a6bd3622671bf761b0a600509d}\label{class_scene_a8a4650a6bd3622671bf761b0a600509d}} 
+\index{Scene@{Scene}!OnUnLoad@{OnUnLoad}}
+\index{OnUnLoad@{OnUnLoad}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{OnUnLoad()}{OnUnLoad()}}
+{\footnotesize\ttfamily void Scene\+::\+On\+Un\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unloads the scene. Performs cleanup and gets the scene ready for new load. Should be called after the scene was unlaoded from render window (It is done by render window). 
+
 \mbox{\Hypertarget{class_scene_a90165078e5ee14185bbbfd84f56f75a1}\label{class_scene_a90165078e5ee14185bbbfd84f56f75a1}} 
 \index{Scene@{Scene}!SetLightProjection@{SetLightProjection}}
 \index{SetLightProjection@{SetLightProjection}!Scene@{Scene}}
@@ -173,11 +199,31 @@ light\+Sources field, which represents if the lightning is done accordingly to l
 
 Sets if the light should be projected. 
 
+\mbox{\Hypertarget{class_scene_acc023b5549678db2c2d2ba7e9ddefe62}\label{class_scene_acc023b5549678db2c2d2ba7e9ddefe62}} 
+\index{Scene@{Scene}!SetMainCamera@{SetMainCamera}}
+\index{SetMainCamera@{SetMainCamera}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{SetMainCamera()}{SetMainCamera()}}
+{\footnotesize\ttfamily void Scene\+::\+Set\+Main\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} \&}]{new\+Main\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter for main\+Camera field. 
+
+\begin{DoxyReturn}{Returns}
+Reference to camera, which will be new main camera (From it\textquotesingle{}s perspective the world will be rendered).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}\label{class_scene_a31e0e1b9ce39bd9f5ec160835cc94d44}} 
 \index{Scene@{Scene}!Start@{Start}}
 \index{Start@{Start}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Start()}{Start()}}
 {\footnotesize\ttfamily void Scene\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the scene. Loads all scripts, calls Start on it and performs cleanup. Should be called before rendering of this scene happens (It is done by render window). 
 
 \mbox{\Hypertarget{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}\label{class_scene_a41d8ecc3af6c4153e47fc478e5e3d04f}} 
 \index{Scene@{Scene}!Update@{Update}}
@@ -187,6 +233,15 @@ Sets if the light should be projected.
 
 
 
+Updates the scene. Calls update for each script. Should be called once per frame (It is done by render window). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time that passed since last frame was rendered. \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Core/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}

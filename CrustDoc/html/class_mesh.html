@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('class_mesh.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
-<p>Represents 3D model as mesh consisted of 3D triangles.  
+<p>Represents 3D model as mesh consisted of 3D polygons.  
  <a href="class_mesh.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>&gt;</code></p>
@@ -105,33 +105,35 @@ $(document).ready(function(){initNavTree('class_mesh.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2af137f1571af89172b9c102302c416b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a2af137f1571af89172b9c102302c416b">Mesh</a> ()</td></tr>
+<tr class="memdesc:a2af137f1571af89172b9c102302c416b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a> object with name set to #Mesh::DEFAULT_MESH_NAME.  <a href="class_mesh.html#a2af137f1571af89172b9c102302c416b">More...</a><br /></td></tr>
 <tr class="separator:a2af137f1571af89172b9c102302c416b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b496cb615ff94d1e7d247eb89810791"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a9b496cb615ff94d1e7d247eb89810791">Mesh</a> (std::string name)</td></tr>
+<tr class="memdesc:a9b496cb615ff94d1e7d247eb89810791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a> object with name set to name.  <a href="class_mesh.html#a9b496cb615ff94d1e7d247eb89810791">More...</a><br /></td></tr>
 <tr class="separator:a9b496cb615ff94d1e7d247eb89810791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5efe4da1a4c0971cfb037bd70304c303"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a> ()</td></tr>
-<tr class="memdesc:a5efe4da1a4c0971cfb037bd70304c303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all of the triangles of this mesh.  <a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">More...</a><br /></td></tr>
+<tr class="memdesc:a5efe4da1a4c0971cfb037bd70304c303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all of the polygons of this mesh.  <a href="class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303">More...</a><br /></td></tr>
 <tr class="separator:a5efe4da1a4c0971cfb037bd70304c303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64d0401e240cb2befe5a275578bf7aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a64d0401e240cb2befe5a275578bf7aae">AddTriangle</a> (<a class="el" href="class_triangle.html">Triangle</a> *tri)</td></tr>
-<tr class="memdesc:a64d0401e240cb2befe5a275578bf7aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the triangle to mesh.  <a href="class_mesh.html#a64d0401e240cb2befe5a275578bf7aae">More...</a><br /></td></tr>
-<tr class="separator:a64d0401e240cb2befe5a275578bf7aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa31be6805b7ccc048ce37f3f27775847"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#aa31be6805b7ccc048ce37f3f27775847">GetTriangle</a> (uint8_t index)</td></tr>
-<tr class="memdesc:aa31be6805b7ccc048ce37f3f27775847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for triangle.  <a href="class_mesh.html#aa31be6805b7ccc048ce37f3f27775847">More...</a><br /></td></tr>
-<tr class="separator:aa31be6805b7ccc048ce37f3f27775847"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d9e6f92ff35de42a39c305cc2a3181c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a2d9e6f92ff35de42a39c305cc2a3181c">GetPoint</a> (uint8_t triIndex, uint8_t pointIndex)</td></tr>
-<tr class="memdesc:a2d9e6f92ff35de42a39c305cc2a3181c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for point of triangle of specified index.  <a href="class_mesh.html#a2d9e6f92ff35de42a39c305cc2a3181c">More...</a><br /></td></tr>
-<tr class="separator:a2d9e6f92ff35de42a39c305cc2a3181c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0657100f56c0f80790e4bf8cd57295ed"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a0657100f56c0f80790e4bf8cd57295ed">GetTrianglesCount</a> ()</td></tr>
-<tr class="memdesc:a0657100f56c0f80790e4bf8cd57295ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for triangles count.  <a href="class_mesh.html#a0657100f56c0f80790e4bf8cd57295ed">More...</a><br /></td></tr>
-<tr class="separator:a0657100f56c0f80790e4bf8cd57295ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b13bffa35d0d581ffe1e0dc8479584"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ac3b13bffa35d0d581ffe1e0dc8479584">AddPolygon</a> (<a class="el" href="class_polygon.html">Polygon</a> &amp;poli)</td></tr>
+<tr class="memdesc:ac3b13bffa35d0d581ffe1e0dc8479584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the polygon to mesh. It holds the originals so given polygon should be allocated on stack. It will be then deleted in <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a>'s destructor.  <a href="class_mesh.html#ac3b13bffa35d0d581ffe1e0dc8479584">More...</a><br /></td></tr>
+<tr class="separator:ac3b13bffa35d0d581ffe1e0dc8479584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b150426b4b41b61f5ea8e99d9d704a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_polygon.html">Polygon</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a1b150426b4b41b61f5ea8e99d9d704a3">GetPolygon</a> (const uint32_t index) const</td></tr>
+<tr class="memdesc:a1b150426b4b41b61f5ea8e99d9d704a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for polygon.  <a href="class_mesh.html#a1b150426b4b41b61f5ea8e99d9d704a3">More...</a><br /></td></tr>
+<tr class="separator:a1b150426b4b41b61f5ea8e99d9d704a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae02ed726ed1bce1f9fdfa878de9a72a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#ae02ed726ed1bce1f9fdfa878de9a72a4">GetPoint</a> (const uint32_t poliIndex, const uint32_t pointIndex) const</td></tr>
+<tr class="memdesc:ae02ed726ed1bce1f9fdfa878de9a72a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for point of polygon of specified index.  <a href="class_mesh.html#ae02ed726ed1bce1f9fdfa878de9a72a4">More...</a><br /></td></tr>
+<tr class="separator:ae02ed726ed1bce1f9fdfa878de9a72a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4161e575431590bae285e2b050194c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a3f4161e575431590bae285e2b050194c">GetPolygonsCount</a> () const</td></tr>
+<tr class="memdesc:a3f4161e575431590bae285e2b050194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for polygons count.  <a href="class_mesh.html#a3f4161e575431590bae285e2b050194c">More...</a><br /></td></tr>
+<tr class="separator:a3f4161e575431590bae285e2b050194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd25fc39bfa8e74103191d36529f1841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#acd25fc39bfa8e74103191d36529f1841">SetName</a> (std::string newName)</td></tr>
 <tr class="memdesc:acd25fc39bfa8e74103191d36529f1841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for name field.  <a href="class_mesh.html#acd25fc39bfa8e74103191d36529f1841">More...</a><br /></td></tr>
 <tr class="separator:acd25fc39bfa8e74103191d36529f1841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8e87bb63f0fd8648effba210ddf082"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a8c8e87bb63f0fd8648effba210ddf082">GetName</a> ()</td></tr>
-<tr class="memdesc:a8c8e87bb63f0fd8648effba210ddf082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter fir name field.  <a href="class_mesh.html#a8c8e87bb63f0fd8648effba210ddf082">More...</a><br /></td></tr>
-<tr class="separator:a8c8e87bb63f0fd8648effba210ddf082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890a2d67b7973fe5178b234cffaa445d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh.html#a890a2d67b7973fe5178b234cffaa445d">GetName</a> () const</td></tr>
+<tr class="memdesc:a890a2d67b7973fe5178b234cffaa445d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for name field.  <a href="class_mesh.html#a890a2d67b7973fe5178b234cffaa445d">More...</a><br /></td></tr>
+<tr class="separator:a890a2d67b7973fe5178b234cffaa445d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Represents 3D model as mesh consisted of 3D triangles. </p>
+<div class="textblock"><p >Represents 3D model as mesh consisted of 3D polygons. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2af137f1571af89172b9c102302c416b" name="a2af137f1571af89172b9c102302c416b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2af137f1571af89172b9c102302c416b">&#9670;&#160;</a></span>Mesh() <span class="overload">[1/2]</span></h2>
@@ -155,6 +157,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a> object with name set to #Mesh::DEFAULT_MESH_NAME. </p>
 
 </div>
 </div>
@@ -182,6 +186,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a> object with name set to name. </p>
+
 </div>
 </div>
 <a id="a5efe4da1a4c0971cfb037bd70304c303" name="a5efe4da1a4c0971cfb037bd70304c303"></a>
@@ -199,13 +205,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Deletes all of the triangles of this mesh. </p>
+<p>Deletes all of the polygons of this mesh. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a64d0401e240cb2befe5a275578bf7aae" name="a64d0401e240cb2befe5a275578bf7aae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64d0401e240cb2befe5a275578bf7aae">&#9670;&#160;</a></span>AddTriangle()</h2>
+<a id="ac3b13bffa35d0d581ffe1e0dc8479584" name="ac3b13bffa35d0d581ffe1e0dc8479584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b13bffa35d0d581ffe1e0dc8479584">&#9670;&#160;</a></span>AddPolygon()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,10 +220,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Mesh::AddTriangle </td>
+          <td class="memname">void Mesh::AddPolygon </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td>
-          <td class="paramname"><em>tri</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_polygon.html">Polygon</a> &amp;&#160;</td>
+          <td class="paramname"><em>poli</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -228,18 +234,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adds the triangle to mesh. </p>
+<p>Adds the polygon to mesh. It holds the originals so given polygon should be allocated on stack. It will be then deleted in <a class="el" href="class_mesh.html" title="Represents 3D model as mesh consisted of 3D polygons.">Mesh</a>'s destructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tri</td><td>Handler to added triangle. </td></tr>
+    <tr><td class="paramname">poli</td><td>Handler to added triangle. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8c8e87bb63f0fd8648effba210ddf082" name="a8c8e87bb63f0fd8648effba210ddf082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c8e87bb63f0fd8648effba210ddf082">&#9670;&#160;</a></span>GetName()</h2>
+<a id="a890a2d67b7973fe5178b234cffaa445d" name="a890a2d67b7973fe5178b234cffaa445d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a890a2d67b7973fe5178b234cffaa445d">&#9670;&#160;</a></span>GetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +257,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::string Mesh::GetName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -261,13 +267,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter fir name field. </p>
+<p>Getter for name field. </p>
 <dl class="section return"><dt>Returns</dt><dd>The mesh's file name. </dd></dl>
 
 </div>
 </div>
-<a id="a2d9e6f92ff35de42a39c305cc2a3181c" name="a2d9e6f92ff35de42a39c305cc2a3181c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d9e6f92ff35de42a39c305cc2a3181c">&#9670;&#160;</a></span>GetPoint()</h2>
+<a id="ae02ed726ed1bce1f9fdfa878de9a72a4" name="ae02ed726ed1bce1f9fdfa878de9a72a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02ed726ed1bce1f9fdfa878de9a72a4">&#9670;&#160;</a></span>GetPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,21 +282,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> * Mesh::GetPoint </td>
+          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> &amp; Mesh::GetPoint </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>triIndex</em>, </td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>poliIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">const uint32_t&#160;</td>
           <td class="paramname"><em>pointIndex</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -300,19 +306,19 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for point of triangle of specified index. </p>
+<p>Getter for point of polygon of specified index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">triIndex</td><td><a class="el" href="class_triangle.html" title="Represents flat triangled plane in 3D space as 3 points.">Triangle</a> index. </td></tr>
-    <tr><td class="paramname">pointIndex</td><td><a class="el" href="class_triangle.html" title="Represents flat triangled plane in 3D space as 3 points.">Triangle</a>'s point index. </td></tr>
+    <tr><td class="paramname">poliIndex</td><td><a class="el" href="class_triangle.html" title="Represents flat triangular plane in 3D space as 3 points.">Triangle</a> index. </td></tr>
+    <tr><td class="paramname">pointIndex</td><td><a class="el" href="class_triangle.html" title="Represents flat triangular plane in 3D space as 3 points.">Triangle</a>'s point index. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa31be6805b7ccc048ce37f3f27775847" name="aa31be6805b7ccc048ce37f3f27775847"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa31be6805b7ccc048ce37f3f27775847">&#9670;&#160;</a></span>GetTriangle()</h2>
+<a id="a1b150426b4b41b61f5ea8e99d9d704a3" name="a1b150426b4b41b61f5ea8e99d9d704a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b150426b4b41b61f5ea8e99d9d704a3">&#9670;&#160;</a></span>GetPolygon()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,11 +327,11 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_triangle.html">Triangle</a> * Mesh::GetTriangle </td>
+          <td class="memname"><a class="el" href="class_polygon.html">Polygon</a> &amp; Mesh::GetPolygon </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">const uint32_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -335,18 +341,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for triangle. </p>
+<p>Getter for polygon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index in triangles for got triangle. </td></tr>
+    <tr><td class="paramname">index</td><td>The index in polygons for got polygon. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a0657100f56c0f80790e4bf8cd57295ed" name="a0657100f56c0f80790e4bf8cd57295ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0657100f56c0f80790e4bf8cd57295ed">&#9670;&#160;</a></span>GetTrianglesCount()</h2>
+<a id="a3f4161e575431590bae285e2b050194c" name="a3f4161e575431590bae285e2b050194c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4161e575431590bae285e2b050194c">&#9670;&#160;</a></span>GetPolygonsCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,10 +361,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Mesh::GetTrianglesCount </td>
+          <td class="memname">uint32_t Mesh::GetPolygonsCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -368,8 +374,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for triangles count. </p>
-<dl class="section return"><dt>Returns</dt><dd>Triangles count. </dd></dl>
+<p>Getter for polygons count. </p>
+<dl class="section return"><dt>Returns</dt><dd>polygons count. </dd></dl>
 
 </div>
 </div>
@@ -408,7 +414,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/<a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/<a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

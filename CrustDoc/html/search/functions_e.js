@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['timeprovider_0',['TimeProvider',['../class_time_provider.html#a70769e2163712924ac6dfac894ceada2',1,'TimeProvider']]],
-  ['tostring_1',['ToString',['../class_matrix.html#af40af6f88268cbe1850617269d1f80e2',1,'Matrix::ToString()'],['../class_triangle.html#ab15e48058937687f381d00f91ccbd0e7',1,'Triangle::ToString()'],['../class_render_object.html#a75bfe73c0026bd3fe154c7441ee75e8b',1,'RenderObject::ToString()']]],
-  ['triangle_2',['Triangle',['../class_triangle.html#aaefe4ed500c07918d30c6f0e286332c5',1,'Triangle::Triangle()'],['../class_triangle.html#ad6140b354e030e413dd093c5bbd47282',1,'Triangle::Triangle(double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)'],['../class_triangle.html#abe8dff6bf83bd56d5d2d038896e4a5c6',1,'Triangle::Triangle(Vector3 *point1, Vector3 *point2, Vector3 *point3)']]]
+  ['radianstodegrees_0',['RadiansToDegrees',['../class_math.html#a4abfa07a5a65576c732355c2b2a857b3',1,'Math']]],
+  ['recalculateprojectionmatrix_1',['RecalculateProjectionMatrix',['../class_renderer.html#acf73586e7e50e21034aecc3954d88d8e',1,'Renderer']]],
+  ['renderer_2',['Renderer',['../class_renderer.html#a617f76dcdd347cf5f8dea3d0d05fd6de',1,'Renderer']]],
+  ['rendererwrapper_3',['RendererWrapper',['../class_renderer_wrapper.html#ac95051051d48f9a1297efef198837341',1,'RendererWrapper']]],
+  ['renderobject_4',['RenderObject',['../class_render_object.html#a9bf7b34d8db9cd5f2c2ca29e5ca1afdb',1,'RenderObject']]],
+  ['renderwindow_5',['RenderWindow',['../class_render_window.html#a474af6882664e442e75373327fee808a',1,'RenderWindow']]],
+  ['rotateeuler_6',['RotateEuler',['../class_transform.html#a921571b811212ea4958fecc626271f70',1,'Transform']]]
 ];

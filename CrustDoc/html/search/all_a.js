@@ -1,14 +1,19 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrix_2',['Matrix',['../class_matrix.html',1,'Matrix'],['../class_matrix.html#a00c52f04b918a0d4a3241eb4cd31c26b',1,'Matrix::Matrix(uint8_t rows, uint8_t columns)'],['../class_matrix.html#adb6d6c9da85ace0a00871ed1627a1bd4',1,'Matrix::Matrix(uint8_t rows, uint8_t columns, double defaultVal)']]],
-  ['matrix_2ehpp_3',['Matrix.hpp',['../_matrix_8hpp.html',1,'']]],
-  ['mesh_4',['Mesh',['../class_mesh.html',1,'Mesh'],['../class_mesh.html#a2af137f1571af89172b9c102302c416b',1,'Mesh::Mesh()'],['../class_mesh.html#a9b496cb615ff94d1e7d247eb89810791',1,'Mesh::Mesh(std::string name)']]],
-  ['mesh_2ehpp_5',['Mesh.hpp',['../_mesh_8hpp.html',1,'']]],
-  ['meshloader_6',['MeshLoader',['../class_mesh_loader.html',1,'']]],
-  ['meshloader_2ehpp_7',['MeshLoader.hpp',['../_mesh_loader_8hpp.html',1,'']]],
-  ['miliseconds_5fto_5fseconds_8',['MILISECONDS_TO_SECONDS',['../class_time_provider.html#abc5c086c8ef16eb8f9f332a904ea8d41',1,'TimeProvider']]],
-  ['move_9',['Move',['../class_object.html#a66015f89ae68876a273c8a9c8fc0cc57',1,'Object']]],
-  ['multiply_10',['Multiply',['../class_matrix.html#ab094af0b0a93d8fa1226139476f69f17',1,'Matrix::Multiply(Matrix *mat1, Matrix *mat2, Matrix &amp;outMat)'],['../class_matrix.html#a08429f5aa98e740e74c27955942b1158',1,'Matrix::Multiply(Matrix *mat, const double scalar)']]]
+  ['librenderer_0',['LibRenderer',['../_renderer_wrapper_8hpp.html#aabfe390260f47e772b92d1812e1ee81f',1,'RendererWrapper.hpp']]],
+  ['librendererbool_1',['LibRendererBool',['../_renderer_wrapper_8hpp.html#af6e11f4a7f8b39b513d9e81abb64524c',1,'RendererWrapper.hpp']]],
+  ['librendererfalse_2',['LibRendererFalse',['../_renderer_wrapper_8hpp.html#ab58498eca2b16ba6caabc4fee5c6eef7',1,'RendererWrapper.hpp']]],
+  ['librenderertrue_3',['LibRendererTrue',['../_renderer_wrapper_8hpp.html#a4262a62250555f6547de7aff6da4cc82',1,'RendererWrapper.hpp']]],
+  ['librendererwindow_4',['LibRendererWindow',['../_renderer_wrapper_8hpp.html#ae8b47be60271af516c1ddae887a141b2',1,'RendererWrapper.hpp']]],
+  ['light_5fblue_5',['LIGHT_BLUE',['../class_logger.html#aab46cf9d0c4d9b36533adb210f3aa7a1a2893776f2d3352d37a2714a5f21958f1',1,'Logger']]],
+  ['lightsource_6',['LightSource',['../class_light_source.html',1,'LightSource'],['../class_light_source.html#aea31dec629e642b2071c5790eca3a4c6',1,'LightSource::LightSource()']]],
+  ['lightsource_2ehpp_7',['LightSource.hpp',['../_light_source_8hpp.html',1,'']]],
+  ['loadmeshfromfile_8',['LoadMeshFromFile',['../class_mesh_loader.html#a79900851f6165bcdca8eecae4c5b452b',1,'MeshLoader']]],
+  ['loadscene_9',['LoadScene',['../class_render_window.html#a912a77a2ef8cf58b423d41e6409890d9',1,'RenderWindow']]],
+  ['log_10',['Log',['../class_logger.html#ae9cc87d3a78f21600b1c5f98c43cd3b8',1,'Logger::Log(const char *format,...)'],['../class_logger.html#a211ceb8f080d6088a6b2db5e966a0608',1,'Logger::Log()'],['../class_logger.html#a56cc303e45fe5ceb8e74e55cda9cd291',1,'Logger::Log(int colorCode, const char *format,...)']]],
+  ['logger_11',['Logger',['../class_logger.html',1,'']]],
+  ['logger_2ehpp_12',['Logger.hpp',['../_logger_8hpp.html',1,'']]],
+  ['loginline_13',['LogInline',['../class_logger.html#a4ec5d46dea2702a3101dee7988a7fff3',1,'Logger']]],
+  ['loopmove_14',['LoopMove',['../class_loop_move.html',1,'LoopMove'],['../class_loop_move.html#a8d2e5be10a471fc4f9eb9f4e55f731d0',1,'LoopMove::LoopMove()']]],
+  ['loopmove_2ehpp_15',['LoopMove.hpp',['../_loop_move_8hpp.html',1,'']]]
 ];

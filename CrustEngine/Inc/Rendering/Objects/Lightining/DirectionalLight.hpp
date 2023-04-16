@@ -11,15 +11,16 @@
 class DirectionalLight : public LightSource
 {
 public:
+    /**
+     * @param _intensivity Light's intensivity.
+     * @param _dir Light's direction.
+     */
     DirectionalLight(double _intensivity, Vector3 &_direction);
-
-    std::string GetObjectTypeName() override;
 };
 
-inline DirectionalLight::DirectionalLight(double _intensivity, Vector3 &_dir) : LightSource(_intensivity) {
+inline DirectionalLight::DirectionalLight(double _intensivity, Vector3 &_dir) : LightSource(_intensivity)
+{
     transform->SetEulerRotation(_dir.X(), _dir.Y(), _dir.Z());
 }
-
-inline std::string DirectionalLight::GetObjectTypeName() { return "Directional Light Source"; }
 
 #endif /* _DURECTIONALLIGHT_HPP_ */

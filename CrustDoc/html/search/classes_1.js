@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filereader_0',['FileReader',['../class_file_reader.html',1,'']]]
+  ['directionallight_0',['DirectionalLight',['../class_directional_light.html',1,'']]]
 ];

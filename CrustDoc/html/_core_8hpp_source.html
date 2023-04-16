@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrustEngine: /Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/Core.hpp Source File</title>
+<title>CrustEngine: /Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Core/Core.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,73 +103,75 @@ $(document).ready(function(){initNavTree('_core_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="_scene_8hpp.html">Core/Scene.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="_render_window_8hpp.html">Rendering/RenderWindow.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_core.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_core.html">Core</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_function" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_core.html#a3259aa546be9c7e12da440ad570f7b39">   17</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_core.html#a3259aa546be9c7e12da440ad570f7b39">~Core</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#af8dfa9a1586b40a8b92d92ceb5435814">OpenNewWindow</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <a class="code hl_class" href="class_scene.html">Scene</a>* scene);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a37572d86a6f846b22fe2713b6eee272a">CloseWindow</a>(<a class="code hl_class" href="class_render_window.html">RenderWindow</a>* window);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">CloseAllWindows</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a41b241ecdc132a508a97944ea5044265">Quit</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  std::vector&lt;RenderWindow*&gt; openedWindows; </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">   60</a></span><span class="keyword">inline</span> <a class="code hl_function" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core::Core</a>() { <a class="code hl_function" href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">TimeProvider::OnEngineStart</a>(); }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_core.html#af8dfa9a1586b40a8b92d92ceb5435814">   62</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#af8dfa9a1586b40a8b92d92ceb5435814">Core::OpenNewWindow</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <a class="code hl_class" href="class_scene.html">Scene</a>* scene) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_class" href="class_render_window.html">RenderWindow</a>* window = <span class="keyword">new</span> <a class="code hl_class" href="class_render_window.html">RenderWindow</a>(width, height, scene);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  window-&gt;<a class="code hl_function" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">Start</a>(); <span class="comment">// TODO: run on new thread</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  openedWindows.push_back(window);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_core.html#a37572d86a6f846b22fe2713b6eee272a">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a37572d86a6f846b22fe2713b6eee272a">Core::CloseWindow</a>(<a class="code hl_class" href="class_render_window.html">RenderWindow</a>* window) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  window-&gt;<a class="code hl_function" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">Close</a>();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  remove(openedWindows.begin(), openedWindows.end(), window);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">delete</span> window;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_core.html#aed08a80f222174c48adfb87fa239877c">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">Core::CloseAllWindows</a>() {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;window : openedWindows){</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    window-&gt;Close();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">delete</span> window;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  openedWindows.clear();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_core.html#a41b241ecdc132a508a97944ea5044265">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a41b241ecdc132a508a97944ea5044265">Core::Quit</a>() {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_function" href="class_logger.html#aae69f0478dbd5d719e70a8af3b154761">Logger::Info</a>(<span class="stringliteral">&quot;Engine work time: %lf [s]&quot;</span>, <a class="code hl_function" href="class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4">TimeProvider::GetTime_s</a>());</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">CloseAllWindows</a>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif </span><span class="comment">/* _CORE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_core.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_core.html">Core</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_function" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_core.html#a3259aa546be9c7e12da440ad570f7b39">   18</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_core.html#a3259aa546be9c7e12da440ad570f7b39">~Core</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a17a3358b487ae2d2b83044c449ebb45b">OpenNewWindow</a>(uint32_t width, uint32_t uint32_t, <a class="code hl_class" href="class_scene.html">Scene</a> &amp;scene);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aaf31dbcac2b4fa11118c70aa0c759f62">CloseWindow</a>(<a class="code hl_class" href="class_render_window.html">RenderWindow</a> &amp;window);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">CloseAllWindows</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a41b241ecdc132a508a97944ea5044265">Quit</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  std::vector&lt;RenderWindow *&gt; openedWindows; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">   61</a></span><span class="keyword">inline</span> <a class="code hl_function" href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core::Core</a>() { <a class="code hl_function" href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">TimeProvider::OnEngineStart</a>(); }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_core.html#a17a3358b487ae2d2b83044c449ebb45b">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a17a3358b487ae2d2b83044c449ebb45b">Core::OpenNewWindow</a>(uint32_t width, uint32_t height, <a class="code hl_class" href="class_scene.html">Scene</a> &amp;scene)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="class_render_window.html">RenderWindow</a> *window = <span class="keyword">new</span> <a class="code hl_class" href="class_render_window.html">RenderWindow</a>(width, height, scene);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  window-&gt;<a class="code hl_function" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">Start</a>(); <span class="comment">// TODO: run on new thread</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  openedWindows.push_back(window);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_core.html#aaf31dbcac2b4fa11118c70aa0c759f62">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aaf31dbcac2b4fa11118c70aa0c759f62">Core::CloseWindow</a>(<a class="code hl_class" href="class_render_window.html">RenderWindow</a> &amp;window)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  window.<a class="code hl_function" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">Close</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  remove(openedWindows.begin(), openedWindows.end(), &amp;window);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">delete</span> &amp;window;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_core.html#aed08a80f222174c48adfb87fa239877c">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">Core::CloseAllWindows</a>()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;window : openedWindows)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    window-&gt;Close();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">delete</span> window;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  openedWindows.clear();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_core.html#a41b241ecdc132a508a97944ea5044265">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_core.html#a41b241ecdc132a508a97944ea5044265">Core::Quit</a>()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_function" href="class_core.html#aed08a80f222174c48adfb87fa239877c">CloseAllWindows</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif </span><span class="comment">/* _CORE_HPP_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a_render_window_8hpp_html"><div class="ttname"><a href="_render_window_8hpp.html">RenderWindow.hpp</a></div></div>
 <div class="ttc" id="a_scene_8hpp_html"><div class="ttname"><a href="_scene_8hpp.html">Scene.hpp</a></div></div>
 <div class="ttc" id="a_time_provider_8hpp_html"><div class="ttname"><a href="_time_provider_8hpp.html">TimeProvider.hpp</a></div></div>
-<div class="ttc" id="aclass_core_html"><div class="ttname"><a href="class_core.html">Core</a></div><div class="ttdoc">Class, which helds opened windows and manages the engine work.</div><div class="ttdef"><b>Definition:</b> Core.hpp:14</div></div>
-<div class="ttc" id="aclass_core_html_a14e63188e0aa7c4a6f72d5501384d1f9"><div class="ttname"><a href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core::Core</a></div><div class="ttdeci">Core()</div><div class="ttdef"><b>Definition:</b> Core.hpp:60</div></div>
+<div class="ttc" id="aclass_core_html"><div class="ttname"><a href="class_core.html">Core</a></div><div class="ttdoc">Class, which helds opened windows and manages the engine work.</div><div class="ttdef"><b>Definition:</b> Core.hpp:15</div></div>
+<div class="ttc" id="aclass_core_html_a14e63188e0aa7c4a6f72d5501384d1f9"><div class="ttname"><a href="class_core.html#a14e63188e0aa7c4a6f72d5501384d1f9">Core::Core</a></div><div class="ttdeci">Core()</div><div class="ttdef"><b>Definition:</b> Core.hpp:61</div></div>
+<div class="ttc" id="aclass_core_html_a17a3358b487ae2d2b83044c449ebb45b"><div class="ttname"><a href="class_core.html#a17a3358b487ae2d2b83044c449ebb45b">Core::OpenNewWindow</a></div><div class="ttdeci">void OpenNewWindow(uint32_t width, uint32_t uint32_t, Scene &amp;scene)</div><div class="ttdoc">Opens new RenderWindow of size #width x #height and default loaded scene set to #scene.</div><div class="ttdef"><b>Definition:</b> Core.hpp:63</div></div>
 <div class="ttc" id="aclass_core_html_a3259aa546be9c7e12da440ad570f7b39"><div class="ttname"><a href="class_core.html#a3259aa546be9c7e12da440ad570f7b39">Core::~Core</a></div><div class="ttdeci">virtual ~Core()=default</div></div>
-<div class="ttc" id="aclass_core_html_a37572d86a6f846b22fe2713b6eee272a"><div class="ttname"><a href="class_core.html#a37572d86a6f846b22fe2713b6eee272a">Core::CloseWindow</a></div><div class="ttdeci">void CloseWindow(RenderWindow *window)</div><div class="ttdoc">Closes the specified #window.</div><div class="ttdef"><b>Definition:</b> Core.hpp:70</div></div>
-<div class="ttc" id="aclass_core_html_a41b241ecdc132a508a97944ea5044265"><div class="ttname"><a href="class_core.html#a41b241ecdc132a508a97944ea5044265">Core::Quit</a></div><div class="ttdeci">void Quit()</div><div class="ttdoc">Quits the engine. Should be called at program end.</div><div class="ttdef"><b>Definition:</b> Core.hpp:84</div></div>
-<div class="ttc" id="aclass_core_html_aed08a80f222174c48adfb87fa239877c"><div class="ttname"><a href="class_core.html#aed08a80f222174c48adfb87fa239877c">Core::CloseAllWindows</a></div><div class="ttdeci">void CloseAllWindows()</div><div class="ttdoc">Closes all opened windows.</div><div class="ttdef"><b>Definition:</b> Core.hpp:76</div></div>
-<div class="ttc" id="aclass_core_html_af8dfa9a1586b40a8b92d92ceb5435814"><div class="ttname"><a href="class_core.html#af8dfa9a1586b40a8b92d92ceb5435814">Core::OpenNewWindow</a></div><div class="ttdeci">void OpenNewWindow(int width, int height, Scene *scene)</div><div class="ttdoc">Opens new RenderWindow of size #width x #height and default loaded scene set to #scene.</div><div class="ttdef"><b>Definition:</b> Core.hpp:62</div></div>
-<div class="ttc" id="aclass_logger_html_aae69f0478dbd5d719e70a8af3b154761"><div class="ttname"><a href="class_logger.html#aae69f0478dbd5d719e70a8af3b154761">Logger::Info</a></div><div class="ttdeci">static void Info(const char *format,...)</div><div class="ttdoc">Logs onto the console in blue color.</div><div class="ttdef"><b>Definition:</b> Logger.hpp:90</div></div>
-<div class="ttc" id="aclass_render_window_html"><div class="ttname"><a href="class_render_window.html">RenderWindow</a></div><div class="ttdoc">Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:15</div></div>
-<div class="ttc" id="aclass_render_window_html_a0e9fd523d9888ca17333e50216ba096c"><div class="ttname"><a href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">RenderWindow::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdoc">Stops the window rendering process.</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:122</div></div>
-<div class="ttc" id="aclass_render_window_html_ace7b6b9d6045bc2b9fbb41c474122cf8"><div class="ttname"><a href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">RenderWindow::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the window rendering process.</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:88</div></div>
-<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Class holding objects rendered on window and camera, from which the projection will be calculated.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:24</div></div>
-<div class="ttc" id="aclass_time_provider_html_a865d73e9b56b2dc1ebe2648282f8b4cd"><div class="ttname"><a href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">TimeProvider::OnEngineStart</a></div><div class="ttdeci">static void OnEngineStart()</div><div class="ttdoc">Method called on engine's core start.</div><div class="ttdef"><b>Definition:</b> TimeProvider.hpp:108</div></div>
-<div class="ttc" id="aclass_time_provider_html_a95b5d9a0b234c9506a58637411b215a4"><div class="ttname"><a href="class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4">TimeProvider::GetTime_s</a></div><div class="ttdeci">static double GetTime_s()</div><div class="ttdoc">Returns time from engine's core start in seconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.hpp:87</div></div>
+<div class="ttc" id="aclass_core_html_a41b241ecdc132a508a97944ea5044265"><div class="ttname"><a href="class_core.html#a41b241ecdc132a508a97944ea5044265">Core::Quit</a></div><div class="ttdeci">void Quit()</div><div class="ttdoc">Quits the engine. Should be called at program end.</div><div class="ttdef"><b>Definition:</b> Core.hpp:88</div></div>
+<div class="ttc" id="aclass_core_html_aaf31dbcac2b4fa11118c70aa0c759f62"><div class="ttname"><a href="class_core.html#aaf31dbcac2b4fa11118c70aa0c759f62">Core::CloseWindow</a></div><div class="ttdeci">void CloseWindow(RenderWindow &amp;window)</div><div class="ttdoc">Closes the specified #window.</div><div class="ttdef"><b>Definition:</b> Core.hpp:71</div></div>
+<div class="ttc" id="aclass_core_html_aed08a80f222174c48adfb87fa239877c"><div class="ttname"><a href="class_core.html#aed08a80f222174c48adfb87fa239877c">Core::CloseAllWindows</a></div><div class="ttdeci">void CloseAllWindows()</div><div class="ttdoc">Closes all opened windows.</div><div class="ttdef"><b>Definition:</b> Core.hpp:78</div></div>
+<div class="ttc" id="aclass_render_window_html"><div class="ttname"><a href="class_render_window.html">RenderWindow</a></div><div class="ttdoc">Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:18</div></div>
+<div class="ttc" id="aclass_render_window_html_a0e9fd523d9888ca17333e50216ba096c"><div class="ttname"><a href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">RenderWindow::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdoc">Stops the window rendering process bu killing the renderer. When called the Start method stops it's l...</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:131</div></div>
+<div class="ttc" id="aclass_render_window_html_ace7b6b9d6045bc2b9fbb41c474122cf8"><div class="ttname"><a href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">RenderWindow::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the window rendering process.</div><div class="ttdef"><b>Definition:</b> RenderWindow.hpp:97</div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Class holding objects rendered on window and camera, from which the projection will be calculated.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:25</div></div>
+<div class="ttc" id="aclass_time_provider_html_a865d73e9b56b2dc1ebe2648282f8b4cd"><div class="ttname"><a href="class_time_provider.html#a865d73e9b56b2dc1ebe2648282f8b4cd">TimeProvider::OnEngineStart</a></div><div class="ttdeci">static void OnEngineStart()</div><div class="ttdoc">Method called on engine's core start.</div><div class="ttdef"><b>Definition:</b> TimeProvider.hpp:112</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_23fdee2f6995db16c755697cdf620cf4.html">Code</a></li><li class="navelem"><a class="el" href="dir_d4220d8c9360161864d2ed0ae52386e3.html">Inc</a></li><li class="navelem"><a class="el" href="dir_c38393593bab3e57ff0677c69bbbf217.html">Core</a></li><li class="navelem"><a class="el" href="_core_8hpp.html">Core.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_0855f742691d218dce9c0e2bee1fbd03.html">CrustEngine</a></li><li class="navelem"><a class="el" href="dir_84f0353f9b03c40a4493788ca07ad4a2.html">Inc</a></li><li class="navelem"><a class="el" href="dir_4ed581a0684b513c1b5f83dfa8954f89.html">Core</a></li><li class="navelem"><a class="el" href="_core_8hpp.html">Core.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

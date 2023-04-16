@@ -1,0 +1,96 @@
+\hypertarget{class_polygon}{}\doxysection{Polygon Class Reference}
+\label{class_polygon}\index{Polygon@{Polygon}}
+
+
+This class represents renderable piece of an mesh.  
+
+
+
+
+{\ttfamily \#include $<$Polygon.\+hpp$>$}
+
+Inheritance diagram for Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_polygon}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_polygon_ace39c67107966db12e13a183f496c3b0}{$\sim$\+Polygon}} ()
+\item 
+\mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_polygon_af3825082a54541362d00c16abbe062a0}{Normal}} ()
+\begin{DoxyCompactList}\small\item\em Calculates normal vector of plane that this polygon represents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_polygon_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}} ()
+\item 
+\mbox{\hyperlink{class_polygon_ad6140b354e030e413dd093c5bbd47282}{Triangle}} (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents renderable piece of an mesh. 
+
+It is a wrapper for a mathematical shape that represents renderable plane. Obj type uses a triangle so mostly it will be it. But it if we need anything else we can just modify this class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_polygon_ace39c67107966db12e13a183f496c3b0}\label{class_polygon_ace39c67107966db12e13a183f496c3b0}} 
+\index{Polygon@{Polygon}!````~Polygon@{$\sim$Polygon}}
+\index{````~Polygon@{$\sim$Polygon}!Polygon@{Polygon}}
+\doxysubsubsection{\texorpdfstring{$\sim$Polygon()}{~Polygon()}}
+{\footnotesize\ttfamily Polygon\+::$\sim$\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polygon_af3825082a54541362d00c16abbe062a0}\label{class_polygon_af3825082a54541362d00c16abbe062a0}} 
+\index{Polygon@{Polygon}!Normal@{Normal}}
+\index{Normal@{Normal}!Polygon@{Polygon}}
+\doxysubsubsection{\texorpdfstring{Normal()}{Normal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} \& Polygon\+::\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates normal vector of plane that this polygon represents. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vector3}{Vector3}}\& Normal vector of this plane. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_polygon_aaefe4ed500c07918d30c6f0e286332c5}\label{class_polygon_aaefe4ed500c07918d30c6f0e286332c5}} 
+\index{Polygon@{Polygon}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Polygon@{Polygon}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_polygon_ad6140b354e030e413dd093c5bbd47282}\label{class_polygon_ad6140b354e030e413dd093c5bbd47282}} 
+\index{Polygon@{Polygon}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Polygon@{Polygon}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p1Z,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p2Z,  }\item[{double}]{p3X,  }\item[{double}]{p3Y,  }\item[{double}]{p3Z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1X} & Point 1 x coordinate value in 3D space. \\
+\hline
+{\em p1Y} & Point 1 y coordinate value in 3D space. \\
+\hline
+{\em p1Z} & Point 1 z coordinate value in 3D space. \\
+\hline
+{\em p2X} & Point 2 x coordinate value in 3D space. \\
+\hline
+{\em p2Y} & Point 2 y coordinate value in 3D space. \\
+\hline
+{\em p2Z} & Point 2 z coordinate value in 3D space. \\
+\hline
+{\em p3X} & Point 3 x coordinate value in 3D space. \\
+\hline
+{\em p3Y} & Point 3 y coordinate value in 3D space. \\
+\hline
+{\em p3Z} & Point 3 z coordinate value in 3D space. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Rendering/\mbox{\hyperlink{_polygon_8hpp}{Polygon.\+hpp}}\end{DoxyCompactItemize}

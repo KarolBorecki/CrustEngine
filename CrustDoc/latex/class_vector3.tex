@@ -12,45 +12,33 @@ Represents mathematical vector3.
 Inheritance diagram for Vector3\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_vector3}
+\includegraphics[height=3.000000cm]{class_vector3}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_vector3_a0f49191f7e001e7f7ae1cb49522118b4}{Vector3}} ()
-\begin{DoxyCompactList}\small\item\em Creates blank vector that consists of values zero. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates blank vector that consists of zeros. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}{Vector3}} (double val\+XYZ)
 \item 
 \mbox{\hyperlink{class_vector3_a3b370f98c38f1221df9238a9b5f3200c}{Vector3}} (double x, double y, double z)
 \item 
 \mbox{\hyperlink{class_vector3_a5545e13e2e2861ece8f14b12a6a8101f}{$\sim$\+Vector3}} ()
 \item 
-double \mbox{\hyperlink{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}{X}} ()
+double \mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}} () const
 \begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_vector3_ada990cdc627b1eab3ee985458eefb98a}{Y}} ()
+double \mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}} () const
 \begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}{Z}} ()
+double \mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}} () const
 \begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vector3_adefc004f13762e3386de5cb557692408}{SetX}} (double valX)
 \begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vector3_a84690eeeb8f94037b9103772b8bcb221}{SetY}} (double valY)
 \begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vector3_abef4f93039c0cc4181dea08ee0fc41c2}{SetZ}} (double valZ)
-\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_vector3_a96424507ccf818dd9582f648c646a71a}{Set\+XYZ}} (double x, double y, double z)
-\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_vector3_adce5ef38969238e909fcddcada3b423e}{Set\+XYZ}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec\+XYZ)
-\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values from another \mbox{\hyperlink{class_vector3}{Vector3}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \mbox{\hyperlink{class_vector3_ae919b64e71a55266e36d054ce77a03ea}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec, double x, double y, double z)
-\begin{DoxyCompactList}\small\item\em Adds given x, y, z values to given vector. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec, double scalar)
-\begin{DoxyCompactList}\small\item\em Adds given value to given vector. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}{Add}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec1, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$vec2)
-\begin{DoxyCompactList}\small\item\em Adds given x, y, z values to given vector from another vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setter for \mbox{\hyperlink{class_vector3}{Vector3}} z value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -65,7 +53,7 @@ Represents mathematical vector3.
 
 
 
-Creates blank vector that consists of values zero. 
+Creates blank vector that consists of zeros. 
 
 \mbox{\Hypertarget{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}\label{class_vector3_af3ddf3f85d2e8390fa8c297c8448761e}} 
 \index{Vector3@{Vector3}!Vector3@{Vector3}}
@@ -102,61 +90,6 @@ Creates blank vector that consists of values zero.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}\label{class_vector3_a9fc3c0a1ab2857d4468c0ae761bf0cbe}} 
-\index{Vector3@{Vector3}!Add@{Add}}
-\index{Add@{Add}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec,  }\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Adds given value to given vector. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em vec} & Modified vector to which values will be added. \\
-\hline
-{\em scalar} & The value added to vector. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vector3_ae919b64e71a55266e36d054ce77a03ea}\label{class_vector3_ae919b64e71a55266e36d054ce77a03ea}} 
-\index{Vector3@{Vector3}!Add@{Add}}
-\index{Add@{Add}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Adds given x, y, z values to given vector. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em vec} & Modified vector to which values will be added. \\
-\hline
-{\em x} & Value added to \#vec x field. \\
-\hline
-{\em y} & Value added to \#vec y field. \\
-\hline
-{\em z} & Value added to \#vec z field. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}\label{class_vector3_a8b75ad7da558f27ad8393ed947367eb4}} 
-\index{Vector3@{Vector3}!Add@{Add}}
-\index{Add@{Add}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily void Vector3\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec1,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Adds given x, y, z values to given vector from another vector. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em vec1} & Modified vector to which values will be added. \\
-\hline
-{\em vec2} & Origin of values that will be added to \#vec1. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_vector3_adefc004f13762e3386de5cb557692408}\label{class_vector3_adefc004f13762e3386de5cb557692408}} 
 \index{Vector3@{Vector3}!SetX@{SetX}}
 \index{SetX@{SetX}!Vector3@{Vector3}}
@@ -170,40 +103,6 @@ Setter for \mbox{\hyperlink{class_vector3}{Vector3}} x value.
 
 \begin{DoxyParams}{Parameters}
 {\em valX} & New value of vector\textquotesingle{}s x. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vector3_a96424507ccf818dd9582f648c646a71a}\label{class_vector3_a96424507ccf818dd9582f648c646a71a}} 
-\index{Vector3@{Vector3}!SetXYZ@{SetXYZ}}
-\index{SetXYZ@{SetXYZ}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{SetXYZ()}{SetXYZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Vector3\+::\+Set\+XYZ (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})}
-
-
-
-Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & New value of vector\textquotesingle{}s x. \\
-\hline
-{\em y} & New value of vector\textquotesingle{}s y. \\
-\hline
-{\em z} & New value of vector\textquotesingle{}s z. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_vector3_adce5ef38969238e909fcddcada3b423e}\label{class_vector3_adce5ef38969238e909fcddcada3b423e}} 
-\index{Vector3@{Vector3}!SetXYZ@{SetXYZ}}
-\index{SetXYZ@{SetXYZ}!Vector3@{Vector3}}
-\doxysubsubsection{\texorpdfstring{SetXYZ()}{SetXYZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Vector3\+::\+Set\+XYZ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{vec\+XYZ }\end{DoxyParamCaption})}
-
-
-
-Setter for \mbox{\hyperlink{class_vector3}{Vector3}} values from another \mbox{\hyperlink{class_vector3}{Vector3}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em vec} & Another vector from which the values will be taken. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_vector3_a84690eeeb8f94037b9103772b8bcb221}\label{class_vector3_a84690eeeb8f94037b9103772b8bcb221}} 
@@ -236,31 +135,31 @@ Setter for \mbox{\hyperlink{class_vector3}{Vector3}} z value.
 {\em valZ} & New value of vector\textquotesingle{}s z. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}\label{class_vector3_ac489a8c1cb8c052fbfc1227cb66c64d2}} 
+\mbox{\Hypertarget{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}\label{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}} 
 \index{Vector3@{Vector3}!X@{X}}
 \index{X@{X}!Vector3@{Vector3}}
 \doxysubsubsection{\texorpdfstring{X()}{X()}}
-{\footnotesize\ttfamily double Vector3\+::X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Vector3\+::X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for \mbox{\hyperlink{class_vector3}{Vector3}} x value. 
 
-\mbox{\Hypertarget{class_vector3_ada990cdc627b1eab3ee985458eefb98a}\label{class_vector3_ada990cdc627b1eab3ee985458eefb98a}} 
+\mbox{\Hypertarget{class_vector3_a4cdf9e8af601508983635de175ebac65}\label{class_vector3_a4cdf9e8af601508983635de175ebac65}} 
 \index{Vector3@{Vector3}!Y@{Y}}
 \index{Y@{Y}!Vector3@{Vector3}}
 \doxysubsubsection{\texorpdfstring{Y()}{Y()}}
-{\footnotesize\ttfamily double Vector3\+::Y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Vector3\+::Y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for \mbox{\hyperlink{class_vector3}{Vector3}} y value. 
 
-\mbox{\Hypertarget{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}\label{class_vector3_a9cee9c340fd39d7eb535f993ede6c026}} 
+\mbox{\Hypertarget{class_vector3_a44d26a20339d2a17c3002001bf57174b}\label{class_vector3_a44d26a20339d2a17c3002001bf57174b}} 
 \index{Vector3@{Vector3}!Z@{Z}}
 \index{Z@{Z}!Vector3@{Vector3}}
 \doxysubsubsection{\texorpdfstring{Z()}{Z()}}
-{\footnotesize\ttfamily double Vector3\+::Z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Vector3\+::Z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -270,4 +169,4 @@ Getter for \mbox{\hyperlink{class_vector3}{Vector3}} z value.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Math/\mbox{\hyperlink{_vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}

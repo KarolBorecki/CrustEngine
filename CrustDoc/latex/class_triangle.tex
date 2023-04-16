@@ -2,13 +2,19 @@
 \label{class_triangle}\index{Triangle@{Triangle}}
 
 
-Represents flat triangled plane in 3D space as 3 points.  
+Represents flat triangular plane in 3D space as 3 points.  
 
 
 
 
 {\ttfamily \#include $<$Triangle.\+hpp$>$}
 
+Inheritance diagram for Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_triangle}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,32 +22,28 @@ Represents flat triangled plane in 3D space as 3 points.
 \item 
 \mbox{\hyperlink{class_triangle_ad6140b354e030e413dd093c5bbd47282}{Triangle}} (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)
 \item 
-\mbox{\hyperlink{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}{Triangle}} (\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point1, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point2, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$point3)
-\item 
 \mbox{\hyperlink{class_triangle_a5199760a17454f4dc94c855a57e3a152}{$\sim$\+Triangle}} ()
 \begin{DoxyCompactList}\small\item\em Destroy created vectors representing triangle\textquotesingle{}s points. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ \mbox{\hyperlink{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}{Get\+Point}} (uint8\+\_\+t index)
+\mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{Get\+Point}} (uint8\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em Getter for triangle \mbox{\hyperlink{class_vector3}{Vector3}} point. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_triangle_a01d55a4d18956260b842ddc4c580b26e}{Set\+Points}} (double p1X, double p1Y, double p1Z, double p2X, double p2Y, double p2Z, double p3X, double p3Y, double p3Z)
-\begin{DoxyCompactList}\small\item\em Setter for all 3 points of triangle x, y and z values. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_triangle_ab15e48058937687f381d00f91ccbd0e7}{To\+String}} ()
-\begin{DoxyCompactList}\small\item\em Converts triangle to std\+::string, so it can be written on any output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Setter for all 3 points of triangle x, y and z values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Represents flat triangled plane in 3D space as 3 points. 
+Represents flat triangular plane in 3D space as 3 points. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}\label{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}} 
 \index{Triangle@{Triangle}!Triangle@{Triangle}}
 \index{Triangle@{Triangle}!Triangle@{Triangle}}
-\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_triangle_ad6140b354e030e413dd093c5bbd47282}\label{class_triangle_ad6140b354e030e413dd093c5bbd47282}} 
 \index{Triangle@{Triangle}!Triangle@{Triangle}}
 \index{Triangle@{Triangle}!Triangle@{Triangle}}
-\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{double}]{p1X,  }\item[{double}]{p1Y,  }\item[{double}]{p1Z,  }\item[{double}]{p2X,  }\item[{double}]{p2Y,  }\item[{double}]{p2Z,  }\item[{double}]{p3X,  }\item[{double}]{p3Y,  }\item[{double}]{p3Z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -65,21 +67,6 @@ Represents flat triangled plane in 3D space as 3 points.
 {\em p3Z} & Point 3 z coordinate value in 3D space. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}\label{class_triangle_abe8dff6bf83bd56d5d2d038896e4a5c6}} 
-\index{Triangle@{Triangle}!Triangle@{Triangle}}
-\index{Triangle@{Triangle}!Triangle@{Triangle}}
-\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point1,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point2,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{point3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyParams}{Parameters}
-{\em point1} & First point of triangle. \\
-\hline
-{\em point2} & Second point of triangle. In projection next from \#point1 in clockwise direction. \\
-\hline
-{\em point3} & Third point of triangle. In projection next from \#point1 in clockwise direction. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_triangle_a5199760a17454f4dc94c855a57e3a152}\label{class_triangle_a5199760a17454f4dc94c855a57e3a152}} 
 \index{Triangle@{Triangle}!````~Triangle@{$\sim$Triangle}}
 \index{````~Triangle@{$\sim$Triangle}!Triangle@{Triangle}}
@@ -93,11 +80,11 @@ Destroy created vectors representing triangle\textquotesingle{}s points.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}\label{class_triangle_a6ac054c3c4c13a19ef2f34f23b52cc1c}} 
+\mbox{\Hypertarget{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}\label{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}} 
 \index{Triangle@{Triangle}!GetPoint@{GetPoint}}
 \index{GetPoint@{GetPoint}!Triangle@{Triangle}}
 \doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$ Triangle\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} \& Triangle\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -118,20 +105,8 @@ Getter for triangle \mbox{\hyperlink{class_vector3}{Vector3}} point.
 
 Setter for all 3 points of triangle x, y and z values. 
 
-\mbox{\Hypertarget{class_triangle_ab15e48058937687f381d00f91ccbd0e7}\label{class_triangle_ab15e48058937687f381d00f91ccbd0e7}} 
-\index{Triangle@{Triangle}!ToString@{ToString}}
-\index{ToString@{ToString}!Triangle@{Triangle}}
-\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
-{\footnotesize\ttfamily std\+::string Triangle\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Converts triangle to std\+::string, so it can be written on any output. 
-
-The returned string is in a following format\+:~\newline
- First line contains \char`\"{}\+Triangle\+:\char`\"{} caption.~\newline
- Next 3 lines contains written vectors using \mbox{\hyperlink{class_matrix_af40af6f88268cbe1850617269d1f80e2}{Vector3\+::\+To\+String}} function. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Physics/\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Math/\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}}\end{DoxyCompactItemize}

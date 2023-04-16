@@ -10,7 +10,7 @@ class Vector4 : public Vector3
 {
 public:
   /**
-   * @brief Creates blank vector4 that consists of values zero.
+   * @brief Creates blank vector4 that consists of zeros.
    */
   Vector4();
 
@@ -39,6 +39,10 @@ public:
    * @param valW New value of vector's w.
    */
   void SetW(double valW);
+
+private:
+  static inline constexpr uint8_t VECTOR4_WIDTH{4};
+  static inline constexpr uint8_t VECTOR4_HEIGHT{1};
 };
 
 inline Vector4::Vector4() : Vector4(0, 0, 0, 0) {}
@@ -47,10 +51,10 @@ inline Vector4::Vector4(double valXYZW) : Vector4(valXYZW, valXYZW, valXYZW, val
 
 inline Vector4::Vector4(double x, double y, double z, double w)
 {
-  width = 4;
-  height = 1;
-  totalSize = 4;
-  mat = new double[4];
+  width = VECTOR4_WIDTH;
+  height = VECTOR4_HEIGHT;
+  totalSize = VECTOR4_WIDTH;
+  mat = new double[VECTOR4_WIDTH];
 
   SetX(x);
   SetY(y);

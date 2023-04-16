@@ -28,6 +28,7 @@ public:
    * @param scene Scene to load as first.
    */
   RenderWindow(uint32_t _width, uint32_t _height, Scene &_scene);
+
   /**
    * @details If renderer is not nullptr deletes it.
    */
@@ -35,15 +36,22 @@ public:
 
   /**
    * @brief Starts the window rendering process.
+   * @details Starts loop that performs rendering as long as renderer is opened and running.
+   * At each frame it calculates FPS, Polls for any pending input events, updates loaded scene by calling #Update method,
+   * checks if last event that occured was not EVENT_QUIT and if so ends the renderer work, cleans window and draws projected polygons.
+   *
+   * @sa Renderer.hpp,
    */
   void Start();
+
   /**
-   * @brief Stops the window rendering process.
+   * @brief Stops the window rendering process bu killing the renderer. When called the #Start method stops it's loop.
    */
   void Close();
 
   /**
-   * @brief Loads scene.
+   * @brief Loads new scene that will be rendered in this window.
+   * @details Unloads previously loaded scene by calling #OnUnLoad. gets new scene's name as caption. Recalculates projection matrix according to new scene's main camera and calls #OnLoad on new scene.
    *
    * @param scene Handler to scene handler, which will be loaded.
    */
@@ -55,7 +63,7 @@ private:
   Renderer *renderer{nullptr}; //!< Widnows's renderer handler.
   Scene *loadedScene{nullptr}; //!< Loaded scene's handler.
 
-  TimeProvider *timeProvider{nullptr};
+  TimeProvider *timeProvider{nullptr}; //!< Windows's time provider that calculates it's work time, FPS etc...
 
   /**
    * @brief Cleans everything that was drawn on the window.
@@ -102,7 +110,7 @@ void RenderWindow::Start()
     loadedScene->Update(timeProvider->GetDeltaTime_s());
 
     if (InputHandler::GetLastEvent().type == Event::EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
-      renderer->StopRunning();
+      Close();
 
     Clean();
     objs = loadedScene->GetObjectsToRender();
@@ -126,10 +134,13 @@ inline void RenderWindow::Close()
 }
 
 inline void RenderWindow::LoadScene(Scene &scene)
-{ // TODO does not run start of newly loaded scene. Should stop this window and reload scene TODO - add stop window method
+{
+  if (loadedScene != nullptr)
+    loadedScene->OnUnLoad();
   loadedScene = &scene;
   renderer->SetWindowTitle(loadedScene->GetName());
   renderer->RecalculateProjectionMatrix(loadedScene->GetMainCamera());
+  loadedScene->OnLoad();
 }
 
 inline void RenderWindow::Clean()

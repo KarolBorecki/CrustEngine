@@ -16,9 +16,9 @@ Class, which helds opened windows and manages the engine work.
 \item 
 virtual \mbox{\hyperlink{class_core_a3259aa546be9c7e12da440ad570f7b39}{$\sim$\+Core}} ()=default
 \item 
-void \mbox{\hyperlink{class_core_af8dfa9a1586b40a8b92d92ceb5435814}{Open\+New\+Window}} (int width, int height, \mbox{\hyperlink{class_scene}{Scene}} $\ast$scene)
+void \mbox{\hyperlink{class_core_a17a3358b487ae2d2b83044c449ebb45b}{Open\+New\+Window}} (uint32\+\_\+t width, uint32\+\_\+t uint32\+\_\+t, \mbox{\hyperlink{class_scene}{Scene}} \&scene)
 \begin{DoxyCompactList}\small\item\em Opens new \mbox{\hyperlink{class_render_window}{Render\+Window}} of size \#width x \#height and default loaded scene set to \#scene. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_core_a37572d86a6f846b22fe2713b6eee272a}{Close\+Window}} (\mbox{\hyperlink{class_render_window}{Render\+Window}} $\ast$window)
+void \mbox{\hyperlink{class_core_aaf31dbcac2b4fa11118c70aa0c759f62}{Close\+Window}} (\mbox{\hyperlink{class_render_window}{Render\+Window}} \&window)
 \begin{DoxyCompactList}\small\item\em Closes the specified \#window. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_core_aed08a80f222174c48adfb87fa239877c}{Close\+All\+Windows}} ()
 \begin{DoxyCompactList}\small\item\em Closes all opened windows. \end{DoxyCompactList}\item 
@@ -60,11 +60,11 @@ Loops through opened\+Windows array, runs \mbox{\hyperlink{class_render_window_a
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_core_a37572d86a6f846b22fe2713b6eee272a}\label{class_core_a37572d86a6f846b22fe2713b6eee272a}} 
+\mbox{\Hypertarget{class_core_aaf31dbcac2b4fa11118c70aa0c759f62}\label{class_core_aaf31dbcac2b4fa11118c70aa0c759f62}} 
 \index{Core@{Core}!CloseWindow@{CloseWindow}}
 \index{CloseWindow@{CloseWindow}!Core@{Core}}
 \doxysubsubsection{\texorpdfstring{CloseWindow()}{CloseWindow()}}
-{\footnotesize\ttfamily void Core\+::\+Close\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_render_window}{Render\+Window}} $\ast$}]{window }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Core\+::\+Close\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_render_window}{Render\+Window}} \&}]{window }\end{DoxyParamCaption})}
 
 
 
@@ -80,11 +80,11 @@ Searches for \#window inside opened\+Windows array and runs \mbox{\hyperlink{cla
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_core_af8dfa9a1586b40a8b92d92ceb5435814}\label{class_core_af8dfa9a1586b40a8b92d92ceb5435814}} 
+\mbox{\Hypertarget{class_core_a17a3358b487ae2d2b83044c449ebb45b}\label{class_core_a17a3358b487ae2d2b83044c449ebb45b}} 
 \index{Core@{Core}!OpenNewWindow@{OpenNewWindow}}
 \index{OpenNewWindow@{OpenNewWindow}!Core@{Core}}
 \doxysubsubsection{\texorpdfstring{OpenNewWindow()}{OpenNewWindow()}}
-{\footnotesize\ttfamily void Core\+::\+Open\+New\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{class_scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Core\+::\+Open\+New\+Window (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{width,  }\item[{uint32\+\_\+t uint32\+\_\+t}]{,  }\item[{\mbox{\hyperlink{class_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})}
 
 
 
@@ -98,7 +98,7 @@ Creates new object of instance \mbox{\hyperlink{class_render_window}{Render\+Win
 \hline
 {\em height} & The new opened window height. \\
 \hline
-{\em scene} & The new opened scene loaded scene. This can be changed with \mbox{\hyperlink{class_render_window_aff1f326684632bb9e48f19ca7bd85e06}{Render\+Window\+::\+Load\+Scene}}.\\
+{\em scene} & The new opened scene loaded scene. This can be changed with \mbox{\hyperlink{class_render_window_a912a77a2ef8cf58b423d41e6409890d9}{Render\+Window\+::\+Load\+Scene}}.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -118,4 +118,4 @@ Runs Render\+Window\+::\+Close\+All\+Windows.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Core/\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Core/\mbox{\hyperlink{_core_8hpp}{Core.\+hpp}}\end{DoxyCompactItemize}

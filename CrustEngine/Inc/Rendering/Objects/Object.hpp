@@ -16,13 +16,10 @@ class Object
 public:
   /**
    * @brief Creates object at position 0, 0, 0.
-   * @details Calls Object::Init method with all values equal to 0.0.
    */
   Object();
 
-  ~Object();
-
-  virtual std::string GetObjectTypeName();
+  virtual ~Object();
 
   /**
    * @brief Getter for #isActive field.
@@ -32,14 +29,12 @@ public:
   bool IsActive();
 
   /**
-   * @brief Getter for #transform handler field.
-   *
-   * @sa CrustScript.hpp
+   * @brief Getter for #transform handler field. Transform represents position and rotation on the scene of the object.
    */
   Transform &GetTransform();
 
   /**
-   * @brief Getter for #scripts field.
+   * @brief Getter for #scripts field. All scripts of an objects are executed during scene rendering, if they are active.
    *
    * @sa CrustScript.hpp
    */
@@ -48,7 +43,7 @@ public:
   /**
    * @brief Attaches given script functionality to this object.
    *
-   * @param script Attached script which will be exectued specificly for this object.
+   * @param script Attached script, which will be exectued specificly for this object.
    */
   void AttachScript(CrustScript &script);
 
@@ -60,8 +55,8 @@ public:
   uint32_t GetID();
 
 protected:
-  bool isActive{true}; //!< Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.
-  Transform *transform;
+  bool isActive{true};                //!< Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.
+  Transform *transform;               //!< Represents object's orientation on the scene.
   std::vector<CrustScript *> scripts; //!< Scripts attached to this object, wchich will be executed.
 
   uint32_t ID;                      //!< Object's ID.
@@ -76,12 +71,8 @@ inline Object::Object()
 
 inline Object::~Object()
 {
-  Logger::Log("Object 1");
   delete transform;
-  Logger::Log("Object 2");
 }
-
-inline std::string Object::GetObjectTypeName() { return "Object"; }
 
 inline bool Object::IsActive() { return isActive; }
 

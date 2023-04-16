@@ -104,20 +104,31 @@ $(document).ready(function(){initNavTree('class_scene.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adbb43af1966d0be65f2f80e5c237f45a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#adbb43af1966d0be65f2f80e5c237f45a">Scene</a> (std::string _name, <a class="el" href="class_camera.html">Camera</a> *_mainCamera)</td></tr>
-<tr class="separator:adbb43af1966d0be65f2f80e5c237f45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db3a9c24b3a5a82e340fe38e5475cbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7db3a9c24b3a5a82e340fe38e5475cbd">Scene</a> (std::string _name, <a class="el" href="class_camera.html">Camera</a> &amp;_mainCamera)</td></tr>
+<tr class="separator:a7db3a9c24b3a5a82e340fe38e5475cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b8cec2e32546713915f8c6303c951f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b8cec2e32546713915f8c6303c951f1">~Scene</a> ()</td></tr>
 <tr class="separator:a3b8cec2e32546713915f8c6303c951f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e433e73e8aac5c1c5d57ba0e58be0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a01e433e73e8aac5c1c5d57ba0e58be0c">OnLoad</a> ()</td></tr>
+<tr class="memdesc:a01e433e73e8aac5c1c5d57ba0e58be0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the scene. Performs cleanup and gets the scene ready for rendering. Should be called on load from render window (It is done by render window).  <a href="class_scene.html#a01e433e73e8aac5c1c5d57ba0e58be0c">More...</a><br /></td></tr>
+<tr class="separator:a01e433e73e8aac5c1c5d57ba0e58be0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4650a6bd3622671bf761b0a600509d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8a4650a6bd3622671bf761b0a600509d">OnUnLoad</a> ()</td></tr>
+<tr class="memdesc:a8a4650a6bd3622671bf761b0a600509d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads the scene. Performs cleanup and gets the scene ready for new load. Should be called after the scene was unlaoded from render window (It is done by render window).  <a href="class_scene.html#a8a4650a6bd3622671bf761b0a600509d">More...</a><br /></td></tr>
+<tr class="separator:a8a4650a6bd3622671bf761b0a600509d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a31e0e1b9ce39bd9f5ec160835cc94d44">Start</a> ()</td></tr>
+<tr class="memdesc:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the scene. Loads all scripts, calls Start on it and performs cleanup. Should be called before rendering of this scene happens (It is done by render window).  <a href="class_scene.html#a31e0e1b9ce39bd9f5ec160835cc94d44">More...</a><br /></td></tr>
 <tr class="separator:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41d8ecc3af6c4153e47fc478e5e3d04f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a41d8ecc3af6c4153e47fc478e5e3d04f">Update</a> (double deltaTime)</td></tr>
+<tr class="memdesc:a41d8ecc3af6c4153e47fc478e5e3d04f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the scene. Calls update for each script. Should be called once per frame (It is done by render window).  <a href="class_scene.html#a41d8ecc3af6c4153e47fc478e5e3d04f">More...</a><br /></td></tr>
 <tr class="separator:a41d8ecc3af6c4153e47fc478e5e3d04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5810372744288eac09133bc77241308e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a5810372744288eac09133bc77241308e">GetMainCamera</a> ()</td></tr>
-<tr class="memdesc:a5810372744288eac09133bc77241308e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mainCamera field.  <a href="class_scene.html#a5810372744288eac09133bc77241308e">More...</a><br /></td></tr>
-<tr class="separator:a5810372744288eac09133bc77241308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165e38b1c743b1db60b2ba1e42213726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a165e38b1c743b1db60b2ba1e42213726">AddObject</a> (<a class="el" href="class_object.html">Object</a> *obj)</td></tr>
-<tr class="memdesc:a165e38b1c743b1db60b2ba1e42213726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the object to the scene.  <a href="class_scene.html#a165e38b1c743b1db60b2ba1e42213726">More...</a><br /></td></tr>
-<tr class="separator:a165e38b1c743b1db60b2ba1e42213726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1cf007ae56eefd29e4d364f5f4ed69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8a1cf007ae56eefd29e4d364f5f4ed69">GetMainCamera</a> ()</td></tr>
+<tr class="memdesc:a8a1cf007ae56eefd29e4d364f5f4ed69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mainCamera field.  <a href="class_scene.html#a8a1cf007ae56eefd29e4d364f5f4ed69">More...</a><br /></td></tr>
+<tr class="separator:a8a1cf007ae56eefd29e4d364f5f4ed69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc023b5549678db2c2d2ba7e9ddefe62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#acc023b5549678db2c2d2ba7e9ddefe62">SetMainCamera</a> (<a class="el" href="class_camera.html">Camera</a> &amp;newMainCamera)</td></tr>
+<tr class="memdesc:acc023b5549678db2c2d2ba7e9ddefe62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for mainCamera field.  <a href="class_scene.html#acc023b5549678db2c2d2ba7e9ddefe62">More...</a><br /></td></tr>
+<tr class="separator:acc023b5549678db2c2d2ba7e9ddefe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9ad66bea29441cab72ee58ec9b3917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aab9ad66bea29441cab72ee58ec9b3917">AddObject</a> (<a class="el" href="class_object.html">Object</a> &amp;obj)</td></tr>
+<tr class="memdesc:aab9ad66bea29441cab72ee58ec9b3917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the object to the scene.  <a href="class_scene.html#aab9ad66bea29441cab72ee58ec9b3917">More...</a><br /></td></tr>
+<tr class="separator:aab9ad66bea29441cab72ee58ec9b3917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b43d8fd68804b4db228e17b72be93be"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_render_object.html">RenderObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a3b43d8fd68804b4db228e17b72be93be">GetObjectsToRender</a> ()</td></tr>
 <tr class="memdesc:a3b43d8fd68804b4db228e17b72be93be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for renderObjects field.  <a href="class_scene.html#a3b43d8fd68804b4db228e17b72be93be">More...</a><br /></td></tr>
 <tr class="separator:a3b43d8fd68804b4db228e17b72be93be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,8 +150,8 @@ Public Member Functions</h2></td></tr>
 <p >This class is passed to render window as the information what to render and how to render. The <a class="el" href="class_render_window.html" title="Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...">RenderWindow</a> loads scene and calcuates the projection matrix based on mainCamera values. At each frame <a class="el" href="class_render_window.html" title="Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...">RenderWindow</a> goes through renderObjects and draws it.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_render_window_8hpp.html">RenderWindow.hpp</a> <a class="el" href="_camera_8hpp.html">Camera.hpp</a> <a class="el" href="_object_8hpp.html">Object.hpp</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adbb43af1966d0be65f2f80e5c237f45a" name="adbb43af1966d0be65f2f80e5c237f45a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbb43af1966d0be65f2f80e5c237f45a">&#9670;&#160;</a></span>Scene()</h2>
+<a id="a7db3a9c24b3a5a82e340fe38e5475cbd" name="a7db3a9c24b3a5a82e340fe38e5475cbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7db3a9c24b3a5a82e340fe38e5475cbd">&#9670;&#160;</a></span>Scene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +168,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_camera.html">Camera</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_camera.html">Camera</a> &amp;&#160;</td>
           <td class="paramname"><em>_mainCamera</em>&#160;</td>
         </tr>
         <tr>
@@ -208,8 +219,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a165e38b1c743b1db60b2ba1e42213726" name="a165e38b1c743b1db60b2ba1e42213726"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a165e38b1c743b1db60b2ba1e42213726">&#9670;&#160;</a></span>AddObject()</h2>
+<a id="aab9ad66bea29441cab72ee58ec9b3917" name="aab9ad66bea29441cab72ee58ec9b3917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9ad66bea29441cab72ee58ec9b3917">&#9670;&#160;</a></span>AddObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +228,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Scene::AddObject </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> &amp;&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -225,7 +236,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds the object to the scene. </p>
-<p >Adds the object to the objects array and if is type of <a class="el" href="class_render_object.html" title="Represents object present on the scene.">RenderObject</a> or <a class="el" href="class_light_source.html" title="Object on the scene representing basic directional light source. It represents parraller light rays.">LightSource</a> adds it's handler to renderObjects or lightSources array.</p>
+<p >Adds the object to the objects array and if is type of <a class="el" href="class_render_object.html" title="Represents renderable object present on the scene.">RenderObject</a> or <a class="el" href="class_light_source.html" title="Virtual class for light sources.">LightSource</a> adds it's handler to renderObjects or lightSources array.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>Added object.</td></tr>
@@ -265,8 +276,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5810372744288eac09133bc77241308e" name="a5810372744288eac09133bc77241308e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5810372744288eac09133bc77241308e">&#9670;&#160;</a></span>GetMainCamera()</h2>
+<a id="a8a1cf007ae56eefd29e4d364f5f4ed69" name="a8a1cf007ae56eefd29e4d364f5f4ed69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1cf007ae56eefd29e4d364f5f4ed69">&#9670;&#160;</a></span>GetMainCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +286,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_camera.html">Camera</a> * Scene::GetMainCamera </td>
+          <td class="memname"><a class="el" href="class_camera.html">Camera</a> &amp; Scene::GetMainCamera </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -379,6 +390,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a01e433e73e8aac5c1c5d57ba0e58be0c" name="a01e433e73e8aac5c1c5d57ba0e58be0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e433e73e8aac5c1c5d57ba0e58be0c">&#9670;&#160;</a></span>OnLoad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::OnLoad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads the scene. Performs cleanup and gets the scene ready for rendering. Should be called on load from render window (It is done by render window). </p>
+
+</div>
+</div>
+<a id="a8a4650a6bd3622671bf761b0a600509d" name="a8a4650a6bd3622671bf761b0a600509d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4650a6bd3622671bf761b0a600509d">&#9670;&#160;</a></span>OnUnLoad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::OnUnLoad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unloads the scene. Performs cleanup and gets the scene ready for new load. Should be called after the scene was unlaoded from render window (It is done by render window). </p>
+
+</div>
+</div>
 <a id="a90165078e5ee14185bbbfd84f56f75a1" name="a90165078e5ee14185bbbfd84f56f75a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90165078e5ee14185bbbfd84f56f75a1">&#9670;&#160;</a></span>SetLightProjection()</h2>
 
@@ -407,6 +456,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="acc023b5549678db2c2d2ba7e9ddefe62" name="acc023b5549678db2c2d2ba7e9ddefe62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc023b5549678db2c2d2ba7e9ddefe62">&#9670;&#160;</a></span>SetMainCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::SetMainCamera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_camera.html">Camera</a> &amp;&#160;</td>
+          <td class="paramname"><em>newMainCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setter for mainCamera field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to camera, which will be new main camera (From it's perspective the world will be rendered).</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_camera_8hpp.html">Camera.hpp</a> </dd></dl>
+
+</div>
+</div>
 <a id="a31e0e1b9ce39bd9f5ec160835cc94d44" name="a31e0e1b9ce39bd9f5ec160835cc94d44"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31e0e1b9ce39bd9f5ec160835cc94d44">&#9670;&#160;</a></span>Start()</h2>
 
@@ -421,6 +500,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Starts the scene. Loads all scripts, calls Start on it and performs cleanup. Should be called before rendering of this scene happens (It is done by render window). </p>
 
 </div>
 </div>
@@ -440,10 +521,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Updates the scene. Calls update for each script. Should be called once per frame (It is done by render window). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Time that passed since last frame was rendered. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Core/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Core/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

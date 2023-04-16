@@ -4,20 +4,15 @@
 #include <Rendering/Objects/Object.hpp>
 
 /**
- * @brief Object on the scene representing basic directional light source. It represents parraller light rays.
+ * @brief Virtual class for light sources.
  */
 class LightSource : public Object
 {
 public:
   /**
    * @param _intensivity Light's intensivity.
-   * @param _dir Light's direction.
    */
   LightSource(double _intensivity);
-
-  virtual ~LightSource() = default;
-
-  virtual std::string GetObjectTypeName() override;
 
   /**
    * @brief Getter for light's #intesivity field.
@@ -36,8 +31,6 @@ protected:
 };
 
 inline LightSource::LightSource(double _intensivity) : intesivity(_intensivity), Object() {}
-
-inline std::string LightSource::GetObjectTypeName() { return "Light Source"; }
 
 inline uint8_t LightSource::GetIntensivity() { return intesivity; }
 

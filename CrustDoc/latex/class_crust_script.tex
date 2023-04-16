@@ -13,27 +13,26 @@ Inheritance diagram for Crust\+Script\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_crust_script_a1b1fe5bc2b6e16c3f098484e8acc577c}{Crust\+Script}} (\mbox{\hyperlink{class_object}{Object}} $\ast$\+\_\+parent\+Obj)
+\mbox{\hyperlink{class_crust_script_a6f24d55094ea3a8956508cbca0e15c4b}{Crust\+Script}} ()
 \item 
 virtual \mbox{\hyperlink{class_crust_script_ac6ad2879105f990db45593dafa5b2140}{$\sim$\+Crust\+Script}} ()
 \item 
 virtual void \mbox{\hyperlink{class_crust_script_a6f63e4ecf289105c203696cce3e52651}{Start}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function called when script is being attached to the object. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}{Update}} (double delta\+Time)
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_object}{Object}} $\ast$ \mbox{\hyperlink{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}{parent\+Obj}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function called once per frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_script_a4342d644329a50d1a03517ee2fd9f689}{Attach\+To}} (\mbox{\hyperlink{class_object}{Object}} \&\+\_\+parent\+Obj)
+\begin{DoxyCompactList}\small\item\em Function that should only be called once. This is only called from \mbox{\hyperlink{class_object_a2fbd7872006c074445b88970ae148e62}{Object\+::\+Attach\+Script}} and should not be called by the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object}{Object}} \& \mbox{\hyperlink{class_crust_script_aa79919d3db0732975670a5ca1fbc4988}{Get\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Get the object of an parent class that holds this sctipt. It is highly useful to perform any action on parent object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_crust_script_a1b1fe5bc2b6e16c3f098484e8acc577c}\label{class_crust_script_a1b1fe5bc2b6e16c3f098484e8acc577c}} 
+\mbox{\Hypertarget{class_crust_script_a6f24d55094ea3a8956508cbca0e15c4b}\label{class_crust_script_a6f24d55094ea3a8956508cbca0e15c4b}} 
 \index{CrustScript@{CrustScript}!CrustScript@{CrustScript}}
 \index{CrustScript@{CrustScript}!CrustScript@{CrustScript}}
 \doxysubsubsection{\texorpdfstring{CrustScript()}{CrustScript()}}
-{\footnotesize\ttfamily Crust\+Script\+::\+Crust\+Script (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{\+\_\+parent\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Crust\+Script\+::\+Crust\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_crust_script_ac6ad2879105f990db45593dafa5b2140}\label{class_crust_script_ac6ad2879105f990db45593dafa5b2140}} 
 \index{CrustScript@{CrustScript}!````~CrustScript@{$\sim$CrustScript}}
@@ -44,6 +43,37 @@ virtual void \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc66
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_script_a4342d644329a50d1a03517ee2fd9f689}\label{class_crust_script_a4342d644329a50d1a03517ee2fd9f689}} 
+\index{CrustScript@{CrustScript}!AttachTo@{AttachTo}}
+\index{AttachTo@{AttachTo}!CrustScript@{CrustScript}}
+\doxysubsubsection{\texorpdfstring{AttachTo()}{AttachTo()}}
+{\footnotesize\ttfamily void Crust\+Script\+::\+Attach\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} \&}]{\+\_\+parent\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function that should only be called once. This is only called from \mbox{\hyperlink{class_object_a2fbd7872006c074445b88970ae148e62}{Object\+::\+Attach\+Script}} and should not be called by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+parent\+Obj} & \mbox{\hyperlink{class_object}{Object}} that holds this script.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_object_8hpp}{Object.\+hpp}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_crust_script_aa79919d3db0732975670a5ca1fbc4988}\label{class_crust_script_aa79919d3db0732975670a5ca1fbc4988}} 
+\index{CrustScript@{CrustScript}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!CrustScript@{CrustScript}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object}{Object}} \& Crust\+Script\+::\+Get\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the object of an parent class that holds this sctipt. It is highly useful to perform any action on parent object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_object}{Object}}\& Parent object reference. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_crust_script_a6f63e4ecf289105c203696cce3e52651}\label{class_crust_script_a6f63e4ecf289105c203696cce3e52651}} 
 \index{CrustScript@{CrustScript}!Start@{Start}}
 \index{Start@{Start}!CrustScript@{CrustScript}}
@@ -52,7 +82,11 @@ virtual void \mbox{\hyperlink{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc66
 
 
 
-Reimplemented in \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e15e4}{Loop\+Move}}, and \mbox{\hyperlink{class_rotate_af665dc089286af2172d50fd9969e67d1}{Rotate}}.
+Function called when script is being attached to the object. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e15e4}{Loop\+Move}}, and \mbox{\hyperlink{class_mover_ae155f58c82b984805a668830e64bf538}{Mover}}.
 
 \mbox{\Hypertarget{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}\label{class_crust_script_a0fb15cd4d45424abf28aa3ee91dc6611}} 
 \index{CrustScript@{CrustScript}!Update@{Update}}
@@ -62,19 +96,19 @@ Reimplemented in \mbox{\hyperlink{class_loop_move_ae300476115f229c46618e9dd5f7e1
 
 
 
-Reimplemented in \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{Loop\+Move}}, and \mbox{\hyperlink{class_rotate_a400686375957186ada461df00e913655}{Rotate}}.
+Function called once per frame. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time that passed since last frame -\/ it represents how much seconds does the last frame took to render. \\
+\hline
+\end{DoxyParams}
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}\label{class_crust_script_a8c204df77e520bd70f6b03463746a3cd}} 
-\index{CrustScript@{CrustScript}!parentObj@{parentObj}}
-\index{parentObj@{parentObj}!CrustScript@{CrustScript}}
-\doxysubsubsection{\texorpdfstring{parentObj}{parentObj}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_object}{Object}}$\ast$ Crust\+Script\+::parent\+Obj\hspace{0.3cm}{\ttfamily [protected]}}
+
+Reimplemented in \mbox{\hyperlink{class_loop_move_a72a0c87a07549fcc497a9fcc47dca88a}{Loop\+Move}}, and \mbox{\hyperlink{class_mover_a4a3b08ca3643d4c608bad679de5eeb30}{Mover}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Scripting/\mbox{\hyperlink{_crust_script_8hpp}{Crust\+Script.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Scripting/\mbox{\hyperlink{_crust_script_8hpp}{Crust\+Script.\+hpp}}\end{DoxyCompactItemize}

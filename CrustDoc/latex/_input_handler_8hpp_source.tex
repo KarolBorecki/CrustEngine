@@ -1,0 +1,101 @@
+\hypertarget{_input_handler_8hpp_source}{}\doxysection{Input\+Handler.\+hpp}
+\label{_input_handler_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Input/InputHandler.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Input/InputHandler.hpp}}
+\mbox{\hyperlink{_input_handler_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_INPUTHANDLER\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_INPUTHANDLER\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_logger_8hpp}{Logging/Logger.hpp}}>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_input_event_8hpp}{Input/InputEvent.hpp}}>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_input_handler}{InputHandler}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_handler_a37c0e386071d541553ad7e1791847ce4}{BeginInputMonitoring}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{26   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_handler_a8ce9e45fb514a40ceb4cb95762c4e0f6}{PollEvent}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{33   \textcolor{keyword}{static} \mbox{\hyperlink{struct_input_event}{InputEvent}} \&\mbox{\hyperlink{class_input_handler_aa90d8a2336b6a041e0dfdc25a1645d6b}{GetLastEvent}}();}
+\DoxyCodeLine{41   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_handler_a80edcd5f1a346e8a17b16ed9579b2a23}{IsPressed}}(\mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596}{Key::KeyCode}} key);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44   \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} isInitialized\{\textcolor{keyword}{false}\}; }
+\DoxyCodeLine{45   \textcolor{keyword}{static} \textcolor{keyword}{inline} \mbox{\hyperlink{struct_input_event}{InputEvent}} lastEvent;      }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *keyboardState; }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52   \textcolor{keyword}{static} \textcolor{keywordtype}{void} ResetEventState();}
+\DoxyCodeLine{59   \textcolor{keyword}{static} \mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596}{Key::KeyCode}} ParseSDLKeyCodeEvent(int32\_t keyCode);}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_handler_a37c0e386071d541553ad7e1791847ce4}{InputHandler::BeginInputMonitoring}}()}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64   \textcolor{keywordflow}{if} (isInitialized)}
+\DoxyCodeLine{65     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{66   ResetEventState();}
+\DoxyCodeLine{67   isInitialized = \textcolor{keyword}{true};}
+\DoxyCodeLine{68   keyboardState = SDL\_GetKeyboardState(NULL);}
+\DoxyCodeLine{69 \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_handler_a8ce9e45fb514a40ceb4cb95762c4e0f6}{InputHandler::PollEvent}}()}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73   \textcolor{keywordflow}{if} (!isInitialized)}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{keyword}{static} SDL\_Event sdlEvent;}
+\DoxyCodeLine{77   \textcolor{keywordflow}{if} (SDL\_PollEvent(\&sdlEvent))}
+\DoxyCodeLine{78   \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_QUIT)}
+\DoxyCodeLine{80     \{}
+\DoxyCodeLine{81       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563ac59d84eb62bce7d7588571e5f098641b}{Event::EVENT\_WINDOW\_QUIT}};}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_KEYDOWN \&\& sdlEvent.key.repeat == 0)}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de}{Event::EVENT\_KEY\_DOWN}};}
+\DoxyCodeLine{86       lastEvent.\mbox{\hyperlink{struct_input_event_aa811a11480a7569d4690c692d5d893e5}{keyCode}} = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_KEYUP \&\& sdlEvent.key.repeat == 0)}
+\DoxyCodeLine{89     \{}
+\DoxyCodeLine{90       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59}{Event::EVENT\_KEY\_UP}};}
+\DoxyCodeLine{91       lastEvent.\mbox{\hyperlink{struct_input_event_aa811a11480a7569d4690c692d5d893e5}{keyCode}} = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_MOUSEBUTTONDOWN)}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563a7ff08ba3d96b7415720ff39a50b028b7}{Event::EVENT\_MOUSE\_DOWN}};}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_MOUSEBUTTONUP)}
+\DoxyCodeLine{98     \{}
+\DoxyCodeLine{99       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1}{Event::EVENT\_MOUSE\_UP}};}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (sdlEvent.type == SDL\_MOUSEWHEEL)}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103       lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563a5f01cdd866dd2f5642f8e1693a0bd93b}{Event::EVENT\_WHEEL}};}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105   \}}
+\DoxyCodeLine{106 \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_handler_a80edcd5f1a346e8a17b16ed9579b2a23}{InputHandler::IsPressed}}(\mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596}{Key::KeyCode}} key)}
+\DoxyCodeLine{109 \{}
+\DoxyCodeLine{110   \textcolor{keywordflow}{return} keyboardState[key] == 1;}
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{inline} \mbox{\hyperlink{struct_input_event}{InputEvent}} \&\mbox{\hyperlink{class_input_handler_aa90d8a2336b6a041e0dfdc25a1645d6b}{InputHandler::GetLastEvent}}() \{ \textcolor{keywordflow}{return} lastEvent; \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} InputHandler::ResetEventState()}
+\DoxyCodeLine{116 \{}
+\DoxyCodeLine{117   lastEvent.\mbox{\hyperlink{struct_input_event_a394850f0074739828cba172455d67e20}{type}} = \mbox{\hyperlink{namespace_event_ad26f1751aec1886ee5f34ba22391c563af125761e0b089ed6e6bb0db2f3522bec}{Event::EVENT\_UNKNOWN}};}
+\DoxyCodeLine{118   lastEvent.\mbox{\hyperlink{struct_input_event_aa811a11480a7569d4690c692d5d893e5}{keyCode}} = \mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938}{Key::KEY\_NONE}};}
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{inline} \mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596}{Key::KeyCode}} InputHandler::ParseSDLKeyCodeEvent(int32\_t keyCode)}
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123   \textcolor{keywordflow}{if} (keyCode > \mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596a6d46dbac4791d736fe94f2b2eb145e95}{Key::KEY\_Z}})}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938}{Key::KEY\_NONE}};}
+\DoxyCodeLine{125   \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_key_ae48052aa0dd2692dbca9f44ad7e35596}{Key::KeyCode}}\textcolor{keyword}{>}(keyCode);}
+\DoxyCodeLine{126 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_INPUTHANDLER\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

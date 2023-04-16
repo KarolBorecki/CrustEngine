@@ -1,4 +1,4 @@
 var _matrix_8hpp =
 [
-    [ "Matrix", "class_matrix.html", "class_matrix" ]
+    [ "Matrix< T >", "class_matrix.html", "class_matrix" ]
 ];

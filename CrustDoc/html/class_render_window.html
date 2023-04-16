@@ -104,46 +104,49 @@ $(document).ready(function(){initNavTree('class_render_window.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0bb39f73afbd1bd08426ae115987963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#aa0bb39f73afbd1bd08426ae115987963">RenderWindow</a> (int _width, int _height, <a class="el" href="class_scene.html">Scene</a> *_scene)</td></tr>
-<tr class="memdesc:aa0bb39f73afbd1bd08426ae115987963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new window and loads given scene.  <a href="class_render_window.html#aa0bb39f73afbd1bd08426ae115987963">More...</a><br /></td></tr>
-<tr class="separator:aa0bb39f73afbd1bd08426ae115987963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474af6882664e442e75373327fee808a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#a474af6882664e442e75373327fee808a">RenderWindow</a> (uint32_t _width, uint32_t _height, <a class="el" href="class_scene.html">Scene</a> &amp;_scene)</td></tr>
+<tr class="memdesc:a474af6882664e442e75373327fee808a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new window and loads given scene.  <a href="class_render_window.html#a474af6882664e442e75373327fee808a">More...</a><br /></td></tr>
+<tr class="separator:a474af6882664e442e75373327fee808a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17a8d98de14f8ddbbedbee39cf774e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#ae17a8d98de14f8ddbbedbee39cf774e0">~RenderWindow</a> ()</td></tr>
 <tr class="separator:ae17a8d98de14f8ddbbedbee39cf774e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7b6b9d6045bc2b9fbb41c474122cf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">Start</a> ()</td></tr>
 <tr class="memdesc:ace7b6b9d6045bc2b9fbb41c474122cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the window rendering process.  <a href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8">More...</a><br /></td></tr>
 <tr class="separator:ace7b6b9d6045bc2b9fbb41c474122cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9fd523d9888ca17333e50216ba096c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">Close</a> ()</td></tr>
-<tr class="memdesc:a0e9fd523d9888ca17333e50216ba096c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the window rendering process.  <a href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">More...</a><br /></td></tr>
+<tr class="memdesc:a0e9fd523d9888ca17333e50216ba096c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the window rendering process bu killing the renderer. When called the <a class="el" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8" title="Starts the window rendering process.">Start</a> method stops it's loop.  <a href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c">More...</a><br /></td></tr>
 <tr class="separator:a0e9fd523d9888ca17333e50216ba096c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1f326684632bb9e48f19ca7bd85e06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#aff1f326684632bb9e48f19ca7bd85e06">LoadScene</a> (<a class="el" href="class_scene.html">Scene</a> *scene)</td></tr>
-<tr class="memdesc:aff1f326684632bb9e48f19ca7bd85e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads scene.  <a href="class_render_window.html#aff1f326684632bb9e48f19ca7bd85e06">More...</a><br /></td></tr>
-<tr class="separator:aff1f326684632bb9e48f19ca7bd85e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912a77a2ef8cf58b423d41e6409890d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#a912a77a2ef8cf58b423d41e6409890d9">LoadScene</a> (<a class="el" href="class_scene.html">Scene</a> &amp;scene)</td></tr>
+<tr class="memdesc:a912a77a2ef8cf58b423d41e6409890d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads new scene that will be rendered in this window.  <a href="class_render_window.html#a912a77a2ef8cf58b423d41e6409890d9">More...</a><br /></td></tr>
+<tr class="separator:a912a77a2ef8cf58b423d41e6409890d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class responsible to open window, load scene, manage renderer thread and pass render objects to rendering. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa0bb39f73afbd1bd08426ae115987963" name="aa0bb39f73afbd1bd08426ae115987963"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0bb39f73afbd1bd08426ae115987963">&#9670;&#160;</a></span>RenderWindow()</h2>
+<a id="a474af6882664e442e75373327fee808a" name="a474af6882664e442e75373327fee808a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474af6882664e442e75373327fee808a">&#9670;&#160;</a></span>RenderWindow()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">RenderWindow::RenderWindow </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>_width</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>_height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_scene.html">Scene</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_scene.html">Scene</a> &amp;&#160;</td>
           <td class="paramname"><em>_scene</em>&#160;</td>
         </tr>
         <tr>
@@ -152,6 +155,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Creates new window and loads given scene. </p>
@@ -172,6 +180,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">RenderWindow::~RenderWindow </td>
@@ -180,6 +191,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p >If renderer is not nullptr deletes it. </p>
 
@@ -191,6 +207,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RenderWindow::Close </td>
@@ -199,29 +218,43 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Stops the window rendering process. </p>
+<p>Stops the window rendering process bu killing the renderer. When called the <a class="el" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8" title="Starts the window rendering process.">Start</a> method stops it's loop. </p>
 
 </div>
 </div>
-<a id="aff1f326684632bb9e48f19ca7bd85e06" name="aff1f326684632bb9e48f19ca7bd85e06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff1f326684632bb9e48f19ca7bd85e06">&#9670;&#160;</a></span>LoadScene()</h2>
+<a id="a912a77a2ef8cf58b423d41e6409890d9" name="a912a77a2ef8cf58b423d41e6409890d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912a77a2ef8cf58b423d41e6409890d9">&#9670;&#160;</a></span>LoadScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RenderWindow::LoadScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_scene.html">Scene</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_scene.html">Scene</a> &amp;&#160;</td>
           <td class="paramname"><em>scene</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Loads scene. </p>
+<p>Loads new scene that will be rendered in this window. </p>
+<p >Unloads previously loaded scene by calling #OnUnLoad. gets new scene's name as caption. Recalculates projection matrix according to new scene's main camera and calls #OnLoad on new scene.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scene</td><td>Handler to scene handler, which will be loaded. </td></tr>
@@ -247,11 +280,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the window rendering process. </p>
+<p >Starts loop that performs rendering as long as renderer is opened and running. At each frame it calculates FPS, Polls for any pending input events, updates loaded scene by calling #Update method, checks if last event that occured was not EVENT_QUIT and if so ends the renderer work, cleans window and draws projected polygons.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_renderer_8hpp.html">Renderer.hpp</a>, </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/<a class="el" href="_render_window_8hpp_source.html">RenderWindow.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/<a class="el" href="_render_window_8hpp_source.html">RenderWindow.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

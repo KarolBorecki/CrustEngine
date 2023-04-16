@@ -18,41 +18,48 @@ Inheritance diagram for Renderer\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}{Renderer}} (int \+\_\+width, int \+\_\+height)
+\mbox{\hyperlink{class_renderer_a617f76dcdd347cf5f8dea3d0d05fd6de}{Renderer}} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
 \item 
 \mbox{\hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer}} ()
 \item 
-void \mbox{\hyperlink{class_renderer_aa08362456da3321f246d4de151232e27}{Draw\+Tri}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri)
-\begin{DoxyCompactList}\small\item\em Draws given triangle on the screen. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_a05d32dacc896f21d4975a0c5655a402d}{Draw\+Mesh}} (\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$mesh, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$rot, \mbox{\hyperlink{class_camera}{Camera}} $\ast$cam, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$light\+Dir, bool project\+Light)
+void \mbox{\hyperlink{class_renderer_ae9b3f37e9a69fab19cf270ca7521de21}{Draw\+Polygon}} (\mbox{\hyperlink{class_polygon}{Polygon}} \&poli)
+\begin{DoxyCompactList}\small\item\em Draws given polygon on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderer_a8bc45180e9b61bd40b25a367c9588efb}{Draw\+Mesh}} (\mbox{\hyperlink{class_mesh}{Mesh}} \&mesh, \mbox{\hyperlink{class_vector3}{Vector3}} \&pos, \mbox{\hyperlink{class_vector3}{Vector3}} \&rot, \mbox{\hyperlink{class_camera}{Camera}} \&cam, \mbox{\hyperlink{class_vector3}{Vector3}} \&light\+Dir, bool project\+Light)
 \begin{DoxyCompactList}\small\item\em Draws given mesh on the screen. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_renderer_ae150d2d3f583b20e971ad60197205e36}{Project\+Triangle}} (\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$tri, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$pos, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$rot, \mbox{\hyperlink{class_camera}{Camera}} $\ast$cam, \mbox{\hyperlink{class_vector3}{Vector3}} $\ast$light\+Dir, bool project\+Light)
-\begin{DoxyCompactList}\small\item\em Projects given triangle using proj\+Matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ \mbox{\hyperlink{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}{Get\+Projection\+Matrix}} ()
+\mbox{\hyperlink{class_polygon}{Polygon}} \& \mbox{\hyperlink{class_renderer_a6f49c78d6f264c76a6478813c55f3bb2}{Project\+Polygon}} (\mbox{\hyperlink{class_polygon}{Polygon}} \&poli, \mbox{\hyperlink{class_vector3}{Vector3}} \&pos, \mbox{\hyperlink{class_vector3}{Vector3}} \&rot, \mbox{\hyperlink{class_camera}{Camera}} \&cam, \mbox{\hyperlink{class_vector3}{Vector3}} \&light\+Dir, bool project\+Light)
+\begin{DoxyCompactList}\small\item\em Projects given polygon using proj\+Matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_matrix}{Matrix}}$<$ double $>$ \& \mbox{\hyperlink{class_renderer_a9c8160c634360c83d3a5d31653c15f6e}{Get\+Projection\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Getter for proj\+Matrix field. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_a97146506b00259301115bec677ab29e6}{Recalculate\+Projection\+Matrix}} (\mbox{\hyperlink{class_camera}{Camera}} $\ast$cam)
+void \mbox{\hyperlink{class_renderer_acf73586e7e50e21034aecc3954d88d8e}{Recalculate\+Projection\+Matrix}} (\mbox{\hyperlink{class_camera}{Camera}} \&cam)
 \begin{DoxyCompactList}\small\item\em Recalculates the projection matrix for given camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static constexpr int \mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\+\_\+\+MATRIX\+\_\+\+SIZE}} \{ 4 \}
-\end{DoxyCompactItemize}
+static constexpr int \mbox{\hyperlink{class_renderer_a6abcaa726ad275908c817f4592760fda}{PROJ\+\_\+\+MATRIX\+\_\+\+SIZE}} \{4\}
+\begin{DoxyCompactList}\small\item\em Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Class used to render simple shapes on the window. 
 
-Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. 
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. It is able to render renderable objects on the screen with given lightning. Refer to \mbox{\hyperlink{class_render_window}{Render\+Window}} class for more information as this class itself is more low level.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} 
+\end{DoxySeeAlso}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}\label{class_renderer_a9972ee4e3b677e08bb5b5c0a6b7163c9}} 
+\mbox{\Hypertarget{class_renderer_a617f76dcdd347cf5f8dea3d0d05fd6de}\label{class_renderer_a617f76dcdd347cf5f8dea3d0d05fd6de}} 
 \index{Renderer@{Renderer}!Renderer@{Renderer}}
 \index{Renderer@{Renderer}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}}
-{\footnotesize\ttfamily Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{\+\_\+width,  }\item[{uint32\+\_\+t}]{\+\_\+height }\end{DoxyParamCaption})}
 
-Creates new object of type \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Matrix field.
+Creates new object of type \mbox{\hyperlink{class_renderer}{Renderer}} allocates \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Matrix field.
+
+Constructor does not initalize new \mbox{\hyperlink{class_renderer}{Renderer}} properly. In order to init a renderer You need to call \mbox{\hyperlink{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}{Init}} and \mbox{\hyperlink{class_renderer_wrapper_aa75e25014c0efd3ff09d9fdf4e8bbff5}{Create\+Window}} methods. Also remember to load new scene so that renderer has something to render.
 
 
 \begin{DoxyParams}{Parameters}
@@ -70,17 +77,17 @@ Creates new object of type \mbox{\hyperlink{class_matrix}{Matrix}} for proj\+Mat
 If proj\+Matrix is not nullptr deletes it. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_renderer_a05d32dacc896f21d4975a0c5655a402d}\label{class_renderer_a05d32dacc896f21d4975a0c5655a402d}} 
+\mbox{\Hypertarget{class_renderer_a8bc45180e9b61bd40b25a367c9588efb}\label{class_renderer_a8bc45180e9b61bd40b25a367c9588efb}} 
 \index{Renderer@{Renderer}!DrawMesh@{DrawMesh}}
 \index{DrawMesh@{DrawMesh}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} $\ast$}]{mesh,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh}{Mesh}} \&}]{mesh,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} \&}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
 
 
 
 Draws given mesh on the screen. 
 
-Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.
+Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen. It also considers lightning and object\textquotesingle{}s postion (In future also rotation).
 
 
 \begin{DoxyParams}{Parameters}
@@ -92,82 +99,84 @@ Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for d
 \hline
 {\em cam} & \mbox{\hyperlink{class_camera}{Camera}}, from which perspective the mesh will be projected. \\
 \hline
+{\em light\+Dir} & lightning direction on the scene. Right now Crust engine only supports 1 directional light on the scene //\+TODO \\
+\hline
 {\em project\+Light} & Flag if the light should be proojected.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_renderer_aa08362456da3321f246d4de151232e27}\label{class_renderer_aa08362456da3321f246d4de151232e27}} 
-\index{Renderer@{Renderer}!DrawTri@{DrawTri}}
-\index{DrawTri@{DrawTri}!Renderer@{Renderer}}
-\doxysubsubsection{\texorpdfstring{DrawTri()}{DrawTri()}}
-{\footnotesize\ttfamily void Renderer\+::\+Draw\+Tri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_renderer_ae9b3f37e9a69fab19cf270ca7521de21}\label{class_renderer_ae9b3f37e9a69fab19cf270ca7521de21}} 
+\index{Renderer@{Renderer}!DrawPolygon@{DrawPolygon}}
+\index{DrawPolygon@{DrawPolygon}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawPolygon()}{DrawPolygon()}}
+{\footnotesize\ttfamily void Renderer\+::\+Draw\+Polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_polygon}{Polygon}} \&}]{poli }\end{DoxyParamCaption})}
 
 
 
-Draws given triangle on the screen. 
+Draws given polygon on the screen. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em tri} & \mbox{\hyperlink{class_triangle}{Triangle}} that will be drawn.\\
+{\em poli} & \mbox{\hyperlink{class_polygon}{Polygon}} that will be drawn.\\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}} 
+\mbox{\hyperlink{_polygon_8hpp}{Polygon.\+hpp}} \mbox{\hyperlink{_triangle_8hpp}{Triangle.\+hpp}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}\label{class_renderer_a1aefc3c14b9db1a0a7abfb784547018e}} 
+\mbox{\Hypertarget{class_renderer_a9c8160c634360c83d3a5d31653c15f6e}\label{class_renderer_a9c8160c634360c83d3a5d31653c15f6e}} 
 \index{Renderer@{Renderer}!GetProjectionMatrix@{GetProjectionMatrix}}
 \index{GetProjectionMatrix@{GetProjectionMatrix}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}} $\ast$ Renderer\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix}{Matrix}}$<$ double $>$ \& Renderer\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for proj\+Matrix field. 
 
 \begin{DoxyReturn}{Returns}
-Handler to proj\+Matrix field. 
+Reference to proj\+Matrix field. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_renderer_ae150d2d3f583b20e971ad60197205e36}\label{class_renderer_ae150d2d3f583b20e971ad60197205e36}} 
-\index{Renderer@{Renderer}!ProjectTriangle@{ProjectTriangle}}
-\index{ProjectTriangle@{ProjectTriangle}!Renderer@{Renderer}}
-\doxysubsubsection{\texorpdfstring{ProjectTriangle()}{ProjectTriangle()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Renderer\+::\+Project\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$}]{tri,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} $\ast$}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_renderer_a6f49c78d6f264c76a6478813c55f3bb2}\label{class_renderer_a6f49c78d6f264c76a6478813c55f3bb2}} 
+\index{Renderer@{Renderer}!ProjectPolygon@{ProjectPolygon}}
+\index{ProjectPolygon@{ProjectPolygon}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{ProjectPolygon()}{ProjectPolygon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_polygon}{Polygon}} \& Renderer\+::\+Project\+Polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_polygon}{Polygon}} \&}]{poli,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{pos,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{rot,  }\item[{\mbox{\hyperlink{class_camera}{Camera}} \&}]{cam,  }\item[{\mbox{\hyperlink{class_vector3}{Vector3}} \&}]{light\+Dir,  }\item[{bool}]{project\+Light }\end{DoxyParamCaption})}
 
 
 
-Projects given triangle using proj\+Matrix. 
+Projects given polygon using proj\+Matrix. 
 
-Class held by \mbox{\hyperlink{_render_window_8hpp}{Render\+Window.\+hpp}} for drawing purposes. It is able to render all shapes that is needed to show mesh on the flat screen.
+Class used in \mbox{\hyperlink{class_renderer_a8bc45180e9b61bd40b25a367c9588efb}{Draw\+Mesh}} method. It takes 3D space parameters and projects given \#poli accordingly to it\textquotesingle{}s position (in future also rotation) and scene\textquotesingle{}s lightining.
 
 
 \begin{DoxyParams}{Parameters}
-{\em tri} & Projected triangle. \\
+{\em poli} & Projected polygon. \\
 \hline
-{\em pos} & Projected triangle\textquotesingle{}s mesh position in 3D space. \\
+{\em pos} & Projected polygon\textquotesingle{}s mesh position in 3D space. \\
 \hline
-{\em rot} & Projected triangle\textquotesingle{}s mesh rotataion in 3D space. \\
+{\em rot} & Projected polygon\textquotesingle{}s mesh rotataion in 3D space. \\
 \hline
-{\em cam} & \mbox{\hyperlink{class_camera}{Camera}}, from which perspective the triangle will be projected. \\
+{\em cam} & \mbox{\hyperlink{class_camera}{Camera}}, from which perspective the polygon will be projected. \\
 \hline
 {\em project\+Light} & Flag if the light should be proojected.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Projected triangle. 
+Projected polygon. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_renderer_a97146506b00259301115bec677ab29e6}\label{class_renderer_a97146506b00259301115bec677ab29e6}} 
+\mbox{\Hypertarget{class_renderer_acf73586e7e50e21034aecc3954d88d8e}\label{class_renderer_acf73586e7e50e21034aecc3954d88d8e}} 
 \index{Renderer@{Renderer}!RecalculateProjectionMatrix@{RecalculateProjectionMatrix}}
 \index{RecalculateProjectionMatrix@{RecalculateProjectionMatrix}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{RecalculateProjectionMatrix()}{RecalculateProjectionMatrix()}}
-{\footnotesize\ttfamily void Renderer\+::\+Recalculate\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} $\ast$}]{cam }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Renderer\+::\+Recalculate\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera}{Camera}} \&}]{cam }\end{DoxyParamCaption})}
 
 
 
 Recalculates the projection matrix for given camera. 
 
-The projection matrix is calculated as here is explained\+: \href{https://en.wikipedia.org/wiki/3D_projection\#Perspective_projection}{\texttt{ Projection matrix}} ~\newline
+The projection matrix is calculated as here is explained\+: \href{https://en.wikipedia.org/wiki/3D_projection\#Perspective_projection}{\texttt{ Projection matrix on wikipedia}} ~\newline
 
 
 \begin{DoxyNote}{Note}
@@ -188,10 +197,14 @@ The engine calculation is made based on this formulas.
 \index{Renderer@{Renderer}!PROJ\_MATRIX\_SIZE@{PROJ\_MATRIX\_SIZE}}
 \index{PROJ\_MATRIX\_SIZE@{PROJ\_MATRIX\_SIZE}!Renderer@{Renderer}}
 \doxysubsubsection{\texorpdfstring{PROJ\_MATRIX\_SIZE}{PROJ\_MATRIX\_SIZE}}
-{\footnotesize\ttfamily constexpr int Renderer\+::\+PROJ\+\_\+\+MATRIX\+\_\+\+SIZE \{ 4 \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr int Renderer\+::\+PROJ\+\_\+\+MATRIX\+\_\+\+SIZE \{4\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed. 
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}

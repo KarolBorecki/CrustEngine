@@ -38,8 +38,8 @@ enum \mbox{\hyperlink{class_renderer_wrapper_a9a3cfe775f88bf5b58b293618c1fe8ce}{
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_renderer_wrapper_aa26baa306b1544f82b87e239ee3315a0}{Renderer\+Wrapper}} (int \+\_\+width, int \+\_\+height)
-\item 
+\mbox{\hyperlink{class_renderer_wrapper_ac95051051d48f9a1297efef198837341}{Renderer\+Wrapper}} (uint32\+\_\+t \+\_\+width, uint32\+\_\+t \+\_\+height)
+\begin{DoxyCompactList}\small\item\em Creates new renderer. Does not create window. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_renderer_wrapper_a6e76382d887dc72d1409e8070304d924}{$\sim$\+Renderer\+Wrapper}} ()=default
 \item 
 \mbox{\hyperlink{class_renderer_wrapper_a9a70ebe118828e5430332dc83fe75109}{Renderer\+Status}} \mbox{\hyperlink{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}{Init}} ()
@@ -48,13 +48,13 @@ virtual \mbox{\hyperlink{class_renderer_wrapper_a6e76382d887dc72d1409e8070304d92
 \begin{DoxyCompactList}\small\item\em Opens new window to draw on. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_a34dd25d862f072d17d0f6a7aedfd2d59}{Set\+Window\+Title}} (std\+::string title)
 \begin{DoxyCompactList}\small\item\em Sets window caption to \#title. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}{Set\+Draw\+Color}} (int r, int g, int b, int a)
+void \mbox{\hyperlink{class_renderer_wrapper_ac938fcb512c2197639e528cae8e294c4}{Set\+Draw\+Color}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b, uint8\+\_\+t a)
 \begin{DoxyCompactList}\small\item\em Sets drawing color to given values. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_wrapper_a0044afb67be15b213e9c34e00b01af4c}{Set\+Draw\+Color}} (int r, int g, int b)
+void \mbox{\hyperlink{class_renderer_wrapper_a22b6bd48ddf85522796bc5ea36ade1f7}{Set\+Draw\+Color}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
 \begin{DoxyCompactList}\small\item\em Sets drawing color to given values. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_wrapper_a38cf63b51b30046109ed9db61b330f19}{Set\+Draw\+Color}} (int color, int a)
+void \mbox{\hyperlink{class_renderer_wrapper_af00f07b059629d5063a659e8055c050f}{Set\+Draw\+Color}} (uint32\+\_\+t color, uint8\+\_\+t a)
 \begin{DoxyCompactList}\small\item\em Sets drawing color to given values. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_wrapper_a540c5ee48a4d95a131289e0c34856e9c}{Set\+Draw\+Color}} (int color)
+void \mbox{\hyperlink{class_renderer_wrapper_a579bf6fdd1550af4711e21467556fce4}{Set\+Draw\+Color}} (uint32\+\_\+t color)
 \begin{DoxyCompactList}\small\item\em Sets drawing color to given value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_ad1c53fa72b0542f272bf45b137e9b647}{Draw\+Line}} (int startX, int startY, int endX, int endY)
 \begin{DoxyCompactList}\small\item\em Draws straight line on the window from start (x, y) to end (x, y). X and y values are given in pixels. \end{DoxyCompactList}\item 
@@ -66,19 +66,17 @@ void \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{
 \begin{DoxyCompactList}\small\item\em Function called to show everything that has been drawn on the screen after last \mbox{\hyperlink{class_renderer_wrapper_a1eb51647308b1afb0fe1af41b9085e65}{Renderer\+Wrapper\+::\+Show}} call. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Clean}} ()
 \begin{DoxyCompactList}\small\item\em Function called to clean everything that has been drawn on the screen after last \mbox{\hyperlink{class_renderer_wrapper_a40547d72fa39d1b7145bcbab2ad88b83}{Renderer\+Wrapper\+::\+Clean}} call. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{Lib\+Renderer\+Bool}} \mbox{\hyperlink{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}{Is\+Running}} ()
+\mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{Lib\+Renderer\+Bool}} \mbox{\hyperlink{class_renderer_wrapper_afb2182908e974f4c940d2ddac2084bf7}{Is\+Running}} () const
 \begin{DoxyCompactList}\small\item\em Getter for is\+Running field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_a67346fef7b34bbd20af680866c9d014a}{Stop\+Running}} ()
 \begin{DoxyCompactList}\small\item\em Stops the renderer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}{Get\+Event}} ()
-\begin{DoxyCompactList}\small\item\em Checks for events from user and calls methods accordingly. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_renderer_wrapper_aa6f954554db0e56417c7a1b2cf3aef28}{Quit}} ()
 \begin{DoxyCompactList}\small\item\em Quits the graphic library. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{Lib\+Renderer}} $\ast$ \mbox{\hyperlink{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}{Get\+Renderer}} ()
+\mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{Lib\+Renderer}} \& \mbox{\hyperlink{class_renderer_wrapper_a830ab9a1a57619b0a6ce062bd3741b44}{Get\+Renderer}} () const
 \begin{DoxyCompactList}\small\item\em Getter for wrapped renderer. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}{Width}} ()
+uint32\+\_\+t \mbox{\hyperlink{class_renderer_wrapper_a3fa9dab708977fda328c046e2aadce01}{Width}} () const
 \begin{DoxyCompactList}\small\item\em Getter for renderer width. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}{Height}} ()
+uint32\+\_\+t \mbox{\hyperlink{class_renderer_wrapper_a15394b21ef825725cd8c68934a0a7cdb}{Height}} () const
 \begin{DoxyCompactList}\small\item\em Getter for renderer height. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -161,19 +159,28 @@ STATUS\+\_\+\+FAIL&\\
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_renderer_wrapper_aa26baa306b1544f82b87e239ee3315a0}\label{class_renderer_wrapper_aa26baa306b1544f82b87e239ee3315a0}} 
+\mbox{\Hypertarget{class_renderer_wrapper_ac95051051d48f9a1297efef198837341}\label{class_renderer_wrapper_ac95051051d48f9a1297efef198837341}} 
 \index{RendererWrapper@{RendererWrapper}!RendererWrapper@{RendererWrapper}}
 \index{RendererWrapper@{RendererWrapper}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{RendererWrapper()}{RendererWrapper()}}
-{\footnotesize\ttfamily Renderer\+Wrapper\+::\+Renderer\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{\+\_\+width,  }\item[{int}]{\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Renderer\+Wrapper\+::\+Renderer\+Wrapper (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{\+\_\+width,  }\item[{uint32\+\_\+t}]{\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates new renderer. Does not create window. 
+
+This class should not be used. It is ought to be used through \mbox{\hyperlink{class_renderer}{Renderer}} class. Please refer to that class for more information.
 
 
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+width} & Width of graphic window. \\
 \hline
-{\em \+\_\+height} & Height of graphic window. \\
+{\em \+\_\+height} & Height of graphic window.\\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_renderer_wrapper_a6e76382d887dc72d1409e8070304d924}\label{class_renderer_wrapper_a6e76382d887dc72d1409e8070304d924}} 
 \index{RendererWrapper@{RendererWrapper}!````~RendererWrapper@{$\sim$RendererWrapper}}
 \index{````~RendererWrapper@{$\sim$RendererWrapper}!RendererWrapper@{RendererWrapper}}
@@ -271,36 +278,29 @@ Draws triangle with given coordinates on the screen.
 {\em p3Y} & Point 3 Y. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}\label{class_renderer_wrapper_a302245c7911cd01359b8d7ee5e512328}} 
-\index{RendererWrapper@{RendererWrapper}!GetEvent@{GetEvent}}
-\index{GetEvent@{GetEvent}!RendererWrapper@{RendererWrapper}}
-\doxysubsubsection{\texorpdfstring{GetEvent()}{GetEvent()}}
-{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Checks for events from user and calls methods accordingly. 
-
-\mbox{\Hypertarget{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}\label{class_renderer_wrapper_a58c881dec5e9d93f0c239eb9e1640060}} 
+\mbox{\Hypertarget{class_renderer_wrapper_a830ab9a1a57619b0a6ce062bd3741b44}\label{class_renderer_wrapper_a830ab9a1a57619b0a6ce062bd3741b44}} 
 \index{RendererWrapper@{RendererWrapper}!GetRenderer@{GetRenderer}}
 \index{GetRenderer@{GetRenderer}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{GetRenderer()}{GetRenderer()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{Lib\+Renderer}} $\ast$ Renderer\+Wrapper\+::\+Get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_renderer_wrapper_8hpp_aabfe390260f47e772b92d1812e1ee81f}{Lib\+Renderer}} \& Renderer\+Wrapper\+::\+Get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for wrapped renderer. 
 
-\mbox{\Hypertarget{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}\label{class_renderer_wrapper_abdb9eb22477d2b5680091b84145bacd9}} 
+\mbox{\Hypertarget{class_renderer_wrapper_a15394b21ef825725cd8c68934a0a7cdb}\label{class_renderer_wrapper_a15394b21ef825725cd8c68934a0a7cdb}} 
 \index{RendererWrapper@{RendererWrapper}!Height@{Height}}
 \index{Height@{Height}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{Height()}{Height()}}
-{\footnotesize\ttfamily int Renderer\+Wrapper\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily uint32\+\_\+t Renderer\+Wrapper\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for renderer height. 
 
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t Height in pixels. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}\label{class_renderer_wrapper_a24b61a0ab2c161a5569cb1e647731f1d}} 
 \index{RendererWrapper@{RendererWrapper}!Init@{Init}}
 \index{Init@{Init}!RendererWrapper@{RendererWrapper}}
@@ -316,11 +316,11 @@ Runs SDL Init funciton. Must be called before any drawing will be done on new \m
 \begin{DoxyReturn}{Returns}
 STATUS\+\_\+\+OK if everyting is fine and STATUS\+\_\+\+FAIL is something failed and graphic interface cannot start. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}\label{class_renderer_wrapper_a1dacc6d5f7517f7fc633219e6e37fd67}} 
+\mbox{\Hypertarget{class_renderer_wrapper_afb2182908e974f4c940d2ddac2084bf7}\label{class_renderer_wrapper_afb2182908e974f4c940d2ddac2084bf7}} 
 \index{RendererWrapper@{RendererWrapper}!IsRunning@{IsRunning}}
 \index{IsRunning@{IsRunning}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{IsRunning()}{IsRunning()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{Lib\+Renderer\+Bool}} Renderer\+Wrapper\+::\+Is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_renderer_wrapper_8hpp_af6e11f4a7f8b39b513d9e81abb64524c}{Lib\+Renderer\+Bool}} Renderer\+Wrapper\+::\+Is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -339,11 +339,11 @@ Lib\+Renderer\+True if renderer is running and Lib\+Renderer\+False if rendedrer
 
 Quits the graphic library. 
 
-destroys renderer and window if exist. \mbox{\Hypertarget{class_renderer_wrapper_a540c5ee48a4d95a131289e0c34856e9c}\label{class_renderer_wrapper_a540c5ee48a4d95a131289e0c34856e9c}} 
+destroys renderer and window if exist. \mbox{\Hypertarget{class_renderer_wrapper_a579bf6fdd1550af4711e21467556fce4}\label{class_renderer_wrapper_a579bf6fdd1550af4711e21467556fce4}} 
 \index{RendererWrapper@{RendererWrapper}!SetDrawColor@{SetDrawColor}}
 \index{SetDrawColor@{SetDrawColor}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{SetDrawColor()}{SetDrawColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -357,11 +357,11 @@ Sets drawing color to given value.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_renderer_wrapper_a9a3cfe775f88bf5b58b293618c1fe8ce}{Renderer\+Color}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_renderer_wrapper_a38cf63b51b30046109ed9db61b330f19}\label{class_renderer_wrapper_a38cf63b51b30046109ed9db61b330f19}} 
+\mbox{\Hypertarget{class_renderer_wrapper_af00f07b059629d5063a659e8055c050f}\label{class_renderer_wrapper_af00f07b059629d5063a659e8055c050f}} 
 \index{RendererWrapper@{RendererWrapper}!SetDrawColor@{SetDrawColor}}
 \index{SetDrawColor@{SetDrawColor}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{SetDrawColor()}{SetDrawColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{color,  }\item[{int}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -377,11 +377,11 @@ Sets drawing color to given values.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_renderer_wrapper_a9a3cfe775f88bf5b58b293618c1fe8ce}{Renderer\+Color}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_renderer_wrapper_a0044afb67be15b213e9c34e00b01af4c}\label{class_renderer_wrapper_a0044afb67be15b213e9c34e00b01af4c}} 
+\mbox{\Hypertarget{class_renderer_wrapper_a22b6bd48ddf85522796bc5ea36ade1f7}\label{class_renderer_wrapper_a22b6bd48ddf85522796bc5ea36ade1f7}} 
 \index{RendererWrapper@{RendererWrapper}!SetDrawColor@{SetDrawColor}}
 \index{SetDrawColor@{SetDrawColor}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{SetDrawColor()}{SetDrawColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -398,11 +398,11 @@ Sets drawing color to given values.
 {\em a} & Alpha/transparency value (0-\/255). \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}\label{class_renderer_wrapper_af2a519ad1b95f9a46a6377b46bfdacc8}} 
+\mbox{\Hypertarget{class_renderer_wrapper_ac938fcb512c2197639e528cae8e294c4}\label{class_renderer_wrapper_ac938fcb512c2197639e528cae8e294c4}} 
 \index{RendererWrapper@{RendererWrapper}!SetDrawColor@{SetDrawColor}}
 \index{SetDrawColor@{SetDrawColor}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{SetDrawColor()}{SetDrawColor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Renderer\+Wrapper\+::\+Set\+Draw\+Color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b,  }\item[{uint8\+\_\+t}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -454,18 +454,21 @@ Function called to show everything that has been drawn on the screen after last 
 
 Stops the renderer. 
 
-This function sets is\+Running field to Lib\+Renderer\+False in order to stop the main thread of this renderer. \mbox{\Hypertarget{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}\label{class_renderer_wrapper_ad3b4ab35df9e2f56d31120230ce65660}} 
+This function sets is\+Running field to Lib\+Renderer\+False in order to stop the main thread of this renderer. \mbox{\Hypertarget{class_renderer_wrapper_a3fa9dab708977fda328c046e2aadce01}\label{class_renderer_wrapper_a3fa9dab708977fda328c046e2aadce01}} 
 \index{RendererWrapper@{RendererWrapper}!Width@{Width}}
 \index{Width@{Width}!RendererWrapper@{RendererWrapper}}
 \doxysubsubsection{\texorpdfstring{Width()}{Width()}}
-{\footnotesize\ttfamily int Renderer\+Wrapper\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily uint32\+\_\+t Renderer\+Wrapper\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Getter for renderer width. 
 
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t Width in pixels. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Code/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/\+Crust\+Engine/\+Inc/\+Rendering/\mbox{\hyperlink{_renderer_wrapper_8hpp}{Renderer\+Wrapper.\+hpp}}\end{DoxyCompactItemize}

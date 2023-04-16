@@ -8,18 +8,20 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new transform object with position at (0,0,0) and rotation at (0,0,0). Allocates space for position and rotation vectors. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_transform_aa72e286c069850db80927b0e6554cd3e}{$\sim$\+Transform}} ()
 \item 
 \mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_transform_abbbbd89160c4be2736176b4d59b68823}{Get\+Position}} () const
 \begin{DoxyCompactList}\small\item\em Getter for pos field. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_transform_a1f8a9073d7ca064175bec2ed692bae04}{Get\+Rotation}} () const
+\mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_transform_a9eb9569becfe65ffe4a89ea6b600d592}{Get\+Euler\+Rotation}} () const
 \begin{DoxyCompactList}\small\item\em Getter for rot field, this returns handler to euler\textquotesingle{}s vector for rotation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{class_transform_a041962c1715080a013ef4945ce49ff18}{Set\+Position}} (double \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, double \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, double \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a5e74030ebb3297ce1b37ff716fedd68f}{z}})
-\item 
-\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{class_transform_ae9bdd31080a7e04968f38f674ad3e96c}{Translate}} (double dX, double dY, double dZ)
+void \mbox{\hyperlink{class_transform_a041962c1715080a013ef4945ce49ff18}{Set\+Position}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Set the position of this object to given vector (x, y, z). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ae8149b2b9307c44e1cfc2f074273b4c1}{Set\+Euler\+Rotation}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Set the euler\textquotesingle{}s rotation of this object to given vector (x, y, z) in degrees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ae9bdd31080a7e04968f38f674ad3e96c}{Translate}} (double dX, double dY, double dZ)
 \begin{DoxyCompactList}\small\item\em Moves object by given values. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} \mbox{\hyperlink{class_transform_ac2d6c7d8959b196b29d6848016182b9d}{Rotate}} (double dX, double dY, double dZ)
+void \mbox{\hyperlink{class_transform_a921571b811212ea4958fecc626271f70}{Rotate\+Euler}} (double dX, double dY, double dZ)
 \begin{DoxyCompactList}\small\item\em Rotates object by given values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -30,6 +32,10 @@
 \doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
 {\footnotesize\ttfamily Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new transform object with position at (0,0,0) and rotation at (0,0,0). Allocates space for position and rotation vectors. 
+
 \mbox{\Hypertarget{class_transform_aa72e286c069850db80927b0e6554cd3e}\label{class_transform_aa72e286c069850db80927b0e6554cd3e}} 
 \index{Transform@{Transform}!````~Transform@{$\sim$Transform}}
 \index{````~Transform@{$\sim$Transform}!Transform@{Transform}}
@@ -39,6 +45,19 @@
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transform_a9eb9569becfe65ffe4a89ea6b600d592}\label{class_transform_a9eb9569becfe65ffe4a89ea6b600d592}} 
+\index{Transform@{Transform}!GetEulerRotation@{GetEulerRotation}}
+\index{GetEulerRotation@{GetEulerRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetEulerRotation()}{GetEulerRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} \& Transform\+::\+Get\+Euler\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for rot field, this returns handler to euler\textquotesingle{}s vector for rotation. 
+
+\begin{DoxyReturn}{Returns}
+rot field. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_transform_abbbbd89160c4be2736176b4d59b68823}\label{class_transform_abbbbd89160c4be2736176b4d59b68823}} 
 \index{Transform@{Transform}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!Transform@{Transform}}
@@ -52,40 +71,41 @@ Getter for pos field.
 \begin{DoxyReturn}{Returns}
 pos field. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_transform_a1f8a9073d7ca064175bec2ed692bae04}\label{class_transform_a1f8a9073d7ca064175bec2ed692bae04}} 
-\index{Transform@{Transform}!GetRotation@{GetRotation}}
-\index{GetRotation@{GetRotation}!Transform@{Transform}}
-\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}} \& Transform\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Getter for rot field, this returns handler to euler\textquotesingle{}s vector for rotation. 
-
-\begin{DoxyReturn}{Returns}
-rot field. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_transform_ac2d6c7d8959b196b29d6848016182b9d}\label{class_transform_ac2d6c7d8959b196b29d6848016182b9d}} 
-\index{Transform@{Transform}!Rotate@{Rotate}}
-\index{Rotate@{Rotate}!Transform@{Transform}}
-\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} Transform\+::\+Rotate (\begin{DoxyParamCaption}\item[{double}]{dX,  }\item[{double}]{dY,  }\item[{double}]{dZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_transform_a921571b811212ea4958fecc626271f70}\label{class_transform_a921571b811212ea4958fecc626271f70}} 
+\index{Transform@{Transform}!RotateEuler@{RotateEuler}}
+\index{RotateEuler@{RotateEuler}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{RotateEuler()}{RotateEuler()}}
+{\footnotesize\ttfamily void Transform\+::\+Rotate\+Euler (\begin{DoxyParamCaption}\item[{double}]{dX,  }\item[{double}]{dY,  }\item[{double}]{dZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Rotates object by given values. 
 
-Adds dX, dY and dZ to adequate values of rot vector values. \mbox{\Hypertarget{class_transform_a041962c1715080a013ef4945ce49ff18}\label{class_transform_a041962c1715080a013ef4945ce49ff18}} 
+Adds dX, dY and dZ to adequate values of rot vector values. \mbox{\Hypertarget{class_transform_ae8149b2b9307c44e1cfc2f074273b4c1}\label{class_transform_ae8149b2b9307c44e1cfc2f074273b4c1}} 
+\index{Transform@{Transform}!SetEulerRotation@{SetEulerRotation}}
+\index{SetEulerRotation@{SetEulerRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetEulerRotation()}{SetEulerRotation()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Euler\+Rotation (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the euler\textquotesingle{}s rotation of this object to given vector (x, y, z) in degrees. 
+
+\mbox{\Hypertarget{class_transform_a041962c1715080a013ef4945ce49ff18}\label{class_transform_a041962c1715080a013ef4945ce49ff18}} 
 \index{Transform@{Transform}!SetPosition@{SetPosition}}
 \index{SetPosition@{SetPosition}!Transform@{Transform}}
 \doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the position of this object to given vector (x, y, z). 
 
 \mbox{\Hypertarget{class_transform_ae9bdd31080a7e04968f38f674ad3e96c}\label{class_transform_ae9bdd31080a7e04968f38f674ad3e96c}} 
 \index{Transform@{Transform}!Translate@{Translate}}
 \index{Translate@{Translate}!Transform@{Transform}}
 \doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengl_8h_a46df6112013cf583e82b25cebd5cb499}{void}} Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{double}]{dX,  }\item[{double}]{dY,  }\item[{double}]{dZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{double}]{dX,  }\item[{double}]{dY,  }\item[{double}]{dZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

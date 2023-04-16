@@ -92,6 +92,8 @@ $(document).ready(function(){initNavTree('class_object.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="class_object-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Object Class Reference</div></div>
 </div><!--header-->
@@ -107,9 +109,10 @@ Inheritance diagram for Object:</div>
  <div class="center">
   <img src="class_object.png" usemap="#Object_map" alt=""/>
   <map id="Object_map" name="Object_map">
-<area href="class_camera.html" title="Class representing the camera on a scene from which&#39;s perespective the renderer can render Mesh." alt="Camera" shape="rect" coords="0,56,90,80"/>
-<area href="class_light_source.html" title="Object on the scene representing basic directional light source. It represents parraller light rays." alt="LightSource" shape="rect" coords="100,56,190,80"/>
-<area href="class_render_object.html" title="Represents object present on the scene." alt="RenderObject" shape="rect" coords="200,56,290,80"/>
+<area href="class_camera.html" title="Class representing the camera on a scene from which&#39;s perespective the renderer can render Mesh." alt="Camera" shape="rect" coords="0,56,100,80"/>
+<area href="class_light_source.html" title="Virtual class for light sources." alt="LightSource" shape="rect" coords="110,56,210,80"/>
+<area href="class_render_object.html" title="Represents renderable object present on the scene." alt="RenderObject" shape="rect" coords="220,56,320,80"/>
+<area href="class_directional_light.html" title="Object on the scene representing basic directional light source. It represents parraller light rays." alt="DirectionalLight" shape="rect" coords="110,112,210,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -118,46 +121,50 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40860402e64d8008fb42329df7097cdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a40860402e64d8008fb42329df7097cdb">Object</a> ()</td></tr>
 <tr class="memdesc:a40860402e64d8008fb42329df7097cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position 0, 0, 0.  <a href="class_object.html#a40860402e64d8008fb42329df7097cdb">More...</a><br /></td></tr>
 <tr class="separator:a40860402e64d8008fb42329df7097cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ebb6c3f94010e2ec8989bc83a70dc9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a7ebb6c3f94010e2ec8989bc83a70dc9c">Object</a> (<a class="el" href="class_vector3.html">Vector3</a> *pos)</td></tr>
-<tr class="memdesc:a7ebb6c3f94010e2ec8989bc83a70dc9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position #posX, #posY, #posZ.  <a href="class_object.html#a7ebb6c3f94010e2ec8989bc83a70dc9c">More...</a><br /></td></tr>
-<tr class="separator:a7ebb6c3f94010e2ec8989bc83a70dc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ff0fe699c34b951c8bf03a8c3f5808"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#af1ff0fe699c34b951c8bf03a8c3f5808">Object</a> (double posX, double posY, double posZ)</td></tr>
-<tr class="memdesc:af1ff0fe699c34b951c8bf03a8c3f5808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates object at position #posX, #posY, #posZ.  <a href="class_object.html#af1ff0fe699c34b951c8bf03a8c3f5808">More...</a><br /></td></tr>
-<tr class="separator:af1ff0fe699c34b951c8bf03a8c3f5808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
+<tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
 <tr class="separator:ae8f5483f459e46687bd01e6f9977afd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123add5421e44f839cc564f882e8b497"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a123add5421e44f839cc564f882e8b497">GetObjectTypeName</a> ()</td></tr>
-<tr class="separator:a123add5421e44f839cc564f882e8b497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49327b515f7e613c882f33c2b058ab98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a49327b515f7e613c882f33c2b058ab98">IsActive</a> ()</td></tr>
-<tr class="memdesc:a49327b515f7e613c882f33c2b058ab98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for isActive field.  <a href="class_object.html#a49327b515f7e613c882f33c2b058ab98">More...</a><br /></td></tr>
+<tr class="memdesc:a49327b515f7e613c882f33c2b058ab98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_object.html#ac516bd8573de8618cd2218efba90b712" title="Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.">isActive</a> field.  <a href="class_object.html#a49327b515f7e613c882f33c2b058ab98">More...</a><br /></td></tr>
 <tr class="separator:a49327b515f7e613c882f33c2b058ab98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0945360d98dff31603571ff78acb4f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab0945360d98dff31603571ff78acb4f7">GetPosition</a> ()</td></tr>
-<tr class="memdesc:ab0945360d98dff31603571ff78acb4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for pos field.  <a href="class_object.html#ab0945360d98dff31603571ff78acb4f7">More...</a><br /></td></tr>
-<tr class="separator:ab0945360d98dff31603571ff78acb4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7ed1b434799c9ce6b7a7dcca56e69d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a6f7ed1b434799c9ce6b7a7dcca56e69d">GetRotation</a> ()</td></tr>
-<tr class="memdesc:a6f7ed1b434799c9ce6b7a7dcca56e69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rot field, this returns handler to euler's vector for rotation.  <a href="class_object.html#a6f7ed1b434799c9ce6b7a7dcca56e69d">More...</a><br /></td></tr>
-<tr class="separator:a6f7ed1b434799c9ce6b7a7dcca56e69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a44aa385f80433e92ce2cee5c36b3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transform.html">Transform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a26a44aa385f80433e92ce2cee5c36b3b">GetTransform</a> ()</td></tr>
+<tr class="memdesc:a26a44aa385f80433e92ce2cee5c36b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_object.html#addce36298001392c464f5439f2b4b25f" title="Represents object&#39;s orientation on the scene.">transform</a> handler field. <a class="el" href="class_transform.html">Transform</a> represents position and rotation on the scene of the object.  <a href="class_object.html#a26a44aa385f80433e92ce2cee5c36b3b">More...</a><br /></td></tr>
+<tr class="separator:a26a44aa385f80433e92ce2cee5c36b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6a373b25a3ca54d61e6e63812fe36c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_script.html">CrustScript</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4">GetScripts</a> ()</td></tr>
-<tr class="memdesc:ab6a373b25a3ca54d61e6e63812fe36c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for scripts field.  <a href="class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4">More...</a><br /></td></tr>
+<tr class="memdesc:ab6a373b25a3ca54d61e6e63812fe36c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_object.html#ae800b2af48ce0f2a31715c6018c2ad67" title="Scripts attached to this object, wchich will be executed.">scripts</a> field. All scripts of an objects are executed during scene rendering, if they are active.  <a href="class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4">More...</a><br /></td></tr>
 <tr class="separator:ab6a373b25a3ca54d61e6e63812fe36c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bafbad58088d65c769ed1eecad51e44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a6bafbad58088d65c769ed1eecad51e44">AttachScript</a> (<a class="el" href="class_crust_script.html">CrustScript</a> *script)</td></tr>
-<tr class="memdesc:a6bafbad58088d65c769ed1eecad51e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches given script functionality to this object.  <a href="class_object.html#a6bafbad58088d65c769ed1eecad51e44">More...</a><br /></td></tr>
-<tr class="separator:a6bafbad58088d65c769ed1eecad51e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66015f89ae68876a273c8a9c8fc0cc57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a66015f89ae68876a273c8a9c8fc0cc57">Move</a> (double x, double y, double z)</td></tr>
-<tr class="memdesc:a66015f89ae68876a273c8a9c8fc0cc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves object by given values.  <a href="class_object.html#a66015f89ae68876a273c8a9c8fc0cc57">More...</a><br /></td></tr>
-<tr class="separator:a66015f89ae68876a273c8a9c8fc0cc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59643950ef70e2bcc81fb3e53e11dcfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a59643950ef70e2bcc81fb3e53e11dcfe">Rotate</a> (double x, double y, double z)</td></tr>
-<tr class="memdesc:a59643950ef70e2bcc81fb3e53e11dcfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates object by given values.  <a href="class_object.html#a59643950ef70e2bcc81fb3e53e11dcfe">More...</a><br /></td></tr>
-<tr class="separator:a59643950ef70e2bcc81fb3e53e11dcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbd7872006c074445b88970ae148e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a2fbd7872006c074445b88970ae148e62">AttachScript</a> (<a class="el" href="class_crust_script.html">CrustScript</a> &amp;script)</td></tr>
+<tr class="memdesc:a2fbd7872006c074445b88970ae148e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches given script functionality to this object.  <a href="class_object.html#a2fbd7872006c074445b88970ae148e62">More...</a><br /></td></tr>
+<tr class="separator:a2fbd7872006c074445b88970ae148e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9103dbe0ba73f056c1981ef8037f029f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a9103dbe0ba73f056c1981ef8037f029f">GetID</a> ()</td></tr>
-<tr class="memdesc:a9103dbe0ba73f056c1981ef8037f029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for matrix ID.  <a href="class_object.html#a9103dbe0ba73f056c1981ef8037f029f">More...</a><br /></td></tr>
+<tr class="memdesc:a9103dbe0ba73f056c1981ef8037f029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for object's ID.  <a href="class_object.html#a9103dbe0ba73f056c1981ef8037f029f">More...</a><br /></td></tr>
 <tr class="separator:a9103dbe0ba73f056c1981ef8037f029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac516bd8573de8618cd2218efba90b712"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ac516bd8573de8618cd2218efba90b712">isActive</a> {true}</td></tr>
+<tr class="memdesc:ac516bd8573de8618cd2218efba90b712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.  <a href="class_object.html#ac516bd8573de8618cd2218efba90b712">More...</a><br /></td></tr>
+<tr class="separator:ac516bd8573de8618cd2218efba90b712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addce36298001392c464f5439f2b4b25f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#addce36298001392c464f5439f2b4b25f">transform</a></td></tr>
+<tr class="memdesc:addce36298001392c464f5439f2b4b25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents object's orientation on the scene.  <a href="class_object.html#addce36298001392c464f5439f2b4b25f">More...</a><br /></td></tr>
+<tr class="separator:addce36298001392c464f5439f2b4b25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae800b2af48ce0f2a31715c6018c2ad67"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_script.html">CrustScript</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae800b2af48ce0f2a31715c6018c2ad67">scripts</a></td></tr>
+<tr class="memdesc:ae800b2af48ce0f2a31715c6018c2ad67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scripts attached to this object, wchich will be executed.  <a href="class_object.html#ae800b2af48ce0f2a31715c6018c2ad67">More...</a><br /></td></tr>
+<tr class="separator:ae800b2af48ce0f2a31715c6018c2ad67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb10110d660e687cd87c9ca01cb0408"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a2eb10110d660e687cd87c9ca01cb0408">ID</a></td></tr>
+<tr class="memdesc:a2eb10110d660e687cd87c9ca01cb0408"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_object.html" title="Represents object present on the scene.">Object</a>'s ID.  <a href="class_object.html#a2eb10110d660e687cd87c9ca01cb0408">More...</a><br /></td></tr>
+<tr class="separator:a2eb10110d660e687cd87c9ca01cb0408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a13da767dcddf56f245bc886be981fea9"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a13da767dcddf56f245bc886be981fea9">nextID</a> {0}</td></tr>
+<tr class="memdesc:a13da767dcddf56f245bc886be981fea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Next object ID. Also holds amount of objects created on engine work. Only for debug purposes.  <a href="class_object.html#a13da767dcddf56f245bc886be981fea9">More...</a><br /></td></tr>
+<tr class="separator:a13da767dcddf56f245bc886be981fea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Represents object present on the scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a40860402e64d8008fb42329df7097cdb" name="a40860402e64d8008fb42329df7097cdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40860402e64d8008fb42329df7097cdb">&#9670;&#160;</a></span>Object() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40860402e64d8008fb42329df7097cdb">&#9670;&#160;</a></span>Object()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,95 +187,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates object at position 0, 0, 0. </p>
-<p >Calls Object::Init method with all values equal to 0.0. </p>
-
-</div>
-</div>
-<a id="a7ebb6c3f94010e2ec8989bc83a70dc9c" name="a7ebb6c3f94010e2ec8989bc83a70dc9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ebb6c3f94010e2ec8989bc83a70dc9c">&#9670;&#160;</a></span>Object() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Object::Object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector3.html">Vector3</a> *&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates object at position #posX, #posY, #posZ. </p>
-<p >Calls Object::Init method with values equal to #posX, #posY, #posZ.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>Position of the new object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af1ff0fe699c34b951c8bf03a8c3f5808" name="af1ff0fe699c34b951c8bf03a8c3f5808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1ff0fe699c34b951c8bf03a8c3f5808">&#9670;&#160;</a></span>Object() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Object::Object </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>posX</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>posY</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>posZ</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates object at position #posX, #posY, #posZ. </p>
-<p >Calls Object::Init method with values equal to #posX, #posY, #posZ.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">posX</td><td>X position of the new object. </td></tr>
-    <tr><td class="paramname">posY</td><td>Y position of the new object. </td></tr>
-    <tr><td class="paramname">posZ</td><td>Z position of the new object. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -290,7 +208,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -298,8 +216,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6bafbad58088d65c769ed1eecad51e44" name="a6bafbad58088d65c769ed1eecad51e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bafbad58088d65c769ed1eecad51e44">&#9670;&#160;</a></span>AttachScript()</h2>
+<a id="a2fbd7872006c074445b88970ae148e62" name="a2fbd7872006c074445b88970ae148e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbd7872006c074445b88970ae148e62">&#9670;&#160;</a></span>AttachScript()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +228,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Object::AttachScript </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_crust_script.html">CrustScript</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_crust_script.html">CrustScript</a> &amp;&#160;</td>
           <td class="paramname"><em>script</em></td><td>)</td>
           <td></td>
         </tr>
@@ -325,7 +243,7 @@ Public Member Functions</h2></td></tr>
 <p>Attaches given script functionality to this object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">script</td><td>Attached script which will be exectued specificly for this object. </td></tr>
+    <tr><td class="paramname">script</td><td>Attached script, which will be exectued specificly for this object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -355,91 +273,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for matrix ID. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>'s ID. </dd></dl>
-
-</div>
-</div>
-<a id="a123add5421e44f839cc564f882e8b497" name="a123add5421e44f839cc564f882e8b497"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a123add5421e44f839cc564f882e8b497">&#9670;&#160;</a></span>GetObjectTypeName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Object::GetObjectTypeName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_light_source.html#af3981a2c4ba0c41f9c05ef112db722d0">LightSource</a>, and <a class="el" href="class_render_object.html#a68ff19a030819e1bab226858a22859b6">RenderObject</a>.</p>
-
-</div>
-</div>
-<a id="ab0945360d98dff31603571ff78acb4f7" name="ab0945360d98dff31603571ff78acb4f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0945360d98dff31603571ff78acb4f7">&#9670;&#160;</a></span>GetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> * Object::GetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Getter for pos field. </p>
-<dl class="section return"><dt>Returns</dt><dd>pos field. </dd></dl>
-
-</div>
-</div>
-<a id="a6f7ed1b434799c9ce6b7a7dcca56e69d" name="a6f7ed1b434799c9ce6b7a7dcca56e69d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f7ed1b434799c9ce6b7a7dcca56e69d">&#9670;&#160;</a></span>GetRotation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector3.html">Vector3</a> * Object::GetRotation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Getter for rot field, this returns handler to euler's vector for rotation. </p>
-<dl class="section return"><dt>Returns</dt><dd>rot field. </dd></dl>
+<p>Getter for object's ID. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_object.html" title="Represents object present on the scene.">Object</a>'s ID. </dd></dl>
 
 </div>
 </div>
@@ -466,8 +301,35 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for scripts field. </p>
+<p>Getter for <a class="el" href="class_object.html#ae800b2af48ce0f2a31715c6018c2ad67" title="Scripts attached to this object, wchich will be executed.">scripts</a> field. All scripts of an objects are executed during scene rendering, if they are active. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_crust_script_8hpp.html">CrustScript.hpp</a> </dd></dl>
+
+</div>
+</div>
+<a id="a26a44aa385f80433e92ce2cee5c36b3b" name="a26a44aa385f80433e92ce2cee5c36b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a44aa385f80433e92ce2cee5c36b3b">&#9670;&#160;</a></span>GetTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_transform.html">Transform</a> &amp; Object::GetTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for <a class="el" href="class_object.html#addce36298001392c464f5439f2b4b25f" title="Represents object&#39;s orientation on the scene.">transform</a> handler field. <a class="el" href="class_transform.html">Transform</a> represents position and rotation on the scene of the object. </p>
 
 </div>
 </div>
@@ -494,13 +356,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for isActive field. </p>
-<dl class="section return"><dt>Returns</dt><dd>isActive field. </dd></dl>
+<p>Getter for <a class="el" href="class_object.html#ac516bd8573de8618cd2218efba90b712" title="Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.">isActive</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_object.html#ac516bd8573de8618cd2218efba90b712" title="Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.">isActive</a> field. </dd></dl>
 
 </div>
 </div>
-<a id="a66015f89ae68876a273c8a9c8fc0cc57" name="a66015f89ae68876a273c8a9c8fc0cc57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66015f89ae68876a273c8a9c8fc0cc57">&#9670;&#160;</a></span>Move()</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2eb10110d660e687cd87c9ca01cb0408" name="a2eb10110d660e687cd87c9ca01cb0408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb10110d660e687cd87c9ca01cb0408">&#9670;&#160;</a></span>ID</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,43 +372,22 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Object::Move </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">uint32_t Object::ID</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves object by given values. </p>
-<p >Adds x, y and z to adequate values of pos vector values. </p>
+<p><a class="el" href="class_object.html" title="Represents object present on the scene.">Object</a>'s ID. </p>
 
 </div>
 </div>
-<a id="a59643950ef70e2bcc81fb3e53e11dcfe" name="a59643950ef70e2bcc81fb3e53e11dcfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59643950ef70e2bcc81fb3e53e11dcfe">&#9670;&#160;</a></span>Rotate()</h2>
+<a id="ac516bd8573de8618cd2218efba90b712" name="ac516bd8573de8618cd2218efba90b712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac516bd8573de8618cd2218efba90b712">&#9670;&#160;</a></span>isActive</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,43 +396,94 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Object::Rotate </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">bool Object::isActive {true}</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rotates object by given values. </p>
-<p >Adds x, y and z to adequate values of rot vector values. </p>
+<p>Tells is object has any effect on the scene. If is rendered or if any code can be perform on it. </p>
+
+</div>
+</div>
+<a id="a13da767dcddf56f245bc886be981fea9" name="a13da767dcddf56f245bc886be981fea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13da767dcddf56f245bc886be981fea9">&#9670;&#160;</a></span>nextID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Object::nextID {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Next object ID. Also holds amount of objects created on engine work. Only for debug purposes. </p>
+
+</div>
+</div>
+<a id="ae800b2af48ce0f2a31715c6018c2ad67" name="ae800b2af48ce0f2a31715c6018c2ad67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae800b2af48ce0f2a31715c6018c2ad67">&#9670;&#160;</a></span>scripts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_crust_script.html">CrustScript</a> *&gt; Object::scripts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Scripts attached to this object, wchich will be executed. </p>
+
+</div>
+</div>
+<a id="addce36298001392c464f5439f2b4b25f" name="addce36298001392c464f5439f2b4b25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addce36298001392c464f5439f2b4b25f">&#9670;&#160;</a></span>transform</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_transform.html">Transform</a>* Object::transform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents object's orientation on the scene. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Rendering/Objects/<a class="el" href="_object_8hpp_source.html">Object.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/Objects/<a class="el" href="_object_8hpp_source.html">Object.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

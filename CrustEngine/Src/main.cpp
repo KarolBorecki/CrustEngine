@@ -48,9 +48,8 @@ int main(int argc, char *argv[])
     scene.SetLightProjection(true);
 
     Core core;
-    Logger::Info("Opening new window");
     core.OpenNewWindow(1000, 800, scene);
-
     core.Quit();
+    Logger::Info("Engine work time: %lf [s]", TimeProvider::GetTime_s());
     return 0;
 }

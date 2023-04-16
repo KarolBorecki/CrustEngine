@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrustEngine: Matrix Class Reference</title>
+<title>CrustEngine: Matrix&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,9 +92,10 @@ $(document).ready(function(){initNavTree('class_matrix.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="class_matrix-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Matrix Class Reference</div></div>
+  <div class="headertitle"><div class="title">Matrix&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,91 +103,160 @@ $(document).ready(function(){initNavTree('class_matrix.html',''); initResizable(
  <a href="class_matrix.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Matrix:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_matrix.png" usemap="#Matrix_map" alt=""/>
-  <map id="Matrix_map" name="Matrix_map">
-<area href="class_vector3.html" title="Represents mathematical vector3." alt="Vector3" shape="rect" coords="0,56,57,80"/>
-<area href="class_vector4.html" title="Represents mathematical vector4." alt="Vector4" shape="rect" coords="67,56,124,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a00c52f04b918a0d4a3241eb4cd31c26b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a00c52f04b918a0d4a3241eb4cd31c26b">Matrix</a> (uint8_t rows, uint8_t columns)</td></tr>
-<tr class="separator:a00c52f04b918a0d4a3241eb4cd31c26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb6d6c9da85ace0a00871ed1627a1bd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#adb6d6c9da85ace0a00871ed1627a1bd4">Matrix</a> (uint8_t rows, uint8_t columns, double defaultVal)</td></tr>
-<tr class="separator:adb6d6c9da85ace0a00871ed1627a1bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b1c3627f573d78a2f08623fdfef990f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9b1c3627f573d78a2f08623fdfef990f">~Matrix</a> ()</td></tr>
-<tr class="separator:a9b1c3627f573d78a2f08623fdfef990f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9823f552deec6e353ad4b910de873e23"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9823f552deec6e353ad4b910de873e23">Rows</a> ()</td></tr>
-<tr class="memdesc:a9823f552deec6e353ad4b910de873e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for rows field.  <a href="class_matrix.html#a9823f552deec6e353ad4b910de873e23">More...</a><br /></td></tr>
-<tr class="separator:a9823f552deec6e353ad4b910de873e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9604bef87537aeb194d6a708d8d8174a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9604bef87537aeb194d6a708d8d8174a">Columns</a> ()</td></tr>
-<tr class="memdesc:a9604bef87537aeb194d6a708d8d8174a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for columns field.  <a href="class_matrix.html#a9604bef87537aeb194d6a708d8d8174a">More...</a><br /></td></tr>
-<tr class="separator:a9604bef87537aeb194d6a708d8d8174a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57">GetMatrixArray</a> ()</td></tr>
-<tr class="memdesc:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for mat field.  <a href="class_matrix.html#aa131b2bbb38e52ca8c39a5f716ac9d57">More...</a><br /></td></tr>
-<tr class="separator:aa131b2bbb38e52ca8c39a5f716ac9d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729ff19a49e3661c9da642d9b619b4ad"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad">GetValue</a> (uint8_t row, uint8_t column)</td></tr>
-<tr class="memdesc:a729ff19a49e3661c9da642d9b619b4ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value stored on the given position in matrix.  <a href="class_matrix.html#a729ff19a49e3661c9da642d9b619b4ad">More...</a><br /></td></tr>
-<tr class="separator:a729ff19a49e3661c9da642d9b619b4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07a578a33e3d05ab109e35c32f062966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a07a578a33e3d05ab109e35c32f062966">PutValue</a> (uint8_t row, uint8_t column, double value)</td></tr>
-<tr class="memdesc:a07a578a33e3d05ab109e35c32f062966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the given value on the given position.  <a href="class_matrix.html#a07a578a33e3d05ab109e35c32f062966">More...</a><br /></td></tr>
-<tr class="separator:a07a578a33e3d05ab109e35c32f062966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e54b182b691a081e0599e06034b1621"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a7e54b182b691a081e0599e06034b1621">ResetMatrix</a> (double value)</td></tr>
-<tr class="memdesc:a7e54b182b691a081e0599e06034b1621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function resets the matrix so each value of it is the same.  <a href="class_matrix.html#a7e54b182b691a081e0599e06034b1621">More...</a><br /></td></tr>
-<tr class="separator:a7e54b182b691a081e0599e06034b1621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af40af6f88268cbe1850617269d1f80e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#af40af6f88268cbe1850617269d1f80e2">ToString</a> ()</td></tr>
-<tr class="memdesc:af40af6f88268cbe1850617269d1f80e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts matrix to std::string, so it can be written on any output.  <a href="class_matrix.html#af40af6f88268cbe1850617269d1f80e2">More...</a><br /></td></tr>
-<tr class="separator:af40af6f88268cbe1850617269d1f80e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7bf491631a12f9e68018a95bea2135f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ad7bf491631a12f9e68018a95bea2135f">GetID</a> ()</td></tr>
-<tr class="memdesc:ad7bf491631a12f9e68018a95bea2135f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for matrix ID.  <a href="class_matrix.html#ad7bf491631a12f9e68018a95bea2135f">More...</a><br /></td></tr>
-<tr class="separator:ad7bf491631a12f9e68018a95bea2135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e974170cd6bb780272211ae66c598e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ac3e974170cd6bb780272211ae66c598e">Matrix</a> ()</td></tr>
+<tr class="memdesc:ac3e974170cd6bb780272211ae66c598e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor does not reserves the memory for the matrix's array. It only creates memory space for matrix pointer. This means that pointer will be accesiable but no value can be put inside of if. The matrix will be of size 0x0.  <a href="class_matrix.html#ac3e974170cd6bb780272211ae66c598e">More...</a><br /></td></tr>
+<tr class="separator:ac3e974170cd6bb780272211ae66c598e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b06f13012ade46bce4bae86c7980f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a88b06f13012ade46bce4bae86c7980f4">Matrix</a> (uint32_t <a class="el" href="class_matrix.html#a5ccb58af982a27187232cc8c07a94da8">height</a>, uint32_t <a class="el" href="class_matrix.html#ad43ea7e5e99130cffdb7b93ce25f4436">width</a>)</td></tr>
+<tr class="memdesc:a88b06f13012ade46bce4bae86c7980f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If any argument is zero then no space for matrix's array will be allocated.  <a href="class_matrix.html#a88b06f13012ade46bce4bae86c7980f4">More...</a><br /></td></tr>
+<tr class="separator:a88b06f13012ade46bce4bae86c7980f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7743924a9d9182c675372f0b16c13d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9d7743924a9d9182c675372f0b16c13d">Matrix</a> (uint32_t <a class="el" href="class_matrix.html#a5ccb58af982a27187232cc8c07a94da8">height</a>, uint32_t <a class="el" href="class_matrix.html#ad43ea7e5e99130cffdb7b93ce25f4436">width</a>, T defaultVal)</td></tr>
+<tr class="memdesc:a9d7743924a9d9182c675372f0b16c13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If width or height argument is zero then no space for matrix's array will be allocated.  <a href="class_matrix.html#a9d7743924a9d9182c675372f0b16c13d">More...</a><br /></td></tr>
+<tr class="separator:a9d7743924a9d9182c675372f0b16c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8b229ce6eeca4740015a8655b04e8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a5c8b229ce6eeca4740015a8655b04e8a">Matrix</a> (<a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other)</td></tr>
+<tr class="separator:a5c8b229ce6eeca4740015a8655b04e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a280b1a450f7d492a428ea843b3734a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a1a280b1a450f7d492a428ea843b3734a">~Matrix</a> ()</td></tr>
+<tr class="separator:a1a280b1a450f7d492a428ea843b3734a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d796adbcc1ac8564e9e2306360f590"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a86d796adbcc1ac8564e9e2306360f590">Height</a> () const</td></tr>
+<tr class="memdesc:a86d796adbcc1ac8564e9e2306360f590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_matrix.html#a86d796adbcc1ac8564e9e2306360f590" title="Getter for Height field.">Height</a> field.  <a href="class_matrix.html#a86d796adbcc1ac8564e9e2306360f590">More...</a><br /></td></tr>
+<tr class="separator:a86d796adbcc1ac8564e9e2306360f590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a70fa7bc4ca43742b4552189aa62296"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a5a70fa7bc4ca43742b4552189aa62296">Width</a> () const</td></tr>
+<tr class="memdesc:a5a70fa7bc4ca43742b4552189aa62296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_matrix.html#a5a70fa7bc4ca43742b4552189aa62296" title="Getter for Width field.">Width</a> field.  <a href="class_matrix.html#a5a70fa7bc4ca43742b4552189aa62296">More...</a><br /></td></tr>
+<tr class="separator:a5a70fa7bc4ca43742b4552189aa62296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2555ef99ac404304432e38a38bf46f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa2555ef99ac404304432e38a38bf46f5">operator+=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:aa2555ef99ac404304432e38a38bf46f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds #other matrix to this one. Each value at according x and y position will be added to each other. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#aa2555ef99ac404304432e38a38bf46f5">More...</a><br /></td></tr>
+<tr class="separator:aa2555ef99ac404304432e38a38bf46f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac266a5c1c70819a79993bcf1976c460d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ac266a5c1c70819a79993bcf1976c460d">operator+=</a> (std::initializer_list&lt; T &gt; l) noexcept</td></tr>
+<tr class="memdesc:ac266a5c1c70819a79993bcf1976c460d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds #l list to this matrix. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#ac266a5c1c70819a79993bcf1976c460d">More...</a><br /></td></tr>
+<tr class="separator:ac266a5c1c70819a79993bcf1976c460d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66eeebd9fde92d999fa939f43ce250a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a66eeebd9fde92d999fa939f43ce250a7">operator+=</a> (const T value) noexcept</td></tr>
+<tr class="memdesc:a66eeebd9fde92d999fa939f43ce250a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds #value to each value in this matrix.  <a href="class_matrix.html#a66eeebd9fde92d999fa939f43ce250a7">More...</a><br /></td></tr>
+<tr class="separator:a66eeebd9fde92d999fa939f43ce250a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eee11ca0c6f792e126688c0933fb850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9eee11ca0c6f792e126688c0933fb850">operator-=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:a9eee11ca0c6f792e126688c0933fb850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substracts #other matrix to this one. Each value at according x and y position will be substracted to each other. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#a9eee11ca0c6f792e126688c0933fb850">More...</a><br /></td></tr>
+<tr class="separator:a9eee11ca0c6f792e126688c0933fb850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580932af62fe857f9e4aa915e18adaab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a580932af62fe857f9e4aa915e18adaab">operator-=</a> (std::initializer_list&lt; T &gt; l) noexcept</td></tr>
+<tr class="memdesc:a580932af62fe857f9e4aa915e18adaab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substracts #l list to this matrix. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#a580932af62fe857f9e4aa915e18adaab">More...</a><br /></td></tr>
+<tr class="separator:a580932af62fe857f9e4aa915e18adaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c0d57c3e37e3bcba6ed3ec218cefda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a78c0d57c3e37e3bcba6ed3ec218cefda">operator-=</a> (const T value) noexcept</td></tr>
+<tr class="memdesc:a78c0d57c3e37e3bcba6ed3ec218cefda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substracts #value to each value in this matrix.  <a href="class_matrix.html#a78c0d57c3e37e3bcba6ed3ec218cefda">More...</a><br /></td></tr>
+<tr class="separator:a78c0d57c3e37e3bcba6ed3ec218cefda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e69104038c26d50bf456e231faf842"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a19e69104038c26d50bf456e231faf842">operator*=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:a19e69104038c26d50bf456e231faf842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this matrix by #other. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#a19e69104038c26d50bf456e231faf842">More...</a><br /></td></tr>
+<tr class="separator:a19e69104038c26d50bf456e231faf842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a0f163631af1d3efffc23a9acb1ef8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ab5a0f163631af1d3efffc23a9acb1ef8">operator*=</a> (std::initializer_list&lt; T &gt; l) noexcept</td></tr>
+<tr class="memdesc:ab5a0f163631af1d3efffc23a9acb1ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this matrix by matrix made from #l initializer list.  <a href="class_matrix.html#ab5a0f163631af1d3efffc23a9acb1ef8">More...</a><br /></td></tr>
+<tr class="separator:ab5a0f163631af1d3efffc23a9acb1ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494aa8b0270528cbb48624037dd198da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a494aa8b0270528cbb48624037dd198da">operator*=</a> (const T value) noexcept</td></tr>
+<tr class="memdesc:a494aa8b0270528cbb48624037dd198da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies each value of this matrix by #value.  <a href="class_matrix.html#a494aa8b0270528cbb48624037dd198da">More...</a><br /></td></tr>
+<tr class="separator:a494aa8b0270528cbb48624037dd198da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b13ebfb06ef4b9b1e5c832e2f1e6bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a85b13ebfb06ef4b9b1e5c832e2f1e6bb">operator/=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:a85b13ebfb06ef4b9b1e5c832e2f1e6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides this matrix by #other matrix. Each value at according x and y position will be divided to each other. If sizes of matrixes do not match no changes will be done.  <a href="class_matrix.html#a85b13ebfb06ef4b9b1e5c832e2f1e6bb">More...</a><br /></td></tr>
+<tr class="separator:a85b13ebfb06ef4b9b1e5c832e2f1e6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e420a0361b60c45f32124526194670c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a0e420a0361b60c45f32124526194670c">operator/=</a> (const T value) noexcept</td></tr>
+<tr class="memdesc:a0e420a0361b60c45f32124526194670c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides each value of this matrix by #value.  <a href="class_matrix.html#a0e420a0361b60c45f32124526194670c">More...</a><br /></td></tr>
+<tr class="separator:a0e420a0361b60c45f32124526194670c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998d8e9696ae022cf0aaaa30281fad12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a998d8e9696ae022cf0aaaa30281fad12">operator=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:a998d8e9696ae022cf0aaaa30281fad12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mimic #other matrix. Takes it's height, width and values and copies it to self.  <a href="class_matrix.html#a998d8e9696ae022cf0aaaa30281fad12">More...</a><br /></td></tr>
+<tr class="separator:a998d8e9696ae022cf0aaaa30281fad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6325e23bef0bc407a92ddbccf1991ab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a6325e23bef0bc407a92ddbccf1991ab8">operator=</a> (std::initializer_list&lt; T &gt; l) noexcept</td></tr>
+<tr class="memdesc:a6325e23bef0bc407a92ddbccf1991ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mimic values stored in #l initializer list.  <a href="class_matrix.html#a6325e23bef0bc407a92ddbccf1991ab8">More...</a><br /></td></tr>
+<tr class="separator:a6325e23bef0bc407a92ddbccf1991ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63e44d010ca1f300f6cc26cceb827a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ad63e44d010ca1f300f6cc26cceb827a2">operator==</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:ad63e44d010ca1f300f6cc26cceb827a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method comparing two matrixes. It firstly checks the sizes. Then the types and at last values at each position.  <a href="class_matrix.html#ad63e44d010ca1f300f6cc26cceb827a2">More...</a><br /></td></tr>
+<tr class="separator:ad63e44d010ca1f300f6cc26cceb827a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1df14d18d1431142741a24448c419cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#af1df14d18d1431142741a24448c419cc">operator!=</a> (const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:af1df14d18d1431142741a24448c419cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method comparing two matrixes. It firstly checks the sizes. Then the types and at last values at each position.  <a href="class_matrix.html#af1df14d18d1431142741a24448c419cc">More...</a><br /></td></tr>
+<tr class="separator:af1df14d18d1431142741a24448c419cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b7992498c06bea4e240bd7f504ee90"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a18b7992498c06bea4e240bd7f504ee90">operator[]</a> (int x) const noexcept</td></tr>
+<tr class="memdesc:a18b7992498c06bea4e240bd7f504ee90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for values in this matrix. It allows us to perform 2D array-style value getting or getter for pointer to each column.  <a href="class_matrix.html#a18b7992498c06bea4e240bd7f504ee90">More...</a><br /></td></tr>
+<tr class="separator:a18b7992498c06bea4e240bd7f504ee90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a4d8417f15dc4e5ebad02321c9fd37e6c">Add</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat1, <a class="el" href="class_matrix.html">Matrix</a> *mat2)</td></tr>
-<tr class="memdesc:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds to given matrix #mat1 another matrix #mat2.  <a href="class_matrix.html#a4d8417f15dc4e5ebad02321c9fd37e6c">More...</a><br /></td></tr>
-<tr class="separator:a4d8417f15dc4e5ebad02321c9fd37e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa8a37e15cc6098b037fe9bbe4c7a7371">Add</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
-<tr class="memdesc:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds to given matrix scalar, constant value.  <a href="class_matrix.html#aa8a37e15cc6098b037fe9bbe4c7a7371">More...</a><br /></td></tr>
-<tr class="separator:aa8a37e15cc6098b037fe9bbe4c7a7371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab094af0b0a93d8fa1226139476f69f17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ab094af0b0a93d8fa1226139476f69f17">Multiply</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat1, <a class="el" href="class_matrix.html">Matrix</a> *mat2, <a class="el" href="class_matrix.html">Matrix</a> &amp;outMat)</td></tr>
-<tr class="memdesc:ab094af0b0a93d8fa1226139476f69f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies given matrixes.  <a href="class_matrix.html#ab094af0b0a93d8fa1226139476f69f17">More...</a><br /></td></tr>
-<tr class="separator:ab094af0b0a93d8fa1226139476f69f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08429f5aa98e740e74c27955942b1158"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a08429f5aa98e740e74c27955942b1158">Multiply</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
-<tr class="memdesc:a08429f5aa98e740e74c27955942b1158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies given matrix by scalar constant value.  <a href="class_matrix.html#a08429f5aa98e740e74c27955942b1158">More...</a><br /></td></tr>
-<tr class="separator:a08429f5aa98e740e74c27955942b1158"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4886451fa27df3c4b4c886642ab27776"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a4886451fa27df3c4b4c886642ab27776">Divide</a> (<a class="el" href="class_matrix.html">Matrix</a> *mat, const double scalar)</td></tr>
-<tr class="memdesc:a4886451fa27df3c4b4c886642ab27776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides given matrix by scalar constant value.  <a href="class_matrix.html#a4886451fa27df3c4b4c886642ab27776">More...</a><br /></td></tr>
-<tr class="separator:a4886451fa27df3c4b4c886642ab27776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a5ccb58af982a27187232cc8c07a94da8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a5ccb58af982a27187232cc8c07a94da8">height</a> {0}</td></tr>
+<tr class="memdesc:a5ccb58af982a27187232cc8c07a94da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of Height in the matrix.  <a href="class_matrix.html#a5ccb58af982a27187232cc8c07a94da8">More...</a><br /></td></tr>
+<tr class="separator:a5ccb58af982a27187232cc8c07a94da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad43ea7e5e99130cffdb7b93ce25f4436"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ad43ea7e5e99130cffdb7b93ce25f4436">width</a> {0}</td></tr>
+<tr class="memdesc:ad43ea7e5e99130cffdb7b93ce25f4436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of Width in the matrix.  <a href="class_matrix.html#ad43ea7e5e99130cffdb7b93ce25f4436">More...</a><br /></td></tr>
+<tr class="separator:ad43ea7e5e99130cffdb7b93ce25f4436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d60cf534436a6c0985c61eec302be2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a34d60cf534436a6c0985c61eec302be2">totalSize</a> {0}</td></tr>
+<tr class="memdesc:a34d60cf534436a6c0985c61eec302be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total size is a multiplied values of a height and a width. It is a count f elements in an array of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a>.  <a href="class_matrix.html#a34d60cf534436a6c0985c61eec302be2">More...</a><br /></td></tr>
+<tr class="separator:a34d60cf534436a6c0985c61eec302be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c40458ceb26414fd703acd3f98f2be"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be">mat</a> {nullptr}</td></tr>
+<tr class="memdesc:a68c40458ceb26414fd703acd3f98f2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.  <a href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be">More...</a><br /></td></tr>
+<tr class="separator:a68c40458ceb26414fd703acd3f98f2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:ac274897b49c87ddcca3398fce2555fb3"><td class="memItemLeft" align="right" valign="top">static T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#ac274897b49c87ddcca3398fce2555fb3">tmpMat</a> {nullptr}</td></tr>
+<tr class="memdesc:ac274897b49c87ddcca3398fce2555fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.  <a href="class_matrix.html#ac274897b49c87ddcca3398fce2555fb3">More...</a><br /></td></tr>
+<tr class="separator:ac274897b49c87ddcca3398fce2555fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1de83dfa8d942e6ad25b4899f258de"><td class="memItemLeft" align="right" valign="top">static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a0b1de83dfa8d942e6ad25b4899f258de">MAX_MATRIX_SIZE</a> {4096}</td></tr>
+<tr class="memdesc:a0b1de83dfa8d942e6ad25b4899f258de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.  <a href="class_matrix.html#a0b1de83dfa8d942e6ad25b4899f258de">More...</a><br /></td></tr>
+<tr class="separator:a0b1de83dfa8d942e6ad25b4899f258de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Represents the mathematical matrix and is able to preform matrix calculations. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class Matrix&lt; T &gt;</div><p >Represents the mathematical matrix and is able to preform matrix calculations. </p>
+<p >This matrix class assumes that x value is the number of a column and y value is the number of a row. This means that matrix[3][2] is value in 3rd row and 2nd column. Also height says how many rows there are and width says how many columns there are.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Types of values held in this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a00c52f04b918a0d4a3241eb4cd31c26b" name="a00c52f04b918a0d4a3241eb4cd31c26b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c52f04b918a0d4a3241eb4cd31c26b">&#9670;&#160;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
+<a id="ac3e974170cd6bb780272211ae66c598e" name="ac3e974170cd6bb780272211ae66c598e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3e974170cd6bb780272211ae66c598e">&#9670;&#160;</a></span>Matrix() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Matrix::Matrix </td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;<a class="el" href="class_matrix.html">::Matrix</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This constructor does not reserves the memory for the matrix's array. It only creates memory space for matrix pointer. This means that pointer will be accesiable but no value can be put inside of if. The matrix will be of size 0x0. </p>
+
+</div>
+</div>
+<a id="a88b06f13012ade46bce4bae86c7980f4" name="a88b06f13012ade46bce4bae86c7980f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b06f13012ade46bce4bae86c7980f4">&#9670;&#160;</a></span>Matrix() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;<a class="el" href="class_matrix.html">::Matrix</a> </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>rows</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>columns</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,41 +270,42 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>If any argument is zero then no space for matrix's array will be allocated. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rows</td><td>Amount of rows in the matrix. </td></tr>
-    <tr><td class="paramname">columns</td><td>Amount of columns in the matrix. </td></tr>
+    <tr><td class="paramname">Height</td><td>Amount of Height in the matrix. </td></tr>
+    <tr><td class="paramname">Width</td><td>Amount of Width in the matrix. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="adb6d6c9da85ace0a00871ed1627a1bd4" name="adb6d6c9da85ace0a00871ed1627a1bd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb6d6c9da85ace0a00871ed1627a1bd4">&#9670;&#160;</a></span>Matrix() <span class="overload">[2/2]</span></h2>
+<a id="a9d7743924a9d9182c675372f0b16c13d" name="a9d7743924a9d9182c675372f0b16c13d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7743924a9d9182c675372f0b16c13d">&#9670;&#160;</a></span>Matrix() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Matrix::Matrix </td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;<a class="el" href="class_matrix.html">::Matrix</a> </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>rows</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>columns</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>defaultVal</em>&#160;</td>
         </tr>
         <tr>
@@ -243,16 +314,13 @@ Static Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>If width or height argument is zero then no space for matrix's array will be allocated. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rows</td><td>Amount of rows in the matrix. </td></tr>
-    <tr><td class="paramname">columns</td><td>Amount of columns in the matrix. </td></tr>
+    <tr><td class="paramname">Height</td><td>Amount of Height in the matrix. </td></tr>
+    <tr><td class="paramname">Width</td><td>Amount of Width in the matrix. </td></tr>
     <tr><td class="paramname">defaultVal</td><td>The value that will be placed on each position in matrix. </td></tr>
   </table>
   </dd>
@@ -260,20 +328,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b1c3627f573d78a2f08623fdfef990f" name="a9b1c3627f573d78a2f08623fdfef990f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b1c3627f573d78a2f08623fdfef990f">&#9670;&#160;</a></span>~Matrix()</h2>
+<a id="a5c8b229ce6eeca4740015a8655b04e8a" name="a5c8b229ce6eeca4740015a8655b04e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8b229ce6eeca4740015a8655b04e8a">&#9670;&#160;</a></span>Matrix() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;<a class="el" href="class_matrix.html">::Matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a280b1a450f7d492a428ea843b3734a" name="a1a280b1a450f7d492a428ea843b3734a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a280b1a450f7d492a428ea843b3734a">&#9670;&#160;</a></span>~Matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Matrix::~Matrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::~<a class="el" href="class_matrix.html">Matrix</a></td>
         </tr>
       </table>
   </td>
@@ -282,115 +369,24 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >If mat is not null deletes it from the heap. </p>
+<p >If <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a> is not null deletes it from the heap. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa8a37e15cc6098b037fe9bbe4c7a7371" name="aa8a37e15cc6098b037fe9bbe4c7a7371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8a37e15cc6098b037fe9bbe4c7a7371">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
+<a id="a86d796adbcc1ac8564e9e2306360f590" name="a86d796adbcc1ac8564e9e2306360f590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d796adbcc1ac8564e9e2306360f590">&#9670;&#160;</a></span>Height()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Matrix::Add </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>scalar</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds to given matrix scalar, constant value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> to which values scalar will be added. </td></tr>
-    <tr><td class="paramname">scalar</td><td>Value which will be added. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4d8417f15dc4e5ebad02321c9fd37e6c" name="a4d8417f15dc4e5ebad02321c9fd37e6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d8417f15dc4e5ebad02321c9fd37e6c">&#9670;&#160;</a></span>Add() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Matrix::Add </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds to given matrix #mat1 another matrix #mat2. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat1</td><td>Modifiaed matrix. </td></tr>
-    <tr><td class="paramname">mat2</td><td>Added matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9604bef87537aeb194d6a708d8d8174a" name="a9604bef87537aeb194d6a708d8d8174a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9604bef87537aeb194d6a708d8d8174a">&#9670;&#160;</a></span>Columns()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t Matrix::Columns </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::Height</td>
         </tr>
       </table>
   </td>
@@ -400,346 +396,623 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for columns field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Amount of columns in matrix </dd></dl>
+<p>Getter for <a class="el" href="class_matrix.html#a86d796adbcc1ac8564e9e2306360f590" title="Getter for Height field.">Height</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of Height in matrix. </dd></dl>
 
 </div>
 </div>
-<a id="a4886451fa27df3c4b4c886642ab27776" name="a4886451fa27df3c4b4c886642ab27776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4886451fa27df3c4b4c886642ab27776">&#9670;&#160;</a></span>Divide()</h2>
+<a id="af1df14d18d1431142741a24448c419cc" name="af1df14d18d1431142741a24448c419cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1df14d18d1431142741a24448c419cc">&#9670;&#160;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Matrix::Divide </td>
+          <td class="memname">bool <a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::operator!= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>scalar</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Divides given matrix by scalar constant value. </p>
+<p>Method comparing two matrixes. It firstly checks the sizes. Then the types and at last values at each position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mat</td><td>Divided <a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>. </td></tr>
-    <tr><td class="paramname">scalar</td><td>Value by which matrix is being divided. </td></tr>
+    <tr><td class="paramname">other</td><td>Value to which this one is compared. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true If something is not the same in these matrixes. </dd>
+<dd>
+false If everything is eaxctly the same in these matrixes. </dd></dl>
 
 </div>
 </div>
-<a id="ad7bf491631a12f9e68018a95bea2135f" name="ad7bf491631a12f9e68018a95bea2135f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7bf491631a12f9e68018a95bea2135f">&#9670;&#160;</a></span>GetID()</h2>
+<a id="a19e69104038c26d50bf456e231faf842" name="a19e69104038c26d50bf456e231faf842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e69104038c26d50bf456e231faf842">&#9670;&#160;</a></span>operator*=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t Matrix::GetID </td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator*= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for matrix ID. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>'s ID. </dd></dl>
-
-</div>
-</div>
-<a id="aa131b2bbb38e52ca8c39a5f716ac9d57" name="aa131b2bbb38e52ca8c39a5f716ac9d57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa131b2bbb38e52ca8c39a5f716ac9d57">&#9670;&#160;</a></span>GetMatrixArray()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double * Matrix::GetMatrixArray </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Getter for mat field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to matrix array. </dd></dl>
-
-</div>
-</div>
-<a id="a729ff19a49e3661c9da642d9b619b4ad" name="a729ff19a49e3661c9da642d9b619b4ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a729ff19a49e3661c9da642d9b619b4ad">&#9670;&#160;</a></span>GetValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Matrix::GetValue </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>row</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>column</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns value stored on the given position in matrix. </p>
+<p>Multiplies this matrix by #other. If sizes of matrixes do not match no changes will be done. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>The y index of the position in matrix. </td></tr>
-    <tr><td class="paramname">column</td><td>The x index of the position in matrix. </td></tr>
+    <tr><td class="paramname">other</td><td><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> by which this one will be multiplied. #other matrix will remain unchanged. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix multiplied by #other. </dd></dl>
 
 </div>
 </div>
-<a id="a08429f5aa98e740e74c27955942b1158" name="a08429f5aa98e740e74c27955942b1158"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08429f5aa98e740e74c27955942b1158">&#9670;&#160;</a></span>Multiply() <span class="overload">[1/2]</span></h2>
+<a id="a494aa8b0270528cbb48624037dd198da" name="a494aa8b0270528cbb48624037dd198da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494aa8b0270528cbb48624037dd198da">&#9670;&#160;</a></span>operator*=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Matrix::Multiply </td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator*= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>scalar</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Multiplies given matrix by scalar constant value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat</td><td>Multiplied <a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a>. </td></tr>
-    <tr><td class="paramname">scalar</td><td>Value by which matrix is being multiplied. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab094af0b0a93d8fa1226139476f69f17" name="ab094af0b0a93d8fa1226139476f69f17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab094af0b0a93d8fa1226139476f69f17">&#9670;&#160;</a></span>Multiply() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Matrix::Multiply </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> *&#160;</td>
-          <td class="paramname"><em>mat2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_matrix.html">Matrix</a> &amp;&#160;</td>
-          <td class="paramname"><em>outMat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Multiplies given matrixes. </p>
-<p >Multiplies matrixes as the mat1 * mat2 and returns new object of type matrix being te result of multiplication. The original mat1 and mat2 objects remains not modified by this method.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mat1</td><td>First matrix. </td></tr>
-    <tr><td class="paramname">mat2</td><td>Second matrix, by which first is being multiplied. </td></tr>
-    <tr><td class="paramname">outMat</td><td>The output matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a07a578a33e3d05ab109e35c32f062966" name="a07a578a33e3d05ab109e35c32f062966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07a578a33e3d05ab109e35c32f062966">&#9670;&#160;</a></span>PutValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Matrix::PutValue </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>row</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>column</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Puts the given value on the given position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">row</td><td>The y index of the position in matrix. </td></tr>
-    <tr><td class="paramname">column</td><td>The x index of the position in matrix. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a7e54b182b691a081e0599e06034b1621" name="a7e54b182b691a081e0599e06034b1621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e54b182b691a081e0599e06034b1621">&#9670;&#160;</a></span>ResetMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Matrix::ResetMatrix </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const T&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Function resets the matrix so each value of it is the same. </p>
+<p>Multiplies each value of this matrix by #value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The value that will be placed on each position in matrix. </td></tr>
+    <tr><td class="paramname">value</td><td>Value by which value at each position of this matrix will be multiplied. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values multiplied. </dd></dl>
 
 </div>
 </div>
-<a id="a9823f552deec6e353ad4b910de873e23" name="a9823f552deec6e353ad4b910de873e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9823f552deec6e353ad4b910de873e23">&#9670;&#160;</a></span>Rows()</h2>
+<a id="ab5a0f163631af1d3efffc23a9acb1ef8" name="ab5a0f163631af1d3efffc23a9acb1ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5a0f163631af1d3efffc23a9acb1ef8">&#9670;&#160;</a></span>operator*=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Matrix::Rows </td>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator*= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiplies this matrix by matrix made from #l initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>initializer list that fits the convention of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a> convention. For example for 3x3 matrix it will be: {x11, x21, x31, x12, x22, x32, x13, x23, x33} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix that was multiplied by matrix created from #l list. </dd></dl>
+
+</div>
+</div>
+<a id="aa2555ef99ac404304432e38a38bf46f5" name="aa2555ef99ac404304432e38a38bf46f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2555ef99ac404304432e38a38bf46f5">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds #other matrix to this one. Each value at according x and y position will be added to each other. If sizes of matrixes do not match no changes will be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Added matrix. No changes will be done on this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values added. </dd></dl>
+
+</div>
+</div>
+<a id="a66eeebd9fde92d999fa939f43ce250a7" name="a66eeebd9fde92d999fa939f43ce250a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66eeebd9fde92d999fa939f43ce250a7">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds #value to each value in this matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value that will be added to each positions in this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values added. </dd></dl>
+
+</div>
+</div>
+<a id="ac266a5c1c70819a79993bcf1976c460d" name="ac266a5c1c70819a79993bcf1976c460d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac266a5c1c70819a79993bcf1976c460d">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds #l list to this matrix. If sizes of matrixes do not match no changes will be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>initializer list that fits the convention of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a> convention. For example for 3x3 matrix it will be: {x11, x21, x31, x12, x22, x32, x13, x23, x33} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values added. </dd></dl>
+
+</div>
+</div>
+<a id="a9eee11ca0c6f792e126688c0933fb850" name="a9eee11ca0c6f792e126688c0933fb850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eee11ca0c6f792e126688c0933fb850">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Substracts #other matrix to this one. Each value at according x and y position will be substracted to each other. If sizes of matrixes do not match no changes will be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Substracted matrix. No changes will be done on this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values substracted. </dd></dl>
+
+</div>
+</div>
+<a id="a78c0d57c3e37e3bcba6ed3ec218cefda" name="a78c0d57c3e37e3bcba6ed3ec218cefda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c0d57c3e37e3bcba6ed3ec218cefda">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Substracts #value to each value in this matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value that will be substracted to each positions in this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values substracted. </dd></dl>
+
+</div>
+</div>
+<a id="a580932af62fe857f9e4aa915e18adaab" name="a580932af62fe857f9e4aa915e18adaab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580932af62fe857f9e4aa915e18adaab">&#9670;&#160;</a></span>operator-=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Substracts #l list to this matrix. If sizes of matrixes do not match no changes will be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>initializer list that fits the convention of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a> convention. For example for 3x3 matrix it will be: {x11, x21, x31, x12, x22, x32, x13, x23, x33} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values substracted. </dd></dl>
+
+</div>
+</div>
+<a id="a85b13ebfb06ef4b9b1e5c832e2f1e6bb" name="a85b13ebfb06ef4b9b1e5c832e2f1e6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b13ebfb06ef4b9b1e5c832e2f1e6bb">&#9670;&#160;</a></span>operator/=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divides this matrix by #other matrix. Each value at according x and y position will be divided to each other. If sizes of matrixes do not match no changes will be done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> by which values this matrix will be divided. No changes will be done on this matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values divided. </dd></dl>
+
+</div>
+</div>
+<a id="a0e420a0361b60c45f32124526194670c" name="a0e420a0361b60c45f32124526194670c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e420a0361b60c45f32124526194670c">&#9670;&#160;</a></span>operator/=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divides each value of this matrix by #value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value by which value at each position of this matrix will be divided. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values divided. </dd></dl>
+
+</div>
+</div>
+<a id="a998d8e9696ae022cf0aaaa30281fad12" name="a998d8e9696ae022cf0aaaa30281fad12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998d8e9696ae022cf0aaaa30281fad12">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mimic #other matrix. Takes it's height, width and values and copies it to self. </p>
+<p >No changes will be done on #other matrix. Data held until this point on this matrix will be lost. It rewrites this matrix to fit #other matrix size (Only if needed realloc will be done - if this matrix is bigger or equal to #other matrix size only <a class="el" href="class_matrix.html#a5ccb58af982a27187232cc8c07a94da8" title="Amount of Height in the matrix.">height</a> and <a class="el" href="class_matrix.html#ad43ea7e5e99130cffdb7b93ce25f4436" title="Amount of Width in the matrix.">width</a> values will change). Then using memcpy copies values stored in #other matrix.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td><a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> from which copy will be performed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values and size exactly the same as #other matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a6325e23bef0bc407a92ddbccf1991ab8" name="a6325e23bef0bc407a92ddbccf1991ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6325e23bef0bc407a92ddbccf1991ab8">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp; <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mimic values stored in #l initializer list. </p>
+<p >It takes values stored in #l list and copies it into this matrix array. If reallocation is needed it will be done (Only if the size of this matrix is too small). It allows us to set matrix's values at each position or one value for every position. For example for matrix mat of size 2x2 You can perform mat = {1, 3, 2, 4}; which will result in matrix with first row = [1, 2] and second row = [3, 4] Or You can perfoem mat = {1}; which will result in first row = [1, 1] and second row = [1, 1].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>initializer list that fits the convention of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a> convention. For example for 3x3 matrix it will be: {x11, x21, x31, x12, x22, x32, x13, x23, x33} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix&lt;T&gt;&amp; Reference to *this matrix with values and size exactly the same as #l initializer list says. </dd></dl>
+
+</div>
+</div>
+<a id="ad63e44d010ca1f300f6cc26cceb827a2" name="ad63e44d010ca1f300f6cc26cceb827a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63e44d010ca1f300f6cc26cceb827a2">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method comparing two matrixes. It firstly checks the sizes. Then the types and at last values at each position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Value to which this one is compared. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If everything is eaxctly the same in these matrixes. </dd>
+<dd>
+false If something is not the same in these matrixes. </dd></dl>
+
+</div>
+</div>
+<a id="a18b7992498c06bea4e240bd7f504ee90" name="a18b7992498c06bea4e240bd7f504ee90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b7992498c06bea4e240bd7f504ee90">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">E * <a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for values in this matrix. It allows us to perform 2D array-style value getting or getter for pointer to each column. </p>
+<p >For example for matrix mat of size 2x2 with first row = [1, 2] and second row = [3, 4] You will get: mat[0][0] = 1, mat[0][1] = 3, mat[1, 0] = 3, mat[1][1] = 4 And also: mat[0] will give You pointer to first column which is [1, 3].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Index of an column </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T* Pointer to the column. You can the recursivly perform another [] operator to get the 'y' value of this matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a5a70fa7bc4ca43742b4552189aa62296" name="a5a70fa7bc4ca43742b4552189aa62296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a70fa7bc4ca43742b4552189aa62296">&#9670;&#160;</a></span>Width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; E &gt;::Width</td>
         </tr>
       </table>
   </td>
@@ -749,35 +1022,170 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for rows field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Amount of rows in matrix. </dd></dl>
+<p>Getter for <a class="el" href="class_matrix.html#a5a70fa7bc4ca43742b4552189aa62296" title="Getter for Width field.">Width</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of Width in matrix </dd></dl>
 
 </div>
 </div>
-<a id="af40af6f88268cbe1850617269d1f80e2" name="af40af6f88268cbe1850617269d1f80e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af40af6f88268cbe1850617269d1f80e2">&#9670;&#160;</a></span>ToString()</h2>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5ccb58af982a27187232cc8c07a94da8" name="a5ccb58af982a27187232cc8c07a94da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccb58af982a27187232cc8c07a94da8">&#9670;&#160;</a></span>height</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Matrix::ToString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::height {0}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Converts matrix to std::string, so it can be written on any output. </p>
-<p >The returned string is in a following format:<br  />
- First line contains information about the size of the matrix as follows: <a class="el" href="class_matrix.html" title="Represents the mathematical matrix and is able to preform matrix calculations.">Matrix</a> of size: &lt;rows&gt;x&lt;columns&gt;.<br  />
- Next lines contains the matrix in the correct order of rows and columns. </p>
+<p>Amount of Height in the matrix. </p>
+
+</div>
+</div>
+<a id="a68c40458ceb26414fd703acd3f98f2be" name="a68c40458ceb26414fd703acd3f98f2be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c40458ceb26414fd703acd3f98f2be">&#9670;&#160;</a></span>mat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::mat {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently. </p>
+
+</div>
+</div>
+<a id="a0b1de83dfa8d942e6ad25b4899f258de" name="a0b1de83dfa8d942e6ad25b4899f258de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b1de83dfa8d942e6ad25b4899f258de">&#9670;&#160;</a></span>MAX_MATRIX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::MAX_MATRIX_SIZE {4096}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens. </p>
+
+</div>
+</div>
+<a id="ac274897b49c87ddcca3398fce2555fb3" name="ac274897b49c87ddcca3398fce2555fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac274897b49c87ddcca3398fce2555fb3">&#9670;&#160;</a></span>tmpMat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::tmpMat {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory. </p>
+
+</div>
+</div>
+<a id="a34d60cf534436a6c0985c61eec302be2" name="a34d60cf534436a6c0985c61eec302be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d60cf534436a6c0985c61eec302be2">&#9670;&#160;</a></span>totalSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::totalSize {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total size is a multiplied values of a height and a width. It is a count f elements in an array of <a class="el" href="class_matrix.html#a68c40458ceb26414fd703acd3f98f2be" title="Array of matrix&#39;s values. It is linear despite matrix being 2-dimensional. It is more efficiently.">mat</a>. </p>
+
+</div>
+</div>
+<a id="ad43ea7e5e99130cffdb7b93ce25f4436" name="ad43ea7e5e99130cffdb7b93ce25f4436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43ea7e5e99130cffdb7b93ce25f4436">&#9670;&#160;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt;::width {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Amount of Width in the matrix. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/Code/Inc/Physics/<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Math/<a class="el" href="_matrix_8hpp_source.html">Matrix.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

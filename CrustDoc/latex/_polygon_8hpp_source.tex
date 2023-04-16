@@ -1,0 +1,58 @@
+\hypertarget{_polygon_8hpp_source}{}\doxysection{Polygon.\+hpp}
+\label{_polygon_8hpp_source}\index{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/Polygon.hpp@{/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Inc/Rendering/Polygon.hpp}}
+\mbox{\hyperlink{_polygon_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_POLYGON\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_POLYGON\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_vector3_8hpp}{Math/Vector3.hpp}}>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_triangle_8hpp}{Math/Triangle.hpp}}>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_polygon}{Polygon}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_triangle}{Triangle}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \textcolor{keyword}{using }\mbox{\hyperlink{class_triangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle::Triangle}};}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_polygon_ace39c67107966db12e13a183f496c3b0}{\string~Polygon}}();}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22     \mbox{\hyperlink{class_vector3}{Vector3}} \&\mbox{\hyperlink{class_polygon_af3825082a54541362d00c16abbe062a0}{Normal}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_vector3}{Vector3}} *normal\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \mbox{\hyperlink{class_polygon_ace39c67107966db12e13a183f496c3b0}{Polygon::\string~Polygon}}()}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (normal == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{31         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{32     \textcolor{keyword}{delete} normal;}
+\DoxyCodeLine{33 \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \mbox{\hyperlink{class_vector3}{Vector3}} \&\mbox{\hyperlink{class_polygon_af3825082a54541362d00c16abbe062a0}{Polygon::Normal}}()}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if} (normal != \textcolor{keyword}{nullptr}) \textcolor{comment}{// FIXME After rotation this is ought to be recalculated -\/ this will generate bugs, but for now it is good enough as it is faster}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} *normal;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     normal = \textcolor{keyword}{new} \mbox{\hyperlink{class_vector3}{Vector3}}();}
+\DoxyCodeLine{41     \textcolor{keyword}{static} \mbox{\hyperlink{class_vector3}{Vector3}} line1;}
+\DoxyCodeLine{42     \textcolor{keyword}{static} \mbox{\hyperlink{class_vector3}{Vector3}} line2;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     line1 = \mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{GetPoint}}(1);}
+\DoxyCodeLine{45     line1 -\/= \mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{GetPoint}}(0);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     line2 = \mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{GetPoint}}(2);}
+\DoxyCodeLine{48     line2 -\/= \mbox{\hyperlink{class_triangle_a8e4c246a9a54572c9dc197856d9f7659}{GetPoint}}(0);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     normal-\/>\mbox{\hyperlink{class_vector3_adefc004f13762e3386de5cb557692408}{SetX}}(line1.\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}() * line2.\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}() -\/ line1.\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}() * line2.\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}());}
+\DoxyCodeLine{51     normal-\/>\mbox{\hyperlink{class_vector3_a84690eeeb8f94037b9103772b8bcb221}{SetY}}(line1.\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}() * line2.\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}() -\/ line1.\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}() * line2.\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}());}
+\DoxyCodeLine{52     normal-\/>\mbox{\hyperlink{class_vector3_abef4f93039c0cc4181dea08ee0fc41c2}{SetZ}}(line1.\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}() * line2.\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}() -\/ line1.\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}() * line2.\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}());}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{static} \textcolor{keywordtype}{double} normalLen;}
+\DoxyCodeLine{55     normalLen = \mbox{\hyperlink{class_math_ab29df732d1fd8bf452a1570b9866f61f}{Math::SquareRoot}}(normal-\/>\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}() * normal-\/>\mbox{\hyperlink{class_vector3_a6c9e1b2da59154c65bac9f1e2ca92932}{X}}() + normal-\/>\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}() * normal-\/>\mbox{\hyperlink{class_vector3_a4cdf9e8af601508983635de175ebac65}{Y}}() + normal-\/>\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}() * normal-\/>\mbox{\hyperlink{class_vector3_a44d26a20339d2a17c3002001bf57174b}{Z}}());}
+\DoxyCodeLine{56     (*normal) /= normalLen;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} *normal;}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
