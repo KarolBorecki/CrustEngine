@@ -29,8 +29,6 @@ inline void Mover::Start() {}
 
 void Mover::Update(double deltaTime)
 {
-  Logger::Log("MOVER");
-
   if (InputHandler::IsPressed(Key::KEY_D))
   {
     Logger::Log("Moving +X");
