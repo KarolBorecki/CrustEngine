@@ -39,9 +39,9 @@ public:
    * @param cam Camera, from which perspective the polygon will be projected.
    * @param projectLight Flag if the light should be proojected.
    *
-   * @return Projected polygon.
+   * @return Projected polygon. //TODO fix documentation
    */
-    ProjectionData &ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight);
+    ProjectionData &ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3 &lightDir);
 
   /**
    * @brief Getter for #projMatrix field.
@@ -67,11 +67,12 @@ public:
     static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
 
 private:
-    uint32_t width{0};
-    uint32_t height{0};
+    uint32_t width{0}; //!< Assigned window width. Calulated on Renderer creation.
+    uint32_t height{0}; //!< Assigned window height. Calulated on Renderer creation.
     double aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
+
     Matrix<double> &projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    ProjectionData &result;
+    ProjectionData &result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
 Projector::Projector(uint32_t _width, uint32_t _height) : width(_width), height(_height), result(*(new ProjectionData())), projMat(*(new Matrix<double>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
@@ -82,9 +83,10 @@ Projector::Projector(uint32_t _width, uint32_t _height) : width(_width), height(
 Projector::~Projector()
 {
     delete &projMat;
+    delete &result;
 }
 
-Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Vector3 &pos, Vector3 &rot, Camera &cam, Vector3 &lightDir, bool projectLight)
+Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3 &lightDir)
 {
     /* Moving object's triangle */
     static Vector3 movedP1;
@@ -95,9 +97,9 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Vector3 &pos
     movedP2 = poli.GetPoint(1);
     movedP3 = poli.GetPoint(2);
 
-    movedP1 += pos;
-    movedP2 += pos;
-    movedP3 += pos;
+    movedP1 += transform.GetPosition();
+    movedP2 += transform.GetPosition();
+    movedP3 += transform.GetPosition();
 
     movedP1 -= cam.GetTransform().GetPosition(); // TODO move to local variable
     movedP2 -= cam.GetTransform().GetPosition();
@@ -122,18 +124,11 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Vector3 &pos
         static Vector3 lightDirNormal;
         static double lightDotProduct;
 
-        if (projectLight)
-        {
-            lightDirNormal = lightDir;
-            lightDirNormalLen = Math::SquareRoot(lightDir.X() * lightDir.X() + lightDir.Y() * lightDir.Y() + lightDir.Z() * lightDir.Z());
-            lightDirNormal /= lightDirNormalLen;
+        lightDirNormal = lightDir;
+        lightDirNormalLen = Math::SquareRoot(lightDir.X() * lightDir.X() + lightDir.Y() * lightDir.Y() + lightDir.Z() * lightDir.Z());
+        lightDirNormal /= lightDirNormalLen;
 
-            lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
-        }
-        else
-        {
-            lightDotProduct = 1.0;
-        }
+        lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
 
         result.light = (uint8_t)(lightDotProduct * 255);
 
