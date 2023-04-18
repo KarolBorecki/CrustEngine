@@ -15,11 +15,14 @@
 #include <Scripting/SampleScripts/LoopMove.hpp>
 #include <Scripting/SampleScripts/Mover.hpp>
 
+// TODO implement to strings - it is usefull at last
 int main(int argc, char *argv[])
 {
     Logger::Info("Engine Start");
+
     Camera cam(90, 0.1, 1000.0);
     cam.GetTransform().SetPosition(-4, -5, -10);
+
     Scene scene("T Scene", cam);
 
     Mesh mesh("Sample mesh");
@@ -37,15 +40,14 @@ int main(int argc, char *argv[])
     // rObj.AttachScript(&rObjRotation);
 
     Mover mover(12, 12, 12);
-    rObj.AttachScript(mover);
+    cam.AttachScript(mover);
+    //rObj.AttachScript(mover);
 
     Vector3 lightSourceDir(0.6, 0.2, -0.5);
     DirectionalLight dirLightSource(255, lightSourceDir);
 
     scene.AddObject(rObj);
     scene.AddObject(dirLightSource);
-
-    scene.SetLightProjection(true);
 
     Core core;
     core.OpenNewWindow(1000, 800, scene);

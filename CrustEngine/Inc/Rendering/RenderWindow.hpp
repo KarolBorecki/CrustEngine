@@ -126,7 +126,7 @@ void RenderWindow::Start()
       objs = loadedScene->GetObjectsToRender();
       for (auto obj : objs)
       {
-        renderer->DrawMesh(obj->GetMesh(), obj->GetTransform().GetPosition(), obj->GetTransform().GetEulerRotation(), loadedScene->GetMainCamera(), loadedScene->GetLightSources()[0]->GetTransform().GetEulerRotation(), loadedScene->IsLightProjected());
+        renderer->RenderMesh(*obj, *loadedScene); 
       }
     }
 
@@ -150,7 +150,6 @@ void RenderWindow::LoadScene(Scene &scene)
     loadedScene->OnUnLoad();
   loadedScene = &scene;
   renderer->SetWindowTitle(loadedScene->GetName());
-  renderer->RecalculateProjectionMatrix(loadedScene->GetMainCamera());
   loadedScene->OnLoad();
 }
 
@@ -161,7 +160,6 @@ void RenderWindow::UnLoadScene()
   loadedScene->OnUnLoad();
   loadedScene = nullptr;
   renderer->SetWindowTitle("No scene");
-  renderer->GetProjectionMatrix() = {0};
 }
 
 inline void RenderWindow::Clean()
