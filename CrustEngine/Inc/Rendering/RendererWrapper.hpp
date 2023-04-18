@@ -155,10 +155,30 @@ public:
    * @param p2Y Point 2 Y.
    * @param p3X Point 3 X.
    * @param p3Y Point 3 Y.
+   * 
+   * @param r Red value (0-255).
+   * @param g Green value (0-255).
+   * @param b Blue value (0-255).
    *
    * @sa Triangle.hpp
    */
   void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b);
+
+  /**
+   * @brief Draws given triangle on the screen.
+   *
+   * @param p1X Point 1 X.
+   * @param p1Y Point 1 Y.
+   * @param p2X Point 2 X.
+   * @param p2Y Point 2 Y.
+   * @param p3X Point 3 X.
+   * @param p3Y Point 3 Y.
+   * 
+   * @param rgb Red, Green, Blue value (0-255).
+   *
+   * @sa Triangle.hpp
+   */
+  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t rgb);
 
   /**
    * @brief Function called to show everything that has been drawn on the screen after last RendererWrapper::Show call.
@@ -287,6 +307,11 @@ inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, d
           },
       };
   SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
+}
+
+inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t rgb)
+{
+  DrawFilledTri(p1X, p1Y, p2X, p2Y, p3X, p3Y, rgb, rgb, rgb);
 }
 
 inline void RendererWrapper::Show()

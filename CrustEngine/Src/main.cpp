@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
     // rObj.AttachScript(&rObjRotation);
 
     Mover mover(12, 12, 12);
-    cam.AttachScript(mover);
-    //rObj.AttachScript(mover);
+    // cam.AttachScript(mover);
+    rObj.AttachScript(mover);
 
     Vector3 lightSourceDir(0.6, 0.2, -0.5);
     DirectionalLight dirLightSource(255, lightSourceDir);
