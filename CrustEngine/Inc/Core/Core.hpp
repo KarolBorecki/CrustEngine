@@ -8,7 +8,6 @@
 #include <Core/Scene.hpp>
 #include <Rendering/RenderWindow.hpp>
 
-// TODDO maybe make static?
 /**
  * @brief Class, which helds opened windows and manages the engine work.
  */

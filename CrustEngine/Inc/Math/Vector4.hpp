@@ -49,7 +49,7 @@ inline Vector4::Vector4() : Vector4(0, 0, 0, 0) {}
 
 inline Vector4::Vector4(double valXYZW) : Vector4(valXYZW, valXYZW, valXYZW, valXYZW) {}
 
-inline Vector4::Vector4(double x, double y, double z, double w) 
+inline Vector4::Vector4(double x, double y, double z, double w)
 {
   width = VECTOR4_WIDTH;
   height = VECTOR4_HEIGHT;
@@ -62,7 +62,7 @@ inline Vector4::Vector4(double x, double y, double z, double w)
   SetW(w);
 }
 
-inline Vector4::~Vector4() {  }
+inline Vector4::~Vector4() {}
 
 inline double Vector4::W() const { return (*this)[3][0]; }
 

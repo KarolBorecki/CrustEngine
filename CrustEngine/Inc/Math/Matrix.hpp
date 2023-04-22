@@ -200,8 +200,6 @@ public:
    */
   T *operator[](int x) const noexcept;
 
-  static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
-
 protected:
   uint32_t height{0};    //!< Amount of Height in the matrix.
   uint32_t width{0};     //!< Amount of Width in the matrix.
@@ -209,18 +207,24 @@ protected:
 
   T *mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 
-  inline static T tmpMat[MAX_MATRIX_SIZE]; //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
+  inline static T *tmpMat{nullptr};                //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
+  static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
 };
 
 template <class E>
 inline Matrix<E>::Matrix() : height(0), width(0)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = 0;
 }
 
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), width(_width)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
+
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
@@ -230,6 +234,8 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), w
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : height(_height), width(_width)
 {
+  if (tmpMat == nullptr)
+    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
@@ -259,11 +265,6 @@ inline Matrix<E>::~Matrix()
 {
   if (mat != nullptr)
     delete[] mat;
-  // mat = nullptr;
-
-  // if (tmpMat != nullptr)
-  //   delete[] tmpMat;
-  // tmpMat = nullptr;
 }
 
 template <class E>
@@ -365,7 +366,7 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (width != other.height)
   {
-    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
+    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes!");
     return *this;
   }
 
@@ -399,11 +400,11 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
   static uint32_t otherWidth;
   static uint32_t otherHeight;
   otherWidth = l.size() / width;
-  otherHeight = l.size() / otherWidth;
+  otherHeight = l.size() / height;
 
   if (width != otherHeight)
   {
-    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", width, height, otherWidth, otherHeight);
+    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes!");
     return *this;
   }
 
