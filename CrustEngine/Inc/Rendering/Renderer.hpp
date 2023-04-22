@@ -73,7 +73,7 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   projector.RecalculateProjectionMatrix(scene.GetMainCamera());
 
-  for (int i = 0; i < /*object.GetMesh().GetPolygonsCount()*/ 1; i++) // TODO use auto for
+  for (int i = 0; i < object.GetMesh().GetPolygonsCount(); i++) // TODO use auto for
   {
     Projector::ProjectionData w = projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
     if (w.renderable)
