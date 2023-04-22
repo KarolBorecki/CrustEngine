@@ -200,6 +200,8 @@ public:
    */
   T *operator[](int x) const noexcept;
 
+  static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
+
 protected:
   uint32_t height{0};    //!< Amount of Height in the matrix.
   uint32_t width{0};     //!< Amount of Width in the matrix.
@@ -207,24 +209,18 @@ protected:
 
   T *mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 
-  inline static T *tmpMat{nullptr};                //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
-  static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
+  inline static T tmpMat[Matrix::MAX_MATRIX_SIZE]; //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
 };
 
 template <class E>
 inline Matrix<E>::Matrix() : height(0), width(0)
 {
-  if (tmpMat == nullptr)
-    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = 0;
 }
 
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), width(_width)
 {
-  if (tmpMat == nullptr)
-    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
-
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
@@ -234,8 +230,6 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), w
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : height(_height), width(_width)
 {
-  if (tmpMat == nullptr)
-    tmpMat = new E[MAX_MATRIX_SIZE * MAX_MATRIX_SIZE];
   totalSize = _height * _width;
   if (totalSize == 0)
     return;
