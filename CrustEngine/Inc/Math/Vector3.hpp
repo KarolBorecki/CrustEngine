@@ -68,13 +68,8 @@ inline Vector3::Vector3() : Vector3(0, 0, 0) {}
 
 inline Vector3::Vector3(double valXYZ) : Vector3(valXYZ, valXYZ, valXYZ) {}
 
-inline Vector3::Vector3(double x, double y, double z)
+inline Vector3::Vector3(double x, double y, double z) : Matrix<double>(VECTOR3_HEIGHT, VECTOR3_WIDTH)
 {
-  width = VECTOR3_WIDTH;
-  height = VECTOR3_HEIGHT;
-  totalSize = VECTOR3_WIDTH;
-  mat = new double[VECTOR3_WIDTH];
-
   SetX(x);
   SetY(y);
   SetZ(z);
