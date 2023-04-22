@@ -187,7 +187,8 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
 
 void Projector::RecalculateProjectionMatrix(Camera &cam)
 {
-    double q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
+    static double q;
+    q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());;
     projMat[0][0] = aspectRatio * cam.GetFFovRad();
     projMat[1][1] = cam.GetFFovRad();
     projMat[2][2] = q;
