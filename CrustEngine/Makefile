@@ -4,6 +4,11 @@ engine:
 e:
 	clear && clear
 	g++ Src/main.cpp -o e.out -std=c++17 -I Externals/SDL/include -I Inc -L Externals/SDL/lib -l SDL2-2.0.0 
+
+eleaks:
+	clear && clear
+	g++ Src/main.cpp -o e.out -std=c++17 -I Externals/SDL/include -I Inc -L Externals/SDL/lib -l SDL2-2.0.0 
+	leaks -atExit -- ./e.out VideoShip
 test:
 	clear && clear
 	rm -f ./test.out
