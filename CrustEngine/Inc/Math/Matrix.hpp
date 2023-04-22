@@ -272,7 +272,7 @@ Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 {
   if (height != other.Height() || width != other.Width())
   {
-    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
     return *this;
   }
 
@@ -289,7 +289,7 @@ Matrix<E> &Matrix<E>::operator+=(std::initializer_list<E> l) noexcept
 {
   if (totalSize != l.size())
   {
-    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%d) | {%d}", totalSize, l.size());
     return *this;
   }
 
@@ -316,7 +316,7 @@ Matrix<E> &Matrix<E>::operator-=(const Matrix<E> &other) noexcept
 {
   if (height != other.height || width != other.width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
     return *this;
   }
 
@@ -333,7 +333,7 @@ Matrix<E> &Matrix<E>::operator-=(std::initializer_list<E> l) noexcept
 {
   if (totalSize != l.size())
   {
-    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%d) | {%d }", totalSize, l.size());
     return *this;
   }
 
@@ -360,7 +360,7 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (width != other.height)
   {
-    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
     return *this;
   }
 
@@ -398,7 +398,7 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 
   if (width != otherHeight)
   {
-    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", width, height, otherWidth, otherHeight);
     return *this;
   }
 
@@ -437,7 +437,7 @@ Matrix<E> &Matrix<E>::operator/=(const Matrix<E> &other) noexcept
 {
   if (height != other.height || width != other.width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes!");
+    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
     return *this;
   }
 
