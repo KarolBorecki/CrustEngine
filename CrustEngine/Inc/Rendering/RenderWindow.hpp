@@ -109,10 +109,8 @@ void RenderWindow::Start()
   loadedScene->Start();
 
   InputHandler::BeginInputMonitoring();
-  bool test = true;
-  while (renderer->IsRunning() && test)
+  while (renderer->IsRunning())
   {
-    test = false;
     timeProvider->OnFrameStart();
 
     InputHandler::PollEvent();
