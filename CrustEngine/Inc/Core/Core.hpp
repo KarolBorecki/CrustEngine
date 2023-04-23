@@ -8,6 +8,7 @@
 #include <Core/Scene.hpp>
 #include <Rendering/RenderWindow.hpp>
 
+// TODO maybe it doestn't need to be a class
 /**
  * @brief Class, which helds opened windows and manages the engine work.
  */

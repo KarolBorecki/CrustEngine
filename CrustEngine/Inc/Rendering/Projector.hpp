@@ -15,6 +15,7 @@
 class Projector
 {
 public:
+// TODO add documentation about it
     typedef struct ProjectionData
     {
         bool renderable=false;
@@ -188,7 +189,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
 void Projector::RecalculateProjectionMatrix(Camera &cam)
 {
     static double q;
-    q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());;
+    q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
     projMat[0][0] = aspectRatio * cam.GetFFovRad();
     projMat[1][1] = cam.GetFFovRad();
     projMat[2][2] = q;
