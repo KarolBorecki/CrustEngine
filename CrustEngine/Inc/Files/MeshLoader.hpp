@@ -48,6 +48,9 @@ void MeshLoader::LoadMeshFromFile(const char *fileName, Mesh *outMesh)
 void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
 {
   std::ifstream file(fileName);
+  if (!file.is_open())
+    ExceptionsHandler::ThrowError("Failed to open file: %s", fileName);
+
   std::string line;
   const char *analysed_line;
 
@@ -64,7 +67,6 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
 
   while (std::getline(file, line))
   {
-
     analysed_line = line.c_str();
     if (sscanf(analysed_line, "v %lf %lf %lf", &x, &y, &z) == 3)
     {
