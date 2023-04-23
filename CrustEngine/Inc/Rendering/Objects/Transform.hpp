@@ -3,6 +3,8 @@
 
 #include <Math/Vector3.hpp>
 
+//TODO use float in position and rotation vectors
+//TODO add docs
 class Transform
 {
 public:
