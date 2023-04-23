@@ -13,6 +13,8 @@
 #include <Rendering/Objects/RenderObject.hpp>
 #include <Rendering/Projector.hpp>
 
+#include <algorithm>
+
 /**
  * @brief Class used to render simple shapes on the window.
  *
@@ -73,12 +75,28 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   projector.RecalculateProjectionMatrix(scene.GetMainCamera());
 
+  static Projector::ProjectionData tmpProjection;
+  static std::vector<Projector::ProjectionData> projections;
   for (int i = 0; i < object.GetMesh().GetPolygonsCount(); i++) // TODO use auto for
   {
-    Projector::ProjectionData w = projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
-    if (w.renderable)
-      DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, w.light, w.light, w.light);
+    tmpProjection = projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
+    if (tmpProjection.renderable)
+      projections.push_back(tmpProjection);
   }
+
+  sort(projections.begin(), projections.end(), [](const Projector::ProjectionData &a, const Projector::ProjectionData &b)
+       { 
+        /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
+        double za = (a.z1 + a.z2 + a.z3) / 3;
+        double zb = (b.z1 + b.z2 + b.z3) / 3;
+        return za > zb;
+         });
+
+  for (auto &w : projections)
+  {
+    DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, w.light);
+  }
+  projections.clear();
 }
 
 #endif /* _RENDERER_HPP_ */

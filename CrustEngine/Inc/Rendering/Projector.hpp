@@ -19,9 +19,9 @@ public:
     typedef struct ProjectionData
     {
         bool renderable=false;
-        double x1=0, y1=0;
-        double x2=0, y2=0;
-        double x3=0, y3=0;
+        double x1=0, y1=0, z1=0;
+        double x2=0, y2=0, z2=0;
+        double x3=0, y3=0, z3=0;
         uint8_t light=0;
     } ProjectionData;
 
@@ -176,12 +176,15 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
 
         result.x1 = projectedP1.X();
         result.y1 = projectedP1.Y();
+        result.z1 = projectedP1.Z();
 
         result.x2 = projectedP2.X();
         result.y2 = projectedP2.Y();
+        result.z2 = projectedP2.Z();
 
         result.x3 = projectedP3.X();
         result.y3 = projectedP3.Y();
+        result.z3 = projectedP3.Z();
     }
     return result;
 }
