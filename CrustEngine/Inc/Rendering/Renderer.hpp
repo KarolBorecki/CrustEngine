@@ -93,7 +93,7 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
 
   for (auto &w : projections)
   {
-    DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, w.light);
+    DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, scene.IsLightProjected() ? w.light : 255);
   }
   projections.clear();
 }
