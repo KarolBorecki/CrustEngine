@@ -111,27 +111,28 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
     normal = poli.Normal();
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
-    static double dotProduct;
+    static float dotProduct;
     dotProduct = normal.X() * (movedP1.X() - cam.GetTransform().GetPosition().X()) +
                  normal.Y() * (movedP1.Y() - cam.GetTransform().GetPosition().Y()) +
                  normal.Z() * (movedP1.Z() - cam.GetTransform().GetPosition().Z());
 
     result.renderable = dotProduct < 0.0;
 
-    if (dotProduct < 0.0)
+    if (dotProduct < 0.0f)
     {
         /* Illumination - see how many light is being placed onto this plane */
-        static double lightDirNormalLen;
+        static float lightDirNormalLen;
         static Vector3 lightDirNormal;
-        static double lightDotProduct;
+        static float lightDotProduct;
 
         lightDirNormal = lightDir;
         lightDirNormalLen = Math::SquareRoot(lightDir.X() * lightDir.X() + lightDir.Y() * lightDir.Y() + lightDir.Z() * lightDir.Z());
         lightDirNormal /= lightDirNormalLen;
 
         lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
-
-        result.light = (uint8_t)(lightDotProduct * 255);
+        if(lightDotProduct < 0.0f)
+            lightDotProduct = 0.0f;
+        result.light = lightDotProduct * 255;
 
         /* Projecting object's triangle */
         static Vector4 extendedP1;
