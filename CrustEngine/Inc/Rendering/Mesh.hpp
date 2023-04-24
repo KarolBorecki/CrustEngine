@@ -8,8 +8,10 @@
 
 #define DEFAULT_MESH_NAME "NO NAME" //!< Default polygon name that is given when no name was provided.
 
+template<class, typename>
 class Vector3;
 
+// TODO maybe try to use struct instead of a class
 /**
  * @brief Represents 3D model as mesh consisted of 3D polygons.
  */
@@ -50,7 +52,7 @@ public:
    * @param poliIndex Triangle index.
    * @param pointIndex Triangle's point index.
    */
-  Vector3 &GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const;
+  const Vector3<> &GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const;
 
   /**
    * @brief Getter for polygons count.
@@ -93,7 +95,7 @@ inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); }
 
 inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(polygons[index]); }
 
-inline Vector3 &Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const { return polygons[poliIndex]->GetPoint(pointIndex); }
+inline const Vector3<> &Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const { return polygons[poliIndex]->GetPoint(pointIndex); }
 
 inline uint32_t Mesh::GetPolygonsCount() const { return polygons.size(); }
 

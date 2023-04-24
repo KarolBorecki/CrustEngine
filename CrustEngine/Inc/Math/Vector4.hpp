@@ -3,11 +3,12 @@
 
 #include <Math/Vector4.hpp>
 
-//TODO add optional template for this class so wwe are able to use float instead of double 
+//TODO add optional template for this class so wwe are able to use float instead of T 
 /**
  * @brief Represents mathematical vector4.
  */
-class Vector4 : public Matrix<double>
+template<class T = float, typename E = typename std::enable_if<std::is_floating_point<float>::value>::type>
+class Vector4 : public Matrix<T>
 {
 public:
   /**
@@ -16,75 +17,78 @@ public:
   Vector4();
 
   /**
-   * @param valXYZ Value for each X, Y, Z and W fields.
+   * @param valXYZ Value for each X, Y, Z and E fields.
    */
-  Vector4(double valXYZW);
+  Vector4(T valXYZW);
 
   /**
    * @param x Value for X field.
    * @param y Value for Y field.
    * @param z Value for Z field.
-   * @param w Value for W field.
+   * @param w Value for E field.
    */
-  Vector4(double x, double y, double z, double w);
+  Vector4(T x, T y, T z, T w);
   ~Vector4();
 
     /**
    * @brief Getter for Vector4 x value.
    */
-  double X() const;
+  T X() const;
   /**
    * @brief Getter for Vector4 y value.
    */
-  double Y() const;
+  T Y() const;
   /**
    * @brief Getter for Vector4 z value.
    */
-  double Z() const;
+  T Z() const;
 
     /**
    * @brief Getter for Vector4 z value.
    */
-  double W() const;
+  T W() const;
 
   /**
    * @brief Setter for Vector4 x value.
    *
    * @param valX New value of vector's x.
    */
-  void SetX(double valX);
+  void SetX(T valX);
 
   /**
    * @brief Setter for Vector4 y value.
    *
    * @param valY New value of vector's y.
    */
-  void SetY(double valY);
+  void SetY(T valY);
 
   /**
    * @brief Setter for Vector4 z value.
    *
    * @param valZ New value of vector's z.
    */
-  void SetZ(double valZ);
+  void SetZ(T valZ);
 
   /**
    * @brief Setter for Vector4 w value.
    *
    * @param valW New value of vector's w.
    */
-  void SetW(double valW);
+  void SetW(T valW);
 
 private:
   static inline constexpr uint8_t VECTOR4_WIDTH{4};
   static inline constexpr uint8_t VECTOR4_HEIGHT{1};
 };
 
-inline Vector4::Vector4() : Vector4(0, 0, 0, 0) {}
+template <typename T, typename E>
+inline Vector4<T, E>::Vector4() : Vector4(0, 0, 0, 0) {}
 
-inline Vector4::Vector4(double valXYZW) : Vector4(valXYZW, valXYZW, valXYZW, valXYZW) {}
+template <typename T, typename E>
+inline Vector4<T, E>::Vector4(T valXYZW) : Vector4(valXYZW, valXYZW, valXYZW, valXYZW) {}
 
-inline Vector4::Vector4(double x, double y, double z, double w) : Matrix<double>(VECTOR4_HEIGHT, VECTOR4_WIDTH)
+template <typename T, typename E>
+inline Vector4<T, E>::Vector4(T x, T y, T z, T w) : Matrix<T>(VECTOR4_HEIGHT, VECTOR4_WIDTH)
 {
   SetX(x);
   SetY(y);
@@ -92,22 +96,31 @@ inline Vector4::Vector4(double x, double y, double z, double w) : Matrix<double>
   SetW(w);
 }
 
-inline Vector4::~Vector4() {}
+template <typename T, typename E>
+inline Vector4<T, E>::~Vector4() {}
 
-inline double Vector4::X() const { return (*this)[0][0]; }
+template <typename T, typename E>
+inline T Vector4<T, E>::X() const { return (*this)[0][0]; }
 
-inline double Vector4::Y() const { return (*this)[1][0]; }
+template <typename T, typename E>
+inline T Vector4<T, E>::Y() const { return (*this)[1][0]; }
 
-inline double Vector4::Z() const { return (*this)[2][0]; }
+template <typename T, typename E>
+inline T Vector4<T, E>::Z() const { return (*this)[2][0]; }
 
-inline double Vector4::W() const { return (*this)[3][0]; }
+template <typename T, typename E>
+inline T Vector4<T, E>::W() const { return (*this)[3][0]; }
 
-inline void Vector4::SetX(double valX) { (*this)[0][0] = valX; }
+template <typename T, typename E>
+inline void Vector4<T, E>::SetX(T valX) { (*this)[0][0] = valX; }
 
-inline void Vector4::SetY(double valY) { (*this)[1][0] = valY; }
+template <typename T, typename E>
+inline void Vector4<T, E>::SetY(T valY) { (*this)[1][0] = valY; }
 
-inline void Vector4::SetZ(double valZ) { (*this)[2][0] = valZ; }
+template <typename T, typename E>
+inline void Vector4<T, E>::SetZ(T valZ) { (*this)[2][0] = valZ; }
 
-inline void Vector4::SetW(double valW) { (*this)[3][0] = valW; }
+template <typename T, typename E>
+inline void Vector4<T, E>::SetW(T valW) { (*this)[3][0] = valW; }
 
 #endif /* _Vector4_HPP_ */

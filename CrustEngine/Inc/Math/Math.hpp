@@ -16,6 +16,7 @@ public:
      * @return double Abosulute value.
      */
     static double Abs(double value);
+    static float Abs(float value);
 
     /**
      * @brief Method that calculates square root of a given value.
@@ -24,6 +25,7 @@ public:
      * @return double Square root of #radicand.
      */
     static double SquareRoot(double radicand);
+    
     /**
      * @brief Method that calculates 1/sqrt(radicand). This is highly useful during projection.
      *
@@ -90,6 +92,11 @@ private:
 };
 
 inline double Math::Abs(double value)
+{
+    return (value >= 0 ? value : -value);
+}
+
+inline float Math::Abs(float value)
 {
     return (value >= 0 ? value : -value);
 }
