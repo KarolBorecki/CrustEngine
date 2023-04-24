@@ -16,7 +16,7 @@ class Projector
 {
 public:
 // TODO add documentation about it
-    typedef struct ProjectionData
+    typedef struct ProjectionData // FIXME use Vectors instead of doubles
     {
         bool renderable=false;
         double x1=0, y1=0, z1=0;
@@ -42,14 +42,14 @@ public:
    *
    * @return Projected polygon. //TODO fix documentation
    */
-    ProjectionData &ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3 &lightDir);
+    ProjectionData &ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3<> &lightDir);
 
   /**
    * @brief Getter for #projMatrix field.
    *
    * @return Reference to #projMatrix field.
    */
-  Matrix<double> &GetProjectionMatrix() const;
+  const Matrix<double> &GetProjectionMatrix() const; // TODO implement
 
   /**
    * @brief Recalculates the projection matrix for given camera.
@@ -70,15 +70,15 @@ public:
 private:
     uint32_t width{0}; //!< Assigned window width. Calulated on Renderer creation.
     uint32_t height{0}; //!< Assigned window height. Calulated on Renderer creation.
-    double aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
+    float aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
-    Matrix<double> &projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    Matrix<float> &projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
     ProjectionData &result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
-Projector::Projector(uint32_t _width, uint32_t _height) : width(_width), height(_height), result(*(new ProjectionData())), projMat(*(new Matrix<double>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
+Projector::Projector(uint32_t _width, uint32_t _height) : width(_width), height(_height), result(*(new ProjectionData())), projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
 {
-    aspectRatio = ((double)_height / (double)_width);
+    aspectRatio = ((float)_height / (float)_width);
 }
 
 Projector::~Projector()
@@ -87,7 +87,7 @@ Projector::~Projector()
     delete &result;
 }
 
-Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3 &lightDir)
+Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3<> &lightDir)
 {
     /* Moving object's triangle */
     static Vector3 movedP1;

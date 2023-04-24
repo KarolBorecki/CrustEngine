@@ -89,8 +89,7 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
         /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
         double za = (a.z1 + a.z2 + a.z3) / 3;
         double zb = (b.z1 + b.z2 + b.z3) / 3;
-        return za > zb;
-         });
+        return za > zb; });
 
   for (auto &w : projections)
   {

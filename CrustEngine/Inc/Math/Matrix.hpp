@@ -419,7 +419,7 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
   totalSize = width * height;
   memcpy(mat, tmpMat, totalSize * sizeof(E));
 
-  return *this; // TODO wywołujepowstanie nowej macierzy
+  return *this; // TODO wywołuje powstanie nowej macierzy
 }
 
 template <class E>
@@ -487,7 +487,7 @@ template <class E>
 Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 {
   // Logger::Log("Start = with init list");
-  const double *ptL = l.begin();
+  const E *ptL = l.begin();
 
   if (l.size() == 1)
   {
@@ -517,7 +517,7 @@ bool Matrix<E>::operator==(const Matrix<E> &other) noexcept
   for (uint32_t x = 0; x < width; x++)
   {
     for (uint32_t y = 0; y < height; y++)
-      if (!Math::DoubleEquals((*this)[x][y], other[x][y])) // FIXME double equals does not fir parametrized class!!!!
+      if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return false;
       }
@@ -535,7 +535,7 @@ bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
   for (uint32_t x = 0; x < width; x++)
   {
     for (uint32_t y = 0; y < height; y++)
-      if (!Math::DoubleEquals((*this)[x][y], other[x][y])) // FIXME double equals does not fir parametrized class!!!!
+      if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return true;
       }
