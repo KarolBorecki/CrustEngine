@@ -27,38 +27,51 @@ inline Mover::Mover(double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) 
 
 inline void Mover::Start() {}
 
+// #define LOG
 void Mover::Update(double deltaTime)
 {
   if (InputHandler::IsPressed(Key::KEY_D))
   {
+#ifdef LOG
     Logger::Log("Moving +X");
+#endif
     GetObject().GetTransform().Translate(speedX * deltaTime, 0, 0);
   }
   if (InputHandler::IsPressed(Key::KEY_A))
   {
+#ifdef LOG
     Logger::Log("Moving -X");
+#endif
     GetObject().GetTransform().Translate(-speedX * deltaTime, 0, 0);
   }
   if (InputHandler::IsPressed(Key::KEY_W))
   {
+#ifdef LOG
     Logger::Log("Moving +Z");
+#endif
     GetObject().GetTransform().Translate(0, 0, speedY * deltaTime);
   }
   if (InputHandler::IsPressed(Key::KEY_S))
   {
+#ifdef LOG
     Logger::Log("Moving -Z");
+#endif
     GetObject().GetTransform().Translate(0, 0, -speedY * deltaTime);
   }
 
   if (InputHandler::IsPressed(Key::KEY_Q))
   {
+#ifdef LOG
     Logger::Log("Moving +Y");
+#endif
     GetObject().GetTransform().Translate(0, speedY * deltaTime, 0);
   }
 
   if (InputHandler::IsPressed(Key::KEY_E))
   {
+#ifdef LOG
     Logger::Log("Moving -Y");
+#endif
     GetObject().GetTransform().Translate(0, -speedY * deltaTime, 0);
   }
 }
