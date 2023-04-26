@@ -221,7 +221,7 @@ inline Matrix<E>::Matrix() : height(0), width(0)
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), width(_width)
 {
-  totalSize = _height * _width;
+  totalSize = height * width;
   if (totalSize == 0)
     return;
   mat = new E[totalSize];
@@ -230,7 +230,7 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), w
 template <class E>
 inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : height(_height), width(_width)
 {
-  totalSize = _height * _width;
+  totalSize = height * width;
   if (totalSize == 0)
     return;
   mat = new E[totalSize];
@@ -241,15 +241,15 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : hei
 template <class E>
 Matrix<E>::Matrix(Matrix<E> &other) : height(other.Height()), width(other.Width())
 {
-  if (totalSize != (other.Height() * other.Width()))
-  {
-    if (mat != nullptr)
-      delete[] mat;
-    mat = nullptr;
-    mat = new E[other.totalSize]; // TODO use realloc!!!!
-  }
-
-  totalSize = width * height;
+  // if (totalSize != (other.Height() * other.Width()))
+  // {
+  //   if (mat != nullptr)
+  //     delete[] mat;
+  //   mat = nullptr;
+  //    // TODO use realloc!!!!
+  // }
+  totalSize = height * width;
+  mat = new E[totalSize];
 
   memcpy(mat, other.mat, sizeof(E) * totalSize);
 }

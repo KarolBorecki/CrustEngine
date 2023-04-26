@@ -45,8 +45,9 @@ int main(int argc, char *argv[])
     Mover mover(12, 12, 12);
     rObj.AttachScript(mover);
 
-    Vector3 lightSourceDir(0.6f, 0.2f, -0.5f);
+    Vector3 lightSourceDir(0.4f, -0.3f, -0.89f);
     DirectionalLight dirLightSource(255, lightSourceDir);
+    
     Logger::Info("Light source created.");
     scene.AddObject(rObj);
     scene.AddObject(dirLightSource);

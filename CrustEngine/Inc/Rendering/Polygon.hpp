@@ -19,7 +19,7 @@ public:
      *
      * @return Vector3& Normal vector of this plane.
      */
-    const Vector3<> &Normal();
+    Vector3<> &Normal();
 
 private:
     Vector3<> *normal{nullptr};
@@ -32,7 +32,7 @@ Polygon::~Polygon()
     delete normal;
 }
 
-const Vector3<> &Polygon::Normal()
+Vector3<> &Polygon::Normal()
 {
     if (normal != nullptr) // FIXME After rotation this is ought to be recalculated - this will generate bugs, but for now it is good enough as it is faster
         return *normal;
