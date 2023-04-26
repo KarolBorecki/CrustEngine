@@ -35,7 +35,7 @@ public:
    *
    * @param index Index of the point. 0 represents first point, 1 second and 2 thrid point.
    */
-  const Vector3<> &GetPoint(uint8_t index);
+  Vector3<> &GetPoint(uint8_t index);
 
   /**
    * @brief Setter for all 3 points of triangle x, y and z values.
@@ -62,7 +62,7 @@ Triangle::~Triangle()
   delete point[2];
 }
 
-inline const Vector3<> &Triangle::GetPoint(uint8_t index) { return *(point[index]); }
+inline Vector3<> &Triangle::GetPoint(uint8_t index) { return *(point[index]); }
 
 void Triangle::SetPoints(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {

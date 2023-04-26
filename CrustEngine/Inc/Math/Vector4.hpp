@@ -3,7 +3,6 @@
 
 #include <Math/Vector4.hpp>
 
-//TODO add optional template for this class so wwe are able to use float instead of T 
 /**
  * @brief Represents mathematical vector4.
  */
