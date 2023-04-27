@@ -41,11 +41,12 @@ public:
   static bool IsPressed(Key::KeyCode key);
 
 private:
-  static inline bool isInitialized{false}; //!< Represents if handler was already initialized.
-  static inline InputEvent lastEvent;      //!< Last event that occured in the engine.
+  static inline bool _isInitialized{false}; //!< Represents if handler was already initialized.
+  static inline InputEvent _lastEvent;      //!< Last event that occured in the engine.
 
-  static const inline unsigned char *keyboardState; //!< Holds true/false value for each keyboard's key - tells if key is pressed right now.
+  static const inline unsigned char *p_keyboardState; //!< Holds true/false value for each keyboard's key - tells if key is pressed right now.
 
+private:
   /**
    * @brief Reset's last event state to UNKNOW. Called on input monitoring start.
    */
@@ -61,16 +62,16 @@ private:
 
 inline void InputHandler::BeginInputMonitoring()
 {
-  if (isInitialized)
+  if (_isInitialized)
     return;
   ResetEventState();
-  isInitialized = true;
-  keyboardState = SDL_GetKeyboardState(NULL);
+  _isInitialized = true;
+  p_keyboardState = SDL_GetKeyboardState(NULL);
 }
 
 void InputHandler::PollEvent()
 {
-  if (!isInitialized)
+  if (!_isInitialized)
     return;
 
   static SDL_Event sdlEvent;
@@ -78,44 +79,44 @@ void InputHandler::PollEvent()
   {
     if (sdlEvent.type == SDL_QUIT)
     {
-      lastEvent.type = Event::EVENT_WINDOW_QUIT;
+      _lastEvent.type = Event::EVENT_WINDOW_QUIT;
     }
     else if (sdlEvent.type == SDL_KEYDOWN && sdlEvent.key.repeat == 0)
     {
-      lastEvent.type = Event::EVENT_KEY_DOWN;
-      lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
+      _lastEvent.type = Event::EVENT_KEY_DOWN;
+      _lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
     }
     else if (sdlEvent.type == SDL_KEYUP && sdlEvent.key.repeat == 0)
     {
-      lastEvent.type = Event::EVENT_KEY_UP;
-      lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
+      _lastEvent.type = Event::EVENT_KEY_UP;
+      _lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
     }
     else if (sdlEvent.type == SDL_MOUSEBUTTONDOWN)
     {
-      lastEvent.type = Event::EVENT_MOUSE_DOWN;
+      _lastEvent.type = Event::EVENT_MOUSE_DOWN;
     }
     else if (sdlEvent.type == SDL_MOUSEBUTTONUP)
     {
-      lastEvent.type = Event::EVENT_MOUSE_UP;
+      _lastEvent.type = Event::EVENT_MOUSE_UP;
     }
     else if (sdlEvent.type == SDL_MOUSEWHEEL)
     {
-      lastEvent.type = Event::EVENT_WHEEL;
+      _lastEvent.type = Event::EVENT_WHEEL;
     }
   }
 }
 
 bool InputHandler::IsPressed(Key::KeyCode key)
 {
-  return keyboardState[key] == 1;
+  return p_keyboardState[key] == 1;
 }
 
-inline InputEvent &InputHandler::GetLastEvent() { return lastEvent; }
+inline InputEvent &InputHandler::GetLastEvent() { return _lastEvent; }
 
 inline void InputHandler::ResetEventState()
 {
-  lastEvent.type = Event::EVENT_UNKNOWN;
-  lastEvent.keyCode = Key::KEY_NONE;
+  _lastEvent.type = Event::EVENT_UNKNOWN;
+  _lastEvent.keyCode = Key::KEY_NONE;
 }
 
 inline Key::KeyCode InputHandler::ParseSDLKeyCodeEvent(int32_t keyCode)

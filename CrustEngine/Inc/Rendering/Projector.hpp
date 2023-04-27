@@ -68,23 +68,23 @@ public:
     static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
 
 private:
-    uint32_t width{0}; //!< Assigned window width. Calulated on Renderer creation.
-    uint32_t height{0}; //!< Assigned window height. Calulated on Renderer creation.
-    float aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
+    uint32_t _width{0}; //!< Assigned window width. Calulated on Renderer creation.
+    uint32_t _height{0}; //!< Assigned window height. Calulated on Renderer creation.
+    float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
-    Matrix<float> &projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    ProjectionData &result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
+    Matrix<float> &r_projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    ProjectionData &r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
-Projector::Projector(uint32_t _width, uint32_t _height) : width(_width), height(_height), result(*(new ProjectionData())), projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
+Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
 {
-    aspectRatio = ((float)_height / (float)_width);
+    _aspectRatio = ((float)_height / (float)_width);
 }
 
 Projector::~Projector()
 {
-    delete &projMat;
-    delete &result;
+    delete &r_projMat;
+    delete &r_result;
 }
 
 Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3<> &lightDir)
@@ -116,7 +116,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
                  normal.Y() * (movedP1.Y() - cam.GetTransform().GetPosition().Y()) +
                  normal.Z() * (movedP1.Z() - cam.GetTransform().GetPosition().Z());
 
-    result.renderable = dotProduct < 0.0;
+    r_result.renderable = dotProduct < 0.0;
 
     if (dotProduct < 0.0f)
     {
@@ -132,7 +132,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
         lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
         if(lightDotProduct < 0.0f)
             lightDotProduct = 0.0f;
-        result.light = lightDotProduct * 255;
+        r_result.light = lightDotProduct * 255;
 
         /* Projecting object's triangle */
         static Vector4 extendedP1;
@@ -143,9 +143,9 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
         extendedP2 = {movedP2.X(), movedP2.Y(), movedP2.Z(), 1.0};
         extendedP3 = {movedP3.X(), movedP3.Y(), movedP3.Z(), 1.0};
 
-        extendedP1 *= projMat;
-        extendedP2 *= projMat;
-        extendedP3 *= projMat;
+        extendedP1 *= r_projMat;
+        extendedP2 *= r_projMat;
+        extendedP3 *= r_projMat;
 
         static Vector3 projectedP1;
         static Vector3 projectedP2;
@@ -168,37 +168,37 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
         projectedP2 *= 0.5;
         projectedP3 *= 0.5;
 
-        projectedP1.SetX(projectedP1.X() * width);
-        projectedP1.SetY(projectedP1.Y() * height);
-        projectedP2.SetX(projectedP2.X() * width);
-        projectedP2.SetY(projectedP2.Y() * height);
-        projectedP3.SetX(projectedP3.X() * width);
-        projectedP3.SetY(projectedP3.Y() * height);
+        projectedP1.SetX(projectedP1.X() * _width);
+        projectedP1.SetY(projectedP1.Y() * _height);
+        projectedP2.SetX(projectedP2.X() * _width);
+        projectedP2.SetY(projectedP2.Y() * _height);
+        projectedP3.SetX(projectedP3.X() * _width);
+        projectedP3.SetY(projectedP3.Y() * _height);
 
-        result.x1 = projectedP1.X();
-        result.y1 = projectedP1.Y();
-        result.z1 = projectedP1.Z();
+        r_result.x1 = projectedP1.X();
+        r_result.y1 = projectedP1.Y();
+        r_result.z1 = projectedP1.Z();
 
-        result.x2 = projectedP2.X();
-        result.y2 = projectedP2.Y();
-        result.z2 = projectedP2.Z();
+        r_result.x2 = projectedP2.X();
+        r_result.y2 = projectedP2.Y();
+        r_result.z2 = projectedP2.Z();
 
-        result.x3 = projectedP3.X();
-        result.y3 = projectedP3.Y();
-        result.z3 = projectedP3.Z();
+        r_result.x3 = projectedP3.X();
+        r_result.y3 = projectedP3.Y();
+        r_result.z3 = projectedP3.Z();
     }
-    return result;
+    return r_result;
 }
 
 void Projector::RecalculateProjectionMatrix(Camera &cam)
 {
     static double q;
     q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
-    projMat[0][0] = aspectRatio * cam.GetFFovRad();
-    projMat[1][1] = cam.GetFFovRad();
-    projMat[2][2] = q;
-    projMat[3][2] = 1.0;
-    projMat[2][3] = -cam.GetFNear() * q;
+    r_projMat[0][0] = _aspectRatio * cam.GetFFovRad();
+    r_projMat[1][1] = cam.GetFFovRad();
+    r_projMat[2][2] = q;
+    r_projMat[3][2] = 1.0;
+    r_projMat[2][3] = -cam.GetFNear() * q;
 }
 
 #endif /* _PROJECTOR_HPP_ */

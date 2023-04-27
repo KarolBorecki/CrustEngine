@@ -17,7 +17,7 @@
 
 // TODO implement toStrings - it is usefull at last
 // TODO add SDL as submodule of a git repository - z modułami trzeba klonować git clone --recursive <URL>
-// TODO learn abou cmake - use it for built project
+// TODO change private variables names to '_<varname>'
 // TODO learn abou cpp compilers
 // TODO typeof is only for gcc, use deltype
 // TODO create asset manager so we do not hgave to load files repeatedly

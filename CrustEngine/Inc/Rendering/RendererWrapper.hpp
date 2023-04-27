@@ -57,11 +57,11 @@ public:
    *
    * @sa Renderer.hpp
    */
-  RendererWrapper(uint32_t _width, uint32_t _height) : width(_width), height(_height)
+  RendererWrapper(uint32_t _width, uint32_t _height) : _width(_width), _height(_height)
   {
-    window = NULL;
-    renderer = NULL;
-    isRunning = LibRendererFalse;
+    p_window = NULL;
+    p_renderer = NULL;
+    _isRunning = LibRendererFalse;
   }
   virtual ~RendererWrapper() = default;
 
@@ -229,13 +229,13 @@ public:
   uint32_t Height() const;
 
 private:
-  uint32_t width{0};  //!< Drawing window width.
-  uint32_t height{0}; //!< Drawing window height.
+  uint32_t _width{0};  //!< Drawing window width.
+  uint32_t _height{0}; //!< Drawing window height.
 
-  LibRendererWindow *window{nullptr}; //!< Drawing window handler.
-  LibRenderer *renderer{nullptr};     //!< Drawing renderer handler.
+  LibRendererWindow *p_window{nullptr}; //!< Drawing window handler.
+  LibRenderer *p_renderer{nullptr};     //!< Drawing renderer handler.
 
-  LibRendererBool isRunning{LibRendererFalse}; //!< Flag representing if the renderer thread is running.
+  LibRendererBool _isRunning{LibRendererFalse}; //!< Flag representing if the renderer thread is running.
 };
 
 inline RendererWrapper::RendererStatus RendererWrapper::Init()
@@ -245,18 +245,18 @@ inline RendererWrapper::RendererStatus RendererWrapper::Init()
 
 inline RendererWrapper::RendererStatus RendererWrapper::CreateWindow()
 {
-  isRunning = LibRendererTrue;
-  return SDL_CreateWindowAndRenderer(width, height, 0, &window, &renderer) == 0 ? STATUS_OK : STATUS_FAIL;
+  _isRunning = LibRendererTrue;
+  return SDL_CreateWindowAndRenderer(_width, _height, 0, &p_window, &p_renderer) == 0 ? STATUS_OK : STATUS_FAIL;
 }
 
 inline void RendererWrapper::SetWindowTitle(std::string title)
 {
-  SDL_SetWindowTitle(window, title.c_str());
+  SDL_SetWindowTitle(p_window, title.c_str());
 }
 
 inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
-  SDL_SetRenderDrawColor(renderer, r, g, b, a);
+  SDL_SetRenderDrawColor(p_renderer, r, g, b, a);
 }
 
 inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b)
@@ -276,7 +276,7 @@ inline void RendererWrapper::SetDrawColor(uint32_t color)
 
 inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY)
 {
-  SDL_RenderDrawLine(renderer, startX, startY, endX, endY);
+  SDL_RenderDrawLine(p_renderer, startX, startY, endX, endY);
 }
 
 void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
@@ -306,7 +306,7 @@ inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, d
               SDL_FPoint{0},
           },
       };
-  SDL_RenderGeometry(renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
+  SDL_RenderGeometry(p_renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
 }
 
 inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t rgb)
@@ -316,38 +316,38 @@ inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, d
 
 inline void RendererWrapper::Show()
 {
-  SDL_RenderPresent(renderer);
+  SDL_RenderPresent(p_renderer);
 }
 
 inline void RendererWrapper::Clean()
 {
-  SDL_RenderClear(renderer);
+  SDL_RenderClear(p_renderer);
 }
 
 inline LibRendererBool RendererWrapper::IsRunning() const
 {
-  return isRunning;
+  return _isRunning;
 }
 
 inline void RendererWrapper::StopRunning()
 {
-  isRunning = LibRendererFalse;
+  _isRunning = LibRendererFalse;
 }
 
 void RendererWrapper::Quit()
 {
-  if (renderer)
-    SDL_DestroyRenderer(renderer);
-  if (window)
-    SDL_DestroyWindow(window);
+  if (p_renderer)
+    SDL_DestroyRenderer(p_renderer);
+  if (p_window)
+    SDL_DestroyWindow(p_window);
 
   SDL_Quit();
 }
 
-inline LibRenderer &RendererWrapper::GetRenderer() const { return *renderer; }
+inline LibRenderer &RendererWrapper::GetRenderer() const { return *p_renderer; }
 
-inline uint32_t RendererWrapper::Width() const { return width; }
+inline uint32_t RendererWrapper::Width() const { return _width; }
 
-inline uint32_t RendererWrapper::Height() const { return height; }
+inline uint32_t RendererWrapper::Height() const { return _height; }
 
 #endif /* _RENDERERWRAPPER_HPP_ */

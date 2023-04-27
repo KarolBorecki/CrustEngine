@@ -72,31 +72,31 @@ public:
   static constexpr double MILISECONDS_TO_SECONDS{0.001};
 
 private:
-  double frameDeltaTime_ms{0.0}; //!< Time that last frame took to complete.
-  uint32_t framesPassed{0};      //!< Amount of frames that RenderWindow did from it start.
+  double _frameDeltaTime_ms{0.0}; //!< Time that last frame took to complete.
+  uint32_t _framesPassed{0};      //!< Amount of frames that RenderWindow did from it start.
 
-  std::chrono::steady_clock::time_point lastFrameStartTimePoint;            //!< Last frame saved time point at which it started.
-  static inline std::chrono::steady_clock::time_point engineStartTimePoint; //!< Engine's core start time point saved in TimeProvider::OnEngineStart.
+  std::chrono::steady_clock::time_point _lastFrameStartTimePoint;            //!< Last frame saved time point at which it started.
+  static inline std::chrono::steady_clock::time_point _engineStartTimePoint; //!< Engine's core start time point saved in TimeProvider::OnEngineStart.
 };
 
 TimeProvider::TimeProvider() {}
 
 double TimeProvider::GetTime_ms()
 {
-  return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - engineStartTimePoint).count();
+  return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - _engineStartTimePoint).count();
 }
 
 inline double TimeProvider::GetTime_s() { return GetTime_ms() * MILISECONDS_TO_SECONDS; }
 
 void TimeProvider::OnFrameStart()
 {
-  lastFrameStartTimePoint = std::chrono::steady_clock::now();
+  _lastFrameStartTimePoint = std::chrono::steady_clock::now();
 }
 
 void TimeProvider::OnFrameEnd()
 {
-  frameDeltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - lastFrameStartTimePoint).count();
-  framesPassed++;
+  _frameDeltaTime_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - _lastFrameStartTimePoint).count();
+  _framesPassed++;
 }
 
 inline double TimeProvider::GetFPS() { return 1 / GetDeltaTime_s(); }
@@ -105,10 +105,10 @@ inline double TimeProvider::GetAverageFPS() { return 1 / GetAverageFrameTime_s()
 
 inline double TimeProvider::GetDeltaTime_s() { return GetDeltaTime_ms() * MILISECONDS_TO_SECONDS; }
 
-inline double TimeProvider::GetDeltaTime_ms() { return frameDeltaTime_ms; }
+inline double TimeProvider::GetDeltaTime_ms() { return _frameDeltaTime_ms; }
 
-inline double TimeProvider::GetAverageFrameTime_s() { return GetTime_s() / framesPassed; }
+inline double TimeProvider::GetAverageFrameTime_s() { return GetTime_s() / _framesPassed; }
 
-inline void TimeProvider::OnEngineStart() { engineStartTimePoint = std::chrono::steady_clock::now(); }
+inline void TimeProvider::OnEngineStart() { _engineStartTimePoint = std::chrono::steady_clock::now(); }
 
 #endif /* _TIMEPROVIDER_HPP_ */

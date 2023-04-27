@@ -43,32 +43,32 @@ public:
   void SetPoints(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z);
 
 private:
-  Vector3<> *point[3]; //!< Three points representing the triangle in 3D space.
+  Vector3<> *_point[3]; //!< Three points representing the triangle in 3D space.
 };
 
 inline Triangle::Triangle() : Triangle(0, 0, 0, 0, 0, 0, 0, 0, 0) {}
 
 inline Triangle::Triangle(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {
-  point[0] = new Vector3(p1X, p1Y, p1Z);
-  point[1] = new Vector3(p2X, p2Y, p2Z);
-  point[2] = new Vector3(p3X, p3Y, p3Z);
+  _point[0] = new Vector3(p1X, p1Y, p1Z);
+  _point[1] = new Vector3(p2X, p2Y, p2Z);
+  _point[2] = new Vector3(p3X, p3Y, p3Z);
 }
 
 Triangle::~Triangle()
 {
-  delete point[0];
-  delete point[1];
-  delete point[2];
+  delete _point[0];
+  delete _point[1];
+  delete _point[2];
 }
 
-inline Vector3<> &Triangle::GetPoint(uint8_t index) { return *(point[index]); }
+inline Vector3<> &Triangle::GetPoint(uint8_t index) { return *(_point[index]); }
 
 void Triangle::SetPoints(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {
-  (*point[0]) = {p1X, p1Y, p1Z};
-  (*point[1]) = {p2X, p2Y, p2Z};
-  (*point[2]) = {p3X, p3Y, p3Z};
+  (*_point[0]) = {p1X, p1Y, p1Z};
+  (*_point[1]) = {p2X, p2Y, p2Z};
+  (*_point[2]) = {p3X, p3Y, p3Z};
 }
 
 #endif /* _TRIANGLE_HPP_ */

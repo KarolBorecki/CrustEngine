@@ -54,32 +54,32 @@ public:
     void RotateEuler(float dX, float dY, float dZ);
 
 private:
-    Vector3<> *pos{nullptr}; //!< Object's position in 3D space.
-    Vector3<> *rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
+    Vector3<> *p_pos{nullptr}; //!< Object's position in 3D space.
+    Vector3<> *p_rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
 };
 
 inline Transform::Transform()
 {
-    pos = new Vector3();
-    rot = new Vector3();
+    p_pos = new Vector3();
+    p_rot = new Vector3();
 }
 
 inline Transform::~Transform()
 {
-    delete pos;
-    delete rot;
+    delete p_pos;
+    delete p_rot;
 }
 
-inline Vector3<> &Transform::GetPosition() const { return *pos; }
+inline Vector3<> &Transform::GetPosition() const { return *p_pos; }
 
-inline Vector3<> &Transform::GetEulerRotation() const { return *rot; }
+inline Vector3<> &Transform::GetEulerRotation() const { return *p_rot; }
 
-inline void Transform::SetPosition(float x, float y, float z) { (*pos) = {x, y, z}; }
+inline void Transform::SetPosition(float x, float y, float z) { (*p_pos) = {x, y, z}; }
 
-inline void Transform::SetEulerRotation(float x, float y, float z) { (*rot) = {x, y, z}; }
+inline void Transform::SetEulerRotation(float x, float y, float z) { (*p_rot) = {x, y, z}; }
 
-inline void Transform::Translate(float dX, float dY, float dZ) { (*pos) += {dX, dY, dZ}; }
+inline void Transform::Translate(float dX, float dY, float dZ) { (*p_pos) += {dX, dY, dZ}; }
 
-inline void Transform::RotateEuler(float dX, float dY, float dZ) { (*rot) += {dX, dY, dZ}; }
+inline void Transform::RotateEuler(float dX, float dY, float dZ) { (*p_rot) += {dX, dY, dZ}; }
 
 #endif /* _TRANSFORM_HPP_ */

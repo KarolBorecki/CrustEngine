@@ -58,28 +58,28 @@ public:
   void RenderMesh(RenderObject &object, Scene &scene);
 
 private:
-  Projector &projector;
+  Projector &r_projector;
 };
 
-Renderer::Renderer(uint32_t _width, uint32_t _height) : RendererWrapper(_width, _height), projector(*(new Projector(_width, _height)))
+Renderer::Renderer(uint32_t _width, uint32_t _height) : RendererWrapper(_width, _height), r_projector(*(new Projector(_width, _height)))
 {
 }
 
 Renderer::~Renderer()
 {
-  delete &projector;
+  delete &r_projector;
 }
 
 void Renderer::RenderMesh(RenderObject &object, Scene &scene)
 {
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
-  projector.RecalculateProjectionMatrix(scene.GetMainCamera());
+  r_projector.RecalculateProjectionMatrix(scene.GetMainCamera());
 
   static Projector::ProjectionData tmpProjection;
   static std::vector<Projector::ProjectionData> projections;
   for (int i = 0; i < object.GetMesh().GetPolygonsCount(); i++) // TODO use auto for
   {
-    tmpProjection = projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
+    tmpProjection = r_projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
     if (tmpProjection.renderable)
       projections.push_back(tmpProjection);
   }
