@@ -61,8 +61,8 @@ public:
   void SetZ(T valZ);
 
 private:
-  static inline constexpr uint8_t VECTOR3_WIDTH{3};
-  static inline constexpr uint8_t VECTOR3_HEIGHT{1};
+  static inline constexpr uint8_t _VECTOR3_WIDTH{3};
+  static inline constexpr uint8_t _VECTOR3_HEIGHT{1};
 };
 
 template <typename T, typename E>
@@ -72,7 +72,7 @@ template <typename T, typename E>
 inline Vector3<T, E>::Vector3(T valXYZ) : Vector3(valXYZ, valXYZ, valXYZ) {}
 
 template <class T, typename E>
-inline Vector3<T, E>::Vector3(T x, T y, T z) : Matrix<T>(VECTOR3_HEIGHT, VECTOR3_WIDTH)
+inline Vector3<T, E>::Vector3(T x, T y, T z) : Matrix<T>(_VECTOR3_HEIGHT, _VECTOR3_WIDTH)
 {
   SetX(x);
   SetY(y);

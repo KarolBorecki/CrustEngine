@@ -64,12 +64,12 @@ public:
   void UnLoadScene();
 
 private:
-  uint32_t width{0};           //!< Width of this window.
-  uint32_t height{0};          //!< Height of this window.
-  Renderer *renderer{nullptr}; //!< Widnows's renderer handler.
-  Scene *loadedScene{nullptr}; //!< Loaded scene's handler.
+  uint32_t _width{0};           //!< Width of this window.
+  uint32_t _height{0};          //!< Height of this window.
+  Renderer *p_renderer{nullptr}; //!< Widnows's renderer handler.
+  Scene *p_loadedScene{nullptr}; //!< Loaded scene's handler.
 
-  TimeProvider *timeProvider{nullptr}; //!< Windows's time provider that calculates it's work time, FPS etc...
+  TimeProvider *p_timeProvider{nullptr}; //!< Windows's time provider that calculates it's work time, FPS etc...
 
   /**
    * @brief Cleans everything that was drawn on the window.
@@ -79,39 +79,39 @@ private:
 
 inline RenderWindow::RenderWindow(uint32_t _width, uint32_t _height, Scene &_scene)
 {
-  width = _width;
-  height = _height;
-  renderer = new Renderer(_width, _height);
-  if (renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK)
+  _width = _width;
+  _height = _height;
+  p_renderer = new Renderer(_width, _height);
+  if (p_renderer->Init() != RendererWrapper::RendererStatus::STATUS_OK)
   {
     ExceptionsHandler::ThrowError("RenderWindow failed to initzialize!");
   }
-  if (renderer->CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK)
+  if (p_renderer->CreateWindow() != RendererWrapper::RendererStatus::STATUS_OK)
   {
     ExceptionsHandler::ThrowError("RenderWindow failed to be created!");
   }
   LoadScene(_scene);
-  timeProvider = new TimeProvider();
+  p_timeProvider = new TimeProvider();
 }
 
 inline RenderWindow::~RenderWindow()
 {
-  delete renderer;
-  delete timeProvider;
+  delete p_renderer;
+  delete p_timeProvider;
 }
 
 void RenderWindow::Start()
 {
-  if (renderer == nullptr || timeProvider == nullptr)
+  if (p_renderer == nullptr || p_timeProvider == nullptr)
     ExceptionsHandler::ThrowError("Cannot start renderer window - It was not properly initialized!");
 
   static std::vector<RenderObject *> objs;
-  loadedScene->Start();
+  p_loadedScene->Start();
 
   InputHandler::BeginInputMonitoring();
-  while (renderer->IsRunning())
+  while (p_renderer->IsRunning())
   {
-    timeProvider->OnFrameStart();
+    p_timeProvider->OnFrameStart();
 
     InputHandler::PollEvent();
 
@@ -119,52 +119,52 @@ void RenderWindow::Start()
       Close();
 
     Clean();
-    if (loadedScene != nullptr)
+    if (p_loadedScene != nullptr)
     {
-      loadedScene->Update(timeProvider->GetDeltaTime_s());
-      objs = loadedScene->GetObjectsToRender();
+      p_loadedScene->Update(p_timeProvider->GetDeltaTime_s());
+      objs = p_loadedScene->GetObjectsToRender();
       for (auto obj : objs)
       {
-        renderer->RenderMesh(*obj, *loadedScene); 
+        p_renderer->RenderMesh(*obj, *p_loadedScene); 
       }
     }
 
-    renderer->Show();
+    p_renderer->Show();
 
-    timeProvider->OnFrameEnd();
+    p_timeProvider->OnFrameEnd();
     // Logger::Info("This frame took: %lf [s] (%lf FPS)", timeProvider->GetDeltaTime_s(), timeProvider->GetFPS());// TODO Debug log
   }
-  renderer->Quit();
-  Logger::Info("Avreage frame time: %lf [s] (%lf FPS)", timeProvider->GetAverageFrameTime_s(), timeProvider->GetAverageFPS()); // TODO Debug log
+  p_renderer->Quit();
+  Logger::Info("Avreage frame time: %lf [s] (%lf FPS)", p_timeProvider->GetAverageFrameTime_s(), p_timeProvider->GetAverageFPS()); // TODO Debug log
 }
 
 inline void RenderWindow::Close()
 {
-  renderer->StopRunning();
+  p_renderer->StopRunning();
 }
 
 void RenderWindow::LoadScene(Scene &scene)
 {
-  if (loadedScene != nullptr)
-    loadedScene->OnUnLoad();
-  loadedScene = &scene;
-  renderer->SetWindowTitle(loadedScene->GetName());
-  loadedScene->OnLoad();
+  if (p_loadedScene != nullptr)
+    p_loadedScene->OnUnLoad();
+  p_loadedScene = &scene;
+  p_renderer->SetWindowTitle(p_loadedScene->GetName());
+  p_loadedScene->OnLoad();
 }
 
 void RenderWindow::UnLoadScene()
 {
-  if (loadedScene == nullptr) return;
+  if (p_loadedScene == nullptr) return;
   
-  loadedScene->OnUnLoad();
-  loadedScene = nullptr;
-  renderer->SetWindowTitle("No scene");
+  p_loadedScene->OnUnLoad();
+  p_loadedScene = nullptr;
+  p_renderer->SetWindowTitle("No scene");
 }
 
 inline void RenderWindow::Clean()
 {
-  renderer->SetDrawColor(0, 0, 0);
-  renderer->Clean();
+  p_renderer->SetDrawColor(0, 0, 0);
+  p_renderer->Clean();
 }
 
 #endif /* _RENDERWINDOW_HPP_ */

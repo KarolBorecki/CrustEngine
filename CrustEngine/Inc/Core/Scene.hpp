@@ -120,50 +120,50 @@ public:
   std::string GetName();
 
 private:
-  std::string name;            //!< Scene name, also used as window caption on top of the renderer window.
-  bool started{false};         //!< Flag that says if given scene already started - was loaded or performed Start on every script in this scene.
-  bool loaded{false};          //!< Flag that says if given scene is currently loaded on any render window.
-  Camera *mainCamera{nullptr}; //!< Main camera from which perspective the projection will be calculated.
+  std::string _name;            //!< Scene name, also used as window caption on top of the renderer window.
+  bool _started{false};         //!< Flag that says if given scene already started - was loaded or performed Start on every script in this scene.
+  bool _loaded{false};          //!< Flag that says if given scene is currently loaded on any render window.
+  Camera *p_mainCamera{nullptr}; //!< Main camera from which perspective the projection will be calculated.
 
-  bool projectLight{true}; //!< If true the light will be projected accordingly to light sources, if false all mesh's faces will be projected with maximum lighting.
+  bool _projectLight{true}; //!< If true the light will be projected accordingly to light sources, if false all mesh's faces will be projected with maximum lighting.
 
-  std::vector<Object *> objects;             //!< Objects present on the scene.
-  std::vector<RenderObject *> renderObjects; //!< Renderable objects present on the scene. This array is sub-array of objects.
-  std::vector<LightSource *> lightSources;   //!< Light sources in the scene. This array is sub-array of objects.
+  std::vector<Object *> _objects;             //!< Objects present on the scene.
+  std::vector<RenderObject *> _renderObjects; //!< Renderable objects present on the scene. This array is sub-array of objects.
+  std::vector<LightSource *> _lightSources;   //!< Light sources in the scene. This array is sub-array of objects.
 };
 
-inline Scene::Scene(std::string _name, Camera &_mainCamera) : name(_name), mainCamera(&_mainCamera)
+inline Scene::Scene(std::string name, Camera &mainCamera) : _name(name), p_mainCamera(&mainCamera)
 {
-  AddObject(_mainCamera);
+  AddObject(*p_mainCamera);
 }
 
 void Scene::OnLoad()
 {
-  loaded = true;
+  _loaded = true;
   Start();
 }
 
 void Scene::OnUnLoad()
 {
-  loaded = false;
-  started = false;
+  _loaded = false;
+  _started = false;
 }
 
 void Scene::Start()
 {
-  if (started)
+  if (_started)
     return;
 
-  for (auto obj : objects)
+  for (auto obj : _objects)
     for (auto script : obj->GetScripts())
       script->Start();
 
-  started = true;
+  _started = true;
 }
 
 void Scene::Update(double deltaTime)
 {
-  for (auto obj : objects)
+  for (auto obj : _objects)
   {
     for (auto script : obj->GetScripts())
     {
@@ -174,35 +174,35 @@ void Scene::Update(double deltaTime)
   }
 }
 
-inline Camera &Scene::GetMainCamera() { return *mainCamera; }
+inline Camera &Scene::GetMainCamera() { return *p_mainCamera; }
 
-inline void Scene::SetMainCamera(Camera &newMainCamera) { mainCamera = &newMainCamera; }
+inline void Scene::SetMainCamera(Camera &newMainCamera) { p_mainCamera = &newMainCamera; }
 
 void Scene::AddObject(Object &obj)
 {
-  objects.push_back(&obj);
+  _objects.push_back(&obj);
 
   RenderObject *renderObj = dynamic_cast<RenderObject *>(&obj);
   if (renderObj != nullptr)
   {
-    renderObjects.push_back(renderObj);
+    _renderObjects.push_back(renderObj);
   }
 
   LightSource *lightSource = dynamic_cast<LightSource *>(&obj);
   if (lightSource != nullptr)
   {
-    lightSources.push_back(lightSource);
+    _lightSources.push_back(lightSource);
   }
 }
 
-inline std::vector<RenderObject *> Scene::GetObjectsToRender() { return renderObjects; }
+inline std::vector<RenderObject *> Scene::GetObjectsToRender() { return _renderObjects; }
 
-inline std::vector<LightSource *> Scene::GetLightSources() { return lightSources; } // TODO maybe return just 1 light source by reference?
+inline std::vector<LightSource *> Scene::GetLightSources() { return _lightSources; } // TODO maybe return just 1 light source by reference?
 
-inline bool Scene::IsLightProjected() { return projectLight; }
+inline bool Scene::IsLightProjected() { return _projectLight; }
 
-inline void Scene::SetLightProjection(bool project) { projectLight = project; }
+inline void Scene::SetLightProjection(bool project) { _projectLight = project; }
 
-inline std::string Scene::GetName() { return name; }
+inline std::string Scene::GetName() { return _name; }
 
 #endif /* _SCENE_HPP_ */

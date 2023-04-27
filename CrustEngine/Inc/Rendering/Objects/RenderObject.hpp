@@ -25,11 +25,11 @@ public:
   Mesh &GetMesh();
 
 private:
-  Mesh &mesh; //!< Mesh that is rendered in this object position.
+  Mesh &r_mesh; //!< Mesh that is rendered in this object position.
 };
 
-inline RenderObject::RenderObject(Mesh &_mesh) : mesh(_mesh), Object() {}
+inline RenderObject::RenderObject(Mesh &_mesh) : r_mesh(_mesh), Object() {}
 
-inline Mesh &RenderObject::GetMesh() { return mesh; }
+inline Mesh &RenderObject::GetMesh() { return r_mesh; }
 
 #endif /* _RENDEROBJECT_HPP_ */

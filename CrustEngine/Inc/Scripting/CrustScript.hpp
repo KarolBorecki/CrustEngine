@@ -39,9 +39,9 @@ public:
   Object &GetObject();
 
 private:
-  Object *parentObj{nullptr}; //!< Object that holds this script and on which this script's functionallity will be performed.
+  Object *p_parentObj{nullptr}; //!< Object that holds this script and on which this script's functionallity will be performed.
 
-  bool isAttached{false}; //!< Flag that represents if given script was already attached to it's parent. If equal to yes method #AttachTo will do no action.
+  bool _isAttached{false}; //!< Flag that represents if given script was already attached to it's parent. If equal to yes method #AttachTo will do no action.
 };
 
 inline void CrustScript::Start() {}
@@ -50,12 +50,12 @@ inline void CrustScript::Update(double deltaTime) {}
 
 inline void CrustScript::AttachTo(Object &_parentObj)
 {
-  if (isAttached)
+  if (_isAttached)
     return;
-  parentObj = &_parentObj;
-  isAttached = (parentObj != nullptr);
+  p_parentObj = &_parentObj;
+  _isAttached = (p_parentObj != nullptr);
 }
 
-inline Object &CrustScript::GetObject() { return *parentObj; }
+inline Object &CrustScript::GetObject() { return *p_parentObj; }
 
 #endif /* _CRUSTSCRIPT_HPP_ */

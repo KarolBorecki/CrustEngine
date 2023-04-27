@@ -27,13 +27,13 @@ public:
   virtual double GetNormalisedIntensivity();
 
 protected:
-  uint8_t intesivity{255}; //!< Light's intensivity. Value between 0 and 255, where 255 represent the brightest light.
+  uint8_t _intesivity{255}; //!< Light's intensivity. Value between 0 and 255, where 255 represent the brightest light.
 };
 
-inline LightSource::LightSource(double _intensivity) : intesivity(_intensivity), Object() {}
+inline LightSource::LightSource(double _intensivity) : _intesivity(_intensivity), Object() {}
 
-inline uint8_t LightSource::GetIntensivity() { return intesivity; }
+inline uint8_t LightSource::GetIntensivity() { return _intesivity; }
 
-inline double LightSource::GetNormalisedIntensivity() { return intesivity / 255; }
+inline double LightSource::GetNormalisedIntensivity() { return _intesivity / 255; }
 
 #endif /* _LIGHTSOURCE_HPP_ */

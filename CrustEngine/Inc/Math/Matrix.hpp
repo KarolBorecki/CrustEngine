@@ -203,43 +203,43 @@ public:
   static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
 
 protected:
-  uint32_t height{0};    //!< Amount of Height in the matrix.
-  uint32_t width{0};     //!< Amount of Width in the matrix.
-  uint32_t totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
+  uint32_t _height{0};    //!< Amount of Height in the matrix.
+  uint32_t _width{0};     //!< Amount of Width in the matrix.
+  uint32_t _totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
 
-  T *mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
+  T *p_mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 
-  inline static T tmpMat[Matrix::MAX_MATRIX_SIZE]; //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
+  inline static T _TMPMAT[Matrix::MAX_MATRIX_SIZE]; //!< second matrix allocated only once. This matrix is used for calculation purposes. It allows us to safely multiply matrixes without a need to allocate more memory.
 };
 
 template <class E>
-inline Matrix<E>::Matrix() : height(0), width(0)
+inline Matrix<E>::Matrix() : _height(0), _width(0)
 {
-  totalSize = 0;
+  _totalSize = 0;
 }
 
 template <class E>
-inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : height(_height), width(_width)
+inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : _height(_height), _width(_width)
 {
-  totalSize = height * width;
-  if (totalSize == 0)
+  _totalSize = _height * _width;
+  if (_totalSize == 0)
     return;
-  mat = new E[totalSize];
+  p_mat = new E[_totalSize];
 }
 
 template <class E>
-inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : height(_height), width(_width)
+inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : _height(_height), _width(_width)
 {
-  totalSize = height * width;
-  if (totalSize == 0)
+  _totalSize = _height * _width;
+  if (_totalSize == 0)
     return;
-  mat = new E[totalSize];
+  p_mat = new E[_totalSize];
 
   *this = {_defaultVal};
 }
 
 template <class E>
-Matrix<E>::Matrix(Matrix<E> &other) : height(other.Height()), width(other.Width())
+Matrix<E>::Matrix(Matrix<E> &other) : _height(other.Height()), _width(other.Width())
 {
   // if (totalSize != (other.Height() * other.Width()))
   // {
@@ -248,37 +248,37 @@ Matrix<E>::Matrix(Matrix<E> &other) : height(other.Height()), width(other.Width(
   //   mat = nullptr;
   //    // TODO use realloc!!!!
   // }
-  totalSize = height * width;
-  mat = new E[totalSize];
+  _totalSize = _height * _width;
+  p_mat = new E[_totalSize];
 
-  memcpy(mat, other.mat, sizeof(E) * totalSize);
+  memcpy(p_mat, other.p_mat, sizeof(E) * _totalSize);
 }
 
 template <class E>
 inline Matrix<E>::~Matrix()
 {
-  if (mat != nullptr)
-    delete[] mat;
+  if (p_mat != nullptr)
+    delete[] p_mat;
 }
 
 template <class E>
-inline uint32_t Matrix<E>::Height() const { return height; }
+inline uint32_t Matrix<E>::Height() const { return _height; }
 
 template <class E>
-inline uint32_t Matrix<E>::Width() const { return width; }
+inline uint32_t Matrix<E>::Width() const { return _width; }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 {
-  if (height != other.Height() || width != other.Width())
+  if (_height != other.Height() || _width != other.Width())
   {
-    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
     return *this;
   }
 
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] += other.mat[i];
+    p_mat[i] += other.p_mat[i];
   }
 
   return *this;
@@ -287,15 +287,15 @@ Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator+=(std::initializer_list<E> l) noexcept
 {
-  if (totalSize != l.size())
+  if (_totalSize != l.size())
   {
-    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%d) | {%d}", totalSize, l.size());
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%d) | {%d}", _totalSize, l.size());
     return *this;
   }
 
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] += l.begin()[i];
+    p_mat[i] += l.begin()[i];
   }
 
   return *this;
@@ -304,9 +304,9 @@ Matrix<E> &Matrix<E>::operator+=(std::initializer_list<E> l) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator+=(const E value) noexcept
 {
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] += value;
+    p_mat[i] += value;
   }
   return *this;
 }
@@ -314,15 +314,15 @@ Matrix<E> &Matrix<E>::operator+=(const E value) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator-=(const Matrix<E> &other) noexcept
 {
-  if (height != other.height || width != other.width)
+  if (_height != other._height || _width != other._width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
     return *this;
   }
 
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] -= other.mat[i];
+    p_mat[i] -= other.p_mat[i];
   }
 
   return *this;
@@ -331,15 +331,15 @@ Matrix<E> &Matrix<E>::operator-=(const Matrix<E> &other) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator-=(std::initializer_list<E> l) noexcept
 {
-  if (totalSize != l.size())
+  if (_totalSize != l.size())
   {
-    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%d) | {%d }", totalSize, l.size());
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%d) | {%d }", _totalSize, l.size());
     return *this;
   }
 
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] -= l.begin()[i];
+    p_mat[i] -= l.begin()[i];
   }
 
   return *this;
@@ -348,9 +348,9 @@ Matrix<E> &Matrix<E>::operator-=(std::initializer_list<E> l) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator-=(const E value) noexcept
 {
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] -= value;
+    p_mat[i] -= value;
   }
   return *this;
 }
@@ -358,33 +358,33 @@ Matrix<E> &Matrix<E>::operator-=(const E value) noexcept
 template <class E> // TODO refactor
 Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
-  if (width != other.height)
+  if (_width != other._height)
   {
-    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
+    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
     return *this;
   }
 
-  for (int y = 0; y < height; y++)
+  for (int y = 0; y < _height; y++)
   {
     for (int x = 0; x < other.Height(); x++)
     {
-      *(tmpMat + (x * width) + y) *= 0.0;
+      *(_TMPMAT + (x * _width) + y) *= 0.0;
       for (int i = 0; i < other.Height(); i++)
       {
-        *(tmpMat + (x * width) + y) += (*this)[i][y] * other[x][i];
+        *(_TMPMAT + (x * _width) + y) += (*this)[i][y] * other[x][i];
       }
     }
   }
 
-  height = width;
-  width = other.height;
-  if (height * width > totalSize)
+  _height = _width;
+  _width = other._height;
+  if (_height * _width > _totalSize)
   {
-    delete[] mat;
-    mat = new E[height * width];
+    delete[] p_mat;
+    p_mat = new E[_height * _width];
   }
-  totalSize = width * height;
-  memcpy(mat, tmpMat, totalSize * sizeof(E));
+  _totalSize = _width * _height;
+  memcpy(p_mat, _TMPMAT, _totalSize * sizeof(E));
   return *this;
 }
 
@@ -393,31 +393,31 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 {
   static uint32_t otherWidth;
   static uint32_t otherHeight;
-  otherWidth = l.size() / width;
-  otherHeight = l.size() / height;
+  otherWidth = l.size() / _width;
+  otherHeight = l.size() / _height;
 
-  if (width != otherHeight)
+  if (_width != otherHeight)
   {
-    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", width, height, otherWidth, otherHeight);
+    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", _width, _height, otherWidth, otherHeight);
     return *this;
   }
 
-  for (int y = 0; y < height; y++)
+  for (int y = 0; y < _height; y++)
   {
     for (int x = 0; x < otherHeight; x++)
     {
-      *(tmpMat + (x * width) + y) *= 0.0;
+      *(_TMPMAT + (x * _width) + y) *= 0.0;
       for (int i = 0; i < otherHeight; i++)
       {
-        *(tmpMat + (x * width) + y) += (*this)[i][y] * (*(l.begin() + (x * otherHeight) + i));
+        *(_TMPMAT + (x * _width) + y) += (*this)[i][y] * (*(l.begin() + (x * otherHeight) + i));
       }
     }
   }
 
-  height = width;
-  width = otherHeight;
-  totalSize = width * height;
-  memcpy(mat, tmpMat, totalSize * sizeof(E));
+  _height = _width;
+  _width = otherHeight;
+  _totalSize = _width * _height;
+  memcpy(p_mat, _TMPMAT, _totalSize * sizeof(E));
 
   return *this; // TODO wywołuje powstanie nowej macierzy
 }
@@ -425,9 +425,9 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator*=(const E value) noexcept
 {
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] *= value;
+    p_mat[i] *= value;
   }
   return *this;
 }
@@ -435,15 +435,15 @@ Matrix<E> &Matrix<E>::operator*=(const E value) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator/=(const Matrix<E> &other) noexcept
 {
-  if (height != other.height || width != other.width)
+  if (_height != other._height || _width != other._width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", width, height, other.width, other.height);
+    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
     return *this;
   }
 
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] /= other.mat[i];
+    p_mat[i] /= other.p_mat[i];
   }
 
   return *this;
@@ -452,9 +452,9 @@ Matrix<E> &Matrix<E>::operator/=(const Matrix<E> &other) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator/=(const E value) noexcept
 {
-  for (int i = 0; i < totalSize; i++)
+  for (int i = 0; i < _totalSize; i++)
   {
-    mat[i] /= value;
+    p_mat[i] /= value;
   }
   return *this;
 }
@@ -466,19 +466,19 @@ Matrix<E> &Matrix<E>::operator=(const Matrix<E> &other) noexcept
   if (this == &other)
     return *this;
 
-  if (totalSize != (other.Height() * other.Width()))
+  if (_totalSize != (other.Height() * other.Width()))
   {
-    if (mat != nullptr)
-      delete[] mat;
-    mat = nullptr;
-    mat = new E[other.totalSize]; // TODO use realloc!!!!
+    if (p_mat != nullptr)
+      delete[] p_mat;
+    p_mat = nullptr;
+    p_mat = new E[other._totalSize]; // TODO use realloc!!!!
   }
 
-  height = other.Height();
-  width = other.Width();
-  totalSize = width * height;
+  _height = other.Height();
+  _width = other.Width();
+  _totalSize = _width * _height;
 
-  memcpy(mat, other.mat, sizeof(E) * totalSize);
+  memcpy(p_mat, other.p_mat, sizeof(E) * _totalSize);
   // Logger::Log("End = with matrix");
   return *this;
 }
@@ -491,12 +491,12 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 
   if (l.size() == 1)
   {
-    for (uint32_t i = 0; i < totalSize; i++)
-      mat[i] = *l.begin();
+    for (uint32_t i = 0; i < _totalSize; i++)
+      p_mat[i] = *l.begin();
   }
-  else if (l.size() == totalSize)
+  else if (l.size() == _totalSize)
   {
-    memcpy(mat, l.begin(), totalSize * sizeof(E));
+    memcpy(p_mat, l.begin(), _totalSize * sizeof(E));
   }
   // Logger::Log("End = with init list");
   return *this;
@@ -505,18 +505,18 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 template <class E>
 E *Matrix<E>::operator[](int x) const noexcept
 {
-  return mat + ((x * Height()) % totalSize);
+  return p_mat + ((x * Height()) % _totalSize);
 }
 
 template <class E>
 bool Matrix<E>::operator==(const Matrix<E> &other) noexcept
 {
-  if (height != other.Height() || width != other.Width())
+  if (_height != other.Height() || _width != other.Width())
     return false;
 
-  for (uint32_t x = 0; x < width; x++)
+  for (uint32_t x = 0; x < _width; x++)
   {
-    for (uint32_t y = 0; y < height; y++)
+    for (uint32_t y = 0; y < _height; y++)
       if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return false;
@@ -529,12 +529,12 @@ bool Matrix<E>::operator==(const Matrix<E> &other) noexcept
 template <class E>
 bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
 {
-  if (height != other.Height() || width != other.Width())
+  if (_height != other.Height() || _width != other.Width())
     return true;
 
-  for (uint32_t x = 0; x < width; x++)
+  for (uint32_t x = 0; x < _width; x++)
   {
-    for (uint32_t y = 0; y < height; y++)
+    for (uint32_t y = 0; y < _height; y++)
       if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return true;

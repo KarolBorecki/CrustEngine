@@ -56,7 +56,7 @@ public:
   void Quit();
 
 private:
-  std::vector<RenderWindow *> openedWindows; //!< Array of currently opened windows.
+  std::vector<RenderWindow *> _openedWindows; //!< Array of currently opened windows.
 };
 
 inline Core::Core() { TimeProvider::OnEngineStart(); }
@@ -69,25 +69,25 @@ void Core::OpenNewWindow(uint32_t width, uint32_t height, Scene &scene)
   RenderWindow *window = new RenderWindow(width, height, scene);
   window->Start(); // TODO: run on new thread
 
-  openedWindows.push_back(window);
+  _openedWindows.push_back(window);
 }
 
 void Core::CloseWindow(RenderWindow &window)
 {
   window.Close();
-  remove(openedWindows.begin(), openedWindows.end(), &window);
+  remove(_openedWindows.begin(), _openedWindows.end(), &window);
   delete &window;
 }
 
 void Core::CloseAllWindows()
 {
-  for (auto &window : openedWindows)
+  for (auto &window : _openedWindows)
   {
     if(window == nullptr) continue;
     window->Close();
     delete window;
   }
-  openedWindows.clear();
+  _openedWindows.clear();
 }
 
 void Core::Quit()

@@ -20,7 +20,7 @@ public:
 
 inline DirectionalLight::DirectionalLight(double _intensivity, Vector3<> &_dir) : LightSource(_intensivity)
 {
-    transform->SetEulerRotation(_dir.X(), _dir.Y(), _dir.Z());
+    p_transform->SetEulerRotation(_dir.X(), _dir.Y(), _dir.Z());
 }
 
 #endif /* _DURECTIONALLIGHT_HPP_ */

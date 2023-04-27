@@ -76,8 +76,8 @@ public:
   void SetW(T valW);
 
 private:
-  static inline constexpr uint8_t VECTOR4_WIDTH{4};
-  static inline constexpr uint8_t VECTOR4_HEIGHT{1};
+  static inline constexpr uint8_t _VECTOR4_WIDTH{4};
+  static inline constexpr uint8_t _VECTOR4_HEIGHT{1};
 };
 
 template <typename T, typename E>
@@ -87,7 +87,7 @@ template <typename T, typename E>
 inline Vector4<T, E>::Vector4(T valXYZW) : Vector4(valXYZW, valXYZW, valXYZW, valXYZW) {}
 
 template <typename T, typename E>
-inline Vector4<T, E>::Vector4(T x, T y, T z, T w) : Matrix<T>(VECTOR4_HEIGHT, VECTOR4_WIDTH)
+inline Vector4<T, E>::Vector4(T x, T y, T z, T w) : Matrix<T>(_VECTOR4_HEIGHT, _VECTOR4_WIDTH)
 {
   SetX(x);
   SetY(y);

@@ -47,13 +47,13 @@ public:
   double GetFFovRad();
 
 private:
-  int fFovDeg{0};      //!< Represents the field of view of the camera as the angle value in degrees.
-  double fNear{0.0};   //!< Represents the distance between the virtual eye and the rendered plane.
-  double fFar{0.0};    //!< Represents the maximum depth of the viewed image.
-  double fFovRad{0.0}; //!< Represents the field of view in radians.
+  int _fFovDeg{0};      //!< Represents the field of view of the camera as the angle value in degrees.
+  double _fNear{0.0};   //!< Represents the distance between the virtual eye and the rendered plane.
+  double _fFar{0.0};    //!< Represents the maximum depth of the viewed image.
+  double _fFovRad{0.0}; //!< Represents the field of view in radians.
 };
 
-inline Camera::Camera(int _fFovDeg, double _fNear, double _fFar) : fFovDeg(_fFovDeg), fNear(_fNear), fFar(_fFar)
+inline Camera::Camera(int fFovDeg, double fNear, double fFar) : _fFovDeg(fFovDeg), _fNear(fNear), _fFar(fFar)
 {
   if(_fNear <= 0 || _fFar <= 0 || _fNear >= _fFar)
     ExceptionsHandler::ThrowError("Wrong input data for Camera!");
@@ -62,15 +62,15 @@ inline Camera::Camera(int _fFovDeg, double _fNear, double _fFar) : fFovDeg(_fFov
   if(Math::DoubleEquals(fFovConverted, 0)) 
     ExceptionsHandler::ThrowError("_fFovDeg cannot be equal to 0 in radians!");
     
-  fFovRad = (1.0 / Math::Tan(fFovConverted * 0.5));
+  _fFovRad = (1.0 / Math::Tan(fFovConverted * 0.5));
 }
 
-inline int Camera::GetFFovDeg() { return fFovDeg; }
+inline int Camera::GetFFovDeg() { return _fFovDeg; }
 
-inline double Camera::GetFNear() { return fNear; }
+inline double Camera::GetFNear() { return _fNear; }
 
-inline double Camera::GetFFar() { return fFar; }
+inline double Camera::GetFFar() { return _fFar; }
 
-inline double Camera::GetFFovRad() { return fFovRad; }
+inline double Camera::GetFFovRad() { return _fFovRad; }
 
 #endif /* _CAMERA_HPP_ */
