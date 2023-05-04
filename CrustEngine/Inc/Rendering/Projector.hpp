@@ -19,9 +19,9 @@ public:
     typedef struct ProjectionData // FIXME use Vectors instead of doubles
     {
         bool renderable=false;
-        double x1=0, y1=0, z1=0;
-        double x2=0, y2=0, z2=0;
-        double x3=0, y3=0, z3=0;
+        float x1=0, y1=0, z1=0;
+        float x2=0, y2=0, z2=0;
+        float x3=0, y3=0, z3=0;
         uint8_t light=0;
     } ProjectionData;
 
