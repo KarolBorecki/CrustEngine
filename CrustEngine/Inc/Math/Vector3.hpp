@@ -60,6 +60,26 @@ public:
    */
   void SetZ(T valZ);
 
+  /**
+   * @brief Calculates length of this vector.
+   * 
+   * @return float Length of this vector.
+   */
+  float Length() const;
+  
+  /**
+   * @brief Normalizes this vector. Warning! This method modifies this vector, value will be changed and old vector's state will be lost.
+   */
+  void Normalize();
+
+  /**
+   * @brief Calculates dot product of this vector and given vector.
+   * 
+   * @param other Vector to calculate dot product with.
+   * @return float Dot product of this vector and given vector.
+   */
+  float Dot(const Vector3<T, E> &other) const;
+
 private:
   static inline constexpr uint8_t _VECTOR3_WIDTH{3};
   static inline constexpr uint8_t _VECTOR3_HEIGHT{1};
@@ -99,5 +119,26 @@ inline void Vector3<T, E>::SetY(T valY) { (*this)[1][0] = valY; }
 
 template <typename T, typename E>
 inline void Vector3<T, E>::SetZ(T valZ) { (*this)[2][0] = valZ; }
+
+template <typename T, typename E>
+inline float Vector3<T, E>::Length() const
+{
+  return Math::SquareRoot(X() * X() + Y() * Y() + Z() * Z());
+}
+
+template <typename T, typename E>
+inline void Vector3<T, E>::Normalize()
+{
+  T length = Length();
+  SetX(X() / length);
+  SetY(Y() / length);
+  SetZ(Z() / length);
+}
+
+template <typename T, typename E>
+inline float Vector3<T, E>::Dot(const Vector3<T, E> &other) const
+{
+  return X() * other.X() + Y() * other.Y() + Z() * other.Z();
+}
 
 #endif /* _VECTOR3_HPP_ */

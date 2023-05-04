@@ -15,68 +15,78 @@
 class Projector
 {
 public:
-// TODO add documentation about it
+    // TODO add documentation about it
     typedef struct ProjectionData // FIXME use Vectors instead of doubles
     {
-        bool renderable=false;
-        float x1=0, y1=0, z1=0;
-        float x2=0, y2=0, z2=0;
-        float x3=0, y3=0, z3=0;
-        uint8_t light=0;
+        bool renderable = false;
+        float x1 = 0, y1 = 0, z1 = 0;
+        float x2 = 0, y2 = 0, z2 = 0;
+        float x3 = 0, y3 = 0, z3 = 0;
+        uint8_t light = 0;
     } ProjectionData;
 
     Projector(uint32_t _windowWidth, uint32_t _windowHeigth);
 
     ~Projector();
 
-  /**
-   * @brief Projects given polygon using #projMatrix.
-   *
-   * @details Class used in #DrawMesh method. It takes 3D space parameters and projects given #poli accordingly to it's position (in future also rotation) and scene's lightining.
-   *
-   * @param poli Projected polygon.
-   * @param pos Projected polygon's mesh position in 3D space.
-   * @param rot Projected polygon's mesh rotataion in 3D space.
-   * @param cam Camera, from which perspective the polygon will be projected.
-   * @param projectLight Flag if the light should be proojected.
-   *
-   * @return Projected polygon. //TODO fix documentation
-   */
-    ProjectionData &ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3<> &lightDir);
+    /**
+     * @brief Projects given polygon using #projMatrix.
+     *
+     * @details Class used in #DrawMesh method. It takes 3D space parameters and projects given #poli accordingly to it's position (in future also rotation) and scene's lightining.
+     *
+     * @param poli Projected polygon.
+     * @param pos Projected polygon's mesh position in 3D space.
+     * @param rot Projected polygon's mesh rotataion in 3D space.
+     * @param cam Camera, from which perspective the polygon will be projected.
+     * @param projectLight Flag if the light should be proojected.
+     *
+     * @return Projected polygon. //TODO fix documentation
+     */
+    ProjectionData &ProjectPolygon(Polygon &poli, Transform &transform, Camera &cam, Vector3<> &lightDir);
 
-  /**
-   * @brief Getter for #projMatrix field.
-   *
-   * @return Reference to #projMatrix field.
-   */
-  const Matrix<double> &GetProjectionMatrix() const; // TODO implement
+    /**
+     * @brief Getter for #projMatrix field.
+     *
+     * @return Reference to #projMatrix field.
+     */
+    const Matrix<double> &GetProjectionMatrix() const; // TODO implement
 
-  /**
-   * @brief Recalculates the projection matrix for given camera.
-   *
-   * @details The projection matrix is calculated as here is explained: <a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">Projection matrix on wikipedia</a> <br>
-   *
-   * @note The engine calculation is made based on <a link="https://www.youtube.com/watch?v=ih20l3pJoeU">this formulas</a>.
-   *
-   * @param cam Camera from which perspective objects will rendered.
-   *
-   * @sa Camera.hpp RenderObject.hpp
-   */
+    /**
+     * @brief Recalculates the projection matrix for given camera.
+     *
+     * @details The projection matrix is calculated as here is explained: <a href="https://en.wikipedia.org/wiki/3D_projection#Perspective_projection">Projection matrix on wikipedia</a> <br>
+     *
+     * @note The engine calculation is made based on <a link="https://www.youtube.com/watch?v=ih20l3pJoeU">this formulas</a>.
+     *
+     * @param cam Camera from which perspective objects will be rendered.
+     *
+     * @sa Camera.hpp RenderObject.hpp
+     */
     void RecalculateProjectionMatrix(Camera &cam);
-    /* This value should not be changed without full understanding of this change! */
 
+    /**
+     * @brief Recalculates the view matrix for given camera. //TODO fix documentation
+     * 
+     * @param cam Camera from which perspective objects will be rendered.
+     *
+     * @sa Camera.hpp RenderObject.hpp
+     */
+    void CalculateViewMatrix(Camera &cam);
+
+    /* This value should not be changed without full understanding of this change! */
     static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
 
 private:
-    uint32_t _width{0}; //!< Assigned window width. Calulated on Renderer creation.
-    uint32_t _height{0}; //!< Assigned window height. Calulated on Renderer creation.
+    uint32_t _width{0};      //!< Assigned window width. Calulated on Renderer creation.
+    uint32_t _height{0};     //!< Assigned window height. Calulated on Renderer creation.
     float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
     Matrix<float> &r_projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    Matrix<float> &r_viewMat; //!< View matrix. See Renderer::RecalculateProjectionMatrix.
     ProjectionData &r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
-Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
+Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_viewMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
 {
     _aspectRatio = ((float)_height / (float)_width);
 }
@@ -87,7 +97,7 @@ Projector::~Projector()
     delete &r_result;
 }
 
-Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& transform, Camera &cam, Vector3<> &lightDir)
+Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &transform, Camera &cam, Vector3<> &lightDir)
 {
     /* Moving object's triangle */
     static Vector3 movedP1;
@@ -111,28 +121,15 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform& t
     normal = poli.Normal();
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
-    static float dotProduct;
-    dotProduct = normal.X() * (movedP1.X() - cam.GetTransform().GetPosition().X()) +
-                 normal.Y() * (movedP1.Y() - cam.GetTransform().GetPosition().Y()) +
-                 normal.Z() * (movedP1.Z() - cam.GetTransform().GetPosition().Z());
-
-    r_result.renderable = dotProduct < 0.0;
-
-    if (dotProduct < 0.0f)
+    r_result.renderable = normal.Dot(movedP1) < 0.0f;
+    if (r_result.renderable)
     {
         /* Illumination - see how many light is being placed onto this plane */
-        static float lightDirNormalLen;
         static Vector3 lightDirNormal;
-        static float lightDotProduct;
-
         lightDirNormal = lightDir;
-        lightDirNormalLen = Math::SquareRoot(lightDir.X() * lightDir.X() + lightDir.Y() * lightDir.Y() + lightDir.Z() * lightDir.Z());
-        lightDirNormal /= lightDirNormalLen;
+        lightDirNormal.Normalize();
 
-        lightDotProduct = normal.X() * lightDirNormal.X() + normal.Y() * lightDirNormal.Y() + normal.Z() * lightDirNormal.Z();
-        if(lightDotProduct < 0.0f)
-            lightDotProduct = 0.0f;
-        r_result.light = lightDotProduct * 255;
+        r_result.light = lightDirNormal.Dot(normal)* 255;
 
         /* Projecting object's triangle */
         static Vector4 extendedP1;
@@ -199,6 +196,13 @@ void Projector::RecalculateProjectionMatrix(Camera &cam)
     r_projMat[2][2] = q;
     r_projMat[3][2] = 1.0;
     r_projMat[2][3] = -cam.GetFNear() * q;
+}
+
+void Projector::CalculateViewMatrix(Camera &cam){
+    static Vector3<> forward;
+    forward = cam.GetTransform().GetEulerRotation();
+    forward -= cam.GetTransform().GetPosition();
+    forward.Normalize();
 }
 
 #endif /* _PROJECTOR_HPP_ */

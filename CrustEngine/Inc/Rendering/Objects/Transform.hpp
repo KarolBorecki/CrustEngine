@@ -55,7 +55,7 @@ public:
 
 private:
     Vector3<> *p_pos{nullptr}; //!< Object's position in 3D space.
-    Vector3<> *p_rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
+    Vector3<> *p_rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions, this value should be from 0 to 1
     
     static inline Vector3<> _upVector{0,1,0}; //!< Object's up vector in 3D space. Represents the direction of the top of the object.
 
@@ -85,6 +85,6 @@ inline void Transform::SetEulerRotation(float x, float y, float z) { (*p_rot) = 
 
 inline void Transform::Translate(float dX, float dY, float dZ) { (*p_pos) += {dX, dY, dZ}; }
 
-inline void Transform::RotateEuler(float dX, float dY, float dZ) { (*p_rot) += {dX, dY, dZ}; }
+inline void Transform::RotateEuler(float dX, float dY, float dZ) { (*p_rot) += {dX, dY, dZ}; } 
 
 #endif /* _TRANSFORM_HPP_ */
