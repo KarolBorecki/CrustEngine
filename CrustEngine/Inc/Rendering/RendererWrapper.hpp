@@ -281,6 +281,10 @@ inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY
 
 void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
 {
+  p1X = _width - p1X; p1Y = _height - p1Y;
+  p2X = _width - p2X; p2Y = _height - p2Y;
+  p3X = _width - p3X; p3Y = _height - p3Y;
+  
   DrawLine(p1X, p1Y, p2X, p2Y);
   DrawLine(p2X, p2Y, p3X, p3Y);
   DrawLine(p3X, p3Y, p1X, p1Y);
@@ -288,6 +292,9 @@ void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, do
 
 inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b)
 {
+  p1X = _width - p1X; p1Y = _height - p1Y;
+  p2X = _width - p2X; p2Y = _height - p2Y;
+  p3X = _width - p3X; p3Y = _height - p3Y;
   const std::vector<SDL_Vertex> verts =
       {
           {
