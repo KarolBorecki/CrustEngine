@@ -27,7 +27,7 @@ inline Mover::Mover(double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) 
 
 inline void Mover::Start() {}
 
-// #define LOG
+#define LOG
 void Mover::Update(double deltaTime)
 {
   if (InputHandler::IsPressed(Key::KEY_D))
