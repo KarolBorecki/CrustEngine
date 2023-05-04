@@ -144,7 +144,7 @@ public:
    * @param p3X Point 3 X.
    * @param p3Y Point 3 Y.
    */
-  void DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y);
+  void DrawTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y);
 
   /**
    * @brief Draws given triangle on the screen.
@@ -162,7 +162,7 @@ public:
    *
    * @sa Triangle.hpp
    */
-  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b);
+  void DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b);
 
   /**
    * @brief Draws given triangle on the screen.
@@ -178,7 +178,7 @@ public:
    *
    * @sa Triangle.hpp
    */
-  void DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t rgb);
+  void DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t rgb);
 
   /**
    * @brief Function called to show everything that has been drawn on the screen after last RendererWrapper::Show call.
@@ -279,7 +279,7 @@ inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY
   SDL_RenderDrawLine(p_renderer, startX, startY, endX, endY);
 }
 
-void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y)
+void RendererWrapper::DrawTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y)
 {
   p1X = _width - p1X; p1Y = _height - p1Y;
   p2X = _width - p2X; p2Y = _height - p2Y;
@@ -290,7 +290,7 @@ void RendererWrapper::DrawTri(double p1X, double p1Y, double p2X, double p2Y, do
   DrawLine(p3X, p3Y, p1X, p1Y);
 }
 
-inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t r, uint8_t g, uint8_t b)
+inline void RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b)
 {
   p1X = _width - p1X; p1Y = _height - p1Y;
   p2X = _width - p2X; p2Y = _height - p2Y;
@@ -298,17 +298,17 @@ inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, d
   const std::vector<SDL_Vertex> verts =
       {
           {
-              SDL_FPoint{static_cast<float>(p1X), static_cast<float>(p1Y)},
+              SDL_FPoint{p1X, p1Y},
               SDL_Color{r, g, b, 255},
               SDL_FPoint{0},
           },
           {
-              SDL_FPoint{static_cast<float>(p2X), static_cast<float>(p2Y)},
+              SDL_FPoint{p2X, p2Y},
               SDL_Color{r, g, b, 255},
               SDL_FPoint{0},
           },
           {
-              SDL_FPoint{static_cast<float>(p3X), static_cast<float>(p3Y)},
+              SDL_FPoint{p3X, p3Y},
               SDL_Color{r, g, b, 255},
               SDL_FPoint{0},
           },
@@ -316,7 +316,7 @@ inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, d
   SDL_RenderGeometry(p_renderer, nullptr, verts.data(), verts.size(), nullptr, 0);
 }
 
-inline void RendererWrapper::DrawFilledTri(double p1X, double p1Y, double p2X, double p2Y, double p3X, double p3Y, uint8_t rgb)
+inline void RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t rgb)
 {
   DrawFilledTri(p1X, p1Y, p2X, p2Y, p3X, p3Y, rgb, rgb, rgb);
 }
