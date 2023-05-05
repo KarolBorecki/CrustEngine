@@ -200,6 +200,21 @@ public:
    */
   T *operator[](int x) const noexcept;
 
+  /**
+   * @brief Resets matrix's values. Whole matrix will be filled with #val value.
+   *
+   * @param val Value that will be set to each position of this matrix.
+   */
+  void Reset(T val) noexcept;
+
+  /**
+   * @brief Tranform this matrix to identity matrix. It will lost all values saved in a matrix.
+   *
+   * @details Creates identity matrix of size #height x #width and copies it to this matrix. Regardless of it's size.
+   * If matrix is not quadtaric it will be filled with zeros and first (looking from left) diagonale will be filled with ones.
+   */
+  void MakeIdentity() noexcept;
+
   static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
 
 protected:
@@ -272,7 +287,8 @@ Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
 {
   if (_height != other.Height() || _width != other.Width())
   {
-    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
+    Logger::Log("%zu %zu", _height, _width);
+    ExceptionsHandler::ThrowWarning("Trying to add matrixes with different sizes! (%zu x %zu) | (%zu x %zu)", _height, _width, other._height, other._width);
     return *this;
   }
 
@@ -316,7 +332,7 @@ Matrix<E> &Matrix<E>::operator-=(const Matrix<E> &other) noexcept
 {
   if (_height != other._height || _width != other._width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
+    ExceptionsHandler::ThrowWarning("Trying to substract matrixes with different sizes! (%zu x %zu) | (%zu x %zu)", _height, _width, other._height, other._width);
     return *this;
   }
 
@@ -360,7 +376,8 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 {
   if (_width != other._height)
   {
-    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
+    Logger::Log("%zu %zu", _width, _height);
+    ExceptionsHandler::ThrowWarning("Trying to multiply matrixes with not compatible sizes! (%zu x %zu) | (%zu x %zu)", _height, _width, other._height, other._width);
     return *this;
   }
 
@@ -368,19 +385,17 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
   {
     for (int x = 0; x < other.Height(); x++)
     {
-      *(_TMPMAT + (x * _width) + y) *= 0.0;
+      *(_TMPMAT + (x * _height) + y) *= 0.0;
       for (int i = 0; i < other.Height(); i++)
       {
-        *(_TMPMAT + (x * _width) + y) += (*this)[i][y] * other[x][i];
+        *(_TMPMAT + (x * _height) + y) += (*this)[i][y] * other[x][i];
       }
     }
   }
-
-  _height = _width;
-  _width = other._height;
+  _width = other._width;
   if (_height * _width > _totalSize)
   {
-    delete[] p_mat;
+    delete[] p_mat; // TODO use realloc!!!!
     p_mat = new E[_height * _width];
   }
   _totalSize = _width * _height;
@@ -398,7 +413,7 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 
   if (_width != otherHeight)
   {
-    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", _width, _height, otherWidth, otherHeight);
+    ExceptionsHandler::ThrowWarning("Trying to muyltiply matrixes with not comaptible sizes! (%d x %d) | {%d x %d}", _height, _width, otherHeight, otherWidth);
     return *this;
   }
 
@@ -406,16 +421,15 @@ Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
   {
     for (int x = 0; x < otherHeight; x++)
     {
-      *(_TMPMAT + (x * _width) + y) *= 0.0;
+      *(_TMPMAT + (x * _height) + y) *= 0.0;
       for (int i = 0; i < otherHeight; i++)
       {
-        *(_TMPMAT + (x * _width) + y) += (*this)[i][y] * (*(l.begin() + (x * otherHeight) + i));
+        *(_TMPMAT + (x * _height) + y) += (*this)[i][y] * (*(l.begin() + (x * otherHeight) + i));
       }
     }
   }
 
-  _height = _width;
-  _width = otherHeight;
+  _width = otherWidth;
   _totalSize = _width * _height;
   memcpy(p_mat, _TMPMAT, _totalSize * sizeof(E));
 
@@ -437,7 +451,7 @@ Matrix<E> &Matrix<E>::operator/=(const Matrix<E> &other) noexcept
 {
   if (_height != other._height || _width != other._width)
   {
-    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes! (%lf x %lf) | (%lf x %lf)", _width, _height, other._width, other._height);
+    ExceptionsHandler::ThrowWarning("Trying to divide matrixes with different sizes! (%zu x %zu) | (%zu x %zu)", _height, _width ,  other._height, other._width);
     return *this;
   }
 
@@ -543,4 +557,21 @@ bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
 
   return false;
 }
+
+template <class E>
+void Matrix<E>::Reset(E val) noexcept
+{
+  for (uint32_t i = 0; i < _totalSize; i++)
+    p_mat[i] = val;
+}
+
+template <class E>
+void Matrix<E>::MakeIdentity() noexcept // FIXME does not work for different matrixes than numeric-wise
+{
+  Reset(0.0);
+  uint32_t minSize = _width < _height ? _width : _height;
+  for (uint32_t i = 0; i < minSize; i++)
+    (*this)[i][i] = 1.0;
+}
+
 #endif /* _MATRIX_HPP_ */

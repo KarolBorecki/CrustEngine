@@ -2,7 +2,10 @@
 #define _VECTOR3_HPP_
 
 #include <Math/Matrix.hpp>
+#include <Math/Vector4.hpp>
 
+template <class T, typename E>
+class Vector4;
 /**
  * @brief Represents mathematical vector3.
  */
@@ -73,12 +76,43 @@ public:
   void Normalize();
 
   /**
+   * @brief Calculates normal of this vector and returns new vector with calculated values. It does not modify the original vector.
+   * 
+   * @return Vector3<T, E> Normal of this vector. Copy.
+   */
+  Vector3<T, E> Normalized();
+
+  /**
    * @brief Calculates dot product of this vector and given vector.
    * 
    * @param other Vector to calculate dot product with.
    * @return float Dot product of this vector and given vector.
    */
   float Dot(const Vector3<T, E> &other) const;
+
+  /**
+   * @brief Calculates cross product of this vector and given vector.
+   * 
+   * @param other Vector to calculate cross product with.
+   * @return Vector3<T, E> Cross product of this vector and given vector.
+   */
+  Vector3<T, E> Cross(const Vector3<T, E> &other) const;
+
+  /**
+   * @brief Converts this vector to Vector4.
+   * 
+   * @param wVal Value of w field in new Vector4.
+   * 
+   * @return Vector4<T, E> Vector4 with X, Y and Z values from this vector and given w value.
+   */
+  Vector4<T, E> ToVector4(T wVal) const;
+
+  /**
+   * @brief Calculates normal vector of plane that this polygon represents.
+   *
+   * @return Vector3& Normal vector of this plane.
+   */
+  static Vector3<T, E> PolygonNormal(Vector3<> p1, Vector3<> p2, Vector3<> p3);
 
 private:
   static inline constexpr uint8_t _VECTOR3_WIDTH{3};
@@ -127,18 +161,50 @@ inline float Vector3<T, E>::Length() const
 }
 
 template <typename T, typename E>
-inline void Vector3<T, E>::Normalize()
+inline void  Vector3<T, E>::Normalize()
 {
   T length = Length();
+  length = Math::Equals(length, 0.0f) ? 1.0f : length;
   SetX(X() / length);
   SetY(Y() / length);
   SetZ(Z() / length);
 }
 
 template <typename T, typename E>
+inline Vector3<T, E> Vector3<T, E>::Normalized()
+{
+  T length = Length();
+  return Vector3<T, E>(X() / length, Y() / length, Z() / length);
+}
+
+template <typename T, typename E>
 inline float Vector3<T, E>::Dot(const Vector3<T, E> &other) const
 {
   return X() * other.X() + Y() * other.Y() + Z() * other.Z();
+}
+
+template <typename T, typename E>
+inline Vector3<T, E> Vector3<T, E>::Cross(const Vector3<T, E> &other) const
+{
+  return Vector3<T, E>(Y() * other.Z() - Z() * other.Y(),
+                       Z() * other.X() - X() * other.Z(),
+                       X() * other.Y() - Y() * other.X());
+}
+
+template <typename T, typename E>
+inline Vector4<T, E> Vector3<T, E>::ToVector4(T wVal) const
+{
+  return Vector4<T, E>(X(), Y(), Z(), wVal);
+}
+
+template <typename T, typename E>
+inline Vector3<T, E> Vector3<T, E>::PolygonNormal(Vector3<> p1, Vector3<> p2, Vector3<> p3)
+{
+  Vector3<T, E> v1 = p2;
+  Vector3<T, E> v2 = p3;
+  v1 -= p1;
+  v2 -= p1;
+  return v1.Cross(v2).Normalized();
 }
 
 #endif /* _VECTOR3_HPP_ */

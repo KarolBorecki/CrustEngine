@@ -1,0 +1,45 @@
+#! /bin/sh
+
+USER="boreckik"
+GROUP="STUD"
+GID="400"
+HOME="/boreckik"
+
+NAS_SERVER="10.146.146.22"
+VOLT_SERVER="boreckik@vol"
+
+SSH_KEY_TYPE="ed25519"
+SSH_KEY_FILE=".ssh/ed25519"
+
+
+NAS_MOUNTS=$(showmount -e $NAS_SERVER | awk '{print $1 " "}' | tail -n +2)
+#VOLT_MOUNTS=$(showmount -e $VOLT_SERVER | awk '{print $1 " "}' | tail -n +2)
+
+GROUP_EXISTS=$(less /etc/group | grep -c "$GROUP")
+if [ $GROUP_EXISTS -lt 1 ];
+then
+  sudo groupadd -g $GID $GROUP
+fi
+
+USER_EXISTS=$(cat /etc/passwd | grep -c "$USER")
+if [ $USER_EXISTS -lt 1 ];
+then
+  sudo useradd -g $GROUP -m -d /home/$HOME $USER
+fi
+
+sudo passwd $USER
+
+for mount in $NAS_MOUNTS
+do
+  DIR="/home/$HOME/$(echo $mount | awk -F "/" '{print $NF}')"
+  mkdir -p $DIR
+  sudo mount -t nfs "$NAS_SERVER:$mount" $DIR
+done
+
+sudo pacman -S --needed sshd
+sudo systemctl start sshd
+
+ssh-keygen -t $SSH_KEY_TYPE -f $SSH_KEY_FILE 
+sudo ssh-copy-id -i "$SSH_KEY_FILE"".pub" $VOLT_SERVER
+
+su $USER

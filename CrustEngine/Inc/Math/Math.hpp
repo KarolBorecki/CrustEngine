@@ -81,14 +81,25 @@ public:
      * @return true Values are equal within accepted margin.
      * @return false Values are not equal within accepted margin.
      */
-    static bool DoubleEquals(double val1, double val2, double delta = _DOUBLE_DEFAULT_DELTA);
+    static bool Equals(double val1, double val2, double delta = _DOUBLE_DEFAULT_DELTA);
+
+    /**
+     * @brief Checks if given values are equal within accepted margin #delta.
+     *
+     * @param val1 First compared value.
+     * @param val2 Second compared value.
+     * @param delta Accepted margin that will be tolerated even if the value are not exact. Default is #DOUBLE_DEFAULT_DELTA.
+     * @return true Values are equal within accepted margin.
+     * @return false Values are not equal within accepted margin.
+     */
+    static bool Equals(float val1, float val2, double delta = _DOUBLE_DEFAULT_DELTA);
 
 public:
     static constexpr double PI{M_PI}; //!< The value of PI
     static constexpr double INF { 1.7976931348623157E+308 }; //!< Maximum value that double can hold. 
 
 private: 
-    static constexpr double _DOUBLE_DEFAULT_DELTA{0.0000001}; //!< Default accepted margin for double values.
+    static constexpr double _DOUBLE_DEFAULT_DELTA{0.0000000000001}; //!< Default accepted margin for double values.
 
 };
 
@@ -110,7 +121,7 @@ inline double Math::SquareRoot(double radicand)
 inline double Math::InverseSquareRoot(double radicand)
 {
     double sq = sqrt(radicand);
-    if(DoubleEquals(sq, 0)) return Math::INF;
+    if(Equals(sq, 0)) return Math::INF;
     return (1.0 / sq);
 }
 
@@ -139,7 +150,12 @@ inline double Math::DegreesToRadians(uint16_t degrees)
     return (degrees)*PI / 180.0;
 }
 
-inline bool Math::DoubleEquals(double val1, double val2, double delta)
+inline bool Math::Equals(double val1, double val2, double delta)
+{
+    return (Math::Abs(val1 - val2) <= delta);
+}
+
+inline bool Math::Equals(float val1, float val2, double delta)
 {
     return (Math::Abs(val1 - val2) <= delta);
 }

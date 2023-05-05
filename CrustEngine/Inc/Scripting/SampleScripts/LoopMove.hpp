@@ -12,7 +12,7 @@ public:
   ~LoopMove() override {}
 
   void Start() override;
-  void Update(double deltaTime) override;
+  void Update(float deltaTime) override;
 
 private:
   double maxX{0.0};
@@ -33,7 +33,7 @@ inline LoopMove::LoopMove(double _minX, double _maxX, double _minY, double _maxY
 
 inline void LoopMove::Start() {}
 
-void LoopMove::Update(double deltaTime)
+void LoopMove::Update(float deltaTime)
 {
   if (moveDirX > 0 && GetObject().GetTransform().GetPosition().X() >= maxX)
     moveDirX = -1;

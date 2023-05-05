@@ -15,7 +15,7 @@ public:
   ~Mover() override {}
 
   void Start() override;
-  void Update(double deltaTime) override;
+  void Update(float deltaTime) override;
 
 private:
   double speedX{0.0};
@@ -27,52 +27,54 @@ inline Mover::Mover(double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) 
 
 inline void Mover::Start() {}
 
-#define LOG
-void Mover::Update(double deltaTime)
+ #define LOG_MOVER // Uncomment to log debug data
+void Mover::Update(float deltaTime)
 {
   if (InputHandler::IsPressed(Key::KEY_D))
   {
-#ifdef LOG
-    Logger::Log("Moving +X");
+#ifdef LOG_MOVER
+    Logger::Log("Moving +X : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(speedX * deltaTime, 0, 0);
   }
   if (InputHandler::IsPressed(Key::KEY_A))
   {
-#ifdef LOG
-    Logger::Log("Moving -X");
+#ifdef LOG_MOVER
+    Logger::Log("Moving -X : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(-speedX * deltaTime, 0, 0);
   }
   if (InputHandler::IsPressed(Key::KEY_W))
   {
-#ifdef LOG
-    Logger::Log("Moving +Z");
+#ifdef LOG_MOVER
+    Logger::Log("Moving +Z : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(0, 0, speedY * deltaTime);
   }
   if (InputHandler::IsPressed(Key::KEY_S))
   {
-#ifdef LOG
-    Logger::Log("Moving -Z");
+#ifdef LOG_MOVER
+    Logger::Log("Moving -Z : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(0, 0, -speedY * deltaTime);
   }
 
   if (InputHandler::IsPressed(Key::KEY_Q))
   {
-#ifdef LOG
-    Logger::Log("Moving +Y");
+#ifdef LOG_MOVER
+    Logger::Log("Moving +Y : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(0, speedY * deltaTime, 0);
+    // GetObject().GetTransform().RotateEuler(0, 0, 0.001f * deltaTime);
   }
 
   if (InputHandler::IsPressed(Key::KEY_E))
   {
-#ifdef LOG
-    Logger::Log("Moving -Y");
+#ifdef LOG_MOVER
+    Logger::Log("Moving -Y : (%f, %f, %f)", GetObject().GetTransform().GetPosition().X(), GetObject().GetTransform().GetPosition().Y(), GetObject().GetTransform().GetPosition().Z());
 #endif
     GetObject().GetTransform().Translate(0, -speedY * deltaTime, 0);
+    // GetObject().GetTransform().RotateEuler(0, 0, -0.001f * deltaTime);
   }
 }
 

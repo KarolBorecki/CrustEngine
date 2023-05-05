@@ -12,6 +12,8 @@
 #include <Math/Triangle.hpp>
 #include <Rendering/Objects/RenderObject.hpp>
 
+#include <Logging/ObjectLogger.hpp>
+
 class Projector
 {
 public:
@@ -66,7 +68,7 @@ public:
 
     /**
      * @brief Recalculates the view matrix for given camera. //TODO fix documentation
-     * 
+     *
      * @param cam Camera from which perspective objects will be rendered.
      *
      * @sa Camera.hpp RenderObject.hpp
@@ -100,28 +102,87 @@ Projector::~Projector()
 Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &transform, Camera &cam, Vector3<> &lightDir)
 {
     /* Moving object's triangle */
-    static Vector3 movedP1;
-    static Vector3 movedP2;
-    static Vector3 movedP3;
+    static Vector4<> transformedP1(0);
+    static Vector4<> transformedP2(0);
+    static Vector4<> transformedP3(0);
 
-    movedP1 = poli.GetPoint(0);
-    movedP2 = poli.GetPoint(1);
-    movedP3 = poli.GetPoint(2);
+    transformedP1 = poli.GetPoint(0);
+    transformedP2 = poli.GetPoint(1);
+    transformedP3 = poli.GetPoint(2);
 
-    movedP1 += transform.GetPosition();
-    movedP2 += transform.GetPosition();
-    movedP3 += transform.GetPosition();
+    /* Translation matrix */
+    static Matrix<float> translationMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+    translationMat.MakeIdentity();
+    translationMat[3][0] = transform.GetPosition().X();
+    translationMat[3][1] = transform.GetPosition().Y();
+    translationMat[3][2] = transform.GetPosition().Z();
+    ObjectLogger::Log("Translation matrix: ", translationMat);
 
-    movedP1 -= cam.GetTransform().GetPosition(); // TODO move to local variable
-    movedP2 -= cam.GetTransform().GetPosition();
-    movedP3 -= cam.GetTransform().GetPosition();
+    static Matrix<float> rotationZMat(4, 4, 0.0);
+    rotationZMat[0][0] = Math::Cos(transform.GetEulerRotation().Z());
+    rotationZMat[0][1] = Math::Sin(transform.GetEulerRotation().Z());
+    rotationZMat[1][0] = -Math::Sin(transform.GetEulerRotation().Z());
+    rotationZMat[1][1] = Math::Cos(transform.GetEulerRotation().Z());
+    rotationZMat[2][2] = 1.0f;
+    rotationZMat[3][3] = 1.0f;
+
+    static Matrix<float> rotationXMat(4, 4, 0.0);
+    rotationXMat[0][0] = 1.0f;
+    rotationXMat[1][1] = Math::Cos(transform.GetEulerRotation().X());
+    rotationXMat[1][2] = Math::Sin(transform.GetEulerRotation().X());
+    rotationXMat[2][1] = -Math::Sin(transform.GetEulerRotation().X());
+    rotationXMat[2][2] = Math::Cos(transform.GetEulerRotation().X());
+    rotationXMat[3][3] = 1.0f;
+
+    static Matrix<float> rotationYMat(4, 4, 0.0); // Not tested
+    rotationYMat[0][0] = Math::Cos(transform.GetEulerRotation().Y());
+    rotationYMat[0][2] = Math::Sin(transform.GetEulerRotation().Y());
+    rotationYMat[2][0] = -Math::Sin(transform.GetEulerRotation().Y());
+    rotationYMat[1][1] = 1.0f;
+    rotationYMat[2][2] = Math::Cos(transform.GetEulerRotation().Y());
+    rotationYMat[3][3] = 1.0f;
+
+    static Matrix<float> worldMat(4, 4, 0.0);
+    worldMat.MakeIdentity();
+    worldMat = rotationZMat;
+    worldMat *= rotationXMat;
+    worldMat *= translationMat;
+
+    transformedP1 *= rotationZMat;
+    transformedP2 *= rotationZMat;
+    transformedP3 *= rotationZMat;
+    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    transformedP1.SetW(1.0);
+    transformedP2.SetW(1.0);
+    transformedP3.SetW(1.0);
+
+    transformedP1 *= rotationXMat;
+    transformedP2 *= rotationXMat;
+    transformedP3 *= rotationXMat;
+    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    transformedP1.SetW(1.0);
+    transformedP2.SetW(1.0);
+    transformedP3.SetW(1.0);
+
+    transformedP1 += transform.GetPosition().ToVector4(0.0f);
+    transformedP2 += transform.GetPosition().ToVector4(0.0f);
+    transformedP3 += transform.GetPosition().ToVector4(0.0f);
+
+    // transformedP1 *= worldMat; // I think it does not work
+    // transformedP2 *= worldMat;
+    // transformedP3 *= worldMat;
 
     /* Calculating plolygons plane normal vector to see which direction it is facing */
-    static Vector3 normal;
-    normal = poli.Normal();
+    Vector3<> normal = Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
-    r_result.renderable = normal.Dot(movedP1) < 0.0f;
+    Vector3<> poliDir = transformedP1.ToVector3();
+    poliDir -= cam.GetTransform().GetPosition();
+    r_result.renderable = normal.Dot(poliDir) < 0.0f;
     if (r_result.renderable)
     {
         /* Illumination - see how many light is being placed onto this plane */
@@ -129,48 +190,41 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &t
         lightDirNormal = lightDir;
         lightDirNormal.Normalize();
 
-        r_result.light = lightDirNormal.Dot(normal)* 255;
+        r_result.light = lightDirNormal.Dot(normal) * 255;
 
         /* Projecting object's triangle */
-        static Vector4 extendedP1;
-        static Vector4 extendedP2;
-        static Vector4 extendedP3;
+        // transformedP1 *= r_viewMat; // Not working
+        // transformedP2 *= r_viewMat;
+        // transformedP3 *= r_viewMat;
 
-        extendedP1 = {movedP1.X(), movedP1.Y(), movedP1.Z(), 1.0};
-        extendedP2 = {movedP2.X(), movedP2.Y(), movedP2.Z(), 1.0};
-        extendedP3 = {movedP3.X(), movedP3.Y(), movedP3.Z(), 1.0};
-
-        extendedP1 *= r_projMat;
-        extendedP2 *= r_projMat;
-        extendedP3 *= r_projMat;
+        transformedP1 *= r_projMat;
+        transformedP2 *= r_projMat;
+        transformedP3 *= r_projMat;
 
         static Vector3 projectedP1;
         static Vector3 projectedP2;
         static Vector3 projectedP3;
 
-        projectedP1 = {extendedP1.X(), extendedP1.Y(), extendedP1.Z()}; // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
-        projectedP2 = {extendedP2.X(), extendedP2.Y(), extendedP2.Z()}; // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
-        projectedP3 = {extendedP3.X(), extendedP3.Y(), extendedP3.Z()};
+        projectedP1 = {transformedP1.X(), transformedP1.Y(), transformedP1.Z()}; // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
+        projectedP2 = {transformedP2.X(), transformedP2.Y(), transformedP2.Z()}; // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
+        projectedP3 = {transformedP3.X(), transformedP3.Y(), transformedP3.Z()};
 
         /* Scaling object's triangle to world space */
-        projectedP1 /= extendedP1.W();
-        projectedP2 /= extendedP2.W();
-        projectedP3 /= extendedP3.W();
+        projectedP1 /= transformedP1.W();
+        projectedP2 /= transformedP2.W();
+        projectedP3 /= transformedP3.W();
 
-        projectedP1 += 1;
-        projectedP2 += 1;
-        projectedP3 += 1;
+        Vector3<> viewOffset(1.0f, 1.0f, 0.0f);
+        projectedP1 += viewOffset;
+        projectedP2 += viewOffset;
+        projectedP3 += viewOffset;
 
-        projectedP1 *= 0.5;
-        projectedP2 *= 0.5;
-        projectedP3 *= 0.5;
-
-        projectedP1.SetX(projectedP1.X() * _width);
-        projectedP1.SetY(projectedP1.Y() * _height);
-        projectedP2.SetX(projectedP2.X() * _width);
-        projectedP2.SetY(projectedP2.Y() * _height);
-        projectedP3.SetX(projectedP3.X() * _width);
-        projectedP3.SetY(projectedP3.Y() * _height);
+        projectedP1.SetX(projectedP1.X() * _width * 0.5);
+        projectedP1.SetY(projectedP1.Y() * _height * 0.5);
+        projectedP2.SetX(projectedP2.X() * _width * 0.5);
+        projectedP2.SetY(projectedP2.Y() * _height * 0.5);
+        projectedP3.SetX(projectedP3.X() * _width * 0.5);
+        projectedP3.SetY(projectedP3.Y() * _height * 0.5);
 
         r_result.x1 = projectedP1.X();
         r_result.y1 = projectedP1.Y();
@@ -198,11 +252,110 @@ void Projector::RecalculateProjectionMatrix(Camera &cam)
     r_projMat[2][3] = -cam.GetFNear() * q;
 }
 
-void Projector::CalculateViewMatrix(Camera &cam){
-    static Vector3<> forward;
-    forward = cam.GetTransform().GetEulerRotation();
-    forward -= cam.GetTransform().GetPosition();
-    forward.Normalize();
+void Projector::CalculateViewMatrix(Camera &cam)
+{ // TODO static's
+    Vector3<> target = cam.GetTransform().GetPosition();
+    // target += {0.0, 0.0, 0.0};
+    target += cam.GetTransform().GetEulerRotation();
+    // ObjectLogger::Log("Target", target);
+
+    static Vector3<> newForward;
+    newForward = target;
+    newForward -= cam.GetTransform().GetPosition();
+    // ObjectLogger::Log("New Forward Before normalization", newForward);
+    newForward.Normalize();
+    // ObjectLogger::Log("New Forward", newForward);
+
+    static Vector3<> a;
+    a = newForward;
+    a *= newForward.Dot(Transform::Up());
+    // ObjectLogger::Log("A", a);
+
+    static Vector3<> newUp;
+    newUp = Transform::Up();
+    newUp -= a;
+    newUp.Normalize();
+    // ObjectLogger::Log("New Up", newUp);
+
+    static Vector3<> newRight;
+    newRight = newUp.Cross(newForward);
+    // ObjectLogger::Log("New Right", newRight);
+
+    // // First column
+    // r_viewMat[0][0] = newRight.X();
+    // r_viewMat[1][0] = newUp.X();
+    // r_viewMat[2][0] = newForward.X();
+    // r_viewMat[3][0] = cam.GetTransform().GetPosition().X();
+
+    // // Second column
+    // r_viewMat[0][1] = newRight.Y();
+    // r_viewMat[1][1] = newUp.Y();
+    // r_viewMat[2][1] = newForward.Y();
+    // r_viewMat[3][1] = cam.GetTransform().GetPosition().Y();
+
+    // // Third column
+    // r_viewMat[0][2] = newRight.Z();
+    // r_viewMat[1][2] = newUp.Z();
+    // r_viewMat[2][2] = newForward.Z();
+    // r_viewMat[3][2] = cam.GetTransform().GetPosition().Z();
+
+    // // Fourth column
+    // r_viewMat[0][3] = 0.0;
+    // r_viewMat[1][3] = 0.0;
+    // r_viewMat[2][3] = 0.0;
+    // r_viewMat[3][3] = 1.0;
+
+    //----------------------------------------
+
+    // First column
+    r_viewMat[0][0] = newRight.X();
+    r_viewMat[0][1] = newRight.Y();
+    r_viewMat[0][2] = newRight.Z();
+    r_viewMat[0][3] = 0.0; // -newRight.Dot(cam.GetTransform().GetPosition())
+
+    // Second column
+    r_viewMat[1][0] = newUp.X();
+    r_viewMat[1][1] = newUp.Y();
+    r_viewMat[1][2] = newUp.Z();
+    r_viewMat[1][3] = 0.0; // -newUp.Dot(cam.GetTransform().GetPosition())
+
+    // Third column
+    r_viewMat[2][0] = newForward.X();
+    r_viewMat[2][1] = newForward.Y();
+    r_viewMat[2][2] = newForward.Z();
+    r_viewMat[2][3] = 0.0; // -newForward.Dot(cam.GetTransform().GetPosition())
+
+    // Fourth column
+    r_viewMat[3][0] = cam.GetTransform().GetPosition().X();
+    r_viewMat[3][1] = cam.GetTransform().GetPosition().Y();
+    r_viewMat[3][2] = cam.GetTransform().GetPosition().Z();
+    r_viewMat[3][3] = 1.0;
+
+    // Inversing this matrix
+
+    // First column
+    r_viewMat[0][0] = r_viewMat[0][0];
+    r_viewMat[0][1] = r_viewMat[1][0];
+    r_viewMat[0][2] = r_viewMat[2][0];
+    r_viewMat[0][3] = 0.0f;
+
+    // Second column
+    r_viewMat[1][0] = r_viewMat[0][1];
+    r_viewMat[1][1] = r_viewMat[1][1];
+    r_viewMat[1][2] = r_viewMat[2][1];
+    r_viewMat[1][3] = 0.0f;
+
+    // Third column
+    r_viewMat[2][0] = r_viewMat[0][2];
+    r_viewMat[2][1] = r_viewMat[1][2];
+    r_viewMat[2][2] = r_viewMat[2][2];
+    r_viewMat[2][3] = 0.0f;
+
+    // Fourth column
+    r_viewMat[3][0] = -(r_viewMat[3][0] * r_viewMat[0][0] + r_viewMat[3][1] * r_viewMat[1][0] + r_viewMat[3][2] * r_viewMat[2][0]);
+    r_viewMat[3][1] = -(r_viewMat[3][0] * r_viewMat[0][1] + r_viewMat[3][1] * r_viewMat[1][1] + r_viewMat[3][2] * r_viewMat[2][1]);
+    r_viewMat[3][2] = -(r_viewMat[3][0] * r_viewMat[0][2] + r_viewMat[3][1] * r_viewMat[1][2] + r_viewMat[3][2] * r_viewMat[2][2]);
+    r_viewMat[3][3] = 1.0f;
 }
 
 #endif /* _PROJECTOR_HPP_ */
