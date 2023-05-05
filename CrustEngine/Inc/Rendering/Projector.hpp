@@ -168,6 +168,16 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &t
     transformedP2.SetW(1.0);
     transformedP3.SetW(1.0);
 
+        transformedP1 *= rotationYMat;
+    transformedP2 *= rotationYMat;
+    transformedP3 *= rotationYMat;
+    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    transformedP1.SetW(1.0);
+    transformedP2.SetW(1.0);
+    transformedP3.SetW(1.0);
+
     transformedP1 += transform.GetPosition().ToVector4(0.0f);
     transformedP2 += transform.GetPosition().ToVector4(0.0f);
     transformedP3 += transform.GetPosition().ToVector4(0.0f);
