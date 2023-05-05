@@ -93,6 +93,10 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
 
   for (auto &w : projections)
   {
+    // #define LOG_RENDERER
+#ifdef LOG_RENDERER
+    Logger::Log("Drawing at: (%f, %f) (%f, %f) (%f, %f) [%d]", w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, scene.IsLightProjected() ? w.light : 255);
+#endif
     DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, scene.IsLightProjected() ? w.light : 255);
   }
   projections.clear();

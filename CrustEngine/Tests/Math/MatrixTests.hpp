@@ -6,7 +6,7 @@
 #include <Math/Matrix.hpp>
 
 #include <Logging/Logger.hpp>
-
+#include <Logging/ObjectLogger.hpp>
 namespace MatrixTests
 {
     void test_constructor_noparameters()
@@ -225,6 +225,22 @@ namespace MatrixTests
         _EQUALS(m1, expected);
     }
 
+    void test_multiplying_matrix_with_diff_size()
+    {
+        Matrix<float> m1(4, 4);
+        Matrix<float> m2(1, 4);
+
+        m1 = {1, 5, 9, 13, 2, 6, 10, 14,  3, 7, 11, 15, 4, 8, 12, 16};
+        m2 = {9, 6, 3, 200};
+
+        Matrix<float> expected(1, 4);
+        expected = {2666, 2884, 3102, 3320};
+
+        m2 *= m1;
+
+        _EQUALS(m2, expected);
+    }
+
     void test_multiplying_initlist()
     {
         Matrix<double> m1(3, 3);
@@ -292,6 +308,7 @@ namespace MatrixTests
 
         test_multiplying_constant();
         test_multiplying_matrix();
+        test_multiplying_matrix_with_diff_size();
         test_multiplying_initlist();
 
         test_dividing_constant();

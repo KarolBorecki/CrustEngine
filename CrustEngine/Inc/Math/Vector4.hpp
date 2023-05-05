@@ -1,7 +1,11 @@
 #ifndef _Vector4_HPP_
 #define _Vector4_HPP_
 
-#include <Math/Vector4.hpp>
+#include <Math/Matrix.hpp>
+#include <Math/Vector3.hpp>
+
+template <class T, typename E>
+class Vector3;
 
 /**
  * @brief Represents mathematical vector4.
@@ -75,6 +79,30 @@ public:
    */
   void SetW(T valW);
 
+  /**
+   * @brief Converts Vector4 to Vector3. Cuts the 'W' value.
+   * 
+   * @return Vector3<> Vector3 with X, Y and Z value from this Vector4.
+   */
+  Vector3<T, E> ToVector3() const;
+
+    /**
+   * @brief Converts Vector4 to Vector3. Divides X, Y and Z values by 'W' value.
+   * 
+   * @return Vector3<> Vector3 with X, Y and Z value from this Vector4 divided by 'W' value.
+   */
+  Vector3<T, E> ToNormalizedVector3() const;
+
+  /**
+   * @brief Mimic #other vector3. Copy X, Y, Z values and sets 'W' value to 1.
+   * @details No changes will be done on #other matrix. Data held until this point on this vector4 will be lost.
+   *
+   * @param other Vector3 from which copy of X, Y and Z values will be performed.
+   * @return Vector4<> & Reference to *this Vector4 with values X, Y and Z exactly the same as #other Vactor3 and 'W' value set to 1.0.
+   */
+  Vector4<T, E> &operator=(const Vector3<T, E> &other) noexcept;
+
+
 private:
   static inline constexpr uint8_t _VECTOR4_WIDTH{4};
   static inline constexpr uint8_t _VECTOR4_HEIGHT{1};
@@ -121,5 +149,28 @@ inline void Vector4<T, E>::SetZ(T valZ) { (*this)[2][0] = valZ; }
 
 template <typename T, typename E>
 inline void Vector4<T, E>::SetW(T valW) { (*this)[3][0] = valW; }
+
+template <typename T, typename E>
+inline Vector3<T, E> Vector4<T, E>::ToVector3() const
+{
+  return Vector3<T, E>(X(), Y(), Z());
+}
+
+template <typename T, typename E>
+inline Vector3<T, E> Vector4<T, E>::ToNormalizedVector3() const
+{
+  return Vector3<T, E>(X() / W(), Y() / W(), Z() / W());
+}
+
+template <typename T, typename E>
+inline Vector4<T, E> &Vector4<T, E>::operator=(const Vector3<T, E> &other) noexcept
+{
+  SetX(other.X());
+  SetY(other.Y());
+  SetZ(other.Z());
+  SetW(1.0);
+
+  return *this;
+}
 
 #endif /* _Vector4_HPP_ */

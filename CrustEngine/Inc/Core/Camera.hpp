@@ -59,7 +59,7 @@ inline Camera::Camera(int fFovDeg, double fNear, double fFar) : _fFovDeg(fFovDeg
     ExceptionsHandler::ThrowError("Wrong input data for Camera!");
 
   double fFovConverted = Math::DegreesToRadians(fFovDeg);
-  if(Math::DoubleEquals(fFovConverted, 0)) 
+  if(Math::Equals(fFovConverted, 0)) 
     ExceptionsHandler::ThrowError("_fFovDeg cannot be equal to 0 in radians!");
     
   _fFovRad = (1.0 / Math::Tan(fFovConverted * 0.5));

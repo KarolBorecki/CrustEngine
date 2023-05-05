@@ -14,6 +14,7 @@
 
 #include <Scripting/SampleScripts/LoopMove.hpp>
 #include <Scripting/SampleScripts/Mover.hpp>
+#include <Scripting/SampleScripts/Rotator.hpp>
 
 // TODO implement toStrings - it is usefull at last
 // TODO add SDL as submodule of a git repository - z modułami trzeba klonować git clone --recursive <URL>
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
 
     Camera cam(90, 0.1, 1000.0);
     cam.GetTransform().SetPosition(-4, -5, -10);
+    cam.GetTransform().SetEulerRotation(0, 0, 1);
     Logger::Info("Camera created.");
 
     Scene scene("T Scene", cam);
@@ -42,8 +44,12 @@ int main(int argc, char *argv[])
     RenderObject rObj(mesh);
     Logger::Info("Render object created.");
 
+    Rotator rotator(0.9f);
+    rObj.AttachScript(rotator);
+
     Mover mover(12, 12, 12);
     rObj.AttachScript(mover);
+    rObj.GetTransform().SetPosition(0, 0, 10.0f);
 
     Vector3 lightSourceDir(0.4f, -0.3f, -0.89f);
     DirectionalLight dirLightSource(255, lightSourceDir);
@@ -51,6 +57,9 @@ int main(int argc, char *argv[])
     Logger::Info("Light source created.");
     scene.AddObject(rObj);
     scene.AddObject(dirLightSource);
+
+    scene.SetLightProjection(true);
+
     Logger::Info("Objectes added to the scene.");
     Core core;
     core.OpenNewWindow(1000, 800, scene);

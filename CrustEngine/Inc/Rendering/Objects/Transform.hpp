@@ -53,14 +53,13 @@ public:
      */
     void RotateEuler(float dX, float dY, float dZ);
 
+    static Vector3<>& Up() { return _upVector; }
+
 private:
     Vector3<> *p_pos{nullptr}; //!< Object's position in 3D space.
     Vector3<> *p_rot{nullptr}; //!< Object's Euler roatation in 3D space. //TODO implement Quaternions, this value should be from 0 to 1
     
     static inline Vector3<> _upVector{0,1,0}; //!< Object's up vector in 3D space. Represents the direction of the top of the object.
-
-private:
-    static Vector3<>& Up() { return _upVector; }
 };
 
 inline Transform::Transform()
