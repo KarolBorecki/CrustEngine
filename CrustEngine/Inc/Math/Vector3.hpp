@@ -107,6 +107,8 @@ public:
    */
   Vector4<T, E> ToVector4(T wVal) const;
 
+  //TODO add overload for multiply and make it more optimized
+
   /**
    * @brief Calculates normal vector of plane that this polygon represents.
    *
