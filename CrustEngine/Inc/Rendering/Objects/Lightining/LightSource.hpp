@@ -10,9 +10,11 @@ class LightSource : public Object
 {
 public:
   enum LightIntensivity : uint8_t {
-    INTENSIVITY_LOW = 0,
+    INTENSIVITY_DARK = 0,
+    INTENSIVITY_LOW = 64,
     INTENSIVITY_MEDIUM = 128,
-    INTENSIVITY_HIGH = 255,
+    INTENSIVITY_BRIGHT = 192,
+    INTENSIVITY_HIGH = 232,
     INTENSIVITY_MAX = 255
   };
 

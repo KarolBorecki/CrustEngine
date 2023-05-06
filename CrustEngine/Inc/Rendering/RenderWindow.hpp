@@ -122,11 +122,7 @@ void RenderWindow::Start()
     if (p_loadedScene != nullptr)
     {
       p_loadedScene->Update(p_timeProvider->GetDeltaTime_s());
-      objs = p_loadedScene->GetObjectsToRender();
-      for (auto obj : objs)
-      {
-        p_renderer->RenderMesh(*obj, *p_loadedScene); 
-      }
+      p_renderer->RenderScene(*p_loadedScene);
     }
 
     p_renderer->Show();

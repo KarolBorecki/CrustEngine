@@ -40,7 +40,16 @@ public:
   ~Renderer();
 
   /**
-   * @brief Draws given mesh on the screen
+   * @brief Renders given scene on the screen of this renderer.
+   *
+   * @param scene Scene to render.
+   */
+  void RenderScene(Scene &scene);
+
+  void RenderObjectOntoScene(RenderObject &object, Scene &scene);
+
+  /**
+   * @brief Draws given mesh on the screen //TODO fix doc
    *
    * @details Class held by RenderWindow.hpp for drawing purposes.
    * It is able to render all shapes that is needed to show mesh on the flat screen.
@@ -55,7 +64,7 @@ public:
    *
    * @sa Mesh.hpp
    */
-  void RenderMesh(RenderObject &object, Scene &scene);
+  void RenderMeshWithTranslation(Mesh &mesh, Matrix<float>& translationMatrix);
 
 private:
   Projector &r_projector;
@@ -70,18 +79,34 @@ Renderer::~Renderer()
   delete &r_projector;
 }
 
-void Renderer::RenderMesh(RenderObject &object, Scene &scene)
+void Renderer::RenderScene(Scene &scene)
 {
   SetDrawColor(RendererWrapper::RendererColor::WHITE);
   r_projector.RecalculateProjectionMatrix(scene.GetMainCamera());
+  r_projector.RecalculateLightning(*scene.GetLightSources()[0], scene.IsLightProjected());
+  for (auto &object : scene.GetObjectsToRender())
+  {
+    RenderObjectOntoScene(*object, scene);
+  }
+}
 
+void Renderer::RenderObjectOntoScene(RenderObject &object, Scene &scene)
+{
+  if (object.IsActive())
+  {
+      static Matrix<float> translationMatrix;
+  translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
+    RenderMeshWithTranslation(object.GetMesh(), translationMatrix);
+  }
+}
+
+void Renderer::RenderMeshWithTranslation(Mesh &mesh, Matrix<float>& translationMatrix)
+{
   static Projector::ProjectionData tmpProjection;
   static std::vector<Projector::ProjectionData> projections;
-  static Matrix<float> translationMatrix;
-  translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
-  for (int i = 0; i < object.GetMesh().GetPolygonsCount(); i++) // TODO use auto for
+  for (int i = 0; i < mesh.GetPolygonsCount(); i++)                     
   {
-    tmpProjection = r_projector.ProjectPolygon(object.GetMesh().GetPolygon(i), translationMatrix, scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
+    tmpProjection = r_projector.ProjectPolygon(mesh.GetPolygon(i), translationMatrix);
     if (tmpProjection.renderable)
       projections.push_back(tmpProjection);
   }
@@ -99,7 +124,7 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
 #ifdef LOG_RENDERER
     Logger::Log("Drawing at: (%f, %f) (%f, %f) (%f, %f) [%d]", w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, scene.IsLightProjected() ? w.light : 255);
 #endif
-    DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, scene.IsLightProjected() ? w.light : 255);
+    DrawFilledTri(w.x1, w.y1, w.x2, w.y2, w.x3, w.y3, w.light);
   }
   projections.clear();
 }

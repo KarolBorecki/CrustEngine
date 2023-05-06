@@ -99,6 +99,13 @@ public:
   Vector3<T, E> Cross(const Vector3<T, E> &other) const;
 
   /**
+   * @brief Calculates normal vector of plane that this polygon represents.
+   *
+   * @return Vector3& Normal vector of this plane.
+   */
+  static Vector3<T, E> PolygonNormal(Vector3<> p1, Vector3<> p2, Vector3<> p3);
+
+  /**
    * @brief Converts this vector to Vector4.
    * 
    * @param wVal Value of w field in new Vector4.
@@ -108,13 +115,14 @@ public:
   Vector4<T, E> ToVector4(T wVal) const;
 
   //TODO add overload for multiply and make it more optimized
-
-  /**
-   * @brief Calculates normal vector of plane that this polygon represents.
+    /**
+   * @brief Mimic #other vector4. Copy X, Y, Z values and disobeys 'W' value.
+   * @details No changes will be done on #other matrix. Data held until this point on this vector3 will be lost.
    *
-   * @return Vector3& Normal vector of this plane.
+   * @param other Vector4 from which copy of X, Y and Z values will be performed.
+   * @return Vector3<> & Reference to *this Vector3 with values X, Y and Z exactly the same as #other Vactor4.
    */
-  static Vector3<T, E> PolygonNormal(Vector3<> p1, Vector3<> p2, Vector3<> p3);
+  Vector3<T, E> &operator=(const Vector4<T, E> &other) noexcept;
 
 private:
   static inline constexpr uint8_t _VECTOR3_WIDTH{3};
@@ -194,19 +202,28 @@ inline Vector3<T, E> Vector3<T, E>::Cross(const Vector3<T, E> &other) const
 }
 
 template <typename T, typename E>
-inline Vector4<T, E> Vector3<T, E>::ToVector4(T wVal) const
-{
-  return Vector4<T, E>(X(), Y(), Z(), wVal);
-}
-
-template <typename T, typename E>
 inline Vector3<T, E> Vector3<T, E>::PolygonNormal(Vector3<> p1, Vector3<> p2, Vector3<> p3)
 {
   Vector3<T, E> v1 = p2;
   Vector3<T, E> v2 = p3;
   v1 -= p1;
   v2 -= p1;
-  return v1.Cross(v2).Normalized();
+  return v1.Cross(v2).Normalized(); 
+}
+
+template <typename T, typename E>
+inline Vector4<T, E> Vector3<T, E>::ToVector4(T wVal) const
+{
+  return Vector4<T, E>(X(), Y(), Z(), wVal);
+}
+
+template <typename T, typename E>
+inline Vector3<T, E> &Vector3<T, E>::operator=(const Vector4<T, E> &other) noexcept
+{
+  SetX(other.X());
+  SetY(other.Y());
+  SetZ(other.Z());
+  return *this;
 }
 
 #endif /* _VECTOR3_HPP_ */
