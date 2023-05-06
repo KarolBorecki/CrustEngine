@@ -60,8 +60,8 @@ I am documenting this project using deoxygen software. The setting and compiled 
 Here is example of how it looks like now.
 
 <div align="center">
-    <img src="Commercial/Show/Showup-06-05-2023/gif/axis.gif" alt="Axis projection" width="500"/>
-<img src="Commercial/Show/Showup-06-05-2023/gif/videoship.gif" alt="VideoShip projection" width="500"/>
+    <img src="Commercial/Show/Showup-06-05-2023/gif/axis.gif" alt="Axis projection" width="700"/>
+<img src="Commercial/Show/Showup-06-05-2023/gif/videoship.gif" alt="VideoShip projection" width="700"/>
 <img src="Commercial/Show/Showup-06-05-2023/gif/teapot.gif" alt="Teapot projection" width="700"/>
     </div>
 
