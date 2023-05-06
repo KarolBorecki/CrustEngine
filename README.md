@@ -59,7 +59,11 @@ I am documenting this project using deoxygen software. The setting and compiled 
 ## CrustEngine on work
 Here is example of how it looks like now.
 
-<img src="Commercial/Show/BasicProjection.jpg" alt="BasicProjection" width=450/>
+<div align="center">
+    <img src="Commercial/Show/Showup-06-05-2023/gif/axis.gif" alt="Axis projection" width="500"/>
+<img src="Commercial/Show/Showup-06-05-2023/gif/videoship.gif" alt="VideoShip projection" width="500"/>
+<img src="Commercial/Show/Showup-06-05-2023/gif/teapot.gif" alt="Teapot projection" width="700"/>
+    </div>
 
 ## CrustEngine's test framework
 During development of this project I came across the choice of an c++ testing framework. As c++ does not offer very much support for testing (unlike java, which is compiled to byte-code and can be quicjly tested) and as I did not required much from this framwework I decided to create my own. It is placed inside  `CrustTestingFramework` folder and is as simple as possible. Feel free to use it.
