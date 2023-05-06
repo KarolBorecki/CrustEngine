@@ -113,10 +113,17 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &t
     /* Translation matrix */
     static Matrix<float> translationMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
     translationMat.MakeIdentity();
-    translationMat[3][0] = transform.GetPosition().X();
-    translationMat[3][1] = transform.GetPosition().Y();
-    translationMat[3][2] = transform.GetPosition().Z();
-    ObjectLogger::Log("Translation matrix: ", translationMat);
+    translationMat[0][3] = transform.GetPosition().X();
+    translationMat[1][3] = transform.GetPosition().Y();
+    translationMat[2][3] = transform.GetPosition().Z();
+    translationMat[3][3] = 1.0f;
+    // ObjectLogger::Log("Translation matrix: ", translationMat);
+
+    static Matrix<float> scaleMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+    scaleMat[0][0] = transform.GetScale().X();
+    scaleMat[1][1] = transform.GetScale().Y();
+    scaleMat[2][2] = transform.GetScale().Z();
+    scaleMat[3][3] = 1.0f;
 
     static Matrix<float> rotationZMat(4, 4, 0.0);
     rotationZMat[0][0] = Math::Cos(transform.GetEulerRotation().Z());
@@ -146,53 +153,63 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &t
     worldMat.MakeIdentity();
     worldMat = rotationZMat;
     worldMat *= rotationXMat;
+    worldMat *= rotationYMat;
+
     worldMat *= translationMat;
+    worldMat *= scaleMat;
+    ObjectLogger::Log("Position: ", transform.GetPosition());
+    ObjectLogger::Log("Scale: ", transform.GetScale());
+    ObjectLogger::Log("Rotation: ", transform.GetEulerRotation());
+    ObjectLogger::Log("Translation matrix: ", translationMat);
+    ObjectLogger::Log("Scale matrix: ", scaleMat);
+    ObjectLogger::Log("World matrix: ", worldMat);
+    Logger::Log("------------------------------------");
 
-    transformedP1 *= rotationZMat;
-    transformedP2 *= rotationZMat;
-    transformedP3 *= rotationZMat;
-    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    transformedP1.SetW(1.0);
-    transformedP2.SetW(1.0);
-    transformedP3.SetW(1.0);
+    transformedP1 *= worldMat; // I think it does not work
+    transformedP2 *= worldMat;
+    transformedP3 *= worldMat;
 
-    transformedP1 *= rotationXMat;
-    transformedP2 *= rotationXMat;
-    transformedP3 *= rotationXMat;
-    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    transformedP1.SetW(1.0);
-    transformedP2.SetW(1.0);
-    transformedP3.SetW(1.0);
+    // transformedP1 *= rotationZMat;
+    // transformedP2 *= rotationZMat;
+    // transformedP3 *= rotationZMat;
+    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    // transformedP1.SetW(1.0);
+    // transformedP2.SetW(1.0);
+    // transformedP3.SetW(1.0);
 
-        transformedP1 *= rotationYMat;
-    transformedP2 *= rotationYMat;
-    transformedP3 *= rotationYMat;
-    transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    transformedP1.SetW(1.0);
-    transformedP2.SetW(1.0);
-    transformedP3.SetW(1.0);
+    // transformedP1 *= rotationXMat;
+    // transformedP2 *= rotationXMat;
+    // transformedP3 *= rotationXMat;
+    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    // transformedP1.SetW(1.0);
+    // transformedP2.SetW(1.0);
+    // transformedP3.SetW(1.0);
 
-    transformedP1 += transform.GetPosition().ToVector4(0.0f);
-    transformedP2 += transform.GetPosition().ToVector4(0.0f);
-    transformedP3 += transform.GetPosition().ToVector4(0.0f);
+    // transformedP1 *= rotationYMat;
+    // transformedP2 *= rotationYMat;
+    // transformedP3 *= rotationYMat;
+    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
+    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
+    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
+    // transformedP1.SetW(1.0);
+    // transformedP2.SetW(1.0);
+    // transformedP3.SetW(1.0);
 
-    // transformedP1 *= worldMat; // I think it does not work
-    // transformedP2 *= worldMat;
-    // transformedP3 *= worldMat;
+    // transformedP1 += transform.GetPosition().ToVector4(0.0f);
+    // transformedP2 += transform.GetPosition().ToVector4(0.0f);
+    // transformedP3 += transform.GetPosition().ToVector4(0.0f);
 
     /* Calculating plolygons plane normal vector to see which direction it is facing */
     Vector3<> normal = Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
-    Vector3<> poliDir = transformedP1.ToVector3();
-    poliDir -= cam.GetTransform().GetPosition();
-    r_result.renderable = normal.Dot(poliDir) < 0.0f;
+    // Vector3<> poliDir = transformedP1.ToVector3();
+    // poliDir -= cam.GetTransform().GetPosition();
+    r_result.renderable = normal.Dot(transformedP1.ToVector3()) < -0.1f;
     if (r_result.renderable)
     {
         /* Illumination - see how many light is being placed onto this plane */

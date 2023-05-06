@@ -15,6 +15,7 @@
 #include <Scripting/SampleScripts/LoopMove.hpp>
 #include <Scripting/SampleScripts/Mover.hpp>
 #include <Scripting/SampleScripts/Rotator.hpp>
+#include <Scripting/SampleScripts/Scaler.hpp>
 
 // TODO implement toStrings - it is usefull at last
 // TODO add SDL as submodule of a git repository - z modułami trzeba klonować git clone --recursive <URL>
@@ -42,14 +43,16 @@ int main(int argc, char *argv[])
     MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
     Logger::Info("Mesh loaded.");
     RenderObject rObj(mesh);
+    rObj.GetTransform().SetPosition(0, 0, 10.0f);
     Logger::Info("Render object created.");
 
-    Rotator rotator(0.9f);
-    rObj.AttachScript(rotator);
-
     Mover mover(12, 12, 12);
+    Rotator rotator(0.9f);
+    Scaler scaler(0.6f);
+
     rObj.AttachScript(mover);
-    rObj.GetTransform().SetPosition(0, 0, 10.0f);
+    rObj.AttachScript(rotator);
+    rObj.AttachScript(scaler);
 
     Vector3 lightSourceDir(0.4f, -0.3f, -0.89f);
     DirectionalLight dirLightSource(255, lightSourceDir);
