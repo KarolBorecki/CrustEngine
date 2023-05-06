@@ -28,7 +28,7 @@ public:
    *
    * @sa RenderWindow.hpp
    */
-  void OpenNewWindow(uint32_t width, uint32_t uint32_t, Scene &scene);
+  void OpenNewWindow(uint32_t width, uint32_t height, Scene &scene);
 
   /**
    * @brief Closes the specified #window.

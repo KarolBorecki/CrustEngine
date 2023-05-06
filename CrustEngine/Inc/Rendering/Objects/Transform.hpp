@@ -80,7 +80,7 @@ private:
     Vector3<> *p_pos{nullptr};   //!< Object's position in 3D space.
     Vector3<> *p_scale{nullptr}; //!< Object's scale in 3D space.
     Vector3<> *p_rot{nullptr};   //!< Object's Euler roatation in 3D space. //TODO implement Quaternions, this value should be from 0 to 1
-
+    //TODO trzymanie wartości nie jest głupie jeśli Vector3 = 3 * float = 24 bity < 64 bitowa referencja
     static inline Vector3<> _upVector{0, 1, 0}; //!< Object's up vector in 3D space. Represents the direction of the top of the object.
 };
 
@@ -88,7 +88,7 @@ inline Transform::Transform()
 {
     p_pos = new Vector3(0.0f);
     p_scale = new Vector3(1.0f);
-    p_rot = new Vector3(0.0f);
+    p_rot = new Vector3(0.0f); 
 }
 
 inline Transform::~Transform()

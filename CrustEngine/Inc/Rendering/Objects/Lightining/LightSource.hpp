@@ -9,10 +9,18 @@
 class LightSource : public Object
 {
 public:
+  enum LightIntensivity : uint8_t {
+    INTENSIVITY_LOW = 0,
+    INTENSIVITY_MEDIUM = 128,
+    INTENSIVITY_HIGH = 255,
+    INTENSIVITY_MAX = 255
+  };
+
+public:
   /**
    * @param _intensivity Light's intensivity.
    */
-  LightSource(double _intensivity);
+  LightSource(uint8_t _intensivity);
 
   /**
    * @brief Getter for light's #intesivity field.
@@ -27,13 +35,13 @@ public:
   virtual double GetNormalisedIntensivity();
 
 protected:
-  uint8_t _intesivity{255}; //!< Light's intensivity. Value between 0 and 255, where 255 represent the brightest light.
+  uint8_t _intesivity{INTENSIVITY_HIGH}; //!< Light's intensivity. Value between 0 and 255, where 255 represent the brightest light.
 };
 
-inline LightSource::LightSource(double _intensivity) : _intesivity(_intensivity), Object() {}
+inline LightSource::LightSource(uint8_t _intensivity) : _intesivity(_intensivity), Object() {}
 
 inline uint8_t LightSource::GetIntensivity() { return _intesivity; }
 
-inline double LightSource::GetNormalisedIntensivity() { return _intesivity / 255; }
+inline double LightSource::GetNormalisedIntensivity() { return _intesivity / INTENSIVITY_MAX; }
 
 #endif /* _LIGHTSOURCE_HPP_ */

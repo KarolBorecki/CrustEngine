@@ -122,7 +122,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
     transformedP2 = poli.GetPoint(1);
     transformedP3 = poli.GetPoint(2);
 
-    /* Translation */
+    /* Translation - object movement, rotation and scaling */
     transformedP1 *= translationMat; 
     transformedP2 *= translationMat;
     transformedP3 *= translationMat;
@@ -140,15 +140,16 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
         lightDirNormal.Normalize();
 
         if(lightDirNormal.Dot(normal) < 0.0f)
-            lightDirNormal *= -1.0f; // FIXME this is not working (lightDirNormal is not normalized
+            lightDirNormal = 0.0f; 
 
         r_result.light = lightDirNormal.Dot(normal) * 255;
 
-        /* Projecting object's triangle */
+        /* Camera movement */
         // transformedP1 *= r_viewMat; // Not working
         // transformedP2 *= r_viewMat;
         // transformedP3 *= r_viewMat;
 
+        /* Projecting object's triangle */
         transformedP1 *= r_projMat;
         transformedP2 *= r_projMat;
         transformedP3 *= r_projMat;
