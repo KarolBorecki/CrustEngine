@@ -102,6 +102,8 @@ public:
    */
   Vector4<T, E> &operator=(const Vector3<T, E> &other) noexcept;
 
+    //TODO add overload for multiply and make it more optimized
+
 
 private:
   static inline constexpr uint8_t _VECTOR4_WIDTH{4};

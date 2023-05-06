@@ -77,9 +77,11 @@ void Renderer::RenderMesh(RenderObject &object, Scene &scene)
 
   static Projector::ProjectionData tmpProjection;
   static std::vector<Projector::ProjectionData> projections;
+  static Matrix<float> translationMatrix;
+  translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
   for (int i = 0; i < object.GetMesh().GetPolygonsCount(); i++) // TODO use auto for
   {
-    tmpProjection = r_projector.ProjectPolygon(object.GetMesh().GetPolygon(i), object.GetTransform(), scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
+    tmpProjection = r_projector.ProjectPolygon(object.GetMesh().GetPolygon(i), translationMatrix, scene.GetMainCamera(), scene.GetLightSources()[0]->GetTransform().GetEulerRotation());
     if (tmpProjection.renderable)
       projections.push_back(tmpProjection);
   }

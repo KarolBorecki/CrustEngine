@@ -44,7 +44,7 @@ public:
      *
      * @return Projected polygon. //TODO fix documentation
      */
-    ProjectionData &ProjectPolygon(Polygon &poli, Transform &transform, Camera &cam, Vector3<> &lightDir);
+    ProjectionData &ProjectPolygon(Polygon &poli, Matrix<float>& translationMat, Camera &cam, Vector3<> &lightDir);
 
     /**
      * @brief Getter for #projMatrix field.
@@ -73,7 +73,15 @@ public:
      *
      * @sa Camera.hpp RenderObject.hpp
      */
-    void CalculateViewMatrix(Camera &cam);
+    void RecalculateViewMatrix(Camera &cam);
+
+    /**
+     * @brief Calculates the translation matrix for given transform.
+     * 
+     * @param transform Transform from which perspective object will be rendered.
+     * @return Matrix<float>& Translation matrix for given object.
+     */
+    Matrix<float>& CalculateTranslationMatrix(Transform& transform);
 
     /* This value should not be changed without full understanding of this change! */
     static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
@@ -84,22 +92,26 @@ private:
     float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
     Matrix<float> &r_projMat; //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    Matrix<float> &r_viewMat; //!< View matrix. See Renderer::RecalculateProjectionMatrix.
+    Matrix<float> &r_transMat; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
+    Matrix<float> &r_viewMat; //!< View matrix. See Renderer::RecalculateViewMatrix.
     ProjectionData &r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
-Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_viewMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
+Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_viewMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_transMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0)))
 {
     _aspectRatio = ((float)_height / (float)_width);
+
 }
 
 Projector::~Projector()
 {
     delete &r_projMat;
+    delete &r_viewMat;
+    delete &r_transMat;
     delete &r_result;
 }
 
-Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &transform, Camera &cam, Vector3<> &lightDir)
+Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float>& translationMat, Camera &cam, Vector3<> &lightDir)
 {
     /* Moving object's triangle */
     static Vector4<> transformedP1(0);
@@ -110,112 +122,25 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Transform &t
     transformedP2 = poli.GetPoint(1);
     transformedP3 = poli.GetPoint(2);
 
-    /* Translation matrix */
-    static Matrix<float> translationMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
-    translationMat.MakeIdentity();
-    translationMat[0][3] = transform.GetPosition().X();
-    translationMat[1][3] = transform.GetPosition().Y();
-    translationMat[2][3] = transform.GetPosition().Z();
-    translationMat[3][3] = 1.0f;
-    // ObjectLogger::Log("Translation matrix: ", translationMat);
-
-    static Matrix<float> scaleMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
-    scaleMat[0][0] = transform.GetScale().X();
-    scaleMat[1][1] = transform.GetScale().Y();
-    scaleMat[2][2] = transform.GetScale().Z();
-    scaleMat[3][3] = 1.0f;
-
-    static Matrix<float> rotationZMat(4, 4, 0.0);
-    rotationZMat[0][0] = Math::Cos(transform.GetEulerRotation().Z());
-    rotationZMat[0][1] = Math::Sin(transform.GetEulerRotation().Z());
-    rotationZMat[1][0] = -Math::Sin(transform.GetEulerRotation().Z());
-    rotationZMat[1][1] = Math::Cos(transform.GetEulerRotation().Z());
-    rotationZMat[2][2] = 1.0f;
-    rotationZMat[3][3] = 1.0f;
-
-    static Matrix<float> rotationXMat(4, 4, 0.0);
-    rotationXMat[0][0] = 1.0f;
-    rotationXMat[1][1] = Math::Cos(transform.GetEulerRotation().X());
-    rotationXMat[1][2] = Math::Sin(transform.GetEulerRotation().X());
-    rotationXMat[2][1] = -Math::Sin(transform.GetEulerRotation().X());
-    rotationXMat[2][2] = Math::Cos(transform.GetEulerRotation().X());
-    rotationXMat[3][3] = 1.0f;
-
-    static Matrix<float> rotationYMat(4, 4, 0.0); // Not tested
-    rotationYMat[0][0] = Math::Cos(transform.GetEulerRotation().Y());
-    rotationYMat[0][2] = Math::Sin(transform.GetEulerRotation().Y());
-    rotationYMat[2][0] = -Math::Sin(transform.GetEulerRotation().Y());
-    rotationYMat[1][1] = 1.0f;
-    rotationYMat[2][2] = Math::Cos(transform.GetEulerRotation().Y());
-    rotationYMat[3][3] = 1.0f;
-
-    static Matrix<float> worldMat(4, 4, 0.0);
-    worldMat.MakeIdentity();
-    worldMat = rotationZMat;
-    worldMat *= rotationXMat;
-    worldMat *= rotationYMat;
-
-    worldMat *= translationMat;
-    worldMat *= scaleMat;
-    ObjectLogger::Log("Position: ", transform.GetPosition());
-    ObjectLogger::Log("Scale: ", transform.GetScale());
-    ObjectLogger::Log("Rotation: ", transform.GetEulerRotation());
-    ObjectLogger::Log("Translation matrix: ", translationMat);
-    ObjectLogger::Log("Scale matrix: ", scaleMat);
-    ObjectLogger::Log("World matrix: ", worldMat);
-    Logger::Log("------------------------------------");
-
-    transformedP1 *= worldMat; // I think it does not work
-    transformedP2 *= worldMat;
-    transformedP3 *= worldMat;
-
-    // transformedP1 *= rotationZMat;
-    // transformedP2 *= rotationZMat;
-    // transformedP3 *= rotationZMat;
-    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    // transformedP1.SetW(1.0);
-    // transformedP2.SetW(1.0);
-    // transformedP3.SetW(1.0);
-
-    // transformedP1 *= rotationXMat;
-    // transformedP2 *= rotationXMat;
-    // transformedP3 *= rotationXMat;
-    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    // transformedP1.SetW(1.0);
-    // transformedP2.SetW(1.0);
-    // transformedP3.SetW(1.0);
-
-    // transformedP1 *= rotationYMat;
-    // transformedP2 *= rotationYMat;
-    // transformedP3 *= rotationYMat;
-    // transformedP1 /= (transformedP1.W() == 0.0f) ? 1.0f : transformedP1.W();
-    // transformedP2 /= (transformedP2.W() == 0.0f) ? 1.0f : transformedP2.W();
-    // transformedP3 /= (transformedP3.W() == 0.0f) ? 1.0f : transformedP3.W();
-    // transformedP1.SetW(1.0);
-    // transformedP2.SetW(1.0);
-    // transformedP3.SetW(1.0);
-
-    // transformedP1 += transform.GetPosition().ToVector4(0.0f);
-    // transformedP2 += transform.GetPosition().ToVector4(0.0f);
-    // transformedP3 += transform.GetPosition().ToVector4(0.0f);
+    /* Translation */
+    transformedP1 *= translationMat; 
+    transformedP2 *= translationMat;
+    transformedP3 *= translationMat;
 
     /* Calculating plolygons plane normal vector to see which direction it is facing */
     Vector3<> normal = Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
-    // Vector3<> poliDir = transformedP1.ToVector3();
-    // poliDir -= cam.GetTransform().GetPosition();
-    r_result.renderable = normal.Dot(transformedP1.ToVector3()) < -0.1f;
+    r_result.renderable = normal.Dot(transformedP1.ToVector3()) < 0.0f;
     if (r_result.renderable)
     {
         /* Illumination - see how many light is being placed onto this plane */
         static Vector3 lightDirNormal;
         lightDirNormal = lightDir;
         lightDirNormal.Normalize();
+
+        if(lightDirNormal.Dot(normal) < 0.0f)
+            lightDirNormal *= -1.0f; // FIXME this is not working (lightDirNormal is not normalized
 
         r_result.light = lightDirNormal.Dot(normal) * 255;
 
@@ -279,7 +204,7 @@ void Projector::RecalculateProjectionMatrix(Camera &cam)
     r_projMat[2][3] = -cam.GetFNear() * q;
 }
 
-void Projector::CalculateViewMatrix(Camera &cam)
+void Projector::RecalculateViewMatrix(Camera &cam)
 { // TODO static's
     Vector3<> target = cam.GetTransform().GetPosition();
     // target += {0.0, 0.0, 0.0};
@@ -358,7 +283,7 @@ void Projector::CalculateViewMatrix(Camera &cam)
     r_viewMat[3][2] = cam.GetTransform().GetPosition().Z();
     r_viewMat[3][3] = 1.0;
 
-    // Inversing this matrix
+    // Inversing this matrix - try to do it without transposing
 
     // First column
     r_viewMat[0][0] = r_viewMat[0][0];
@@ -383,6 +308,57 @@ void Projector::CalculateViewMatrix(Camera &cam)
     r_viewMat[3][1] = -(r_viewMat[3][0] * r_viewMat[0][1] + r_viewMat[3][1] * r_viewMat[1][1] + r_viewMat[3][2] * r_viewMat[2][1]);
     r_viewMat[3][2] = -(r_viewMat[3][0] * r_viewMat[0][2] + r_viewMat[3][1] * r_viewMat[1][2] + r_viewMat[3][2] * r_viewMat[2][2]);
     r_viewMat[3][3] = 1.0f;
+}
+
+Matrix<float>& Projector::CalculateTranslationMatrix(Transform& transform) 
+{
+    static Matrix<float> translationMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+    translationMat.MakeIdentity();
+    translationMat[0][3] = transform.GetPosition().X();
+    translationMat[1][3] = transform.GetPosition().Y();
+    translationMat[2][3] = transform.GetPosition().Z();
+    translationMat[3][3] = 1.0f;
+
+    static Matrix<float> scaleMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+    scaleMat[0][0] = transform.GetScale().X();
+    scaleMat[1][1] = transform.GetScale().Y();
+    scaleMat[2][2] = transform.GetScale().Z();
+    scaleMat[3][3] = 1.0f;
+
+    static Matrix<float> rotationZMat(4, 4, 0.0);
+    rotationZMat[0][0] = Math::Cos(transform.GetEulerRotation().Z());
+    rotationZMat[0][1] = Math::Sin(transform.GetEulerRotation().Z());
+    rotationZMat[1][0] = -Math::Sin(transform.GetEulerRotation().Z());
+    rotationZMat[1][1] = Math::Cos(transform.GetEulerRotation().Z());
+    rotationZMat[2][2] = 1.0f;
+    rotationZMat[3][3] = 1.0f;
+
+    static Matrix<float> rotationXMat(4, 4, 0.0);
+    rotationXMat[0][0] = 1.0f;
+    rotationXMat[1][1] = Math::Cos(transform.GetEulerRotation().X());
+    rotationXMat[1][2] = Math::Sin(transform.GetEulerRotation().X());
+    rotationXMat[2][1] = -Math::Sin(transform.GetEulerRotation().X());
+    rotationXMat[2][2] = Math::Cos(transform.GetEulerRotation().X());
+    rotationXMat[3][3] = 1.0f;
+
+    static Matrix<float> rotationYMat(4, 4, 0.0); // Not tested
+    rotationYMat[0][0] = Math::Cos(transform.GetEulerRotation().Y());
+    rotationYMat[0][2] = Math::Sin(transform.GetEulerRotation().Y());
+    rotationYMat[2][0] = -Math::Sin(transform.GetEulerRotation().Y());
+    rotationYMat[1][1] = 1.0f;
+    rotationYMat[2][2] = Math::Cos(transform.GetEulerRotation().Y());
+    rotationYMat[3][3] = 1.0f;
+
+    static Matrix<float> worldMat(4, 4, 0.0);
+    worldMat.MakeIdentity();
+    worldMat = rotationZMat;
+    worldMat *= rotationXMat;
+    worldMat *= rotationYMat;
+    worldMat *= translationMat;
+    worldMat *= scaleMat;
+
+    r_transMat = worldMat;
+    return r_transMat;
 }
 
 #endif /* _PROJECTOR_HPP_ */
