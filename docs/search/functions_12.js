@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vector3_0',['Vector3',['../class_vector3.html#a0f49191f7e001e7f7ae1cb49522118b4',1,'Vector3::Vector3()'],['../class_vector3.html#af3ddf3f85d2e8390fa8c297c8448761e',1,'Vector3::Vector3(double valXYZ)'],['../class_vector3.html#a3b370f98c38f1221df9238a9b5f3200c',1,'Vector3::Vector3(double x, double y, double z)']]],
-  ['vector4_1',['Vector4',['../class_vector4.html#a511b4d9c8326c235b76d794eea018921',1,'Vector4::Vector4()'],['../class_vector4.html#a56844fb12dc7d0d3ca3636e858a41d3c',1,'Vector4::Vector4(double valXYZW)'],['../class_vector4.html#a6e5895badfb614ee237878c13f709464',1,'Vector4::Vector4(double x, double y, double z, double w)']]]
+  ['vector3_0',['Vector3',['../class_vector3.html#a367b63bc238532d345d2807459a2e083',1,'Vector3::Vector3()'],['../class_vector3.html#a7fc86376bd6309e776543237756ab552',1,'Vector3::Vector3(T valXYZ)'],['../class_vector3.html#a48f2033c3b8d49ec27f4248bcf9d0466',1,'Vector3::Vector3(T x, T y, T z)']]],
+  ['vector4_1',['Vector4',['../class_vector4.html#a207c2d4a015911477d0b263c10432241',1,'Vector4::Vector4()'],['../class_vector4.html#a0ff77f3408d407b2dfe406667a939871',1,'Vector4::Vector4(T valXYZW)'],['../class_vector4.html#a93d5eed948c0ac4c78c9447830d09d31',1,'Vector4::Vector4(T x, T y, T z, T w)']]]
 ];

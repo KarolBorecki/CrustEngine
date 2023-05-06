@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.1.0</span>
    </div>
   </td>
  </tr>
@@ -112,89 +112,90 @@ $(document).ready(function(){initNavTree('_input_handler_8hpp_source.html',''); 
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">IsPressed</a>(<a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> key);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> isInitialized{<span class="keyword">false</span>}; </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_struct" href="struct_input_event.html">InputEvent</a> lastEvent;      </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> _isInitialized{<span class="keyword">false</span>}; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_struct" href="struct_input_event.html">InputEvent</a> _lastEvent;      </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *keyboardState; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *p_keyboardState; </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> ResetEventState();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">static</span> <a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> ParseSDLKeyCodeEvent(int32_t keyCode);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">   62</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">InputHandler::BeginInputMonitoring</a>()</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">if</span> (isInitialized)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  ResetEventState();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  isInitialized = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  keyboardState = SDL_GetKeyboardState(NULL);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">InputHandler::PollEvent</a>()</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">if</span> (!isInitialized)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">static</span> SDL_Event sdlEvent;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordflow">if</span> (SDL_PollEvent(&amp;sdlEvent))</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (sdlEvent.type == SDL_QUIT)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563ac59d84eb62bce7d7588571e5f098641b">Event::EVENT_WINDOW_QUIT</a>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_KEYDOWN &amp;&amp; sdlEvent.key.repeat == 0)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de">Event::EVENT_KEY_DOWN</a>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_KEYUP &amp;&amp; sdlEvent.key.repeat == 0)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59">Event::EVENT_KEY_UP</a>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEBUTTONDOWN)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a7ff08ba3d96b7415720ff39a50b028b7">Event::EVENT_MOUSE_DOWN</a>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEBUTTONUP)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1">Event::EVENT_MOUSE_UP</a>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEWHEEL)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5f01cdd866dd2f5642f8e1693a0bd93b">Event::EVENT_WHEEL</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">  108</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">InputHandler::IsPressed</a>(<a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> key)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">return</span> keyboardState[key] == 1;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">  113</a></span><span class="keyword">inline</span> <a class="code hl_struct" href="struct_input_event.html">InputEvent</a> &amp;<a class="code hl_function" href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">InputHandler::GetLastEvent</a>() { <span class="keywordflow">return</span> lastEvent; }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">inline</span> <span class="keywordtype">void</span> InputHandler::ResetEventState()</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563af125761e0b089ed6e6bb0db2f3522bec">Event::EVENT_UNKNOWN</a>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938">Key::KEY_NONE</a>;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">inline</span> <a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> InputHandler::ParseSDLKeyCodeEvent(int32_t keyCode)</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">if</span> (keyCode &gt; <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a6d46dbac4791d736fe94f2b2eb145e95">Key::KEY_Z</a>)</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938">Key::KEY_NONE</a>;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a><span class="keyword">&gt;</span>(keyCode);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#endif </span><span class="comment">/* _INPUTHANDLER_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> ResetEventState();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">static</span> <a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> ParseSDLKeyCodeEvent(int32_t keyCode);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">   63</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">InputHandler::BeginInputMonitoring</a>()</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (_isInitialized)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  ResetEventState();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  _isInitialized = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  p_keyboardState = SDL_GetKeyboardState(NULL);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">InputHandler::PollEvent</a>()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">if</span> (!_isInitialized)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">static</span> SDL_Event sdlEvent;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordflow">if</span> (SDL_PollEvent(&amp;sdlEvent))</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (sdlEvent.type == SDL_QUIT)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563ac59d84eb62bce7d7588571e5f098641b">Event::EVENT_WINDOW_QUIT</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_KEYDOWN &amp;&amp; sdlEvent.key.repeat == 0)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de">Event::EVENT_KEY_DOWN</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_KEYUP &amp;&amp; sdlEvent.key.repeat == 0)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59">Event::EVENT_KEY_UP</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEBUTTONDOWN)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a7ff08ba3d96b7415720ff39a50b028b7">Event::EVENT_MOUSE_DOWN</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEBUTTONUP)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1">Event::EVENT_MOUSE_UP</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sdlEvent.type == SDL_MOUSEWHEEL)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5f01cdd866dd2f5642f8e1693a0bd93b">Event::EVENT_WHEEL</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">  109</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">InputHandler::IsPressed</a>(<a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> key)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">return</span> p_keyboardState[key] == 1;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">  114</a></span><span class="keyword">inline</span> <a class="code hl_struct" href="struct_input_event.html">InputEvent</a> &amp;<a class="code hl_function" href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">InputHandler::GetLastEvent</a>() { <span class="keywordflow">return</span> _lastEvent; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">inline</span> <span class="keywordtype">void</span> InputHandler::ResetEventState()</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  _lastEvent.<a class="code hl_variable" href="struct_input_event.html#a394850f0074739828cba172455d67e20">type</a> = <a class="code hl_enumvalue" href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563af125761e0b089ed6e6bb0db2f3522bec">Event::EVENT_UNKNOWN</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  _lastEvent.<a class="code hl_variable" href="struct_input_event.html#aa811a11480a7569d4690c692d5d893e5">keyCode</a> = <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938">Key::KEY_NONE</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">inline</span> <a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a> InputHandler::ParseSDLKeyCodeEvent(int32_t keyCode)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordflow">if</span> (keyCode &gt; <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a6d46dbac4791d736fe94f2b2eb145e95">Key::KEY_Z</a>)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596a41658cb4bd5405f152352bf842ab3938">Key::KEY_NONE</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespace_key.html#ae48052aa0dd2692dbca9f44ad7e35596">Key::KeyCode</a><span class="keyword">&gt;</span>(keyCode);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif </span><span class="comment">/* _INPUTHANDLER_HPP_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="a_input_event_8hpp_html"><div class="ttname"><a href="_input_event_8hpp.html">InputEvent.hpp</a></div></div>
 <div class="ttc" id="a_logger_8hpp_html"><div class="ttname"><a href="_logger_8hpp.html">Logger.hpp</a></div></div>
 <div class="ttc" id="aclass_input_handler_html"><div class="ttname"><a href="class_input_handler.html">InputHandler</a></div><div class="ttdoc">A static class used to handle event from the user.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:13</div></div>
-<div class="ttc" id="aclass_input_handler_html_a37c0e386071d541553ad7e1791847ce4"><div class="ttname"><a href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">InputHandler::BeginInputMonitoring</a></div><div class="ttdeci">static void BeginInputMonitoring()</div><div class="ttdoc">Method that has to be called once before any input monitoring will be done.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:62</div></div>
-<div class="ttc" id="aclass_input_handler_html_a80edcd5f1a346e8a17b16ed9579b2a23"><div class="ttname"><a href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">InputHandler::IsPressed</a></div><div class="ttdeci">static bool IsPressed(Key::KeyCode key)</div><div class="ttdoc">Function that checks if given key is pressed. In order for this function to work You need to call Beg...</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:108</div></div>
-<div class="ttc" id="aclass_input_handler_html_a8ce9e45fb514a40ceb4cb95762c4e0f6"><div class="ttname"><a href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">InputHandler::PollEvent</a></div><div class="ttdeci">static void PollEvent()</div><div class="ttdoc">Method that should be called once per frame. This function checks for any pending events.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:71</div></div>
-<div class="ttc" id="aclass_input_handler_html_aa90d8a2336b6a041e0dfdc25a1645d6b"><div class="ttname"><a href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">InputHandler::GetLastEvent</a></div><div class="ttdeci">static InputEvent &amp; GetLastEvent()</div><div class="ttdoc">Get the last event that occured in the engine.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:113</div></div>
+<div class="ttc" id="aclass_input_handler_html_a37c0e386071d541553ad7e1791847ce4"><div class="ttname"><a href="class_input_handler.html#a37c0e386071d541553ad7e1791847ce4">InputHandler::BeginInputMonitoring</a></div><div class="ttdeci">static void BeginInputMonitoring()</div><div class="ttdoc">Method that has to be called once before any input monitoring will be done.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:63</div></div>
+<div class="ttc" id="aclass_input_handler_html_a80edcd5f1a346e8a17b16ed9579b2a23"><div class="ttname"><a href="class_input_handler.html#a80edcd5f1a346e8a17b16ed9579b2a23">InputHandler::IsPressed</a></div><div class="ttdeci">static bool IsPressed(Key::KeyCode key)</div><div class="ttdoc">Function that checks if given key is pressed. In order for this function to work You need to call Beg...</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:109</div></div>
+<div class="ttc" id="aclass_input_handler_html_a8ce9e45fb514a40ceb4cb95762c4e0f6"><div class="ttname"><a href="class_input_handler.html#a8ce9e45fb514a40ceb4cb95762c4e0f6">InputHandler::PollEvent</a></div><div class="ttdeci">static void PollEvent()</div><div class="ttdoc">Method that should be called once per frame. This function checks for any pending events.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:72</div></div>
+<div class="ttc" id="aclass_input_handler_html_aa90d8a2336b6a041e0dfdc25a1645d6b"><div class="ttname"><a href="class_input_handler.html#aa90d8a2336b6a041e0dfdc25a1645d6b">InputHandler::GetLastEvent</a></div><div class="ttdeci">static InputEvent &amp; GetLastEvent()</div><div class="ttdoc">Get the last event that occured in the engine.</div><div class="ttdef"><b>Definition:</b> InputHandler.hpp:114</div></div>
 <div class="ttc" id="anamespace_event_html_ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de"><div class="ttname"><a href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de">Event::EVENT_KEY_DOWN</a></div><div class="ttdeci">@ EVENT_KEY_DOWN</div><div class="ttdef"><b>Definition:</b> InputEvent.hpp:89</div></div>
 <div class="ttc" id="anamespace_event_html_ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1"><div class="ttname"><a href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1">Event::EVENT_MOUSE_UP</a></div><div class="ttdeci">@ EVENT_MOUSE_UP</div><div class="ttdef"><b>Definition:</b> InputEvent.hpp:92</div></div>
 <div class="ttc" id="anamespace_event_html_ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59"><div class="ttname"><a href="namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59">Event::EVENT_KEY_UP</a></div><div class="ttdeci">@ EVENT_KEY_UP</div><div class="ttdef"><b>Definition:</b> InputEvent.hpp:90</div></div>

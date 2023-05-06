@@ -20,14 +20,15 @@ var searchData=
   ['getnormalisedintensivity_17',['GetNormalisedIntensivity',['../class_light_source.html#a4d22b2f23fe354c613318fc0b7cc5bda',1,'LightSource']]],
   ['getobject_18',['GetObject',['../class_crust_script.html#aa79919d3db0732975670a5ca1fbc4988',1,'CrustScript']]],
   ['getobjectstorender_19',['GetObjectsToRender',['../class_scene.html#a3b43d8fd68804b4db228e17b72be93be',1,'Scene']]],
-  ['getpoint_20',['GetPoint',['../class_triangle.html#a8e4c246a9a54572c9dc197856d9f7659',1,'Triangle::GetPoint()'],['../class_mesh.html#ae02ed726ed1bce1f9fdfa878de9a72a4',1,'Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const']]],
+  ['getpoint_20',['GetPoint',['../class_triangle.html#a8e4c246a9a54572c9dc197856d9f7659',1,'Triangle::GetPoint()'],['../class_mesh.html#a0da24947e3a70fc9c34346021fb935f5',1,'Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const']]],
   ['getpolygon_21',['GetPolygon',['../class_mesh.html#a1b150426b4b41b61f5ea8e99d9d704a3',1,'Mesh']]],
   ['getpolygonscount_22',['GetPolygonsCount',['../class_mesh.html#a3f4161e575431590bae285e2b050194c',1,'Mesh']]],
   ['getposition_23',['GetPosition',['../class_transform.html#abbbbd89160c4be2736176b4d59b68823',1,'Transform']]],
-  ['getprojectionmatrix_24',['GetProjectionMatrix',['../class_renderer.html#a9c8160c634360c83d3a5d31653c15f6e',1,'Renderer']]],
+  ['getprojectionmatrix_24',['GetProjectionMatrix',['../class_projector.html#accd6332cb44631cb9892a225c6316896',1,'Projector']]],
   ['getrenderer_25',['GetRenderer',['../class_renderer_wrapper.html#a830ab9a1a57619b0a6ce062bd3741b44',1,'RendererWrapper']]],
-  ['getscripts_26',['GetScripts',['../class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4',1,'Object']]],
-  ['gettime_5fms_27',['GetTime_ms',['../class_time_provider.html#ae04680a366faf60db2a88e89b10183a4',1,'TimeProvider']]],
-  ['gettime_5fs_28',['GetTime_s',['../class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4',1,'TimeProvider']]],
-  ['gettransform_29',['GetTransform',['../class_object.html#a26a44aa385f80433e92ce2cee5c36b3b',1,'Object']]]
+  ['getscale_26',['GetScale',['../class_transform.html#aefecbe7fe13c02d0ffdefce6f6582f97',1,'Transform']]],
+  ['getscripts_27',['GetScripts',['../class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4',1,'Object']]],
+  ['gettime_5fms_28',['GetTime_ms',['../class_time_provider.html#ae04680a366faf60db2a88e89b10183a4',1,'TimeProvider']]],
+  ['gettime_5fs_29',['GetTime_s',['../class_time_provider.html#a95b5d9a0b234c9506a58637411b215a4',1,'TimeProvider']]],
+  ['gettransform_30',['GetTransform',['../class_object.html#a26a44aa385f80433e92ce2cee5c36b3b',1,'Object']]]
 ];

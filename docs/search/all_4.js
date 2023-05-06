@@ -1,17 +1,11 @@
 var searchData=
 [
-  ['error_0',['Error',['../class_logger.html#a618b81914d1e3fe6eff17cee0be5ee22',1,'Logger']]],
-  ['event_1',['Event',['../namespace_event.html',1,'']]],
-  ['event_5fkey_5fdown_2',['EVENT_KEY_DOWN',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a0ad0c04e217c09ca282073c197e4f1de',1,'Event']]],
-  ['event_5fkey_5fup_3',['EVENT_KEY_UP',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5cc7dab1adb3a3e96fb0bc4645594f59',1,'Event']]],
-  ['event_5fmouse_5fdown_4',['EVENT_MOUSE_DOWN',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a7ff08ba3d96b7415720ff39a50b028b7',1,'Event']]],
-  ['event_5fmouse_5fup_5',['EVENT_MOUSE_UP',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a4a9c1a243670ebb42bd816ae882282c1',1,'Event']]],
-  ['event_5fquit_6',['EVENT_QUIT',['../class_renderer_wrapper.html#a5d1152c56b88f2cf8e847c1d153fd858a78afe7a82ecbe6ba243fa81f1fb23f75',1,'RendererWrapper']]],
-  ['event_5funknown_7',['EVENT_UNKNOWN',['../class_renderer_wrapper.html#a5d1152c56b88f2cf8e847c1d153fd858aa6ac34f5826ff60827199d8974638ba0',1,'RendererWrapper::EVENT_UNKNOWN()'],['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563af125761e0b089ed6e6bb0db2f3522bec',1,'Event::EVENT_UNKNOWN()']]],
-  ['event_5fwheel_8',['EVENT_WHEEL',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563a5f01cdd866dd2f5642f8e1693a0bd93b',1,'Event']]],
-  ['event_5fwindow_5fquit_9',['EVENT_WINDOW_QUIT',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563ac59d84eb62bce7d7588571e5f098641b',1,'Event']]],
-  ['events_5fcount_10',['EVENTS_COUNT',['../namespace_event.html#ac7d77268cf8beddc3421933b18ffba3d',1,'Event']]],
-  ['eventtype_11',['EventType',['../namespace_event.html#ad26f1751aec1886ee5f34ba22391c563',1,'Event']]],
-  ['exceptionshandler_12',['ExceptionsHandler',['../class_exceptions_handler.html',1,'']]],
-  ['exceptionshandler_2ehpp_13',['ExceptionsHandler.hpp',['../_exceptions_handler_8hpp.html',1,'']]]
+  ['default_5fmesh_5fname_0',['DEFAULT_MESH_NAME',['../_mesh_8hpp.html#afba135fa34fecd8ecd9dea2b331a01a3',1,'Mesh.hpp']]],
+  ['degreestoradians_1',['DegreesToRadians',['../class_math.html#ad427c62078fffe46c465c7b99bc9a3de',1,'Math']]],
+  ['directionallight_2',['DirectionalLight',['../class_directional_light.html',1,'DirectionalLight'],['../class_directional_light.html#a544025b49c6bb0b4aab48015063089b1',1,'DirectionalLight::DirectionalLight()']]],
+  ['directionallight_2ehpp_3',['DirectionalLight.hpp',['../_directional_light_8hpp.html',1,'']]],
+  ['dot_4',['Dot',['../class_vector3.html#a5a03c304a8adfe12c1a3a2e1d6d4f622',1,'Vector3']]],
+  ['drawfilledtri_5',['DrawFilledTri',['../class_renderer_wrapper.html#aadd3b0b97bc11a159ada1631234d2592',1,'RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b)'],['../class_renderer_wrapper.html#a2f0ea129fd17f2f4739080de4aa7c72a',1,'RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t rgb)']]],
+  ['drawline_6',['DrawLine',['../class_renderer_wrapper.html#ad1c53fa72b0542f272bf45b137e9b647',1,'RendererWrapper']]],
+  ['drawtri_7',['DrawTri',['../class_renderer_wrapper.html#a5787c18a077fa41e736ff73a812f9094',1,'RendererWrapper']]]
 ];

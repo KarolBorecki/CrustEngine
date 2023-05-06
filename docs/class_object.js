@@ -7,8 +7,8 @@ var class_object =
     [ "GetScripts", "class_object.html#ab6a373b25a3ca54d61e6e63812fe36c4", null ],
     [ "GetTransform", "class_object.html#a26a44aa385f80433e92ce2cee5c36b3b", null ],
     [ "IsActive", "class_object.html#a49327b515f7e613c882f33c2b058ab98", null ],
-    [ "ID", "class_object.html#a2eb10110d660e687cd87c9ca01cb0408", null ],
-    [ "isActive", "class_object.html#ac516bd8573de8618cd2218efba90b712", null ],
-    [ "scripts", "class_object.html#ae800b2af48ce0f2a31715c6018c2ad67", null ],
-    [ "transform", "class_object.html#addce36298001392c464f5439f2b4b25f", null ]
+    [ "_id", "class_object.html#a5cdefe557afed989a6a1bcfae53abc99", null ],
+    [ "_isActive", "class_object.html#a80528bc60ca64e7ae6208b2bfd8fafad", null ],
+    [ "_scripts", "class_object.html#a46c03cc0faa773f48a03a4db608b3cfd", null ],
+    [ "p_transform", "class_object.html#a9d6a4418b754b54ee19584a49c0dc660", null ]
 ];

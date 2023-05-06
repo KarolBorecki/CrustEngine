@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.1.0</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('class_math.html',''); initResizable();
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_math-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Math Class Reference</div></div>
 </div><!--header-->
@@ -107,6 +108,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aad545cc846717f163d9bd06db85482b6"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#aad545cc846717f163d9bd06db85482b6">Abs</a> (double value)</td></tr>
 <tr class="memdesc:aad545cc846717f163d9bd06db85482b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates absolute of a given value.  <a href="class_math.html#aad545cc846717f163d9bd06db85482b6">More...</a><br /></td></tr>
 <tr class="separator:aad545cc846717f163d9bd06db85482b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4048e2be9d74afc86689bd27217f0a17"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a4048e2be9d74afc86689bd27217f0a17">Abs</a> (float value)</td></tr>
+<tr class="separator:a4048e2be9d74afc86689bd27217f0a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29df732d1fd8bf452a1570b9866f61f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#ab29df732d1fd8bf452a1570b9866f61f">SquareRoot</a> (double radicand)</td></tr>
 <tr class="memdesc:ab29df732d1fd8bf452a1570b9866f61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that calculates square root of a given value.  <a href="class_math.html#ab29df732d1fd8bf452a1570b9866f61f">More...</a><br /></td></tr>
 <tr class="separator:ab29df732d1fd8bf452a1570b9866f61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,15 +131,27 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad427c62078fffe46c465c7b99bc9a3de"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#ad427c62078fffe46c465c7b99bc9a3de">DegreesToRadians</a> (uint16_t degrees)</td></tr>
 <tr class="memdesc:ad427c62078fffe46c465c7b99bc9a3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts #angleInDegrees to radians.  <a href="class_math.html#ad427c62078fffe46c465c7b99bc9a3de">More...</a><br /></td></tr>
 <tr class="separator:ad427c62078fffe46c465c7b99bc9a3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa90009368994c44a0426ad668908aa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a5aa90009368994c44a0426ad668908aa">DoubleEquals</a> (double val1, double val2, double delta=DOUBLE_DEFAULT_DELTA)</td></tr>
-<tr class="memdesc:a5aa90009368994c44a0426ad668908aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given values are equal within accepted margin #delta.  <a href="class_math.html#a5aa90009368994c44a0426ad668908aa">More...</a><br /></td></tr>
-<tr class="separator:a5aa90009368994c44a0426ad668908aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96febe17da06717977137e19d68c1979"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a96febe17da06717977137e19d68c1979">Equals</a> (double val1, double val2, double delta=_DOUBLE_DEFAULT_DELTA)</td></tr>
+<tr class="memdesc:a96febe17da06717977137e19d68c1979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given values are equal within accepted margin #delta.  <a href="class_math.html#a96febe17da06717977137e19d68c1979">More...</a><br /></td></tr>
+<tr class="separator:a96febe17da06717977137e19d68c1979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33485d6eb517997fd710a553599a1d80"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a33485d6eb517997fd710a553599a1d80">Equals</a> (float val1, float val2, double delta=_DOUBLE_DEFAULT_DELTA)</td></tr>
+<tr class="memdesc:a33485d6eb517997fd710a553599a1d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if given values are equal within accepted margin #delta.  <a href="class_math.html#a33485d6eb517997fd710a553599a1d80">More...</a><br /></td></tr>
+<tr class="separator:a33485d6eb517997fd710a553599a1d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:acfc7ead6b66a7dce80f1a510df01845c"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#acfc7ead6b66a7dce80f1a510df01845c">PI</a> {M_PI}</td></tr>
+<tr class="memdesc:acfc7ead6b66a7dce80f1a510df01845c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of PI.  <a href="class_math.html#acfc7ead6b66a7dce80f1a510df01845c">More...</a><br /></td></tr>
+<tr class="separator:acfc7ead6b66a7dce80f1a510df01845c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a8bb5dacaad99254b3154fefad75039"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_math.html#a7a8bb5dacaad99254b3154fefad75039">INF</a> { 1.7976931348623157E+308 }</td></tr>
+<tr class="memdesc:a7a8bb5dacaad99254b3154fefad75039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum value that double can hold.  <a href="class_math.html#a7a8bb5dacaad99254b3154fefad75039">More...</a><br /></td></tr>
+<tr class="separator:a7a8bb5dacaad99254b3154fefad75039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Static class that wrapps all math's algorithm used in the engine. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aad545cc846717f163d9bd06db85482b6" name="aad545cc846717f163d9bd06db85482b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad545cc846717f163d9bd06db85482b6">&#9670;&#160;</a></span>Abs()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aad545cc846717f163d9bd06db85482b6">&#9670;&#160;</a></span>Abs() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +182,32 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double Abosulute value. </dd></dl>
+
+</div>
+</div>
+<a id="a4048e2be9d74afc86689bd27217f0a17" name="a4048e2be9d74afc86689bd27217f0a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4048e2be9d74afc86689bd27217f0a17">&#9670;&#160;</a></span>Abs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Math::Abs </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -240,8 +281,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5aa90009368994c44a0426ad668908aa" name="a5aa90009368994c44a0426ad668908aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aa90009368994c44a0426ad668908aa">&#9670;&#160;</a></span>DoubleEquals()</h2>
+<a id="a96febe17da06717977137e19d68c1979" name="a96febe17da06717977137e19d68c1979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96febe17da06717977137e19d68c1979">&#9670;&#160;</a></span>Equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +291,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Math::DoubleEquals </td>
+          <td class="memname">bool Math::Equals </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>val1</em>, </td>
@@ -265,7 +306,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>delta</em> = <code>DOUBLE_DEFAULT_DELTA</code>&#160;</td>
+          <td class="paramname"><em>delta</em> = <code>_DOUBLE_DEFAULT_DELTA</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -285,7 +326,62 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">val1</td><td>First compared value. </td></tr>
     <tr><td class="paramname">val2</td><td>Second compared value. </td></tr>
-    <tr><td class="paramname">delta</td><td>Accepted margin that will be tolerated even if the value are not exact. Default is DOUBLE_DEFAULT_DELTA. </td></tr>
+    <tr><td class="paramname">delta</td><td>Accepted margin that will be tolerated even if the value are not exact. Default is #DOUBLE_DEFAULT_DELTA. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Values are equal within accepted margin. </dd>
+<dd>
+false Values are not equal within accepted margin. </dd></dl>
+
+</div>
+</div>
+<a id="a33485d6eb517997fd710a553599a1d80" name="a33485d6eb517997fd710a553599a1d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33485d6eb517997fd710a553599a1d80">&#9670;&#160;</a></span>Equals() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Math::Equals </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>val2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>delta</em> = <code>_DOUBLE_DEFAULT_DELTA</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if given values are equal within accepted margin #delta. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>First compared value. </td></tr>
+    <tr><td class="paramname">val2</td><td>Second compared value. </td></tr>
+    <tr><td class="paramname">delta</td><td>Accepted margin that will be tolerated even if the value are not exact. Default is #DOUBLE_DEFAULT_DELTA. </td></tr>
   </table>
   </dd>
 </dl>
@@ -467,6 +563,55 @@ false Values are not equal within accepted margin. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double Value of a tan for #t. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7a8bb5dacaad99254b3154fefad75039" name="a7a8bb5dacaad99254b3154fefad75039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8bb5dacaad99254b3154fefad75039">&#9670;&#160;</a></span>INF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Math::INF { 1.7976931348623157E+308 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum value that double can hold. </p>
+
+</div>
+</div>
+<a id="acfc7ead6b66a7dce80f1a510df01845c" name="acfc7ead6b66a7dce80f1a510df01845c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc7ead6b66a7dce80f1a510df01845c">&#9670;&#160;</a></span>PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Math::PI {M_PI}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value of PI. </p>
 
 </div>
 </div>

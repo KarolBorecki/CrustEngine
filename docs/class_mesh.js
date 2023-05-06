@@ -5,7 +5,7 @@ var class_mesh =
     [ "~Mesh", "class_mesh.html#a5efe4da1a4c0971cfb037bd70304c303", null ],
     [ "AddPolygon", "class_mesh.html#ac3b13bffa35d0d581ffe1e0dc8479584", null ],
     [ "GetName", "class_mesh.html#a890a2d67b7973fe5178b234cffaa445d", null ],
-    [ "GetPoint", "class_mesh.html#ae02ed726ed1bce1f9fdfa878de9a72a4", null ],
+    [ "GetPoint", "class_mesh.html#a0da24947e3a70fc9c34346021fb935f5", null ],
     [ "GetPolygon", "class_mesh.html#a1b150426b4b41b61f5ea8e99d9d704a3", null ],
     [ "GetPolygonsCount", "class_mesh.html#a3f4161e575431590bae285e2b050194c", null ],
     [ "SetName", "class_mesh.html#acd25fc39bfa8e74103191d36529f1841", null ]

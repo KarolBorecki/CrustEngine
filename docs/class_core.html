@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.1.0</span>
    </div>
   </td>
  </tr>
@@ -191,7 +191,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Closes all opened windows. </p>
-<p >Loops through openedWindows array, runs <a class="el" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c" title="Stops the window rendering process bu killing the renderer. When called the Start method stops it&#39;s l...">RenderWindow::Close</a> and deletes each window.</p>
+<p >Loops through #openedWindows array, runs <a class="el" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c" title="Stops the window rendering process bu killing the renderer. When called the Start method stops it&#39;s l...">RenderWindow::Close</a> and deletes each window.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_render_window_8hpp.html">RenderWindow.hpp</a> </dd></dl>
 
 </div>
@@ -213,7 +213,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Closes the specified #window. </p>
-<p >Searches for #window inside openedWindows array and runs <a class="el" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c" title="Stops the window rendering process bu killing the renderer. When called the Start method stops it&#39;s l...">RenderWindow::Close</a> method and deletes it's object.</p>
+<p >Searches for #window inside #openedWindows array and runs <a class="el" href="class_render_window.html#a0e9fd523d9888ca17333e50216ba096c" title="Stops the window rendering process bu killing the renderer. When called the Start method stops it&#39;s l...">RenderWindow::Close</a> method and deletes it's object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>window to close.</td></tr>
@@ -257,7 +257,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Opens new <a class="el" href="class_render_window.html" title="Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...">RenderWindow</a> of size #width x #height and default loaded scene set to #scene. </p>
-<p >Creates new object of instance <a class="el" href="class_render_window.html" title="Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...">RenderWindow</a> and adds it to openedWindows array. After this the created window starts using <a class="el" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8" title="Starts the window rendering process.">RenderWindow::Start()</a>.</p>
+<p >Creates new object of instance <a class="el" href="class_render_window.html" title="Class responsible to open window, load scene, manage renderer thread and pass render objects to rende...">RenderWindow</a> and adds it to #openedWindows array. After this the created window starts using <a class="el" href="class_render_window.html#ace7b6b9d6045bc2b9fbb41c474122cf8" title="Starts the window rendering process.">RenderWindow::Start()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">width</td><td>The new opened window width. </td></tr>

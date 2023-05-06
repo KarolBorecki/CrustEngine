@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">CrustEngine<span id="projectnumber">&#160;0.1.0</span>
    </div>
   </td>
  </tr>
@@ -118,6 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a912a77a2ef8cf58b423d41e6409890d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#a912a77a2ef8cf58b423d41e6409890d9">LoadScene</a> (<a class="el" href="class_scene.html">Scene</a> &amp;scene)</td></tr>
 <tr class="memdesc:a912a77a2ef8cf58b423d41e6409890d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads new scene that will be rendered in this window.  <a href="class_render_window.html#a912a77a2ef8cf58b423d41e6409890d9">More...</a><br /></td></tr>
 <tr class="separator:a912a77a2ef8cf58b423d41e6409890d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc1615f214aabee3fb4af7110f40cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_render_window.html#a2cc1615f214aabee3fb4af7110f40cc8">UnLoadScene</a> ()</td></tr>
+<tr class="memdesc:a2cc1615f214aabee3fb4af7110f40cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un loads currently loaded scene. After tyhis operation nothing will be rendered onto the screen.  <a href="class_render_window.html#a2cc1615f214aabee3fb4af7110f40cc8">More...</a><br /></td></tr>
+<tr class="separator:a2cc1615f214aabee3fb4af7110f40cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class responsible to open window, load scene, manage renderer thread and pass render objects to rendering. </p>
@@ -234,9 +237,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RenderWindow::LoadScene </td>
@@ -246,11 +246,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Loads new scene that will be rendered in this window. </p>
@@ -282,6 +277,26 @@ Public Member Functions</h2></td></tr>
 <p>Starts the window rendering process. </p>
 <p >Starts loop that performs rendering as long as renderer is opened and running. At each frame it calculates FPS, Polls for any pending input events, updates loaded scene by calling #Update method, checks if last event that occured was not EVENT_QUIT and if so ends the renderer work, cleans window and draws projected polygons.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_renderer_8hpp.html">Renderer.hpp</a>, </dd></dl>
+
+</div>
+</div>
+<a id="a2cc1615f214aabee3fb4af7110f40cc8" name="a2cc1615f214aabee3fb4af7110f40cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc1615f214aabee3fb4af7110f40cc8">&#9670;&#160;</a></span>UnLoadScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderWindow::UnLoadScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Un loads currently loaded scene. After tyhis operation nothing will be rendered onto the screen. </p>
+<p >Unloads loaded scene by calling #OnUnLoad and by setting #loadedScene to nullptr. Also fills <a class="el" href="class_renderer.html" title="Class used to render simple shapes on the window.">Renderer</a>'s #projMatrix with zeros. </p>
 
 </div>
 </div>
