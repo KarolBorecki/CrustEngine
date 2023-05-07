@@ -64,7 +64,7 @@ public:
    *
    * @sa Mesh.hpp
    */
-  void RenderMeshWithTranslation(Mesh &mesh, Matrix<float>& translationMatrix);
+  void RenderMeshWithTranslation(Mesh &mesh, Matrix<float> &translationMatrix);
 
 private:
   Projector &r_projector;
@@ -94,17 +94,17 @@ void Renderer::RenderObjectOntoScene(RenderObject &object, Scene &scene)
 {
   if (object.IsActive())
   {
-      static Matrix<float> translationMatrix;
-  translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
+    static Matrix<float> translationMatrix;
+    translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
     RenderMeshWithTranslation(object.GetMesh(), translationMatrix);
   }
 }
 
-void Renderer::RenderMeshWithTranslation(Mesh &mesh, Matrix<float>& translationMatrix)
+void Renderer::RenderMeshWithTranslation(Mesh &mesh, Matrix<float> &translationMatrix)
 {
   static Projector::ProjectionData tmpProjection;
   static std::vector<Projector::ProjectionData> projections;
-  for (int i = 0; i < mesh.GetPolygonsCount(); i++)                     
+  for (int i = 0; i < mesh.GetPolygonsCount(); i++)
   {
     tmpProjection = r_projector.ProjectPolygon(mesh.GetPolygon(i), translationMatrix);
     if (tmpProjection.renderable)

@@ -100,28 +100,28 @@ private:
     uint32_t _height{0};     //!< Assigned window height. Calulated on Renderer creation.
     float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
-    Matrix<float> &r_projMat;  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    Matrix<float> &r_transMat; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
-    Matrix<float> &r_viewMat;  //!< View matrix. See Renderer::RecalculateViewMatrix.
+    Matrix<float> r_projMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    Matrix<float> r_transMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f}; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
+    Matrix<float> r_viewMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< View matrix. See Renderer::RecalculateViewMatrix.
 
-    Vector3<> &r_lightDir;     //!< Light direction. See Renderer::DrawMesh.
+    Vector3<> r_lightDir{0.0f};     //!< Light direction. See Renderer::DrawMesh.
     uint8_t _lightIntensivity; //!< Light intensivity. See Renderer::DrawMesh.
     bool _projectLight;        //!< Flag if the light should be projected. See Renderer::DrawMesh.
 
-    ProjectionData &r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
+    ProjectionData r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
 
-Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height), r_result(*(new ProjectionData())), r_projMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_viewMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_transMat(*(new Matrix<float>(PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0))), r_lightDir(*(new Vector3<>(0.0, 0.0, 0.0)))
+Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _height(_height)
 {
     _aspectRatio = ((float)_height / (float)_width);
 }
 
 Projector::~Projector()
 {
-    delete &r_projMat;
-    delete &r_viewMat;
-    delete &r_transMat;
-    delete &r_result;
+    // delete &r_projMat;
+    // delete &r_viewMat;
+    // delete &r_transMat;
+    // delete &r_result;
 }
 
 Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float> &translationMat)
