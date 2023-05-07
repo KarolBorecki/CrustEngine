@@ -35,7 +35,7 @@ public:
    * @param _width Width of the window that this Renderer is applied to.
    * @param _height Height of the window that this Renderer is applied to.
    */
-  Renderer(uint32_t _width, uint32_t _height);
+  Renderer(uint16_t _width, uint16_t _height);
 
   ~Renderer();
 
@@ -70,7 +70,7 @@ private:
   Projector &r_projector;
 };
 
-Renderer::Renderer(uint32_t _width, uint32_t _height) : RendererWrapper(_width, _height), r_projector(*(new Projector(_width, _height)))
+Renderer::Renderer(uint16_t _width, uint16_t _height) : RendererWrapper(_width, _height), r_projector(*(new Projector(_width, _height)))
 {
 }
 

@@ -74,29 +74,29 @@ public:
     static Vector3<> &Up() { return _upVector; }
 
 private:
-    Vector3<> p_pos{0.0f};   //!< Object's position in 3D space.
-    Vector3<> p_scale{1.0f}; //!< Object's scale in 3D space.
-    Vector3<> p_rot{0.0f};   //!< Object's Euler roatation in 3D space. //TODO implement Quaternions, this value should be from 0 to 1
-    //TODO trzymanie wartości nie jest głupie jeśli Vector3 = 3 * float = 24 bity < 64 bitowa referencja
+    Vector3<> _pos{0.0f};   //!< Object's position in 3D space.
+    Vector3<> _scale{1.0f}; //!< Object's scale in 3D space.
+    Vector3<> _rot{0.0f};   //!< Object's Euler roatation in 3D space. //TODO implement Quaternions
+    
     static inline Vector3<> _upVector{0, 1, 0}; //!< Object's up vector in 3D space. Represents the direction of the top of the object.
 };
 
-inline Vector3<> &Transform::GetPosition()  { return p_pos; }
+inline Vector3<> &Transform::GetPosition() { return _pos; }
 
-inline Vector3<> &Transform::GetScale()  { return p_scale; }
+inline Vector3<> &Transform::GetScale() { return _scale; }
 
-inline Vector3<> &Transform::GetEulerRotation()  { return p_rot; }
+inline Vector3<> &Transform::GetEulerRotation() { return _rot; }
 
-inline void Transform::SetPosition(float x, float y, float z) { p_pos = {x, y, z}; }
+inline void Transform::SetPosition(float x, float y, float z) { _pos = {x, y, z}; }
 
-inline void Transform::SetScale(float x, float y, float z) { p_scale = {x, y, z}; }
+inline void Transform::SetScale(float x, float y, float z) { _scale = {x, y, z}; }
 
-inline void Transform::SetEulerRotation(float x, float y, float z) { p_rot = {x, y, z}; }
+inline void Transform::SetEulerRotation(float x, float y, float z) { _rot = {x, y, z}; }
 
-inline void Transform::Translate(float dX, float dY, float dZ) { p_pos += {dX, dY, dZ}; }
+inline void Transform::Translate(float dX, float dY, float dZ) { _pos += {dX, dY, dZ}; }
 
-inline void Transform::Scale(float dX, float dY, float dZ) { p_scale += {dX, dY, dZ}; }
+inline void Transform::Scale(float dX, float dY, float dZ) { _scale += {dX, dY, dZ}; }
 
-inline void Transform::RotateEuler(float dX, float dY, float dZ) { p_rot += {dX, dY, dZ}; }
+inline void Transform::RotateEuler(float dX, float dY, float dZ) { _rot += {dX, dY, dZ}; }
 
 #endif /* _TRANSFORM_HPP_ */

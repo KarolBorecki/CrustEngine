@@ -28,7 +28,7 @@ public:
    *
    * @sa RenderWindow.hpp
    */
-  void OpenNewWindow(uint32_t width, uint32_t height, Scene &scene);
+  void OpenNewWindow(uint16_t width, uint16_t height, Scene &scene);
 
   /**
    * @brief Closes the specified #window.
@@ -61,9 +61,9 @@ private:
 
 inline Core::Core() { TimeProvider::OnEngineStart(); }
 
-void Core::OpenNewWindow(uint32_t width, uint32_t height, Scene &scene)
+void Core::OpenNewWindow(uint16_t width, uint16_t height, Scene &scene)
 {
-  if(width == 0 || height == 0)
+  if (width == 0 || height == 0)
     ExceptionsHandler::ThrowError("Error while opening new window: Width or Height cannot be equal to 0!");
 
   RenderWindow *window = new RenderWindow(width, height, scene);
@@ -83,7 +83,8 @@ void Core::CloseAllWindows()
 {
   for (auto &window : _openedWindows)
   {
-    if(window == nullptr) continue;
+    if (window == nullptr)
+      continue;
     window->Close();
     delete window;
   }

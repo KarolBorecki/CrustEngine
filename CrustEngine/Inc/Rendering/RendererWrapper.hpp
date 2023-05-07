@@ -57,7 +57,7 @@ public:
    *
    * @sa Renderer.hpp
    */
-  RendererWrapper(uint32_t _width, uint32_t _height) : _width(_width), _height(_height)
+  RendererWrapper(uint16_t _width, uint16_t _height) : _width(_width), _height(_height)
   {
     p_window = NULL;
     p_renderer = NULL;
@@ -217,20 +217,20 @@ public:
   /**
    * @brief Getter for renderer width.
    *
-   * @return uint32_t Width in pixels.
+   * @return uint16_t Width in pixels.
    */
-  uint32_t Width() const;
+  uint16_t Width() const;
 
   /**
    * @brief Getter for renderer height.
    *
-   * @return uint32_t Height in pixels.
+   * @return uint16_t Height in pixels.
    */
-  uint32_t Height() const;
+  uint16_t Height() const;
 
 private:
-  uint32_t _width{0};  //!< Drawing window width.
-  uint32_t _height{0}; //!< Drawing window height.
+  uint16_t _width{0};  //!< Drawing window width.
+  uint16_t _height{0}; //!< Drawing window height.
 
   LibRendererWindow *p_window{nullptr}; //!< Drawing window handler.
   LibRenderer *p_renderer{nullptr};     //!< Drawing renderer handler.
@@ -353,8 +353,8 @@ void RendererWrapper::Quit()
 
 inline LibRenderer &RendererWrapper::GetRenderer() const { return *p_renderer; }
 
-inline uint32_t RendererWrapper::Width() const { return _width; }
+inline uint16_t RendererWrapper::Width() const { return _width; }
 
-inline uint32_t RendererWrapper::Height() const { return _height; }
+inline uint16_t RendererWrapper::Height() const { return _height; }
 
 #endif /* _RENDERERWRAPPER_HPP_ */

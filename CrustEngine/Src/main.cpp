@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     rObj.AttachScript(rotator);
     rObj.AttachScript(scaler);
 
-    // rObj.AttachScript(spinner);
+    rObj.AttachScript(spinner);
 
     Vector3 lightSourceDir(0.4f, -0.3f, -0.89f);
     DirectionalLight dirLightSource(LightSource::INTENSIVITY_BRIGHT, lightSourceDir);

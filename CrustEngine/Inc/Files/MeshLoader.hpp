@@ -52,6 +52,7 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
     ExceptionsHandler::ThrowError("Failed to open file: %s", fileName);
 
   std::string line;
+  int lineNum = 0;
   const char *analysed_line;
 
   char str[256];
@@ -67,6 +68,7 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
 
   while (std::getline(file, line))
   {
+    lineNum++;
     analysed_line = line.c_str();
     if (sscanf(analysed_line, "v %lf %lf %lf", &x, &y, &z) == 3)
     {
@@ -101,17 +103,49 @@ void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
                                         points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2],
                                         points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2])));
     }
+    else if (sscanf(analysed_line, "vt %s", str) == 1)
+    {
+      static bool vtWarning = false;
+      if (!vtWarning)
+      {
+        ExceptionsHandler::ThrowWarning("[NOT IMPLEMENTED] vt not implemented");
+        vtWarning = true;
+      }
+    }
     else if (sscanf(analysed_line, "usemtl %s", str) == 1)
     {
-      // TODO mesh obj loader - usage for usemtl data
+      static bool usemtlWarning = false;
+      if (!usemtlWarning)
+      {
+        ExceptionsHandler::ThrowWarning("[NOT IMPLEMENTED] usemtl not implemented");
+        usemtlWarning = true;
+      }
+    }
+    else if (sscanf(analysed_line, "mtllib %s", str) == 1)
+    {
+      static bool mtllibWarning = false;
+      if (!mtllibWarning)
+      {
+        ExceptionsHandler::ThrowWarning("[NOT IMPLEMENTED] mtllib not implemented");
+        mtllibWarning = true;
+      }
     }
     else if (sscanf(analysed_line, "s %s", str) == 1)
     {
-      // TODO mesh obj loader - usage for s off
+      static bool sWarning = false;
+      if (!sWarning)
+      {
+        ExceptionsHandler::ThrowWarning("[NOT IMPLEMENTED] s off/on not implemented");
+        sWarning = true;
+      }
+    }
+    else if (sscanf(analysed_line, "o %s", str) == 1)
+    {
+      outMesh->SetName(str);
     }
     else
     {
-      ExceptionsHandler::ThrowWarning("No matching rule for line: %s in obj's file %s", analysed_line, fileName);
+      ExceptionsHandler::ThrowWarning("No matching rule for line[%d]: %s  in obj's file %s", lineNum, analysed_line, fileName);
     }
   }
 }

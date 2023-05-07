@@ -76,31 +76,31 @@ public:
   std::string GetName() const;
 
 private:
-  std::string name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path. It is just representative and has no influence on mesh rendering.
+  std::string _name; //!< Mesh name. For *.obj file it is 'o' value. For others file: mesh's file path. It is just representative and has no influence on mesh rendering.
 
-  std::vector<Polygon *> polygons; //!< Polygons, of which the mesh consists. Each of it will be then projected onto the scene.
+  std::vector<Polygon *> _polygons; //!< Polygons, of which the mesh consists. Each of it will be then projected onto the scene.
 };
 
-inline Mesh::Mesh() : name(DEFAULT_MESH_NAME) {}
+inline Mesh::Mesh() : _name(DEFAULT_MESH_NAME) {}
 
-inline Mesh::Mesh(std::string meshName) : name(meshName) {}
+inline Mesh::Mesh(std::string meshName) : _name(meshName) {}
 
 Mesh::~Mesh()
 {
-  for (auto poli : polygons)
+  for (auto poli : _polygons)
     delete poli;
 }
 
-inline void Mesh::AddPolygon(Polygon &poli) { polygons.push_back(&poli); }
+inline void Mesh::AddPolygon(Polygon &poli) { _polygons.push_back(&poli); }
 
-inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(polygons[index]); }
+inline Polygon &Mesh::GetPolygon(const uint32_t index) const { return *(_polygons[index]); }
 
-inline const Vector3<> &Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const { return polygons[poliIndex]->GetPoint(pointIndex); }
+inline const Vector3<> &Mesh::GetPoint(const uint32_t poliIndex, const uint32_t pointIndex) const { return _polygons[poliIndex]->GetPoint(pointIndex); }
 
-inline uint32_t Mesh::GetPolygonsCount() const { return polygons.size(); }
+inline uint32_t Mesh::GetPolygonsCount() const { return _polygons.size(); }
 
-inline void Mesh::SetName(std::string newName) { name = newName; }
+inline void Mesh::SetName(std::string newName) { _name = newName; }
 
-inline std::string Mesh::GetName() const { return name; }
+inline std::string Mesh::GetName() const { return _name; }
 
 #endif /* _MESH_HPP_ */

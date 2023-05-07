@@ -30,7 +30,7 @@ public:
 
     Projector(uint32_t _windowWidth, uint32_t _windowHeigth);
 
-    ~Projector();
+    ~Projector() = default;
 
     /**
      * @brief Projects given polygon using #projMatrix.
@@ -100,13 +100,13 @@ private:
     uint32_t _height{0};     //!< Assigned window height. Calulated on Renderer creation.
     float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
-    Matrix<float> r_projMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    Matrix<float> r_transMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f}; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
-    Matrix<float> r_viewMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< View matrix. See Renderer::RecalculateViewMatrix.
+    Matrix<float> _projMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    Matrix<float> _transMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f}; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
+    Matrix<float> _viewMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< View matrix. See Renderer::RecalculateViewMatrix.
 
-    Vector3<> r_lightDir{0.0f};     //!< Light direction. See Renderer::DrawMesh.
-    uint8_t _lightIntensivity; //!< Light intensivity. See Renderer::DrawMesh.
-    bool _projectLight;        //!< Flag if the light should be projected. See Renderer::DrawMesh.
+    Vector3<> r_lightDir{0.0f}; //!< Light direction. See Renderer::DrawMesh.
+    uint8_t _lightIntensivity;  //!< Light intensivity. See Renderer::DrawMesh.
+    bool _projectLight;         //!< Flag if the light should be projected. See Renderer::DrawMesh.
 
     ProjectionData r_result; //!< Result of projection. Temporary value returned when we finish projecting polygin. See Renderer::ProjectPolygon.
 };
@@ -116,18 +116,8 @@ Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _heigh
     _aspectRatio = ((float)_height / (float)_width);
 }
 
-Projector::~Projector()
-{
-    // delete &r_projMat;
-    // delete &r_viewMat;
-    // delete &r_transMat;
-    // delete &r_result;
-}
-
 Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float> &translationMat)
 {
-    /* Moving object's triangle */
-
     Vector4<> transformedP1 = poli.GetPoint(0).ToVector4(1.0f);
     Vector4<> transformedP2 = poli.GetPoint(1).ToVector4(1.0f);
     Vector4<> transformedP3 = poli.GetPoint(2).ToVector4(1.0f);
@@ -137,7 +127,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
     transformedP2 *= translationMat;
     transformedP3 *= translationMat;
 
-    /* Calculating plolygons plane normal vector to see which direction it is facing */
+    /* Calculating polygons plane normal vector to see which direction it is facing */
     Vector3<> normal = Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
@@ -161,10 +151,10 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
         // transformedP2 *= r_viewMat;
         // transformedP3 *= r_viewMat;
 
-        /* Projecting object's triangle */
-        transformedP1 *= r_projMat;
-        transformedP2 *= r_projMat;
-        transformedP3 *= r_projMat;
+        /* Projecting object's triangle onto 2D plane */
+        transformedP1 *= _projMat;
+        transformedP2 *= _projMat;
+        transformedP3 *= _projMat;
 
         Vector3<> projectedP1 = transformedP1.ToVector3(); // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
         Vector3<> projectedP2 = transformedP2.ToVector3(); // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
@@ -187,6 +177,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
         projectedP3.SetX(projectedP3.X() * _width * 0.5);
         projectedP3.SetY(projectedP3.Y() * _height * 0.5);
 
+        /* Assigning the result */
         r_result.x1 = projectedP1.X();
         r_result.y1 = projectedP1.Y();
         r_result.z1 = projectedP1.Z();
@@ -205,15 +196,15 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
 void Projector::RecalculateProjectionMatrix(Camera &cam)
 {
     double q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
-    r_projMat[0][0] = _aspectRatio * cam.GetFFovRad();
-    r_projMat[1][1] = cam.GetFFovRad();
-    r_projMat[2][2] = q;
-    r_projMat[3][2] = 1.0;
-    r_projMat[2][3] = -cam.GetFNear() * q;
+    _projMat[0][0] = _aspectRatio * cam.GetFFovRad();
+    _projMat[1][1] = cam.GetFFovRad();
+    _projMat[2][2] = q;
+    _projMat[3][2] = 1.0;
+    _projMat[2][3] = -cam.GetFNear() * q;
 }
 
 void Projector::RecalculateViewMatrix(Camera &cam)
-{ // TODO static's
+{ // TODO Refactor - it does not work properly
     Vector3<> target = cam.GetTransform().GetPosition();
     // target += {0.0, 0.0, 0.0};
     target += cam.GetTransform().GetEulerRotation();
@@ -268,54 +259,54 @@ void Projector::RecalculateViewMatrix(Camera &cam)
     //----------------------------------------
 
     // First column
-    r_viewMat[0][0] = newRight.X();
-    r_viewMat[0][1] = newRight.Y();
-    r_viewMat[0][2] = newRight.Z();
-    r_viewMat[0][3] = 0.0; // -newRight.Dot(cam.GetTransform().GetPosition())
+    _viewMat[0][0] = newRight.X();
+    _viewMat[0][1] = newRight.Y();
+    _viewMat[0][2] = newRight.Z();
+    _viewMat[0][3] = 0.0; // -newRight.Dot(cam.GetTransform().GetPosition())
 
     // Second column
-    r_viewMat[1][0] = newUp.X();
-    r_viewMat[1][1] = newUp.Y();
-    r_viewMat[1][2] = newUp.Z();
-    r_viewMat[1][3] = 0.0; // -newUp.Dot(cam.GetTransform().GetPosition())
+    _viewMat[1][0] = newUp.X();
+    _viewMat[1][1] = newUp.Y();
+    _viewMat[1][2] = newUp.Z();
+    _viewMat[1][3] = 0.0; // -newUp.Dot(cam.GetTransform().GetPosition())
 
     // Third column
-    r_viewMat[2][0] = newForward.X();
-    r_viewMat[2][1] = newForward.Y();
-    r_viewMat[2][2] = newForward.Z();
-    r_viewMat[2][3] = 0.0; // -newForward.Dot(cam.GetTransform().GetPosition())
+    _viewMat[2][0] = newForward.X();
+    _viewMat[2][1] = newForward.Y();
+    _viewMat[2][2] = newForward.Z();
+    _viewMat[2][3] = 0.0; // -newForward.Dot(cam.GetTransform().GetPosition())
 
     // Fourth column
-    r_viewMat[3][0] = cam.GetTransform().GetPosition().X();
-    r_viewMat[3][1] = cam.GetTransform().GetPosition().Y();
-    r_viewMat[3][2] = cam.GetTransform().GetPosition().Z();
-    r_viewMat[3][3] = 1.0;
+    _viewMat[3][0] = cam.GetTransform().GetPosition().X();
+    _viewMat[3][1] = cam.GetTransform().GetPosition().Y();
+    _viewMat[3][2] = cam.GetTransform().GetPosition().Z();
+    _viewMat[3][3] = 1.0;
 
     // Inversing this matrix - try to do it without transposing
 
     // First column
-    r_viewMat[0][0] = r_viewMat[0][0];
-    r_viewMat[0][1] = r_viewMat[1][0];
-    r_viewMat[0][2] = r_viewMat[2][0];
-    r_viewMat[0][3] = 0.0f;
+    _viewMat[0][0] = _viewMat[0][0];
+    _viewMat[0][1] = _viewMat[1][0];
+    _viewMat[0][2] = _viewMat[2][0];
+    _viewMat[0][3] = 0.0f;
 
     // Second column
-    r_viewMat[1][0] = r_viewMat[0][1];
-    r_viewMat[1][1] = r_viewMat[1][1];
-    r_viewMat[1][2] = r_viewMat[2][1];
-    r_viewMat[1][3] = 0.0f;
+    _viewMat[1][0] = _viewMat[0][1];
+    _viewMat[1][1] = _viewMat[1][1];
+    _viewMat[1][2] = _viewMat[2][1];
+    _viewMat[1][3] = 0.0f;
 
     // Third column
-    r_viewMat[2][0] = r_viewMat[0][2];
-    r_viewMat[2][1] = r_viewMat[1][2];
-    r_viewMat[2][2] = r_viewMat[2][2];
-    r_viewMat[2][3] = 0.0f;
+    _viewMat[2][0] = _viewMat[0][2];
+    _viewMat[2][1] = _viewMat[1][2];
+    _viewMat[2][2] = _viewMat[2][2];
+    _viewMat[2][3] = 0.0f;
 
     // Fourth column
-    r_viewMat[3][0] = -(r_viewMat[3][0] * r_viewMat[0][0] + r_viewMat[3][1] * r_viewMat[1][0] + r_viewMat[3][2] * r_viewMat[2][0]);
-    r_viewMat[3][1] = -(r_viewMat[3][0] * r_viewMat[0][1] + r_viewMat[3][1] * r_viewMat[1][1] + r_viewMat[3][2] * r_viewMat[2][1]);
-    r_viewMat[3][2] = -(r_viewMat[3][0] * r_viewMat[0][2] + r_viewMat[3][1] * r_viewMat[1][2] + r_viewMat[3][2] * r_viewMat[2][2]);
-    r_viewMat[3][3] = 1.0f;
+    _viewMat[3][0] = -(_viewMat[3][0] * _viewMat[0][0] + _viewMat[3][1] * _viewMat[1][0] + _viewMat[3][2] * _viewMat[2][0]);
+    _viewMat[3][1] = -(_viewMat[3][0] * _viewMat[0][1] + _viewMat[3][1] * _viewMat[1][1] + _viewMat[3][2] * _viewMat[2][1]);
+    _viewMat[3][2] = -(_viewMat[3][0] * _viewMat[0][2] + _viewMat[3][1] * _viewMat[1][2] + _viewMat[3][2] * _viewMat[2][2]);
+    _viewMat[3][3] = 1.0f;
 }
 
 void Projector::RecalculateLightning(LightSource &lightSource, bool projectLight)
@@ -327,15 +318,15 @@ void Projector::RecalculateLightning(LightSource &lightSource, bool projectLight
 }
 
 Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
-{
-    Matrix<float> translationMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+{ // TODO refactor this
+    Matrix<float> translationMat(4, 4, 0.0);
     translationMat.MakeIdentity();
     translationMat[0][3] = transform.GetPosition().X();
     translationMat[1][3] = transform.GetPosition().Y();
     translationMat[2][3] = transform.GetPosition().Z();
     translationMat[3][3] = 1.0f;
 
-    Matrix<float> scaleMat(4, 4, 0.0); // TODO transform matrxi does not need to be calculated for each poli!!!
+    Matrix<float> scaleMat(4, 4, 0.0);
     scaleMat[0][0] = transform.GetScale().X();
     scaleMat[1][1] = transform.GetScale().Y();
     scaleMat[2][2] = transform.GetScale().Z();
@@ -373,8 +364,8 @@ Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
     worldMat *= translationMat;
     worldMat *= scaleMat;
 
-    r_transMat = worldMat;
-    return r_transMat;
+    _transMat = worldMat;
+    return _transMat;
 }
 
 #endif /* _PROJECTOR_HPP_ */

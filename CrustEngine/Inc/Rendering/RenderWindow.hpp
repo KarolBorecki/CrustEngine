@@ -57,15 +57,15 @@ public:
    */
   void LoadScene(Scene &scene);
 
-    /**
+  /**
    * @brief Un loads currently loaded scene. After tyhis operation nothing will be rendered onto the screen.
    * @details Unloads loaded scene by calling #OnUnLoad and by setting #loadedScene to nullptr. Also fills Renderer's #projMatrix with zeros.
    */
   void UnLoadScene();
 
 private:
-  uint32_t _width{0};           //!< Width of this window.
-  uint32_t _height{0};          //!< Height of this window.
+  uint32_t _width{0};            //!< Width of this window. //TODO change to uint16_t
+  uint32_t _height{0};           //!< Height of this window.
   Renderer *p_renderer{nullptr}; //!< Widnows's renderer handler.
   Scene *p_loadedScene{nullptr}; //!< Loaded scene's handler.
 
@@ -150,8 +150,9 @@ void RenderWindow::LoadScene(Scene &scene)
 
 void RenderWindow::UnLoadScene()
 {
-  if (p_loadedScene == nullptr) return;
-  
+  if (p_loadedScene == nullptr)
+    return;
+
   p_loadedScene->OnUnLoad();
   p_loadedScene = nullptr;
   p_renderer->SetWindowTitle("No scene");

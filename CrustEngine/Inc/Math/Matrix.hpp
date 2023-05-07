@@ -31,14 +31,14 @@ public:
    * @param Height Amount of Height in the matrix.
    * @param Width Amount of Width in the matrix.
    */
-  Matrix(uint32_t height, uint32_t width);
+  Matrix(uint16_t height, uint16_t width);
   /**
    * @brief If width or height argument is zero then no space for matrix's array will be allocated.
    * @param Height Amount of Height in the matrix.
    * @param Width Amount of Width in the matrix.
    * @param defaultVal The value that will be placed on each position in matrix.
    */
-  Matrix(uint32_t height, uint32_t width, T defaultVal);
+  Matrix(uint16_t height, uint16_t width, T defaultVal);
 
   Matrix(Matrix<T> &other); // Rule of 3/5/0
 
@@ -52,13 +52,13 @@ public:
    *
    * @return Amount of Height in matrix.
    */
-  uint32_t Height() const;
+  uint16_t Height() const;
   /**
    * @brief Getter for #Width field.
    *
    * @return Amount of Width in matrix
    */
-  uint32_t Width() const;
+  uint16_t Width() const;
 
   /**
    * @brief Adds #other matrix to this one. Each value at according x and y position will be added to each other. If sizes of matrixes do not match no changes will be done.
@@ -215,12 +215,12 @@ public:
    */
   void MakeIdentity() noexcept;
 
-  static constexpr uint32_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
+  static constexpr uint16_t MAX_MATRIX_SIZE{4096}; //!< Maximum size of a matrix that calculation will be performed on. This is a theoreticall value and if some calculation will be done on bigger matrix bad things happens.
 
 protected:
-  uint32_t _height{0};    //!< Amount of Height in the matrix.
-  uint32_t _width{0};     //!< Amount of Width in the matrix.
-  uint32_t _totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
+  uint16_t _height{0};    //!< Amount of Height in the matrix.
+  uint16_t _width{0};     //!< Amount of Width in the matrix.
+  uint16_t _totalSize{0}; //!< Total size is a multiplied values of a height and a width. It is a count f elements in an array of #mat.
 
   T *p_mat{nullptr}; //!< Array of matrix's values. It is linear despite matrix being 2-dimensional. It is more efficiently.
 
@@ -234,7 +234,7 @@ inline Matrix<E>::Matrix() : _height(0), _width(0)
 }
 
 template <class E>
-inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : _height(_height), _width(_width)
+inline Matrix<E>::Matrix(uint16_t _height, uint16_t _width) : _height(_height), _width(_width)
 {
   _totalSize = _height * _width;
   if (_totalSize == 0)
@@ -243,7 +243,7 @@ inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width) : _height(_height), 
 }
 
 template <class E>
-inline Matrix<E>::Matrix(uint32_t _height, uint32_t _width, E _defaultVal) : _height(_height), _width(_width)
+inline Matrix<E>::Matrix(uint16_t _height, uint16_t _width, E _defaultVal) : _height(_height), _width(_width)
 {
   _totalSize = _height * _width;
   if (_totalSize == 0)
@@ -277,10 +277,10 @@ inline Matrix<E>::~Matrix()
 }
 
 template <class E>
-inline uint32_t Matrix<E>::Height() const { return _height; }
+inline uint16_t Matrix<E>::Height() const { return _height; }
 
 template <class E>
-inline uint32_t Matrix<E>::Width() const { return _width; }
+inline uint16_t Matrix<E>::Width() const { return _width; }
 
 template <class E>
 Matrix<E> &Matrix<E>::operator+=(const Matrix<E> &other) noexcept
@@ -406,8 +406,8 @@ Matrix<E> &Matrix<E>::operator*=(const Matrix<E> &other) noexcept
 template <class E>
 Matrix<E> &Matrix<E>::operator*=(std::initializer_list<E> l) noexcept
 {
-  static uint32_t otherWidth;
-  static uint32_t otherHeight;
+  static uint16_t otherWidth;
+  static uint16_t otherHeight;
   otherWidth = l.size() / _width;
   otherHeight = l.size() / _height;
 
@@ -505,7 +505,7 @@ Matrix<E> &Matrix<E>::operator=(std::initializer_list<E> l) noexcept
 
   if (l.size() == 1)
   {
-    for (uint32_t i = 0; i < _totalSize; i++)
+    for (uint16_t i = 0; i < _totalSize; i++)
       p_mat[i] = *l.begin();
   }
   else if (l.size() == _totalSize)
@@ -528,9 +528,9 @@ bool Matrix<E>::operator==(const Matrix<E> &other) noexcept
   if (_height != other.Height() || _width != other.Width())
     return false;
 
-  for (uint32_t x = 0; x < _width; x++)
+  for (uint16_t x = 0; x < _width; x++)
   {
-    for (uint32_t y = 0; y < _height; y++)
+    for (uint16_t y = 0; y < _height; y++)
       if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return false;
@@ -546,9 +546,9 @@ bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
   if (_height != other.Height() || _width != other.Width())
     return true;
 
-  for (uint32_t x = 0; x < _width; x++)
+  for (uint16_t x = 0; x < _width; x++)
   {
-    for (uint32_t y = 0; y < _height; y++)
+    for (uint16_t y = 0; y < _height; y++)
       if ((*this)[x][y] != other[x][y]) // FIXME double equals does not fir parametrized class!!!!
       {
         return true;
@@ -561,7 +561,7 @@ bool Matrix<E>::operator!=(const Matrix<E> &other) noexcept
 template <class E>
 void Matrix<E>::Reset(E val) noexcept
 {
-  for (uint32_t i = 0; i < _totalSize; i++)
+  for (uint16_t i = 0; i < _totalSize; i++)
     p_mat[i] = val;
 }
 
@@ -569,8 +569,8 @@ template <class E>
 void Matrix<E>::MakeIdentity() noexcept // FIXME does not work for different matrixes than numeric-wise
 {
   Reset(0.0);
-  uint32_t minSize = _width < _height ? _width : _height;
-  for (uint32_t i = 0; i < minSize; i++)
+  uint16_t minSize = _width < _height ? _width : _height;
+  for (uint16_t i = 0; i < minSize; i++)
     (*this)[i][i] = 1.0;
 }
 
