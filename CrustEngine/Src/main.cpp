@@ -55,25 +55,25 @@ int main(int argc, char *argv[])
 
     Logger::Info("Render object created.");
 
-    Mover mover(12, 12, 12);
+    Mover mover(14, 14, 14);
     Mover mover2(15, 15, 15);
-    Rotator rotator(0.9f);
-    Scaler scaler(0.6f);
+    Rotator rotator(1.8f);
+    Scaler scaler(0.9f);
     Spinner spinner(1.0f, 0.5f, 0.8f);
 
     rObj.AttachScript(mover);
     rObj2.AttachScript(mover2);
-    // rObj.AttachScript(rotator);
-    // rObj.AttachScript(scaler);
+    rObj.AttachScript(rotator);
+    rObj.AttachScript(scaler);
 
-    rObj.AttachScript(spinner);
+    // rObj.AttachScript(spinner);
 
     Vector3 lightSourceDir(0.4f, -0.3f, -0.89f);
     DirectionalLight dirLightSource(LightSource::INTENSIVITY_BRIGHT, lightSourceDir);
 
     Logger::Info("Light source created.");
     scene.AddObject(rObj);
-    scene.AddObject(rObj2);
+    // scene.AddObject(rObj2);
     scene.AddObject(dirLightSource);
 
     scene.SetLightProjection(true);
