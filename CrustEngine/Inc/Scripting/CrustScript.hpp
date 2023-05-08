@@ -20,7 +20,7 @@ public:
    *
    * @param deltaTime Time that passed since last frame - it represents how much seconds does the last frame took to render.
    */
-  virtual void Update(float deltaTime);
+  virtual void Update(double deltaTime);
 
   /**
    * @brief Function that should only be called once. This is only called from Object::AttachScript and should not be called by the user.
@@ -46,7 +46,7 @@ private:
 
 inline void CrustScript::Start() {}
 
-inline void CrustScript::Update(float deltaTime) {}
+inline void CrustScript::Update(double deltaTime) {}
 
 inline void CrustScript::AttachTo(Object &_parentObj)
 {

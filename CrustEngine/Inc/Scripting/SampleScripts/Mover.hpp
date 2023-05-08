@@ -15,7 +15,7 @@ public:
   ~Mover() override {}
 
   void Start() override;
-  void Update(float deltaTime) override;
+  void Update(double deltaTime) override;
 
 private:
   double speedX{0.0};
@@ -28,7 +28,7 @@ inline Mover::Mover(double _moveSpeedX, double _moveSpeedY, double _moveSpeedZ) 
 inline void Mover::Start() {}
 
  #define LOG_MOVER // Uncomment to log debug data
-void Mover::Update(float deltaTime)
+void Mover::Update(double deltaTime)
 {
   if (InputHandler::IsPressed(Key::KEY_D))
   {

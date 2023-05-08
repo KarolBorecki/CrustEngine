@@ -15,7 +15,7 @@ public:
     ~Spinner() override{};
 
     void Start() override;
-    void Update(float deltaTime) override;
+    void Update(double deltaTime) override;
 
 private:
     float _xSpeed{0.0f};
@@ -27,7 +27,7 @@ inline Spinner::Spinner(float xSpeed, float ySpeed, float zSpeed) : _xSpeed(xSpe
 
 inline void Spinner::Start() {}
 
-void Spinner::Update(float deltaTime)
+void Spinner::Update(double deltaTime)
 {
     GetObject().GetTransform().RotateEuler(0, 0, _zSpeed * deltaTime);
     GetObject().GetTransform().RotateEuler(0, _ySpeed * deltaTime, 0);

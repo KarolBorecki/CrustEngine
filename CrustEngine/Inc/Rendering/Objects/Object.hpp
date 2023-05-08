@@ -56,7 +56,7 @@ public:
 
 protected:
   bool _isActive{true};                //!< Tells is object has any effect on the scene. If is rendered or if any code can be perform on it.
-  Transform p_transform;               //!< Represents object's orientation on the scene.
+  Transform _transform;               //!< Represents object's orientation on the scene.
   std::vector<CrustScript *> _scripts; //!< Scripts attached to this object, wchich will be executed.
 
   uint32_t _id;                      //!< Object's ID.
@@ -74,7 +74,7 @@ inline Object::~Object()
 
 inline bool Object::IsActive() { return _isActive; }
 
-inline Transform &Object::GetTransform() { return p_transform; }
+inline Transform &Object::GetTransform() { return _transform; }
 
 inline std::vector<CrustScript *> Object::GetScripts() { return _scripts; }
 

@@ -15,7 +15,7 @@ public:
     ~Rotator() override{};
 
     void Start() override;
-    void Update(float deltaTime) override;
+    void Update(double deltaTime) override;
 
 private:
     float _speed{0.0f};
@@ -27,7 +27,7 @@ inline void Rotator::Start() {}
 
 #define LOG_ROTATOR // Uncomment to log debug data
 
-void Rotator::Update(float deltaTime)
+void Rotator::Update(double deltaTime)
 {
     if (InputHandler::IsPressed(Key::KEY_Z))
     {

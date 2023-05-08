@@ -42,14 +42,14 @@ int main(int argc, char *argv[])
     std::string name = argv[1];
     std::string path = "/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Tmp/meshes/" + name + ".obj";
     MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
-    Logger::Info("Mesh loaded.");
+    Logger::Info("Mesh '%s' loaded.", mesh.GetName().c_str());
     RenderObject rObj(mesh);
     rObj.GetTransform().SetPosition(0, 0, 12.0f);
 
     Mesh mesh2("Sample mesh");
     std::string path2 = "/Users/karolborecki/Desktop/CrustEngine/CrustEngine/Tmp/meshes/teapot.obj";
     MeshLoader::LoadMeshFromFile(path2.c_str(), &mesh2);
-    Logger::Info("Mesh loaded.");
+    Logger::Info("Mesh '%s' loaded.", mesh2.GetName().c_str());
     RenderObject rObj2(mesh2);
     rObj2.GetTransform().SetPosition(-5, 10, 8.0f);
 
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 
     Logger::Info("Objectes added to the scene.");
     Core core;
-    core.OpenNewWindow(1500, 1200, scene);
+    core.OpenNewWindow(800, 500, scene);
     core.Quit();
     Logger::Info("Engine work time: %lf [s]", TimeProvider::GetTime_s());
 

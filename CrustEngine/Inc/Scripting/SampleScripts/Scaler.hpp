@@ -15,7 +15,7 @@ public:
     ~Scaler() override{};
 
     void Start() override;
-    void Update(float deltaTime) override;
+    void Update(double deltaTime) override;
 
 private:
     float _speed{0.0f};
@@ -27,7 +27,7 @@ inline void Scaler::Start() {}
 
 #define LOG_SCALER // Uncomment to log debug data
 
-void Scaler::Update(float deltaTime)
+void Scaler::Update(double deltaTime)
 {
     if (InputHandler::IsPressed(Key::KEY_1))
     {
