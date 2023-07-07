@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/Game/Game.scss"],"names":[],"mappings":"AACA,eACI,gBAAA,CACA,UAAA","file":"16.0e49f8ac.chunk.css","sourcesContent":["\n.gameContainer {\n    padding-top: 70px;\n    width: 100%;\n}"]}

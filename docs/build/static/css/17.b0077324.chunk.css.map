@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/Unknown/Unknown.scss"],"names":[],"mappings":"AAAA,YACE,iBAAA,CACA,QAAA,CACA,iBAAA,CACA,UAAA","file":"17.b0077324.chunk.css","sourcesContent":["div .uknown {\n  margin-top: 10.5em;\n  left: 10%;\n  text-align: center;\n  height: 30%;\n}\n"]}
