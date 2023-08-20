@@ -3,7 +3,7 @@
 
 #include <Scripting/CrustScript.hpp>
 
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 
 class LoopMove : public CrustScript
 {

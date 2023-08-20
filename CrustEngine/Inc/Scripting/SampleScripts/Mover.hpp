@@ -6,7 +6,7 @@
 #include <Logging/Logger.hpp>
 #include <Input/InputHandler.hpp>
 
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 
 class Mover : public CrustScript
 {

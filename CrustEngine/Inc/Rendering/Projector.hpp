@@ -3,15 +3,16 @@
 
 #include <Math/Matrix.hpp>
 
-#include <Core/Camera.hpp>
+#include <Objects/Camera.hpp>
 
 #include <Rendering/RendererWrapper.hpp>
 
 #include <Math/Vector3.hpp>
 #include <Math/Vector4.hpp>
 #include <Math/Triangle.hpp>
-#include <Rendering/Objects/RenderObject.hpp>
-#include <Rendering/Objects/Lightining/LightSource.hpp>
+
+#include <Objects/RenderObject.hpp>
+#include <Objects/Lightining/LightSource.hpp>
 
 #include <Logging/ObjectLogger.hpp>
 

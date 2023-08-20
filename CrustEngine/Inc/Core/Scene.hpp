@@ -4,10 +4,10 @@
 #include <vector>
 #include <string>
 
-#include <Core/Camera.hpp>
-#include <Rendering/Objects/RenderObject.hpp>
-#include <Rendering/Objects/Lightining/LightSource.hpp>
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
+#include <Objects/Camera.hpp>
+#include <Objects/RenderObject.hpp>
+#include <Objects/Lightining/LightSource.hpp>
 
 #include <Scripting/CrustScript.hpp>
 

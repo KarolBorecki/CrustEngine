@@ -1,12 +1,13 @@
 #include <Logging/Logger.hpp>
 
-#include <Core/Camera.hpp>
 #include <Core/Scene.hpp>
 #include <Core/Core.hpp>
 
+#include <Objects/Camera.hpp>
+#include <Objects/Lightining/DirectionalLight.hpp>
+#include <Objects/RenderObject.hpp>
+
 #include <Rendering/Mesh.hpp>
-#include <Rendering/Objects/Lightining/DirectionalLight.hpp>
-#include <Rendering/Objects/RenderObject.hpp>
 
 #include <Files/MeshLoader.hpp>
 

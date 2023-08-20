@@ -1,7 +1,7 @@
 #ifndef _CAMERA_HPP_
 #define _CAMERA_HPP_
 
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 
 #include <Math/Math.hpp>
 

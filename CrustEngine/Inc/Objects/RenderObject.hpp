@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 #include <Rendering/Mesh.hpp>
 
 /**

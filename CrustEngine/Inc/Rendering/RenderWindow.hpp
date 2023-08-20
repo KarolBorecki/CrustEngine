@@ -3,12 +3,12 @@
 
 #include <queue>
 
-#include <Utils/TimeProvider.hpp>
-
 #include <Core/Scene.hpp>
-#include <Rendering/Renderer.hpp>
 #include <Input/InputHandler.hpp>
-#include <Rendering/Objects/RenderObject.hpp>
+#include <Rendering/Renderer.hpp>
+#include <Objects/RenderObject.hpp>
+
+#include <Utils/TimeProvider.hpp>
 #include <Logging/ExceptionsHandler.hpp>
 
 /**

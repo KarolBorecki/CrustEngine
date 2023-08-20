@@ -4,7 +4,7 @@
 #include <vector>
 
 #include <Scripting/CrustScript.hpp>
-#include <Rendering/Objects/Transform.hpp>
+#include <Objects/Transform.hpp>
 
 class CrustScript;
 

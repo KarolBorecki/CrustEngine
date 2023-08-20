@@ -2,7 +2,7 @@
 #define _SPINNER_HPP_
 
 #include <Scripting/CrustScript.hpp>
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 
 #include <Input/InputHandler.hpp>
 #include <Input/InputEvent.hpp>

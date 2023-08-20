@@ -1,7 +1,7 @@
 #ifndef _LIGHTSOURCE_HPP_
 #define _LIGHTSOURCE_HPP_
 
-#include <Rendering/Objects/Object.hpp>
+#include <Objects/Object.hpp>
 
 /**
  * @brief Virtual class for light sources.

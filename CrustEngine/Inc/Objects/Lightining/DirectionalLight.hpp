@@ -1,7 +1,7 @@
 #ifndef _DURECTIONALLIGHT_HPP_
 #define _DURECTIONALLIGHT_HPP_
 
-#include <Rendering/Objects/Lightining/LightSource.hpp>
+#include <Objects/Lightining/LightSource.hpp>
 
 #include <Math/Vector3.hpp>
 
