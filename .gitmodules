@@ -1,3 +1,6 @@
 [submodule "CrustEngine/SDL"]
 	path = CrustEngine/SDL
 	url = https://github.com/libsdl-org/SDL.git
+[submodule "CrustEngine/eigen"]
+	path = CrustEngine/eigen
+	url = https://gitlab.com/libeigen/eigen
