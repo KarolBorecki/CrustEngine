@@ -1,7 +1,7 @@
 #ifndef _INPUTHANDLER_HPP_
 #define _INPUTHANDLER_HPP_
 
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 
 #include <Logging/Logger.hpp>
 #include <Input/InputEvent.hpp>
@@ -77,29 +77,29 @@ void InputHandler::PollEvent()
   static SDL_Event sdlEvent;
   if (SDL_PollEvent(&sdlEvent))
   {
-    if (sdlEvent.type == SDL_QUIT)
+    if (sdlEvent.type == SDL_EVENT_QUIT)
     {
       _lastEvent.type = Event::EVENT_WINDOW_QUIT;
     }
-    else if (sdlEvent.type == SDL_KEYDOWN && sdlEvent.key.repeat == 0)
+    else if (sdlEvent.type == SDL_EVENT_KEY_DOWN && sdlEvent.key.repeat == 0)
     {
       _lastEvent.type = Event::EVENT_KEY_DOWN;
       _lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
     }
-    else if (sdlEvent.type == SDL_KEYUP && sdlEvent.key.repeat == 0)
+    else if (sdlEvent.type == SDL_EVENT_KEY_UP && sdlEvent.key.repeat == 0)
     {
       _lastEvent.type = Event::EVENT_KEY_UP;
       _lastEvent.keyCode = ParseSDLKeyCodeEvent(sdlEvent.key.keysym.sym);
     }
-    else if (sdlEvent.type == SDL_MOUSEBUTTONDOWN)
+    else if (sdlEvent.type == SDL_EVENT_MOUSE_BUTTON_DOWN)
     {
       _lastEvent.type = Event::EVENT_MOUSE_DOWN;
     }
-    else if (sdlEvent.type == SDL_MOUSEBUTTONUP)
+    else if (sdlEvent.type == SDL_EVENT_MOUSE_BUTTON_UP)
     {
       _lastEvent.type = Event::EVENT_MOUSE_UP;
     }
-    else if (sdlEvent.type == SDL_MOUSEWHEEL)
+    else if (sdlEvent.type == SDL_EVENT_MOUSE_WHEEL)
     {
       _lastEvent.type = Event::EVENT_WHEEL;
     }

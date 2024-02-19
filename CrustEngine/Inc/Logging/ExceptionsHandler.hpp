@@ -1,6 +1,8 @@
 #ifndef _EXCEPTIONSHANDLER_HPP_
 #define _EXCEPTIONSHANDLER_HPP_
 
+#include <stdexcept>
+
 #include <Logging/Logger.hpp>
 
 /**

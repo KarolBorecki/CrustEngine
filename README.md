@@ -24,7 +24,7 @@ Project is using technologies passed below:
 
 Tools Used by me to develop it:
 - Atom/VS Code - IDE software
-- G++ - C++ compiler
+- gcc >= 7.x - C++ compiler
 
 Also I am using wavefront's obj standard as a standard 3D model file.
 

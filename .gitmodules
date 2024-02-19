@@ -1,6 +1,8 @@
-[submodule "CrustEngine/SDL"]
-	path = CrustEngine/SDL
+[submodule "CrustEngine/extern/sdl"]
+	path = CrustEngine/extern/sdl
 	url = https://github.com/libsdl-org/SDL.git
-[submodule "CrustEngine/eigen"]
-	path = CrustEngine/eigen
-	url = https://gitlab.com/libeigen/eigen
+	branch = release-2.30.x
+[submodule "CrustEngine/extern/eigen"]
+	path = CrustEngine/extern/eigen
+	url = https://gitlab.com/libeigen/eigen.git
+	branch = 3.4

@@ -3,6 +3,8 @@
 
 #include <math.h> /* cos, sin, sqrt */
 
+#define M_PI 3.14159265358979323846
+
 /**
  * @brief Static class that wrapps all math's algorithm used in the engine.
  */
@@ -95,11 +97,11 @@ public:
     static bool Equals(float val1, float val2, double delta = _DOUBLE_DEFAULT_DELTA);
 
 public:
-    static constexpr double PI{M_PI}; //!< The value of PI
+    static constexpr double PI {M_PI }; //!< The value of PI
     static constexpr double INF { 1.7976931348623157E+308 }; //!< Maximum value that double can hold. 
 
 private: 
-    static constexpr double _DOUBLE_DEFAULT_DELTA{0.0000000000001}; //!< Default accepted margin for double values.
+    static constexpr double _DOUBLE_DEFAULT_DELTA{ 0.0000000000001 }; //!< Default accepted margin for double values.
 
 };
 
