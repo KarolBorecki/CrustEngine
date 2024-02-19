@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="Commercial/Logo/logo.png" alt="Logo" width=300/>
+    <img src="commercial/logo/logo.png" alt="Logo" width=300/>
 
   <h3 align="center"><strong>CrustEngine</strong><br/>Simple engine rendering 3D files using 2D renderer SDL2.</h3>
 
   <p align="center">
-    <a href="https://github.com/KarolBorecki/CrustEngine/commits/main">Commits</a>
+    <a href="https://github.com/KarolBorecki/CrustEngine/commits/develop">Commits</a>
     ·
     <a href="https://github.com/KarolBorecki/CrustEngine/branches">Branches</a>
     ·
@@ -59,10 +59,34 @@ I am documenting this project using deoxygen software. The setting and compiled 
 ## CrustEngine on work
 Here is example of how it looks like now.
 
-<img src="Commercial/Show/BasicProjection.jpg" alt="BasicProjection" width=450/>
+<img src="commercial/show/BasicProjection.jpg" alt="BasicProjection" width=450/>
+<img src="commercial/show/Showup-06-05-2023/gif/axis.gif" alt="axis" width=450/>
+<img src="commercial/show/Showup-06-05-2023/gif/teapot.gif" alt="teapot" width=450/>
+<img src="commercial/show/Showup-06-05-2023/gif/videoship.gif" alt="videoship" width=450/>
 
 ## CrustEngine's test framework
 During development of this project I came across the choice of an c++ testing framework. As c++ does not offer very much support for testing (unlike java, which is compiled to byte-code and can be quicjly tested) and as I did not required much from this framwework I decided to create my own. It is placed inside  `CrustTestingFramework` folder and is as simple as possible. Feel free to use it.
+
+## C++ Practices
+Here I'm describing what convetions I intended to use in this project.
+
+### Naming 
+- **class private members** - `m_*` - represents `m` for member.
+- **method/functions parameters** - `t_*` - represents `t` for the.
+- **types** - use `CamelCase`.
+- **functions/methods** - use `CamelCase`.
+- Do not use naming `_*` - this can collide with compiler definitions.
+
+### More info
+- Use always `{value}` for class fields initialization - avoids errors in conversion (for `=` andd `int` 7.9 is converted to 7. with `{7.9}` you get compilation error (NICE!)).
+- Use `nullptr` - avoid using 0 or NULL. This is cpp. Not c!
+- Use `//<comment>` in comment blocks - avoid using `/* <comment> */` - it's easier to debug.
+- Never use `using namespace`.
+- Include include guards.
+- Always use `{}` in ifs, loops even if it's not necessary - avoids future mistakes.
+- Use `"path"` for local includes. `<path>` ise reserved for system includes!
+- Do not declare global fields - always use namespaces.
+- Use source files. Do not keep implementation in `*.hpp` / `*.h` files
 
 ## Contact
 
