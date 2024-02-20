@@ -50,9 +50,9 @@ inline Triangle::Triangle() : Triangle(0, 0, 0, 0, 0, 0, 0, 0, 0) {}
 
 inline Triangle::Triangle(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {
-  _point[0] = new Vector3(p1X, p1Y, p1Z);
-  _point[1] = new Vector3(p2X, p2Y, p2Z);
-  _point[2] = new Vector3(p3X, p3Y, p3Z);
+  _point[0] = new Vector3<>(p1X, p1Y, p1Z);
+  _point[1] = new Vector3<>(p2X, p2Y, p2Z);
+  _point[2] = new Vector3<>(p3X, p3Y, p3Z);
 }
 
 Triangle::~Triangle()
