@@ -108,15 +108,15 @@ void RenderWindow::Start()
   static std::vector<RenderObject *> objs;
   p_loadedScene->Start();
 
-  InputHandler::BeginInputMonitoring();
+//  InputHandler::BeginInputMonitoring();
   while (p_renderer->IsRunning())
   {
     p_timeProvider->OnFrameStart();
 
-    InputHandler::PollEvent();
+//    InputHandler::PollEvent();
 
-    if (InputHandler::GetLastEvent().type == Event::EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
-      Close();
+//    if (InputHandler::GetLastEvent().type == Event::EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
+//      Close();
 
     Clean();
     if (p_loadedScene != nullptr)

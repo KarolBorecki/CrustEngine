@@ -15,12 +15,14 @@
 /**
  * @brief Wrapper for currently used graphic library.
  */
-class RendererWrapper {
+class RendererWrapper
+{
 public:
     /**
      * @brief Represents status of graphic interfaces.
      */
-    enum RendererStatus {
+    enum RendererStatus
+    {
         STATUS_OK = 0,
         STATUS_FAIL
     };
@@ -28,7 +30,8 @@ public:
     /**
      * @brief Represents type of event occured on the graphic window.
      */
-    enum RendererEvent {
+    enum RendererEvent
+    {
         EVENT_QUIT = 0,
         EVENT_UNKNOWN
     };
@@ -36,7 +39,8 @@ public:
     /**
      * @brief Represents color in classic web hexadecimal values.
      */
-    enum RendererColor {
+    enum RendererColor
+    {
         BLACK = 0x000000,
         WHITE = 0xFFFFFF,
         RED = 0xFF0000,
@@ -53,12 +57,12 @@ public:
      *
      * @sa Renderer.hpp
      */
-    RendererWrapper(uint16_t _width, uint16_t _height) : _width(_width), _height(_height) {
+    RendererWrapper(uint16_t _width, uint16_t _height) : _width(_width), _height(_height)
+    {
         p_window = NULL;
         p_renderer = NULL;
         _isRunning = LibRendererFalse;
     }
-
     virtual ~RendererWrapper() = default;
 
     /**
@@ -70,7 +74,6 @@ public:
      * @return STATUS_OK if everyting is fine and STATUS_FAIL is something failed and graphic interface cannot start.
      */
     RendererStatus Init();
-
     /**
      * @brief Opens new window to draw on.
      *
@@ -159,8 +162,7 @@ public:
      *
      * @sa Triangle.hpp
      */
-    void
-    DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b);
+    void DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b);
 
     /**
      * @brief Draws given triangle on the screen.
@@ -182,7 +184,6 @@ public:
      * @brief Function called to show everything that has been drawn on the screen after last RendererWrapper::Show call.
      */
     void Show();
-
     /**
      * @brief Function called to clean everything that has been drawn on the screen after last RendererWrapper::Clean call.
      */
@@ -194,7 +195,6 @@ public:
      * @return LibRendererTrue if renderer is running and LibRendererFalse if rendedrer is not running.
      */
     LibRendererBool IsRunning() const;
-
     /**
      * @brief Stops the renderer.
      *
@@ -238,88 +238,118 @@ private:
     LibRendererBool _isRunning{LibRendererFalse}; //!< Flag representing if the renderer thread is running.
 };
 
-inline RendererWrapper::RendererStatus RendererWrapper::Init() {
+inline RendererWrapper::RendererStatus RendererWrapper::Init()
+{
     return SDL_Init(SDL_INIT_VIDEO) == 0 ? STATUS_OK : STATUS_FAIL;
 }
 
-inline RendererWrapper::RendererStatus RendererWrapper::CreateWindow() {
+inline RendererWrapper::RendererStatus RendererWrapper::CreateWindow()
+{
     _isRunning = LibRendererTrue;
     return SDL_CreateWindowAndRenderer(_width, _height, 0, &p_window, &p_renderer) == 0 ? STATUS_OK : STATUS_FAIL;
 }
 
-inline void RendererWrapper::SetWindowTitle(std::string title) {
+inline void RendererWrapper::SetWindowTitle(std::string title)
+{
     SDL_SetWindowTitle(p_window, title.c_str());
 }
 
-inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
+{
     SDL_SetRenderDrawColor(p_renderer, r, g, b, a);
 }
 
-inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b) {
+inline void RendererWrapper::SetDrawColor(uint8_t r, uint8_t g, uint8_t b)
+{
     SetDrawColor(r, g, b, 255);
 }
 
-inline void RendererWrapper::SetDrawColor(uint32_t color, uint8_t a) {
+inline void RendererWrapper::SetDrawColor(uint32_t color, uint8_t a)
+{
     SetDrawColor((color & 0xFF0000) >> 16, (color & 0x00FF00) >> 8, (color & 0x0000FF), a);
 }
 
-inline void RendererWrapper::SetDrawColor(uint32_t color) {
+inline void RendererWrapper::SetDrawColor(uint32_t color)
+{
     SetDrawColor(color, 255);
 }
 
-inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY) {
+inline void RendererWrapper::DrawLine(int startX, int startY, int endX, int endY)
+{
     SDL_RenderLine(p_renderer, startX, startY, endX, endY);
 }
 
-void RendererWrapper::DrawTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y) {
-    p1X = _width - p1X;
-    p1Y = _height - p1Y;
-    p2X = _width - p2X;
-    p2Y = _height - p2Y;
-    p3X = _width - p3X;
-    p3Y = _height - p3Y;
+void RendererWrapper::DrawTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y)
+{
+    p1X = _width - p1X; p1Y = _height - p1Y;
+    p2X = _width - p2X; p2Y = _height - p2Y;
+    p3X = _width - p3X; p3Y = _height - p3Y;
 
     DrawLine(p1X, p1Y, p2X, p2Y);
     DrawLine(p2X, p2Y, p3X, p3Y);
     DrawLine(p3X, p3Y, p1X, p1Y);
 }
 
-inline void
-RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b) {
-    SDL_SetRenderDrawColor(p_renderer, r, g, b, 255);
-
+inline void RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t r, uint8_t g, uint8_t b)
+{
+    p1X = _width - p1X; p1Y = _height - p1Y;
+    p2X = _width - p2X; p2Y = _height - p2Y;
+    p3X = _width - p3X; p3Y = _height - p3Y;
     SDL_Vertex vert[3];
-    vert[0].position.x = _width - p1X;
-    vert[0].position.y = _height - p1Y;
-    vert[1].position.x = _width - p2X;
-    vert[1].position.y = _height - p2Y;
-    vert[2].position.x = _width - p3X;
-    vert[2].position.y = _height - p3Y;
 
+    // center
+    vert[0].position.x = p1X;
+    vert[0].position.y = p1Y;
+    vert[0].color.r = 255;
+    vert[0].color.g = 0;
+    vert[0].color.b = 0;
+    vert[0].color.a = 255;
+
+    // left
+    vert[1].position.x = p2X;
+    vert[1].position.y = p2Y;
+    vert[1].color.r = 0;
+    vert[1].color.g = 0;
+    vert[1].color.b = 255;
+    vert[1].color.a = 255;
+
+    // right
+    vert[2].position.x = p3X;
+    vert[2].position.y = p3Y;
+    vert[2].color.r = 0;
+    vert[2].color.g = 255;
+    vert[2].color.b = 0;
+    vert[2].color.a = 255;
     SDL_RenderGeometry(p_renderer, nullptr, vert, 3, nullptr, 0);
 }
 
-inline void RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t rgb) {
+inline void RendererWrapper::DrawFilledTri(float p1X, float p1Y, float p2X, float p2Y, float p3X, float p3Y, uint8_t rgb)
+{
     DrawFilledTri(p1X, p1Y, p2X, p2Y, p3X, p3Y, rgb, rgb, rgb);
 }
 
-inline void RendererWrapper::Show() {
+inline void RendererWrapper::Show()
+{
     SDL_RenderPresent(p_renderer);
 }
 
-inline void RendererWrapper::Clean() {
+inline void RendererWrapper::Clean()
+{
     SDL_RenderClear(p_renderer);
 }
 
-inline LibRendererBool RendererWrapper::IsRunning() const {
+inline LibRendererBool RendererWrapper::IsRunning() const
+{
     return _isRunning;
 }
 
-inline void RendererWrapper::StopRunning() {
+inline void RendererWrapper::StopRunning()
+{
     _isRunning = LibRendererFalse;
 }
 
-void RendererWrapper::Quit() {
+void RendererWrapper::Quit()
+{
     if (p_renderer)
         SDL_DestroyRenderer(p_renderer);
     if (p_window)
