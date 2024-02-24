@@ -53,35 +53,7 @@ ExternalProject_Add(eigen
 include_directories(${EIGEN_PATH}/include/eigen3)
 link_directories(${EIGEN_PATH}/shared)
 
-set(SOURCES Src/main.cpp
-        Inc/Rendering/Renderer.hpp
-        Inc/Rendering/RendererWrapper.hpp
-        Inc/Rendering/RenderWindow.hpp
-        Inc/Rendering/Projector.hpp
-        Inc/Rendering/Polygon.hpp
-        Inc/Rendering/Mesh.hpp
-        Inc/Objects/Transform.hpp
-        Inc/Objects/RenderObject.hpp
-        Inc/Objects/Object.hpp
-        Inc/Objects/Camera.hpp
-        Inc/Objects/Lightining/LightSource.hpp
-        Inc/Objects/Lightining/DirectionalLight.hpp
-        Inc/Scripting/CrustScript.hpp
-        Inc/Utils/TimeProvider.hpp
-        Inc/Math/Math.hpp
-        Inc/Math/Matrix.hpp
-        Inc/Math/Triangle.hpp
-        Inc/Math/Vector3.hpp
-        Inc/Math/Vector4.hpp
-        Inc/Logging/ExceptionsHandler.hpp
-        Inc/Logging/Logger.hpp
-        Inc/Logging/ObjectLogger.hpp
-        Inc/Input/InputEvent.hpp
-        Inc/Input/InputHandler.hpp
-        Inc/Files/MeshLoader.hpp
-        Inc/Core/Core.hpp
-        Inc/Core/Scene.hpp
-)
+set(SOURCES Src/main.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/Inc)
