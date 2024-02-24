@@ -42,7 +42,7 @@ public:
    *
    * @sa Renderer.hpp,
    */
-  void Start();
+  void Start(); //TODO rename to open
 
   /**
    * @brief Stops the window rendering process bu killing the renderer. When called the #Start method stops it's loop.
@@ -70,11 +70,6 @@ private:
   Scene *p_loadedScene{nullptr}; //!< Loaded scene's handler.
 
   TimeProvider *p_timeProvider{nullptr}; //!< Windows's time provider that calculates it's work time, FPS etc...
-
-  /**
-   * @brief Cleans everything that was drawn on the window.
-   */
-  void Clean();
 };
 
 inline RenderWindow::RenderWindow(uint32_t _width, uint32_t _height, Scene &_scene)
@@ -109,7 +104,7 @@ void RenderWindow::Start()
   p_loadedScene->Start();
 
 //  InputHandler::BeginInputMonitoring();
-  while (p_renderer->IsRunning())
+  while (!p_renderer->ShouldClose()) // TODO while window is open - not renderer
   {
     p_timeProvider->OnFrameStart();
 
@@ -118,34 +113,30 @@ void RenderWindow::Start()
 //    if (InputHandler::GetLastEvent().type == Event::EVENT_WINDOW_QUIT) // FIXME How to figure out which window is supposed to be closed?
 //      Close();
 
-    Clean();
     if (p_loadedScene != nullptr)
     {
       p_loadedScene->Update(p_timeProvider->GetDeltaTime_s());
       p_renderer->RenderScene(*p_loadedScene);
     }
 
-    p_renderer->Show();
-
     p_timeProvider->OnFrameEnd();
     // Logger::Info("This frame took: %lf [s] (%lf FPS)", timeProvider->GetDeltaTime_s(), timeProvider->GetFPS());// TODO Debug log
   }
-  p_renderer->Quit();
-  Logger::Info("Avreage frame time: %lf [s] (%lf FPS)", p_timeProvider->GetAverageFrameTime_s(), p_timeProvider->GetAverageFPS()); // TODO Debug log
+
+  Logger::Info("Average frame time: %lf [s] (%lf FPS)", p_timeProvider->GetAverageFrameTime_s(), p_timeProvider->GetAverageFPS()); // TODO Debug log
 }
 
 inline void RenderWindow::Close()
 {
-  p_renderer->StopRunning();
+  p_renderer->Quit();
 }
 
 void RenderWindow::LoadScene(Scene &scene)
 {
-  if (p_loadedScene != nullptr)
-    p_loadedScene->OnUnLoad();
-  p_loadedScene = &scene;
-  p_renderer->SetWindowTitle(p_loadedScene->GetName());
-  p_loadedScene->OnLoad();
+    UnLoadScene();
+    p_loadedScene = &scene;
+    p_renderer->SetWindowTitle(p_loadedScene->GetName());
+    p_loadedScene->OnLoad();
 }
 
 void RenderWindow::UnLoadScene()
@@ -156,12 +147,6 @@ void RenderWindow::UnLoadScene()
   p_loadedScene->OnUnLoad();
   p_loadedScene = nullptr;
   p_renderer->SetWindowTitle("No scene");
-}
-
-inline void RenderWindow::Clean()
-{
-  p_renderer->SetDrawColor(0, 0, 0);
-  p_renderer->Clean();
 }
 
 #endif /* _RENDERWINDOW_HPP_ */

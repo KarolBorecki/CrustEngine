@@ -15,10 +15,10 @@ public:
      * @param _intensivity Light's intensivity.
      * @param _dir Light's direction.
      */
-    DirectionalLight(uint8_t _intensivity, Vector3<> &_direction);
+    DirectionalLight(uint8_t _intensivity, crust::Vector3<> &_direction);
 };
 
-inline DirectionalLight::DirectionalLight(uint8_t _intensivity, Vector3<> &_dir) : LightSource(_intensivity)
+inline DirectionalLight::DirectionalLight(uint8_t _intensivity, crust::Vector3<> &_dir) : LightSource(_intensivity)
 {
     GetTransform().SetEulerRotation(_dir.X(), _dir.Y(), _dir.Z());
 }

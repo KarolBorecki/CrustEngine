@@ -21,7 +21,7 @@ public:
    * Supported file extensions: <br>
    *   - *.obj <br>
    */
-  static void LoadMeshFromFile(const char *fileName, Mesh *outMesh);
+  static void LoadMeshFromFile(const char *fileName, crust::Mesh *outMesh);
 
 private:
   /**
@@ -32,10 +32,10 @@ private:
    *
    * @sa FileReader.hpp <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">*.obj file extensions</a>
    */
-  static void ParseObjToMesh(const char *fileName, Mesh *outMesh);
+  static void ParseObjToMesh(const char *fileName, crust::Mesh *outMesh);
 };
 
-void MeshLoader::LoadMeshFromFile(const char *fileName, Mesh *outMesh)
+void MeshLoader::LoadMeshFromFile(const char *fileName, crust::Mesh *outMesh)
 {
   uint8_t fileNameLen = strlen(fileName);
 
@@ -45,7 +45,7 @@ void MeshLoader::LoadMeshFromFile(const char *fileName, Mesh *outMesh)
     ExceptionsHandler::ThrowWarning("No mathing file extension for file: %s - The mesh will not be loaded.", fileName);
 }
 
-void MeshLoader::ParseObjToMesh(const char *fileName, Mesh *outMesh)
+void MeshLoader::ParseObjToMesh(const char *fileName, crust::Mesh *outMesh)
 {
   std::ifstream file(fileName);
   if (!file.is_open())

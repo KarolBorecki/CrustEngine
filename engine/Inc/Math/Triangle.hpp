@@ -35,7 +35,7 @@ public:
    *
    * @param index Index of the point. 0 represents first point, 1 second and 2 thrid point.
    */
-  Vector3<> &GetPoint(uint8_t index);
+  crust::Vector3<> &GetPoint(uint8_t index);
 
   /**
    * @brief Setter for all 3 points of triangle x, y and z values.
@@ -43,16 +43,16 @@ public:
   void SetPoints(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z);
 
 private:
-  Vector3<> *_point[3]; //!< Three points representing the triangle in 3D space.
+    crust::Vector3<> *_point[3]; //!< Three points representing the triangle in 3D space.
 };
 
 inline Triangle::Triangle() : Triangle(0, 0, 0, 0, 0, 0, 0, 0, 0) {}
 
 inline Triangle::Triangle(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {
-  _point[0] = new Vector3<>(p1X, p1Y, p1Z);
-  _point[1] = new Vector3<>(p2X, p2Y, p2Z);
-  _point[2] = new Vector3<>(p3X, p3Y, p3Z);
+  _point[0] = new crust::Vector3<>(p1X, p1Y, p1Z);
+  _point[1] = new crust::Vector3<>(p2X, p2Y, p2Z);
+  _point[2] = new crust::Vector3<>(p3X, p3Y, p3Z);
 }
 
 Triangle::~Triangle()
@@ -62,7 +62,7 @@ Triangle::~Triangle()
   delete _point[2];
 }
 
-inline Vector3<> &Triangle::GetPoint(uint8_t index) { return *(_point[index]); }
+inline crust::Vector3<> &Triangle::GetPoint(uint8_t index) { return *(_point[index]); }
 
 void Triangle::SetPoints(float p1X, float p1Y, float p1Z, float p2X, float p2Y, float p2Z, float p3X, float p3Y, float p3Z)
 {

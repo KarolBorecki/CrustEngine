@@ -9,14 +9,14 @@
 class ObjectLogger
 {
 public:
-  static void Log(const char* info, Matrix<float> &matrix);
+  static void Log(const char* info, crust::Matrix<float> &matrix);
 
-  static void Log(const char* info, Vector3<float> &matrix);
+  static void Log(const char* info, crust::Vector3<float> &matrix);
 
-  static void Log(const char* info, Vector4<float> &matrix);
+  static void Log(const char* info, crust::Vector4<float> &matrix);
 };
 
-inline void ObjectLogger::Log(const char* info, Matrix<float> &matrix)
+inline void ObjectLogger::Log(const char* info, crust::Matrix<float> &matrix)
 {
   Logger::Log("%s", info);
   for (int y = 0; y < matrix.Height(); ++y)
@@ -30,12 +30,12 @@ inline void ObjectLogger::Log(const char* info, Matrix<float> &matrix)
   Logger::LogInline("[%zu x %zu] \n", matrix.Width(), matrix.Height());
 }
 
-inline void ObjectLogger::Log(const char* info, Vector3<float> &vector)
+inline void ObjectLogger::Log(const char* info, crust::Vector3<float> &vector)
 {
   Logger::Log("%s (%f, %f, %f) [%zu x %zu]\n", info, vector.X(), vector.Y(), vector.Z(), vector.Width(), vector.Height());
 }
 
-inline void ObjectLogger::Log(const char* info, Vector4<float> &vector)
+inline void ObjectLogger::Log(const char* info, crust::Vector4<float> &vector)
 {
   Logger::Log("%s(%f, %f, %f, %f) [%zu x %zu]\n", info, vector.X(), vector.Y(), vector.Z(), vector.W(), vector.Width(), vector.Height());
 }

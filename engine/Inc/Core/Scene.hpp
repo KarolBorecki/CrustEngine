@@ -28,7 +28,7 @@ public:
    * @param _name Scene name, used as RenderWindow's window caption.
    * @param _mainCamera Main camera handler.
    */
-  Scene(std::string _name, Camera &_mainCamera);
+  Scene(std::string _name, crust::Camera &_mainCamera);
   ~Scene(){};
 
   /**
@@ -61,7 +61,7 @@ public:
    *
    * @sa Camera.hpp
    */
-  Camera &GetMainCamera();
+  crust::Camera &GetMainCamera();
 
   /**
    * @brief Setter for #mainCamera field.
@@ -70,7 +70,7 @@ public:
    *
    * @sa Camera.hpp
    */
-  void SetMainCamera(Camera &newMainCamera);
+  void SetMainCamera(crust::Camera &newMainCamera);
 
   /**
    * @brief Adds the object to the scene.
@@ -123,7 +123,7 @@ private:
   std::string _name;            //!< Scene name, also used as window caption on top of the renderer window.
   bool _started{false};         //!< Flag that says if given scene already started - was loaded or performed Start on every script in this scene.
   bool _loaded{false};          //!< Flag that says if given scene is currently loaded on any render window.
-  Camera *p_mainCamera{nullptr}; //!< Main camera from which perspective the projection will be calculated.
+    crust::Camera *p_mainCamera{nullptr}; //!< Main camera from which perspective the projection will be calculated.
 
   bool _projectLight{true}; //!< If true the light will be projected accordingly to light sources, if false all mesh's faces will be projected with maximum lighting.
 
@@ -132,7 +132,7 @@ private:
   std::vector<LightSource *> _lightSources;   //!< Light sources in the scene. This array is sub-array of objects.
 };
 
-inline Scene::Scene(std::string name, Camera &mainCamera) : _name(name), p_mainCamera(&mainCamera)
+inline Scene::Scene(std::string name, crust::Camera &mainCamera) : _name(name), p_mainCamera(&mainCamera)
 {
   AddObject(*p_mainCamera);
 }
@@ -174,9 +174,9 @@ void Scene::Update(double deltaTime)
   }
 }
 
-inline Camera &Scene::GetMainCamera() { return *p_mainCamera; }
+inline crust::Camera &Scene::GetMainCamera() { return *p_mainCamera; }
 
-inline void Scene::SetMainCamera(Camera &newMainCamera) { p_mainCamera = &newMainCamera; }
+inline void Scene::SetMainCamera(crust::Camera &newMainCamera) { p_mainCamera = &newMainCamera; }
 
 void Scene::AddObject(Object &obj)
 {

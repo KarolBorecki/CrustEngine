@@ -1,6 +1,8 @@
 #ifndef _RENDERER_HPP_
 #define _RENDERER_HPP_
 
+#include <Core/Scene.hpp>
+
 #include <Math/Matrix.hpp>
 
 #include <Objects/Camera.hpp>
@@ -65,7 +67,7 @@ public:
    *
    * @sa Mesh.hpp
    */
-  void RenderMeshWithTranslation(Mesh &mesh, Matrix<float> &translationMatrix);
+  void RenderMeshWithTranslation(crust::Mesh &mesh, crust::Matrix<float> &translationMatrix);
 
 private:
   Projector &r_projector;
@@ -82,26 +84,27 @@ Renderer::~Renderer()
 
 void Renderer::RenderScene(Scene &scene)
 {
-  SetDrawColor(RendererWrapper::RendererColor::WHITE);
+    OnDrawStart();
   r_projector.RecalculateProjectionMatrix(scene.GetMainCamera());
   r_projector.RecalculateLightning(*scene.GetLightSources()[0], scene.IsLightProjected());
   for (auto &object : scene.GetObjectsToRender())
   {
-    RenderObjectOntoScene(*object, scene);
+      if(object->IsActive())
+      {
+          RenderObjectOntoScene(*object, scene);
+      }
   }
+    OnDrawEnd();
 }
 
 void Renderer::RenderObjectOntoScene(RenderObject &object, Scene &scene)
 {
-  if (object.IsActive())
-  {
-    static Matrix<float> translationMatrix;
+    static crust::Matrix<float> translationMatrix;
     translationMatrix = r_projector.CalculateTranslationMatrix(object.GetTransform()); // Skok rzędu ~10FPS
     RenderMeshWithTranslation(object.GetMesh(), translationMatrix);
-  }
 }
 
-void Renderer::RenderMeshWithTranslation(Mesh &mesh, Matrix<float> &translationMatrix)
+void Renderer::RenderMeshWithTranslation(crust::Mesh &mesh, crust::Matrix<float> &translationMatrix)
 {
   static Projector::ProjectionData tmpProjection;
   static std::vector<Projector::ProjectionData> projections;

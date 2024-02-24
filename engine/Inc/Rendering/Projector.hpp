@@ -46,14 +46,14 @@ public:
      *
      * @return Projected polygon. //TODO fix documentation
      */
-    ProjectionData &ProjectPolygon(Polygon &poli, Matrix<float> &translationMat);
+    ProjectionData &ProjectPolygon(Polygon &poli, crust::Matrix<float> &translationMat);
 
     /**
      * @brief Getter for #projMatrix field.
      *
      * @return Reference to #projMatrix field.
      */
-    const Matrix<double> &GetProjectionMatrix() const; // TODO implement
+    const crust::Matrix<double> &GetProjectionMatrix() const; // TODO implement
 
     /**
      * @brief Recalculates the projection matrix for given camera.
@@ -66,7 +66,7 @@ public:
      *
      * @sa Camera.hpp RenderObject.hpp
      */
-    void RecalculateProjectionMatrix(Camera &cam);
+    void RecalculateProjectionMatrix(crust::Camera &cam);
 
     /**
      * @brief Recalculates the view matrix for given camera. //TODO fix documentation
@@ -75,7 +75,7 @@ public:
      *
      * @sa Camera.hpp RenderObject.hpp
      */
-    void RecalculateViewMatrix(Camera &cam);
+    void RecalculateViewMatrix(crust::Camera &cam);
 
     /**
      * @brief Recalculates the lightning for the next projection. It calulates the light direction and intensivity.
@@ -91,7 +91,7 @@ public:
      * @param transform Transform from which perspective object will be rendered.
      * @return Matrix<float>& Translation matrix for given object.
      */
-    Matrix<float> &CalculateTranslationMatrix(Transform &transform);
+    crust::Matrix<float> &CalculateTranslationMatrix(crust::Transform &transform);
 
     /* This value should not be changed without full understanding of this change! */
     static constexpr int PROJ_MATRIX_SIZE{4}; //!< Projection matrix size. Most of the time it will not changed as calculation for projection will most likely not changed.
@@ -101,11 +101,11 @@ private:
     uint32_t _height{0};     //!< Assigned window height. Calulated on Renderer creation.
     float _aspectRatio{0.0}; //!< Assigned window aspect ration. Calulated on Renderer creation.
 
-    Matrix<float> _projMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
-    Matrix<float> _transMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f}; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
-    Matrix<float> _viewMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< View matrix. See Renderer::RecalculateViewMatrix.
+    crust::Matrix<float> _projMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< Projection matrix. See Renderer::RecalculateProjectionMatrix.
+    crust::Matrix<float> _transMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f}; //!< Translation matrix. See Renderer::CalculateTranslationMatrix.
+    crust::Matrix<float> _viewMat{PROJ_MATRIX_SIZE, PROJ_MATRIX_SIZE, 0.0f};  //!< View matrix. See Renderer::RecalculateViewMatrix.
 
-    Vector3<> r_lightDir{0.0f}; //!< Light direction. See Renderer::DrawMesh.
+    crust::Vector3<> r_lightDir{0.0f}; //!< Light direction. See Renderer::DrawMesh.
     uint8_t _lightIntensivity;  //!< Light intensivity. See Renderer::DrawMesh.
     bool _projectLight;         //!< Flag if the light should be projected. See Renderer::DrawMesh.
 
@@ -117,11 +117,14 @@ Projector::Projector(uint32_t _width, uint32_t _height) : _width(_width), _heigh
     _aspectRatio = ((float)_height / (float)_width);
 }
 
-Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float> &translationMat)
+Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, crust::Matrix<float> &translationMat)
 {
-    Vector4<> transformedP1 = poli.GetPoint(0).ToVector4(1.0f);
-    Vector4<> transformedP2 = poli.GetPoint(1).ToVector4(1.0f);
-    Vector4<> transformedP3 = poli.GetPoint(2).ToVector4(1.0f);
+    crust::Vector4<> transformedP1;
+    transformedP1 = poli.GetPoint(0).ToVector4(1.0f);
+    crust::Vector4<> transformedP2;
+    transformedP2 = poli.GetPoint(1).ToVector4(1.0f);
+    crust::Vector4<> transformedP3;
+    transformedP3 = poli.GetPoint(2).ToVector4(1.0f);
 
     /* Translation - object movement, rotation and scaling */
     transformedP1 *= translationMat;
@@ -129,7 +132,8 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
     transformedP3 *= translationMat;
 
     /* Calculating polygons plane normal vector to see which direction it is facing */
-    Vector3<> normal = Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
+    crust::Vector3<> normal;
+    normal = crust::Vector3<>::PolygonNormal(transformedP1.ToVector3(), transformedP2.ToVector3(), transformedP3.ToVector3());
 
     /* Calculate dot product of this normal vector to see if it is visible by the camera*/
     r_result.renderable = normal.Dot(transformedP1.ToVector3()) < 0.0f;
@@ -157,16 +161,16 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
         transformedP2 *= _projMat;
         transformedP3 *= _projMat;
 
-        Vector3<> projectedP1 = transformedP1.ToVector3(); // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
-        Vector3<> projectedP2 = transformedP2.ToVector3(); // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
-        Vector3<> projectedP3 = transformedP3.ToVector3();
+        crust::Vector3<> projectedP1 = transformedP1.ToVector3(); // Problem wyddaje się być w tym na czym wykonujemy tę wfunkcję (jak dajemy *this to normalnie wykonuje się = z init list)
+        crust::Vector3<> projectedP2 = transformedP2.ToVector3(); // FIXME moze brak copy constructora dla Vector3 iu Vector4 powoduje te wycieki???????
+        crust::Vector3<> projectedP3 = transformedP3.ToVector3();
 
         /* Scaling object's triangle to world space */
         projectedP1 /= transformedP1.W();
         projectedP2 /= transformedP2.W();
         projectedP3 /= transformedP3.W();
 
-        Vector3<> viewOffset(1.0f, 1.0f, 0.0f);
+        crust::Vector3<> viewOffset(1.0f, 1.0f, 0.0f);
         projectedP1 += viewOffset;
         projectedP2 += viewOffset;
         projectedP3 += viewOffset;
@@ -194,7 +198,7 @@ Projector::ProjectionData &Projector::ProjectPolygon(Polygon &poli, Matrix<float
     return r_result;
 }
 
-void Projector::RecalculateProjectionMatrix(Camera &cam)
+void Projector::RecalculateProjectionMatrix(crust::Camera &cam)
 {
     double q = cam.GetFFar() / (cam.GetFFar() - cam.GetFNear());
     _projMat[0][0] = _aspectRatio * cam.GetFFovRad();
@@ -204,32 +208,32 @@ void Projector::RecalculateProjectionMatrix(Camera &cam)
     _projMat[2][3] = -cam.GetFNear() * q;
 }
 
-void Projector::RecalculateViewMatrix(Camera &cam)
+void Projector::RecalculateViewMatrix(crust::Camera &cam)
 { // TODO Refactor - it does not work properly
-    Vector3<> target = cam.GetTransform().GetPosition();
+    crust::Vector3<> target = cam.GetTransform().GetPosition();
     // target += {0.0, 0.0, 0.0};
     target += cam.GetTransform().GetEulerRotation();
     // ObjectLogger::Log("Target", target);
 
-    static Vector3<> newForward;
+    static crust::Vector3<> newForward;
     newForward = target;
     newForward -= cam.GetTransform().GetPosition();
     // ObjectLogger::Log("New Forward Before normalization", newForward);
     newForward.Normalize();
     // ObjectLogger::Log("New Forward", newForward);
 
-    static Vector3<> a;
+    static crust::Vector3<> a;
     a = newForward;
-    a *= newForward.Dot(Transform::Up());
+    a *= newForward.Dot(crust::Transform::Up());
     // ObjectLogger::Log("A", a);
 
-    static Vector3<> newUp;
-    newUp = Transform::Up();
+    static crust::Vector3<> newUp;
+    newUp = crust::Transform::Up();
     newUp -= a;
     newUp.Normalize();
     // ObjectLogger::Log("New Up", newUp);
 
-    static Vector3<> newRight;
+    static crust::Vector3<> newRight;
     newRight = newUp.Cross(newForward);
     // ObjectLogger::Log("New Right", newRight);
 
@@ -312,28 +316,27 @@ void Projector::RecalculateViewMatrix(Camera &cam)
 
 void Projector::RecalculateLightning(LightSource &lightSource, bool projectLight)
 {
-
     r_lightDir = lightSource.GetTransform().GetEulerRotation().Normalized();
     _lightIntensivity = lightSource.GetIntensivity();
     _projectLight = projectLight;
 }
 
-Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
+crust::Matrix<float> &Projector::CalculateTranslationMatrix(crust::Transform &transform)
 { // TODO refactor this
-    Matrix<float> translationMat(4, 4, 0.0);
+    crust::Matrix<float> translationMat(4, 4, 0.0);
     translationMat.MakeIdentity();
     translationMat[0][3] = transform.GetPosition().X();
     translationMat[1][3] = transform.GetPosition().Y();
     translationMat[2][3] = transform.GetPosition().Z();
     translationMat[3][3] = 1.0f;
 
-    Matrix<float> scaleMat(4, 4, 0.0);
+    crust::Matrix<float> scaleMat(4, 4, 0.0);
     scaleMat[0][0] = transform.GetScale().X();
     scaleMat[1][1] = transform.GetScale().Y();
     scaleMat[2][2] = transform.GetScale().Z();
     scaleMat[3][3] = 1.0f;
 
-    Matrix<float> rotationZMat(4, 4, 0.0);
+    crust::Matrix<float> rotationZMat(4, 4, 0.0);
     rotationZMat[0][0] = Math::Cos(transform.GetEulerRotation().Z());
     rotationZMat[0][1] = Math::Sin(transform.GetEulerRotation().Z());
     rotationZMat[1][0] = -Math::Sin(transform.GetEulerRotation().Z());
@@ -341,7 +344,7 @@ Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
     rotationZMat[2][2] = 1.0f;
     rotationZMat[3][3] = 1.0f;
 
-    Matrix<float> rotationXMat(4, 4, 0.0);
+    crust::Matrix<float> rotationXMat(4, 4, 0.0);
     rotationXMat[0][0] = 1.0f;
     rotationXMat[1][1] = Math::Cos(transform.GetEulerRotation().X());
     rotationXMat[1][2] = Math::Sin(transform.GetEulerRotation().X());
@@ -349,7 +352,7 @@ Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
     rotationXMat[2][2] = Math::Cos(transform.GetEulerRotation().X());
     rotationXMat[3][3] = 1.0f;
 
-    Matrix<float> rotationYMat(4, 4, 0.0); // Not tested
+    crust::Matrix<float> rotationYMat(4, 4, 0.0); // Not tested
     rotationYMat[0][0] = Math::Cos(transform.GetEulerRotation().Y());
     rotationYMat[0][2] = Math::Sin(transform.GetEulerRotation().Y());
     rotationYMat[2][0] = -Math::Sin(transform.GetEulerRotation().Y());
@@ -357,7 +360,7 @@ Matrix<float> &Projector::CalculateTranslationMatrix(Transform &transform)
     rotationYMat[2][2] = Math::Cos(transform.GetEulerRotation().Y());
     rotationYMat[3][3] = 1.0f;
 
-    Matrix<float> worldMat(4, 4, 0.0);
+    crust::Matrix<float> worldMat(4, 4, 0.0);
     worldMat.MakeIdentity();
     worldMat = rotationZMat;
     worldMat *= rotationXMat;
