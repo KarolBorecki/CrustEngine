@@ -1,0 +1,41 @@
+\hypertarget{_mesh_8h_source}{}\doxysection{Mesh.\+h}
+\label{_mesh_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/objects/Mesh.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/objects/Mesh.h}}
+\mbox{\hyperlink{_mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_MESH\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_MESH\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_triangle_8h}{math/geometry/Triangle.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_mesh}{Mesh}} \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_crust_1_1_mesh_a6be744beaa137d247e5c71819baee15f}{Mesh}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{22         \mbox{\hyperlink{class_crust_1_1_mesh_a6f2e5661c964e8603b4b594337ce6445}{Mesh}}(std::string name);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27         \mbox{\hyperlink{class_crust_1_1_mesh_a8b175b3a9071aa3fb33bf32335905c34}{\string~Mesh}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_mesh_a5ee170836f457b1236bcf4a116b43c80}{addPolygon}}(\mbox{\hyperlink{class_crust_1_1_triangle}{Triangle}} \&p\_poli);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{41         \mbox{\hyperlink{class_crust_1_1_triangle}{Triangle}} \&\mbox{\hyperlink{class_crust_1_1_mesh_a9fe7baf5da55725e36040a2f8c88ca10}{getPolygon}}(\textcolor{keyword}{const} uint32\_t p\_index) \textcolor{keyword}{const};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49         \textcolor{keyword}{const} \mbox{\hyperlink{class_crust_1_1_vector3}{Vector3<>}} \&\mbox{\hyperlink{class_crust_1_1_mesh_a4f5706c8a4854c0313e5495efbb95fdc}{getVertex}}(\textcolor{keyword}{const} uint32\_t p\_poli\_index, \textcolor{keyword}{const} uint32\_t p\_point\_index) \textcolor{keyword}{const};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{56         uint32\_t \mbox{\hyperlink{class_crust_1_1_mesh_af4fa60cb215d22182018e4d241c1e31f}{getPolygonsCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_mesh_a6d3ca865faaccf6a8e510d57d5bc3ceb}{setName}}(std::string p\_newName);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70         std::string \mbox{\hyperlink{class_crust_1_1_mesh_ab35850eaeeccff868d5ee23c8f4e18a1}{getName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{private}:}
+\DoxyCodeLine{73         std::string m\_name; }
+\DoxyCodeLine{74         std::vector<Triangle*> m\_polygons; }
+\DoxyCodeLine{75     \};}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_MESH\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

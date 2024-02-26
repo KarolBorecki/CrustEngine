@@ -1,0 +1,143 @@
+\hypertarget{class_crust_1_1_matrix}{}\doxysection{Crust\+::Matrix\texorpdfstring{$<$}{<} T, H, W \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_crust_1_1_matrix}\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+
+
+Represents the mathematical matrix and is able to preform matrix calculations.  
+
+
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+Inheritance diagram for Crust\+::Matrix\texorpdfstring{$<$}{<} T, H, W \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crust_1_1_matrix}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}{Matrix}} ()
+\item 
+\mbox{\hyperlink{class_crust_1_1_matrix_a990fa463ef190b3e49a6a1e3b2bbbfd3}{Matrix}} (T p\+\_\+val)
+\begin{DoxyCompactList}\small\item\em If width or height argument is zero then no space for matrix\textquotesingle{}s array will be allocated. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_crust_1_1_matrix_af768dac0040fc1fa51142359072f473f}{height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the matrix. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_crust_1_1_matrix_a547e82d4a3970a67be846e794a9fde97}{width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}{reset}} (T p\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Reset all elements in matrix to the given value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_matrix_a30a67789796b32d7aea82fe623fb9ec6}{make\+Identity}} ()
+\begin{DoxyCompactList}\small\item\em Make this matrix an identity matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename D $>$ }\\\mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ T, H, W $>$ \& \mbox{\hyperlink{class_crust_1_1_matrix_aad133b654dc1d11415aaa0748ab51e28}{operator=}} (const Eigen\+::\+Matrix\+Base$<$ D $>$ \&other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, int H, int W$>$\newline
+class Crust\+::\+Matrix$<$ T, H, W $>$}
+Represents the mathematical matrix and is able to preform matrix calculations. 
+
+This matrix class assumes that x value is the number of a column and y value is the number of a row. This means that matrix\mbox{[}3\mbox{]}\mbox{[}2\mbox{]} is value in 3rd row and 2nd column. Also height says how many rows there are and width says how many columns there are.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Types of values held in this matrix. \\
+\hline
+{\em H} & Amount of rows in this matrix. \\
+\hline
+{\em W} & Amount of columns in this matrix. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}\label{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+\mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crust_1_1_matrix_a990fa463ef190b3e49a6a1e3b2bbbfd3}\label{class_crust_1_1_matrix_a990fa463ef190b3e49a6a1e3b2bbbfd3}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+\mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::\+Matrix (\begin{DoxyParamCaption}\item[{T}]{p\+\_\+val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+If width or height argument is zero then no space for matrix\textquotesingle{}s array will be allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Val} & The value that will be placed on each position in matrix. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_matrix_af768dac0040fc1fa51142359072f473f}\label{class_crust_1_1_matrix_af768dac0040fc1fa51142359072f473f}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!height@{height}}
+\index{height@{height}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the height of the matrix. 
+
+\mbox{\Hypertarget{class_crust_1_1_matrix_a30a67789796b32d7aea82fe623fb9ec6}\label{class_crust_1_1_matrix_a30a67789796b32d7aea82fe623fb9ec6}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!makeIdentity@{makeIdentity}}
+\index{makeIdentity@{makeIdentity}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{makeIdentity()}{makeIdentity()}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+void \mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::make\+Identity}
+
+
+
+Make this matrix an identity matrix. 
+
+\mbox{\Hypertarget{class_crust_1_1_matrix_aad133b654dc1d11415aaa0748ab51e28}\label{class_crust_1_1_matrix_aad133b654dc1d11415aaa0748ab51e28}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+template$<$typename D $>$ \\
+\mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ T, H, W $>$ \& \mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::operator= (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Base$<$ D $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}\label{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!reset@{reset}}
+\index{reset@{reset}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+void \mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::reset (\begin{DoxyParamCaption}\item[{T}]{p\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Reset all elements in matrix to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+val} & The value that will be placed on each position in matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_matrix_a547e82d4a3970a67be846e794a9fde97}\label{class_crust_1_1_matrix_a547e82d4a3970a67be846e794a9fde97}} 
+\index{Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}!width@{width}}
+\index{width@{width}!Crust::Matrix$<$ T, H, W $>$@{Crust::Matrix$<$ T, H, W $>$}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_crust_1_1_matrix}{Crust\+::\+Matrix}}$<$ T, H, W $>$\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the width of the matrix. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/math/\mbox{\hyperlink{_matrix_8h}{Matrix.\+h}}\end{DoxyCompactItemize}

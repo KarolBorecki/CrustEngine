@@ -1,0 +1,43 @@
+\hypertarget{_library2_d_wrapper_8h_source}{}\doxysection{Library2\+DWrapper.\+h}
+\label{_library2_d_wrapper_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/rendering/Library2DWrapper.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/rendering/Library2DWrapper.h}}
+\mbox{\hyperlink{_library2_d_wrapper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_LIBRARY2DWRAPPER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_LIBRARY2DWRAPPER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_definitions_8h}{static/Definitions.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2DWrapper}} \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a2b4e107c0bd268eb59f6d3c0620b9297}{Library2DWrapper}}(uint16\_t p\_width, uint16\_t p\_height) : m\_width(p\_width), m\_height(p\_height) \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a2e5985a632c29503dcdee1f56b234c5b}{\string~Library2DWrapper}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{35         \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust::Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a652e2628cd3d53af7fa963f3d92fdebf}{init}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{46         \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust::Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aa859ba83476afac4eb6a7d61a3469995}{createWindow}}(uint16\_t p\_width, uint16\_t p\_height);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{56         \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust::Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aa024ee0a0135f14fec5f7f9b07881645}{setWindowCaption}}(std::string p\_caption);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{63         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aeb745b8cb2f9f6d1c777a322f663a29f}{onDrawStart}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a33e399599b7c1416d37262b29ef853a3}{onDrawEnd}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a859627ae7c195e8f34639b571c08ccb7}{shouldClose}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_ae376a18584271917370fee25c5078f98}{quit}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a00d608d0f8e943e5cb9ee5d83a701d77}{drawTriangle}}(\textcolor{keywordtype}{float} p\_x1, \textcolor{keywordtype}{float} p\_y1, \textcolor{keywordtype}{float} p\_x2, \textcolor{keywordtype}{float} p\_y2, \textcolor{keywordtype}{float} p\_x3, \textcolor{keywordtype}{float} p\_y3, uint8\_t p\_shade);}
+\DoxyCodeLine{98     \textcolor{keyword}{private}:}
+\DoxyCodeLine{99         uint16\_t m\_width \{ 0 \}; }
+\DoxyCodeLine{100         uint16\_t m\_height \{ 0 \}; }
+\DoxyCodeLine{101     \};}
+\DoxyCodeLine{102 \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_LIBRARY2DWRAPPER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,121 @@
+\hypertarget{class_crust_1_1_camera}{}\doxysection{Crust\+::Camera Class Reference}
+\label{class_crust_1_1_camera}\index{Crust::Camera@{Crust::Camera}}
+
+
+Class representing the camera on a scene from which\textquotesingle{}s perespective the renderer can render \mbox{\hyperlink{class_crust_1_1_mesh}{Mesh}}.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for Crust\+::Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crust_1_1_camera}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_camera_aada5db6a7d09d6afee0e8ce4ebdc48a7}{Camera}} (int p\+\_\+f\+\_\+fov\+\_\+deg, double p\+\_\+f\+\_\+near, double p\+\_\+f\+\_\+far)
+\item 
+virtual \mbox{\hyperlink{class_crust_1_1_camera_a23a547cc87e514b3708e6cda5307015c}{$\sim$\+Camera}} ()=default
+\item 
+int \mbox{\hyperlink{class_crust_1_1_camera_a73ef397261ae888416762ba80fc269dc}{get\+FFov\+Deg}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#field\+Of\+View\+Deg field. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_crust_1_1_camera_a357bd3b9084b540d17719e5e40e009c5}{get\+FNear}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#f\+Near field. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_crust_1_1_camera_acf9b7a371bd016a910e8acb3dffa0784}{get\+FFar}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#f\+Far field. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_crust_1_1_camera_a309bd118e34749b413a9d6aa1b8d6e42}{get\+FFov\+Rad}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#f\+Fov\+Rad field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the camera on a scene from which\textquotesingle{}s perespective the renderer can render \mbox{\hyperlink{class_crust_1_1_mesh}{Mesh}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_camera_aada5db6a7d09d6afee0e8ce4ebdc48a7}\label{class_crust_1_1_camera_aada5db6a7d09d6afee0e8ce4ebdc48a7}} 
+\index{Crust::Camera@{Crust::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Crust\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+f\+\_\+fov\+\_\+deg,  }\item[{double}]{p\+\_\+f\+\_\+near,  }\item[{double}]{p\+\_\+f\+\_\+far }\end{DoxyParamCaption})}
+
+Also calculates the f\+Fov\+Rad for given input.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+f\+Fov\+Deg} & Field of view in degress. \\
+\hline
+{\em \+\_\+f\+Near} & f\+Near. \\
+\hline
+{\em \+\_\+f\+Far} & f\+Far. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_camera_a23a547cc87e514b3708e6cda5307015c}\label{class_crust_1_1_camera_a23a547cc87e514b3708e6cda5307015c}} 
+\index{Crust::Camera@{Crust::Camera}!````~Camera@{$\sim$Camera}}
+\index{````~Camera@{$\sim$Camera}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{$\sim$Camera()}{~Camera()}}
+{\footnotesize\ttfamily virtual Crust\+::\+Camera\+::$\sim$\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_camera_acf9b7a371bd016a910e8acb3dffa0784}\label{class_crust_1_1_camera_acf9b7a371bd016a910e8acb3dffa0784}} 
+\index{Crust::Camera@{Crust::Camera}!getFFar@{getFFar}}
+\index{getFFar@{getFFar}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{getFFar()}{getFFar()}}
+{\footnotesize\ttfamily double Crust\+::\+Camera\+::get\+FFar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#f\+Far field. 
+
+\begin{DoxyReturn}{Returns}
+Value of \#f\+Far. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_camera_a73ef397261ae888416762ba80fc269dc}\label{class_crust_1_1_camera_a73ef397261ae888416762ba80fc269dc}} 
+\index{Crust::Camera@{Crust::Camera}!getFFovDeg@{getFFovDeg}}
+\index{getFFovDeg@{getFFovDeg}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{getFFovDeg()}{getFFovDeg()}}
+{\footnotesize\ttfamily int Crust\+::\+Camera\+::get\+FFov\+Deg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#field\+Of\+View\+Deg field. 
+
+\begin{DoxyReturn}{Returns}
+Value of \#field\+Of\+View\+Deg. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_camera_a309bd118e34749b413a9d6aa1b8d6e42}\label{class_crust_1_1_camera_a309bd118e34749b413a9d6aa1b8d6e42}} 
+\index{Crust::Camera@{Crust::Camera}!getFFovRad@{getFFovRad}}
+\index{getFFovRad@{getFFovRad}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{getFFovRad()}{getFFovRad()}}
+{\footnotesize\ttfamily double Crust\+::\+Camera\+::get\+FFov\+Rad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#f\+Fov\+Rad field. 
+
+\begin{DoxyReturn}{Returns}
+Value of \#f\+Fov\+Rad. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_camera_a357bd3b9084b540d17719e5e40e009c5}\label{class_crust_1_1_camera_a357bd3b9084b540d17719e5e40e009c5}} 
+\index{Crust::Camera@{Crust::Camera}!getFNear@{getFNear}}
+\index{getFNear@{getFNear}!Crust::Camera@{Crust::Camera}}
+\doxysubsubsection{\texorpdfstring{getFNear()}{getFNear()}}
+{\footnotesize\ttfamily double Crust\+::\+Camera\+::get\+FNear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#f\+Near field. 
+
+\begin{DoxyReturn}{Returns}
+Value of \#f\+Near. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/objects/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\end{DoxyCompactItemize}

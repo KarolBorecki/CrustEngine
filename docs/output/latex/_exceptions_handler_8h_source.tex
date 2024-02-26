@@ -1,0 +1,37 @@
+\hypertarget{_exceptions_handler_8h_source}{}\doxysection{Exceptions\+Handler.\+h}
+\label{_exceptions_handler_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/logging/ExceptionsHandler.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/logging/ExceptionsHandler.h}}
+\mbox{\hyperlink{_exceptions_handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_EXCEPTIONHANDLER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_EXCEPTIONHANDLER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_logger_8h}{Logger.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_exceptions_handler}{ExceptionsHandler}}}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_exceptions_handler_ae94d84379a8fd5514284bb2f585271e3}{throwError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p\_format, ...);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{30         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_exceptions_handler_a1d66007828c72e56d8bc3e2aa205f017}{throwWarning}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p\_format, ...);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_exceptions_handler_ae94d84379a8fd5514284bb2f585271e3}{ExceptionsHandler::throwError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p\_format, ...) \{}
+\DoxyCodeLine{35         va\_list args;}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_crust_1_1_logger_a448306e417ab259008d4d2ee85e624c5}{Crust::Logger::error}}(p\_format, args);}
+\DoxyCodeLine{37         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_exceptions_handler_a1d66007828c72e56d8bc3e2aa205f017}{ExceptionsHandler::throwWarning}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p\_format, ...) \{}
+\DoxyCodeLine{41         va\_list args;}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_crust_1_1_logger_ae9da193539eafa2563ee313c92f37317}{Crust::Logger::warning}}(p\_format, args);}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_EXCEPTIONHANDLER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

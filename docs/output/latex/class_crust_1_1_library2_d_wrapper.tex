@@ -1,0 +1,198 @@
+\hypertarget{class_crust_1_1_library2_d_wrapper}{}\doxysection{Crust\+::Library2\+DWrapper Class Reference}
+\label{class_crust_1_1_library2_d_wrapper}\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+
+
+A wrapper class for the 2D library.  
+
+
+
+
+{\ttfamily \#include $<$Library2\+DWrapper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a2b4e107c0bd268eb59f6d3c0620b9297}{Library2\+DWrapper}} (uint16\+\_\+t p\+\_\+width, uint16\+\_\+t p\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2\+DWrapper}} object with the specified width and height. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a2e5985a632c29503dcdee1f56b234c5b}{$\sim$\+Library2\+DWrapper}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2\+DWrapper}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a652e2628cd3d53af7fa963f3d92fdebf}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the 2D library. Should be called on the start of the wrapper. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aa859ba83476afac4eb6a7d61a3469995}{create\+Window}} (uint16\+\_\+t p\+\_\+width, uint16\+\_\+t p\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Create a window with the specified width and height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aa024ee0a0135f14fec5f7f9b07881645}{set\+Window\+Caption}} (std\+::string p\+\_\+caption)
+\begin{DoxyCompactList}\small\item\em Set the window caption. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_aeb745b8cb2f9f6d1c777a322f663a29f}{on\+Draw\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Start the drawing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a33e399599b7c1416d37262b29ef853a3}{on\+Draw\+End}} ()
+\begin{DoxyCompactList}\small\item\em End the drawing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a859627ae7c195e8f34639b571c08ccb7}{should\+Close}} ()
+\begin{DoxyCompactList}\small\item\em Check if the window should close. Typicaly should return true when user clicks the close button on the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_ae376a18584271917370fee25c5078f98}{quit}} ()
+\begin{DoxyCompactList}\small\item\em Close the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper_a00d608d0f8e943e5cb9ee5d83a701d77}{draw\+Triangle}} (float p\+\_\+x1, float p\+\_\+y1, float p\+\_\+x2, float p\+\_\+y2, float p\+\_\+x3, float p\+\_\+y3, uint8\+\_\+t p\+\_\+shade)
+\begin{DoxyCompactList}\small\item\em Draw a triangle on the window in greyscale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A wrapper class for the 2D library. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a2b4e107c0bd268eb59f6d3c0620b9297}\label{class_crust_1_1_library2_d_wrapper_a2b4e107c0bd268eb59f6d3c0620b9297}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!Library2DWrapper@{Library2DWrapper}}
+\index{Library2DWrapper@{Library2DWrapper}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{Library2DWrapper()}{Library2DWrapper()}}
+{\footnotesize\ttfamily Crust\+::\+Library2\+DWrapper\+::\+Library2\+DWrapper (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{p\+\_\+width,  }\item[{uint16\+\_\+t}]{p\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2\+DWrapper}} object with the specified width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+width} & The width of the window. \\
+\hline
+{\em p\+\_\+height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a2e5985a632c29503dcdee1f56b234c5b}\label{class_crust_1_1_library2_d_wrapper_a2e5985a632c29503dcdee1f56b234c5b}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!````~Library2DWrapper@{$\sim$Library2DWrapper}}
+\index{````~Library2DWrapper@{$\sim$Library2DWrapper}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{$\sim$Library2DWrapper()}{~Library2DWrapper()}}
+{\footnotesize\ttfamily virtual Crust\+::\+Library2\+DWrapper\+::$\sim$\+Library2\+DWrapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2\+DWrapper}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_aa859ba83476afac4eb6a7d61a3469995}\label{class_crust_1_1_library2_d_wrapper_aa859ba83476afac4eb6a7d61a3469995}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!createWindow@{createWindow}}
+\index{createWindow@{createWindow}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{createWindow()}{createWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} Crust\+::\+Library2\+DWrapper\+::create\+Window (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{p\+\_\+width,  }\item[{uint16\+\_\+t}]{p\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Create a window with the specified width and height. 
+
+Performs the creation of the window by opening OS\textquotesingle{}s new window to draw onto. It also sets the width and height of the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+width} & The width of the window. \\
+\hline
+{\em p\+\_\+height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the window creation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a00d608d0f8e943e5cb9ee5d83a701d77}\label{class_crust_1_1_library2_d_wrapper_a00d608d0f8e943e5cb9ee5d83a701d77}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!drawTriangle@{drawTriangle}}
+\index{drawTriangle@{drawTriangle}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{drawTriangle()}{drawTriangle()}}
+{\footnotesize\ttfamily void Crust\+::\+Library2\+DWrapper\+::draw\+Triangle (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+x1,  }\item[{float}]{p\+\_\+y1,  }\item[{float}]{p\+\_\+x2,  }\item[{float}]{p\+\_\+y2,  }\item[{float}]{p\+\_\+x3,  }\item[{float}]{p\+\_\+y3,  }\item[{uint8\+\_\+t}]{p\+\_\+shade }\end{DoxyParamCaption})}
+
+
+
+Draw a triangle on the window in greyscale. 
+
+Draws a pixel on the triangle at the specified position with the specified color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+x} & The x position of the triangle\textquotesingle{}s point. \\
+\hline
+{\em p\+\_\+y} & The y position of the triangle\textquotesingle{}s point. \\
+\hline
+{\em p\+\_\+shade} & The color of the pixel in greyscale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a652e2628cd3d53af7fa963f3d92fdebf}\label{class_crust_1_1_library2_d_wrapper_a652e2628cd3d53af7fa963f3d92fdebf}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!init@{init}}
+\index{init@{init}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} Crust\+::\+Library2\+DWrapper\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the 2D library. Should be called on the start of the wrapper. 
+
+Performs the initialization of the 2D library.
+
+\begin{DoxyReturn}{Returns}
+The status of the initialization. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a33e399599b7c1416d37262b29ef853a3}\label{class_crust_1_1_library2_d_wrapper_a33e399599b7c1416d37262b29ef853a3}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!onDrawEnd@{onDrawEnd}}
+\index{onDrawEnd@{onDrawEnd}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{onDrawEnd()}{onDrawEnd()}}
+{\footnotesize\ttfamily void Crust\+::\+Library2\+DWrapper\+::on\+Draw\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+End the drawing. 
+
+Ends the drawing. Should be called after each draw frame after all drawing is done. \mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_aeb745b8cb2f9f6d1c777a322f663a29f}\label{class_crust_1_1_library2_d_wrapper_aeb745b8cb2f9f6d1c777a322f663a29f}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!onDrawStart@{onDrawStart}}
+\index{onDrawStart@{onDrawStart}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{onDrawStart()}{onDrawStart()}}
+{\footnotesize\ttfamily void Crust\+::\+Library2\+DWrapper\+::on\+Draw\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the drawing. 
+
+Starts the drawing. Should be called before each draw frame before any drawing is done and after the window is created. \mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_ae376a18584271917370fee25c5078f98}\label{class_crust_1_1_library2_d_wrapper_ae376a18584271917370fee25c5078f98}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!quit@{quit}}
+\index{quit@{quit}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void Crust\+::\+Library2\+DWrapper\+::quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close the window. 
+
+Closes the window. Should be called after the drawing loop ends and we want to cleanup leftovers of the library. \mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_aa024ee0a0135f14fec5f7f9b07881645}\label{class_crust_1_1_library2_d_wrapper_aa024ee0a0135f14fec5f7f9b07881645}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!setWindowCaption@{setWindowCaption}}
+\index{setWindowCaption@{setWindowCaption}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{setWindowCaption()}{setWindowCaption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}} Crust\+::\+Library2\+DWrapper\+::set\+Window\+Caption (\begin{DoxyParamCaption}\item[{std\+::string}]{p\+\_\+caption }\end{DoxyParamCaption})}
+
+
+
+Set the window caption. 
+
+Sets the caption of the window to the specified string that will be visible in the OS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+caption} & The caption of the window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the caption setting. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_library2_d_wrapper_a859627ae7c195e8f34639b571c08ccb7}\label{class_crust_1_1_library2_d_wrapper_a859627ae7c195e8f34639b571c08ccb7}} 
+\index{Crust::Library2DWrapper@{Crust::Library2DWrapper}!shouldClose@{shouldClose}}
+\index{shouldClose@{shouldClose}!Crust::Library2DWrapper@{Crust::Library2DWrapper}}
+\doxysubsubsection{\texorpdfstring{shouldClose()}{shouldClose()}}
+{\footnotesize\ttfamily bool Crust\+::\+Library2\+DWrapper\+::should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the window should close. Typicaly should return true when user clicks the close button on the window. 
+
+Checks if the window should close. Should be called in the main loop of the application as the check for the loop.
+
+\begin{DoxyReturn}{Returns}
+The status of the window closing. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/rendering/\mbox{\hyperlink{_library2_d_wrapper_8h}{Library2\+DWrapper.\+h}}\end{DoxyCompactItemize}

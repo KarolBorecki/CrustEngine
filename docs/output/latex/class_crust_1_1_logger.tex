@@ -1,0 +1,258 @@
+\hypertarget{class_crust_1_1_logger}{}\doxysection{Crust\+::Logger Class Reference}
+\label{class_crust_1_1_logger}\index{Crust::Logger@{Crust::Logger}}
+
+
+Static class allowing to log with certain color and style on classic console with well-\/known printf() arguments.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24}{Font\+Color}} \{ \newline
+\mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a5609c9ffd6227655095da49979d6530a}{WHITE}} = 0
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a186523a148b0af8e6f44223e8ed4a621}{GREY}} = 37
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa8f29bae8724e23234126d9e73dc8cb8}{LIGHT\+\_\+\+BLUE}} = 36
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a9d5924fb5439eb33de4db53773660a5b}{PINK}} = 35
+, \newline
+\mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24ae7b8b214620f42eef85b81ac9b29e50a}{GREEN}} = 32
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa4b3f0ab6cd6698d7274ae18cb962234}{BLUE}} = 34
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a3583010ac4a41067c06735b06e4ea1dc}{RED}} = 31
+, \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a6a237f274f83f25350c09e1e944192c3}{YELLOW}} = 33
+ \}
+\begin{DoxyCompactList}\small\item\em representing console color codes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5}{Font\+Style}} \{ \mbox{\hyperlink{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5a021efc815d6da9b6108f7785ce0531be}{NORMAL}} = 0
+, \mbox{\hyperlink{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5ab8f7c1cf74e4fc28e825180d6f63d630}{BOLD}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing console font styles codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a448306e417ab259008d4d2ee85e624c5}{error}} (const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console in red color. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_ae9da193539eafa2563ee313c92f37317}{warning}} (const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console in yellow color. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a97fb232241dad146c5581564447fec86}{info}} (const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console in blue color. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a6ea9f24b3ccf4f84af673c0f6cb082df}{log}} ()
+\begin{DoxyCompactList}\small\item\em Prints empty line onto the console. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a607b2a3d57bbad20cd450f0cf9aa4c8d}{log}} (const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console with standard printf-\/like interface. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_aa7231ec10b639e191e57a385e7af9901}{log}} (int p\+\_\+color\+\_\+code, const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console in specified color\+Code color. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a4efaea5b99b4d3691649dd7dfa2dbd06}{log\+Inline}} (const char $\ast$p\+\_\+format,...)
+\begin{DoxyCompactList}\small\item\em Logs onto the console. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T , int H, int W$>$ }\\static void \mbox{\hyperlink{class_crust_1_1_logger_a001b5178d48140f3183d35a89c6cfbb2}{log}} (const char $\ast$p\+\_\+info, const \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ T, H, W $>$ \&p\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em Logs matrix onto the console. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_crust_1_1_logger_a2a61c0cd741f5af31a7ea69bf8afdcb9}{log}} (const char $\ast$p\+\_\+info, const \mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}$<$ T $>$ \&p\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Logs 3 dimensional vector onto the console. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_crust_1_1_logger_a4f39f1af67a1559fbcc509c7747ca8e6}{log}} (const char $\ast$p\+\_\+info, const \mbox{\hyperlink{class_crust_1_1_vector4}{Vector4}}$<$ T $>$ \&p\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Logs 4 dimensional vector onto the console. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_a91bf31a52746020f85e830cbfa23cfff}{set\+Font}} (int p\+\_\+color\+\_\+code, int p\+\_\+style\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Sets console color to color\+Code and console font style to style\+Code;. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_crust_1_1_logger_ab8333ea3d528ce8ccd3d91897adc0b04}{set\+Font}} (int p\+\_\+color\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Sets console color to color\+Code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static class allowing to log with certain color and style on classic console with well-\/known printf() arguments. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24}} 
+\index{Crust::Logger@{Crust::Logger}!FontColor@{FontColor}}
+\index{FontColor@{FontColor}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{FontColor}{FontColor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24}{Crust\+::\+Logger\+::\+Font\+Color}}}
+
+
+
+representing console color codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!WHITE@{WHITE}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a5609c9ffd6227655095da49979d6530a}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a5609c9ffd6227655095da49979d6530a}} 
+WHITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREY@{GREY}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!GREY@{GREY}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a186523a148b0af8e6f44223e8ed4a621}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a186523a148b0af8e6f44223e8ed4a621}} 
+GREY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIGHT\_BLUE@{LIGHT\_BLUE}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!LIGHT\_BLUE@{LIGHT\_BLUE}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa8f29bae8724e23234126d9e73dc8cb8}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa8f29bae8724e23234126d9e73dc8cb8}} 
+LIGHT\+\_\+\+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PINK@{PINK}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!PINK@{PINK}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a9d5924fb5439eb33de4db53773660a5b}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a9d5924fb5439eb33de4db53773660a5b}} 
+PINK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!GREEN@{GREEN}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24ae7b8b214620f42eef85b81ac9b29e50a}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24ae7b8b214620f42eef85b81ac9b29e50a}} 
+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!BLUE@{BLUE}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa4b3f0ab6cd6698d7274ae18cb962234}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24aa4b3f0ab6cd6698d7274ae18cb962234}} 
+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!RED@{RED}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a3583010ac4a41067c06735b06e4ea1dc}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a3583010ac4a41067c06735b06e4ea1dc}} 
+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOW@{YELLOW}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!YELLOW@{YELLOW}}}\mbox{\Hypertarget{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a6a237f274f83f25350c09e1e944192c3}\label{class_crust_1_1_logger_a89a4891527368d100d992e40e5da5c24a6a237f274f83f25350c09e1e944192c3}} 
+YELLOW&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5}\label{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5}} 
+\index{Crust::Logger@{Crust::Logger}!FontStyle@{FontStyle}}
+\index{FontStyle@{FontStyle}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{FontStyle}{FontStyle}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5}{Crust\+::\+Logger\+::\+Font\+Style}}}
+
+
+
+Enumeration representing console font styles codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL@{NORMAL}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!NORMAL@{NORMAL}}}\mbox{\Hypertarget{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5a021efc815d6da9b6108f7785ce0531be}\label{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5a021efc815d6da9b6108f7785ce0531be}} 
+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOLD@{BOLD}!Crust::Logger@{Crust::Logger}}\index{Crust::Logger@{Crust::Logger}!BOLD@{BOLD}}}\mbox{\Hypertarget{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5ab8f7c1cf74e4fc28e825180d6f63d630}\label{class_crust_1_1_logger_a2edf0d781300084b8a59131b5a8d80e5ab8f7c1cf74e4fc28e825180d6f63d630}} 
+BOLD&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_logger_a448306e417ab259008d4d2ee85e624c5}\label{class_crust_1_1_logger_a448306e417ab259008d4d2ee85e624c5}} 
+\index{Crust::Logger@{Crust::Logger}!error@{error}}
+\index{error@{error}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console in red color. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a97fb232241dad146c5581564447fec86}\label{class_crust_1_1_logger_a97fb232241dad146c5581564447fec86}} 
+\index{Crust::Logger@{Crust::Logger}!info@{info}}
+\index{info@{info}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console in blue color. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a6ea9f24b3ccf4f84af673c0f6cb082df}\label{class_crust_1_1_logger_a6ea9f24b3ccf4f84af673c0f6cb082df}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints empty line onto the console. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a607b2a3d57bbad20cd450f0cf9aa4c8d}\label{class_crust_1_1_logger_a607b2a3d57bbad20cd450f0cf9aa4c8d}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console with standard printf-\/like interface. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a001b5178d48140f3183d35a89c6cfbb2}\label{class_crust_1_1_logger_a001b5178d48140f3183d35a89c6cfbb2}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename T , int H, int W$>$ \\
+void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+info,  }\item[{const \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ T, H, W $>$ \&}]{p\+\_\+matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs matrix onto the console. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a2a61c0cd741f5af31a7ea69bf8afdcb9}\label{class_crust_1_1_logger_a2a61c0cd741f5af31a7ea69bf8afdcb9}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+info,  }\item[{const \mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}$<$ T $>$ \&}]{p\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs 3 dimensional vector onto the console. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a4f39f1af67a1559fbcc509c7747ca8e6}\label{class_crust_1_1_logger_a4f39f1af67a1559fbcc509c7747ca8e6}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+info,  }\item[{const \mbox{\hyperlink{class_crust_1_1_vector4}{Vector4}}$<$ T $>$ \&}]{p\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs 4 dimensional vector onto the console. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_aa7231ec10b639e191e57a385e7af9901}\label{class_crust_1_1_logger_aa7231ec10b639e191e57a385e7af9901}} 
+\index{Crust::Logger@{Crust::Logger}!log@{log}}
+\index{log@{log}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::log (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+color\+\_\+code,  }\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console in specified color\+Code color. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a4efaea5b99b4d3691649dd7dfa2dbd06}\label{class_crust_1_1_logger_a4efaea5b99b4d3691649dd7dfa2dbd06}} 
+\index{Crust::Logger@{Crust::Logger}!logInline@{logInline}}
+\index{logInline@{logInline}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{logInline()}{logInline()}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::log\+Inline (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_ab8333ea3d528ce8ccd3d91897adc0b04}\label{class_crust_1_1_logger_ab8333ea3d528ce8ccd3d91897adc0b04}} 
+\index{Crust::Logger@{Crust::Logger}!setFont@{setFont}}
+\index{setFont@{setFont}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::set\+Font (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+color\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets console color to color\+Code. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_a91bf31a52746020f85e830cbfa23cfff}\label{class_crust_1_1_logger_a91bf31a52746020f85e830cbfa23cfff}} 
+\index{Crust::Logger@{Crust::Logger}!setFont@{setFont}}
+\index{setFont@{setFont}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::set\+Font (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+color\+\_\+code,  }\item[{int}]{p\+\_\+style\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets console color to color\+Code and console font style to style\+Code;. 
+
+\mbox{\Hypertarget{class_crust_1_1_logger_ae9da193539eafa2563ee313c92f37317}\label{class_crust_1_1_logger_ae9da193539eafa2563ee313c92f37317}} 
+\index{Crust::Logger@{Crust::Logger}!warning@{warning}}
+\index{warning@{warning}!Crust::Logger@{Crust::Logger}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily void Crust\+::\+Logger\+::warning (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Logs onto the console in yellow color. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/logging/\mbox{\hyperlink{_logger_8h}{Logger.\+h}}\end{DoxyCompactItemize}

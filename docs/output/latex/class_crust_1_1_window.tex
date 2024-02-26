@@ -1,0 +1,120 @@
+\hypertarget{class_crust_1_1_window}{}\doxysection{Crust\+::Window Class Reference}
+\label{class_crust_1_1_window}\index{Crust::Window@{Crust::Window}}
+
+
+\mbox{\hyperlink{class_crust_1_1_window}{Window}} class is responsible for creating and managing the engine\textquotesingle{}s window.  
+
+
+
+
+{\ttfamily \#include $<$Window.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_window_ab23ebad7af573a9999699837482aa802}{Window}} (uint16\+\_\+t p\+\_\+width, uint16\+\_\+t p\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_window}{Window}} object with specified width and height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_window_ab1c4d36b318c93b857b3b87eefb557a5}{$\sim$\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_crust_1_1_window}{Window}} object. It also unloads the scene from the window. It will not delete the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} \mbox{\hyperlink{class_crust_1_1_window_aca95f2c0b2ce1228c0e243708054849e}{load\+Scene}} (\mbox{\hyperlink{class_crust_1_1_scene}{Scene}} \&p\+\_\+scene)
+\begin{DoxyCompactList}\small\item\em Loads the scene into the window. This scene will be rendered on the window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} \mbox{\hyperlink{class_crust_1_1_window_accac9e9a4478c01c7344cee2ce210c64}{un\+Load\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Unloads the scene from the window. Remember that this method doesn\textquotesingle{}t delete the scene and scene\textquotesingle{}s start method will not be called ever again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_window_abb8869036b5578f28d5d8f2e2fef3ed7}{open}} ()
+\begin{DoxyCompactList}\small\item\em Opens the window. It also starts the rendering loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_window_a9f335f8f8edd0516db5709aeb8116786}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the window. It also stops the rendering loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_crust_1_1_window}{Window}} class is responsible for creating and managing the engine\textquotesingle{}s window. 
+
+It also manages the scene that is being rendered on the window. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_window_ab23ebad7af573a9999699837482aa802}\label{class_crust_1_1_window_ab23ebad7af573a9999699837482aa802}} 
+\index{Crust::Window@{Crust::Window}!Window@{Window}}
+\index{Window@{Window}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Crust\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{p\+\_\+width,  }\item[{uint16\+\_\+t}]{p\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_window}{Window}} object with specified width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+width} & The width of the window. \\
+\hline
+{\em p\+\_\+height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_window_ab1c4d36b318c93b857b3b87eefb557a5}\label{class_crust_1_1_window_ab1c4d36b318c93b857b3b87eefb557a5}} 
+\index{Crust::Window@{Crust::Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{$\sim$Window()}{~Window()}}
+{\footnotesize\ttfamily Crust\+::\+Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{class_crust_1_1_window}{Window}} object. It also unloads the scene from the window. It will not delete the scene. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_window_a9f335f8f8edd0516db5709aeb8116786}\label{class_crust_1_1_window_a9f335f8f8edd0516db5709aeb8116786}} 
+\index{Crust::Window@{Crust::Window}!close@{close}}
+\index{close@{close}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Crust\+::\+Window\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the window. It also stops the rendering loop. 
+
+\mbox{\Hypertarget{class_crust_1_1_window_aca95f2c0b2ce1228c0e243708054849e}\label{class_crust_1_1_window_aca95f2c0b2ce1228c0e243708054849e}} 
+\index{Crust::Window@{Crust::Window}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} Crust\+::\+Window\+::load\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_crust_1_1_scene}{Scene}} \&}]{p\+\_\+scene }\end{DoxyParamCaption})}
+
+
+
+Loads the scene into the window. This scene will be rendered on the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+scene} & \mbox{\hyperlink{class_crust_1_1_scene}{Scene}} to be loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7}{Status\+::\+OK}} if scene was loaded successfully, \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8}{Status\+::\+ERROR}} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_window_abb8869036b5578f28d5d8f2e2fef3ed7}\label{class_crust_1_1_window_abb8869036b5578f28d5d8f2e2fef3ed7}} 
+\index{Crust::Window@{Crust::Window}!open@{open}}
+\index{open@{open}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Crust\+::\+Window\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Opens the window. It also starts the rendering loop. 
+
+\mbox{\Hypertarget{class_crust_1_1_window_accac9e9a4478c01c7344cee2ce210c64}\label{class_crust_1_1_window_accac9e9a4478c01c7344cee2ce210c64}} 
+\index{Crust::Window@{Crust::Window}!unLoadScene@{unLoadScene}}
+\index{unLoadScene@{unLoadScene}!Crust::Window@{Crust::Window}}
+\doxysubsubsection{\texorpdfstring{unLoadScene()}{unLoadScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} Crust\+::\+Window\+::un\+Load\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unloads the scene from the window. Remember that this method doesn\textquotesingle{}t delete the scene and scene\textquotesingle{}s start method will not be called ever again. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7}{Status\+::\+OK}} if scene was unloaded successfully, \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8}{Status\+::\+ERROR}} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/core/\mbox{\hyperlink{_window_8h}{Window.\+h}}\end{DoxyCompactItemize}

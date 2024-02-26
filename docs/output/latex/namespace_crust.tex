@@ -1,0 +1,196 @@
+\hypertarget{namespace_crust}{}\doxysection{Crust Namespace Reference}
+\label{namespace_crust}\index{Crust@{Crust}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_crust_1_1_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em Class representing the camera on a scene from which\textquotesingle{}s perespective the renderer can render \mbox{\hyperlink{class_crust_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_core}{Core}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_crust_1_1_core}{Core}} of the engine. It manages all of the windows and their events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_exceptions_handler}{Exceptions\+Handler}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_crust}{Crust}} engine exception\textquotesingle{}s wrapper. This static class allows us to throw errors and warnings at anytime. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_library2_d_wrapper}{Library2\+DWrapper}}
+\begin{DoxyCompactList}\small\item\em A wrapper class for the 2D library. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}}
+\begin{DoxyCompactList}\small\item\em A light source base class. Based on this class no calculation will be done. Please use derived classes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_logger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Static class allowing to log with certain color and style on classic console with well-\/known printf() arguments. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_math}{Math}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_crust_1_1_math}{Math}} operations wrapper/implementation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}
+\begin{DoxyCompactList}\small\item\em Represents the mathematical matrix and is able to preform matrix calculations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_mesh}{Mesh}}
+\begin{DoxyCompactList}\small\item\em Represents 3D model as mesh consisted of 3D polygons. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_mesh_loader}{Mesh\+Loader}}
+\item 
+class \mbox{\hyperlink{class_crust_1_1_object}{Object}}
+\begin{DoxyCompactList}\small\item\em The base class for all objects in the engine. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_polygon}{Polygon}}
+\begin{DoxyCompactList}\small\item\em A polygon with a variable number of vertices. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_projector}{Projector}}
+\begin{DoxyCompactList}\small\item\em A projector class. Based on this class projection calculation will be done. It wrapps mathematical model of the engine. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_renderer}{Renderer}}
+\begin{DoxyCompactList}\small\item\em The renderer class. It is responsible for rendering the scene and managing the objects on the scene. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_render_object}{Render\+Object}}
+\begin{DoxyCompactList}\small\item\em A renderable object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_scene}{Scene}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_crust_1_1_scene}{Scene}} class. It\textquotesingle{}s a container for all objects rendered onto the window. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_script}{Script}}
+\item 
+class \mbox{\hyperlink{class_crust_1_1_time_provider}{Time\+Provider}}
+\begin{DoxyCompactList}\small\item\em Class providing timing data in the engine. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_transform}{Transform}}
+\item 
+class \mbox{\hyperlink{class_crust_1_1_triangle}{Triangle}}
+\begin{DoxyCompactList}\small\item\em A triangle. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}
+\begin{DoxyCompactList}\small\item\em A 3D vector. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_vector4}{Vector4}}
+\begin{DoxyCompactList}\small\item\em A 4D vector. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_crust_1_1_window}{Window}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_crust_1_1_window}{Window}} class is responsible for creating and managing the engine\textquotesingle{}s window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ float, 4, 4 $>$ \mbox{\hyperlink{namespace_crust_a9b86ff296a0be4f6a68afbec7076258a}{Matrix4x4f}}
+\item 
+typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ float, 3, 3 $>$ \mbox{\hyperlink{namespace_crust_abc4bc4d56ed3ab5cae8baa29e7f2486b}{Matrix3x3f}}
+\item 
+typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ double, 4, 4 $>$ \mbox{\hyperlink{namespace_crust_af84ca3d1ce71345c93520c68ff96d601}{Matrix4x4d}}
+\item 
+typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$ double, 3, 3 $>$ \mbox{\hyperlink{namespace_crust_a16d1c114ca1454df04583342832f4365}{Matrix3x3d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} \{ \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7}{OK}} = 0
+, \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8}{ERROR}} = 99
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfee}{Light\+Type}} \{ \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a}{DIRECTIONAL}} = 0
+, \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaf39d5f15b7b016a9d06a5d0c08c9a717}{POINT}} = 1
+, \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaeb63728bf03bf79d8d1b4e6ba8780856}{SPOT}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdb}{Light\+Intensity}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbae179f5ab4b531e5c863ae6bf1406e456}{INTENSIVITY\+\_\+\+DARK}} = 0
+, \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbafa148be8788dcc7b5f6cfa9da5c91a77}{INTENSIVITY\+\_\+\+LOW}} = 64
+, \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba5db0986f8911b9ecc89972555c2cf505}{INTENSIVITY\+\_\+\+MEDIUM}} = 128
+, \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825}{INTENSIVITY\+\_\+\+BRIGHT}} = 192
+, \newline
+\mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba95c1c77bf08e75c20b685a9e10e21544}{INTENSIVITY\+\_\+\+HIGH}} = 232
+, \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba111d3db52c26ea55820a0a0577e00cd5}{INTENSIVITY\+\_\+\+MAX}} = 255
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{namespace_crust_a73723b1f658b85911d53d0aea566fc99}{DEFAULT\+\_\+\+MESH\+\_\+\+NAME}} = \char`\"{}NO NAME\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_crust_a16d1c114ca1454df04583342832f4365}\label{namespace_crust_a16d1c114ca1454df04583342832f4365}} 
+\index{Crust@{Crust}!Matrix3x3d@{Matrix3x3d}}
+\index{Matrix3x3d@{Matrix3x3d}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{Matrix3x3d}{Matrix3x3d}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$double, 3, 3$>$ \mbox{\hyperlink{namespace_crust_a16d1c114ca1454df04583342832f4365}{Crust\+::\+Matrix3x3d}}}
+
+\mbox{\Hypertarget{namespace_crust_abc4bc4d56ed3ab5cae8baa29e7f2486b}\label{namespace_crust_abc4bc4d56ed3ab5cae8baa29e7f2486b}} 
+\index{Crust@{Crust}!Matrix3x3f@{Matrix3x3f}}
+\index{Matrix3x3f@{Matrix3x3f}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{Matrix3x3f}{Matrix3x3f}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$float, 3, 3$>$ \mbox{\hyperlink{namespace_crust_abc4bc4d56ed3ab5cae8baa29e7f2486b}{Crust\+::\+Matrix3x3f}}}
+
+\mbox{\Hypertarget{namespace_crust_af84ca3d1ce71345c93520c68ff96d601}\label{namespace_crust_af84ca3d1ce71345c93520c68ff96d601}} 
+\index{Crust@{Crust}!Matrix4x4d@{Matrix4x4d}}
+\index{Matrix4x4d@{Matrix4x4d}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{Matrix4x4d}{Matrix4x4d}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$double, 4, 4$>$ \mbox{\hyperlink{namespace_crust_af84ca3d1ce71345c93520c68ff96d601}{Crust\+::\+Matrix4x4d}}}
+
+\mbox{\Hypertarget{namespace_crust_a9b86ff296a0be4f6a68afbec7076258a}\label{namespace_crust_a9b86ff296a0be4f6a68afbec7076258a}} 
+\index{Crust@{Crust}!Matrix4x4f@{Matrix4x4f}}
+\index{Matrix4x4f@{Matrix4x4f}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{Matrix4x4f}{Matrix4x4f}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}$<$float, 4, 4$>$ \mbox{\hyperlink{namespace_crust_a9b86ff296a0be4f6a68afbec7076258a}{Crust\+::\+Matrix4x4f}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdb}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdb}} 
+\index{Crust@{Crust}!LightIntensity@{LightIntensity}}
+\index{LightIntensity@{LightIntensity}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{LightIntensity}{LightIntensity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdb}{Crust\+::\+Light\+Intensity}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_DARK@{INTENSIVITY\_DARK}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_DARK@{INTENSIVITY\_DARK}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbae179f5ab4b531e5c863ae6bf1406e456}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbae179f5ab4b531e5c863ae6bf1406e456}} 
+INTENSIVITY\+\_\+\+DARK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_LOW@{INTENSIVITY\_LOW}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_LOW@{INTENSIVITY\_LOW}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbafa148be8788dcc7b5f6cfa9da5c91a77}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbafa148be8788dcc7b5f6cfa9da5c91a77}} 
+INTENSIVITY\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_MEDIUM@{INTENSIVITY\_MEDIUM}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_MEDIUM@{INTENSIVITY\_MEDIUM}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba5db0986f8911b9ecc89972555c2cf505}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba5db0986f8911b9ecc89972555c2cf505}} 
+INTENSIVITY\+\_\+\+MEDIUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_BRIGHT@{INTENSIVITY\_BRIGHT}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_BRIGHT@{INTENSIVITY\_BRIGHT}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825}} 
+INTENSIVITY\+\_\+\+BRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_HIGH@{INTENSIVITY\_HIGH}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_HIGH@{INTENSIVITY\_HIGH}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba95c1c77bf08e75c20b685a9e10e21544}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba95c1c77bf08e75c20b685a9e10e21544}} 
+INTENSIVITY\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTENSIVITY\_MAX@{INTENSIVITY\_MAX}!Crust@{Crust}}\index{Crust@{Crust}!INTENSIVITY\_MAX@{INTENSIVITY\_MAX}}}\mbox{\Hypertarget{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba111d3db52c26ea55820a0a0577e00cd5}\label{namespace_crust_ad3ae41ebd15bd848899c417f23caebdba111d3db52c26ea55820a0a0577e00cd5}} 
+INTENSIVITY\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_crust_a7f44ad3bd117f6f05649d4068463cfee}\label{namespace_crust_a7f44ad3bd117f6f05649d4068463cfee}} 
+\index{Crust@{Crust}!LightType@{LightType}}
+\index{LightType@{LightType}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{LightType}{LightType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfee}{Crust\+::\+Light\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIRECTIONAL@{DIRECTIONAL}!Crust@{Crust}}\index{Crust@{Crust}!DIRECTIONAL@{DIRECTIONAL}}}\mbox{\Hypertarget{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a}\label{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a}} 
+DIRECTIONAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POINT@{POINT}!Crust@{Crust}}\index{Crust@{Crust}!POINT@{POINT}}}\mbox{\Hypertarget{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaf39d5f15b7b016a9d06a5d0c08c9a717}\label{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaf39d5f15b7b016a9d06a5d0c08c9a717}} 
+POINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPOT@{SPOT}!Crust@{Crust}}\index{Crust@{Crust}!SPOT@{SPOT}}}\mbox{\Hypertarget{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaeb63728bf03bf79d8d1b4e6ba8780856}\label{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaeb63728bf03bf79d8d1b4e6ba8780856}} 
+SPOT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}\label{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}} 
+\index{Crust@{Crust}!Status@{Status}}
+\index{Status@{Status}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Crust\+::\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!Crust@{Crust}}\index{Crust@{Crust}!OK@{OK}}}\mbox{\Hypertarget{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7}\label{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7}} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Crust@{Crust}}\index{Crust@{Crust}!ERROR@{ERROR}}}\mbox{\Hypertarget{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8}\label{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8}} 
+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_crust_a73723b1f658b85911d53d0aea566fc99}\label{namespace_crust_a73723b1f658b85911d53d0aea566fc99}} 
+\index{Crust@{Crust}!DEFAULT\_MESH\_NAME@{DEFAULT\_MESH\_NAME}}
+\index{DEFAULT\_MESH\_NAME@{DEFAULT\_MESH\_NAME}!Crust@{Crust}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_MESH\_NAME}{DEFAULT\_MESH\_NAME}}
+{\footnotesize\ttfamily const char$\ast$ Crust\+::\+DEFAULT\+\_\+\+MESH\+\_\+\+NAME = \char`\"{}NO NAME\char`\"{}}
+

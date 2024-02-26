@@ -1,0 +1,36 @@
+\hypertarget{_camera_8h_source}{}\doxysection{Camera.\+h}
+\label{_camera_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/objects/Camera.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/objects/Camera.h}}
+\mbox{\hyperlink{_camera_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_CAMERA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_CAMERA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_camera}{Camera}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_crust_1_1_object}{Object}} \{}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_crust_1_1_camera_aada5db6a7d09d6afee0e8ce4ebdc48a7}{Camera}}(\textcolor{keywordtype}{int} p\_f\_fov\_deg, \textcolor{keywordtype}{double} p\_f\_near, \textcolor{keywordtype}{double} p\_f\_far);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_crust_1_1_camera_a23a547cc87e514b3708e6cda5307015c}{\string~Camera}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_crust_1_1_camera_a73ef397261ae888416762ba80fc269dc}{getFFovDeg}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_camera_a357bd3b9084b540d17719e5e40e009c5}{getFNear}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_camera_acf9b7a371bd016a910e8acb3dffa0784}{getFFar}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_camera_a309bd118e34749b413a9d6aa1b8d6e42}{getFFovRad}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{private}:}
+\DoxyCodeLine{52         \textcolor{keywordtype}{int} m\_f\_fov\_deg \{ 0 \};      }
+\DoxyCodeLine{53         \textcolor{keywordtype}{double} m\_fNear \{ 0.0 \};   }
+\DoxyCodeLine{54         \textcolor{keywordtype}{double} m\_f\_far \{ 0.0 \};    }
+\DoxyCodeLine{55         \textcolor{keywordtype}{double} m\_f\_fov\_rad \{ 0.0 \}; }
+\DoxyCodeLine{56     \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_CAMERA\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

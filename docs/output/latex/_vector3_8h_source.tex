@@ -1,0 +1,30 @@
+\hypertarget{_vector3_8h_source}{}\doxysection{Vector3.\+h}
+\label{_vector3_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/Vector3.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/Vector3.h}}
+\mbox{\hyperlink{_vector3_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_VECTOR3\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_VECTOR3\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{10     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T = \textcolor{keywordtype}{float}>}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}} : \textcolor{keyword}{public} Eigen::Vector3<T> \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_crust_1_1_vector3_ab81870e47855302be7ee1afef5bffc4e}{Vector3}}() : Eigen::\mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}<T>() \{\};}
+\DoxyCodeLine{22         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_crust_1_1_vector3_ae66034e36d99ceeb9b20f28c6a59b386}{Vector3}}(T p\_val) : Eigen::\mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}<T>(p\_val, p\_val, p\_val) \{\};}
+\DoxyCodeLine{30         \mbox{\hyperlink{class_crust_1_1_vector3_a9bda82e63fc9064bf5576f9403ab851e}{Vector3}}(T p\_x, T p\_y, T p\_z) : Eigen::\mbox{\hyperlink{class_crust_1_1_vector3}{Vector3}}<T>(p\_x, p\_y, p\_z) \{\};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{template}<\textcolor{keyword}{typename} D>}
+\DoxyCodeLine{33         \mbox{\hyperlink{class_crust_1_1_vector3}{Vector3<T>}}\& \mbox{\hyperlink{class_crust_1_1_vector3_a44c7ad9930c51f3c1ad618b6931a9152}{operator=}}(\textcolor{keyword}{const} Eigen::MatrixBase<D>\& other)}
+\DoxyCodeLine{34         \{}
+\DoxyCodeLine{35             this-\/>Eigen::Vector3<T>::operator=(other);}
+\DoxyCodeLine{36             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_VECTOR3\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

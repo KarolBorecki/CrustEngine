@@ -1,0 +1,76 @@
+\hypertarget{_time_provider_8h_source}{}\doxysection{Time\+Provider.\+h}
+\label{_time_provider_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/utils/TimeProvider.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/utils/TimeProvider.h}}
+\mbox{\hyperlink{_time_provider_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_TIMEPROVIDER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_TIMEPROVIDER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_time_provider}{TimeProvider}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_crust_1_1_time_provider_a337775ed91781884bc170a6c9b4fae3f}{TimeProvider}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{14         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_crust_1_1_time_provider_a2ba36aed84b02dddc6de116661311556}{\string~TimeProvider}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a7bd079284fc824dbd96c6d863197566c}{getTime\_ms}}();}
+\DoxyCodeLine{23         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_ab006c8030ac9fe2c39992dfd3207d17e}{getTime\_s}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a8ca1104d90046e77890ed11f50c04043}{onFrameStart}}();}
+\DoxyCodeLine{36         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a2c01815e6775a433f03b7d7468b65bf3}{onFrameEnd}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_acbfce7e0201f448541fbaee3dab87f7b}{getFPS}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{47         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a7c342a0744278ed942f51ade4b8889b6}{getAverageFPS}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_ac493d5950799c504f54654eed92ed0fc}{getDeltaTime\_s}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{56         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a994e6507faa36fce39aeb1037e88716f}{getDeltaTime\_ms}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_affd51821a53f5e201ff3d98051f35d8a}{getAverageFrameTime\_s}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{71         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a5047b56dcfca4d5a48736a3b42e6ffe3}{onEngineStart}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_aedd461d9c8808da738ab287345756eb7}{MILISECONDS\_TO\_SECONDS}}\{0.001\};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keyword}{private}:}
+\DoxyCodeLine{76         \textcolor{keywordtype}{double} m\_frame\_delta\_time\_ms \{ 0.0 \}; }
+\DoxyCodeLine{77         uint32\_t m\_frames\_passed \{ 0 \};      }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         std::chrono::steady\_clock::time\_point m\_last\_frame\_start\_time\_point;            }
+\DoxyCodeLine{80         \textcolor{keyword}{static} \textcolor{keyword}{inline} std::chrono::steady\_clock::time\_point m\_engine\_start\_time\_point; }
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a7bd079284fc824dbd96c6d863197566c}{TimeProvider::getTime\_ms}}()}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         \textcolor{keywordflow}{return} std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::steady\_clock::now() -\/ m\_engine\_start\_time\_point).count();}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_ab006c8030ac9fe2c39992dfd3207d17e}{TimeProvider::getTime\_s}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_crust_1_1_time_provider_a7bd079284fc824dbd96c6d863197566c}{getTime\_ms}}() * \mbox{\hyperlink{class_crust_1_1_time_provider_aedd461d9c8808da738ab287345756eb7}{MILISECONDS\_TO\_SECONDS}}; \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a8ca1104d90046e77890ed11f50c04043}{TimeProvider::onFrameStart}}()}
+\DoxyCodeLine{91     \{}
+\DoxyCodeLine{92         m\_last\_frame\_start\_time\_point = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a2c01815e6775a433f03b7d7468b65bf3}{TimeProvider::onFrameEnd}}()}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         m\_frame\_delta\_time\_ms = std::chrono::duration\_cast<std::chrono::milliseconds>(std::chrono::steady\_clock::now() -\/ m\_last\_frame\_start\_time\_point).count();}
+\DoxyCodeLine{98         m\_frames\_passed++;}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_acbfce7e0201f448541fbaee3dab87f7b}{TimeProvider::getFPS}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 1 / \mbox{\hyperlink{class_crust_1_1_time_provider_ac493d5950799c504f54654eed92ed0fc}{getDeltaTime\_s}}(); \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a7c342a0744278ed942f51ade4b8889b6}{TimeProvider::getAverageFPS}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 1 / \mbox{\hyperlink{class_crust_1_1_time_provider_affd51821a53f5e201ff3d98051f35d8a}{getAverageFrameTime\_s}}(); \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_ac493d5950799c504f54654eed92ed0fc}{TimeProvider::getDeltaTime\_s}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_crust_1_1_time_provider_a994e6507faa36fce39aeb1037e88716f}{getDeltaTime\_ms}}() * \mbox{\hyperlink{class_crust_1_1_time_provider_aedd461d9c8808da738ab287345756eb7}{MILISECONDS\_TO\_SECONDS}}; \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_a994e6507faa36fce39aeb1037e88716f}{TimeProvider::getDeltaTime\_ms}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_frame\_delta\_time\_ms; \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keyword}{inline} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_crust_1_1_time_provider_affd51821a53f5e201ff3d98051f35d8a}{TimeProvider::getAverageFrameTime\_s}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_crust_1_1_time_provider_ab006c8030ac9fe2c39992dfd3207d17e}{getTime\_s}}() / m\_frames\_passed; \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_time_provider_a5047b56dcfca4d5a48736a3b42e6ffe3}{TimeProvider::onEngineStart}}() \{ m\_engine\_start\_time\_point = std::chrono::steady\_clock::now(); \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_TIMEPROVIDER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,141 @@
+\hypertarget{class_crust_1_1_light_source}{}\doxysection{Crust\+::Light\+Source Class Reference}
+\label{class_crust_1_1_light_source}\index{Crust::LightSource@{Crust::LightSource}}
+
+
+A light source base class. Based on this class no calculation will be done. Please use derived classes.  
+
+
+
+
+{\ttfamily \#include $<$Light\+Source.\+h$>$}
+
+Inheritance diagram for Crust\+::Light\+Source\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crust_1_1_light_source}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_light_source_aef4d236ed660c94d4a8c3c49995d4858}{Light\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object with default type set to \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a}{DIRECTIONAL}} and intensity set to \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825}{INTENSIVITY\+\_\+\+BRIGHT}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_light_source_a505c4313a6b59468a546e9b55f241330}{Light\+Source}} (uint8\+\_\+t p\+\_\+type, uint8\+\_\+t p\+\_\+intensity)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object with intensity set to \#p\+\_\+intensity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_crust_1_1_light_source_a5274105e379dc7fd5d6995213b6289e8}{$\sim$\+Light\+Source}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_light_source_a7ca821fa9a3572f9b7d8bcf8981b0a03}{set\+Type}} (uint8\+\_\+t p\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Set the type of the light source. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_crust_1_1_light_source_a94b8f272fb6551287c719723035aeab9}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Get the type of the light source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_light_source_a9d78831b462e2fdd053428ef655702ea}{set\+Intensity}} (uint8\+\_\+t p\+\_\+intensity)
+\begin{DoxyCompactList}\small\item\em Set the intensity of the light source. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_crust_1_1_light_source_a48550f391cb155ee40e74258b3954bad}{get\+Intensity}} () const
+\begin{DoxyCompactList}\small\item\em Get the intensity of the light source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A light source base class. Based on this class no calculation will be done. Please use derived classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_light_source_aef4d236ed660c94d4a8c3c49995d4858}\label{class_crust_1_1_light_source_aef4d236ed660c94d4a8c3c49995d4858}} 
+\index{Crust::LightSource@{Crust::LightSource}!LightSource@{LightSource}}
+\index{LightSource@{LightSource}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{LightSource()}{LightSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Crust\+::\+Light\+Source\+::\+Light\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object with default type set to \mbox{\hyperlink{namespace_crust_a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a}{DIRECTIONAL}} and intensity set to \mbox{\hyperlink{namespace_crust_ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825}{INTENSIVITY\+\_\+\+BRIGHT}}. 
+
+\mbox{\Hypertarget{class_crust_1_1_light_source_a505c4313a6b59468a546e9b55f241330}\label{class_crust_1_1_light_source_a505c4313a6b59468a546e9b55f241330}} 
+\index{Crust::LightSource@{Crust::LightSource}!LightSource@{LightSource}}
+\index{LightSource@{LightSource}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{LightSource()}{LightSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Crust\+::\+Light\+Source\+::\+Light\+Source (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{p\+\_\+type,  }\item[{uint8\+\_\+t}]{p\+\_\+intensity }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object with intensity set to \#p\+\_\+intensity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+type} & Type of the light source. \\
+\hline
+{\em p\+\_\+intensity} & Intensity of the light source. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_light_source_a5274105e379dc7fd5d6995213b6289e8}\label{class_crust_1_1_light_source_a5274105e379dc7fd5d6995213b6289e8}} 
+\index{Crust::LightSource@{Crust::LightSource}!````~LightSource@{$\sim$LightSource}}
+\index{````~LightSource@{$\sim$LightSource}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{$\sim$LightSource()}{~LightSource()}}
+{\footnotesize\ttfamily virtual Crust\+::\+Light\+Source\+::$\sim$\+Light\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{class_crust_1_1_light_source}{Light\+Source}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_light_source_a48550f391cb155ee40e74258b3954bad}\label{class_crust_1_1_light_source_a48550f391cb155ee40e74258b3954bad}} 
+\index{Crust::LightSource@{Crust::LightSource}!getIntensity@{getIntensity}}
+\index{getIntensity@{getIntensity}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{getIntensity()}{getIntensity()}}
+{\footnotesize\ttfamily uint8\+\_\+t Crust\+::\+Light\+Source\+::get\+Intensity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the intensity of the light source. 
+
+\begin{DoxyReturn}{Returns}
+Intensity of the light source. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_light_source_a94b8f272fb6551287c719723035aeab9}\label{class_crust_1_1_light_source_a94b8f272fb6551287c719723035aeab9}} 
+\index{Crust::LightSource@{Crust::LightSource}!getType@{getType}}
+\index{getType@{getType}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily uint8\+\_\+t Crust\+::\+Light\+Source\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the type of the light source. 
+
+\begin{DoxyReturn}{Returns}
+Type of the light source. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_light_source_a9d78831b462e2fdd053428ef655702ea}\label{class_crust_1_1_light_source_a9d78831b462e2fdd053428ef655702ea}} 
+\index{Crust::LightSource@{Crust::LightSource}!setIntensity@{setIntensity}}
+\index{setIntensity@{setIntensity}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{setIntensity()}{setIntensity()}}
+{\footnotesize\ttfamily void Crust\+::\+Light\+Source\+::set\+Intensity (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{p\+\_\+intensity }\end{DoxyParamCaption})}
+
+
+
+Set the intensity of the light source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+intensity} & Intensity of the light source. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_light_source_a7ca821fa9a3572f9b7d8bcf8981b0a03}\label{class_crust_1_1_light_source_a7ca821fa9a3572f9b7d8bcf8981b0a03}} 
+\index{Crust::LightSource@{Crust::LightSource}!setType@{setType}}
+\index{setType@{setType}!Crust::LightSource@{Crust::LightSource}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Crust\+::\+Light\+Source\+::set\+Type (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{p\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Set the type of the light source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+type} & Type of the light source. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/objects/\mbox{\hyperlink{_light_source_8h}{Light\+Source.\+h}}\end{DoxyCompactItemize}

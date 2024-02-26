@@ -1,0 +1,162 @@
+\hypertarget{class_crust_1_1_transform}{}\doxysection{Crust\+::Transform Class Reference}
+\label{class_crust_1_1_transform}\index{Crust::Transform@{Crust::Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_transform_a9c591b557699a3ceec459d0c22bdb4fa}{Transform}} ()
+\item 
+virtual \mbox{\hyperlink{class_crust_1_1_transform_ac9fae078b71a1b9da73239ee550cd523}{$\sim$\+Transform}} ()=default
+\item 
+\mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& \mbox{\hyperlink{class_crust_1_1_transform_ac8c0a9afea13d2746f39e198b4af9537}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#pos field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& \mbox{\hyperlink{class_crust_1_1_transform_a9a5617019c7cc592072ea457941b6f5f}{get\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \mbox{\hyperlink{class_crust_1_1_transform_ac51660d9f97083fed9fccf82112369eb}{scale}} field;. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& \mbox{\hyperlink{class_crust_1_1_transform_af4ac079ac5eaf174f497fe3bd61b23be}{get\+Euler\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em Getter for \#rot field, this returns handler to euler\textquotesingle{}s vector for rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_a8408199f6cae62a0329c7211168f57c6}{set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the position of this object to given vector (x, y, z). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_a37f2b6894ca7a988f58ce0fe16bf97bd}{set\+Scale}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the scale of this object to given vector (x, y, z). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_ade0f2c0b335c5918c5ba0adfa33ef6b5}{set\+Euler\+Rotation}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the euler\textquotesingle{}s rotation of this object to given vector (x, y, z) in degrees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_ac65f4c4738b9758bf2c8ec20c6ace2a7}{translate}} (float dX, float dY, float dZ)
+\begin{DoxyCompactList}\small\item\em Moves object by given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_ac51660d9f97083fed9fccf82112369eb}{scale}} (float dX, float dY, float dZ)
+\begin{DoxyCompactList}\small\item\em Scales object by given values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_transform_acf87a752c6051b6a519529d6b2f4d06a}{rotate\+Euler}} (float dX, float dY, float dZ)
+\begin{DoxyCompactList}\small\item\em Rotates object by given values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_transform_a9c591b557699a3ceec459d0c22bdb4fa}\label{class_crust_1_1_transform_a9c591b557699a3ceec459d0c22bdb4fa}} 
+\index{Crust::Transform@{Crust::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily Crust\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_crust_1_1_transform_ac9fae078b71a1b9da73239ee550cd523}\label{class_crust_1_1_transform_ac9fae078b71a1b9da73239ee550cd523}} 
+\index{Crust::Transform@{Crust::Transform}!````~Transform@{$\sim$Transform}}
+\index{````~Transform@{$\sim$Transform}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{$\sim$Transform()}{~Transform()}}
+{\footnotesize\ttfamily virtual Crust\+::\+Transform\+::$\sim$\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_transform_af4ac079ac5eaf174f497fe3bd61b23be}\label{class_crust_1_1_transform_af4ac079ac5eaf174f497fe3bd61b23be}} 
+\index{Crust::Transform@{Crust::Transform}!getEulerRotation@{getEulerRotation}}
+\index{getEulerRotation@{getEulerRotation}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{getEulerRotation()}{getEulerRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& Crust\+::\+Transform\+::get\+Euler\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#rot field, this returns handler to euler\textquotesingle{}s vector for rotation. 
+
+\begin{DoxyReturn}{Returns}
+Vector3$<$$>$\& Euler\textquotesingle{}s rotation of the object with this transform attached. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_transform_ac8c0a9afea13d2746f39e198b4af9537}\label{class_crust_1_1_transform_ac8c0a9afea13d2746f39e198b4af9537}} 
+\index{Crust::Transform@{Crust::Transform}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& Crust\+::\+Transform\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \#pos field. 
+
+\begin{DoxyReturn}{Returns}
+Vector3$<$$>$\& Position of the object with this transform attached. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_transform_a9a5617019c7cc592072ea457941b6f5f}\label{class_crust_1_1_transform_a9a5617019c7cc592072ea457941b6f5f}} 
+\index{Crust::Transform@{Crust::Transform}!getScale@{getScale}}
+\index{getScale@{getScale}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crust_1_1_vector3}{Crust\+::\+Vector3}} \& Crust\+::\+Transform\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for \mbox{\hyperlink{class_crust_1_1_transform_ac51660d9f97083fed9fccf82112369eb}{scale}} field;. 
+
+\begin{DoxyReturn}{Returns}
+Vector3$<$$>$\& Scale of the object with this transform attached. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_transform_acf87a752c6051b6a519529d6b2f4d06a}\label{class_crust_1_1_transform_acf87a752c6051b6a519529d6b2f4d06a}} 
+\index{Crust::Transform@{Crust::Transform}!rotateEuler@{rotateEuler}}
+\index{rotateEuler@{rotateEuler}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{rotateEuler()}{rotateEuler()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::rotate\+Euler (\begin{DoxyParamCaption}\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{float}]{dZ }\end{DoxyParamCaption})}
+
+
+
+Rotates object by given values. 
+
+Adds dX, dY and dZ to adequate values of \#rot vector values. \mbox{\Hypertarget{class_crust_1_1_transform_ac51660d9f97083fed9fccf82112369eb}\label{class_crust_1_1_transform_ac51660d9f97083fed9fccf82112369eb}} 
+\index{Crust::Transform@{Crust::Transform}!scale@{scale}}
+\index{scale@{scale}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{float}]{dZ }\end{DoxyParamCaption})}
+
+
+
+Scales object by given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dX} & delta X of which the scale of the object will be increased. \\
+\hline
+{\em dY} & delta Y of which the scale of the object will be increased. \\
+\hline
+{\em dZ} & delta Z of which the scale of the object will be increased. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_crust_1_1_transform_ade0f2c0b335c5918c5ba0adfa33ef6b5}\label{class_crust_1_1_transform_ade0f2c0b335c5918c5ba0adfa33ef6b5}} 
+\index{Crust::Transform@{Crust::Transform}!setEulerRotation@{setEulerRotation}}
+\index{setEulerRotation@{setEulerRotation}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{setEulerRotation()}{setEulerRotation()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::set\+Euler\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the euler\textquotesingle{}s rotation of this object to given vector (x, y, z) in degrees. 
+
+\mbox{\Hypertarget{class_crust_1_1_transform_a8408199f6cae62a0329c7211168f57c6}\label{class_crust_1_1_transform_a8408199f6cae62a0329c7211168f57c6}} 
+\index{Crust::Transform@{Crust::Transform}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the position of this object to given vector (x, y, z). 
+
+\mbox{\Hypertarget{class_crust_1_1_transform_a37f2b6894ca7a988f58ce0fe16bf97bd}\label{class_crust_1_1_transform_a37f2b6894ca7a988f58ce0fe16bf97bd}} 
+\index{Crust::Transform@{Crust::Transform}!setScale@{setScale}}
+\index{setScale@{setScale}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Set the scale of this object to given vector (x, y, z). 
+
+\mbox{\Hypertarget{class_crust_1_1_transform_ac65f4c4738b9758bf2c8ec20c6ace2a7}\label{class_crust_1_1_transform_ac65f4c4738b9758bf2c8ec20c6ace2a7}} 
+\index{Crust::Transform@{Crust::Transform}!translate@{translate}}
+\index{translate@{translate}!Crust::Transform@{Crust::Transform}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void Crust\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{float}]{dZ }\end{DoxyParamCaption})}
+
+
+
+Moves object by given values. 
+
+Adds dX, dY and dZ to adequate values of \#pos vector values. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/objects/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\end{DoxyCompactItemize}

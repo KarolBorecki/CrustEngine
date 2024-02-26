@@ -1,0 +1,71 @@
+\hypertarget{_matrix_8h_source}{}\doxysection{Matrix.\+h}
+\label{_matrix_8h_source}\index{/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/Matrix.h@{/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/Matrix.h}}
+\mbox{\hyperlink{_matrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CRUSTENGINE\_MATRIX\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CRUSTENGINE\_MATRIX\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_crust}{Crust}} \{}
+\DoxyCodeLine{18     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keywordtype}{int} H, \textcolor{keywordtype}{int} W>}
+\DoxyCodeLine{19     \textcolor{keyword}{class }\mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}} : \textcolor{keyword}{public} Eigen::Matrix<T, H, W> \{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}{Matrix}}() : Eigen::\mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}<T, H, W>() \{\};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28         \textcolor{keyword}{explicit} \mbox{\hyperlink{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}{Matrix}}(T p\_val);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33         \textcolor{keyword}{inline} uint16\_t \mbox{\hyperlink{class_crust_1_1_matrix_af768dac0040fc1fa51142359072f473f}{height}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (*this).rows(); \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38         \textcolor{keyword}{inline} uint16\_t \mbox{\hyperlink{class_crust_1_1_matrix_a547e82d4a3970a67be846e794a9fde97}{width}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} (*this).cols(); \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}{reset}}(T p\_val);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_matrix_a30a67789796b32d7aea82fe623fb9ec6}{makeIdentity}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{template}<\textcolor{keyword}{typename} D>}
+\DoxyCodeLine{53         \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix<T, H, W>}}\& \mbox{\hyperlink{class_crust_1_1_matrix_aad133b654dc1d11415aaa0748ab51e28}{operator=}}(\textcolor{keyword}{const} Eigen::MatrixBase <D>\& other)}
+\DoxyCodeLine{54         \{}
+\DoxyCodeLine{55             this-\/>Eigen::Matrix<T, H, W>::operator=(other);}
+\DoxyCodeLine{56             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{typedef} \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix<float, 4, 4>}} \mbox{\hyperlink{namespace_crust_a9b86ff296a0be4f6a68afbec7076258a}{Matrix4x4f}};}
+\DoxyCodeLine{61     \textcolor{keyword}{typedef} \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix<float, 3, 3>}} \mbox{\hyperlink{namespace_crust_abc4bc4d56ed3ab5cae8baa29e7f2486b}{Matrix3x3f}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{typedef} \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix<double, 4, 4>}} \mbox{\hyperlink{namespace_crust_af84ca3d1ce71345c93520c68ff96d601}{Matrix4x4d}};}
+\DoxyCodeLine{64     \textcolor{keyword}{typedef} \mbox{\hyperlink{class_crust_1_1_matrix}{Matrix<double, 3, 3>}} \mbox{\hyperlink{namespace_crust_a16d1c114ca1454df04583342832f4365}{Matrix3x3d}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keywordtype}{int} H, \textcolor{keywordtype}{int} W>}
+\DoxyCodeLine{67     \mbox{\hyperlink{class_crust_1_1_matrix_a3f7109113aaceb512e8fd791441e68b4}{Matrix<T, H, W>::Matrix}}(T p\_val) : Eigen::\mbox{\hyperlink{class_crust_1_1_matrix}{Matrix}}<T, H, W>() \{}
+\DoxyCodeLine{68         \mbox{\hyperlink{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}{reset}}(p\_val);}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keywordtype}{int} H, \textcolor{keywordtype}{int} W>}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6}{Matrix<T, H, W>::reset}}(T p\_val) \{}
+\DoxyCodeLine{73         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < W; i++) \{}
+\DoxyCodeLine{74             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < H; j++) \{}
+\DoxyCodeLine{75                 (*this)(i, j) = p\_val;}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keywordtype}{int} H, \textcolor{keywordtype}{int} W>}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_crust_1_1_matrix_a30a67789796b32d7aea82fe623fb9ec6}{Matrix<T, H, W>::makeIdentity}}() \{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < W; i++) \{}
+\DoxyCodeLine{83             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < H; j++) \{}
+\DoxyCodeLine{84                 \textcolor{keywordflow}{if} (i == j) \{}
+\DoxyCodeLine{85                     (*this)(i, j) = 1;}
+\DoxyCodeLine{86                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{87                     (*this)(i, j) = 0;}
+\DoxyCodeLine{88                 \}}
+\DoxyCodeLine{89             \}}
+\DoxyCodeLine{90         \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93 \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* CRUSTENGINE\_MATRIX\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

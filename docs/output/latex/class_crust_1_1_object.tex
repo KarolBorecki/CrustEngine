@@ -1,0 +1,160 @@
+\hypertarget{class_crust_1_1_object}{}\doxysection{Crust\+::Object Class Reference}
+\label{class_crust_1_1_object}\index{Crust::Object@{Crust::Object}}
+
+
+The base class for all objects in the engine.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+Inheritance diagram for Crust\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crust_1_1_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_crust_1_1_object_a78e458fb4d757d1bbb9cf4e5d0fbd2f6}{Object}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_object}{Object}} object with default transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_object_aece2bbc13a23405b1c9a74169aad1026}{$\sim$\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_crust_1_1_object}{Object}} object with the specified transform. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_crust_1_1_object_a8e2d0574006d47c244ef93e4517b766c}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get the id of the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_crust_1_1_object_acf08b0a78b98975bee445fe3e8c56e74}{is\+Active}} () const
+\begin{DoxyCompactList}\small\item\em Get if the object is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_crust_1_1_object_a40bb420fffc66b57c66a59032f817c3a}{set\+Active}} (bool p\+\_\+active)
+\begin{DoxyCompactList}\small\item\em Set the active state of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_crust_1_1_transform}{Transform}} \& \mbox{\hyperlink{class_crust_1_1_object_ae66631864ba6bcb70d3f7ec4eafc9ae9}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the transform of the object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_crust_1_1_script}{Script}} $\ast$ $>$ \mbox{\hyperlink{class_crust_1_1_object_ab6eea003ba17ce80d606a5694f9e40fb}{get\+Scripts}} () const
+\begin{DoxyCompactList}\small\item\em Get the scripts attached to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} \mbox{\hyperlink{class_crust_1_1_object_a7c1f5797c2bb19d7a69dc1c710dd4f93}{attach\+Script}} (\mbox{\hyperlink{class_crust_1_1_script}{Script}} \&script)
+\begin{DoxyCompactList}\small\item\em Attach the script to the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for all objects in the engine. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_crust_1_1_object_a78e458fb4d757d1bbb9cf4e5d0fbd2f6}\label{class_crust_1_1_object_a78e458fb4d757d1bbb9cf4e5d0fbd2f6}} 
+\index{Crust::Object@{Crust::Object}!Object@{Object}}
+\index{Object@{Object}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily Crust\+::\+Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_object}{Object}} object with default transform. 
+
+\mbox{\Hypertarget{class_crust_1_1_object_aece2bbc13a23405b1c9a74169aad1026}\label{class_crust_1_1_object_aece2bbc13a23405b1c9a74169aad1026}} 
+\index{Crust::Object@{Crust::Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily Crust\+::\+Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_crust_1_1_object}{Object}} object with the specified transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+transform} & The transform of the object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_crust_1_1_object_a7c1f5797c2bb19d7a69dc1c710dd4f93}\label{class_crust_1_1_object_a7c1f5797c2bb19d7a69dc1c710dd4f93}} 
+\index{Crust::Object@{Crust::Object}!attachScript@{attachScript}}
+\index{attachScript@{attachScript}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{attachScript()}{attachScript()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_crust_aa2db099fa45e4a23ea3f17a75d0ccc6c}{Status}} Crust\+::\+Object\+::attach\+Script (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_crust_1_1_script}{Script}} \&}]{script }\end{DoxyParamCaption})}
+
+
+
+Attach the script to the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+script} & The script to attach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status The status of the operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_object_a8e2d0574006d47c244ef93e4517b766c}\label{class_crust_1_1_object_a8e2d0574006d47c244ef93e4517b766c}} 
+\index{Crust::Object@{Crust::Object}!getId@{getId}}
+\index{getId@{getId}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily uint32\+\_\+t Crust\+::\+Object\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the id of the object. 
+
+\begin{DoxyReturn}{Returns}
+The id of the object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_object_ab6eea003ba17ce80d606a5694f9e40fb}\label{class_crust_1_1_object_ab6eea003ba17ce80d606a5694f9e40fb}} 
+\index{Crust::Object@{Crust::Object}!getScripts@{getScripts}}
+\index{getScripts@{getScripts}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{getScripts()}{getScripts()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_crust_1_1_script}{Script}} $\ast$ $>$ Crust\+::\+Object\+::get\+Scripts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the scripts attached to the object. 
+
+\begin{DoxyReturn}{Returns}
+The scripts attached to the object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_object_ae66631864ba6bcb70d3f7ec4eafc9ae9}\label{class_crust_1_1_object_ae66631864ba6bcb70d3f7ec4eafc9ae9}} 
+\index{Crust::Object@{Crust::Object}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_crust_1_1_transform}{Transform}} \& Crust\+::\+Object\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the transform of the object. 
+
+\begin{DoxyReturn}{Returns}
+The transform of the object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_object_acf08b0a78b98975bee445fe3e8c56e74}\label{class_crust_1_1_object_acf08b0a78b98975bee445fe3e8c56e74}} 
+\index{Crust::Object@{Crust::Object}!isActive@{isActive}}
+\index{isActive@{isActive}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool Crust\+::\+Object\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get if the object is active. 
+
+\begin{DoxyReturn}{Returns}
+The active state of the object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_crust_1_1_object_a40bb420fffc66b57c66a59032f817c3a}\label{class_crust_1_1_object_a40bb420fffc66b57c66a59032f817c3a}} 
+\index{Crust::Object@{Crust::Object}!setActive@{setActive}}
+\index{setActive@{setActive}!Crust::Object@{Crust::Object}}
+\doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
+{\footnotesize\ttfamily void Crust\+::\+Object\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{p\+\_\+active }\end{DoxyParamCaption})}
+
+
+
+Set the active state of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+active} & The active state of the object. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/karolborecki/\+Desktop/\+Crust\+Engine/engine/inc/objects/\mbox{\hyperlink{_object_8h}{Object.\+h}}\end{DoxyCompactItemize}
