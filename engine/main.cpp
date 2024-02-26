@@ -1,99 +1,33 @@
-#include <Logging/Logger.hpp>
+#include "math/Matrix.h"
+#include "math/Vector3.h"
+#include "math/Vector4.h"
+#include "logging/Logger.h"
 
-#include <Core/Scene.hpp>
-#include <Core/Core.hpp>
-
-#include <Objects/Camera.hpp>
-#include <Objects/Lightining/DirectionalLight.hpp>
-#include <Objects/RenderObject.hpp>
-
-#include <Rendering/Mesh.hpp>
-
-#include <Files/MeshLoader.hpp>
-
-#include <Math/Matrix.hpp>
-
-#include <Scripting/SampleScripts/LoopMove.hpp>
-#include <Scripting/SampleScripts/Mover.hpp>
-#include <Scripting/SampleScripts/Rotator.hpp>
-#include <Scripting/SampleScripts/Scaler.hpp>
-#include <Scripting/SampleScripts/Spinner.hpp>
-
-#include <iostream>
-#include <Eigen/Dense>
-
-// TODO implement toStrings - it is usefull at last
-// TODO add SDL as submodule of a git repository - z modułami trzeba klonować git clone --recursive <URL>
-// TODO change private variables names to '_<varname>'
-// TODO learn abou cpp compilers
-// TODO typeof is only for gcc, use deltype
-// TODO create asset manager so we do not hgave to load files repeatedly
-// TODO pass const& if possible - what does const keyword mean in method's variable? and what is const in method body?
-// todo implement talising
+//TODO investigate [[nodiscard]] attribute
 int main(int argc, char *argv[])
 {
-    Logger::Info("Engine Start");
+    Crust::Matrix<float, 4, 4> matrix;
+    Crust::Matrix<float, 4, 4> matrix2(2.0f);
 
-    crust::Camera cam(90, 0.1, 1000.0);
-    cam.GetTransform().SetPosition(-4, -5, -10);
-    cam.GetTransform().SetEulerRotation(0, 0, 1);
-    Logger::Info("Camera created.");
+    matrix.reset(5.0f);
+    matrix(0, 0) = 2.0f;
+    matrix(1, 3) = 69.0f;
 
-    Scene scene("T Scene", cam);
-    Logger::Info("Scene created.");
+    matrix2(0, 0) = 12.0f;
+    matrix2(1, 3) = 45.0f;
 
-    crust::Mesh mesh("Sample mesh");
-//    std::string name = argv[1];
-    std::string path = "/Users/karolborecki/Desktop/CrustEngine/engine/Tmp/meshes/VideoShip.obj";
-    MeshLoader::LoadMeshFromFile(path.c_str(), &mesh);
-    Logger::Info("Mesh '%s' loaded.", mesh.GetName().c_str());
-    RenderObject rObj(mesh);
-    rObj.GetTransform().SetPosition(0, 0, 12.0f);
+    Crust::Logger::log("Matrix: ", matrix);
+    Crust::Logger::log("Matrix2: ", matrix2);
 
-    crust::Mesh mesh2("Sample mesh");
-    std::string path2 = "/Users/karolborecki/Desktop/CrustEngine/engine/Tmp/meshes/teapot.obj";
-    MeshLoader::LoadMeshFromFile(path2.c_str(), &mesh2);
-    Logger::Info("Mesh '%s' loaded.", mesh2.GetName().c_str());
-    RenderObject rObj2(mesh2);
-    rObj2.GetTransform().SetPosition(-5, 10, 8.0f);
+    Crust::Matrix<float, 4, 4> matrix3;
+    matrix3 = matrix - matrix2;
+    matrix3 -= matrix2;
+    Crust::Logger::log("Matrix - Matrix2: ", matrix3);
 
-    Logger::Info("Render object created.");
-//
-//    Mover mover(14, 14, 14);
-//    Mover mover2(15, 15, 15);
-//    Rotator rotator(1.8f);
-//    Scaler scaler(0.9f);
-//    Spinner spinner(1.0f, 0.5f, 0.8f);
+    Crust::Vector4<> v1(1.0f, 2.0f, 3.0f, 4.0f);
+    Crust::Vector4<> v2(1.0f);
+    Crust::Vector3<> v3(1.0f);
 
-//    rObj.AttachScript(mover);
-//    //rObj2.AttachScript(mover2);
-//    rObj.AttachScript(rotator);
-//    rObj.AttachScript(scaler);
-
-    // rObj.AttachScript(spinner);
-
-    crust::Vector3<> lightSourceDir(0.4f, -0.3f, -0.89f);
-    DirectionalLight dirLightSource(LightSource::INTENSIVITY_BRIGHT, lightSourceDir);
-
-    Logger::Info("Light source created.");
-    scene.AddObject(rObj);
-    // scene.AddObject(rObj2);
-    scene.AddObject(dirLightSource);
-
-    scene.SetLightProjection(true);
-
-    Logger::Info("Objectes added to the scene.");
-    Core core;
-    core.OpenNewWindow(800, 500, scene);
-    core.Quit();
-    Logger::Info("Engine work time: %lf [s]", TimeProvider::GetTime_s());
-
-    //   Eigen::MatrixXd m(2,2);
-    // m(0,0) = 3;
-    // m(1,0) = 2.5;
-    // m(0,1) = -1;
-    // m(1,1) = m(1,0) + m(0,1);
-    // std::cout << m << std::endl;
 
     return 0;
 }

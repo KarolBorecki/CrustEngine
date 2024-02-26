@@ -74,14 +74,14 @@ inline Object::~Object()
 
 inline bool Object::IsActive() { return _isActive; }
 
-inline crust::Transform &Object::GetTransform() { return _transform; }
+inline Crust::Transform &Object::GetTransform() { return _transform; }
 
 inline std::vector<CrustScript *> Object::GetScripts() { return _scripts; }
 
 inline void Object::AttachScript(CrustScript &script)
 {
   _scripts.push_back(&script);
-  script.AttachTo(*this);
+  script.attachTo(*this);
 }
 
 inline uint32_t Object::GetID() { return _id; }
