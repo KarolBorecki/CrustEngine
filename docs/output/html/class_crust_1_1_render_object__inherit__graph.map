@@ -1,0 +1,4 @@
+<map id="Crust::RenderObject" name="Crust::RenderObject">
+<area shape="rect" id="node1" title="A renderable object." alt="" coords="5,79,147,105"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_object.html" title="The base class for all objects in the engine." alt="" coords="26,5,126,31"/>
+</map>

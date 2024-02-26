@@ -2,11 +2,11 @@ var namespace_crust =
 [
     [ "Camera", "class_crust_1_1_camera.html", "class_crust_1_1_camera" ],
     [ "Core", "class_crust_1_1_core.html", "class_crust_1_1_core" ],
-    [ "ExceptionsHandler", "class_crust_1_1_exceptions_handler.html", null ],
+    [ "ExceptionsHandler", "class_crust_1_1_exceptions_handler.html", "class_crust_1_1_exceptions_handler" ],
     [ "Library2DWrapper", "class_crust_1_1_library2_d_wrapper.html", "class_crust_1_1_library2_d_wrapper" ],
     [ "LightSource", "class_crust_1_1_light_source.html", "class_crust_1_1_light_source" ],
     [ "Logger", "class_crust_1_1_logger.html", "class_crust_1_1_logger" ],
-    [ "Math", "class_crust_1_1_math.html", null ],
+    [ "Math", "class_crust_1_1_math.html", "class_crust_1_1_math" ],
     [ "Matrix", "class_crust_1_1_matrix.html", "class_crust_1_1_matrix" ],
     [ "Mesh", "class_crust_1_1_mesh.html", "class_crust_1_1_mesh" ],
     [ "MeshLoader", "class_crust_1_1_mesh_loader.html", "class_crust_1_1_mesh_loader" ],

@@ -101,13 +101,12 @@ $(document).ready(function(){initNavTree('class_crust_1_1_matrix.html',''); init
 <p>Represents the mathematical matrix and is able to preform matrix calculations.  
  <a href="class_crust_1_1_matrix.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_matrix_8h_source.html">Matrix.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">Matrix.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Crust::Matrix&lt; T, H, W &gt;:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_crust_1_1_matrix.png" alt=""/>
- </div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_matrix__inherit__graph.svg" width="179" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -169,7 +168,8 @@ template&lt;typename T , int H, int W&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><span class="lineno">   21</span>: Eigen::Matrix&lt;T, H, W&gt;() {};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a990fa463ef190b3e49a6a1e3b2bbbfd3" name="a990fa463ef190b3e49a6a1e3b2bbbfd3"></a>
@@ -205,6 +205,17 @@ template&lt;typename T , int H, int W&gt; </div>
   </table>
   </dd>
 </dl>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                                   : Eigen::Matrix&lt;T, H, W&gt;() {</div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_function" href="class_crust_1_1_matrix.html#add627aacd55d492f0ebfce0af8b381b6">reset</a>(p_val);</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="ttc" id="aclass_crust_1_1_matrix_html_add627aacd55d492f0ebfce0af8b381b6"><div class="ttname"><a href="class_crust_1_1_matrix.html#add627aacd55d492f0ebfce0af8b381b6">Crust::Matrix::reset</a></div><div class="ttdeci">void reset(T p_val)</div><div class="ttdoc">Reset all elements in matrix to the given value.</div><div class="ttdef"><b>Definition:</b> Matrix.h:72</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00072">Crust::Matrix&lt; T, H, W &gt;::reset()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_matrix_a990fa463ef190b3e49a6a1e3b2bbbfd3_cgraph.svg" width="335" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -235,6 +246,14 @@ template&lt;typename T , int H, int W&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the height of the matrix. </p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keywordflow">return</span> (*this).rows(); };</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#l00170">Crust::Logger::log()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_matrix_af768dac0040fc1fa51142359072f473f_icgraph.svg" width="324" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -253,7 +272,19 @@ template&lt;typename T , int H, int W&gt; </div>
 </div><div class="memdoc">
 
 <p>Make this matrix an identity matrix. </p>
-
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                       {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; W; i++) {</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; H; j++) {</div>
+<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">if</span> (i == j) {</div>
+<div class="line"><span class="lineno">   85</span>                    (*this)(i, j) = 1;</div>
+<div class="line"><span class="lineno">   86</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   87</span>                    (*this)(i, j) = 0;</div>
+<div class="line"><span class="lineno">   88</span>                }</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aad133b654dc1d11415aaa0748ab51e28" name="aad133b654dc1d11415aaa0748ab51e28"></a>
@@ -283,7 +314,11 @@ template&lt;typename D &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>        {</div>
+<div class="line"><span class="lineno">   55</span>            this-&gt;Eigen::Matrix&lt;T, H, W&gt;::operator=(other);</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="add627aacd55d492f0ebfce0af8b381b6" name="add627aacd55d492f0ebfce0af8b381b6"></a>
@@ -311,6 +346,20 @@ template&lt;typename T , int H, int W&gt; </div>
   </table>
   </dd>
 </dl>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>                                       {</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; W; i++) {</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; H; j++) {</div>
+<div class="line"><span class="lineno">   75</span>                (*this)(i, j) = p_val;</div>
+<div class="line"><span class="lineno">   76</span>            }</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#l00067">Crust::Matrix&lt; T, H, W &gt;::Matrix()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_matrix_add627aacd55d492f0ebfce0af8b381b6_icgraph.svg" width="335" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -340,11 +389,19 @@ template&lt;typename T , int H, int W&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the width of the matrix. </p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keywordflow">return</span> (*this).cols(); };</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="#l00170">Crust::Logger::log()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_matrix_a547e82d4a3970a67be846e794a9fde97_icgraph.svg" width="320" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/<a class="el" href="_matrix_8h_source.html">Matrix.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/<a class="el" href="">Matrix.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

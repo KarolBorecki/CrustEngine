@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('class_crust_1_1_time_provider.html',''
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_crust_1_1_time_provider-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::TimeProvider Class Reference</div></div>
 </div><!--header-->
@@ -103,7 +105,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_time_provider.html',''
 <p>Class providing timing data in the engine.  
  <a href="class_crust_1_1_time_provider.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_time_provider_8h_source.html">TimeProvider.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">TimeProvider.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -149,6 +151,24 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aedd461d9c8808da738ab287345756eb7"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_time_provider.html#aedd461d9c8808da738ab287345756eb7">MILISECONDS_TO_SECONDS</a> {0.001}</td></tr>
 <tr class="separator:aedd461d9c8808da738ab287345756eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a018d23ca23e142277b47622f296971d5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_time_provider.html#a018d23ca23e142277b47622f296971d5">m_frame_delta_time_ms</a> { 0.0 }</td></tr>
+<tr class="memdesc:a018d23ca23e142277b47622f296971d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time that last frame took to complete.  <a href="class_crust_1_1_time_provider.html#a018d23ca23e142277b47622f296971d5">More...</a><br /></td></tr>
+<tr class="separator:a018d23ca23e142277b47622f296971d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ac4202db1ee23a411a4cde14020a14"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_time_provider.html#ae5ac4202db1ee23a411a4cde14020a14">m_frames_passed</a> { 0 }</td></tr>
+<tr class="memdesc:ae5ac4202db1ee23a411a4cde14020a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of frames that RenderWindow did from it start.  <a href="class_crust_1_1_time_provider.html#ae5ac4202db1ee23a411a4cde14020a14">More...</a><br /></td></tr>
+<tr class="separator:ae5ac4202db1ee23a411a4cde14020a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba05c3af33c0fa1c2e0aa3a3706e5640"><td class="memItemLeft" align="right" valign="top">std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_time_provider.html#aba05c3af33c0fa1c2e0aa3a3706e5640">m_last_frame_start_time_point</a></td></tr>
+<tr class="memdesc:aba05c3af33c0fa1c2e0aa3a3706e5640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last frame saved time point at which it started.  <a href="class_crust_1_1_time_provider.html#aba05c3af33c0fa1c2e0aa3a3706e5640">More...</a><br /></td></tr>
+<tr class="separator:aba05c3af33c0fa1c2e0aa3a3706e5640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a4eb333ec75ea7625dc691996a04e17d0"><td class="memItemLeft" align="right" valign="top">static std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_time_provider.html#a4eb333ec75ea7625dc691996a04e17d0">m_engine_start_time_point</a></td></tr>
+<tr class="memdesc:a4eb333ec75ea7625dc691996a04e17d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Engine's core start time point saved in TimeProvider::OnEngineStart.  <a href="class_crust_1_1_time_provider.html#a4eb333ec75ea7625dc691996a04e17d0">More...</a><br /></td></tr>
+<tr class="separator:a4eb333ec75ea7625dc691996a04e17d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class providing timing data in the engine. </p>
@@ -229,6 +249,15 @@ Static Public Attributes</h2></td></tr>
 
 <p>Returns current average frames per seconds value based on all frames. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns value of 1.0 / TimeProvider::GetAverageFrameTime_s. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{ <span class="keywordflow">return</span> 1 / <a class="code hl_function" href="class_crust_1_1_time_provider.html#affd51821a53f5e201ff3d98051f35d8a">getAverageFrameTime_s</a>(); }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_affd51821a53f5e201ff3d98051f35d8a"><div class="ttname"><a href="class_crust_1_1_time_provider.html#affd51821a53f5e201ff3d98051f35d8a">Crust::TimeProvider::getAverageFrameTime_s</a></div><div class="ttdeci">double getAverageFrameTime_s() const</div><div class="ttdoc">Returns average frame time from engine start in seconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:109</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00109">getAverageFrameTime_s()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_a7c342a0744278ed942f51ade4b8889b6_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -257,6 +286,23 @@ Static Public Attributes</h2></td></tr>
 
 <p>Returns average frame time from engine start in seconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>TimeProvider::getTimeS / #framesPassed; </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="class_crust_1_1_time_provider.html#ab006c8030ac9fe2c39992dfd3207d17e">getTime_s</a>() / <a class="code hl_variable" href="class_crust_1_1_time_provider.html#ae5ac4202db1ee23a411a4cde14020a14">m_frames_passed</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_ab006c8030ac9fe2c39992dfd3207d17e"><div class="ttname"><a href="class_crust_1_1_time_provider.html#ab006c8030ac9fe2c39992dfd3207d17e">Crust::TimeProvider::getTime_s</a></div><div class="ttdeci">static double getTime_s()</div><div class="ttdoc">Returns time from engine's core start in seconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:88</div></div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_ae5ac4202db1ee23a411a4cde14020a14"><div class="ttname"><a href="class_crust_1_1_time_provider.html#ae5ac4202db1ee23a411a4cde14020a14">Crust::TimeProvider::m_frames_passed</a></div><div class="ttdeci">uint32_t m_frames_passed</div><div class="ttdoc">Amount of frames that RenderWindow did from it start.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:77</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00088">getTime_s()</a>, and <a class="el" href="#l00077">m_frames_passed</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#l00103">getAverageFPS()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_affd51821a53f5e201ff3d98051f35d8a_cgraph.svg" width="559" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_affd51821a53f5e201ff3d98051f35d8a_icgraph.svg" width="372" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -284,6 +330,17 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns last frame time in miliseconds. </p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_time_provider.html#a018d23ca23e142277b47622f296971d5">m_frame_delta_time_ms</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_a018d23ca23e142277b47622f296971d5"><div class="ttname"><a href="class_crust_1_1_time_provider.html#a018d23ca23e142277b47622f296971d5">Crust::TimeProvider::m_frame_delta_time_ms</a></div><div class="ttdeci">double m_frame_delta_time_ms</div><div class="ttdoc">Time that last frame took to complete.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:76</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00076">m_frame_delta_time_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#l00105">getDeltaTime_s()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_a994e6507faa36fce39aeb1037e88716f_icgraph.svg" width="522" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -311,6 +368,23 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns last frame time in seconds. </p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="class_crust_1_1_time_provider.html#a994e6507faa36fce39aeb1037e88716f">getDeltaTime_ms</a>() * <a class="code hl_variable" href="class_crust_1_1_time_provider.html#aedd461d9c8808da738ab287345756eb7">MILISECONDS_TO_SECONDS</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_a994e6507faa36fce39aeb1037e88716f"><div class="ttname"><a href="class_crust_1_1_time_provider.html#a994e6507faa36fce39aeb1037e88716f">Crust::TimeProvider::getDeltaTime_ms</a></div><div class="ttdeci">double getDeltaTime_ms() const</div><div class="ttdoc">Returns last frame time in miliseconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:107</div></div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_aedd461d9c8808da738ab287345756eb7"><div class="ttname"><a href="class_crust_1_1_time_provider.html#aedd461d9c8808da738ab287345756eb7">Crust::TimeProvider::MILISECONDS_TO_SECONDS</a></div><div class="ttdeci">static constexpr double MILISECONDS_TO_SECONDS</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:73</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00107">getDeltaTime_ms()</a>, and <a class="el" href="#l00073">MILISECONDS_TO_SECONDS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#l00101">getFPS()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_ac493d5950799c504f54654eed92ed0fc_cgraph.svg" width="336" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_ac493d5950799c504f54654eed92ed0fc_icgraph.svg" width="336" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -338,6 +412,15 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns current frames per seconds value based on last frame time. </p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{ <span class="keywordflow">return</span> 1 / <a class="code hl_function" href="class_crust_1_1_time_provider.html#ac493d5950799c504f54654eed92ed0fc">getDeltaTime_s</a>(); }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_ac493d5950799c504f54654eed92ed0fc"><div class="ttname"><a href="class_crust_1_1_time_provider.html#ac493d5950799c504f54654eed92ed0fc">Crust::TimeProvider::getDeltaTime_s</a></div><div class="ttdeci">double getDeltaTime_s() const</div><div class="ttdoc">Returns last frame time in seconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:105</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00105">getDeltaTime_s()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_acbfce7e0201f448541fbaee3dab87f7b_cgraph.svg" width="522" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -365,6 +448,19 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns time from engine's core start in milliseconds. </p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::steady_clock::now() - <a class="code hl_variable" href="class_crust_1_1_time_provider.html#a4eb333ec75ea7625dc691996a04e17d0">m_engine_start_time_point</a>).count();</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_a4eb333ec75ea7625dc691996a04e17d0"><div class="ttname"><a href="class_crust_1_1_time_provider.html#a4eb333ec75ea7625dc691996a04e17d0">Crust::TimeProvider::m_engine_start_time_point</a></div><div class="ttdeci">static std::chrono::steady_clock::time_point m_engine_start_time_point</div><div class="ttdoc">Engine's core start time point saved in TimeProvider::OnEngineStart.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:80</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00080">m_engine_start_time_point</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#l00088">getTime_s()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_a7bd079284fc824dbd96c6d863197566c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -392,6 +488,22 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns time from engine's core start in seconds. </p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="class_crust_1_1_time_provider.html#a7bd079284fc824dbd96c6d863197566c">getTime_ms</a>() * <a class="code hl_variable" href="class_crust_1_1_time_provider.html#aedd461d9c8808da738ab287345756eb7">MILISECONDS_TO_SECONDS</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_a7bd079284fc824dbd96c6d863197566c"><div class="ttname"><a href="class_crust_1_1_time_provider.html#a7bd079284fc824dbd96c6d863197566c">Crust::TimeProvider::getTime_ms</a></div><div class="ttdeci">static double getTime_ms()</div><div class="ttdoc">Returns time from engine's core start in milliseconds.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:83</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00083">getTime_ms()</a>, and <a class="el" href="#l00073">MILISECONDS_TO_SECONDS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#l00109">getAverageFrameTime_s()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_ab006c8030ac9fe2c39992dfd3207d17e_cgraph.svg" width="336" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_time_provider_ab006c8030ac9fe2c39992dfd3207d17e_icgraph.svg" width="559" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -421,6 +533,9 @@ Static Public Attributes</h2></td></tr>
 <p>Method called on engine's core start. </p>
 <p >Saves engine's core start time point.</p>
 <dl class="section see"><dt>See also</dt><dd>Core.hpp </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{ <a class="code hl_variable" href="class_crust_1_1_time_provider.html#a4eb333ec75ea7625dc691996a04e17d0">m_engine_start_time_point</a> = std::chrono::steady_clock::now(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00080">m_engine_start_time_point</a>.</p>
 
 </div>
 </div>
@@ -441,6 +556,13 @@ Static Public Attributes</h2></td></tr>
 
 <p>Method called on each window's frame end. </p>
 <p >Saves time point of frame end to calculate how long this frame took. </p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_variable" href="class_crust_1_1_time_provider.html#a018d23ca23e142277b47622f296971d5">m_frame_delta_time_ms</a> = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::steady_clock::now() - <a class="code hl_variable" href="class_crust_1_1_time_provider.html#aba05c3af33c0fa1c2e0aa3a3706e5640">m_last_frame_start_time_point</a>).count();</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="class_crust_1_1_time_provider.html#ae5ac4202db1ee23a411a4cde14020a14">m_frames_passed</a>++;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="ttc" id="aclass_crust_1_1_time_provider_html_aba05c3af33c0fa1c2e0aa3a3706e5640"><div class="ttname"><a href="class_crust_1_1_time_provider.html#aba05c3af33c0fa1c2e0aa3a3706e5640">Crust::TimeProvider::m_last_frame_start_time_point</a></div><div class="ttdeci">std::chrono::steady_clock::time_point m_last_frame_start_time_point</div><div class="ttdoc">Last frame saved time point at which it started.</div><div class="ttdef"><b>Definition:</b> TimeProvider.h:79</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00076">m_frame_delta_time_ms</a>, <a class="el" href="#l00077">m_frames_passed</a>, and <a class="el" href="#l00079">m_last_frame_start_time_point</a>.</p>
 
 </div>
 </div>
@@ -461,10 +583,119 @@ Static Public Attributes</h2></td></tr>
 
 <p>Method called on each window's frame start. </p>
 <p >Saves time point of frame start to calculate how long this frame will take. </p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_variable" href="class_crust_1_1_time_provider.html#aba05c3af33c0fa1c2e0aa3a3706e5640">m_last_frame_start_time_point</a> = std::chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00079">m_last_frame_start_time_point</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4eb333ec75ea7625dc691996a04e17d0" name="a4eb333ec75ea7625dc691996a04e17d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb333ec75ea7625dc691996a04e17d0">&#9670;&#160;</a></span>m_engine_start_time_point</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::steady_clock::time_point Crust::TimeProvider::m_engine_start_time_point</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Engine's core start time point saved in TimeProvider::OnEngineStart. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00083">getTime_ms()</a>, and <a class="el" href="#l00111">onEngineStart()</a>.</p>
+
+</div>
+</div>
+<a id="a018d23ca23e142277b47622f296971d5" name="a018d23ca23e142277b47622f296971d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018d23ca23e142277b47622f296971d5">&#9670;&#160;</a></span>m_frame_delta_time_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Crust::TimeProvider::m_frame_delta_time_ms { 0.0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Time that last frame took to complete. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00107">getDeltaTime_ms()</a>, and <a class="el" href="#l00095">onFrameEnd()</a>.</p>
+
+</div>
+</div>
+<a id="ae5ac4202db1ee23a411a4cde14020a14" name="ae5ac4202db1ee23a411a4cde14020a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ac4202db1ee23a411a4cde14020a14">&#9670;&#160;</a></span>m_frames_passed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Crust::TimeProvider::m_frames_passed { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Amount of frames that RenderWindow did from it start. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00109">getAverageFrameTime_s()</a>, and <a class="el" href="#l00095">onFrameEnd()</a>.</p>
+
+</div>
+</div>
+<a id="aba05c3af33c0fa1c2e0aa3a3706e5640" name="aba05c3af33c0fa1c2e0aa3a3706e5640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba05c3af33c0fa1c2e0aa3a3706e5640">&#9670;&#160;</a></span>m_last_frame_start_time_point</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::steady_clock::time_point Crust::TimeProvider::m_last_frame_start_time_point</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Last frame saved time point at which it started. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00095">onFrameEnd()</a>, and <a class="el" href="#l00090">onFrameStart()</a>.</p>
+
+</div>
+</div>
 <a id="aedd461d9c8808da738ab287345756eb7" name="aedd461d9c8808da738ab287345756eb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedd461d9c8808da738ab287345756eb7">&#9670;&#160;</a></span>MILISECONDS_TO_SECONDS</h2>
 
@@ -485,10 +716,12 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="#l00105">getDeltaTime_s()</a>, and <a class="el" href="#l00088">getTime_s()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/utils/<a class="el" href="_time_provider_8h_source.html">TimeProvider.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/utils/<a class="el" href="">TimeProvider.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

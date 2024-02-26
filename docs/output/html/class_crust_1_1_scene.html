@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_scene.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_crust_1_1_scene-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::Scene Class Reference</div></div>
 </div><!--header-->
@@ -101,7 +102,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_scene.html',''); initR
 <p><a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> class. It's a container for all objects rendered onto the window.  
  <a href="class_crust_1_1_scene.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">Scene.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -112,13 +113,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1b5b6c6c6e0173369716be2653883b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object.  <a href="class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11">More...</a><br /></td></tr>
 <tr class="separator:a1b5b6c6c6e0173369716be2653883b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a33933fb69d511455f0314008c1cf4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a">onLoad</a> ()</td></tr>
-<tr class="memdesc:a1a33933fb69d511455f0314008c1cf4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is loaded. Sets m_loaded to true. calls <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c" title="Called when scene is started. Sets m_started to true. Calls start method on every script in this scen...">start</a> method if not started yet and <a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008" title="Called when scene is reloaded. Calls reload method on every script in this scene.">reload</a> method otherwise.  <a href="class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a">More...</a><br /></td></tr>
+<tr class="memdesc:a1a33933fb69d511455f0314008c1cf4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is loaded. Sets <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> to true. calls <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c" title="Called when scene is started. Sets m_started to true. Calls start method on every script in this scen...">start</a> method if not started yet and <a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008" title="Called when scene is reloaded. Calls reload method on every script in this scene.">reload</a> method otherwise.  <a href="class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a">More...</a><br /></td></tr>
 <tr class="separator:a1a33933fb69d511455f0314008c1cf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfe1ab61d4a76b45f349c9ef747b9ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#abbfe1ab61d4a76b45f349c9ef747b9ba">onUnLoad</a> ()</td></tr>
-<tr class="memdesc:abbfe1ab61d4a76b45f349c9ef747b9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is unloaded. Sets m_loaded to false and m_started to false.  <a href="class_crust_1_1_scene.html#abbfe1ab61d4a76b45f349c9ef747b9ba">More...</a><br /></td></tr>
+<tr class="memdesc:abbfe1ab61d4a76b45f349c9ef747b9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is unloaded. Sets <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> to false and <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> to false.  <a href="class_crust_1_1_scene.html#abbfe1ab61d4a76b45f349c9ef747b9ba">More...</a><br /></td></tr>
 <tr class="separator:abbfe1ab61d4a76b45f349c9ef747b9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ff619ac00a53053262c30456ddc879c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">start</a> ()</td></tr>
-<tr class="memdesc:a4ff619ac00a53053262c30456ddc879c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is started. Sets m_started to true. Calls start method on every script in this scene.  <a href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">More...</a><br /></td></tr>
+<tr class="memdesc:a4ff619ac00a53053262c30456ddc879c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is started. Sets <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> to true. Calls start method on every script in this scene.  <a href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">More...</a><br /></td></tr>
 <tr class="separator:a4ff619ac00a53053262c30456ddc879c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80af2706649b97a9c47c7be406cf3212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212">update</a> ()</td></tr>
 <tr class="memdesc:a80af2706649b97a9c47c7be406cf3212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in each frame. Calls update method on every script in this scene.  <a href="class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212">More...</a><br /></td></tr>
@@ -127,25 +128,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3542a103a2697cdf50d5472538e60008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is reloaded. Calls reload method on every script in this scene.  <a href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008">More...</a><br /></td></tr>
 <tr class="separator:a3542a103a2697cdf50d5472538e60008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac3fb4a16707248105f25ca462d1125"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a3ac3fb4a16707248105f25ca462d1125">getName</a> () const</td></tr>
-<tr class="memdesc:a3ac3fb4a16707248105f25ca462d1125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for m_name field.  <a href="class_crust_1_1_scene.html#a3ac3fb4a16707248105f25ca462d1125">More...</a><br /></td></tr>
+<tr class="memdesc:a3ac3fb4a16707248105f25ca462d1125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9">m_name</a> field.  <a href="class_crust_1_1_scene.html#a3ac3fb4a16707248105f25ca462d1125">More...</a><br /></td></tr>
 <tr class="separator:a3ac3fb4a16707248105f25ca462d1125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a618a271cfef5053ad0a1163cfb4a08da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">getMainCamera</a> () const</td></tr>
-<tr class="memdesc:a618a271cfef5053ad0a1163cfb4a08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for m_camera field.  <a href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">More...</a><br /></td></tr>
+<tr class="memdesc:a618a271cfef5053ad0a1163cfb4a08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field.  <a href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">More...</a><br /></td></tr>
 <tr class="separator:a618a271cfef5053ad0a1163cfb4a08da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab79f0009083d9bfd96552ccf5806a28f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">setMainCamera</a> (<a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;p_camera)</td></tr>
-<tr class="memdesc:ab79f0009083d9bfd96552ccf5806a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for m_camera field.  <a href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">More...</a><br /></td></tr>
+<tr class="memdesc:ab79f0009083d9bfd96552ccf5806a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field.  <a href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">More...</a><br /></td></tr>
 <tr class="separator:ab79f0009083d9bfd96552ccf5806a28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2685d453682d28995439605c161451e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">getObjects</a> () const</td></tr>
-<tr class="memdesc:ad2685d453682d28995439605c161451e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for m_objects field.  <a href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">More...</a><br /></td></tr>
+<tr class="memdesc:ad2685d453682d28995439605c161451e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a> field.  <a href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">More...</a><br /></td></tr>
 <tr class="separator:ad2685d453682d28995439605c161451e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019e384aa684591391a5fe71d78e8569"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_light_source.html">LightSource</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a019e384aa684591391a5fe71d78e8569">getLights</a> () const</td></tr>
-<tr class="memdesc:a019e384aa684591391a5fe71d78e8569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for m_lights field.  <a href="class_crust_1_1_scene.html#a019e384aa684591391a5fe71d78e8569">More...</a><br /></td></tr>
+<tr class="memdesc:a019e384aa684591391a5fe71d78e8569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040">m_lights</a> field.  <a href="class_crust_1_1_scene.html#a019e384aa684591391a5fe71d78e8569">More...</a><br /></td></tr>
 <tr class="separator:a019e384aa684591391a5fe71d78e8569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeb4c57eaeab5df6aa860e9dcc741c91"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_render_object.html">RenderObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91">getRenderObjects</a> () const</td></tr>
-<tr class="memdesc:abeb4c57eaeab5df6aa860e9dcc741c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for m_render_objects field.  <a href="class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91">More...</a><br /></td></tr>
+<tr class="memdesc:abeb4c57eaeab5df6aa860e9dcc741c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a> field.  <a href="class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91">More...</a><br /></td></tr>
 <tr class="separator:abeb4c57eaeab5df6aa860e9dcc741c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a230dcbd911d2aef48fb7b69fb5d6ffdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_crust.html#aa2db099fa45e4a23ea3f17a75d0ccc6c">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a230dcbd911d2aef48fb7b69fb5d6ffdc">addObject</a> (<a class="el" href="class_crust_1_1_object.html">Object</a> &amp;p_object)</td></tr>
 <tr class="separator:a230dcbd911d2aef48fb7b69fb5d6ffdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac1f0d61e2983bfbe483bf7a4b3a63752"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> { false }</td></tr>
+<tr class="separator:ac1f0d61e2983bfbe483bf7a4b3a63752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36e2b9602716cba5dd01fc1c2116ebf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> { false }</td></tr>
+<tr class="separator:ab36e2b9602716cba5dd01fc1c2116ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1c191e07798d9b5fac053959a75cc9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9">m_name</a></td></tr>
+<tr class="separator:a2b1c191e07798d9b5fac053959a75cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605ce650dbb9e9a5fed0ad5bedab626d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a></td></tr>
+<tr class="separator:a605ce650dbb9e9a5fed0ad5bedab626d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec179fa7cadb6f5e8a0904c1c55ce575"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a></td></tr>
+<tr class="separator:aec179fa7cadb6f5e8a0904c1c55ce575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3b82ab443731c511893aa2fea828040"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_light_source.html">LightSource</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040">m_lights</a></td></tr>
+<tr class="separator:af3b82ab443731c511893aa2fea828040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f300d8ad1450ade50ff9b802d401c3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_render_object.html">RenderObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a></td></tr>
+<tr class="separator:a88f300d8ad1450ade50ff9b802d401c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> class. It's a container for all objects rendered onto the window. </p>
@@ -248,8 +266,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for m_lights field. </p>
-<dl class="section return"><dt>Returns</dt><dd>m_lights field. </dd></dl>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040">m_lights</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040">m_lights</a> field. </dd></dl>
 
 </div>
 </div>
@@ -268,7 +286,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for m_camera field. </p>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to camera, which will be new main camera (From it's perspective the world will be rendered).</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>Camera.hpp </dd></dl>
 
@@ -289,7 +307,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for m_name field. </p>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9">m_name</a> field. </p>
 <dl class="section return"><dt>Returns</dt><dd>Name of the scene. </dd></dl>
 
 </div>
@@ -309,8 +327,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for m_objects field. </p>
-<dl class="section return"><dt>Returns</dt><dd>m_objects field. </dd></dl>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a> field. </dd></dl>
 
 </div>
 </div>
@@ -329,8 +347,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for m_render_objects field. </p>
-<dl class="section return"><dt>Returns</dt><dd>m_render_objects field. </dd></dl>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a> field. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a> field. </dd></dl>
 
 </div>
 </div>
@@ -349,7 +367,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Called when scene is loaded. Sets m_loaded to true. calls <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c" title="Called when scene is started. Sets m_started to true. Calls start method on every script in this scen...">start</a> method if not started yet and <a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008" title="Called when scene is reloaded. Calls reload method on every script in this scene.">reload</a> method otherwise. </p>
+<p>Called when scene is loaded. Sets <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> to true. calls <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c" title="Called when scene is started. Sets m_started to true. Calls start method on every script in this scen...">start</a> method if not started yet and <a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008" title="Called when scene is reloaded. Calls reload method on every script in this scene.">reload</a> method otherwise. </p>
 
 </div>
 </div>
@@ -368,7 +386,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Called when scene is unloaded. Sets m_loaded to false and m_started to false. </p>
+<p>Called when scene is unloaded. Sets <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> to false and <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> to false. </p>
 
 </div>
 </div>
@@ -407,7 +425,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter for m_camera field. </p>
+<p>Setter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_camera</td><td>New main camera. </td></tr>
@@ -432,7 +450,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Called when scene is started. Sets m_started to true. Calls start method on every script in this scene. </p>
+<p>Called when scene is started. Sets <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> to true. Calls start method on every script in this scene. </p>
 
 </div>
 </div>
@@ -455,8 +473,163 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a605ce650dbb9e9a5fed0ad5bedab626d" name="a605ce650dbb9e9a5fed0ad5bedab626d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605ce650dbb9e9a5fed0ad5bedab626d">&#9670;&#160;</a></span>m_camera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crust_1_1_camera.html">Camera</a>&amp; Crust::Scene::m_camera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3b82ab443731c511893aa2fea828040" name="af3b82ab443731c511893aa2fea828040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b82ab443731c511893aa2fea828040">&#9670;&#160;</a></span>m_lights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_crust_1_1_light_source.html">LightSource</a>*&gt; Crust::Scene::m_lights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1f0d61e2983bfbe483bf7a4b3a63752" name="ac1f0d61e2983bfbe483bf7a4b3a63752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f0d61e2983bfbe483bf7a4b3a63752">&#9670;&#160;</a></span>m_loaded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Crust::Scene::m_loaded { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b1c191e07798d9b5fac053959a75cc9" name="a2b1c191e07798d9b5fac053959a75cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1c191e07798d9b5fac053959a75cc9">&#9670;&#160;</a></span>m_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Crust::Scene::m_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec179fa7cadb6f5e8a0904c1c55ce575" name="aec179fa7cadb6f5e8a0904c1c55ce575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec179fa7cadb6f5e8a0904c1c55ce575">&#9670;&#160;</a></span>m_objects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_crust_1_1_object.html">Object</a>*&gt; Crust::Scene::m_objects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88f300d8ad1450ade50ff9b802d401c3" name="a88f300d8ad1450ade50ff9b802d401c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f300d8ad1450ade50ff9b802d401c3">&#9670;&#160;</a></span>m_render_objects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_crust_1_1_render_object.html">RenderObject</a>*&gt; Crust::Scene::m_render_objects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab36e2b9602716cba5dd01fc1c2116ebf" name="ab36e2b9602716cba5dd01fc1c2116ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36e2b9602716cba5dd01fc1c2116ebf">&#9670;&#160;</a></span>m_started</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Crust::Scene::m_started { false }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/core/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/core/<a class="el" href="">Scene.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

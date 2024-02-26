@@ -9,5 +9,7 @@ var class_crust_1_1_library2_d_wrapper =
     [ "onDrawStart", "class_crust_1_1_library2_d_wrapper.html#aeb745b8cb2f9f6d1c777a322f663a29f", null ],
     [ "quit", "class_crust_1_1_library2_d_wrapper.html#ae376a18584271917370fee25c5078f98", null ],
     [ "setWindowCaption", "class_crust_1_1_library2_d_wrapper.html#aa024ee0a0135f14fec5f7f9b07881645", null ],
-    [ "shouldClose", "class_crust_1_1_library2_d_wrapper.html#a859627ae7c195e8f34639b571c08ccb7", null ]
+    [ "shouldClose", "class_crust_1_1_library2_d_wrapper.html#a859627ae7c195e8f34639b571c08ccb7", null ],
+    [ "m_height", "class_crust_1_1_library2_d_wrapper.html#afa710e8a25bf7a3c40e5ef06202345bc", null ],
+    [ "m_width", "class_crust_1_1_library2_d_wrapper.html#a35dc4df6f9bc931f4d865c52f4a419cb", null ]
 ];

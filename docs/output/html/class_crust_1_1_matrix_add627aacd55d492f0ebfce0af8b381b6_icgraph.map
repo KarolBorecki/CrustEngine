@@ -1,0 +1,4 @@
+<map id="Crust::Matrix::reset" name="Crust::Matrix::reset">
+<area shape="rect" id="node1" title="Reset all elements in matrix to the given value." alt="" coords="195,5,329,31"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_matrix.html#a990fa463ef190b3e49a6a1e3b2bbbfd3" title="If width or height argument is zero then no space for matrix&#39;s array will be allocated." alt="" coords="5,5,147,31"/>
+</map>

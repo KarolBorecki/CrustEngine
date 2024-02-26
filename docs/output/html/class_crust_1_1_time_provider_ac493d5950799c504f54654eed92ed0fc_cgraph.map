@@ -1,0 +1,4 @@
+<map id="Crust::TimeProvider::getDeltaTime_s" name="Crust::TimeProvider::getDeltaTime_s">
+<area shape="rect" id="node1" title="Returns last frame time in seconds." alt="" coords="5,5,144,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_time_provider.html#a994e6507faa36fce39aeb1037e88716f" title="Returns last frame time in miliseconds." alt="" coords="192,5,330,46"/>
+</map>

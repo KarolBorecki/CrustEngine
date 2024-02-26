@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_math.html',''); initRe
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_crust_1_1_math-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::Math Class Reference</div></div>
 </div><!--header-->
@@ -102,14 +103,14 @@ $(document).ready(function(){initNavTree('class_crust_1_1_math.html',''); initRe
 <p><a class="el" href="class_crust_1_1_math.html" title="Math operations wrapper/implementation.">Math</a> operations wrapper/implementation.  
  <a href="class_crust_1_1_math.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_math_8h_source.html">Math.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">Math.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8acbc2055581425104df78f29f56dda5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#a8acbc2055581425104df78f29f56dda5">equal</a> (float p_a, float p_b, float p_epsilon=DOUBLE_DEFAULT_DELTA)</td></tr>
+<tr class="memitem:a8acbc2055581425104df78f29f56dda5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#a8acbc2055581425104df78f29f56dda5">equal</a> (float p_a, float p_b, float p_epsilon=<a class="el" href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">DOUBLE_DEFAULT_DELTA</a>)</td></tr>
 <tr class="memdesc:a8acbc2055581425104df78f29f56dda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two floating point numbers with a given margin of error.  <a href="class_crust_1_1_math.html#a8acbc2055581425104df78f29f56dda5">More...</a><br /></td></tr>
 <tr class="separator:a8acbc2055581425104df78f29f56dda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb17c5775f6d4c17453111f2e4ca87bc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#acb17c5775f6d4c17453111f2e4ca87bc">equal</a> (double p_a, double p_b, float p_epsilon=DOUBLE_DEFAULT_DELTA)</td></tr>
+<tr class="memitem:acb17c5775f6d4c17453111f2e4ca87bc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#acb17c5775f6d4c17453111f2e4ca87bc">equal</a> (double p_a, double p_b, float p_epsilon=<a class="el" href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">DOUBLE_DEFAULT_DELTA</a>)</td></tr>
 <tr class="memdesc:acb17c5775f6d4c17453111f2e4ca87bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two double numbers with a given margin of error.  <a href="class_crust_1_1_math.html#acb17c5775f6d4c17453111f2e4ca87bc">More...</a><br /></td></tr>
 <tr class="separator:acb17c5775f6d4c17453111f2e4ca87bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34d61014a1a24ca07b34b60df0eceaba"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#a34d61014a1a24ca07b34b60df0eceaba">abs</a> (float p_a)</td></tr>
@@ -142,6 +143,12 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a18ed437aebd910a1f2109703495a052c"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#a18ed437aebd910a1f2109703495a052c">INF</a> { 1.7976931348623157E+308 }</td></tr>
 <tr class="memdesc:a18ed437aebd910a1f2109703495a052c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum value that double can hold.  <a href="class_crust_1_1_math.html#a18ed437aebd910a1f2109703495a052c">More...</a><br /></td></tr>
 <tr class="separator:a18ed437aebd910a1f2109703495a052c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:afee02f783b801ccebc02e67e0ac9a498"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">DOUBLE_DEFAULT_DELTA</a> { 0.00000000000000001 }</td></tr>
+<tr class="memdesc:afee02f783b801ccebc02e67e0ac9a498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default accepted margin for double values.  <a href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">More...</a><br /></td></tr>
+<tr class="separator:afee02f783b801ccebc02e67e0ac9a498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="class_crust_1_1_math.html" title="Math operations wrapper/implementation.">Math</a> operations wrapper/implementation. </p>
@@ -307,7 +314,7 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p_epsilon</em> = <code>DOUBLE_DEFAULT_DELTA</code>&#160;</td>
+          <td class="paramname"><em>p_epsilon</em> = <code><a class="el" href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">DOUBLE_DEFAULT_DELTA</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -359,7 +366,7 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p_epsilon</em> = <code>DOUBLE_DEFAULT_DELTA</code>&#160;</td>
+          <td class="paramname"><em>p_epsilon</em> = <code><a class="el" href="class_crust_1_1_math.html#afee02f783b801ccebc02e67e0ac9a498">DOUBLE_DEFAULT_DELTA</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -489,6 +496,30 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="afee02f783b801ccebc02e67e0ac9a498" name="afee02f783b801ccebc02e67e0ac9a498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee02f783b801ccebc02e67e0ac9a498">&#9670;&#160;</a></span>DOUBLE_DEFAULT_DELTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double Crust::Math::DOUBLE_DEFAULT_DELTA { 0.00000000000000001 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default accepted margin for double values. </p>
+
+</div>
+</div>
 <a id="a18ed437aebd910a1f2109703495a052c" name="a18ed437aebd910a1f2109703495a052c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18ed437aebd910a1f2109703495a052c">&#9670;&#160;</a></span>INF</h2>
 
@@ -538,7 +569,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/<a class="el" href="_math_8h_source.html">Math.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/<a class="el" href="">Math.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,4 @@
+<map id="Crust::Logger::error" name="Crust::Logger::error">
+<area shape="rect" id="node1" title="Logs onto the console in red color." alt="" coords="225,13,359,39"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_exceptions_handler.html#ae94d84379a8fd5514284bb2f585271e3" title="Throws an error and ends the engine work immedietly. It also prints message in red color on the conso..." alt="" coords="5,5,177,46"/>
+</map>

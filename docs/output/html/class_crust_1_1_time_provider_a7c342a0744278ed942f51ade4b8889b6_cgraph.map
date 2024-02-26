@@ -1,0 +1,6 @@
+<map id="Crust::TimeProvider::getAverageFPS" name="Crust::TimeProvider::getAverageFPS">
+<area shape="rect" id="node1" title="Returns current average frames per seconds value based on all frames." alt="" coords="5,5,144,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_time_provider.html#affd51821a53f5e201ff3d98051f35d8a" title="Returns average frame time from engine start in seconds." alt="" coords="192,5,367,46"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_time_provider.html#ab006c8030ac9fe2c39992dfd3207d17e" title="Returns time from engine&#39;s core start in seconds." alt="" coords="415,5,553,46"/>
+<area shape="rect" id="node4" href="$class_crust_1_1_time_provider.html#a7bd079284fc824dbd96c6d863197566c" title="Returns time from engine&#39;s core start in milliseconds." alt="" coords="601,5,740,46"/>
+</map>

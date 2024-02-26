@@ -8,5 +8,7 @@ var class_crust_1_1_mesh =
     [ "getPolygon", "class_crust_1_1_mesh.html#a9fe7baf5da55725e36040a2f8c88ca10", null ],
     [ "getPolygonsCount", "class_crust_1_1_mesh.html#af4fa60cb215d22182018e4d241c1e31f", null ],
     [ "getVertex", "class_crust_1_1_mesh.html#a4f5706c8a4854c0313e5495efbb95fdc", null ],
-    [ "setName", "class_crust_1_1_mesh.html#a6d3ca865faaccf6a8e510d57d5bc3ceb", null ]
+    [ "setName", "class_crust_1_1_mesh.html#a6d3ca865faaccf6a8e510d57d5bc3ceb", null ],
+    [ "m_name", "class_crust_1_1_mesh.html#ab79ff669cfeee04d3ba1a9fb23adfe9f", null ],
+    [ "m_polygons", "class_crust_1_1_mesh.html#a7b475134fdcf1637bbf7dc1249379059", null ]
 ];

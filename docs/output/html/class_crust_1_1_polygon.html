@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_polygon.html',''); ini
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_crust_1_1_polygon-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::Polygon&lt; V &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -101,7 +102,12 @@ $(document).ready(function(){initNavTree('class_crust_1_1_polygon.html',''); ini
 <p>A polygon with a variable number of vertices.  
  <a href="class_crust_1_1_polygon.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_polygon_8h_source.html">Polygon.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">Polygon.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Crust::Polygon&lt; V &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_polygon__inherit__graph.svg" width="152" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,6 +120,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b15403ebd1d2006a0313bb2bb878b48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48">getVertex</a> (uint8_t p_index)</td></tr>
 <tr class="memdesc:a3b15403ebd1d2006a0313bb2bb878b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vertex at the specified index.  <a href="class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48">More...</a><br /></td></tr>
 <tr class="separator:a3b15403ebd1d2006a0313bb2bb878b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abd747467c349647a1e96c68fcf75060b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_vector3.html">Vector3</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_polygon.html#abd747467c349647a1e96c68fcf75060b">m_vertices</a> [V]</td></tr>
+<tr class="separator:abd747467c349647a1e96c68fcf75060b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;uint8_t V&gt;<br />
@@ -197,8 +208,34 @@ template&lt;uint8_t V&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="abd747467c349647a1e96c68fcf75060b" name="abd747467c349647a1e96c68fcf75060b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd747467c349647a1e96c68fcf75060b">&#9670;&#160;</a></span>m_vertices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t V&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crust_1_1_vector3.html">Vector3</a>* <a class="el" href="class_crust_1_1_polygon.html">Crust::Polygon</a>&lt; V &gt;::m_vertices[V]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >The vertices of the polygon. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/geometry/<a class="el" href="_polygon_8h_source.html">Polygon.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/math/geometry/<a class="el" href="">Polygon.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,5 @@
+<map id="Crust::TimeProvider::getFPS" name="Crust::TimeProvider::getFPS">
+<area shape="rect" id="node1" title="Returns current frames per seconds value based on last frame time." alt="" coords="5,5,144,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_time_provider.html#ac493d5950799c504f54654eed92ed0fc" title="Returns last frame time in seconds." alt="" coords="192,5,330,46"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_time_provider.html#a994e6507faa36fce39aeb1037e88716f" title="Returns last frame time in miliseconds." alt="" coords="378,5,516,46"/>
+</map>

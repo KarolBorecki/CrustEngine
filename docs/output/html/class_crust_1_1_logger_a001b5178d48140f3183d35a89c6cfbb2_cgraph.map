@@ -1,0 +1,8 @@
+<map id="Crust::Logger::log" name="Crust::Logger::log">
+<area shape="rect" id="node1" title="Logs matrix onto the console." alt="" coords="5,80,131,106"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_matrix.html#af768dac0040fc1fa51142359072f473f" title="Get the height of the matrix." alt="" coords="187,5,327,31"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_logger.html#a6ea9f24b3ccf4f84af673c0f6cb082df" title="Prints empty line onto the console." alt="" coords="194,55,320,80"/>
+<area shape="rect" id="node4" href="$class_crust_1_1_logger.html#a4efaea5b99b4d3691649dd7dfa2dbd06" title="Logs onto the console." alt="" coords="179,104,335,130"/>
+<area shape="rect" id="node6" href="$class_crust_1_1_matrix.html#a547e82d4a3970a67be846e794a9fde97" title="Get the width of the matrix." alt="" coords="189,153,325,179"/>
+<area shape="rect" id="node5" href="$class_crust_1_1_logger.html#a91bf31a52746020f85e830cbfa23cfff" title="Sets console color to colorCode and console font style to styleCode;." alt="" coords="383,104,535,130"/>
+</map>

@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('class_crust_1_1_exceptions_handler.htm
 <p><a class="el" href="namespace_crust.html">Crust</a> engine exception's wrapper. This static class allows us to throw errors and warnings at anytime.  
  <a href="class_crust_1_1_exceptions_handler.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_exceptions_handler_8h_source.html">ExceptionsHandler.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="">ExceptionsHandler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -157,6 +157,19 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                {</div>
+<div class="line"><span class="lineno">   35</span>        va_list args;</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="class_crust_1_1_logger.html#a448306e417ab259008d4d2ee85e624c5">Crust::Logger::error</a>(p_format, args);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="ttc" id="aclass_crust_1_1_logger_html_a448306e417ab259008d4d2ee85e624c5"><div class="ttname"><a href="class_crust_1_1_logger.html#a448306e417ab259008d4d2ee85e624c5">Crust::Logger::error</a></div><div class="ttdeci">static void error(const char *p_format,...)</div><div class="ttdoc">Logs onto the console in red color.</div><div class="ttdef"><b>Definition:</b> Logger.h:101</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00101">Crust::Logger::error()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_exceptions_handler_ae94d84379a8fd5514284bb2f585271e3_cgraph.svg" width="566" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -202,11 +215,23 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                  {</div>
+<div class="line"><span class="lineno">   41</span>        va_list args;</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="class_crust_1_1_logger.html#ae9da193539eafa2563ee313c92f37317">Crust::Logger::warning</a>(p_format, args);</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="ttc" id="aclass_crust_1_1_logger_html_ae9da193539eafa2563ee313c92f37317"><div class="ttname"><a href="class_crust_1_1_logger.html#ae9da193539eafa2563ee313c92f37317">Crust::Logger::warning</a></div><div class="ttdeci">static void warning(const char *p_format,...)</div><div class="ttdoc">Logs onto the console in yellow color.</div><div class="ttdef"><b>Definition:</b> Logger.h:112</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00112">Crust::Logger::warning()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_exceptions_handler_a1d66007828c72e56d8bc3e2aa205f017_cgraph.svg" width="584" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/logging/<a class="el" href="_exceptions_handler_8h_source.html">ExceptionsHandler.h</a></li>
+<li>/Users/karolborecki/Desktop/CrustEngine/engine/inc/logging/<a class="el" href="">ExceptionsHandler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

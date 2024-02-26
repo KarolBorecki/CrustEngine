@@ -1,0 +1,4 @@
+<map id="Crust::Logger::setFont" name="Crust::Logger::setFont">
+<area shape="rect" id="node1" title="Sets console color to colorCode." alt="" coords="5,5,158,31"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_logger.html#a91bf31a52746020f85e830cbfa23cfff" title="Sets console color to colorCode and console font style to styleCode;." alt="" coords="206,5,358,31"/>
+</map>
