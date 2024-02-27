@@ -88,6 +88,9 @@ Here I'm describing what convetions I intended to use in this project.
 - Do not declare global fields - always use namespaces.
 - Use source files. Do not keep implementation in `*.hpp` / `*.h` files
 
+## Activity
+![Alt](https://repobeats.axiom.co/api/embed/78e9f041bad82e7994f88d1f8be39deead52d9b5.svg "Repobeats analytics image")
+
 ## Contact
 
 If You have any questions You can contact be directly.
