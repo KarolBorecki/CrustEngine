@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "Window.h"
+#include "core/Window.h"
 
 namespace Crust {
     /**

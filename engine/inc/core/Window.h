@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#include "Scene.h"
+#include "core/Scene.h"
 #include "static/Definitions.h"
 #include "rendering/Renderer.h"
 #include "utils/TimeProvider.h"
@@ -56,14 +56,13 @@ namespace Crust {
 
     private:
         Renderer& m_renderer; /**< Renderer used to render the scene. */
-        Scene& m_scene; /**< Scene that is being rendered on the window. */
+        Scene* m_scene { nullptr }; /**< Scene that is being rendered on the window. */
 
         TimeProvider& m_time_provider; /**< Time provider used to get the time and manage time-oriented tasks like FPS calculations. */
 
         uint16_t m_width { 0 }; /**< Width of the window. */
         uint16_t m_height { 0 }; /**< Height of the window. */
     };
-
 }
 
 #endif /* CRUSTENGINE_WINDOW_H */

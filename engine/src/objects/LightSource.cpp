@@ -5,7 +5,7 @@ namespace Crust {
 
     }
 
-    void LightSource::setType(uint8_t p_type) : Object() {
+    void LightSource::setType(uint8_t p_type) {
 
     }
 

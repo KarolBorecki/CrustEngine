@@ -5,6 +5,11 @@
 
 #include "math/geometry/Triangle.h"
 
+namespace {
+    template<typename T = float>
+    class Vector3;
+}
+
 namespace Crust {
     /**
      * @brief Represents 3D model as mesh consisted of 3D polygons.
@@ -39,14 +44,6 @@ namespace Crust {
          * @param p_index The index in #polygons for got polygon.
          */
         Triangle &getPolygon(const uint32_t p_index) const;
-
-        /**
-         * @brief Getter for vertex of the polygon of specified index.
-         *
-         * @param p_poliIndex Triangle index.
-         * @param p_point_index Triangle's point index.
-         */
-        const Vector3<> &getVertex(const uint32_t p_poli_index, const uint32_t p_point_index) const;
 
         /**
          * @brief Getter for polygons count.

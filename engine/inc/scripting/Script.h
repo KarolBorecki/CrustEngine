@@ -4,6 +4,10 @@
 #include "objects/Object.h"
 
 namespace Crust {
+    class Object;
+}
+
+namespace Crust {
     class Script {
     public:
         virtual void reload() {};
@@ -12,9 +16,9 @@ namespace Crust {
 
         virtual void update() {};
 
-        void attachTo(Crust::Object& p_object) { m_object = p_object; }
+        void attachTo(Object* p_object) { m_object = p_object; }
     private:
-        Crust::Object& m_object;
+        Object* m_object;
     };
 }
 

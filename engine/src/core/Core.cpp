@@ -1,7 +1,5 @@
 #include "core/Core.h"
 
-#include "core/Window.h"
-
 namespace Crust {
     Core::~Core() {
         closeAllWindows();

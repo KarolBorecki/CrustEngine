@@ -4,6 +4,9 @@
 #include "logging/Logger.h"
 
 //TODO investigate [[nodiscard]] attribute
+// TODO review reference vs pointer scenarios
+// USE reference when you want to tell that object cannot exists withou another
+// USE pointer in any other cases
 int main(int argc, char *argv[])
 {
     Crust::Matrix<float, 4, 4> matrix;

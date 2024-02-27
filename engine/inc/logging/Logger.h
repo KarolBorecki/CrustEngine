@@ -4,7 +4,10 @@
 #include <cstdarg>
 #include <cstring>
 #include <cstdio>
+
 #include "math/Matrix.h"
+#include "math/Vector3.h"
+#include "math/Vector4.h"
 
 namespace Crust {
     /**

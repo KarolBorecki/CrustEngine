@@ -5,7 +5,7 @@
 #include "objects/Object.h"
 #include "objects/Camera.h"
 #include "objects/RenderObject.h"
-#include "objects/light/LightSource.h"
+#include "objects/LightSource.h"
 
 namespace Crust {
     /**
@@ -104,12 +104,11 @@ namespace Crust {
 
         std::string m_name;
 
-        Camera& m_camera;
+        Camera* m_camera { nullptr }; //TODO remember to show no camera info on the screen when camera is nullptr
         std::vector<Object*> m_objects;
         std::vector<LightSource*> m_lights;
         std::vector<RenderObject*> m_render_objects;
     };
-
 }
 
 #endif /* CRUSTENGINE_SCENE_H */

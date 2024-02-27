@@ -33,7 +33,7 @@ namespace Crust {
 
     Status Object::attachScript(Script& p_script) {
         m_scripts.push_back(&p_script);
-        p_script.attachTo(*this);
+        p_script.attachTo(this);
         return OK;
     }
 }

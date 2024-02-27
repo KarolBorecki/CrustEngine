@@ -1,5 +1,7 @@
 #include "objects/Mesh.h"
 
+#include <utility>
+
 namespace Crust {
     Crust::Mesh::Mesh() {
 
@@ -18,11 +20,7 @@ namespace Crust {
     }
 
     Triangle &Mesh::getPolygon(const uint32_t p_index) const {
-        return initializer;
-    }
-
-    const Vector3<> &Mesh::getVertex(const uint32_t p_poli_index, const uint32_t p_point_index) const {
-        return <#initializer#>;
+        return *m_polygons[p_index]; // TODO review this
     }
 
     uint32_t Mesh::getPolygonsCount() const {
@@ -30,7 +28,7 @@ namespace Crust {
     }
 
     void Mesh::setName(std::string p_newName) {
-        m_name = p_newName;
+        m_name = std::move(p_newName); // TODO why std::move
     }
 
     std::string Mesh::getName() const {

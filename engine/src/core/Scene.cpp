@@ -1,7 +1,7 @@
 #include "core/Scene.h"
 
 namespace Crust {
-    Scene::Scene(std::string p_name, Camera& p_main_camera) : m_name(p_name), m_camera(p_main_camera) {}
+    Scene::Scene(std::string p_name, Camera& p_main_camera) : m_name(p_name), m_camera(&p_main_camera) {}
 
     void Scene::onLoad() {
         m_loaded = true;
@@ -26,11 +26,11 @@ namespace Crust {
     }
 
     Camera& Scene::getMainCamera() const {
-        return m_camera;
+        return *m_camera;
     }
 
     void Scene::setMainCamera(Camera& p_camera) {
-        m_camera = p_camera;
+        m_camera = &p_camera;
     }
 
     std::vector<Object*> Scene::getObjects() const {

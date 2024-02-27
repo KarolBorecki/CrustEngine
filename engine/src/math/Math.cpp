@@ -6,7 +6,7 @@ namespace Crust {
     }
 
     bool Math::equal(double p_a, double p_b, float p_epsilon) {
-        return Math::(p_a - p_b) < p_epsilon;
+        return Math::abs(p_a - p_b) < p_epsilon;
     }
 
     float Math::abs(float p_a) {

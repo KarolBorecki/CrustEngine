@@ -53,6 +53,7 @@ ExternalProject_Add(eigen
 include_directories(${EIGEN_PATH}/include/eigen3)
 link_directories(${EIGEN_PATH}/shared)
 
+# TODO review
 set(SOURCES main.cpp
         inc/rendering/Library2DWrapper.h
         src/rendering/Library2DWrapper.cpp
@@ -74,7 +75,6 @@ set(SOURCES main.cpp
         inc/math/Matrix.h
         inc/logging/Logger.h
         inc/math/Vector4.h
-        inc/utils/TimeProvider.h
         src/core/Core.cpp
         inc/core/Core.h
         src/objects/RenderObject.cpp
@@ -85,16 +85,18 @@ set(SOURCES main.cpp
         inc/objects/LightSource.h
         inc/files/MeshLoader.h
         src/files/MeshLoader.cpp
-        src/objects/Mesh.cpp
-        inc/objects/Mesh.h
         src/math/geometry/Polygon.cpp
         inc/math/geometry/Polygon.h
         src/math/geometry/Triangle.cpp
         inc/math/geometry/Triangle.h
+        src/objects/Mesh.cpp
+        inc/objects/Mesh.h
         inc/static/Config.h
         inc/logging/ExceptionsHandler.h
         src/math/Math.cpp
         inc/math/Math.h
+        src/utils/TimeProvider.cpp
+        inc/utils/TimeProvider.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
