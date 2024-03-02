@@ -29,9 +29,17 @@ namespace Crust {
          *
          * @param p_width The width of the window.
          * @param p_height The height of the window.
-         * @return Reference to the opened window.
+         * @return Status::OK if window was opened successfully, Status::ERROR otherwise.
          */
-        Window& openWindow(uint16_t p_width, uint16_t p_height);
+        Status openWindow(uint16_t p_width, uint16_t p_height);
+
+        /**
+         * @brief Get the window with the specified index.
+         *
+         * @param p_index The index of the window.
+         * @return The window with the specified index.
+         */
+        Window* getWindow(uint16_t p_index) const;
 
         /**
          * @brief Closes all of the windows and manages the cleanup of the leftovers.

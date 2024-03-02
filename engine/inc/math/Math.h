@@ -19,15 +19,6 @@ namespace Crust {
         static bool equal(float p_a, float p_b, float p_epsilon = DOUBLE_DEFAULT_DELTA);
 
         /**
-         * @brief Compares two double numbers with a given margin of error.
-         *
-         * @param p_a The first number to compare.
-         * @param p_b The second number to compare.
-         * @param p_epsilon The margin of error.
-         */
-        static bool equal(double p_a, double p_b, float p_epsilon = DOUBLE_DEFAULT_DELTA);
-
-        /**
          * @brief Returns the absolute value of a number.
          *
          * @param p_a The number to get the absolute value of.
@@ -35,46 +26,39 @@ namespace Crust {
         static float abs(float p_a);
 
         /**
-         * @brief Returns the absolute value of a number.
+         * @brief Returns the square root of a number.
          *
-         * @param p_a The number to get the absolute value of.
+         * @param p_a The number to get the square root of.
          */
-        static double abs(double p_a);
+        static float degreesToRadians(int p_degrees);
 
         /**
          * @brief Returns the square root of a number.
          *
          * @param p_a The number to get the square root of.
          */
-        static double degreesToRadians(int p_degrees);
+        static int radiansToDegrees(float p_radians);
 
         /**
          * @brief Returns the square root of a number.
          *
          * @param p_a The number to get the square root of.
          */
-        static double radiansToDegrees(double p_radians);
+        static float tan(float p_t);
 
         /**
          * @brief Returns the square root of a number.
          *
          * @param p_a The number to get the square root of.
          */
-        static double tan(double p_t);
+        static float sin(float p_t);
 
         /**
          * @brief Returns the square root of a number.
          *
          * @param p_a The number to get the square root of.
          */
-        static double sin(double p_t);
-
-        /**
-         * @brief Returns the square root of a number.
-         *
-         * @param p_a The number to get the square root of.
-         */
-        static double cos(double p_t);
+        static float cos(float p_t);
 
     public:
         static constexpr double PI { M_PI }; //!< The value of PI

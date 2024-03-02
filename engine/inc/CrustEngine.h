@@ -24,7 +24,8 @@
 #include "utils/TimeProvider.h"
 #include "core/Scene.h"
 #include "rendering/Library2DWrapper.h"
-#include "rendering/PerspectiveProjector.h"
+#include "rendering/projection/AbstractProjector.h"
+#include "rendering/projection/PerspectiveProjector.h"
 #include "rendering/Renderer.h"
 
 #include "core/Core.h"

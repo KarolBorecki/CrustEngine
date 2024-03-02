@@ -57,8 +57,8 @@ set(SOURCES
         src/objects/LightSource.cpp
         src/objects/Mesh.cpp
         src/objects/RenderObject.cpp
+        src/rendering/projection/PerspectiveProjector.cpp
         src/rendering/Library2DWrapper.cpp
-        src/rendering/Projector.cpp
         src/rendering/Renderer.cpp
         src/utils/TimeProvider.cpp
 )
@@ -83,10 +83,9 @@ set(HEADERS
         inc/objects/LightSource.h
         inc/objects/Mesh.h
         inc/objects/RenderObject.h
-        inc/rendering/AbstractProjector.h
-        inc/rendering/PerspectiveProjector.h
+        inc/rendering/projection/AbstractProjector.h
+        inc/rendering/projection/PerspectiveProjector.h
         inc/rendering/Library2DWrapper.h
-        inc/rendering/PerspectiveProjector.h
         inc/rendering/Renderer.h
         inc/utils/TimeProvider.h
         inc/scripting/Script.h

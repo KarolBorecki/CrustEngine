@@ -23,8 +23,6 @@ namespace Crust {
          */
         Camera(uint16_t p_f_fov_deg, float p_f_near, float p_f_far);
 
-        virtual ~Camera() = default;
-
         /**
          * @brief Getter for #fieldOfViewDeg field.
          *

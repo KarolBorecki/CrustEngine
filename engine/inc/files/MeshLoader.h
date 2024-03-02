@@ -15,7 +15,7 @@ namespace Crust {
          * @param p_path The path to the mesh file.
          * @return The loaded mesh pointer. Remember to delete it after using.
          */
-        static Mesh* loadMesh(const char* p_path);
+        static Mesh& loadMesh(const char* p_path);
     };
 }
 

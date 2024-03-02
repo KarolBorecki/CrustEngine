@@ -1,5 +1,7 @@
 #include <CrustEngine.h>
 
+using namespace Crust; // TODO DELETE
+
 //TODO investigate [[nodiscard]] attribute
 // TODO review reference vs pointer scenarios
 // USE reference when you want to tell that object cannot exists withou another
@@ -15,9 +17,11 @@ int main(int argc, char *argv[])
     Crust::RenderObject object("../resources/models/cube.obj");
     scene.addObject(object);
 
-    Crust::Window window = core.openWindow(800, 600);
-    window.loadScene(scene);
+    core.openWindow(800, 600);
+    Window* window = core.getWindow(0);
+    window->loadScene(scene);
 
     core.quit();
+    Crust::Logger::info("Quitting the engine.");
     return 0;
 }

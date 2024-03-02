@@ -35,17 +35,25 @@ namespace Crust {
             return;
         }
         m_started = true;
-        for (auto o : m_objects) {
-            for (auto s : o->getScripts()) {
-                s->start();
+        for (auto object : m_objects) {
+            if(object != nullptr) {
+                for (auto script : object->getScripts()) {
+                    if (script != nullptr) {
+                        script->start();
+                    }
+                }
             }
         }
     }
 
     void Scene::update() {
-        for (auto o : m_objects) {
-            for (auto s : o->getScripts()) {
-                s->update();
+        for (auto object : m_objects) {
+            if(object != nullptr) {
+                for (auto script : object->getScripts()) {
+                    if (script != nullptr) {
+                        script->update();
+                    }
+                }
             }
         }
     }
