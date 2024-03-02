@@ -1,16 +1,13 @@
 #include "core/Window.h"
 
 namespace Crust {
-    Window::Window(uint16_t p_width, uint16_t p_height) {
+    Window::Window(uint16_t p_width, uint16_t p_height) : m_renderer(p_width, p_height) {
         Logger::info("Window created with width: %d and height: %d", p_width, p_height);
-        m_renderer = new Renderer(p_width, p_height);
-        m_time_provider = new TimeProvider();
     }
 
     Window::~Window() {
+        Logger::log("Window destroyed.");
         unLoadScene();
-        delete m_renderer;
-        delete m_time_provider;
     }
 
     Status Window::loadScene(Scene& p_scene) {
@@ -40,6 +37,6 @@ namespace Crust {
     }
 
     Status Window::changeProjection(Projection p_projection_model) {
-        return m_renderer->setProjector(p_projection_model);
+        return m_renderer.setProjector(p_projection_model);
     }
 }

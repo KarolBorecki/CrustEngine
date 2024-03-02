@@ -1,11 +1,11 @@
 #include "objects/Transform.h"
 
 namespace Crust {
-    Transform::Transform() :
-        m_position(*(new Vector3<>(0.0f, 0.0f, 0.0f))),
-        m_rotation(*(new Vector3<>(0.0f, 0.0f, 0.0f))),
-        m_scale(*(new Vector3<>(1.0f, 1.0f, 1.0f))) {}
-
+    Transform::Transform() {
+        m_position = {0.0f, 0.0f, 0.0f};
+        m_rotation = {0.0f, 0.0f, 0.0f};
+        m_scale = {1.0f, 1.0f, 1.0f};
+    }
 
     inline Crust::Vector3<> &Transform::getPosition() { return m_position; }
 

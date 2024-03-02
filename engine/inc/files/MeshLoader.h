@@ -13,9 +13,10 @@ namespace Crust {
          * @brief Load a mesh from the specified file and if cannot do it returns nullptr.
          *
          * @param p_path The path to the mesh file.
+         * @para p_out_mesh The mesh to load to.
          * @return The loaded mesh pointer. Remember to delete it after using.
          */
-        static Mesh& loadMesh(const char* p_path);
+        static Status loadMesh(const char* p_path, Mesh* p_out_mesh);
     };
 }
 

@@ -1,12 +1,12 @@
 #include "core/Scene.h"
 
 namespace Crust {
-    Scene::Scene() : m_name(Crust::DEFAULT_SCENE_NAME), m_camera(nullptr) {
-        Logger::info("Created new scene with default name.");
+    Scene::Scene() : m_name(Crust::DEFAULT_SCENE_NAME) {
+        Logger::info("Created new scene with default name and no main camera.");
     }
 
-    Scene::Scene(const char* p_name) : m_name(p_name), m_camera(nullptr) {
-        Logger::info("Created new scene with name: %s", p_name);
+    Scene::Scene(const char* p_name) : m_name(p_name) {
+        Logger::info("Created new scene with name: %s and no main camera.", p_name);
     }
 
     Scene::Scene(Camera& p_main_camera) : m_name(Crust::DEFAULT_SCENE_NAME), m_camera(&p_main_camera) {
@@ -70,8 +70,8 @@ namespace Crust {
         return m_name;
     }
 
-    Camera* Scene::getMainCamera() const {
-        return m_camera;
+    Camera& Scene::getMainCamera() const {
+        return *m_camera;
     }
 
     void Scene::setMainCamera(Camera& p_camera) {

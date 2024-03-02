@@ -16,6 +16,11 @@ namespace Crust {
     class Renderer {
     public:
         /**
+         * @brief Construct a new Renderer object with not specified width and height.
+         */
+        Renderer();
+
+        /**
          * @brief Construct a new Renderer object with the specified width and height.
          *
          * @param p_width The width of the renderer.
@@ -26,7 +31,7 @@ namespace Crust {
         /**
          * @brief Destroy the Renderer object with it's lib 2D wrapper and projector.
          */
-        ~Renderer();
+        virtual ~Renderer() = default;
 
         /**
          * @brief Render the scene.
@@ -34,6 +39,16 @@ namespace Crust {
          * @param scene The scene to render.
          */
         void renderScene(Scene& p_scene);
+
+        /**
+         * @brief Resize the renderer.
+         *
+         * @details Resizes the window to the specified width and height. Also performs the resizing of the projector and 2D lib.
+         *
+         * @param p_width The width of the window.
+         * @param p_height The height of the window.
+         */
+        void resize(uint16_t p_width, uint16_t p_height);
 
         /**
          * @brief Set the projector mathematical model.
@@ -47,8 +62,8 @@ namespace Crust {
         uint16_t m_width { 0 }; /** !< The width of the projector. */
         uint16_t m_height { 0 }; /** !< The height of the projector. */
 
-        Library2DWrapper* m_lib_2d { nullptr }; /** !< The 2D library wrapper. */
-        AbstractProjector* m_projector { nullptr }; /** !< The projector. */
+        Library2DWrapper m_lib_2d; /** !< The 2D library wrapper. */
+        AbstractProjector m_projector; /** !< The projector. */
     };
 }
 

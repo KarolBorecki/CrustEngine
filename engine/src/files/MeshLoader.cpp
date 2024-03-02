@@ -1,7 +1,7 @@
 #include "files/MeshLoader.h"
 
 namespace Crust {
-    Mesh& MeshLoader::loadMesh(const char* p_path) {
-        return *new Mesh();
+    Status MeshLoader::loadMesh(const char* p_path, Mesh* p_out_mesh) {
+        return OK;
     }
 }

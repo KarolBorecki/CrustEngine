@@ -3,12 +3,8 @@
 #include "objects/Transform.h"
 
 namespace Crust {
-    Object::Object() : m_transform(*(new Transform())) {
+    Object::Object() {
         m_id = NEXT_ID++;
-    }
-
-    Object::~Object() {
-        delete &m_transform;
     }
 
     uint32_t Object::getId() const {
@@ -23,7 +19,7 @@ namespace Crust {
         m_active = p_active;
     }
 
-    Transform& Object::getTransform() const {
+    Transform& Object::getTransform() {
         return m_transform;
     }
 

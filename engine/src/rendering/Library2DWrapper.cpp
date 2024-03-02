@@ -13,6 +13,11 @@ namespace Crust {
         return ERROR;
     }
 
+    void Library2DWrapper::resize(uint16_t p_width, uint16_t p_height) {
+        m_width = p_width;
+        m_height = p_height;
+    }
+
     void Library2DWrapper::onDrawStart() {
 
     }

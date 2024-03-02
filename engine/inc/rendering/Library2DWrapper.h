@@ -56,6 +56,16 @@ namespace Crust {
         Crust::Status setWindowCaption(std::string p_caption);
 
         /**
+         * @brief Resize the window.
+         *
+         * @details Resizes the window to the specified width and height.
+         *
+         * @param p_width The width of the window.
+         * @param p_height The height of the window.
+         */
+        void resize(uint16_t p_width, uint16_t p_height);
+
+        /**
          * @brief Start the drawing.
          *
          * @details Starts the drawing. Should be called before each draw frame before any drawing is done and after the window is created.

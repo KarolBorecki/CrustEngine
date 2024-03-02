@@ -1,4 +1,5 @@
 #include "objects/Mesh.h"
+#include "logging/Logger.h"
 
 namespace Crust {
     Crust::Mesh::Mesh() : m_name(DEFAULT_MESH_NAME) {}
@@ -6,6 +7,7 @@ namespace Crust {
     Mesh::Mesh(const char* name) : m_name(name){}
 
     Mesh::~Mesh() {
+        Logger::log("Deleting mesh: %s", m_name);
         for (auto p : m_polygons) {
             delete p;
         }

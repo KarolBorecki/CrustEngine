@@ -4,8 +4,14 @@
 #include "math/Vector3.h"
 
 namespace Crust {
+    /**
+     * @brief The transform of an object. Handles position, rotation and scale.
+     */
     class Transform {
     public:
+        /**
+         * @brief Construct a new Transform object with default values.
+         */
         Transform();
         virtual ~Transform() = default;
 
@@ -69,9 +75,9 @@ namespace Crust {
         void rotateEuler(float dX, float dY, float dZ);
 
     private:
-        Vector3<>& m_position;
-        Vector3<>& m_rotation;
-        Vector3<>& m_scale;
+        Vector3<> m_position;
+        Vector3<> m_rotation;
+        Vector3<> m_scale;
     };
 }
 

@@ -17,9 +17,8 @@ int main(int argc, char *argv[])
     Crust::RenderObject object("../resources/models/cube.obj");
     scene.addObject(object);
 
-    core.openWindow(800, 600);
-    Window* window = core.getWindow(0);
-    window->loadScene(scene);
+    Window window = core.openWindow(800, 600);
+    window.loadScene(scene);
 
     core.quit();
     Crust::Logger::info("Quitting the engine.");

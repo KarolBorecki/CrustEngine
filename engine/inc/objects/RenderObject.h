@@ -22,17 +22,17 @@ namespace Crust {
         /**
          * @brief Destroy the RenderObject object with it's mesh.
          */
-        ~RenderObject() override;
+        ~RenderObject() override = default;
 
         /**
          * @brief Get the mesh to render.
          *
          * @return The mesh to render.
          */
-        Mesh& getMesh() const;
+        Mesh& getMesh();
 
         private:
-            Mesh& m_mesh; /** !< The mesh to render. */
+            Mesh m_mesh; /** !< The mesh to render. */
     };
 }
 

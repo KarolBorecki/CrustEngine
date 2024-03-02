@@ -17,16 +17,16 @@ namespace Crust {
     class Scene {
     public:
         /**
-         * @brief Construct a new Scene object. It's name will be set to default scene name and main camera will be set to default camera.
+         * @brief Construct a new Scene object with name set to default scene name and main camera set to nullptr.
          */
         Scene();
 
         /**
-         * @brief Construct a new Scene object with name set to #name and without a main camera.
+         * @brief Construct a new Scene object with name set to #p_name and main camera set to nullptr.
          *
-         * @param name Name of the scene.
+         * @param p_name Name of the scene.
          */
-        Scene(const char* name);
+        Scene(const char* p_name);
 
         /**
          * @brief Construct a new Scene object with name set to default scene name and main camera set to #main_camera.
@@ -34,7 +34,7 @@ namespace Crust {
          * @param name Name of the scene.
          * @param main_camera Main camera of the scene.
          */
-        Scene(Camera& main_camera);
+        explicit Scene(Camera& main_camera);
 
         /**
          * @brief Construct a new Scene object with name set to #p_name and main camera set to #p_main_camera.
@@ -84,11 +84,11 @@ namespace Crust {
         /**
          * @brief Getter for #m_camera field.
          *
-         * @return Reference to camera, which will be new main camera (From it's perspective the world will be rendered).
+         * @return Pointer to camera, which will be new main camera (From it's perspective the world will be rendered).
          *
          * @sa Camera.hpp
          */
-        Camera* getMainCamera() const;
+        Camera& getMainCamera() const;
 
         /**
          * @brief Setter for #m_camera field.

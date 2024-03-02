@@ -10,7 +10,7 @@ namespace Crust {
         closeAllWindows();
     }
 
-    Status Core::openWindow(uint16_t p_width, uint16_t p_height) {
+    Window& Core::openWindow(uint16_t p_width, uint16_t p_height) {
         if (p_width == 0 || p_height == 0)
             ExceptionsHandler::throwError("Error while opening new window: Width or Height cannot be equal to 0!");
 
@@ -18,14 +18,14 @@ namespace Crust {
         m_windows.push_back(window);
         window->open();
 
-        return OK;
+        return *window;
     }
 
-    Window* Core::getWindow(uint16_t p_index) const {
+    Window& Core::getWindow(uint16_t p_index) { // TODO braks convention
         if (p_index >= m_windows.size()) {
-            return nullptr;
+            ExceptionsHandler::throwError("Error while getting window: Index out of range!");
         }
-        return m_windows[p_index];
+        return *m_windows[p_index];
     }
 
     Status Core::closeAllWindows() {
