@@ -25,6 +25,7 @@ var hierarchy =
     [ "Crust::Script", "class_crust_1_1_script.html", null ],
     [ "Crust::TimeProvider", "class_crust_1_1_time_provider.html", null ],
     [ "Crust::Transform", "class_crust_1_1_transform.html", null ],
+    [ "anonymous_namespace{Mesh.h}::Vector3< T >", "classanonymous__namespace_02_mesh_8h_03_1_1_vector3.html", null ],
     [ "Eigen::Vector3", null, [
       [ "Crust::Vector3< T >", "class_crust_1_1_vector3.html", null ]
     ] ],

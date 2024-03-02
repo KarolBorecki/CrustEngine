@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "core/Window.h"
+#include "logging/ExceptionsHandler.h"
 
 namespace Crust {
     /**
@@ -14,7 +15,7 @@ namespace Crust {
         /**
          * @brief Construct a new Core object.
          */
-        Core() = default;
+        Core();
 
         /**
          * @brief Destroy the Core object. It also closes all of the windows and manages the cleanup of the leftovers.
@@ -28,9 +29,9 @@ namespace Crust {
          *
          * @param p_width The width of the window.
          * @param p_height The height of the window.
-         * @return Status::OK if window was opened successfully, Status::ERROR otherwise.
+         * @return Reference to the opened window.
          */
-        Status openWindow(uint16_t p_width, uint16_t p_height);
+        Window& openWindow(uint16_t p_width, uint16_t p_height);
 
         /**
          * @brief Closes all of the windows and manages the cleanup of the leftovers.
@@ -47,6 +48,13 @@ namespace Crust {
          * @return Status::OK if engine was quit successfully, Status::ERROR otherwise.
          */
         Status quit();
+
+        /**
+         * @brief Get the list of managed windows.
+         *
+         * @return The list of managed windows.
+         */
+        inline std::vector<Window*>& getWindows() { return m_windows; }
 
     private:
         std::vector<Window*> m_windows; /**< List of managed windows. */

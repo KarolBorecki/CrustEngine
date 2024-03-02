@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-#include "Logger.h"
+#include "logging/Logger.h"
 
 namespace Crust
 {
@@ -28,19 +28,7 @@ namespace Crust
          * @param ...  - format args.
          */
         static void throwWarning(const char* p_format, ...);
-
     };
-
-    void ExceptionsHandler::throwError(const char* p_format, ...) {
-        va_list args;
-        Crust::Logger::error(p_format, args);
-        throw std::runtime_error("");
-    }
-
-    void ExceptionsHandler::throwWarning(const char* p_format, ...) {
-        va_list args;
-        Crust::Logger::warning(p_format, args);
-    }
 }
 
 #endif /* CRUSTENGINE_EXCEPTIONHANDLER_H */

@@ -1,3 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="node1" href="$class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene." alt="" coords="5,5,120,31"/>
 </map>

@@ -1,6 +1,9 @@
 #ifndef CRUSTENGINE_CAMERA_H
 #define CRUSTENGINE_CAMERA_H
 
+#include "logging/Logger.h"
+#include "logging/ExceptionsHandler.h"
+#include "math/Math.h"
 #include "Object.h"
 
 namespace Crust {

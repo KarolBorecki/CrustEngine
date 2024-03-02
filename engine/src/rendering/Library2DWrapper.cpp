@@ -1,5 +1,4 @@
 #include "rendering/Library2DWrapper.h"
-#include "static/Definitions.h"
 
 namespace Crust {
     Crust::Status Crust::Library2DWrapper::init() {

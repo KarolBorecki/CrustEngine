@@ -1,22 +1,18 @@
 #include "objects/Mesh.h"
 
-#include <utility>
-
 namespace Crust {
-    Crust::Mesh::Mesh() {
+    Crust::Mesh::Mesh() : m_name(DEFAULT_MESH_NAME) {}
 
-    }
-
-    Mesh::Mesh(std::string name) {
-
-    }
+    Mesh::Mesh(const char* name) : m_name(name){}
 
     Mesh::~Mesh() {
-
+        for (auto p : m_polygons) {
+            delete p;
+        }
     }
 
     void Mesh::addPolygon(Triangle &p_poli) {
-
+        m_polygons.push_back(&p_poli);
     }
 
     Triangle &Mesh::getPolygon(const uint32_t p_index) const {
@@ -24,14 +20,14 @@ namespace Crust {
     }
 
     uint32_t Mesh::getPolygonsCount() const {
-        return 0;
+        return m_polygons.size();
     }
 
-    void Mesh::setName(std::string p_newName) {
-        m_name = std::move(p_newName); // TODO why std::move
+    void Mesh::setName(const char* p_newName) {
+        m_name = p_newName; // TODO why std::move
     }
 
-    std::string Mesh::getName() const {
+    const char* Mesh::getName() const {
         return m_name;
     }
 }

@@ -3,6 +3,11 @@ project(CrustEngine)
 
 include(ExternalProject)
 
+if (${APPLE})
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
+endif()
+
 find_package(raylib QUIET)
 if (NOT raylib_FOUND)
     include(FetchContent)
@@ -53,54 +58,60 @@ ExternalProject_Add(eigen
 include_directories(${EIGEN_PATH}/include/eigen3)
 link_directories(${EIGEN_PATH}/shared)
 
-# TODO review
-set(SOURCES main.cpp
-        inc/rendering/Library2DWrapper.h
-        src/rendering/Library2DWrapper.cpp
-        inc/static/Definitions.h
-        inc/rendering/Renderer.h
-        src/rendering/Renderer.cpp
-        inc/rendering/Projector.h
-        src/rendering/Projector.cpp
-        src/core/Scene.cpp
-        inc/core/Scene.h
-        src/core/Window.cpp
-        inc/core/Window.h
-        src/objects/Object.cpp
-        inc/objects/Object.h
-        src/objects/Transform.cpp
-        inc/objects/Transform.h
-        inc/math/Vector3.h
-        inc/scripting/Script.h
-        inc/math/Matrix.h
-        inc/logging/Logger.h
-        inc/math/Vector4.h
+set(SOURCES
+        main.cpp
         src/core/Core.cpp
-        inc/core/Core.h
-        src/objects/RenderObject.cpp
-        inc/objects/RenderObject.h
-        src/objects/Camera.cpp
-        inc/objects/Camera.h
-        src/objects/LightSource.cpp
-        inc/objects/LightSource.h
-        inc/files/MeshLoader.h
+        src/core/Scene.cpp
+        src/core/Window.cpp
         src/files/MeshLoader.cpp
-        src/math/geometry/Polygon.cpp
-        inc/math/geometry/Polygon.h
-        src/math/geometry/Triangle.cpp
-        inc/math/geometry/Triangle.h
-        src/objects/Mesh.cpp
-        inc/objects/Mesh.h
-        inc/static/Config.h
-        inc/logging/ExceptionsHandler.h
+        src/logging/ExceptionsHandler.cpp
+        src/logging/Logger.cpp
         src/math/Math.cpp
-        inc/math/Math.h
+        src/math/geometry/Polygon.cpp
+        src/math/geometry/Triangle.cpp
+        src/objects/Transform.cpp
+        src/objects/Object.cpp
+        src/objects/Camera.cpp
+        src/objects/LightSource.cpp
+        src/objects/Mesh.cpp
+        src/objects/RenderObject.cpp
+        src/rendering/Library2DWrapper.cpp
+        src/rendering/Projector.cpp
+        src/rendering/Renderer.cpp
         src/utils/TimeProvider.cpp
-        inc/utils/TimeProvider.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
-target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/Inc)
+set(HEADERS
+        inc/CrustEngine.h
+        inc/core/Core.h
+        inc/core/Scene.h
+        inc/core/Window.h
+        inc/files/MeshLoader.h
+        inc/logging/Logger.h
+        inc/logging/ExceptionsHandler.h
+        inc/math/Math.h
+        inc/math/Matrix.h
+        inc/math/Vector3.h
+        inc/math/Vector4.h
+        inc/math/geometry/Polygon.h
+        inc/math/geometry/Triangle.h
+        inc/objects/Transform.h
+        inc/objects/Object.h
+        inc/objects/Camera.h
+        inc/objects/LightSource.h
+        inc/objects/Mesh.h
+        inc/objects/RenderObject.h
+        inc/rendering/Library2DWrapper.h
+        inc/rendering/Projector.h
+        inc/rendering/Renderer.h
+        inc/utils/TimeProvider.h
+        inc/scripting/Script.h
+        inc/static/Config.h
+        inc/static/Definitions.h
+)
+
+include_directories(${PROJECT_SOURCE_DIR}/inc)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)

@@ -1,6 +1,7 @@
 #ifndef _MESHLOADER_HPP_
 #define _MESHLOADER_HPP_
 
+#include <cstdint>
 #include <fstream>
 #include <string>
 #include <vector>

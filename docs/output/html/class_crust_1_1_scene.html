@@ -110,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a83fd8936ac33f114ac7ef027cf4bf9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object with name set to #p_name and main camera set to #p_main_camera.  <a href="class_crust_1_1_scene.html#a83fd8936ac33f114ac7ef027cf4bf9df">More...</a><br /></td></tr>
 <tr class="separator:a83fd8936ac33f114ac7ef027cf4bf9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b5b6c6c6e0173369716be2653883b11"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11">~Scene</a> ()=default</td></tr>
-<tr class="memdesc:a1b5b6c6c6e0173369716be2653883b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object.  <a href="class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11">More...</a><br /></td></tr>
+<tr class="memdesc:a1b5b6c6c6e0173369716be2653883b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object. Remember that it will not delete any objects in the scene.  <a href="class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11">More...</a><br /></td></tr>
 <tr class="separator:a1b5b6c6c6e0173369716be2653883b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a33933fb69d511455f0314008c1cf4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a">onLoad</a> ()</td></tr>
 <tr class="memdesc:a1a33933fb69d511455f0314008c1cf4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is loaded. Sets <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> to true. calls <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c" title="Called when scene is started. Sets m_started to true. Calls start method on every script in this scen...">start</a> method if not started yet and <a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008" title="Called when scene is reloaded. Calls reload method on every script in this scene.">reload</a> method otherwise.  <a href="class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a">More...</a><br /></td></tr>
@@ -131,11 +131,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3ac3fb4a16707248105f25ca462d1125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9">m_name</a> field.  <a href="class_crust_1_1_scene.html#a3ac3fb4a16707248105f25ca462d1125">More...</a><br /></td></tr>
 <tr class="separator:a3ac3fb4a16707248105f25ca462d1125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a618a271cfef5053ad0a1163cfb4a08da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">getMainCamera</a> () const</td></tr>
-<tr class="memdesc:a618a271cfef5053ad0a1163cfb4a08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field.  <a href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">More...</a><br /></td></tr>
+<tr class="memdesc:a618a271cfef5053ad0a1163cfb4a08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853">m_camera</a> field.  <a href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">More...</a><br /></td></tr>
 <tr class="separator:a618a271cfef5053ad0a1163cfb4a08da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab79f0009083d9bfd96552ccf5806a28f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">setMainCamera</a> (<a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;p_camera)</td></tr>
-<tr class="memdesc:ab79f0009083d9bfd96552ccf5806a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field.  <a href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">More...</a><br /></td></tr>
+<tr class="memdesc:ab79f0009083d9bfd96552ccf5806a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for <a class="el" href="class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853">m_camera</a> field.  <a href="class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f">More...</a><br /></td></tr>
 <tr class="separator:ab79f0009083d9bfd96552ccf5806a28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9ec4cd6267fec4d3834d0be5fec500"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#afe9ec4cd6267fec4d3834d0be5fec500">isLoaded</a> () const</td></tr>
+<tr class="memdesc:afe9ec4cd6267fec4d3834d0be5fec500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> field. Determines whether scene is being rendered onto the window.  <a href="class_crust_1_1_scene.html#afe9ec4cd6267fec4d3834d0be5fec500">More...</a><br /></td></tr>
+<tr class="separator:afe9ec4cd6267fec4d3834d0be5fec500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bb47c47177ee969a709c407c1dacaa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ad8bb47c47177ee969a709c407c1dacaa">isStarted</a> () const</td></tr>
+<tr class="memdesc:ad8bb47c47177ee969a709c407c1dacaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> field. Determines whether scene was already started.  <a href="class_crust_1_1_scene.html#ad8bb47c47177ee969a709c407c1dacaa">More...</a><br /></td></tr>
+<tr class="separator:ad8bb47c47177ee969a709c407c1dacaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2685d453682d28995439605c161451e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">getObjects</a> () const</td></tr>
 <tr class="memdesc:ad2685d453682d28995439605c161451e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a> field.  <a href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">More...</a><br /></td></tr>
 <tr class="separator:ad2685d453682d28995439605c161451e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,8 +162,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab36e2b9602716cba5dd01fc1c2116ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1c191e07798d9b5fac053959a75cc9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9">m_name</a></td></tr>
 <tr class="separator:a2b1c191e07798d9b5fac053959a75cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605ce650dbb9e9a5fed0ad5bedab626d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a></td></tr>
-<tr class="separator:a605ce650dbb9e9a5fed0ad5bedab626d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528129b9e84882020497835ad4d28853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853">m_camera</a> { nullptr }</td></tr>
+<tr class="separator:a528129b9e84882020497835ad4d28853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec179fa7cadb6f5e8a0904c1c55ce575"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_object.html">Object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575">m_objects</a></td></tr>
 <tr class="separator:aec179fa7cadb6f5e8a0904c1c55ce575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3b82ab443731c511893aa2fea828040"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_light_source.html">LightSource</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040">m_lights</a></td></tr>
@@ -228,7 +234,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object. </p>
+<p>Destroy the <a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> object. Remember that it will not delete any objects in the scene. </p>
 
 </div>
 </div>
@@ -286,7 +292,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field. </p>
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853">m_camera</a> field. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to camera, which will be new main camera (From it's perspective the world will be rendered).</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>Camera.hpp </dd></dl>
 
@@ -349,6 +355,46 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for <a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a> field. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3">m_render_objects</a> field. </dd></dl>
+
+</div>
+</div>
+<a id="afe9ec4cd6267fec4d3834d0be5fec500" name="afe9ec4cd6267fec4d3834d0be5fec500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9ec4cd6267fec4d3834d0be5fec500">&#9670;&#160;</a></span>isLoaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Crust::Scene::isLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> field. Determines whether scene is being rendered onto the window. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752">m_loaded</a> field. </dd></dl>
+
+</div>
+</div>
+<a id="ad8bb47c47177ee969a709c407c1dacaa" name="ad8bb47c47177ee969a709c407c1dacaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bb47c47177ee969a709c407c1dacaa">&#9670;&#160;</a></span>isStarted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Crust::Scene::isStarted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> field. Determines whether scene was already started. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> field. </dd></dl>
 
 </div>
 </div>
@@ -425,7 +471,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter for <a class="el" href="class_crust_1_1_scene.html#a605ce650dbb9e9a5fed0ad5bedab626d">m_camera</a> field. </p>
+<p>Setter for <a class="el" href="class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853">m_camera</a> field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_camera</td><td>New main camera. </td></tr>
@@ -474,8 +520,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a605ce650dbb9e9a5fed0ad5bedab626d" name="a605ce650dbb9e9a5fed0ad5bedab626d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a605ce650dbb9e9a5fed0ad5bedab626d">&#9670;&#160;</a></span>m_camera</h2>
+<a id="a528129b9e84882020497835ad4d28853" name="a528129b9e84882020497835ad4d28853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528129b9e84882020497835ad4d28853">&#9670;&#160;</a></span>m_camera</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,7 +530,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_crust_1_1_camera.html">Camera</a>&amp; Crust::Scene::m_camera</td>
+          <td class="memname"><a class="el" href="class_crust_1_1_camera.html">Camera</a>* Crust::Scene::m_camera { nullptr }</td>
         </tr>
       </table>
   </td>

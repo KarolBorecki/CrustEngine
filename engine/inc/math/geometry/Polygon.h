@@ -22,7 +22,7 @@ namespace Crust {
         /**
          * @brief Destroy the Polygon object. Deallocate the vertices.
          */
-        ~Polygon();
+        virtual ~Polygon();
 
         /**
          * @brief Get the vertex at the specified index.

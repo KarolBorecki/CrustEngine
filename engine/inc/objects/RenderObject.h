@@ -1,8 +1,10 @@
 #ifndef CRUSTENGINE_RENDEROBJECT_H
 #define CRUSTENGINE_RENDEROBJECT_H
 
+#include "logging/Logger.h"
 #include "Object.h"
 #include "Mesh.h"
+#include "files/MeshLoader.h"
 
 namespace Crust {
     /**
@@ -11,11 +13,11 @@ namespace Crust {
     class RenderObject : public Object {
     public:
         /**
-         * @brief Construct a new RenderObject object with the specified mesh.
+         * @brief Construct a new RenderObject object with the specified mesh. Loads the mesh from the file.
          *
-         * @param p_mesh The mesh to render.
+         * @param p_mesh_path The path to the mesh file.
          */
-        RenderObject(Mesh& p_mesh);
+        RenderObject(const char* p_mesh_path);
 
         /**
          * @brief Destroy the RenderObject object with it's mesh.

@@ -54,6 +54,27 @@ namespace Crust {
          */
         void close();
 
+        /**
+         * @brief Get the width of the window.
+         *
+         * @return The width of the window.
+         */
+        inline uint16_t width() const { return m_width; }
+
+        /**
+         * @brief Get the height of the window.
+         *
+         * @return The height of the window.
+         */
+        inline uint16_t height() const { return m_height; }
+
+        /**
+         * @brief Get the scene that is being rendered on the window.
+         *
+         * @return The scene that is being rendered on the window.
+         */
+        inline Scene* scene() const { return m_scene; }
+
     private:
         Renderer& m_renderer; /**< Renderer used to render the scene. */
         Scene* m_scene { nullptr }; /**< Scene that is being rendered on the window. */

@@ -1,19 +1,40 @@
 #include "core/Core.h"
 
 namespace Crust {
+    Core::Core() {
+        Logger::info("Crust core initialized.");
+    }
+
     Core::~Core() {
         closeAllWindows();
     }
 
-    Status Core::openWindow(uint16_t p_width, uint16_t p_height) {
-        return ERROR;
+    Window& Core::openWindow(uint16_t p_width, uint16_t p_height) {
+        auto* w = new Window(p_width, p_height);
+        if (w == nullptr) {
+            Crust::ExceptionsHandler::throwError("Failed to create window");
+        }
+        m_windows.push_back(w);
+        w->open();
+
+        return *w;
     }
 
     Status Core::closeAllWindows() {
-        return ERROR;
+        for (auto w : m_windows) {
+            if (w == nullptr) {
+                return ERROR;
+            }
+
+            w->close();
+            delete w;
+        }
+        m_windows.clear();
+        return OK;
     }
 
     Status Core::quit() {
-        return ERROR;
+        Logger::info("Quitting the crust engine.");
+        return closeAllWindows();
     }
 }

@@ -13,16 +13,16 @@
 <title>Node0</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="80.5,-19.25 0,-19.25 0,0 80.5,0 80.5,-19.25"/>
-<text text-anchor="middle" x="40.25" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">Eigen::Vector4</text>
+<text text-anchor="middle" x="40.25" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">Eigen::Vector3</text>
 </a>
 </g>
 </g>
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="class_crust_1_1_vector4.html" target="_top" xlink:title="A 4D vector.">
+<g id="a_node2"><a xlink:href="class_crust_1_1_vector3.html" target="_top" xlink:title="A 3D vector.">
 <polygon fill="white" stroke="#666666" points="220.25,-19.25 116.5,-19.25 116.5,0 220.25,0 220.25,-19.25"/>
-<text text-anchor="middle" x="168.38" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">Crust::Vector4&lt; T &gt;</text>
+<text text-anchor="middle" x="168.38" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">Crust::Vector3&lt; T &gt;</text>
 </a>
 </g>
 </g>

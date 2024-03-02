@@ -1,7 +1,5 @@
 #include "math/geometry/Polygon.h"
 
-#include "math/Vector3.h"
-
 namespace Crust {
     template<uint8_t V>
     Polygon<V>::Polygon() {

@@ -1,6 +1,7 @@
 #ifndef CRUSTENGINE_DEFINITIONS_H
 #define CRUSTENGINE_DEFINITIONS_H
 
+#include <cstdint>
 
 namespace Crust {
     enum Status {

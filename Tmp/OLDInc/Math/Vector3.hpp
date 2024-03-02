@@ -1,6 +1,8 @@
 #ifndef _VECTOR3_HPP_
 #define _VECTOR3_HPP_
 
+#include <cstdint>
+
 #include <Math/Matrix.hpp>
 #include <Math/Vector4.hpp>
 

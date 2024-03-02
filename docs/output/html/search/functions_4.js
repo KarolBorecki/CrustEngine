@@ -23,9 +23,9 @@ var searchData=
   ['getrenderobjects_20',['getRenderObjects',['../class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91',1,'Crust::Scene']]],
   ['getscale_21',['getScale',['../class_crust_1_1_transform.html#a9a5617019c7cc592072ea457941b6f5f',1,'Crust::Transform']]],
   ['getscripts_22',['getScripts',['../class_crust_1_1_object.html#ab6eea003ba17ce80d606a5694f9e40fb',1,'Crust::Object']]],
-  ['gettime_5fms_23',['getTime_ms',['../class_crust_1_1_time_provider.html#a7bd079284fc824dbd96c6d863197566c',1,'Crust::TimeProvider']]],
-  ['gettime_5fs_24',['getTime_s',['../class_crust_1_1_time_provider.html#ab006c8030ac9fe2c39992dfd3207d17e',1,'Crust::TimeProvider']]],
+  ['gettime_5fms_23',['getTime_ms',['../class_crust_1_1_time_provider.html#aabc9b4762577f05dd106e243a7b6d000',1,'Crust::TimeProvider']]],
+  ['gettime_5fs_24',['getTime_s',['../class_crust_1_1_time_provider.html#a7a3c5d554d93ca3b9fb9ea8f3e12934f',1,'Crust::TimeProvider']]],
   ['gettransform_25',['getTransform',['../class_crust_1_1_object.html#ae66631864ba6bcb70d3f7ec4eafc9ae9',1,'Crust::Object']]],
   ['gettype_26',['getType',['../class_crust_1_1_light_source.html#a94b8f272fb6551287c719723035aeab9',1,'Crust::LightSource']]],
-  ['getvertex_27',['getVertex',['../class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48',1,'Crust::Polygon::getVertex()'],['../class_crust_1_1_mesh.html#a4f5706c8a4854c0313e5495efbb95fdc',1,'Crust::Mesh::getVertex()']]]
+  ['getvertex_27',['getVertex',['../class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48',1,'Crust::Polygon']]]
 ];

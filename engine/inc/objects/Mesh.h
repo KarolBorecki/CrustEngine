@@ -2,8 +2,10 @@
 #define CRUSTENGINE_MESH_H
 
 #include <string>
+#include <utility>
 
 #include "math/geometry/Triangle.h"
+#include "static/Config.h"
 
 namespace {
     template<typename T = float>
@@ -24,7 +26,7 @@ namespace Crust {
         /**
          * @brief Construct a new Mesh object with name set to #name.
          */
-        Mesh(std::string name);
+        Mesh(const char* name);
 
         /**
          * @brief Deletes all of the polygons of this mesh.
@@ -57,17 +59,17 @@ namespace Crust {
          *
          * @param p_newName new mesh's name.
          */
-        void setName(std::string p_newName);
+        void setName(const char* p_newName);
 
         /**
          * @brief Getter for #name field.
          *
          * @return The mesh's file name.
          */
-        std::string getName() const;
+        const char* getName() const; // TODO const char vs string
 
     private:
-        std::string m_name; //!< Name of the mesh.
+        const char* m_name; //!< Name of the mesh.
         std::vector<Triangle*> m_polygons; //!< Array of polygons that this mesh consists of.
     };
 }

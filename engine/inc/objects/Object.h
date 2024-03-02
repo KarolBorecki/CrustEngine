@@ -21,7 +21,7 @@ namespace Crust {
          *
          * @param p_transform The transform of the object.
          */
-        ~Object();
+        virtual ~Object();
 
         /**
          * @brief Get the id of the object.

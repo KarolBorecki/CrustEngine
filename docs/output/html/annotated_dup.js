@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "anonymous_namespace{Mesh.h}", "namespaceanonymous__namespace_02_mesh_8h_03.html", [
+      [ "Vector3", "classanonymous__namespace_02_mesh_8h_03_1_1_vector3.html", null ]
+    ] ],
     [ "Crust", "namespace_crust.html", [
       [ "Camera", "class_crust_1_1_camera.html", "class_crust_1_1_camera" ],
       [ "Core", "class_crust_1_1_core.html", "class_crust_1_1_core" ],

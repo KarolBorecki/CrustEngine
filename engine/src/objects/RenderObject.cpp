@@ -1,7 +1,9 @@
 #include "objects/RenderObject.h"
 
 namespace Crust {
-    RenderObject::RenderObject(Mesh& p_mesh) : m_mesh(p_mesh), Object() {};
+    RenderObject::RenderObject(const char* p_mesh_path) : m_mesh(MeshLoader::loadMesh(p_mesh_path)), Object() {
+        Logger::info("Created new render object with mesh: %s", p_mesh_path);
+    };
 
     Mesh& RenderObject::getMesh() const {
         return m_mesh;

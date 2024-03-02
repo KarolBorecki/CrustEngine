@@ -2,6 +2,8 @@
 #define CRUSTENGINE_SCENE_H
 
 #include <string>
+
+#include "static/Config.h"
 #include "objects/Object.h"
 #include "objects/Camera.h"
 #include "objects/RenderObject.h"
@@ -15,15 +17,35 @@ namespace Crust {
     class Scene {
     public:
         /**
+         * @brief Construct a new Scene object. It's name will be set to default scene name and main camera will be set to default camera.
+         */
+        Scene();
+
+        /**
+         * @brief Construct a new Scene object with name set to #name and without a main camera.
+         *
+         * @param name Name of the scene.
+         */
+        Scene(const char* name);
+
+        /**
+         * @brief Construct a new Scene object with name set to default scene name and main camera set to #main_camera.
+         *
+         * @param name Name of the scene.
+         * @param main_camera Main camera of the scene.
+         */
+        Scene(Camera& main_camera);
+
+        /**
          * @brief Construct a new Scene object with name set to #p_name and main camera set to #p_main_camera.
          *
          * @param p_name Name of the scene.
          * @param p_main_camera Main camera of the scene.
          */
-        Scene(std::string p_name, Camera& p_main_camera);
+        Scene(const char* p_name, Camera& p_main_camera);
 
         /**
-         * @brief Destroy the Scene object.
+         * @brief Destroy the Scene object. Remember that it will not delete any objects in the scene.
          */
         virtual ~Scene() = default;
 
@@ -57,7 +79,7 @@ namespace Crust {
          *
          * @return Name of the scene.
          */
-        std::string getName() const;
+        const char* getName() const;
 
         /**
          * @brief Getter for #m_camera field.
@@ -66,7 +88,7 @@ namespace Crust {
          *
          * @sa Camera.hpp
          */
-        Camera& getMainCamera() const;
+        Camera* getMainCamera() const;
 
         /**
          * @brief Setter for #m_camera field.
@@ -74,6 +96,20 @@ namespace Crust {
          * @param p_camera New main camera.
          */
         void setMainCamera(Camera& p_camera);
+
+        /**
+         * @brief Getter for #m_loaded field. Determines whether scene is being rendered onto the window.
+         *
+         * @return #m_loaded field.
+         */
+        bool isLoaded() const;
+
+        /**
+         * @brief Getter for #m_started field. Determines whether scene was already started.
+         *
+         * @return #m_started field.
+         */
+        bool isStarted() const;
 
         /**
          * @brief Getter for #m_objects field.
@@ -102,7 +138,7 @@ namespace Crust {
         bool m_loaded { false };
         bool m_started { false };
 
-        std::string m_name;
+        const char* m_name;
 
         Camera* m_camera { nullptr }; //TODO remember to show no camera info on the screen when camera is nullptr
         std::vector<Object*> m_objects;

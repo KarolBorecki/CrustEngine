@@ -1,6 +1,8 @@
 #ifndef _INPUTEVENT_HPP_
 #define _INPUTEVENT_HPP_
 
+#include <cstdint>
+
 namespace Key
 {
   constexpr uint8_t KEYS_COUNT = 70; // Remember to update this value when updating KeyCode enum
