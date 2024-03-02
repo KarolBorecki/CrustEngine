@@ -45,7 +45,6 @@ set(SOURCES
         src/core/Core.cpp
         src/core/Scene.cpp
         src/core/Window.cpp
-        src/files/MeshLoader.cpp
         src/logging/ExceptionsHandler.cpp
         src/logging/Logger.cpp
         src/math/Math.cpp
@@ -61,6 +60,7 @@ set(SOURCES
         src/rendering/Library2DWrapper.cpp
         src/rendering/Renderer.cpp
         src/utils/TimeProvider.cpp
+        src/files/MeshLoader.cpp
 )
 
 set(HEADERS
@@ -68,7 +68,6 @@ set(HEADERS
         inc/core/Core.h
         inc/core/Scene.h
         inc/core/Window.h
-        inc/files/MeshLoader.h
         inc/logging/Logger.h
         inc/logging/ExceptionsHandler.h
         inc/math/Math.h
@@ -92,6 +91,7 @@ set(HEADERS
         inc/static/Config.h
         inc/static/Definitions.h
         inc/rendering/projection/AbstractProjector.h
+        inc/files/MeshLoader.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

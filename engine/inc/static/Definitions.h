@@ -6,6 +6,8 @@
 namespace Crust {
     enum Status : uint8_t {
         OK = 0,
+        NOT_SUPPORTED = 1,
+        FILE_NOT_FOUND = 98,
         ERROR = 99,
     };
 

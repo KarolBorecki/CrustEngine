@@ -29,7 +29,7 @@ namespace Crust {
     }
 
     void Window::open() {
-        // TODO Implement
+        m_renderer.openWindow(m_width, m_height);
     }
 
     void Window::close() {

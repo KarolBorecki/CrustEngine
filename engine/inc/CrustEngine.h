@@ -14,6 +14,8 @@
 #include "math/geometry/Polygon.h"
 #include "math/geometry/Triangle.h"
 
+#include "files/MeshLoader.h"
+
 #include "objects/Transform.h"
 #include "objects/Object.h"
 #include "objects/Camera.h"

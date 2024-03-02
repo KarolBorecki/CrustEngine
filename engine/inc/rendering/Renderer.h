@@ -41,6 +41,16 @@ namespace Crust {
         void renderScene(Scene& p_scene);
 
         /**
+         * @brief Open the window.
+         *
+         * @details Opens the window with the specified width and height.
+         *
+         * @param p_width The width of the window.
+         * @param p_height The height of the window.
+         */
+        void openWindow(uint16_t p_width, uint16_t p_height);
+
+        /**
          * @brief Resize the renderer.
          *
          * @details Resizes the window to the specified width and height. Also performs the resizing of the projector and 2D lib.

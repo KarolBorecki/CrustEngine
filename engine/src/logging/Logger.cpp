@@ -9,7 +9,6 @@ namespace Crust {
         vprintf(p_format, args);
         printf("\n");
         va_end(args);
-        setFont(FontColor::WHITE);
     }
 
     void Logger::warning(const char *p_format, ...)
@@ -20,7 +19,6 @@ namespace Crust {
         vprintf(p_format, args);
         printf("\n");
         va_end(args);
-        setFont(FontColor::WHITE);
     }
 
     void Logger::info(const char *p_format, ...)
@@ -31,11 +29,11 @@ namespace Crust {
         vprintf(p_format, args);
         printf("\n");
         va_end(args);
-        setFont(FontColor::WHITE);
     }
 
     void Logger::log()
     {
+        setFont(FontColor::WHITE);
         printf("\n");
     }
 
@@ -57,7 +55,6 @@ namespace Crust {
         vprintf(p_format, args);
         printf("\n");
         va_end(args);
-        setFont(FontColor::WHITE);
     }
 
     void Logger::logInline(const char *p_format, ...)
