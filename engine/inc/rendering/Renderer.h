@@ -5,6 +5,7 @@
 
 #include "core/Scene.h"
 #include "Library2DWrapper.h"
+#include "rendering/projection/AbstractProjector.h"
 
 namespace Crust {
     /**
@@ -33,7 +34,10 @@ namespace Crust {
         void renderScene(Scene& scene);
 
     private:
+        Projection m_projection_model { Projection::PERSPECTIVE }; /** !< The projection model. */
+
         Library2DWrapper& m_lib_2d; /** !< The 2D library wrapper. */
+        AbstractProjector& m_projector; /** !< The projector. */
     };
 }
 

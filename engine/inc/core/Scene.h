@@ -132,18 +132,25 @@ namespace Crust {
          */
         std::vector<RenderObject*> getRenderObjects() const;
 
+        /**
+         * @brief Adds object to the scene.
+         *
+         * @param p_object Object to be added to the scene.
+         */
         Status addObject(Object& p_object);
 
     private:
-        bool m_loaded { false };
-        bool m_started { false };
+        bool m_loaded { false }; /**< Determines whether scene is being rendered onto the window. */
+        bool m_started { false }; /**< Determines whether scene was already started. */
 
-        const char* m_name;
+        const char* m_name; /**< Name of the scene. */
 
-        Camera* m_camera { nullptr }; //TODO remember to show no camera info on the screen when camera is nullptr
-        std::vector<Object*> m_objects;
-        std::vector<LightSource*> m_lights;
-        std::vector<RenderObject*> m_render_objects;
+        //TODO remember to show no camera info on the screen when camera is nullptr
+        Camera* m_camera { nullptr }; /**< Main camera of the scene. */
+
+        std::vector<Object*> m_objects; /**< Objects in the scene. */
+        std::vector<LightSource*> m_lights; /**< Light sources in the scene. */
+        std::vector<RenderObject*> m_render_objects; /**< Renderable objects in the scene. */
     };
 }
 

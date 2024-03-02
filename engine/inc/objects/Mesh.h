@@ -26,7 +26,7 @@ namespace Crust {
         /**
          * @brief Construct a new Mesh object with name set to #name.
          */
-        Mesh(const char* name);
+        explicit Mesh(const char* name);
 
         /**
          * @brief Deletes all of the polygons of this mesh.
@@ -45,7 +45,7 @@ namespace Crust {
          *
          * @param p_index The index in #polygons for got polygon.
          */
-        Triangle &getPolygon(const uint32_t p_index) const;
+        Triangle &getPolygon(uint32_t p_index) const;
 
         /**
          * @brief Getter for polygons count.
@@ -66,7 +66,7 @@ namespace Crust {
          *
          * @return The mesh's file name.
          */
-        const char* getName() const; // TODO const char vs string
+        const char* getName() const;
 
     private:
         const char* m_name; //!< Name of the mesh.

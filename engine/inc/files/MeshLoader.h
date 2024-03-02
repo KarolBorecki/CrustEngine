@@ -10,12 +10,12 @@ namespace Crust {
         virtual ~MeshLoader() = default;
 
         /**
-         * @brief Load a mesh from the specified file.
+         * @brief Load a mesh from the specified file and if cannot do it returns nullptr.
          *
          * @param p_path The path to the mesh file.
-         * @return The loaded mesh.
+         * @return The loaded mesh pointer. Remember to delete it after using.
          */
-        static Mesh& loadMesh(const char* p_path);
+        static Mesh* loadMesh(const char* p_path);
     };
 }
 

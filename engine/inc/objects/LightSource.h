@@ -5,6 +5,7 @@
 
 #include "Object.h"
 #include "static/Definitions.h"
+#include "static/Config.h"
 
 namespace Crust {
     /**
@@ -23,7 +24,7 @@ namespace Crust {
          * @param p_type Type of the light source.
          * @param p_intensity Intensity of the light source.
          */
-        LightSource(uint8_t p_type, uint8_t p_intensity);
+        LightSource(LightType p_type, LightIntensity p_intensity);
 
         /**
          * @brief Destroy the LightSource object.
@@ -35,32 +36,32 @@ namespace Crust {
          *
          * @param p_type Type of the light source.
          */
-        void setType(uint8_t p_type);
+        void setType(LightType p_type);
 
         /**
          * @brief Get the type of the light source.
          *
          * @return Type of the light source.
          */
-        uint8_t getType() const;
+        LightType getType() const;
 
         /**
          * @brief Set the intensity of the light source.
          *
          * @param p_intensity Intensity of the light source.
          */
-        void setIntensity(uint8_t p_intensity);
+        void setIntensity(LightIntensity p_intensity);
 
         /**
          * @brief Get the intensity of the light source.
          *
          * @return Intensity of the light source.
          */
-        uint8_t getIntensity() const;
+        LightIntensity getIntensity() const;
 
     private:
-        uint8_t m_type { LightType::DIRECTIONAL }; /**< Type of the light source. */
-        uint8_t m_intensity { LightIntensity::INTENSIVITY_BRIGHT }; /**< Intensity of the light source. */
+        LightType m_type { Crust::DEFAULT_LIGHT_TYPE }; /**< Type of the light source. */
+        LightIntensity m_intensity { Crust::DEFAULT_LIGHT_INTENSITY }; /**< Intensity of the light source. */
     };
 }
 

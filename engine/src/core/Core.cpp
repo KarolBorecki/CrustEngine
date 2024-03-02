@@ -11,9 +11,6 @@ namespace Crust {
 
     Window& Core::openWindow(uint16_t p_width, uint16_t p_height) {
         auto* w = new Window(p_width, p_height);
-        if (w == nullptr) {
-            Crust::ExceptionsHandler::throwError("Failed to create window");
-        }
         m_windows.push_back(w);
         w->open();
 
@@ -36,5 +33,9 @@ namespace Crust {
     Status Core::quit() {
         Logger::info("Quitting the crust engine.");
         return closeAllWindows();
+    }
+
+    std::vector<Window*> Core::getWindows() const {
+        return m_windows;
     }
 }

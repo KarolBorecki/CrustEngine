@@ -17,12 +17,12 @@ namespace Crust {
          *
          * @param p_mesh_path The path to the mesh file.
          */
-        RenderObject(const char* p_mesh_path);
+        explicit RenderObject(const char* p_mesh_path);
 
         /**
          * @brief Destroy the RenderObject object with it's mesh.
          */
-        ~RenderObject() = default;
+        ~RenderObject() override;
 
         /**
          * @brief Get the mesh to render.

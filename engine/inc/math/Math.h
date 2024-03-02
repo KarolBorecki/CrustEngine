@@ -81,7 +81,7 @@ namespace Crust {
         static constexpr double INF { 1.7976931348623157E+308 }; //!< Maximum value that double can hold.
 
     private:
-        static constexpr double DOUBLE_DEFAULT_DELTA { 0.00000000000000001 }; //!< Default accepted margin for double values.
+        static constexpr double DOUBLE_DEFAULT_DELTA { 0.000000000000000000001 }; //!< Default accepted margin for double values.
 
     };
 }

@@ -31,24 +31,6 @@ if (NOT raylib_cpp_FOUND)
     FetchContent_MakeAvailable(raylib_cpp)
 endif()
 
-#set(RAYLIB_PATH ${CMAKE_BINARY_DIR}/raylib)
-#ExternalProject_Add(raylib
-#    GIT_REPOSITORY https://github.com/raysan5/raylib.git
-#    GIT_TAG 5.0
-#    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${RAYLIB_PATH}
-#)
-#include_directories(${RAYLIB_PATH}/include)
-#link_directories(${RAYLIB_PATH}/lib)
-
-#set(RAYLIBCPP_PATH ${CMAKE_BINARY_DIR}/raylib_cpp)
-#ExternalProject_Add(raylib_cpp
-#    GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-#    GIT_TAG v5.0.1
-#    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${RAYLIBCPP_PATH}
-#)
-#include_directories(${RAYLIBCPP_PATH}/include)
-#link_directories(${RAYLIBCPP_PATH}/lib)
-
 set(EIGEN_PATH ${CMAKE_BINARY_DIR}/eigen)
 ExternalProject_Add(eigen
     GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
@@ -101,13 +83,16 @@ set(HEADERS
         inc/objects/LightSource.h
         inc/objects/Mesh.h
         inc/objects/RenderObject.h
+        inc/rendering/AbstractProjector.h
+        inc/rendering/PerspectiveProjector.h
         inc/rendering/Library2DWrapper.h
-        inc/rendering/Projector.h
+        inc/rendering/PerspectiveProjector.h
         inc/rendering/Renderer.h
         inc/utils/TimeProvider.h
         inc/scripting/Script.h
         inc/static/Config.h
         inc/static/Definitions.h
+        inc/rendering/projection/AbstractProjector.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

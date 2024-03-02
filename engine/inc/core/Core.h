@@ -54,7 +54,7 @@ namespace Crust {
          *
          * @return The list of managed windows.
          */
-        inline std::vector<Window*>& getWindows() { return m_windows; }
+        std::vector<Window*> getWindows() const;
 
     private:
         std::vector<Window*> m_windows; /**< List of managed windows. */

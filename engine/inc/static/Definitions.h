@@ -4,15 +4,20 @@
 #include <cstdint>
 
 namespace Crust {
-    enum Status {
+    enum Status : uint8_t {
         OK = 0,
         ERROR = 99,
     };
 
-    enum LightType {
+    enum Projection : uint8_t{
+        PERSPECTIVE = 0,
+//        ORTHOGRAPHIC = 1 // not implemented
+    };
+
+    enum LightType : uint8_t {
         DIRECTIONAL = 0,
-        POINT = 1, // TODO not implemented
-        SPOT = 2 // TODO not implemented
+//        POINT = 1, // not implemented
+//        SPOT = 2 // not implemented
     };
 
     enum LightIntensity : uint8_t {

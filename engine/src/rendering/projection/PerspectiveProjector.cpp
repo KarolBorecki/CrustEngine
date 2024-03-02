@@ -1,4 +1,4 @@
-#include "rendering/Projector.h"
+#include "rendering/PerspectiveProjector.h"
 
 namespace Crust {
     Crust::Projector::Projector(uint16_t p_width, uint16_t p_height) {
