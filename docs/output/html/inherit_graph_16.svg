@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="class_crust_1_1_transform.html" target="_top" xlink:title=" ">
+<g id="a_node1"><a xlink:href="class_crust_1_1_transform.html" target="_top" xlink:title="The transform of an object. Handles position, rotation and scale.">
 <polygon fill="white" stroke="#666666" points="90.25,-19.25 0,-19.25 0,0 90.25,0 90.25,-19.25"/>
 <text text-anchor="middle" x="45.12" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">Crust::Transform</text>
 </a>

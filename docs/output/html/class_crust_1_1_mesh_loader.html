@@ -92,32 +92,35 @@ $(document).ready(function(){initNavTree('class_crust_1_1_mesh_loader.html','');
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_crust_1_1_mesh_loader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::MeshLoader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="class_crust_1_1_mesh_loader.html" title="The MeshLoader class is a utility class to load meshes from files.">MeshLoader</a> class is a utility class to load meshes from files.  
+ <a href="class_crust_1_1_mesh_loader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="">MeshLoader.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a41c16472516668543cc12f07e60068f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_mesh_loader.html#a41c16472516668543cc12f07e60068f9">MeshLoader</a> ()=default</td></tr>
-<tr class="separator:a41c16472516668543cc12f07e60068f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0d2934c4d828789037ee009cb90fbb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_mesh_loader.html#a2b0d2934c4d828789037ee009cb90fbb">~MeshLoader</a> ()=default</td></tr>
-<tr class="separator:a2b0d2934c4d828789037ee009cb90fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a43f96c15fb456f2b6cb39559d37bf728"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_mesh_loader.html#a43f96c15fb456f2b6cb39559d37bf728">loadMesh</a> (const char *p_path, <a class="el" href="class_crust_1_1_mesh.html">Mesh</a> *p_out_mesh)</td></tr>
-<tr class="memdesc:a43f96c15fb456f2b6cb39559d37bf728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a mesh from a file.  <a href="class_crust_1_1_mesh_loader.html#a43f96c15fb456f2b6cb39559d37bf728">More...</a><br /></td></tr>
-<tr class="separator:a43f96c15fb456f2b6cb39559d37bf728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40154569b601eb539a7389c57d4b6f2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_mesh_loader.html#ac40154569b601eb539a7389c57d4b6f2">loadMesh</a> (const char *p_path, <a class="el" href="class_crust_1_1_mesh.html">Mesh</a> *p_out_mesh)</td></tr>
+<tr class="memdesc:ac40154569b601eb539a7389c57d4b6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a mesh from the specified file and if cannot do it returns nullptr.  <a href="class_crust_1_1_mesh_loader.html#ac40154569b601eb539a7389c57d4b6f2">More...</a><br /></td></tr>
+<tr class="separator:ac40154569b601eb539a7389c57d4b6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a802c6e72976bdc331966445623dd1294"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_mesh_loader.html#a802c6e72976bdc331966445623dd1294">loadObj</a> (const char *p_path, <a class="el" href="class_crust_1_1_mesh.html">Mesh</a> *p_out_mesh)</td></tr>
+<tr class="memdesc:a802c6e72976bdc331966445623dd1294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a mesh from the specified .obj file.  <a href="class_crust_1_1_mesh_loader.html#a802c6e72976bdc331966445623dd1294">More...</a><br /></td></tr>
+<tr class="separator:a802c6e72976bdc331966445623dd1294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a41c16472516668543cc12f07e60068f9" name="a41c16472516668543cc12f07e60068f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41c16472516668543cc12f07e60068f9">&#9670;&#160;</a></span>MeshLoader()</h2>
+<div class="textblock"><p >The <a class="el" href="class_crust_1_1_mesh_loader.html" title="The MeshLoader class is a utility class to load meshes from files.">MeshLoader</a> class is a utility class to load meshes from files. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac40154569b601eb539a7389c57d4b6f2" name="ac40154569b601eb539a7389c57d4b6f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac40154569b601eb539a7389c57d4b6f2">&#9670;&#160;</a></span>loadMesh()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,58 +129,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Crust::MeshLoader::MeshLoader </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2b0d2934c4d828789037ee009cb90fbb" name="a2b0d2934c4d828789037ee009cb90fbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0d2934c4d828789037ee009cb90fbb">&#9670;&#160;</a></span>~MeshLoader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual Crust::MeshLoader::~MeshLoader </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a43f96c15fb456f2b6cb39559d37bf728" name="a43f96c15fb456f2b6cb39559d37bf728"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43f96c15fb456f2b6cb39559d37bf728">&#9670;&#160;</a></span>loadMesh()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void Crust::MeshLoader::loadMesh </td>
+          <td class="memname">static <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a> Crust::MeshLoader::loadMesh </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>p_path</em>, </td>
@@ -201,14 +153,60 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Load a mesh from a file. </p>
+<p>Load a mesh from the specified file and if cannot do it returns nullptr. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_path</td><td>The path to the file. </td></tr>
-    <tr><td class="paramname">p_out_mesh</td><td>The mesh to load the data into. </td></tr>
+    <tr><td class="paramname">p_path</td><td>The path to the mesh file. @para p_out_mesh The mesh to load to. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The loaded mesh pointer. Remember to delete it after using. </dd></dl>
+
+</div>
+</div>
+<a id="a802c6e72976bdc331966445623dd1294" name="a802c6e72976bdc331966445623dd1294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802c6e72976bdc331966445623dd1294">&#9670;&#160;</a></span>loadObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a> Crust::MeshLoader::loadObj </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>p_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_crust_1_1_mesh.html">Mesh</a> *&#160;</td>
+          <td class="paramname"><em>p_out_mesh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load a mesh from the specified .obj file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_path</td><td>The path to the .obj file. </td></tr>
+    <tr><td class="paramname">p_out_mesh</td><td>The mesh to load to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The status of the operation. </dd></dl>
 
 </div>
 </div>

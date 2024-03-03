@@ -1,7 +1,8 @@
 var class_crust_1_1_polygon =
 [
-    [ "Polygon", "class_crust_1_1_polygon.html#a45bf690a0dcc6ecb42032677190057d8", null ],
-    [ "~Polygon", "class_crust_1_1_polygon.html#ae9210a74d1b133fe56378f79228cebc6", null ],
+    [ "Polygon", "class_crust_1_1_polygon.html#a038fdaab1284ac7ac93cea53d31cf5bc", null ],
+    [ "~Polygon", "class_crust_1_1_polygon.html#a337971c06588f0a35d04eb9f4d7b5d8c", null ],
     [ "getVertex", "class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48", null ],
-    [ "m_vertices", "class_crust_1_1_polygon.html#abd747467c349647a1e96c68fcf75060b", null ]
+    [ "setVertex", "class_crust_1_1_polygon.html#a35bacffc296fc9089c5ccaf553fa5c31", null ],
+    [ "m_vertices", "class_crust_1_1_polygon.html#aa2fbdfd0ee937d82ced5c60fd18a350f", null ]
 ];

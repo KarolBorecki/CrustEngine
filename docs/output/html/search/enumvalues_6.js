@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal_0',['NORMAL',['../class_crust_1_1_logger.html#a2edf0d781300084b8a59131b5a8d80e5a021efc815d6da9b6108f7785ce0531be',1,'Crust::Logger']]]
+  ['light_5fblue_0',['LIGHT_BLUE',['../class_crust_1_1_logger.html#a89a4891527368d100d992e40e5da5c24aa8f29bae8724e23234126d9e73dc8cb8',1,'Crust::Logger']]]
 ];

@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "Crust::AbstractProjector", "class_crust_1_1_abstract_projector.html", [
+      [ "Crust::PerspectiveProjector", "class_crust_1_1_perspective_projector.html", null ]
+    ] ],
     [ "Crust::Core", "class_crust_1_1_core.html", null ],
     [ "Crust::ExceptionsHandler", "class_crust_1_1_exceptions_handler.html", null ],
     [ "Crust::Library2DWrapper", "class_crust_1_1_library2_d_wrapper.html", null ],
@@ -19,7 +22,6 @@ var hierarchy =
     [ "Crust::Polygon< 3 >", "class_crust_1_1_polygon.html", [
       [ "Crust::Triangle", "class_crust_1_1_triangle.html", null ]
     ] ],
-    [ "Crust::Projector", "class_crust_1_1_projector.html", null ],
     [ "Crust::Renderer", "class_crust_1_1_renderer.html", null ],
     [ "Crust::Scene", "class_crust_1_1_scene.html", null ],
     [ "Crust::Script", "class_crust_1_1_script.html", null ],

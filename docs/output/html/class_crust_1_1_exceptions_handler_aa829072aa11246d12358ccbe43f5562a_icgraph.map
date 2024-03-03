@@ -1,0 +1,4 @@
+<map id="Crust::ExceptionsHandler::throwError" name="Crust::ExceptionsHandler::throwError">
+<area shape="rect" id="node1" title="Throws an error and ends the engine work immedietly. It also prints message in red color on the conso..." alt="" coords="226,5,397,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_polygon.html#a35bacffc296fc9089c5ccaf553fa5c31" title="Set the vertex at the specified index." alt="" coords="5,13,178,39"/>
+</map>

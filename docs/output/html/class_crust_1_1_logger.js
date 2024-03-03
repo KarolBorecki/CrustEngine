@@ -14,16 +14,13 @@ var class_crust_1_1_logger =
       [ "NORMAL", "class_crust_1_1_logger.html#a2edf0d781300084b8a59131b5a8d80e5a021efc815d6da9b6108f7785ce0531be", null ],
       [ "BOLD", "class_crust_1_1_logger.html#a2edf0d781300084b8a59131b5a8d80e5ab8f7c1cf74e4fc28e825180d6f63d630", null ]
     ] ],
-    [ "error", "class_crust_1_1_logger.html#a448306e417ab259008d4d2ee85e624c5", null ],
-    [ "info", "class_crust_1_1_logger.html#a97fb232241dad146c5581564447fec86", null ],
-    [ "log", "class_crust_1_1_logger.html#a6ea9f24b3ccf4f84af673c0f6cb082df", null ],
-    [ "log", "class_crust_1_1_logger.html#a607b2a3d57bbad20cd450f0cf9aa4c8d", null ],
-    [ "log", "class_crust_1_1_logger.html#a001b5178d48140f3183d35a89c6cfbb2", null ],
-    [ "log", "class_crust_1_1_logger.html#a2a61c0cd741f5af31a7ea69bf8afdcb9", null ],
-    [ "log", "class_crust_1_1_logger.html#a4f39f1af67a1559fbcc509c7747ca8e6", null ],
-    [ "log", "class_crust_1_1_logger.html#aa7231ec10b639e191e57a385e7af9901", null ],
-    [ "logInline", "class_crust_1_1_logger.html#a4efaea5b99b4d3691649dd7dfa2dbd06", null ],
-    [ "setFont", "class_crust_1_1_logger.html#ab8333ea3d528ce8ccd3d91897adc0b04", null ],
-    [ "setFont", "class_crust_1_1_logger.html#a91bf31a52746020f85e830cbfa23cfff", null ],
-    [ "warning", "class_crust_1_1_logger.html#ae9da193539eafa2563ee313c92f37317", null ]
+    [ "error", "class_crust_1_1_logger.html#a852c490d745d322d91c98273a4e3b1bc", null ],
+    [ "info", "class_crust_1_1_logger.html#af38970f3b61220cf1feea4e2eb4d426b", null ],
+    [ "log", "class_crust_1_1_logger.html#a084a1790b87ece97f9e05c9ed221f158", null ],
+    [ "log", "class_crust_1_1_logger.html#a8a426cff99e4bed3a7ead7a0350ee392", null ],
+    [ "log", "class_crust_1_1_logger.html#a9685f6e54c8772cf13ea1a2659d76f93", null ],
+    [ "logInline", "class_crust_1_1_logger.html#a3d1b686c60c639d41633dc513168b534", null ],
+    [ "setFont", "class_crust_1_1_logger.html#a1a60ef3e24cced04aa2ec693711080ee", null ],
+    [ "setFont", "class_crust_1_1_logger.html#a136edb9e34ef1c9c9891a59e88a7ef93", null ],
+    [ "warning", "class_crust_1_1_logger.html#a54ffe22fc559966df62584c128afe4cf", null ]
 ];

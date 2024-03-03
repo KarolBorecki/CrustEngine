@@ -11,7 +11,7 @@ var class_crust_1_1_transform =
     [ "setPosition", "class_crust_1_1_transform.html#a8408199f6cae62a0329c7211168f57c6", null ],
     [ "setScale", "class_crust_1_1_transform.html#a37f2b6894ca7a988f58ce0fe16bf97bd", null ],
     [ "translate", "class_crust_1_1_transform.html#ac65f4c4738b9758bf2c8ec20c6ace2a7", null ],
-    [ "m_position", "class_crust_1_1_transform.html#a3873bc7557702b273bb94e9cd22144f4", null ],
-    [ "m_rotation", "class_crust_1_1_transform.html#aaf6faccd94b12fe9a529e5e47b421807", null ],
-    [ "m_scale", "class_crust_1_1_transform.html#a6f72cc313b4688620a99d06b38e475f4", null ]
+    [ "m_position", "class_crust_1_1_transform.html#ad3696292bc7b591f3aa8fac42c10397c", null ],
+    [ "m_rotation", "class_crust_1_1_transform.html#a0e6cdeee2eba046f7b763ff25245752e", null ],
+    [ "m_scale", "class_crust_1_1_transform.html#a6fcb9b018da089ccf19784021c45fb67", null ]
 ];

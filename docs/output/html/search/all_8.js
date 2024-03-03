@@ -1,7 +1,7 @@
 var searchData=
 [
   ['inf_0',['INF',['../class_crust_1_1_math.html#a18ed437aebd910a1f2109703495a052c',1,'Crust::Math']]],
-  ['info_1',['info',['../class_crust_1_1_logger.html#a97fb232241dad146c5581564447fec86',1,'Crust::Logger']]],
+  ['info_1',['info',['../class_crust_1_1_logger.html#af38970f3b61220cf1feea4e2eb4d426b',1,'Crust::Logger']]],
   ['init_2',['init',['../class_crust_1_1_library2_d_wrapper.html#a652e2628cd3d53af7fa963f3d92fdebf',1,'Crust::Library2DWrapper']]],
   ['intensivity_5fbright_3',['INTENSIVITY_BRIGHT',['../namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdbaff7aa6a95b4b556988fc9e1314156825',1,'Crust']]],
   ['intensivity_5fdark_4',['INTENSIVITY_DARK',['../namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdbae179f5ab4b531e5c863ae6bf1406e456',1,'Crust']]],

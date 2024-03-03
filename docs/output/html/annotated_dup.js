@@ -4,6 +4,7 @@ var annotated_dup =
       [ "Vector3", "classanonymous__namespace_02_mesh_8h_03_1_1_vector3.html", null ]
     ] ],
     [ "Crust", "namespace_crust.html", [
+      [ "AbstractProjector", "class_crust_1_1_abstract_projector.html", "class_crust_1_1_abstract_projector" ],
       [ "Camera", "class_crust_1_1_camera.html", "class_crust_1_1_camera" ],
       [ "Core", "class_crust_1_1_core.html", "class_crust_1_1_core" ],
       [ "ExceptionsHandler", "class_crust_1_1_exceptions_handler.html", "class_crust_1_1_exceptions_handler" ],
@@ -15,8 +16,8 @@ var annotated_dup =
       [ "Mesh", "class_crust_1_1_mesh.html", "class_crust_1_1_mesh" ],
       [ "MeshLoader", "class_crust_1_1_mesh_loader.html", "class_crust_1_1_mesh_loader" ],
       [ "Object", "class_crust_1_1_object.html", "class_crust_1_1_object" ],
+      [ "PerspectiveProjector", "class_crust_1_1_perspective_projector.html", "class_crust_1_1_perspective_projector" ],
       [ "Polygon", "class_crust_1_1_polygon.html", "class_crust_1_1_polygon" ],
-      [ "Projector", "class_crust_1_1_projector.html", "class_crust_1_1_projector" ],
       [ "Renderer", "class_crust_1_1_renderer.html", "class_crust_1_1_renderer" ],
       [ "RenderObject", "class_crust_1_1_render_object.html", "class_crust_1_1_render_object" ],
       [ "Scene", "class_crust_1_1_scene.html", "class_crust_1_1_scene" ],

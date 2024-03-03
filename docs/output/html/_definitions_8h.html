@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('_definitions_8h.html',''); initResizab
   <div class="headertitle"><div class="title">Definitions.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+</div>
 <p><a href="">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -107,15 +108,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aa2db099fa45e4a23ea3f17a75d0ccc6c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#aa2db099fa45e4a23ea3f17a75d0ccc6c">Crust::Status</a> { <a class="el" href="namespace_crust.html#aa2db099fa45e4a23ea3f17a75d0ccc6ca2237ca117421c252ebe0d009677f70d7">Crust::OK</a> = 0
-, <a class="el" href="namespace_crust.html#aa2db099fa45e4a23ea3f17a75d0ccc6cac4ddc212c951a3f19459d0e498a3f8a8">Crust::ERROR</a> = 99
+<tr class="memitem:a0e5796d57a1d9842744f22ec5fe1b047"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Crust::Status</a> : uint8_t { <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047a2237ca117421c252ebe0d009677f70d7">Crust::OK</a> = 0
+, <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047ac3afc75a093d459560d31a3d7339be6a">Crust::NOT_SUPPORTED</a> = 1
+, <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047a9fb10d4772ce351277e285db7eb6dec1">Crust::FILE_NOT_FOUND</a> = 98
+, <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047ac4ddc212c951a3f19459d0e498a3f8a8">Crust::ERROR</a> = 99
  }</td></tr>
-<tr class="separator:aa2db099fa45e4a23ea3f17a75d0ccc6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f44ad3bd117f6f05649d4068463cfee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#a7f44ad3bd117f6f05649d4068463cfee">Crust::LightType</a> { <a class="el" href="namespace_crust.html#a7f44ad3bd117f6f05649d4068463cfeeaa29b1c97be675a6b4320068aeef8ed8a">Crust::DIRECTIONAL</a> = 0
-, <a class="el" href="namespace_crust.html#a7f44ad3bd117f6f05649d4068463cfeeaf39d5f15b7b016a9d06a5d0c08c9a717">Crust::POINT</a> = 1
-, <a class="el" href="namespace_crust.html#a7f44ad3bd117f6f05649d4068463cfeeaeb63728bf03bf79d8d1b4e6ba8780856">Crust::SPOT</a> = 2
+<tr class="separator:a0e5796d57a1d9842744f22ec5fe1b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906e39346986c7bb1030c657973cc4c5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#a906e39346986c7bb1030c657973cc4c5">Crust::Projection</a> : uint8_t { <a class="el" href="namespace_crust.html#a906e39346986c7bb1030c657973cc4c5a9f5c5fe5489b816ff79a801c34b5cb77">Crust::PERSPECTIVE</a> = 0
  }</td></tr>
-<tr class="separator:a7f44ad3bd117f6f05649d4068463cfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a906e39346986c7bb1030c657973cc4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b2a44f94090222468ebead3d91caec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#af8b2a44f94090222468ebead3d91caec">Crust::LightType</a> : uint8_t { <a class="el" href="namespace_crust.html#af8b2a44f94090222468ebead3d91caecaa29b1c97be675a6b4320068aeef8ed8a">Crust::DIRECTIONAL</a> = 0
+ }</td></tr>
+<tr class="separator:af8b2a44f94090222468ebead3d91caec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3ae41ebd15bd848899c417f23caebdb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdb">Crust::LightIntensity</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdbae179f5ab4b531e5c863ae6bf1406e456">Crust::INTENSIVITY_DARK</a> = 0
 , <a class="el" href="namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdbafa148be8788dcc7b5f6cfa9da5c91a77">Crust::INTENSIVITY_LOW</a> = 64

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spot_0',['SPOT',['../namespace_crust.html#a7f44ad3bd117f6f05649d4068463cfeeaeb63728bf03bf79d8d1b4e6ba8780856',1,'Crust']]]
+  ['red_0',['RED',['../class_crust_1_1_logger.html#a89a4891527368d100d992e40e5da5c24a3583010ac4a41067c06735b06e4ea1dc',1,'Crust::Logger']]]
 ];

@@ -106,26 +106,69 @@ $(document).ready(function(){initNavTree('class_crust_1_1_renderer.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a4482974d2311481c2ab83ec1b48da85b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a4482974d2311481c2ab83ec1b48da85b">Renderer</a> ()</td></tr>
+<tr class="memdesc:a4482974d2311481c2ab83ec1b48da85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object with not specified width and height.  <a href="class_crust_1_1_renderer.html#a4482974d2311481c2ab83ec1b48da85b">More...</a><br /></td></tr>
+<tr class="separator:a4482974d2311481c2ab83ec1b48da85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e38e6c3ee79ce74c69303dfa4a8450f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a3e38e6c3ee79ce74c69303dfa4a8450f">Renderer</a> (uint16_t p_width, uint16_t p_height)</td></tr>
 <tr class="memdesc:a3e38e6c3ee79ce74c69303dfa4a8450f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object with the specified width and height.  <a href="class_crust_1_1_renderer.html#a3e38e6c3ee79ce74c69303dfa4a8450f">More...</a><br /></td></tr>
 <tr class="separator:a3e38e6c3ee79ce74c69303dfa4a8450f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe7e2a48c6b99cdf4a78deccb3525693"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#afe7e2a48c6b99cdf4a78deccb3525693">~Renderer</a> ()=default</td></tr>
-<tr class="memdesc:afe7e2a48c6b99cdf4a78deccb3525693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object.  <a href="class_crust_1_1_renderer.html#afe7e2a48c6b99cdf4a78deccb3525693">More...</a><br /></td></tr>
+<tr class="memdesc:afe7e2a48c6b99cdf4a78deccb3525693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object with it's lib 2D wrapper and projector.  <a href="class_crust_1_1_renderer.html#afe7e2a48c6b99cdf4a78deccb3525693">More...</a><br /></td></tr>
 <tr class="separator:afe7e2a48c6b99cdf4a78deccb3525693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a8783dce630a9ecbad92f5a3c1c7caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a4a8783dce630a9ecbad92f5a3c1c7caa">renderScene</a> (<a class="el" href="class_crust_1_1_scene.html">Scene</a> &amp;scene)</td></tr>
-<tr class="memdesc:a4a8783dce630a9ecbad92f5a3c1c7caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the scene.  <a href="class_crust_1_1_renderer.html#a4a8783dce630a9ecbad92f5a3c1c7caa">More...</a><br /></td></tr>
-<tr class="separator:a4a8783dce630a9ecbad92f5a3c1c7caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724edd2cfeee183090db12c20c5e1447"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a724edd2cfeee183090db12c20c5e1447">shouldClose</a> ()</td></tr>
+<tr class="memdesc:a724edd2cfeee183090db12c20c5e1447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the window should close.  <a href="class_crust_1_1_renderer.html#a724edd2cfeee183090db12c20c5e1447">More...</a><br /></td></tr>
+<tr class="separator:a724edd2cfeee183090db12c20c5e1447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6afa432ccd01632271955c4b3b91faa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#ae6afa432ccd01632271955c4b3b91faa">renderScene</a> (<a class="el" href="class_crust_1_1_scene.html">Scene</a> &amp;p_scene)</td></tr>
+<tr class="memdesc:ae6afa432ccd01632271955c4b3b91faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the scene.  <a href="class_crust_1_1_renderer.html#ae6afa432ccd01632271955c4b3b91faa">More...</a><br /></td></tr>
+<tr class="separator:ae6afa432ccd01632271955c4b3b91faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a19f5e99b398a9ce7437bea83433eab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a7a19f5e99b398a9ce7437bea83433eab">openWindow</a> (uint16_t p_width, uint16_t p_height)</td></tr>
+<tr class="memdesc:a7a19f5e99b398a9ce7437bea83433eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the window.  <a href="class_crust_1_1_renderer.html#a7a19f5e99b398a9ce7437bea83433eab">More...</a><br /></td></tr>
+<tr class="separator:a7a19f5e99b398a9ce7437bea83433eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f07a9e80c1f4dc759d442292552748"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#ab5f07a9e80c1f4dc759d442292552748">close</a> ()</td></tr>
+<tr class="memdesc:ab5f07a9e80c1f4dc759d442292552748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window. It also closes the 2D lib and the projector.  <a href="class_crust_1_1_renderer.html#ab5f07a9e80c1f4dc759d442292552748">More...</a><br /></td></tr>
+<tr class="separator:ab5f07a9e80c1f4dc759d442292552748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45ac368dadba55bb85aeed017e1d85d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#ac45ac368dadba55bb85aeed017e1d85d">resize</a> (uint16_t p_width, uint16_t p_height)</td></tr>
+<tr class="memdesc:ac45ac368dadba55bb85aeed017e1d85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the renderer.  <a href="class_crust_1_1_renderer.html#ac45ac368dadba55bb85aeed017e1d85d">More...</a><br /></td></tr>
+<tr class="separator:ac45ac368dadba55bb85aeed017e1d85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd58c6e05bf7bfc5276438a0a639385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#afdd58c6e05bf7bfc5276438a0a639385">setProjector</a> (<a class="el" href="namespace_crust.html#a906e39346986c7bb1030c657973cc4c5">Projection</a> p_projection_model)</td></tr>
+<tr class="memdesc:afdd58c6e05bf7bfc5276438a0a639385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the projector mathematical model.  <a href="class_crust_1_1_renderer.html#afdd58c6e05bf7bfc5276438a0a639385">More...</a><br /></td></tr>
+<tr class="separator:afdd58c6e05bf7bfc5276438a0a639385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a7fcb6c939e008698447d4bf1c56cff28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_library2_d_wrapper.html">Library2DWrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a7fcb6c939e008698447d4bf1c56cff28">m_lib_2d</a></td></tr>
-<tr class="separator:a7fcb6c939e008698447d4bf1c56cff28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031bcc4c1d7f0deefac4c70e9e45efd9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a031bcc4c1d7f0deefac4c70e9e45efd9">m_width</a> { 0 }</td></tr>
+<tr class="separator:a031bcc4c1d7f0deefac4c70e9e45efd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6a1214ee192903be81db4261e5628f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#ace6a1214ee192903be81db4261e5628f">m_height</a> { 0 }</td></tr>
+<tr class="separator:ace6a1214ee192903be81db4261e5628f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d399e9b2d2d3c534263831195e2cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_library2_d_wrapper.html">Library2DWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a56d399e9b2d2d3c534263831195e2cd6">m_lib_2d</a></td></tr>
+<tr class="separator:a56d399e9b2d2d3c534263831195e2cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54439c70eb969b0d29fde046afe7482f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_abstract_projector.html">AbstractProjector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_renderer.html#a54439c70eb969b0d29fde046afe7482f">m_projector</a></td></tr>
+<tr class="separator:a54439c70eb969b0d29fde046afe7482f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The renderer class. It is responsible for rendering the scene and managing the objects on the scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4482974d2311481c2ab83ec1b48da85b" name="a4482974d2311481c2ab83ec1b48da85b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4482974d2311481c2ab83ec1b48da85b">&#9670;&#160;</a></span>Renderer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Crust::Renderer::Renderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object with not specified width and height. </p>
+
+</div>
+</div>
 <a id="a3e38e6c3ee79ce74c69303dfa4a8450f" name="a3e38e6c3ee79ce74c69303dfa4a8450f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e38e6c3ee79ce74c69303dfa4a8450f">&#9670;&#160;</a></span>Renderer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e38e6c3ee79ce74c69303dfa4a8450f">&#9670;&#160;</a></span>Renderer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,13 +227,70 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object. </p>
+<p>Destroy the <a class="el" href="class_crust_1_1_renderer.html" title="The renderer class. It is responsible for rendering the scene and managing the objects on the scene.">Renderer</a> object with it's lib 2D wrapper and projector. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4a8783dce630a9ecbad92f5a3c1c7caa" name="a4a8783dce630a9ecbad92f5a3c1c7caa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8783dce630a9ecbad92f5a3c1c7caa">&#9670;&#160;</a></span>renderScene()</h2>
+<a id="ab5f07a9e80c1f4dc759d442292552748" name="ab5f07a9e80c1f4dc759d442292552748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f07a9e80c1f4dc759d442292552748">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::Renderer::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close the window. It also closes the 2D lib and the projector. </p>
+
+</div>
+</div>
+<a id="a7a19f5e99b398a9ce7437bea83433eab" name="a7a19f5e99b398a9ce7437bea83433eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a19f5e99b398a9ce7437bea83433eab">&#9670;&#160;</a></span>openWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::Renderer::openWindow </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>p_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>p_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the window. </p>
+<p >Opens the window with the specified width and height.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_width</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">p_height</td><td>The height of the window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae6afa432ccd01632271955c4b3b91faa" name="ae6afa432ccd01632271955c4b3b91faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6afa432ccd01632271955c4b3b91faa">&#9670;&#160;</a></span>renderScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +299,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">void Crust::Renderer::renderScene </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_crust_1_1_scene.html">Scene</a> &amp;&#160;</td>
-          <td class="paramname"><em>scene</em></td><td>)</td>
+          <td class="paramname"><em>p_scene</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -215,9 +315,95 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac45ac368dadba55bb85aeed017e1d85d" name="ac45ac368dadba55bb85aeed017e1d85d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45ac368dadba55bb85aeed017e1d85d">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::Renderer::resize </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>p_width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>p_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize the renderer. </p>
+<p >Resizes the window to the specified width and height. Also performs the resizing of the projector and 2D lib.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_width</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">p_height</td><td>The height of the window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afdd58c6e05bf7bfc5276438a0a639385" name="afdd58c6e05bf7bfc5276438a0a639385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd58c6e05bf7bfc5276438a0a639385">&#9670;&#160;</a></span>setProjector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047">Status</a> Crust::Renderer::setProjector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_crust.html#a906e39346986c7bb1030c657973cc4c5">Projection</a>&#160;</td>
+          <td class="paramname"><em>p_projection_model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the projector mathematical model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_projection_model</td><td>The projection model to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047a2237ca117421c252ebe0d009677f70d7">Status::OK</a> if the projector was set successfully, <a class="el" href="namespace_crust.html#a0e5796d57a1d9842744f22ec5fe1b047ac4ddc212c951a3f19459d0e498a3f8a8">Status::ERROR</a> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a724edd2cfeee183090db12c20c5e1447" name="a724edd2cfeee183090db12c20c5e1447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724edd2cfeee183090db12c20c5e1447">&#9670;&#160;</a></span>shouldClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Crust::Renderer::shouldClose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the window should close. </p>
+<p >Checks if the window should close. Should be called in the main loop of the application as the check for the loop.</p>
+<dl class="section return"><dt>Returns</dt><dd>The status of the window closing. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7fcb6c939e008698447d4bf1c56cff28" name="a7fcb6c939e008698447d4bf1c56cff28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fcb6c939e008698447d4bf1c56cff28">&#9670;&#160;</a></span>m_lib_2d</h2>
+<a id="ace6a1214ee192903be81db4261e5628f" name="ace6a1214ee192903be81db4261e5628f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6a1214ee192903be81db4261e5628f">&#9670;&#160;</a></span>m_height</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +412,76 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_crust_1_1_library2_d_wrapper.html">Library2DWrapper</a>&amp; Crust::Renderer::m_lib_2d</td>
+          <td class="memname">uint16_t Crust::Renderer::m_height { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The width of the projector. </p>
+
+</div>
+</div>
+<a id="a56d399e9b2d2d3c534263831195e2cd6" name="a56d399e9b2d2d3c534263831195e2cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d399e9b2d2d3c534263831195e2cd6">&#9670;&#160;</a></span>m_lib_2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crust_1_1_library2_d_wrapper.html">Library2DWrapper</a> Crust::Renderer::m_lib_2d</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The height of the projector. </p>
+
+</div>
+</div>
+<a id="a54439c70eb969b0d29fde046afe7482f" name="a54439c70eb969b0d29fde046afe7482f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54439c70eb969b0d29fde046afe7482f">&#9670;&#160;</a></span>m_projector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crust_1_1_abstract_projector.html">AbstractProjector</a> Crust::Renderer::m_projector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The 2D library wrapper. </p>
+
+</div>
+</div>
+<a id="a031bcc4c1d7f0deefac4c70e9e45efd9" name="a031bcc4c1d7f0deefac4c70e9e45efd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031bcc4c1d7f0deefac4c70e9e45efd9">&#9670;&#160;</a></span>m_width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Crust::Renderer::m_width { 0 }</td>
         </tr>
       </table>
   </td>

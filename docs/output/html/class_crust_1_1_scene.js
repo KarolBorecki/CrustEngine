@@ -1,11 +1,14 @@
 var class_crust_1_1_scene =
 [
-    [ "Scene", "class_crust_1_1_scene.html#a83fd8936ac33f114ac7ef027cf4bf9df", null ],
+    [ "Scene", "class_crust_1_1_scene.html#ac59eae8e4da5bd8bd8eba1aa1a324f3b", null ],
+    [ "Scene", "class_crust_1_1_scene.html#a8a9af4d4531d607a6ebc6b83431dc61a", null ],
+    [ "Scene", "class_crust_1_1_scene.html#a130bc2f0fc6a3cd27125e855531f7247", null ],
+    [ "Scene", "class_crust_1_1_scene.html#a21d9091fb105dd8c13c76bace4b311e3", null ],
     [ "~Scene", "class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11", null ],
     [ "addObject", "class_crust_1_1_scene.html#a230dcbd911d2aef48fb7b69fb5d6ffdc", null ],
     [ "getLights", "class_crust_1_1_scene.html#a019e384aa684591391a5fe71d78e8569", null ],
     [ "getMainCamera", "class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da", null ],
-    [ "getName", "class_crust_1_1_scene.html#a3ac3fb4a16707248105f25ca462d1125", null ],
+    [ "getName", "class_crust_1_1_scene.html#af042fdaae9ce43f999a8871fd0e7f8cd", null ],
     [ "getObjects", "class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e", null ],
     [ "getRenderObjects", "class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91", null ],
     [ "isLoaded", "class_crust_1_1_scene.html#afe9ec4cd6267fec4d3834d0be5fec500", null ],
@@ -19,7 +22,7 @@ var class_crust_1_1_scene =
     [ "m_camera", "class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853", null ],
     [ "m_lights", "class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040", null ],
     [ "m_loaded", "class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752", null ],
-    [ "m_name", "class_crust_1_1_scene.html#a2b1c191e07798d9b5fac053959a75cc9", null ],
+    [ "m_name", "class_crust_1_1_scene.html#aa513074ad2c25c9cb74085dd82ff90c3", null ],
     [ "m_objects", "class_crust_1_1_scene.html#aec179fa7cadb6f5e8a0904c1c55ce575", null ],
     [ "m_render_objects", "class_crust_1_1_scene.html#a88f300d8ad1450ade50ff9b802d401c3", null ],
     [ "m_started", "class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf", null ]
