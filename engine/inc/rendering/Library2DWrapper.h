@@ -1,10 +1,10 @@
 #ifndef CRUSTENGINE_LIBRARY2DWRAPPER_H
 #define CRUSTENGINE_LIBRARY2DWRAPPER_H
 
+#include <SDL2/SDL.h>
+
 #include <cstdint>
 #include <string>
-
-#include <raylib.h>
 
 #include "static/Definitions.h"
 
@@ -109,6 +109,11 @@ namespace Crust {
     private:
         uint16_t m_width { 0 }; /**< Width of the window. */
         uint16_t m_height { 0 }; /**< Height of the window. */
+
+        SDL_Window *m_window { nullptr }; //!< Drawing window handler.
+        SDL_Renderer *m_renderer { nullptr };     //!< Drawing renderer handler.
+
+        SDL_bool m_is_running { SDL_FALSE }; //!< Flag representing if the renderer thread is running.
     };
 }
 
