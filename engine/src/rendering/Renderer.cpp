@@ -6,11 +6,19 @@ namespace Crust {
     Renderer::Renderer(uint16_t p_width, uint16_t p_height) : m_width(p_width), m_height(p_height), m_lib_2d(), m_projector(p_width, p_height) {}
 
     void Renderer::renderScene(Scene &scene) {
-        // TODO: Implement
+        m_lib_2d.onDrawStart();
+        m_lib_2d.drawTriangle(600, 0, 0, 0, 300, 500, 255);
+        m_lib_2d.onDrawEnd();
     }
 
     void Renderer::openWindow(uint16_t p_width, uint16_t p_height) {
+        Logger::info("Window created with width: %d and height: %d", p_width, p_height);
+        m_lib_2d.init();
         m_lib_2d.createWindow(p_width, p_height);
+    }
+
+    void Renderer::close() {
+        m_lib_2d.close();
     }
 
     void Renderer::resize(uint16_t p_width, uint16_t p_height) {
@@ -27,5 +35,9 @@ namespace Crust {
                 return OK;
         }
         return ERROR;
+    }
+
+    bool Renderer::shouldClose() {
+        return m_lib_2d.shouldClose();
     }
 }

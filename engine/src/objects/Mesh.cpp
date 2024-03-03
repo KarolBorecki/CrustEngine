@@ -7,7 +7,6 @@ namespace Crust {
     Mesh::Mesh(const char* name) : m_name(name){}
 
     Mesh::~Mesh() {
-        Logger::log("Deleting mesh: %s", m_name);
         for (auto p : m_polygons) {
             delete p;
         }
@@ -18,7 +17,7 @@ namespace Crust {
     }
 
     Triangle &Mesh::getPolygon(const uint32_t p_index) const {
-        return *m_polygons[p_index]; // TODO review this
+        return *m_polygons[p_index];
     }
 
     uint32_t Mesh::getPolygonsCount() const {
@@ -26,7 +25,7 @@ namespace Crust {
     }
 
     void Mesh::setName(const char* p_newName) {
-        m_name = p_newName; // TODO why std::move
+        m_name = p_newName;
     }
 
     const char* Mesh::getName() const {

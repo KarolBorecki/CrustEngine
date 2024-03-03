@@ -29,9 +29,9 @@ namespace Crust {
          *
          * @param p_width The width of the window.
          * @param p_height The height of the window.
-         * @return Reference to the opened window.
+         * @return Pointer to the opened window.
          */
-        Window& openWindow(uint16_t p_width, uint16_t p_height);
+        Window* openWindow(uint16_t p_width, uint16_t p_height);
 
         /**
          * @brief Get the window with the specified index.
@@ -40,22 +40,6 @@ namespace Crust {
          * @return The window reference with the specified index.
          */
         Window& getWindow(uint16_t p_index);
-
-        /**
-         * @brief Closes all of the windows and manages the cleanup of the leftovers.
-         *
-         * @return Status::OK if all of the windows were closed successfully, Status::ERROR otherwise.
-         */
-        Status closeAllWindows();
-
-        /**
-         * @brief Quits the engine.
-         *
-         * @details Remember that this method should be called at the end of the main function otherwise leaks might occur.
-         *
-         * @return Status::OK if engine was quit successfully, Status::ERROR otherwise.
-         */
-        Status quit();
 
         /**
          * @brief Get the list of managed windows.

@@ -14,8 +14,14 @@ namespace Crust {
 
     bool Library2DWrapper::shouldClose() {
         SDL_Event e;
-        return SDL_PollEvent(&e);
-//        return m_is_running;
+        if (SDL_PollEvent(&e))
+        {
+            if(e.type == SDL_QUIT)
+            {
+                m_is_running = SDL_FALSE;
+            }
+        }
+        return m_is_running == SDL_FALSE;
     }
 
     void Library2DWrapper::onDrawStart() {
@@ -26,7 +32,7 @@ namespace Crust {
         SDL_RenderPresent(m_renderer);
     }
 
-    void Library2DWrapper::quit() {
+    void Library2DWrapper::close() {
         if (m_renderer)
             SDL_DestroyRenderer(m_renderer);
         if (m_window)

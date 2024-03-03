@@ -72,7 +72,7 @@ namespace Crust {
          *
          * @details Closes the window. Should be called after the drawing loop ends and we want to cleanup leftovers of the library.
          */
-        void quit();
+        void close();
 
         /**
          * @brief Resize the window.
@@ -113,7 +113,7 @@ namespace Crust {
         SDL_Window *m_window { nullptr }; //!< Drawing window handler.
         SDL_Renderer *m_renderer { nullptr };     //!< Drawing renderer handler.
 
-        SDL_bool m_is_running { SDL_FALSE }; //!< Flag representing if the renderer thread is running.
+        SDL_bool m_is_running { SDL_TRUE }; //!< Flag representing if the renderer thread is running.
     };
 }
 

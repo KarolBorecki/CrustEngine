@@ -2,48 +2,33 @@
 
 namespace Crust {
     Core::Core() {
-        Logger::info("Crust core initialized.");
         TimeProvider::onEngineStart();
     }
 
     Core::~Core() {
-        closeAllWindows();
+        for (auto window : m_windows) {
+            if (window != nullptr) {
+                delete window;
+            }
+        }
     }
 
-    Window& Core::openWindow(uint16_t p_width, uint16_t p_height) {
+    Window* Core::openWindow(uint16_t p_width, uint16_t p_height) {
         if (p_width == 0 || p_height == 0)
             ExceptionsHandler::throwError("Error while opening new window: Width or Height cannot be equal to 0!");
 
-        Window* window = new Window(p_width, p_height);
+        auto* window = new Window(p_width, p_height);
         m_windows.push_back(window);
         window->open();
 
-        return *window;
+        return window;
     }
 
-    Window& Core::getWindow(uint16_t p_index) { // TODO braks convention
+    Window& Core::getWindow(uint16_t p_index) {
         if (p_index >= m_windows.size()) {
             ExceptionsHandler::throwError("Error while getting window: Index out of range!");
         }
         return *m_windows[p_index];
-    }
-
-    Status Core::closeAllWindows() {
-        for (auto window : m_windows) {
-            if (window == nullptr) {
-                return ERROR;
-            }
-            window->close();
-            delete window;
-        }
-        m_windows.clear();
-        Logger::info("Windows cleared.");
-        return OK;
-    }
-
-    Status Core::quit() {
-        Logger::info("Quitting the crust engine.");
-        return closeAllWindows();
     }
 
     std::vector<Window*> Core::getWindows() const {

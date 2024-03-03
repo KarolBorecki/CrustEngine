@@ -50,9 +50,9 @@ namespace Crust {
         void open();
 
         /**
-         * @brief Closes the window. It also stops the rendering loop.
+         * @brief Starts the infinite rendering loop.
          */
-        void close();
+        void startRenderingLoop();
 
         /**
          * @brief Set the projection model.

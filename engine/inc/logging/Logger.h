@@ -83,7 +83,7 @@ namespace Crust {
 //        /**
 //         * @brief Logs window info onto the console.
 //         */
-//        static void log(const Window& window) { // TODO: Add more info about window
+//        static void log(const Window& window) {
 //            log("Window[%d, %d]: %s", window.width(), window.height(), (window.scene() == nullptr ? "-" : window.scene()->getName()));
 //        }
 //

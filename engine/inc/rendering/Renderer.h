@@ -34,6 +34,15 @@ namespace Crust {
         virtual ~Renderer() = default;
 
         /**
+         * @brief Check if the window should close.
+         *
+         * @details Checks if the window should close. Should be called in the main loop of the application as the check for the loop.
+         *
+         * @return The status of the window closing.
+         */
+        bool shouldClose();
+
+        /**
          * @brief Render the scene.
          *
          * @param scene The scene to render.
@@ -49,6 +58,11 @@ namespace Crust {
          * @param p_height The height of the window.
          */
         void openWindow(uint16_t p_width, uint16_t p_height);
+
+        /**
+         * @brief Close the window. It also closes the 2D lib and the projector.
+         */
+        void close();
 
         /**
          * @brief Resize the renderer.

@@ -54,8 +54,7 @@ namespace Crust {
             }
             else if (sscanf(analysed_line, "f %d %d %d", &p1_index, &p2_index, &p3_index) == 3)
             {
-                Logger::info("f %d %d %d", p1_index, p2_index, p3_index);
-                Triangle* tri = new Triangle();
+                auto* tri = new Triangle();
                 tri->setVertex(0, points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2]);
                 tri->setVertex(1, points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2]);
                 tri->setVertex(2, points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2]);
@@ -63,8 +62,7 @@ namespace Crust {
             }
             else if (sscanf(analysed_line, "f %d/%d %d/%d %d/%d", &p1_index, &t1_index, &p2_index, &t2_index, &p3_index, &t3_index) == 6)
             {
-                Logger::info("f %d/%d %d/%d %d/%d", p1_index, t1_index, p2_index, t2_index, p3_index, t3_index);
-                Triangle* tri = new Triangle();
+                auto* tri = new Triangle();
                 tri->setVertex(0, points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2]);
                 tri->setVertex(1, points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2]);
                 tri->setVertex(2, points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2]);
@@ -73,7 +71,7 @@ namespace Crust {
             else if (sscanf(analysed_line, "f %d/%d/%d %d/%d/%d %d/%d/%d", &p1_index, &t1_index, &n1_index, &p2_index, &t2_index, &n2_index, &p3_index, &t3_index, &n3_index) == 9)
             {
                 Logger::info("f %d/%d/%d %d/%d/%d %d/%d/%d", p1_index, t1_index, n1_index, p2_index, t2_index, n2_index, p3_index, t3_index, n3_index);
-                Triangle* tri = new Triangle();
+                auto* tri = new Triangle();
                 tri->setVertex(0, points[(p1_index - 1) * 3], points[(p1_index - 1) * 3 + 1], points[(p1_index - 1) * 3 + 2]);
                 tri->setVertex(1, points[(p2_index - 1) * 3], points[(p2_index - 1) * 3 + 1], points[(p2_index - 1) * 3 + 2]);
                 tri->setVertex(2, points[(p3_index - 1) * 3], points[(p3_index - 1) * 3 + 1], points[(p3_index - 1) * 3 + 2]);
@@ -121,7 +119,7 @@ namespace Crust {
             }
             else
             {
-                ExceptionsHandler::throwWarning("No matching rule for line[%d]: %s in obj's file %s", lineNum, analysed_line, p_path);
+                ExceptionsHandler::throwWarning("No matching rule for line[%d]: %s in objs file %s", lineNum, analysed_line, p_path);
             }
         }
         return OK;
