@@ -58,30 +58,44 @@ set(HEADERS
 include_directories(${PROJECT_SOURCE_DIR}/inc)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-include(ExternalProject)
-
-set(SDL_PATH ${CMAKE_BINARY_DIR}/sdl)
-ExternalProject_Add(sdl
-        GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
-        GIT_TAG release-2.30.0
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${SDL_PATH}
-)
-include_directories(${SDL_PATH}/include)
-link_directories(${SDL_PATH}/lib)
-target_link_libraries(${PROJECT_NAME} ${SDL_PATH}/lib/libSDL2.dylib)
-
-set(EIGEN_PATH ${CMAKE_BINARY_DIR}/eigen)
-ExternalProject_Add(eigen
-        GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
-        GIT_TAG 3.4.0
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EIGEN_PATH}
-)
-include_directories(${EIGEN_PATH}/include/eigen3)
-
-add_dependencies(${PROJECT_NAME} sdl eigen)
-
 if (${APPLE})
+    include(ExternalProject)
+    set(SDL_PATH ${CMAKE_BINARY_DIR}/sdl)
+    ExternalProject_Add(sdl
+            GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+            GIT_TAG release-2.30.0
+            CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${SDL_PATH}
+    )
+    include_directories(${SDL_PATH}/include)
+    link_directories(${SDL_PATH}/lib)
+    target_link_libraries(${PROJECT_NAME} ${SDL_PATH}/lib/libSDL2.dylib)
+
+    set(EIGEN_PATH ${CMAKE_BINARY_DIR}/eigen)
+    ExternalProject_Add(eigen
+            GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
+            GIT_TAG 3.4.0
+            CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EIGEN_PATH}
+    )
+    include_directories(${EIGEN_PATH}/include/eigen3)
+
+    add_dependencies(${PROJECT_NAME} sdl eigen)
+
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
 endif()
+
+if(WIN32) # check doesnt work
+    SET(EIGEN3_INCLUDE_DIR "$ENV{EIGEN3_INCLUDE_DIR}")
+    SET(CMAKE_MODULE_PATH "$ENV{EIGEN3_DIR}")
+
+    find_package(Eigen3 3.3 REQUIRED)
+    include_directories(${EIGEN3_INCLUDE_DIR})
+
+    find_package(SDL2 REQUIRED)
+    include_directories(${SDL2_INCLUDE_DIRS})
+
+    target_link_libraries(${PROJECT_NAME}  ${SDL2_LIBRARIES})
+endif(WIN32)
+
+
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)

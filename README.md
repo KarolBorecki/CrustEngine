@@ -39,18 +39,16 @@ Here are listed basic requirements for this project:
 
 More detailed were written outside of this repository and will be added later.
 
-## Compilation using g++
-Inside CrustEngine folder run command:
-```
-make engine
-```
-If no errors occured run:
-```
-./engine.out
-```
-As an argument You are ought to pass the starting mesh (*.obj) file, that will be loaded from `CrustEngine/Tmp/meshes` folder. 
+## Compilation 
+Project can be compiled using cmake
 
-*Example for VideoShip.obj: `./engine.out VideoShip`*
+### Required packackages
+- g++ 
+- Eigen 3.4
+- SDL2.x
+
+### Compilation on Windows
+I encourage you to use the Cygwin project
 
 ## Documentation
 
