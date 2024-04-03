@@ -31,7 +31,7 @@ namespace Crust {
             m_projector->project(*obj);
         }
 
-        for (auto data : m_projector->retrievProjections()) {
+        for (auto data : m_projector->retrieveProjections()) {
             m_lib_2d.drawTriangle(data.x1, data.y1, data.x2, data.y2, data.x3, data.y3, data.light);
         }
 

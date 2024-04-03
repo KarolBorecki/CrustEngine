@@ -48,7 +48,7 @@ namespace Crust {
          *
          * @return std::vector<ProjectionData_t> The projection data.
          */
-        inline std::vector<ProjectionData_t> retrievProjections() {
+        inline virtual std::vector<ProjectionData_t> retrieveProjections() {
             sort(m_projection_data.begin(), m_projection_data.end(), [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b)
             {
                 /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
