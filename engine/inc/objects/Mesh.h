@@ -11,7 +11,7 @@ namespace {
     template<typename T = float>
     class Vector3;
 }
-
+// TODO rename polygons to faces
 namespace Crust {
     /**
      * @brief Represents 3D model as mesh consisted of 3D polygons.
@@ -39,6 +39,13 @@ namespace Crust {
          * @param p_poli Handler to added triangle.
          */
         void addPolygon(Triangle &p_poli);
+
+        /**
+         * @brief Getter for polygons.
+         *
+         * @return polygons.
+         */
+        std::vector<Triangle*> &getPolygons();
 
         /**
          * @brief Getter for polygon.

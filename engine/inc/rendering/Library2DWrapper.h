@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "static/Definitions.h"
+#include "input/InputHandler.h"
 
 namespace Crust {
     /**

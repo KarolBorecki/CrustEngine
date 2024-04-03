@@ -59,6 +59,13 @@ namespace Crust {
          */
         LightIntensity getIntensity() const;
 
+        /**
+         * @brief Get the direction of the light source.
+         *
+         * @return Direction of the light source.
+         */
+        Vector3<>& direction() { return m_transform.eulerRotation(); }
+
     private:
         LightType m_type { Crust::DEFAULT_LIGHT_TYPE }; /**< Type of the light source. */
         LightIntensity m_intensity { Crust::DEFAULT_LIGHT_INTENSITY }; /**< Intensity of the light source. */

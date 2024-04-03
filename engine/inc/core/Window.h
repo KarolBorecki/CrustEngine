@@ -4,8 +4,9 @@
 #include <cstdint>
 
 #include "core/Scene.h"
-#include "static/Definitions.h"
 #include "rendering/Renderer.h"
+#include "input/InputHandler.h"
+#include "static/Definitions.h"
 #include "utils/TimeProvider.h"
 
 namespace Crust {
@@ -48,6 +49,11 @@ namespace Crust {
          * @brief Opens the window. It also starts the rendering loop.
          */
         void open();
+
+        /**
+         * @brief Closes the window.
+         */
+        void close();
 
         /**
          * @brief Starts the infinite rendering loop.

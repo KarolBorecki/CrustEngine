@@ -9,7 +9,7 @@ namespace Crust {
         if (Math::equal(f_fov_converted, 0))
             ExceptionsHandler::throwError("_fFovDeg cannot be equal to 0 in radians!");
 
-        m_f_fov_rad = (1.0f / Math::tan(f_fov_converted * 0.5f));
+        m_f_fov_rad = f_fov_converted;
         Logger::info("Camera created with fFovDeg: %d, fNear: %f, fFar: %f", p_f_fov_deg, p_f_near, p_f_far);
     }
 

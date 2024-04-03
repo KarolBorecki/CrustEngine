@@ -31,7 +31,7 @@ namespace Crust {
         /**
          * @brief Destroy the Renderer object with it's lib 2D wrapper and projector.
          */
-        virtual ~Renderer() = default;
+        ~Renderer();
 
         /**
          * @brief Check if the window should close.
@@ -87,7 +87,7 @@ namespace Crust {
         uint16_t m_height { 0 }; /** !< The height of the projector. */
 
         Library2DWrapper m_lib_2d; /** !< The 2D library wrapper. */
-        AbstractProjector m_projector; /** !< The projector. */
+        AbstractProjector* m_projector; /** !< The projector. */
     };
 }
 

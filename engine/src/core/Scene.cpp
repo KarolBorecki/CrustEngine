@@ -38,12 +38,12 @@ namespace Crust {
         }
     }
 
-    void Scene::update() {
+    void Scene::update(double p_delta_time) {
         for (auto object : m_objects) {
             if(object != nullptr) {
                 for (auto script : object->getScripts()) {
                     if (script != nullptr) {
-                        script->update();
+                        script->update(p_delta_time);
                     }
                 }
             }

@@ -7,33 +7,33 @@ namespace Crust {
         m_scale = {1.0f, 1.0f, 1.0f};
     }
 
-    inline Crust::Vector3<> &Transform::getPosition() { return m_position; }
+    Crust::Vector3<> &Transform::position() { return m_position; }
 
-    inline Crust::Vector3<> &Transform::getScale() { return m_scale; }
+    Crust::Vector3<> &Transform::size() { return m_scale; }
 
-    inline Crust::Vector3<> &Transform::getEulerRotation() { return m_rotation; }
+    Crust::Vector3<> &Transform::eulerRotation() { return m_rotation; }
 
-    inline void Transform::setPosition(float p_x, float p_y, float p_z) { m_position = {p_x, p_y, p_z}; }
+    void Transform::setPosition(float p_x, float p_y, float p_z) { m_position = {p_x, p_y, p_z}; }
 
-    inline void Transform::setScale(float p_x, float p_y, float p_z) { m_scale = {p_x, p_y, p_z}; }
+    void Transform::setSize(float p_x, float p_y, float p_z) { m_scale = {p_x, p_y, p_z}; }
 
-    inline void Transform::setEulerRotation(float p_x, float p_y, float p_z) { m_rotation = {p_x, p_y, p_z}; }
+    void Transform::setEulerRotation(float p_x, float p_y, float p_z) { m_rotation = {p_x, p_y, p_z}; }
 
-    inline void Transform::translate(float p_dx, float p_dy, float p_dz) {
+    void Transform::translate(float p_dx, float p_dy, float p_dz) {
         m_position(0) += p_dx;
-        m_position(0) += p_dy;
-        m_position(0) += p_dz;
+        m_position(1) += p_dy;
+        m_position(2) += p_dz;
     }
 
-    inline void Transform::scale(float p_dx, float p_dy, float p_dz) {
+    void Transform::scale(float p_dx, float p_dy, float p_dz) {
         m_scale(0) += p_dx;
-        m_scale(0) += p_dy;
-        m_scale(0) += p_dz;
+        m_scale(1) += p_dy;
+        m_scale(2) += p_dz;
     }
 
-    inline void Transform::rotateEuler(float p_dx, float p_dy, float p_dz) {
+    void Transform::rotateEuler(float p_dx, float p_dy, float p_dz) {
         m_rotation(0) += p_dx;
-        m_rotation(0) += p_dy;
-        m_rotation(0) += p_dz;
+        m_rotation(1) += p_dy;
+        m_rotation(2) += p_dz;
     }
 }

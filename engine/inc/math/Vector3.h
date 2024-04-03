@@ -14,12 +14,14 @@ namespace Crust {
          * @brief Construct a new Vector3 object with default values.
          */
         Vector3() : Eigen::Vector3<T>() {};
+
         /**
          * @brief Construct a new Vector3 object with the specified value for all components.
          *
          * @param p_val The value to set all components to.
          */
         explicit Vector3(T p_val) : Eigen::Vector3<T>(p_val, p_val, p_val) {};
+
         /**
          * @brief Construct a new Vector3 object with the specified values for each component.
          *

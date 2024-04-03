@@ -3,6 +3,7 @@ project(CrustEngine)
 
 set(SOURCES
         main.cpp
+        src/objects/Transform.cpp
         src/core/Core.cpp
         src/core/Scene.cpp
         src/core/Window.cpp
@@ -11,7 +12,6 @@ set(SOURCES
         src/math/Math.cpp
         src/math/geometry/Polygon.cpp
         src/math/geometry/Triangle.cpp
-        src/objects/Transform.cpp
         src/objects/Object.cpp
         src/objects/Camera.cpp
         src/objects/LightSource.cpp
@@ -53,6 +53,10 @@ set(HEADERS
         inc/static/Definitions.h
         inc/rendering/projection/AbstractProjector.h
         inc/files/MeshLoader.h
+        inc/scripting/examples/Rotator.h
+        inc/scripting/examples/Mover.h
+        inc/input/InputHandler.h
+        inc/input/InputEvent.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

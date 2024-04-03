@@ -66,8 +66,10 @@ namespace Crust {
 
         /**
          * @brief Called in each frame. Calls update method on every script in this scene.
+         *
+         * @param p_delta_time Time passed since last frame.
          */
-        void update();
+        void update(double p_delta_time);
 
         /**
          * @brief Called when scene is reloaded. Calls reload method on every script in this scene.

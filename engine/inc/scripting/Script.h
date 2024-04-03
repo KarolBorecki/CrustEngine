@@ -3,6 +3,8 @@
 
 #include "objects/Object.h"
 
+#include "logging/Logger.h"
+
 namespace Crust {
     class Object;
 }
@@ -14,11 +16,12 @@ namespace Crust {
 
         virtual void start() {};
 
-        virtual void update() {};
+        virtual void update(float p_delta_time) {};
 
         void attachTo(Object* p_object) { m_object = p_object; }
-    private:
-        Object* m_object;
+
+    protected:
+        Object* m_object { nullptr };
     };
 }
 

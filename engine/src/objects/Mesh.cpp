@@ -16,6 +16,10 @@ namespace Crust {
         m_polygons.push_back(&p_poli);
     }
 
+    std::vector<Triangle*> &Mesh::getPolygons() {
+        return m_polygons;
+    }
+
     Triangle &Mesh::getPolygon(const uint32_t p_index) const {
         return *m_polygons[p_index];
     }

@@ -49,7 +49,7 @@ namespace Crust {
          *
          * @return The transform of the object.
          */
-        Transform& getTransform();
+        Transform& transform();
 
         /**
          * @brief Get the scripts attached to the object.
@@ -66,11 +66,13 @@ namespace Crust {
          */
         Status attachScript(Script& script);
 
-    private:
+    protected:
         uint32_t m_id { 0 }; /**< The id of the object. */
         bool m_active { true }; /**< Wheter object is active: is rendered, it's scripts are performed etc. If not active it behaves like it not exists. */
 
         Transform m_transform; /**< The transform of the object. Represents coordinates, scale and rotation in 3D space */
+
+    private:
         std::vector<Script*> m_scripts; /**< The scripts attached to the object. */
 
         static inline uint32_t NEXT_ID { 0 }; /**< The next id of the object. Static field. */

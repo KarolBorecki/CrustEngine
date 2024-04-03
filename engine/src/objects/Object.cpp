@@ -19,7 +19,7 @@ namespace Crust {
         m_active = p_active;
     }
 
-    Transform& Object::getTransform() {
+    Transform& Object::transform() {
         return m_transform;
     }
 

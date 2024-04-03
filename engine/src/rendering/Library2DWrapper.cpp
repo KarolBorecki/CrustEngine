@@ -13,14 +13,11 @@ namespace Crust {
     }
 
     bool Library2DWrapper::shouldClose() {
-        SDL_Event e;
-        if (SDL_PollEvent(&e))
+        if (InputHandler::getLastEvent().type == Event::EVENT_WINDOW_QUIT)
         {
-            if(e.type == SDL_QUIT)
-            {
-                m_is_running = SDL_FALSE;
-            }
+            m_is_running = SDL_FALSE;
         }
+
         return m_is_running == SDL_FALSE;
     }
 

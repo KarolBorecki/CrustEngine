@@ -29,11 +29,28 @@ namespace Crust {
         m_renderer.openWindow(m_width, m_height);
     }
 
-    void Window::startRenderingLoop() {
-        while (!m_renderer.shouldClose()) {
-            m_renderer.renderScene(*m_scene);
-        }
+    void Window::close() {
         m_renderer.close();
+
+    }
+
+    void Window::startRenderingLoop() {
+        static std::vector<RenderObject *> objs;
+
+        InputHandler::beginInputMonitoring();
+        while (!m_renderer.shouldClose()) {
+            m_time_provider.onFrameStart();
+            InputHandler::pollEvent();
+
+            if (m_scene != nullptr) {
+                m_scene->update(m_time_provider.getDeltaTime_s());
+                m_renderer.renderScene(*m_scene);
+            }
+
+            m_time_provider.onFrameEnd();
+        }
+        close();
+        Logger::info("Average frame time: %lf [s] (%lf FPS)", m_time_provider.getAverageFrameTime_s(), m_time_provider.getAverageFPS());
     }
 
     Status Window::changeProjection(Projection p_projection_model) {

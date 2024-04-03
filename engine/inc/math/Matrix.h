@@ -57,6 +57,8 @@ namespace Crust {
         }
     };
 
+    typedef Matrix<float, 1, 4> Matrix1x4f;
+
     typedef Matrix<float, 4, 4> Matrix4x4f;
     typedef Matrix<float, 3, 3> Matrix3x3f;
 

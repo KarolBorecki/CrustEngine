@@ -20,21 +20,21 @@ namespace Crust {
          *
          * @return Vector3<>& Position of the object with this transform attached.
          */
-        Crust::Vector3<> &getPosition();
+        Crust::Vector3<> &position();
 
         /**
          * @brief Getter for #scale field;
          *
          * @return Vector3<>& Scale of the object with this transform attached.
          */
-        Crust::Vector3<> &getScale();
+        Crust::Vector3<> &size();
 
         /**
          * @brief Getter for #rot field, this returns handler to euler's vector for rotation.
          *
          * @return Vector3<>& Euler's rotation of the object with this transform attached.
          */
-        Crust::Vector3<> &getEulerRotation();
+        Crust::Vector3<> &eulerRotation();
 
         /**
          * @brief Set the position of this object to given vector (x, y, z).
@@ -44,7 +44,7 @@ namespace Crust {
         /**
          * @brief Set the scale of this object to given vector (x, y, z).
          */
-        void setScale(float x, float y, float z);
+        void setSize(float x, float y, float z);
 
         /**
          * @brief Set the euler's rotation of this object to given vector (x, y, z) in degrees.
