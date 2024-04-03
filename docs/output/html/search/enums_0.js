@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fontcolor_0',['FontColor',['../class_crust_1_1_logger.html#a89a4891527368d100d992e40e5da5c24',1,'Crust::Logger']]],
-  ['fontstyle_1',['FontStyle',['../class_crust_1_1_logger.html#a2edf0d781300084b8a59131b5a8d80e5',1,'Crust::Logger']]]
+  ['eventtype_0',['EventType',['../namespace_crust_1_1_event.html#aeaee5aaa4dfa4fe0dd75c54adf6fab46',1,'Crust::Event']]]
 ];

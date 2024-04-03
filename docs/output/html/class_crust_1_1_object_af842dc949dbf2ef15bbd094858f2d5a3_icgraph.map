@@ -1,0 +1,5 @@
+<map id="Crust::Object::transform" name="Crust::Object::transform">
+<area shape="rect" id="node1" title="Get the transform of the object." alt="" coords="205,31,367,56"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_mover.html#aa0e0c5a3aa591ee56e987a5fca2836de" title=" " alt="" coords="9,5,153,31"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_rotator.html#a949a12319675df6ceedb1a903b3e5c9c" title=" " alt="" coords="5,55,157,80"/>
+</map>

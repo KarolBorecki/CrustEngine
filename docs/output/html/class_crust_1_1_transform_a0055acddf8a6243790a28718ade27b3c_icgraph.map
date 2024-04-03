@@ -1,0 +1,4 @@
+<map id="Crust::Transform::eulerRotation" name="Crust::Transform::eulerRotation">
+<area shape="rect" id="node1" title="Getter for #rot field, this returns handler to euler&#39;s vector for rotation." alt="" coords="184,13,389,39"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_light_source.html#ab877bd02b183ebca004c564ef452749c" title="Get the direction of the light source." alt="" coords="5,5,136,46"/>
+</map>

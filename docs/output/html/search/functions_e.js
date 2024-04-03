@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['unloadscene_0',['unLoadScene',['../class_crust_1_1_window.html#accac9e9a4478c01c7344cee2ce210c64',1,'Crust::Window']]],
-  ['update_1',['update',['../class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212',1,'Crust::Scene::update()'],['../class_crust_1_1_script.html#a902bbe6cc654e2ca9e78f5bce24a3c3a',1,'Crust::Script::update()']]]
+  ['scale_0',['scale',['../class_crust_1_1_transform.html#ac51660d9f97083fed9fccf82112369eb',1,'Crust::Transform']]],
+  ['scene_1',['scene',['../class_crust_1_1_window.html#aa0e054a2dc5592165314d4176f930a1c',1,'Crust::Window']]],
+  ['scene_2',['Scene',['../class_crust_1_1_scene.html#ac59eae8e4da5bd8bd8eba1aa1a324f3b',1,'Crust::Scene::Scene()'],['../class_crust_1_1_scene.html#a8a9af4d4531d607a6ebc6b83431dc61a',1,'Crust::Scene::Scene(const char *p_name)'],['../class_crust_1_1_scene.html#a130bc2f0fc6a3cd27125e855531f7247',1,'Crust::Scene::Scene(Camera &amp;main_camera)'],['../class_crust_1_1_scene.html#a21d9091fb105dd8c13c76bace4b311e3',1,'Crust::Scene::Scene(const char *p_name, Camera &amp;p_main_camera)']]],
+  ['setactive_3',['setActive',['../class_crust_1_1_object.html#a40bb420fffc66b57c66a59032f817c3a',1,'Crust::Object']]],
+  ['seteulerrotation_4',['setEulerRotation',['../class_crust_1_1_transform.html#ade0f2c0b335c5918c5ba0adfa33ef6b5',1,'Crust::Transform']]],
+  ['setfont_5',['setFont',['../class_crust_1_1_logger.html#a136edb9e34ef1c9c9891a59e88a7ef93',1,'Crust::Logger::setFont(int p_color_code, int p_style_code)'],['../class_crust_1_1_logger.html#a1a60ef3e24cced04aa2ec693711080ee',1,'Crust::Logger::setFont(int p_color_code)']]],
+  ['setintensity_6',['setIntensity',['../class_crust_1_1_light_source.html#a9ac138c100db32735156885c66dfc670',1,'Crust::LightSource']]],
+  ['setmaincamera_7',['setMainCamera',['../class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f',1,'Crust::Scene']]],
+  ['setname_8',['setName',['../class_crust_1_1_mesh.html#a216fb95e6aa177257d7c7e52f999a88b',1,'Crust::Mesh']]],
+  ['setposition_9',['setPosition',['../class_crust_1_1_transform.html#a8408199f6cae62a0329c7211168f57c6',1,'Crust::Transform']]],
+  ['setprojector_10',['setProjector',['../class_crust_1_1_renderer.html#afdd58c6e05bf7bfc5276438a0a639385',1,'Crust::Renderer']]],
+  ['setsize_11',['setSize',['../class_crust_1_1_transform.html#a69069c787a41a92114a5a195c8a6a3ae',1,'Crust::Transform']]],
+  ['settype_12',['setType',['../class_crust_1_1_light_source.html#a905b29834ceddfbd80fba9349756f814',1,'Crust::LightSource']]],
+  ['setupcamera_13',['setupCamera',['../class_crust_1_1_abstract_projector.html#a7f3728ffed07436f1425901fbfd4d28e',1,'Crust::AbstractProjector::setupCamera()'],['../class_crust_1_1_perspective_projector.html#a2f9a0b5472c781e8caf0aaf1283c86a5',1,'Crust::PerspectiveProjector::setupCamera()']]],
+  ['setuplightning_14',['setupLightning',['../class_crust_1_1_abstract_projector.html#a0163f596dea89be9e76b5ae5871c33cd',1,'Crust::AbstractProjector::setupLightning()'],['../class_crust_1_1_perspective_projector.html#ae2dcba5f6fa8950a03c1a1b0962546ac',1,'Crust::PerspectiveProjector::setupLightning()']]],
+  ['setvertex_15',['setVertex',['../class_crust_1_1_polygon.html#a35bacffc296fc9089c5ccaf553fa5c31',1,'Crust::Polygon']]],
+  ['setwindowcaption_16',['setWindowCaption',['../class_crust_1_1_library2_d_wrapper.html#a85f43028a70c85737e4b7e3bd3ae7e9c',1,'Crust::Library2DWrapper']]],
+  ['shouldclose_17',['shouldClose',['../class_crust_1_1_library2_d_wrapper.html#a859627ae7c195e8f34639b571c08ccb7',1,'Crust::Library2DWrapper::shouldClose()'],['../class_crust_1_1_renderer.html#a724edd2cfeee183090db12c20c5e1447',1,'Crust::Renderer::shouldClose()']]],
+  ['sin_18',['sin',['../class_crust_1_1_math.html#a4b48369487f4358ddf804ac37df0b368',1,'Crust::Math']]],
+  ['size_19',['size',['../class_crust_1_1_transform.html#aa1c59f2af743a92785195ede69ebdfce',1,'Crust::Transform']]],
+  ['start_20',['start',['../class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c',1,'Crust::Scene::start()'],['../class_crust_1_1_mover.html#ab487c2964c8cbc2a4ff89dc9924dbbb4',1,'Crust::Mover::start()'],['../class_crust_1_1_rotator.html#a4a497791c3c3ff6391bce86e8030e8ed',1,'Crust::Rotator::start()'],['../class_crust_1_1_script.html#a4359792ba452892a50f645535d53c3b4',1,'Crust::Script::start()']]],
+  ['startrenderingloop_21',['startRenderingLoop',['../class_crust_1_1_window.html#a4d0c9ec50b6c023cc07683c5c452152a',1,'Crust::Window']]]
 ];

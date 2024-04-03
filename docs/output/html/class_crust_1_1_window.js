@@ -3,6 +3,7 @@ var class_crust_1_1_window =
     [ "Window", "class_crust_1_1_window.html#ab23ebad7af573a9999699837482aa802", null ],
     [ "~Window", "class_crust_1_1_window.html#ab1c4d36b318c93b857b3b87eefb557a5", null ],
     [ "changeProjection", "class_crust_1_1_window.html#aca10eb865ad02757497ec163d7ca721a", null ],
+    [ "close", "class_crust_1_1_window.html#a9f335f8f8edd0516db5709aeb8116786", null ],
     [ "height", "class_crust_1_1_window.html#a4d38c81058fb53a02fb74c7f7761c6d0", null ],
     [ "loadScene", "class_crust_1_1_window.html#aca95f2c0b2ce1228c0e243708054849e", null ],
     [ "open", "class_crust_1_1_window.html#abb8869036b5578f28d5d8f2e2fef3ed7", null ],

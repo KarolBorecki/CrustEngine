@@ -1,0 +1,6 @@
+<map id="Crust::Mover::update" name="Crust::Mover::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,55,150,80"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_transform.html#af66171bfb1959cbcd7f3166dd3c864ba" title="Getter for #pos field." alt="" coords="200,5,374,31"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_object.html#af842dc949dbf2ef15bbd094858f2d5a3" title="Get the transform of the object." alt="" coords="206,55,368,80"/>
+<area shape="rect" id="node4" href="$class_crust_1_1_transform.html#ac65f4c4738b9758bf2c8ec20c6ace2a7" title="Moves object by given values." alt="" coords="198,104,376,130"/>
+</map>

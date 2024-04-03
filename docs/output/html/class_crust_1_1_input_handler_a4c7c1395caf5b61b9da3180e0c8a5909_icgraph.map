@@ -1,0 +1,4 @@
+<map id="Crust::InputHandler::parseSDLKeyCodeEvent" name="Crust::InputHandler::parseSDLKeyCodeEvent">
+<area shape="rect" id="node1" title="Wrapper for SDL&#39;s keycodes &#45; converts SDL&#39;s keycode to crustengine codes." alt="" coords="189,5,364,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_input_handler.html#aa36e77f564de97d8b4954dad0f58d749" title="Method that should be called once per frame. This function checks for any pending events." alt="" coords="5,5,141,46"/>
+</map>

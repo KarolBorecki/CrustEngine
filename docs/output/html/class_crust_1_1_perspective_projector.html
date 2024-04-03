@@ -92,8 +92,9 @@ $(document).ready(function(){initNavTree('class_crust_1_1_perspective_projector.
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_crust_1_1_perspective_projector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Crust::PerspectiveProjector Class Reference</div></div>
 </div><!--header-->
@@ -106,29 +107,86 @@ $(document).ready(function(){initNavTree('class_crust_1_1_perspective_projector.
 <div class="dynheader">
 Inheritance diagram for Crust::PerspectiveProjector:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_perspective_projector__inherit__graph.svg" width="194" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_crust_1_1_perspective_projector__inherit__graph.svg" width="194" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad5d6753c84437ca3c590c3f7f4661df0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_crust_1_1_abstract_projector_1_1_projection_data.html">Crust::AbstractProjector::ProjectionData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">ProjectionData_t</a></td></tr>
+<tr class="separator:ad5d6753c84437ca3c590c3f7f4661df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a731646c161f5c5319bad7400fad66179"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_perspective_projector.html#a731646c161f5c5319bad7400fad66179">PerspectiveProjector</a> (uint16_t p_width, uint16_t p_height)</td></tr>
 <tr class="memdesc:a731646c161f5c5319bad7400fad66179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Projector object with the specified width and height.  <a href="class_crust_1_1_perspective_projector.html#a731646c161f5c5319bad7400fad66179">More...</a><br /></td></tr>
 <tr class="separator:a731646c161f5c5319bad7400fad66179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c27147a6ba4baee9aca33c2ff3e124"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_perspective_projector.html#ac5c27147a6ba4baee9aca33c2ff3e124">~PerspectiveProjector</a> () override=default</td></tr>
+<tr class="memdesc:ac5c27147a6ba4baee9aca33c2ff3e124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Projector object.  <a href="class_crust_1_1_perspective_projector.html#ac5c27147a6ba4baee9aca33c2ff3e124">More...</a><br /></td></tr>
+<tr class="separator:ac5c27147a6ba4baee9aca33c2ff3e124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f9a0b5472c781e8caf0aaf1283c86a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_perspective_projector.html#a2f9a0b5472c781e8caf0aaf1283c86a5">setupCamera</a> (<a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;camera) override</td></tr>
+<tr class="memdesc:a2f9a0b5472c781e8caf0aaf1283c86a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the camera ready for the frame. Prepares projection and view matrixes.  <a href="class_crust_1_1_perspective_projector.html#a2f9a0b5472c781e8caf0aaf1283c86a5">More...</a><br /></td></tr>
+<tr class="separator:a2f9a0b5472c781e8caf0aaf1283c86a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2dcba5f6fa8950a03c1a1b0962546ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_perspective_projector.html#ae2dcba5f6fa8950a03c1a1b0962546ac">setupLightning</a> (<a class="el" href="class_crust_1_1_light_source.html">LightSource</a> &amp;p_light) override</td></tr>
+<tr class="memdesc:ae2dcba5f6fa8950a03c1a1b0962546ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setups the lightning on the scene. Saves the direction of the perpendicular rays (currently on this is supported).  <a href="class_crust_1_1_perspective_projector.html#ae2dcba5f6fa8950a03c1a1b0962546ac">More...</a><br /></td></tr>
+<tr class="separator:ae2dcba5f6fa8950a03c1a1b0962546ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae045935c8e0f826a86a0135b3dd03dc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_perspective_projector.html#ae045935c8e0f826a86a0135b3dd03dc8">project</a> (<a class="el" href="class_crust_1_1_render_object.html">RenderObject</a> &amp;p_object) override</td></tr>
+<tr class="memdesc:ae045935c8e0f826a86a0135b3dd03dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects the Render object and saves projected faces to the <a class="el" href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">m_projection_data</a> vector.  <a href="class_crust_1_1_perspective_projector.html#ae045935c8e0f826a86a0135b3dd03dc8">More...</a><br /></td></tr>
+<tr class="separator:ae045935c8e0f826a86a0135b3dd03dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aed6c3d57133e6881adacb543f0c7c0"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">ProjectionData_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a2aed6c3d57133e6881adacb543f0c7c0">retrieveProjections</a> ()</td></tr>
+<tr class="memdesc:a2aed6c3d57133e6881adacb543f0c7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the projection data, which is the data of the projections made in the current frame.  <a href="class_crust_1_1_abstract_projector.html#a2aed6c3d57133e6881adacb543f0c7c0">More...</a><br /></td></tr>
+<tr class="separator:a2aed6c3d57133e6881adacb543f0c7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578912b99646e5fa56754a7d569d2da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a578912b99646e5fa56754a7d569d2da4">clearProjections</a> ()</td></tr>
+<tr class="memdesc:a578912b99646e5fa56754a7d569d2da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes projection performed during last frame. This is obligatory to run after frame end. Without it old projections stays in the memory and gets drawn each frame which results in overflowing the stack.  <a href="class_crust_1_1_abstract_projector.html#a578912b99646e5fa56754a7d569d2da4">More...</a><br /></td></tr>
+<tr class="separator:a578912b99646e5fa56754a7d569d2da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bbc095983dd50a39d86ea6f21633136"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a4bbc095983dd50a39d86ea6f21633136">resize</a> (uint16_t p_width, uint16_t p_height)</td></tr>
 <tr class="memdesc:a4bbc095983dd50a39d86ea6f21633136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set according on what window size calculations will be made.  <a href="class_crust_1_1_abstract_projector.html#a4bbc095983dd50a39d86ea6f21633136">More...</a><br /></td></tr>
 <tr class="separator:a4bbc095983dd50a39d86ea6f21633136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a0e67288cd35d0f84e844e408374997a6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a0e67288cd35d0f84e844e408374997a6">m_aspect_ratio</a> { 0 }</td></tr>
+<tr class="separator:a0e67288cd35d0f84e844e408374997a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60ee5e9dbd3b5d39e7d61b0a34002400"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a60ee5e9dbd3b5d39e7d61b0a34002400">m_width</a> { 0 }</td></tr>
 <tr class="separator:a60ee5e9dbd3b5d39e7d61b0a34002400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed392359fba08846fd7e142a5579a01"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a1ed392359fba08846fd7e142a5579a01">m_height</a> { 0 }</td></tr>
 <tr class="separator:a1ed392359fba08846fd7e142a5579a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f580aeff6c1db830b53a7a59d8b178"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">ProjectionData_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">m_projection_data</a></td></tr>
+<tr class="separator:a76f580aeff6c1db830b53a7a59d8b178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356f6b5c0c6e9c6b84144277989ee709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a356f6b5c0c6e9c6b84144277989ee709">m_projection_matrix</a></td></tr>
+<tr class="separator:a356f6b5c0c6e9c6b84144277989ee709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6b9b890cf38f19183c32e2b2871913"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#aca6b9b890cf38f19183c32e2b2871913">m_view_matrix</a></td></tr>
+<tr class="separator:aca6b9b890cf38f19183c32e2b2871913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ce0c6e2950812d8de7b96e880c2b11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a64ce0c6e2950812d8de7b96e880c2b11">m_translation_matrix</a></td></tr>
+<tr class="separator:a64ce0c6e2950812d8de7b96e880c2b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b97bf5fa5a456ef82c014a8275be040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crust_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_abstract_projector.html#a9b97bf5fa5a456ef82c014a8275be040">m_light_direction</a></td></tr>
+<tr class="separator:a9b97bf5fa5a456ef82c014a8275be040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A perspective projector class. It is responsible for projecting the scene based on the perspective projection model. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ad5d6753c84437ca3c590c3f7f4661df0" name="ad5d6753c84437ca3c590c3f7f4661df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d6753c84437ca3c590c3f7f4661df0">&#9670;&#160;</a></span>ProjectionData_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_crust_1_1_abstract_projector_1_1_projection_data.html">Crust::AbstractProjector::ProjectionData</a> <a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">Crust::AbstractProjector::ProjectionData_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a731646c161f5c5319bad7400fad66179" name="a731646c161f5c5319bad7400fad66179"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a731646c161f5c5319bad7400fad66179">&#9670;&#160;</a></span>PerspectiveProjector()</h2>
 
@@ -171,12 +229,108 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>: <a class="code hl_function" href="class_crust_1_1_abstract_projector.html#afbeeea04dc953a3fb09220f762ccc198">AbstractProjector</a>(p_width, p_height) { }</div>
-<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_afbeeea04dc953a3fb09220f762ccc198"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#afbeeea04dc953a3fb09220f762ccc198">Crust::AbstractProjector::AbstractProjector</a></div><div class="ttdeci">AbstractProjector(uint16_t p_width, uint16_t p_height)</div><div class="ttdoc">Construct a new Projector object with the specified width and height.</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:18</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>: <a class="code hl_function" href="class_crust_1_1_abstract_projector.html#afbeeea04dc953a3fb09220f762ccc198">AbstractProjector</a>(p_width, p_height) { }</div>
+<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_afbeeea04dc953a3fb09220f762ccc198"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#afbeeea04dc953a3fb09220f762ccc198">Crust::AbstractProjector::AbstractProjector</a></div><div class="ttdeci">AbstractProjector(uint16_t p_width, uint16_t p_height)</div><div class="ttdoc">Construct a new Projector object with the specified width and height.</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:32</div></div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ac5c27147a6ba4baee9aca33c2ff3e124" name="ac5c27147a6ba4baee9aca33c2ff3e124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c27147a6ba4baee9aca33c2ff3e124">&#9670;&#160;</a></span>~PerspectiveProjector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Crust::PerspectiveProjector::~PerspectiveProjector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the Projector object. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a578912b99646e5fa56754a7d569d2da4" name="a578912b99646e5fa56754a7d569d2da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a578912b99646e5fa56754a7d569d2da4">&#9670;&#160;</a></span>clearProjections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::AbstractProjector::clearProjections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes projection performed during last frame. This is obligatory to run after frame end. Without it old projections stays in the memory and gets drawn each frame which results in overflowing the stack. </p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                       {</div>
+<div class="line"><span class="lineno">   83</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">m_projection_data</a>.clear();</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a76f580aeff6c1db830b53a7a59d8b178"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">Crust::AbstractProjector::m_projection_data</a></div><div class="ttdeci">std::vector&lt; ProjectionData_t &gt; m_projection_data</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:103</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00103">Crust::AbstractProjector::m_projection_data</a>.</p>
+
+</div>
+</div>
+<a id="ae045935c8e0f826a86a0135b3dd03dc8" name="ae045935c8e0f826a86a0135b3dd03dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae045935c8e0f826a86a0135b3dd03dc8">&#9670;&#160;</a></span>project()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::PerspectiveProjector::project </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_crust_1_1_render_object.html">RenderObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Projects the Render object and saves projected faces to the <a class="el" href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">m_projection_data</a> vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_object</td><td>- object to project. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_crust_1_1_abstract_projector.html#a312c06ec43912288c6dea747d42428bc">Crust::AbstractProjector</a>.</p>
+
+</div>
+</div>
 <a id="a4bbc095983dd50a39d86ea6f21633136" name="a4bbc095983dd50a39d86ea6f21633136"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bbc095983dd50a39d86ea6f21633136">&#9670;&#160;</a></span>resize()</h2>
 
@@ -219,18 +373,157 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                                {</div>
-<div class="line"><span class="lineno">   32</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a60ee5e9dbd3b5d39e7d61b0a34002400">m_width</a> = p_width;</div>
-<div class="line"><span class="lineno">   33</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a1ed392359fba08846fd7e142a5579a01">m_height</a> = p_height;</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a1ed392359fba08846fd7e142a5579a01"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a1ed392359fba08846fd7e142a5579a01">Crust::AbstractProjector::m_height</a></div><div class="ttdeci">uint16_t m_height</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:38</div></div>
-<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a60ee5e9dbd3b5d39e7d61b0a34002400"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a60ee5e9dbd3b5d39e7d61b0a34002400">Crust::AbstractProjector::m_width</a></div><div class="ttdeci">uint16_t m_width</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:37</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                                                {</div>
+<div class="line"><span class="lineno">   93</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a60ee5e9dbd3b5d39e7d61b0a34002400">m_width</a> = p_width;</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a1ed392359fba08846fd7e142a5579a01">m_height</a> = p_height;</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a0e67288cd35d0f84e844e408374997a6">m_aspect_ratio</a> = (float)p_height / (<span class="keywordtype">float</span>)p_width;</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a0e67288cd35d0f84e844e408374997a6"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a0e67288cd35d0f84e844e408374997a6">Crust::AbstractProjector::m_aspect_ratio</a></div><div class="ttdeci">float m_aspect_ratio</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:99</div></div>
+<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a1ed392359fba08846fd7e142a5579a01"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a1ed392359fba08846fd7e142a5579a01">Crust::AbstractProjector::m_height</a></div><div class="ttdeci">uint16_t m_height</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:101</div></div>
+<div class="ttc" id="aclass_crust_1_1_abstract_projector_html_a60ee5e9dbd3b5d39e7d61b0a34002400"><div class="ttname"><a href="class_crust_1_1_abstract_projector.html#a60ee5e9dbd3b5d39e7d61b0a34002400">Crust::AbstractProjector::m_width</a></div><div class="ttdeci">uint16_t m_width</div><div class="ttdef"><b>Definition:</b> AbstractProjector.h:100</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#l00038">Crust::AbstractProjector::m_height</a>, and <a class="el" href="#l00037">Crust::AbstractProjector::m_width</a>.</p>
+<p class="reference">References <a class="el" href="#l00099">Crust::AbstractProjector::m_aspect_ratio</a>, <a class="el" href="#l00101">Crust::AbstractProjector::m_height</a>, and <a class="el" href="#l00100">Crust::AbstractProjector::m_width</a>.</p>
+
+</div>
+</div>
+<a id="a2aed6c3d57133e6881adacb543f0c7c0" name="a2aed6c3d57133e6881adacb543f0c7c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aed6c3d57133e6881adacb543f0c7c0">&#9670;&#160;</a></span>retrieveProjections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt; <a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">ProjectionData_t</a> &gt; Crust::AbstractProjector::retrieveProjections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the projection data, which is the data of the projections made in the current frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ProjectionData_t&gt; The projection data. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                                                                         {</div>
+<div class="line"><span class="lineno">   68</span><span class="comment">//            sort(m_projection_data.begin(), m_projection_data.end(), [](const AbstractProjector::ProjectionData &amp;a, const AbstractProjector::ProjectionData &amp;b)</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">//            {</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">//                /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">//                float za = (a.z1 + a.z2 + a.z3) / 3;</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">//                float zb = (b.z1 + b.z2 + b.z3) / 3;</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">//                return za &gt; zb;</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">//            });</span></div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_abstract_projector.html#a76f580aeff6c1db830b53a7a59d8b178">m_projection_data</a>;</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#l00103">Crust::AbstractProjector::m_projection_data</a>.</p>
+
+</div>
+</div>
+<a id="a2f9a0b5472c781e8caf0aaf1283c86a5" name="a2f9a0b5472c781e8caf0aaf1283c86a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9a0b5472c781e8caf0aaf1283c86a5">&#9670;&#160;</a></span>setupCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::PerspectiveProjector::setupCamera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_crust_1_1_camera.html">Camera</a> &amp;&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the camera ready for the frame. Prepares projection and view matrixes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td>- main camera on the scene from which projection will be done. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_crust_1_1_abstract_projector.html#a7f3728ffed07436f1425901fbfd4d28e">Crust::AbstractProjector</a>.</p>
+
+</div>
+</div>
+<a id="ae2dcba5f6fa8950a03c1a1b0962546ac" name="ae2dcba5f6fa8950a03c1a1b0962546ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2dcba5f6fa8950a03c1a1b0962546ac">&#9670;&#160;</a></span>setupLightning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::PerspectiveProjector::setupLightning </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_crust_1_1_light_source.html">LightSource</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_light</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setups the lightning on the scene. Saves the direction of the perpendicular rays (currently on this is supported). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_light</td><td>- Light source which emits the light on the scene. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_crust_1_1_abstract_projector.html#a0163f596dea89be9e76b5ae5871c33cd">Crust::AbstractProjector</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0e67288cd35d0f84e844e408374997a6" name="a0e67288cd35d0f84e844e408374997a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e67288cd35d0f84e844e408374997a6">&#9670;&#160;</a></span>m_aspect_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Crust::AbstractProjector::m_aspect_ratio { 0 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#l00032">Crust::AbstractProjector::AbstractProjector()</a>, and <a class="el" href="#l00092">Crust::AbstractProjector::resize()</a>.</p>
+
+</div>
+</div>
 <a id="a1ed392359fba08846fd7e142a5579a01" name="a1ed392359fba08846fd7e142a5579a01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ed392359fba08846fd7e142a5579a01">&#9670;&#160;</a></span>m_height</h2>
 
@@ -246,13 +539,130 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p >!&lt; The width of the projector. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00031">Crust::AbstractProjector::resize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00092">Crust::AbstractProjector::resize()</a>.</p>
+
+</div>
+</div>
+<a id="a9b97bf5fa5a456ef82c014a8275be040" name="a9b97bf5fa5a456ef82c014a8275be040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b97bf5fa5a456ef82c014a8275be040">&#9670;&#160;</a></span>m_light_direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crust_1_1_vector3.html">Vector3</a> Crust::AbstractProjector::m_light_direction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The translation matrix. </p>
+
+</div>
+</div>
+<a id="a76f580aeff6c1db830b53a7a59d8b178" name="a76f580aeff6c1db830b53a7a59d8b178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f580aeff6c1db830b53a7a59d8b178">&#9670;&#160;</a></span>m_projection_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_crust_1_1_abstract_projector.html#ad5d6753c84437ca3c590c3f7f4661df0">ProjectionData_t</a>&gt; Crust::AbstractProjector::m_projection_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The height of the projector. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00082">Crust::AbstractProjector::clearProjections()</a>, and <a class="el" href="#l00067">Crust::AbstractProjector::retrieveProjections()</a>.</p>
+
+</div>
+</div>
+<a id="a356f6b5c0c6e9c6b84144277989ee709" name="a356f6b5c0c6e9c6b84144277989ee709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356f6b5c0c6e9c6b84144277989ee709">&#9670;&#160;</a></span>m_projection_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a> Crust::AbstractProjector::m_projection_matrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The data of the projection. Holds all projections made in current frame </p>
+
+</div>
+</div>
+<a id="a64ce0c6e2950812d8de7b96e880c2b11" name="a64ce0c6e2950812d8de7b96e880c2b11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ce0c6e2950812d8de7b96e880c2b11">&#9670;&#160;</a></span>m_translation_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a> Crust::AbstractProjector::m_translation_matrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The view matrix. </p>
+
+</div>
+</div>
+<a id="aca6b9b890cf38f19183c32e2b2871913" name="aca6b9b890cf38f19183c32e2b2871913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6b9b890cf38f19183c32e2b2871913">&#9670;&#160;</a></span>m_view_matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_crust.html#a9b86ff296a0be4f6a68afbec7076258a">Matrix4x4f</a> Crust::AbstractProjector::m_view_matrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >!&lt; The projection matrix. </p>
 
 </div>
 </div>
@@ -271,12 +681,13 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >!&lt; The aspect ratio of the projector. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00031">Crust::AbstractProjector::resize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00092">Crust::AbstractProjector::resize()</a>.</p>
 
 </div>
 </div>

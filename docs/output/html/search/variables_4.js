@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pi_0',['PI',['../class_crust_1_1_math.html#a29fca8c9f8b3c1bded2cf24d7e126a32',1,'Crust::Math']]]
+  ['light_0',['light',['../struct_crust_1_1_abstract_projector_1_1_projection_data.html#a137b70ff8af7c0df29ae11c119911d59',1,'Crust::AbstractProjector::ProjectionData']]]
 ];

@@ -18,7 +18,7 @@ var class_crust_1_1_scene =
     [ "reload", "class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008", null ],
     [ "setMainCamera", "class_crust_1_1_scene.html#ab79f0009083d9bfd96552ccf5806a28f", null ],
     [ "start", "class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c", null ],
-    [ "update", "class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212", null ],
+    [ "update", "class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0", null ],
     [ "m_camera", "class_crust_1_1_scene.html#a528129b9e84882020497835ad4d28853", null ],
     [ "m_lights", "class_crust_1_1_scene.html#af3b82ab443731c511893aa2fea828040", null ],
     [ "m_loaded", "class_crust_1_1_scene.html#ac1f0d61e2983bfbe483bf7a4b3a63752", null ],

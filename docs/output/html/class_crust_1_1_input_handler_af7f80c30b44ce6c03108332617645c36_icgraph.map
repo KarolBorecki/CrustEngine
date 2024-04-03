@@ -1,0 +1,4 @@
+<map id="Crust::InputHandler::resetEventState" name="Crust::InputHandler::resetEventState">
+<area shape="rect" id="node1" title="Reset&#39;s last event state to UNKNOW. Called on input monitoring start." alt="" coords="203,5,338,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_input_handler.html#ad44c1e68c458f6078fd1d0ec6d876439" title="Method that has to be called once before any input monitoring will be done." alt="" coords="5,5,155,46"/>
+</map>

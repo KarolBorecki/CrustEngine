@@ -1,0 +1,5 @@
+<map id="Crust::Script" name="Crust::Script">
+<area shape="rect" id="node1" title=" " alt="" coords="69,5,164,31"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_mover.html" title=" " alt="" coords="5,79,103,105"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_rotator.html" title=" " alt="" coords="127,79,232,105"/>
+</map>

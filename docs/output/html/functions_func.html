@@ -103,10 +103,16 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </ul>
 
 
+<h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>beginInputMonitoring()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#ad44c1e68c458f6078fd1d0ec6d876439">Crust::InputHandler</a></li>
+</ul>
+
+
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>Camera()&#160;:&#160;<a class="el" href="class_crust_1_1_camera.html#a88026476376b8193031df7574b779c19">Crust::Camera</a></li>
 <li>changeProjection()&#160;:&#160;<a class="el" href="class_crust_1_1_window.html#aca10eb865ad02757497ec163d7ca721a">Crust::Window</a></li>
-<li>close()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a3281a2a9601a36f12dc6efeb640d0f75">Crust::Library2DWrapper</a>, <a class="el" href="class_crust_1_1_renderer.html#ab5f07a9e80c1f4dc759d442292552748">Crust::Renderer</a></li>
+<li>clearProjections()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a578912b99646e5fa56754a7d569d2da4">Crust::AbstractProjector</a></li>
+<li>close()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a3281a2a9601a36f12dc6efeb640d0f75">Crust::Library2DWrapper</a>, <a class="el" href="class_crust_1_1_renderer.html#ab5f07a9e80c1f4dc759d442292552748">Crust::Renderer</a>, <a class="el" href="class_crust_1_1_window.html#a9f335f8f8edd0516db5709aeb8116786">Crust::Window</a></li>
 <li>Core()&#160;:&#160;<a class="el" href="class_crust_1_1_core.html#acc20508fb3effead72ae7c7093747982">Crust::Core</a></li>
 <li>cos()&#160;:&#160;<a class="el" href="class_crust_1_1_math.html#ab5e9e11d547f20e87599d165d95b2dbe">Crust::Math</a></li>
 <li>createWindow()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#aa859ba83476afac4eb6a7d61a3469995">Crust::Library2DWrapper</a></li>
@@ -115,6 +121,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>degreesToRadians()&#160;:&#160;<a class="el" href="class_crust_1_1_math.html#a0f08647c203de3499e60e535a3f08d4c">Crust::Math</a></li>
+<li>direction()&#160;:&#160;<a class="el" href="class_crust_1_1_light_source.html#ab877bd02b183ebca004c564ef452749c">Crust::LightSource</a></li>
 <li>drawTriangle()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a00d608d0f8e943e5cb9ee5d83a701d77">Crust::Library2DWrapper</a></li>
 </ul>
 
@@ -122,6 +129,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
 <li>equal()&#160;:&#160;<a class="el" href="class_crust_1_1_math.html#a8acbc2055581425104df78f29f56dda5">Crust::Math</a></li>
 <li>error()&#160;:&#160;<a class="el" href="class_crust_1_1_logger.html#a852c490d745d322d91c98273a4e3b1bc">Crust::Logger</a></li>
+<li>eulerRotation()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a0055acddf8a6243790a28718ade27b3c">Crust::Transform</a></li>
 </ul>
 
 
@@ -130,7 +138,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>getAverageFrameTime_s()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#affd51821a53f5e201ff3d98051f35d8a">Crust::TimeProvider</a></li>
 <li>getDeltaTime_ms()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#a994e6507faa36fce39aeb1037e88716f">Crust::TimeProvider</a></li>
 <li>getDeltaTime_s()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#ac493d5950799c504f54654eed92ed0fc">Crust::TimeProvider</a></li>
-<li>getEulerRotation()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#af4ac079ac5eaf174f497fe3bd61b23be">Crust::Transform</a></li>
 <li>getFFar()&#160;:&#160;<a class="el" href="class_crust_1_1_camera.html#afae29631443b7ddf1c9ac8108057735b">Crust::Camera</a></li>
 <li>getFFovDeg()&#160;:&#160;<a class="el" href="class_crust_1_1_camera.html#a95d74e9ab03f05a0654e4b67194fa99a">Crust::Camera</a></li>
 <li>getFFovRad()&#160;:&#160;<a class="el" href="class_crust_1_1_camera.html#a079a527f6273cb376e0781821a57288c">Crust::Camera</a></li>
@@ -138,20 +145,19 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>getFPS()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#acbfce7e0201f448541fbaee3dab87f7b">Crust::TimeProvider</a></li>
 <li>getId()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#a8e2d0574006d47c244ef93e4517b766c">Crust::Object</a></li>
 <li>getIntensity()&#160;:&#160;<a class="el" href="class_crust_1_1_light_source.html#a832deda028a404179085ba764df64054">Crust::LightSource</a></li>
+<li>getLastEvent()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#aa1d3a06c1c403d236c73a2c1d01218e2">Crust::InputHandler</a></li>
 <li>getLights()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#a019e384aa684591391a5fe71d78e8569">Crust::Scene</a></li>
 <li>getMainCamera()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#a618a271cfef5053ad0a1163cfb4a08da">Crust::Scene</a></li>
 <li>getMesh()&#160;:&#160;<a class="el" href="class_crust_1_1_render_object.html#afb0a6dfbc92de3b5215d85cbd7e49af5">Crust::RenderObject</a></li>
 <li>getName()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#a524fe427ce74fcfa92a9c73e5cb4e375">Crust::Mesh</a>, <a class="el" href="class_crust_1_1_scene.html#af042fdaae9ce43f999a8871fd0e7f8cd">Crust::Scene</a></li>
 <li>getObjects()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#ad2685d453682d28995439605c161451e">Crust::Scene</a></li>
 <li>getPolygon()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#a0ac87f3e31f6d0b194729ceed349f9fc">Crust::Mesh</a></li>
+<li>getPolygons()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#ae3a101ab94d681f90be3716c83f541f8">Crust::Mesh</a></li>
 <li>getPolygonsCount()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#af4fa60cb215d22182018e4d241c1e31f">Crust::Mesh</a></li>
-<li>getPosition()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#ac8c0a9afea13d2746f39e198b4af9537">Crust::Transform</a></li>
 <li>getRenderObjects()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#abeb4c57eaeab5df6aa860e9dcc741c91">Crust::Scene</a></li>
-<li>getScale()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a9a5617019c7cc592072ea457941b6f5f">Crust::Transform</a></li>
 <li>getScripts()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#ab6eea003ba17ce80d606a5694f9e40fb">Crust::Object</a></li>
 <li>getTime_ms()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#aabc9b4762577f05dd106e243a7b6d000">Crust::TimeProvider</a></li>
 <li>getTime_s()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#a7a3c5d554d93ca3b9fb9ea8f3e12934f">Crust::TimeProvider</a></li>
-<li>getTransform()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#a14927548133c4b969e86ea6c690b0f0a">Crust::Object</a></li>
 <li>getType()&#160;:&#160;<a class="el" href="class_crust_1_1_light_source.html#a39007b54f2b743996445693c2a150634">Crust::LightSource</a></li>
 <li>getVertex()&#160;:&#160;<a class="el" href="class_crust_1_1_polygon.html#a3b15403ebd1d2006a0313bb2bb878b48">Crust::Polygon&lt; V &gt;</a></li>
 <li>getWindow()&#160;:&#160;<a class="el" href="class_crust_1_1_core.html#a77afb5d3b783cd9f0f111009a4e7ddc7">Crust::Core</a></li>
@@ -169,6 +175,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>init()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a652e2628cd3d53af7fa963f3d92fdebf">Crust::Library2DWrapper</a></li>
 <li>isActive()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#acf08b0a78b98975bee445fe3e8c56e74">Crust::Object</a></li>
 <li>isLoaded()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#afe9ec4cd6267fec4d3834d0be5fec500">Crust::Scene</a></li>
+<li>isPressed()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#a2c017d93667c0e913aee2cf875396d18">Crust::InputHandler</a></li>
 <li>isStarted()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#ad8bb47c47177ee969a709c407c1dacaa">Crust::Scene</a></li>
 </ul>
 
@@ -188,6 +195,12 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>makeIdentity()&#160;:&#160;<a class="el" href="class_crust_1_1_matrix.html#a30a67789796b32d7aea82fe623fb9ec6">Crust::Matrix&lt; T, H, W &gt;</a></li>
 <li>Matrix()&#160;:&#160;<a class="el" href="class_crust_1_1_matrix.html#a3f7109113aaceb512e8fd791441e68b4">Crust::Matrix&lt; T, H, W &gt;</a></li>
 <li>Mesh()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#a6be744beaa137d247e5c71819baee15f">Crust::Mesh</a></li>
+<li>Mover()&#160;:&#160;<a class="el" href="class_crust_1_1_mover.html#ad806913e7a9117796261c7024ced7086">Crust::Mover</a></li>
+</ul>
+
+
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>normal()&#160;:&#160;<a class="el" href="class_crust_1_1_math.html#af3924f6646517a1fdadb0867dc3efedc">Crust::Math</a></li>
 </ul>
 
 
@@ -207,8 +220,12 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>parseSDLKeyCodeEvent()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#a4c7c1395caf5b61b9da3180e0c8a5909">Crust::InputHandler</a></li>
 <li>PerspectiveProjector()&#160;:&#160;<a class="el" href="class_crust_1_1_perspective_projector.html#a731646c161f5c5319bad7400fad66179">Crust::PerspectiveProjector</a></li>
+<li>pollEvent()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#aa36e77f564de97d8b4954dad0f58d749">Crust::InputHandler</a></li>
 <li>Polygon()&#160;:&#160;<a class="el" href="class_crust_1_1_polygon.html#a038fdaab1284ac7ac93cea53d31cf5bc">Crust::Polygon&lt; V &gt;</a></li>
+<li>position()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#af66171bfb1959cbcd7f3166dd3c864ba">Crust::Transform</a></li>
+<li>project()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a312c06ec43912288c6dea747d42428bc">Crust::AbstractProjector</a>, <a class="el" href="class_crust_1_1_perspective_projector.html#ae045935c8e0f826a86a0135b3dd03dc8">Crust::PerspectiveProjector</a></li>
 </ul>
 
 
@@ -219,8 +236,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>RenderObject()&#160;:&#160;<a class="el" href="class_crust_1_1_render_object.html#acf74e0ef0318257875cfc75b8eea3c96">Crust::RenderObject</a></li>
 <li>renderScene()&#160;:&#160;<a class="el" href="class_crust_1_1_renderer.html#ae6afa432ccd01632271955c4b3b91faa">Crust::Renderer</a></li>
 <li>reset()&#160;:&#160;<a class="el" href="class_crust_1_1_matrix.html#add627aacd55d492f0ebfce0af8b381b6">Crust::Matrix&lt; T, H, W &gt;</a></li>
+<li>resetEventState()&#160;:&#160;<a class="el" href="class_crust_1_1_input_handler.html#af7f80c30b44ce6c03108332617645c36">Crust::InputHandler</a></li>
 <li>resize()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a4bbc095983dd50a39d86ea6f21633136">Crust::AbstractProjector</a>, <a class="el" href="class_crust_1_1_library2_d_wrapper.html#a4ee47d5c29a0ec8a07004f2e93f999df">Crust::Library2DWrapper</a>, <a class="el" href="class_crust_1_1_renderer.html#ac45ac368dadba55bb85aeed017e1d85d">Crust::Renderer</a></li>
+<li>retrieveProjections()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a2aed6c3d57133e6881adacb543f0c7c0">Crust::AbstractProjector</a></li>
 <li>rotateEuler()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#acf87a752c6051b6a519529d6b2f4d06a">Crust::Transform</a></li>
+<li>Rotator()&#160;:&#160;<a class="el" href="class_crust_1_1_rotator.html#a3b4434ff3bffe983dbb806a21cf3ec26">Crust::Rotator</a></li>
 </ul>
 
 
@@ -236,13 +256,16 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>setName()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#a216fb95e6aa177257d7c7e52f999a88b">Crust::Mesh</a></li>
 <li>setPosition()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a8408199f6cae62a0329c7211168f57c6">Crust::Transform</a></li>
 <li>setProjector()&#160;:&#160;<a class="el" href="class_crust_1_1_renderer.html#afdd58c6e05bf7bfc5276438a0a639385">Crust::Renderer</a></li>
-<li>setScale()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a37f2b6894ca7a988f58ce0fe16bf97bd">Crust::Transform</a></li>
+<li>setSize()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a69069c787a41a92114a5a195c8a6a3ae">Crust::Transform</a></li>
 <li>setType()&#160;:&#160;<a class="el" href="class_crust_1_1_light_source.html#a905b29834ceddfbd80fba9349756f814">Crust::LightSource</a></li>
+<li>setupCamera()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a7f3728ffed07436f1425901fbfd4d28e">Crust::AbstractProjector</a>, <a class="el" href="class_crust_1_1_perspective_projector.html#a2f9a0b5472c781e8caf0aaf1283c86a5">Crust::PerspectiveProjector</a></li>
+<li>setupLightning()&#160;:&#160;<a class="el" href="class_crust_1_1_abstract_projector.html#a0163f596dea89be9e76b5ae5871c33cd">Crust::AbstractProjector</a>, <a class="el" href="class_crust_1_1_perspective_projector.html#ae2dcba5f6fa8950a03c1a1b0962546ac">Crust::PerspectiveProjector</a></li>
 <li>setVertex()&#160;:&#160;<a class="el" href="class_crust_1_1_polygon.html#a35bacffc296fc9089c5ccaf553fa5c31">Crust::Polygon&lt; V &gt;</a></li>
 <li>setWindowCaption()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a85f43028a70c85737e4b7e3bd3ae7e9c">Crust::Library2DWrapper</a></li>
 <li>shouldClose()&#160;:&#160;<a class="el" href="class_crust_1_1_library2_d_wrapper.html#a859627ae7c195e8f34639b571c08ccb7">Crust::Library2DWrapper</a>, <a class="el" href="class_crust_1_1_renderer.html#a724edd2cfeee183090db12c20c5e1447">Crust::Renderer</a></li>
 <li>sin()&#160;:&#160;<a class="el" href="class_crust_1_1_math.html#a4b48369487f4358ddf804ac37df0b368">Crust::Math</a></li>
-<li>start()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">Crust::Scene</a>, <a class="el" href="class_crust_1_1_script.html#a4359792ba452892a50f645535d53c3b4">Crust::Script</a></li>
+<li>size()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#aa1c59f2af743a92785195ede69ebdfce">Crust::Transform</a></li>
+<li>start()&#160;:&#160;<a class="el" href="class_crust_1_1_mover.html#ab487c2964c8cbc2a4ff89dc9924dbbb4">Crust::Mover</a>, <a class="el" href="class_crust_1_1_rotator.html#a4a497791c3c3ff6391bce86e8030e8ed">Crust::Rotator</a>, <a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">Crust::Scene</a>, <a class="el" href="class_crust_1_1_script.html#a4359792ba452892a50f645535d53c3b4">Crust::Script</a></li>
 <li>startRenderingLoop()&#160;:&#160;<a class="el" href="class_crust_1_1_window.html#a4d0c9ec50b6c023cc07683c5c452152a">Crust::Window</a></li>
 </ul>
 
@@ -252,6 +275,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>throwError()&#160;:&#160;<a class="el" href="class_crust_1_1_exceptions_handler.html#aa829072aa11246d12358ccbe43f5562a">Crust::ExceptionsHandler</a></li>
 <li>throwWarning()&#160;:&#160;<a class="el" href="class_crust_1_1_exceptions_handler.html#a615dcc2414fbd69b1643342c953d233d">Crust::ExceptionsHandler</a></li>
 <li>TimeProvider()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#a337775ed91781884bc170a6c9b4fae3f">Crust::TimeProvider</a></li>
+<li>transform()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#af842dc949dbf2ef15bbd094858f2d5a3">Crust::Object</a></li>
 <li>Transform()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#a9c591b557699a3ceec459d0c22bdb4fa">Crust::Transform</a></li>
 <li>translate()&#160;:&#160;<a class="el" href="class_crust_1_1_transform.html#ac65f4c4738b9758bf2c8ec20c6ace2a7">Crust::Transform</a></li>
 <li>Triangle()&#160;:&#160;<a class="el" href="class_crust_1_1_triangle.html#a6f1e07c36dcdd4929636622cf7affad3">Crust::Triangle</a></li>
@@ -260,7 +284,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>unLoadScene()&#160;:&#160;<a class="el" href="class_crust_1_1_window.html#accac9e9a4478c01c7344cee2ce210c64">Crust::Window</a></li>
-<li>update()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212">Crust::Scene</a>, <a class="el" href="class_crust_1_1_script.html#a902bbe6cc654e2ca9e78f5bce24a3c3a">Crust::Script</a></li>
+<li>update()&#160;:&#160;<a class="el" href="class_crust_1_1_mover.html#aa0e0c5a3aa591ee56e987a5fca2836de">Crust::Mover</a>, <a class="el" href="class_crust_1_1_rotator.html#a949a12319675df6ceedb1a903b3e5c9c">Crust::Rotator</a>, <a class="el" href="class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0">Crust::Scene</a>, <a class="el" href="class_crust_1_1_script.html#afa6d2f8c863d792fd31e402bba037a31">Crust::Script</a></li>
 </ul>
 
 
@@ -284,8 +308,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>~LightSource()&#160;:&#160;<a class="el" href="class_crust_1_1_light_source.html#a5274105e379dc7fd5d6995213b6289e8">Crust::LightSource</a></li>
 <li>~Mesh()&#160;:&#160;<a class="el" href="class_crust_1_1_mesh.html#a8b175b3a9071aa3fb33bf32335905c34">Crust::Mesh</a></li>
 <li>~Object()&#160;:&#160;<a class="el" href="class_crust_1_1_object.html#ac9d02a8b6fb7afa86e4d753076333a65">Crust::Object</a></li>
+<li>~PerspectiveProjector()&#160;:&#160;<a class="el" href="class_crust_1_1_perspective_projector.html#ac5c27147a6ba4baee9aca33c2ff3e124">Crust::PerspectiveProjector</a></li>
 <li>~Polygon()&#160;:&#160;<a class="el" href="class_crust_1_1_polygon.html#a337971c06588f0a35d04eb9f4d7b5d8c">Crust::Polygon&lt; V &gt;</a></li>
-<li>~Renderer()&#160;:&#160;<a class="el" href="class_crust_1_1_renderer.html#afe7e2a48c6b99cdf4a78deccb3525693">Crust::Renderer</a></li>
+<li>~Renderer()&#160;:&#160;<a class="el" href="class_crust_1_1_renderer.html#a27db042b9944335d79663f098efd08f5">Crust::Renderer</a></li>
 <li>~RenderObject()&#160;:&#160;<a class="el" href="class_crust_1_1_render_object.html#a996b221dc3be22d7b99499d2567cd671">Crust::RenderObject</a></li>
 <li>~Scene()&#160;:&#160;<a class="el" href="class_crust_1_1_scene.html#a1b5b6c6c6e0173369716be2653883b11">Crust::Scene</a></li>
 <li>~TimeProvider()&#160;:&#160;<a class="el" href="class_crust_1_1_time_provider.html#a2ba36aed84b02dddc6de116661311556">Crust::TimeProvider</a></li>

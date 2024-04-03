@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['radianstodegrees_0',['radiansToDegrees',['../class_crust_1_1_math.html#a04d493479fc194659c5098768b2cb7e5',1,'Crust::Math']]],
-  ['reload_1',['reload',['../class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008',1,'Crust::Scene::reload()'],['../class_crust_1_1_script.html#aa488594c465e646a46af817498892af6',1,'Crust::Script::reload()']]],
-  ['renderer_2',['Renderer',['../class_crust_1_1_renderer.html#a4482974d2311481c2ab83ec1b48da85b',1,'Crust::Renderer::Renderer()'],['../class_crust_1_1_renderer.html#a3e38e6c3ee79ce74c69303dfa4a8450f',1,'Crust::Renderer::Renderer(uint16_t p_width, uint16_t p_height)']]],
-  ['renderobject_3',['RenderObject',['../class_crust_1_1_render_object.html#acf74e0ef0318257875cfc75b8eea3c96',1,'Crust::RenderObject']]],
-  ['renderscene_4',['renderScene',['../class_crust_1_1_renderer.html#ae6afa432ccd01632271955c4b3b91faa',1,'Crust::Renderer']]],
-  ['reset_5',['reset',['../class_crust_1_1_matrix.html#add627aacd55d492f0ebfce0af8b381b6',1,'Crust::Matrix']]],
-  ['resize_6',['resize',['../class_crust_1_1_library2_d_wrapper.html#a4ee47d5c29a0ec8a07004f2e93f999df',1,'Crust::Library2DWrapper::resize()'],['../class_crust_1_1_abstract_projector.html#a4bbc095983dd50a39d86ea6f21633136',1,'Crust::AbstractProjector::resize()'],['../class_crust_1_1_renderer.html#ac45ac368dadba55bb85aeed017e1d85d',1,'Crust::Renderer::resize()']]],
-  ['rotateeuler_7',['rotateEuler',['../class_crust_1_1_transform.html#acf87a752c6051b6a519529d6b2f4d06a',1,'Crust::Transform']]]
+  ['object_0',['Object',['../class_crust_1_1_object.html#a78e458fb4d757d1bbb9cf4e5d0fbd2f6',1,'Crust::Object']]],
+  ['ondrawend_1',['onDrawEnd',['../class_crust_1_1_library2_d_wrapper.html#a33e399599b7c1416d37262b29ef853a3',1,'Crust::Library2DWrapper']]],
+  ['ondrawstart_2',['onDrawStart',['../class_crust_1_1_library2_d_wrapper.html#aeb745b8cb2f9f6d1c777a322f663a29f',1,'Crust::Library2DWrapper']]],
+  ['onenginestart_3',['onEngineStart',['../class_crust_1_1_time_provider.html#ad326c414be88705acc51cb0e3fa9b26d',1,'Crust::TimeProvider']]],
+  ['onframeend_4',['onFrameEnd',['../class_crust_1_1_time_provider.html#a2c01815e6775a433f03b7d7468b65bf3',1,'Crust::TimeProvider']]],
+  ['onframestart_5',['onFrameStart',['../class_crust_1_1_time_provider.html#a8ca1104d90046e77890ed11f50c04043',1,'Crust::TimeProvider']]],
+  ['onload_6',['onLoad',['../class_crust_1_1_scene.html#a1a33933fb69d511455f0314008c1cf4a',1,'Crust::Scene']]],
+  ['onunload_7',['onUnLoad',['../class_crust_1_1_scene.html#abbfe1ab61d4a76b45f349c9ef747b9ba',1,'Crust::Scene']]],
+  ['open_8',['open',['../class_crust_1_1_window.html#abb8869036b5578f28d5d8f2e2fef3ed7',1,'Crust::Window']]],
+  ['openwindow_9',['openWindow',['../class_crust_1_1_core.html#a9e401d6f3662e9918a3192b5578e80b7',1,'Crust::Core::openWindow()'],['../class_crust_1_1_renderer.html#a7a19f5e99b398a9ce7437bea83433eab',1,'Crust::Renderer::openWindow()']]],
+  ['operator_3d_10',['operator=',['../class_crust_1_1_matrix.html#aad133b654dc1d11415aaa0748ab51e28',1,'Crust::Matrix::operator=()'],['../class_crust_1_1_vector3.html#a44c7ad9930c51f3c1ad618b6931a9152',1,'Crust::Vector3::operator=()'],['../class_crust_1_1_vector4.html#a23822ae99faae386bb13140030200574',1,'Crust::Vector4::operator=()']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['warning_0',['warning',['../class_crust_1_1_logger.html#a54ffe22fc559966df62584c128afe4cf',1,'Crust::Logger']]],
-  ['width_1',['width',['../class_crust_1_1_window.html#afaf8501fa5c59d0d2719f36874055f9a',1,'Crust::Window::width()'],['../class_crust_1_1_matrix.html#a547e82d4a3970a67be846e794a9fde97',1,'Crust::Matrix::width()']]],
-  ['window_2',['Window',['../class_crust_1_1_window.html#ab23ebad7af573a9999699837482aa802',1,'Crust::Window']]]
+  ['unloadscene_0',['unLoadScene',['../class_crust_1_1_window.html#accac9e9a4478c01c7344cee2ce210c64',1,'Crust::Window']]],
+  ['update_1',['update',['../class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0',1,'Crust::Scene::update()'],['../class_crust_1_1_mover.html#aa0e0c5a3aa591ee56e987a5fca2836de',1,'Crust::Mover::update()'],['../class_crust_1_1_rotator.html#a949a12319675df6ceedb1a903b3e5c9c',1,'Crust::Rotator::update()'],['../class_crust_1_1_script.html#afa6d2f8c863d792fd31e402bba037a31',1,'Crust::Script::update()']]]
 ];

@@ -130,9 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ff619ac00a53053262c30456ddc879c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">start</a> ()</td></tr>
 <tr class="memdesc:a4ff619ac00a53053262c30456ddc879c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is started. Sets <a class="el" href="class_crust_1_1_scene.html#ab36e2b9602716cba5dd01fc1c2116ebf">m_started</a> to true. Calls start method on every script in this scene.  <a href="class_crust_1_1_scene.html#a4ff619ac00a53053262c30456ddc879c">More...</a><br /></td></tr>
 <tr class="separator:a4ff619ac00a53053262c30456ddc879c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80af2706649b97a9c47c7be406cf3212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212">update</a> ()</td></tr>
-<tr class="memdesc:a80af2706649b97a9c47c7be406cf3212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in each frame. Calls update method on every script in this scene.  <a href="class_crust_1_1_scene.html#a80af2706649b97a9c47c7be406cf3212">More...</a><br /></td></tr>
-<tr class="separator:a80af2706649b97a9c47c7be406cf3212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd8a086a43e8f29a882899e09ac7cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0">update</a> (double p_delta_time)</td></tr>
+<tr class="memdesc:a7dd8a086a43e8f29a882899e09ac7cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in each frame. Calls update method on every script in this scene.  <a href="class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0">More...</a><br /></td></tr>
+<tr class="separator:a7dd8a086a43e8f29a882899e09ac7cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3542a103a2697cdf50d5472538e60008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008">reload</a> ()</td></tr>
 <tr class="memdesc:a3542a103a2697cdf50d5472538e60008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when scene is reloaded. Calls reload method on every script in this scene.  <a href="class_crust_1_1_scene.html#a3542a103a2697cdf50d5472538e60008">More...</a><br /></td></tr>
 <tr class="separator:a3542a103a2697cdf50d5472538e60008"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -598,8 +598,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a80af2706649b97a9c47c7be406cf3212" name="a80af2706649b97a9c47c7be406cf3212"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80af2706649b97a9c47c7be406cf3212">&#9670;&#160;</a></span>update()</h2>
+<a id="a7dd8a086a43e8f29a882899e09ac7cd0" name="a7dd8a086a43e8f29a882899e09ac7cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd8a086a43e8f29a882899e09ac7cd0">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -607,13 +607,20 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Crust::Scene::update </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_delta_time</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Called in each frame. Calls update method on every script in this scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_delta_time</td><td>Time passed since last frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lightintensity_0',['LightIntensity',['../namespace_crust.html#ad3ae41ebd15bd848899c417f23caebdb',1,'Crust']]],
-  ['lighttype_1',['LightType',['../namespace_crust.html#af8b2a44f94090222468ebead3d91caec',1,'Crust']]]
+  ['fontcolor_0',['FontColor',['../class_crust_1_1_logger.html#a89a4891527368d100d992e40e5da5c24',1,'Crust::Logger']]],
+  ['fontstyle_1',['FontStyle',['../class_crust_1_1_logger.html#a2edf0d781300084b8a59131b5a8d80e5',1,'Crust::Logger']]]
 ];

@@ -1,0 +1,6 @@
+<map id="Crust::Rotator::update" name="Crust::Rotator::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,157,104"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_input_handler.html#a2c017d93667c0e913aee2cf875396d18" title="Function that checks if given key is pressed. In order for this function to work You need to call #Be..." alt="" coords="218,5,354,46"/>
+<area shape="rect" id="node3" href="$class_crust_1_1_transform.html#acf87a752c6051b6a519529d6b2f4d06a" title="Rotates object by given values." alt="" coords="205,71,367,111"/>
+<area shape="rect" id="node4" href="$class_crust_1_1_object.html#af842dc949dbf2ef15bbd094858f2d5a3" title="Get the transform of the object." alt="" coords="205,136,367,161"/>
+</map>

@@ -5,10 +5,13 @@ var hierarchy =
     ] ],
     [ "Crust::Core", "class_crust_1_1_core.html", null ],
     [ "Crust::ExceptionsHandler", "class_crust_1_1_exceptions_handler.html", null ],
+    [ "Crust::InputEvent", "struct_crust_1_1_input_event.html", null ],
+    [ "Crust::InputHandler", "class_crust_1_1_input_handler.html", null ],
     [ "Crust::Library2DWrapper", "class_crust_1_1_library2_d_wrapper.html", null ],
     [ "Crust::Logger", "class_crust_1_1_logger.html", null ],
     [ "Crust::Math", "class_crust_1_1_math.html", null ],
     [ "Eigen::Matrix", null, [
+      [ "Crust::Matrix< float, 4, 4 >", "class_crust_1_1_matrix.html", null ],
       [ "Crust::Matrix< T, H, W >", "class_crust_1_1_matrix.html", null ]
     ] ],
     [ "Crust::Mesh", "class_crust_1_1_mesh.html", null ],
@@ -22,9 +25,13 @@ var hierarchy =
     [ "Crust::Polygon< 3 >", "class_crust_1_1_polygon.html", [
       [ "Crust::Triangle", "class_crust_1_1_triangle.html", null ]
     ] ],
+    [ "Crust::AbstractProjector::ProjectionData", "struct_crust_1_1_abstract_projector_1_1_projection_data.html", null ],
     [ "Crust::Renderer", "class_crust_1_1_renderer.html", null ],
     [ "Crust::Scene", "class_crust_1_1_scene.html", null ],
-    [ "Crust::Script", "class_crust_1_1_script.html", null ],
+    [ "Crust::Script", "class_crust_1_1_script.html", [
+      [ "Crust::Mover", "class_crust_1_1_mover.html", null ],
+      [ "Crust::Rotator", "class_crust_1_1_rotator.html", null ]
+    ] ],
     [ "Crust::TimeProvider", "class_crust_1_1_time_provider.html", null ],
     [ "Crust::Transform", "class_crust_1_1_transform.html", null ],
     [ "anonymous_namespace{Mesh.h}::Vector3< T >", "classanonymous__namespace_02_mesh_8h_03_1_1_vector3.html", null ],

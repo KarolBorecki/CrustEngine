@@ -1,0 +1,4 @@
+<map id="Crust::InputHandler::isPressed" name="Crust::InputHandler::isPressed">
+<area shape="rect" id="node1" title="Function that checks if given key is pressed. In order for this function to work You need to call #Be..." alt="" coords="205,5,340,46"/>
+<area shape="rect" id="node2" href="$class_crust_1_1_rotator.html#a949a12319675df6ceedb1a903b3e5c9c" title=" " alt="" coords="5,13,157,39"/>
+</map>

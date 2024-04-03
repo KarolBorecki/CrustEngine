@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['vector3_0',['Vector3',['../class_crust_1_1_vector3.html#ab81870e47855302be7ee1afef5bffc4e',1,'Crust::Vector3::Vector3()'],['../class_crust_1_1_vector3.html#ae66034e36d99ceeb9b20f28c6a59b386',1,'Crust::Vector3::Vector3(T p_val)'],['../class_crust_1_1_vector3.html#a9bda82e63fc9064bf5576f9403ab851e',1,'Crust::Vector3::Vector3(T p_x, T p_y, T p_z)']]],
-  ['vector4_1',['Vector4',['../class_crust_1_1_vector4.html#a71ae6964112e5223b24df4e48cabd9a1',1,'Crust::Vector4::Vector4()'],['../class_crust_1_1_vector4.html#ae86839207c634e2d5b11e9b4cbdcdd0d',1,'Crust::Vector4::Vector4(T p_val)'],['../class_crust_1_1_vector4.html#ae82d7318954e07f502cffe692239b4e3',1,'Crust::Vector4::Vector4(T p_x, T p_y, T p_z, T p_w)']]]
+  ['tan_0',['tan',['../class_crust_1_1_math.html#aea34b6399850ec94f1384e05787958b7',1,'Crust::Math']]],
+  ['throwerror_1',['throwError',['../class_crust_1_1_exceptions_handler.html#aa829072aa11246d12358ccbe43f5562a',1,'Crust::ExceptionsHandler']]],
+  ['throwwarning_2',['throwWarning',['../class_crust_1_1_exceptions_handler.html#a615dcc2414fbd69b1643342c953d233d',1,'Crust::ExceptionsHandler']]],
+  ['timeprovider_3',['TimeProvider',['../class_crust_1_1_time_provider.html#a337775ed91781884bc170a6c9b4fae3f',1,'Crust::TimeProvider']]],
+  ['transform_4',['transform',['../class_crust_1_1_object.html#af842dc949dbf2ef15bbd094858f2d5a3',1,'Crust::Object']]],
+  ['transform_5',['Transform',['../class_crust_1_1_transform.html#a9c591b557699a3ceec459d0c22bdb4fa',1,'Crust::Transform']]],
+  ['translate_6',['translate',['../class_crust_1_1_transform.html#ac65f4c4738b9758bf2c8ec20c6ace2a7',1,'Crust::Transform']]],
+  ['triangle_7',['Triangle',['../class_crust_1_1_triangle.html#a6f1e07c36dcdd4929636622cf7affad3',1,'Crust::Triangle']]]
 ];

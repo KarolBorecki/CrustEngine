@@ -38,9 +38,25 @@ namespace Crust {
          */
         virtual ~AbstractProjector() = default;
 
-        virtual void setupCamera(Camera& camera) = 0; // TODO add documentation
-        virtual void setupLightning(LightSource& p_light) = 0; // TODO handle multiple lights
+        /**
+         * @brief Gets the camera ready for the frame. Prepares projection and view matrixes.
+         *
+         * @param camera - main camera on the scene from which projection will be done.
+         */
+        virtual void setupCamera(Camera& camera) = 0;
 
+        /**
+         * @brief Setups the lightning on the scene. Saves the direction of the perpendicular rays (currently on this is supported).
+         *
+         * @param p_light - Light source which emits the light on the scene.
+         */
+        virtual void setupLightning(LightSource& p_light) = 0; // TODO handle multiple lights?
+
+        /**
+         * @brief Projects the Render object and saves projected faces to the #m_projection_data vector.
+         *
+         * @param p_object - object to project.
+         */
         virtual void project(RenderObject& p_object) = 0;
 
         /**
@@ -49,17 +65,20 @@ namespace Crust {
          * @return std::vector<ProjectionData_t> The projection data.
          */
         inline virtual std::vector<ProjectionData_t> retrieveProjections() {
-            sort(m_projection_data.begin(), m_projection_data.end(), [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b)
-            {
-                /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
-                float za = (a.z1 + a.z2 + a.z3) / 3;
-                float zb = (b.z1 + b.z2 + b.z3) / 3;
-                return za > zb;
-            });
+//            sort(m_projection_data.begin(), m_projection_data.end(), [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b)
+//            {
+//                /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
+//                float za = (a.z1 + a.z2 + a.z3) / 3;
+//                float zb = (b.z1 + b.z2 + b.z3) / 3;
+//                return za > zb;
+//            });
 
             return m_projection_data;
         }
 
+        /**
+         * @brief Deletes projection performed during last frame. This is obligatory to run after frame end. Without it old projections stays in the memory and gets drawn each frame which results in overflowing the stack.
+         */
         inline void clearProjections() {
             m_projection_data.clear();
         }

@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb8869036b5578f28d5d8f2e2fef3ed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_window.html#abb8869036b5578f28d5d8f2e2fef3ed7">open</a> ()</td></tr>
 <tr class="memdesc:abb8869036b5578f28d5d8f2e2fef3ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the window. It also starts the rendering loop.  <a href="class_crust_1_1_window.html#abb8869036b5578f28d5d8f2e2fef3ed7">More...</a><br /></td></tr>
 <tr class="separator:abb8869036b5578f28d5d8f2e2fef3ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f335f8f8edd0516db5709aeb8116786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_window.html#a9f335f8f8edd0516db5709aeb8116786">close</a> ()</td></tr>
+<tr class="memdesc:a9f335f8f8edd0516db5709aeb8116786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the window.  <a href="class_crust_1_1_window.html#a9f335f8f8edd0516db5709aeb8116786">More...</a><br /></td></tr>
+<tr class="separator:a9f335f8f8edd0516db5709aeb8116786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d0c9ec50b6c023cc07683c5c452152a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crust_1_1_window.html#a4d0c9ec50b6c023cc07683c5c452152a">startRenderingLoop</a> ()</td></tr>
 <tr class="memdesc:a4d0c9ec50b6c023cc07683c5c452152a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the infinite rendering loop.  <a href="class_crust_1_1_window.html#a4d0c9ec50b6c023cc07683c5c452152a">More...</a><br /></td></tr>
 <tr class="separator:a4d0c9ec50b6c023cc07683c5c452152a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,6 +240,25 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9f335f8f8edd0516db5709aeb8116786" name="a9f335f8f8edd0516db5709aeb8116786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f335f8f8edd0516db5709aeb8116786">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Crust::Window::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the window. </p>
+
+</div>
+</div>
 <a id="a4d38c81058fb53a02fb74c7f7761c6d0" name="a4d38c81058fb53a02fb74c7f7761c6d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d38c81058fb53a02fb74c7f7761c6d0">&#9670;&#160;</a></span>height()</h2>
 
@@ -262,10 +284,10 @@ Private Attributes</h2></td></tr>
 
 <p>Get the height of the window. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height of the window. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#a80bb0f37ca8a39baac5dcc5ecd0e9cbe">m_height</a>; }</div>
-<div class="ttc" id="aclass_crust_1_1_window_html_a80bb0f37ca8a39baac5dcc5ecd0e9cbe"><div class="ttname"><a href="class_crust_1_1_window.html#a80bb0f37ca8a39baac5dcc5ecd0e9cbe">Crust::Window::m_height</a></div><div class="ttdeci">uint16_t m_height</div><div class="ttdef"><b>Definition:</b> Window.h:92</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#a80bb0f37ca8a39baac5dcc5ecd0e9cbe">m_height</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_window_html_a80bb0f37ca8a39baac5dcc5ecd0e9cbe"><div class="ttname"><a href="class_crust_1_1_window.html#a80bb0f37ca8a39baac5dcc5ecd0e9cbe">Crust::Window::m_height</a></div><div class="ttdeci">uint16_t m_height</div><div class="ttdef"><b>Definition:</b> Window.h:98</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#l00092">m_height</a>.</p>
+<p class="reference">References <a class="el" href="#l00098">m_height</a>.</p>
 
 </div>
 </div>
@@ -340,10 +362,10 @@ Private Attributes</h2></td></tr>
 
 <p>Get the scene that is being rendered on the window. </p>
 <dl class="section return"><dt>Returns</dt><dd>The scene that is being rendered on the window. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#a11d15ba14754c2fd2a849bd00a44189c">m_scene</a>; }</div>
-<div class="ttc" id="aclass_crust_1_1_window_html_a11d15ba14754c2fd2a849bd00a44189c"><div class="ttname"><a href="class_crust_1_1_window.html#a11d15ba14754c2fd2a849bd00a44189c">Crust::Window::m_scene</a></div><div class="ttdeci">Scene * m_scene</div><div class="ttdef"><b>Definition:</b> Window.h:87</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#a11d15ba14754c2fd2a849bd00a44189c">m_scene</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_window_html_a11d15ba14754c2fd2a849bd00a44189c"><div class="ttname"><a href="class_crust_1_1_window.html#a11d15ba14754c2fd2a849bd00a44189c">Crust::Window::m_scene</a></div><div class="ttdeci">Scene * m_scene</div><div class="ttdef"><b>Definition:</b> Window.h:93</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#l00087">m_scene</a>.</p>
+<p class="reference">References <a class="el" href="#l00093">m_scene</a>.</p>
 
 </div>
 </div>
@@ -411,10 +433,10 @@ Private Attributes</h2></td></tr>
 
 <p>Get the width of the window. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width of the window. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#ac1e051dbc68154c941a5c178c41cd60a">m_width</a>; }</div>
-<div class="ttc" id="aclass_crust_1_1_window_html_ac1e051dbc68154c941a5c178c41cd60a"><div class="ttname"><a href="class_crust_1_1_window.html#ac1e051dbc68154c941a5c178c41cd60a">Crust::Window::m_width</a></div><div class="ttdeci">uint16_t m_width</div><div class="ttdef"><b>Definition:</b> Window.h:91</div></div>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_crust_1_1_window.html#ac1e051dbc68154c941a5c178c41cd60a">m_width</a>; }</div>
+<div class="ttc" id="aclass_crust_1_1_window_html_ac1e051dbc68154c941a5c178c41cd60a"><div class="ttname"><a href="class_crust_1_1_window.html#ac1e051dbc68154c941a5c178c41cd60a">Crust::Window::m_width</a></div><div class="ttdeci">uint16_t m_width</div><div class="ttdef"><b>Definition:</b> Window.h:97</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#l00091">m_width</a>.</p>
+<p class="reference">References <a class="el" href="#l00097">m_width</a>.</p>
 
 </div>
 </div>
@@ -440,7 +462,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Height of the window. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00076">height()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00082">height()</a>.</p>
 
 </div>
 </div>
@@ -488,7 +510,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p ><a class="el" href="class_crust_1_1_scene.html" title="Scene class. It&#39;s a container for all objects rendered onto the window.">Scene</a> that is being rendered on the window. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00083">scene()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00089">scene()</a>.</p>
 
 </div>
 </div>
@@ -536,7 +558,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Width of the window. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00069">width()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00075">width()</a>.</p>
 
 </div>
 </div>

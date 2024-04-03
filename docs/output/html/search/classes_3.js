@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['library2dwrapper_0',['Library2DWrapper',['../class_crust_1_1_library2_d_wrapper.html',1,'Crust']]],
-  ['lightsource_1',['LightSource',['../class_crust_1_1_light_source.html',1,'Crust']]],
-  ['logger_2',['Logger',['../class_crust_1_1_logger.html',1,'Crust']]]
+  ['inputevent_0',['InputEvent',['../struct_crust_1_1_input_event.html',1,'Crust']]],
+  ['inputhandler_1',['InputHandler',['../class_crust_1_1_input_handler.html',1,'Crust']]]
 ];

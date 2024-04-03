@@ -14,12 +14,14 @@ namespace Crust {
          * @brief Construct a new Vector4 object with default values.
          */
         Vector4() : Eigen::Vector4<T>() {};
+
         /**
          * @brief Construct a new Vector4 object with the specified value for all components.
          *
          * @param p_val The value to set all components to.
          */
         explicit Vector4(T p_val) : Eigen::Vector4<T>(p_val, p_val, p_val, p_val) {};
+
         /**
          * @brief Construct a new Vector4 object with the specified values for each component.
          *

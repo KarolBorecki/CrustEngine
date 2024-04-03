@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['vector3_0',['Vector3',['../classanonymous__namespace_02_mesh_8h_03_1_1_vector3.html',1,'anonymous_namespace{Mesh.h}::Vector3&lt; T &gt;'],['../class_crust_1_1_vector3.html',1,'Crust::Vector3&lt; T &gt;'],['../class_crust_1_1_vector3.html#ab81870e47855302be7ee1afef5bffc4e',1,'Crust::Vector3::Vector3()'],['../class_crust_1_1_vector3.html#ae66034e36d99ceeb9b20f28c6a59b386',1,'Crust::Vector3::Vector3(T p_val)'],['../class_crust_1_1_vector3.html#a9bda82e63fc9064bf5576f9403ab851e',1,'Crust::Vector3::Vector3(T p_x, T p_y, T p_z)']]],
-  ['vector3_2eh_1',['Vector3.h',['../_vector3_8h.html',1,'']]],
-  ['vector4_2',['Vector4',['../class_crust_1_1_vector4.html',1,'Crust::Vector4&lt; T &gt;'],['../class_crust_1_1_vector4.html#a71ae6964112e5223b24df4e48cabd9a1',1,'Crust::Vector4::Vector4()'],['../class_crust_1_1_vector4.html#ae86839207c634e2d5b11e9b4cbdcdd0d',1,'Crust::Vector4::Vector4(T p_val)'],['../class_crust_1_1_vector4.html#ae82d7318954e07f502cffe692239b4e3',1,'Crust::Vector4::Vector4(T p_x, T p_y, T p_z, T p_w)']]],
-  ['vector4_2eh_3',['Vector4.h',['../_vector4_8h.html',1,'']]]
+  ['unloadscene_0',['unLoadScene',['../class_crust_1_1_window.html#accac9e9a4478c01c7344cee2ce210c64',1,'Crust::Window']]],
+  ['update_1',['update',['../class_crust_1_1_scene.html#a7dd8a086a43e8f29a882899e09ac7cd0',1,'Crust::Scene::update()'],['../class_crust_1_1_mover.html#aa0e0c5a3aa591ee56e987a5fca2836de',1,'Crust::Mover::update()'],['../class_crust_1_1_rotator.html#a949a12319675df6ceedb1a903b3e5c9c',1,'Crust::Rotator::update()'],['../class_crust_1_1_script.html#afa6d2f8c863d792fd31e402bba037a31',1,'Crust::Script::update()']]]
 ];
