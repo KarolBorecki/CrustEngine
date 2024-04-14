@@ -17,9 +17,9 @@ namespace Crust {
     public:
         typedef struct ProjectionData
         {
-            float x1 = 0, y1 = 0, z1 = 0;
-            float x2 = 0, y2 = 0, z2 = 0;
-            float x3 = 0, y3 = 0, z3 = 0;
+            Vector3<> v1;
+            Vector3<> v2;
+            Vector3<> v3;
             uint8_t light = 0;
         } ProjectionData_t;
 

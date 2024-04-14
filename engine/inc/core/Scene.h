@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "static/Config.h"
+#include "static/Defaults.h"
 #include "objects/Object.h"
 #include "objects/Camera.h"
 #include "objects/RenderObject.h"

@@ -5,7 +5,7 @@
 #include <utility>
 
 #include "math/geometry/Triangle.h"
-#include "static/Config.h"
+#include "static/Defaults.h"
 
 namespace {
     template<typename T = float>

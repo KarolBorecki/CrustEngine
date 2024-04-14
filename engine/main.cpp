@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
     Crust::Camera camera(90, 0.1, 300);
     scene.setMainCamera(camera);
 
-    Crust::RenderObject object("/Users/karolborecki/Desktop/cube/teapot.obj");
+    Crust::RenderObject object("/Users/karolborecki/Desktop/cube/VideoShip.obj");
     object.transform().setSize(0.1f, 0.1f, 0.1f);
-    object.transform().setPosition(0.0f, 0.0f, -3.0f);
+    object.transform().setPosition(0.0f, 0.0f, -1.5f);
     Crust::Rotator rotator(0.4f, 0.3f, 0.3f);
     Crust::Mover mover;
      object.attachScript(rotator);
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     light.transform().setEulerRotation(0.4f, -0.3f, -0.89f);
     scene.addObject(light);
 
-    Crust::Window* window = core.openWindow(1200, 800);
+    Crust::Window* window = core.openWindow(800, 600);
     window->loadScene(scene);
     window->startRenderingLoop();
     return 0;

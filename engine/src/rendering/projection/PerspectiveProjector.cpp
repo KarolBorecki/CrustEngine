@@ -20,7 +20,7 @@ namespace Crust {
         m_light_direction = p_light.direction();
     }
 
-    void PerspectiveProjector::project(RenderObject& p_object) {
+    void PerspectiveProjector::project(RenderObject& p_object) {// TODO maybe keep in memory projected faces until something changes in certain object's translation?
         Transform& transform = p_object.transform();
         static Matrix4x4f translation_mat;
         translation_mat = translation_mat.Identity();
@@ -58,10 +58,9 @@ namespace Crust {
         rotation_y_mat(2, 2) = Math::cos(transform.eulerRotation().y());
         rotation_y_mat(3, 3) = 1.0f;
 
-        static Matrix4x4f rotation_mat;
-        rotation_mat = rotation_z_mat * rotation_x_mat * rotation_y_mat;
-        m_translation_matrix = scale_mat * rotation_mat * translation_mat;
+        m_translation_matrix = scale_mat * rotation_z_mat * rotation_x_mat * rotation_y_mat * translation_mat; // TODO maybe recalculate only if certain object's translation changes?
 
+        m_light_direction.normalize();
         for (auto face : p_object.getMesh().getPolygons()) {
             // Translation
             static Matrix1x4f transformedP1;
@@ -81,47 +80,21 @@ namespace Crust {
             Vector3<> normal = Math::normal(referencePoint,
                                             {transformedP2.x(), transformedP2.y(), transformedP2.z()},
                                             {transformedP3.x(), transformedP3.y(), transformedP3.z()});
-            if (normal.dot(referencePoint) < 0.0f) {
+            if (normal.dot(referencePoint) < 0) {
                 static uint8_t light = 0;
-                Vector3<> lightDirNormal;
-                lightDirNormal = m_light_direction;
-                lightDirNormal.normalize();
-                if(lightDirNormal.dot(normal) < 0.0f)
-                    lightDirNormal *= -1.0f;
-                light = m_light_direction.normalized().dot(normal) * 255;
+                if(m_light_direction.dot(normal) < 0)
+                    m_light_direction *= -1;
+                light = m_light_direction.dot(normal) * 255;
 
                 // Projection
                 transformedP1 *= m_projection_matrix;
                 transformedP2 *= m_projection_matrix;
                 transformedP3 *= m_projection_matrix;
 
-
-                // Normalization
-                static Vector3<> projectedP1;
-                static Vector3<> projectedP2;
-                static Vector3<> projectedP3;
-
-                projectedP1 << transformedP1.x(), transformedP1.y(), transformedP1.z();
-                projectedP2 << transformedP2.x(), transformedP2.y(), transformedP2.z();
-                projectedP3 << transformedP3.x(), transformedP3.y(), transformedP3.z();
-
-                projectedP1 /= transformedP1.w();
-                projectedP2 /= transformedP2.w();
-                projectedP3 /= transformedP3.w();
-
-                static Vector3<> viewOffset(1.0f, 1.0f, 0.0f);
-                projectedP1 += viewOffset;
-                projectedP2 += viewOffset;
-                projectedP3 += viewOffset;
-
-                // Data mapping
-                projectedP1 << (projectedP1.x()) * m_width * 0.5f, (projectedP1.y()) * m_height * 0.5f, projectedP1.z();
-                projectedP2 << (projectedP2.x()) * m_width * 0.5f, (projectedP2.y()) * m_height * 0.5f, projectedP2.z();;
-                projectedP3 << (projectedP3.x()) * m_width * 0.5f, (projectedP3.y()) * m_height * 0.5f, projectedP3.z();;
-
-                m_projection_data.push_back({ projectedP1.x(), projectedP1.y(),projectedP1.z(),
-                                              projectedP2.x(), projectedP2.y(), projectedP2.z(),
-                                              projectedP3.x(), projectedP3.y(), projectedP3.z(),
+                // Normalization & Data mapping
+                m_projection_data.push_back({ Vector3<>((transformedP1.x() / transformedP1.w() + 1.0f) * m_width * 0.5f, (transformedP1.y() / transformedP1.w() + 1.0f) * m_height * 0.5f, transformedP1.z() / transformedP1.w()),
+                                              Vector3<>((transformedP2.x() / transformedP2.w() + 1.0f) * m_width * 0.5f, (transformedP2.y() / transformedP2.w() + 1.0f) * m_height * 0.5f, transformedP2.z() / transformedP2.w()),
+                                              Vector3<>((transformedP3.x() / transformedP3.w() + 1.0f) * m_width * 0.5f, (transformedP3.y() / transformedP3.w() + 1.0f) * m_height * 0.5f, transformedP3.z() / transformedP3.w()),
                                               light });
             }
         }

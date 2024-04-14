@@ -5,7 +5,7 @@
 
 #include "Object.h"
 #include "static/Definitions.h"
-#include "static/Config.h"
+#include "static/Defaults.h"
 
 namespace Crust {
     /**

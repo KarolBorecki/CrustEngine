@@ -49,7 +49,7 @@ set(HEADERS
         inc/rendering/Renderer.h
         inc/utils/TimeProvider.h
         inc/scripting/Script.h
-        inc/static/Config.h
+        inc/static/Defaults.h
         inc/static/Definitions.h
         inc/rendering/projection/AbstractProjector.h
         inc/files/MeshLoader.h
