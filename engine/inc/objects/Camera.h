@@ -6,13 +6,14 @@
 #include "logging/Logger.h"
 #include "logging/ExceptionsHandler.h"
 #include "math/Math.h"
-#include "Object.h"
+#include "objects/Entity.h"
+#include "objects/transforms/CameraTransform.h"
 
 namespace Crust {
     /**
      * @brief Class representing the camera on a scene from which's perespective the renderer can render Mesh.
      */
-    class Camera : public Object {
+    class Camera : public Entity {
     public:
         /**
          * @details Also calculates the fFovRad for given input.
@@ -51,11 +52,21 @@ namespace Crust {
          */
         float getFFovRad() const;
 
+        /**
+         * @brief Get the transform of the object.
+         *
+         * @return The transform of the object.
+         */
+        virtual inline Transform& transform() override { return m_transform; }
+
     private:
         uint16_t m_f_fov_deg { 0 }; //!< Represents the field of view of the camera as the angle value in degrees.
         float m_fNear { 0.0 }; //!< Represents the distance between the virtual eye and the rendered plane.
         float m_f_far { 0.0 }; //!< Represents the maximum depth of the viewed image.
         float m_f_fov_rad { 0.0 }; //!< Represents the field of view in radians.
+
+    protected:
+        CameraTransform m_transform; /**< The transform of the object. Represents coordinates, scale and rotation in 3D space */
     };
 
 }

@@ -1,4 +1,4 @@
-#include "objects/Transform.h"
+#include "objects/transforms/Transform.h"
 
 namespace Crust {
     Transform::Transform() {
@@ -13,16 +13,22 @@ namespace Crust {
 
     Crust::Vector3<> &Transform::eulerRotation() { return m_rotation; }
 
-    void Transform::setPosition(float p_x, float p_y, float p_z) { m_position = {p_x, p_y, p_z}; }
+    void Transform::setPosition(float p_x, float p_y, float p_z) {
+        m_position = {p_x, p_y, p_z};
+    }
 
-    void Transform::setSize(float p_x, float p_y, float p_z) { m_scale = {p_x, p_y, p_z}; }
+    void Transform::setSize(float p_x, float p_y, float p_z) {
+        m_scale = {p_x, p_y, p_z};
+    }
 
-    void Transform::setEulerRotation(float p_x, float p_y, float p_z) { m_rotation = {p_x, p_y, p_z}; }
+    void Transform::setEulerRotation(float p_x, float p_y, float p_z) {
+        m_rotation = {p_x, p_y, p_z};
+    }
 
     void Transform::translate(float p_dx, float p_dy, float p_dz) {
-        m_position(0) += p_dx;
-        m_position(1) += p_dy;
-        m_position(2) += p_dz;
+        m_position(0) -= p_dx;
+        m_position(1) -= p_dy;
+        m_position(2) -= p_dz;
     }
 
     void Transform::scale(float p_dx, float p_dy, float p_dz) {

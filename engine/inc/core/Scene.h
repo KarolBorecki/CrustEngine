@@ -5,6 +5,7 @@
 
 #include "static/Defaults.h"
 #include "objects/Object.h"
+#include "scripting/Script.h"
 #include "objects/Camera.h"
 #include "objects/RenderObject.h"
 #include "objects/LightSource.h"

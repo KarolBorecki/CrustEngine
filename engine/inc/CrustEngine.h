@@ -16,7 +16,10 @@
 
 #include "files/MeshLoader.h"
 
-#include "objects/Transform.h"
+#include "objects/transforms/Transform.h"
+#include "objects/transforms/ObjectTransform.h"
+#include "objects/transforms/CameraTransform.h"
+#include "objects/Entity.h"
 #include "objects/Object.h"
 #include "objects/Camera.h"
 #include "objects/LightSource.h"

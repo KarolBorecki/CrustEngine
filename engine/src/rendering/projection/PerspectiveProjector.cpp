@@ -21,45 +21,7 @@ namespace Crust {
     }
 
     void PerspectiveProjector::project(RenderObject& p_object) {// TODO maybe keep in memory projected faces until something changes in certain object's translation?
-        Transform& transform = p_object.transform();
-        static Matrix4x4f translation_mat;
-        translation_mat = translation_mat.Identity();
-        translation_mat(3, 0) = transform.position().x();
-        translation_mat(3, 1) = transform.position().y();
-        translation_mat(3, 2) = transform.position().z();
-
-        static Matrix4x4f scale_mat;
-        scale_mat(0, 0) = transform.size().x();
-        scale_mat(1, 1) = transform.size().y();
-        scale_mat(2, 2) = transform.size().z();
-        scale_mat(3, 3) = 1.0f;
-
-        static Matrix4x4f rotation_z_mat;
-        rotation_z_mat(0, 0) = Math::cos(transform.eulerRotation().z());
-        rotation_z_mat(1, 0) = -Math::sin(transform.eulerRotation().z());
-        rotation_z_mat(0, 1) = Math::sin(transform.eulerRotation().z());
-        rotation_z_mat(1, 1) = Math::cos(transform.eulerRotation().z());
-        rotation_z_mat(2, 2) = 1.0f;
-        rotation_z_mat(3, 3) = 1.0f;
-
-        static Matrix4x4f rotation_x_mat;
-        rotation_x_mat(0, 0) = 1.0f;
-        rotation_x_mat(1, 1) = Math::cos(transform.eulerRotation().x());
-        rotation_x_mat(2, 1) = -Math::sin(transform.eulerRotation().x());
-        rotation_x_mat(1, 2) = Math::sin(transform.eulerRotation().x());
-        rotation_x_mat(2, 2) = Math::cos(transform.eulerRotation().x());
-        rotation_x_mat(3, 3) = 1.0f;
-
-        static Matrix4x4f rotation_y_mat;
-        rotation_y_mat(0, 0) = Math::cos(transform.eulerRotation().y());
-        rotation_y_mat(2, 0) = -Math::sin(transform.eulerRotation().y());
-        rotation_y_mat(0, 2) = Math::sin(transform.eulerRotation().y());
-        rotation_y_mat(1, 1) = 1.0f;
-        rotation_y_mat(2, 2) = Math::cos(transform.eulerRotation().y());
-        rotation_y_mat(3, 3) = 1.0f;
-
-        m_translation_matrix = scale_mat * rotation_z_mat * rotation_x_mat * rotation_y_mat * translation_mat; // TODO maybe recalculate only if certain object's translation changes?
-
+        m_translation_matrix = p_object.transform().transformMatrix();
         m_light_direction.normalize();
         for (auto face : p_object.getMesh().getPolygons()) {
             // Translation

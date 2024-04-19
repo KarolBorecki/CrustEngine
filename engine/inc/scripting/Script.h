@@ -1,12 +1,11 @@
 #ifndef CRUSTENGINE_SCRIPT_H
 #define CRUSTENGINE_SCRIPT_H
 
-#include "objects/Object.h"
-
+// Including Entity results in circle dependency
 #include "logging/Logger.h"
 
 namespace Crust {
-    class Object;
+    class Entity;
 }
 
 namespace Crust {
@@ -18,10 +17,10 @@ namespace Crust {
 
         virtual void update(float p_delta_time) {};
 
-        void attachTo(Object* p_object) { m_object = p_object; }
+        void attachTo(Entity* p_object) { m_object = p_object; }
 
     protected:
-        Object* m_object { nullptr };
+        Entity* m_object { nullptr };
     };
 }
 

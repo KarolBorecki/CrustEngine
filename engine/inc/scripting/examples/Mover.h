@@ -14,33 +14,36 @@ namespace Crust {
     private:
         float m_dx { 1.0f };
         float m_dy { 1.0f };
-        float m_dz { 0.0f };
+        float m_dz { 1.0f };
     };
 
     inline void Mover::start() {}
 
     inline void Mover::update(float p_delta_time) {
-//        if (m_object->transform().position().x() > 10.0f) {
-//            m_dx = -1.0f;
-//        } else if (m_object->transform().position().x() < -10.0f) {
-//            m_dx = 1.0f;
-//        }
-
-        if (m_object->transform().position().y() > 1.0f) {
-            m_dy = -0.1f;
-        } else if (m_object->transform().position().y() < -1.0f) {
-            m_dy = 0.1f;
+        if (InputHandler::isPressed(Key::KeyCode::KEY_W)) {
+            m_object->transform().translate(0.0f, m_dy * p_delta_time, 0.0f);
+            Logger::info("W (%d)", m_object->transform().position().x());
         }
-
-        if (m_object->transform().position().z() > 1.0f) {
-            m_dz = -0.1f;
-        } else if (m_object->transform().position().z() < -1.0f) {
-            m_dz = 0.1f;
+        if (InputHandler::isPressed(Key::KeyCode::KEY_S)) {
+            m_object->transform().translate(0.0f, -m_dy * p_delta_time, 0.0f);
+            Logger::info("S (%d)", m_object->transform().position().x());
         }
-
-        m_object->transform().translate(m_dx * p_delta_time,
-                                        m_dy * p_delta_time,
-                                        m_dz * p_delta_time);
+        if (InputHandler::isPressed(Key::KeyCode::KEY_A)) {
+            m_object->transform().translate(m_dx * p_delta_time, 0.0f, 0.0f);
+            Logger::info("A (%d)", m_object->transform().position().y());
+        }
+        if (InputHandler::isPressed(Key::KeyCode::KEY_D)) {
+            m_object->transform().translate(-m_dx * p_delta_time, 0.0f, 0.0f);
+            Logger::info("D (%d)", m_object->transform().position().y());
+        }
+        if (InputHandler::isPressed(Key::KeyCode::KEY_Q)) {
+            m_object->transform().translate(0.0f, 0.0f, m_dz * p_delta_time);
+            Logger::info("Q (%d)", m_object->transform().position().z());
+        }
+        if (InputHandler::isPressed(Key::KeyCode::KEY_E)) {
+            m_object->transform().translate(0.0f, 0.0f, -m_dz * p_delta_time);
+            Logger::info("E (%d)", m_object->transform().position().z());
+        }
     }
 }
 

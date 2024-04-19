@@ -3,7 +3,9 @@ project(CrustEngine)
 
 set(SOURCES
         main.cpp
-        src/objects/Transform.cpp
+        src/objects/transforms/Transform.cpp
+        src/objects/transforms/ObjectTransform.cpp
+        src/objects/transforms/CameraTransform.cpp
         src/core/Core.cpp
         src/core/Scene.cpp
         src/core/Window.cpp
@@ -37,7 +39,10 @@ set(HEADERS
         inc/math/Vector4.h
         inc/math/geometry/Polygon.h
         inc/math/geometry/Triangle.h
-        inc/objects/Transform.h
+        inc/objects/transforms/Transform.h
+        inc/objects/transforms/ObjectTransform.h
+        inc/objects/transforms/CameraTransform.h
+        inc/objects/Entity.h
         inc/objects/Object.h
         inc/objects/Camera.h
         inc/objects/LightSource.h
@@ -48,7 +53,6 @@ set(HEADERS
         inc/rendering/Library2DWrapper.h
         inc/rendering/Renderer.h
         inc/utils/TimeProvider.h
-        inc/scripting/Script.h
         inc/static/Defaults.h
         inc/static/Definitions.h
         inc/rendering/projection/AbstractProjector.h
@@ -57,6 +61,7 @@ set(HEADERS
         inc/scripting/examples/Mover.h
         inc/input/InputHandler.h
         inc/input/InputEvent.h
+        inc/scripting/Script.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

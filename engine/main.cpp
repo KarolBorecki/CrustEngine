@@ -1,4 +1,5 @@
 #include <CrustEngine.h>
+
 #include "scripting/examples/Rotator.h"
 #include "scripting/examples/Mover.h"
 
@@ -13,9 +14,9 @@ int main(int argc, char *argv[])
     Crust::RenderObject object("/Users/karolborecki/Desktop/cube/VideoShip.obj");
     object.transform().setSize(0.1f, 0.1f, 0.1f);
     object.transform().setPosition(0.0f, 0.0f, -1.5f);
-    Crust::Rotator rotator(0.4f, 0.3f, 0.3f);
+//    Crust::Rotator rotator(0.4f, 0.3f, 0.3f);
     Crust::Mover mover;
-     object.attachScript(rotator);
+     object.attachScript(mover);
 
     scene.addObject(object);
 
