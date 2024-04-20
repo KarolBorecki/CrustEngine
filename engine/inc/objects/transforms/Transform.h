@@ -83,6 +83,14 @@ namespace Crust {
         Vector3 m_position;
         Vector3 m_rotation;
         Vector3 m_scale;
+
+        virtual void recalculateTransformMatrix() {};
+
+        virtual void recalculateTranslationMatrix() {};
+
+        virtual void recalculateScaleMatrix() {};
+
+        virtual void recalculateRotationMatrix() {};
     };
 }
 

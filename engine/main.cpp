@@ -16,8 +16,6 @@ int main(int argc, char *argv[]) {
     Crust::RenderObject axis("/Users/karolborecki/Desktop/cube/axis.obj");
     axis.transform().setSize(0.1f, 0.1f, 0.1f);
     axis.transform().setPosition(0.0f, 0.0f, -2.0f);
-    Crust::Rotator rotator4(0.4f, 0.9f, 0.4f);
-    axis.attachScript(rotator4);
 
     Crust::RenderObject object("/Users/karolborecki/Desktop/cube/cube.obj");
     object.transform().setSize(0.1f, 0.1f, 0.1f);
