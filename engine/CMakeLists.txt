@@ -64,6 +64,7 @@ set(HEADERS
         inc/input/InputEvent.h
         inc/scripting/Script.h
         inc/static/Config.h
+        inc/scripting/examples/CameraCotroller.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

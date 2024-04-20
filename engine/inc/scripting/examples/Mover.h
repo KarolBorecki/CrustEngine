@@ -3,6 +3,8 @@
 
 #include "scripting/Script.h"
 
+#include "input/InputHandler.h"
+
 namespace Crust {
     class Mover : public Script {
     public:
