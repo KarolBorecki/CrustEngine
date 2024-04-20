@@ -16,9 +16,9 @@ namespace Crust {
     class AbstractProjector {
     public:
         typedef struct ProjectionData {
-            Vector3<> v1;
-            Vector3<> v2;
-            Vector3<> v3;
+            Vector3 v1;
+            Vector3 v2;
+            Vector3 v3;
             uint8_t light = 0;
         } ProjectionData_t;
 
@@ -105,7 +105,7 @@ namespace Crust {
         Matrix4x4f m_view_matrix; /** !< The view matrix. */
         Matrix4x4f m_translation_matrix; /** !< The translation matrix. */
 
-        Vector3<> m_light_direction; /** !< The direction of the light source. */
+        Vector3 m_light_direction; /** !< The direction of the light source. */
     };
 
 }

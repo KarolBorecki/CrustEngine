@@ -29,7 +29,8 @@ namespace Crust {
         return std::cos(p_t);
     }
 
-    Vector3<> Math::normal(const Vector3<> &p_a, const Vector3<> &p_b, const Vector3<> &p_c) {
+    //TODO now we can propably optimize it
+    Vector3 Math::normal(const Vector3 &p_a, const Vector3 &p_b, const Vector3 &p_c) {
         auto normalMatrix = (p_b - p_a).cross(p_c - p_a).normalized();
         return {normalMatrix.x(), normalMatrix.y(), normalMatrix.z()};
     }

@@ -31,7 +31,7 @@ namespace Crust {
          * @param p_index The index of the vertex to get.
          * @return The vertex at the specified index.
          */
-        inline Vector3<> &getVertex(uint8_t p_index) {
+        inline Vector3 &getVertex(uint8_t p_index) {
             return m_vertices[p_index];
         }
 
@@ -55,7 +55,7 @@ namespace Crust {
 
 
     private:
-        Vector3<> m_vertices[V]; /**< The vertices of the polygon. */
+        Vector3 m_vertices[V]; /**< The vertices of the polygon. */
     };
 }
 

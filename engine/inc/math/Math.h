@@ -83,7 +83,7 @@ namespace Crust {
          *
          * @return The normal of the plane.
          */
-        static Vector3<> normal(const Vector3<> &p_a, const Vector3<> &p_b, const Vector3<> &p_c);
+        static Vector3 normal(const Vector3 &p_a, const Vector3 &p_b, const Vector3 &p_c);
 
     public:
         static constexpr double PI{M_PI}; //!< The value of PI

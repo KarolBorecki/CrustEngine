@@ -21,23 +21,23 @@ namespace Crust {
         /**
          * @brief Getter for #pos field.
          *
-         * @return Vector3<>& Position of the object with this transform attached.
+         * @return Vector3& Position of the object with this transform attached.
          */
-        virtual Crust::Vector3<> &position();
+        virtual Crust::Vector3 &position();
 
         /**
          * @brief Getter for #scale field;
          *
-         * @return Vector3<>& Scale of the object with this transform attached.
+         * @return Vector3& Scale of the object with this transform attached.
          */
-        virtual Crust::Vector3<> &size();
+        virtual Crust::Vector3 &size();
 
         /**
          * @brief Getter for #rot field, this returns handler to euler's vector for rotation.
          *
-         * @return Vector3<>& Euler's rotation of the object with this transform attached.
+         * @return Vector3& Euler's rotation of the object with this transform attached.
          */
-        virtual Crust::Vector3<> &eulerRotation();
+        virtual Crust::Vector3 &eulerRotation();
 
         /**
          * @brief Set the position of this object to given vector (x, y, z).
@@ -80,9 +80,9 @@ namespace Crust {
         virtual Matrix4x4f &transformMatrix() = 0;
 
     protected:
-        Vector3<> m_position;
-        Vector3<> m_rotation;
-        Vector3<> m_scale;
+        Vector3 m_position;
+        Vector3 m_rotation;
+        Vector3 m_scale;
     };
 }
 

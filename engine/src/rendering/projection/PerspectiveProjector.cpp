@@ -42,10 +42,10 @@ namespace Crust {
             transformedP2 *= m_view_matrix;
             transformedP3 *= m_view_matrix;
 
-            Vector3<> referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
-            Vector3<> normal = Math::normal(referencePoint,
-                                            {transformedP2.x(), transformedP2.y(), transformedP2.z()},
-                                            {transformedP3.x(), transformedP3.y(), transformedP3.z()});
+            Vector3 referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
+            Vector3 normal = Math::normal(referencePoint,
+                                          {transformedP2.x(), transformedP2.y(), transformedP2.z()},
+                                          {transformedP3.x(), transformedP3.y(), transformedP3.z()});
 
 #ifndef CRUST_RENDERER_STOP_CULLING
             if (normal.dot(referencePoint) >= 0.0f) {
@@ -64,15 +64,15 @@ namespace Crust {
             transformedP3 *= m_projection_matrix;
 
             // Normalization & Data mapping
-            m_projection_data.push_back({Vector3<>((transformedP1.x() / transformedP1.w() + 1.0f) * m_width * 0.5f,
-                                                   (transformedP1.y() / transformedP1.w() + 1.0f) * m_height * 0.5f,
-                                                   transformedP1.z() / transformedP1.w()),
-                                         Vector3<>((transformedP2.x() / transformedP2.w() + 1.0f) * m_width * 0.5f,
-                                                   (transformedP2.y() / transformedP2.w() + 1.0f) * m_height * 0.5f,
-                                                   transformedP2.z() / transformedP2.w()),
-                                         Vector3<>((transformedP3.x() / transformedP3.w() + 1.0f) * m_width * 0.5f,
-                                                   (transformedP3.y() / transformedP3.w() + 1.0f) * m_height * 0.5f,
-                                                   transformedP3.z() / transformedP3.w()),
+            m_projection_data.push_back({Vector3((transformedP1.x() / transformedP1.w() + 1.0f) * m_width * 0.5f,
+                                                 (transformedP1.y() / transformedP1.w() + 1.0f) * m_height * 0.5f,
+                                                 transformedP1.z() / transformedP1.w()),
+                                         Vector3((transformedP2.x() / transformedP2.w() + 1.0f) * m_width * 0.5f,
+                                                 (transformedP2.y() / transformedP2.w() + 1.0f) * m_height * 0.5f,
+                                                 transformedP2.z() / transformedP2.w()),
+                                         Vector3((transformedP3.x() / transformedP3.w() + 1.0f) * m_width * 0.5f,
+                                                 (transformedP3.y() / transformedP3.w() + 1.0f) * m_height * 0.5f,
+                                                 transformedP3.z() / transformedP3.w()),
                                          light});
 
         }

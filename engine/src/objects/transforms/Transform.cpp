@@ -1,17 +1,15 @@
 #include "objects/transforms/Transform.h"
 
 namespace Crust {
-    Transform::Transform() {
-        m_position = {0.0f, 0.0f, 0.0f};
-        m_rotation = {0.0f, 0.0f, 0.0f};
-        m_scale = {1.0f, 1.0f, 1.0f};
-    }
+    Transform::Transform() : m_position({0.0f, 0.0f, 0.0f}),
+                             m_rotation({0.0f, 0.0f, 0.0f}),
+                             m_scale({1.0f, 1.0f, 1.0f}) {}
 
-    Crust::Vector3<> &Transform::position() { return m_position; }
+    Crust::Vector3 &Transform::position() { return m_position; }
 
-    Crust::Vector3<> &Transform::size() { return m_scale; }
+    Crust::Vector3 &Transform::size() { return m_scale; }
 
-    Crust::Vector3<> &Transform::eulerRotation() { return m_rotation; }
+    Crust::Vector3 &Transform::eulerRotation() { return m_rotation; }
 
     void Transform::setPosition(float p_x, float p_y, float p_z) {
         m_position = {p_x, p_y, p_z};
