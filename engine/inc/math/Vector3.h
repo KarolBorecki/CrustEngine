@@ -32,8 +32,7 @@ namespace Crust {
         Vector3(T p_x, T p_y, T p_z) : Eigen::Vector3<T>(p_x, p_y, p_z) {};
 
         template<typename D>
-        Vector3<T>& operator=(const Eigen::MatrixBase<D>& other)
-        {
+        Vector3<T> &operator=(const Eigen::MatrixBase <D> &other) {
             this->Eigen::Vector3<T>::operator=(other);
             return *this;
         }

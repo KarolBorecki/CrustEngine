@@ -17,10 +17,10 @@ namespace Crust {
 
         virtual void update(float p_delta_time) {};
 
-        void attachTo(Entity* p_object) { m_object = p_object; }
+        void attachTo(Entity *p_object) { m_object = p_object; }
 
     protected:
-        Entity* m_object { nullptr };
+        Entity *m_object{nullptr};
     };
 }
 

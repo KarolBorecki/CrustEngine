@@ -4,10 +4,10 @@
 namespace Crust {
     Crust::Mesh::Mesh() : m_name(DEFAULT_MESH_NAME) {}
 
-    Mesh::Mesh(const char* name) : m_name(name){}
+    Mesh::Mesh(const char *name) : m_name(name) {}
 
     Mesh::~Mesh() {
-        for (auto p : m_polygons) {
+        for (auto p: m_polygons) {
             delete p;
         }
     }
@@ -16,7 +16,7 @@ namespace Crust {
         m_polygons.push_back(&p_poli);
     }
 
-    std::vector<Triangle*> &Mesh::getPolygons() {
+    std::vector<Triangle *> &Mesh::getPolygons() {
         return m_polygons;
     }
 
@@ -28,11 +28,11 @@ namespace Crust {
         return m_polygons.size();
     }
 
-    void Mesh::setName(const char* p_newName) {
+    void Mesh::setName(const char *p_newName) {
         m_name = p_newName;
     }
 
-    const char* Mesh::getName() const {
+    const char *Mesh::getName() const {
         return m_name;
     }
 }

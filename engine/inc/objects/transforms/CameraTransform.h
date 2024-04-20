@@ -54,12 +54,10 @@ namespace Crust {
          */
         void rotateEuler(float dX, float dY, float dZ) override;
 
-        Matrix4x4f& transformMatrix() override;
+        Matrix4x4f &transformMatrix() override;
 
     protected:
-        static inline Vector3 UP = {0.0f, 1.0f, 0.0f};
-        static inline Vector3 RIGHT = {1.0f, 0.0f, 0.0f};
-        static inline Vector3 FORWARD = {0.0f, 0.0f, 1.0f};
+        static inline Vector3 WORLD_UP = {0.0f, 1.0f, 0.0f};
 
         Matrix4x4f m_transform_mat;
 

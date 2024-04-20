@@ -1,7 +1,8 @@
 #include "objects/Camera.h"
 
 namespace Crust {
-    Camera::Camera(uint16_t p_f_fov_deg, float p_f_near, float p_f_far) : m_f_fov_deg(p_f_fov_deg), m_fNear(p_f_near), m_f_far(p_f_far) {
+    Camera::Camera(uint16_t p_f_fov_deg, float p_f_near, float p_f_far) : m_f_fov_deg(p_f_fov_deg), m_fNear(p_f_near),
+                                                                          m_f_far(p_f_far) {
         if (p_f_near <= 0 || p_f_far <= 0 || p_f_near >= p_f_far)
             ExceptionsHandler::throwError("Wrong input data for Camera!");
 
@@ -25,7 +26,7 @@ namespace Crust {
         return m_f_far;
     }
 
-    float Camera::getFFovRad() const{
+    float Camera::getFFovRad() const {
         return m_f_fov_rad;
     }
 }

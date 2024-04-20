@@ -17,7 +17,7 @@ namespace Crust {
         delete m_projector;
     }
 
-    void Renderer:: renderScene(Scene &scene) {
+    void Renderer::renderScene(Scene &scene) {
         m_lib_2d.onDrawStart();
 
         m_projector->setupCamera(scene.getMainCamera());
@@ -27,13 +27,19 @@ namespace Crust {
             Logger::warning("No lights in the scene!");
         }
 
-        for (auto obj : scene.getRenderObjects()) {
+        for (auto obj: scene.getRenderObjects()) {
             m_projector->project(*obj);
         }
 
-        for (auto data : m_projector->retrieveProjections()) {
-
-            m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.light);
+        for (auto data: m_projector->retrieveProjections()) {
+#ifndef CRUST_RENDERER_DRAW_WIREFRAME
+            m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(),
+                                  data.light);
+#else
+            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.light);
+            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.light);
+            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.light);
+#endif
         }
 
         m_projector->clearProjections();

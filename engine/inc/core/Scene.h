@@ -27,7 +27,7 @@ namespace Crust {
          *
          * @param p_name Name of the scene.
          */
-        Scene(const char* p_name);
+        Scene(const char *p_name);
 
         /**
          * @brief Construct a new Scene object with name set to default scene name and main camera set to #main_camera.
@@ -35,7 +35,7 @@ namespace Crust {
          * @param name Name of the scene.
          * @param main_camera Main camera of the scene.
          */
-        explicit Scene(Camera& main_camera);
+        explicit Scene(Camera &main_camera);
 
         /**
          * @brief Construct a new Scene object with name set to #p_name and main camera set to #p_main_camera.
@@ -43,7 +43,7 @@ namespace Crust {
          * @param p_name Name of the scene.
          * @param p_main_camera Main camera of the scene.
          */
-        Scene(const char* p_name, Camera& p_main_camera);
+        Scene(const char *p_name, Camera &p_main_camera);
 
         /**
          * @brief Destroy the Scene object. Remember that it will not delete any objects in the scene.
@@ -82,7 +82,7 @@ namespace Crust {
          *
          * @return Name of the scene.
          */
-        const char* getName() const;
+        const char *getName() const;
 
         /**
          * @brief Getter for #m_camera field.
@@ -91,14 +91,14 @@ namespace Crust {
          *
          * @sa Camera.hpp
          */
-        Camera& getMainCamera() const;
+        Camera &getMainCamera() const;
 
         /**
          * @brief Setter for #m_camera field.
          *
          * @param p_camera New main camera.
          */
-        void setMainCamera(Camera& p_camera);
+        void setMainCamera(Camera &p_camera);
 
         /**
          * @brief Getter for #m_loaded field. Determines whether scene is being rendered onto the window.
@@ -119,41 +119,41 @@ namespace Crust {
          *
          * @return #m_objects field.
          */
-        std::vector<Object*> getObjects() const;
+        std::vector<Object *> getObjects() const;
 
         /**
          * @brief Getter for #m_lights field.
          *
          * @return #m_lights field.
          */
-        std::vector<LightSource*> getLights() const;
+        std::vector<LightSource *> getLights() const;
 
         /**
          * @brief Getter for #m_render_objects field.
          *
          * @return #m_render_objects field.
          */
-        std::vector<RenderObject*> getRenderObjects() const;
+        std::vector<RenderObject *> getRenderObjects() const;
 
         /**
          * @brief Adds object to the scene.
          *
          * @param p_object Object to be added to the scene.
          */
-        Status addObject(Object& p_object);
+        Status addObject(Object &p_object);
 
     private:
-        bool m_loaded { false }; /**< Determines whether scene is being rendered onto the window. */
-        bool m_started { false }; /**< Determines whether scene was already started. */
+        bool m_loaded{false}; /**< Determines whether scene is being rendered onto the window. */
+        bool m_started{false}; /**< Determines whether scene was already started. */
 
-        const char* m_name; /**< Name of the scene. */
+        const char *m_name; /**< Name of the scene. */
 
         //TODO remember to show no camera info on the screen when camera is nullptr
-        Camera* m_camera { nullptr }; /**< Main camera of the scene. */
+        Camera *m_camera{nullptr}; /**< Main camera of the scene. */
 
-        std::vector<Object*> m_objects; /**< Objects in the scene. */
-        std::vector<LightSource*> m_lights; /**< Light sources in the scene. */
-        std::vector<RenderObject*> m_render_objects; /**< Renderable objects in the scene. */
+        std::vector<Object *> m_objects; /**< Objects in the scene. */
+        std::vector<LightSource *> m_lights; /**< Light sources in the scene. */
+        std::vector<RenderObject *> m_render_objects; /**< Renderable objects in the scene. */
     };
 }
 

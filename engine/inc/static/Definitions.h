@@ -11,7 +11,7 @@ namespace Crust {
         ERROR = 99,
     };
 
-    enum Projection : uint8_t{
+    enum Projection : uint8_t {
         PERSPECTIVE = 0,
 //        ORTHOGRAPHIC = 1 // not implemented
     };

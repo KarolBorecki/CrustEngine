@@ -28,6 +28,7 @@ set(SOURCES
 
 set(HEADERS
         inc/CrustEngine.h
+        inc/static/Config.h
         inc/core/Core.h
         inc/core/Scene.h
         inc/core/Window.h
@@ -62,6 +63,7 @@ set(HEADERS
         inc/input/InputHandler.h
         inc/input/InputEvent.h
         inc/scripting/Script.h
+        inc/static/Config.h
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/inc)

@@ -9,12 +9,13 @@ namespace Crust {
         Mover() = default;
 
         void start() override;
+
         void update(float p_delta_time) override;
 
     private:
-        float m_dx { 1.0f };
-        float m_dy { 1.0f };
-        float m_dz { 1.0f };
+        float m_dx{1.0f};
+        float m_dy{1.0f};
+        float m_dz{1.0f};
     };
 
     inline void Mover::start() {}

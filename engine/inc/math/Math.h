@@ -83,13 +83,15 @@ namespace Crust {
          *
          * @return The normal of the plane.
          */
-        static Vector3<> normal(const Vector3<>& p_a, const Vector3<>& p_b, const Vector3<>& p_c);
+        static Vector3<> normal(const Vector3<> &p_a, const Vector3<> &p_b, const Vector3<> &p_c);
+
     public:
-        static constexpr double PI { M_PI }; //!< The value of PI
-        static constexpr double INF { 1.7976931348623157E+308 }; //!< Maximum value that double can hold.
+        static constexpr double PI{M_PI}; //!< The value of PI
+        static constexpr double INF{1.7976931348623157E+308}; //!< Maximum value that double can hold.
 
     private:
-        static constexpr double DOUBLE_DEFAULT_DELTA { 0.000000000000000000001 }; //!< Default accepted margin for double values.
+        static constexpr double DOUBLE_DEFAULT_DELTA{
+                0.000000000000000000001}; //!< Default accepted margin for double values.
 
     };
 }

@@ -15,6 +15,7 @@ namespace Crust {
          * @brief Construct a new Transform object with default values.
          */
         Transform();
+
         virtual ~Transform() = default;
 
         /**
@@ -76,7 +77,7 @@ namespace Crust {
          */
         virtual void rotateEuler(float dX, float dY, float dZ);
 
-        virtual Matrix4x4f& transformMatrix() = 0;
+        virtual Matrix4x4f &transformMatrix() = 0;
 
     protected:
         Vector3<> m_position;

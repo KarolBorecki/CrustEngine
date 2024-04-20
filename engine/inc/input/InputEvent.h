@@ -5,8 +5,7 @@
 
 namespace Crust {
 
-    namespace Key
-    {
+    namespace Key {
         constexpr uint8_t KEYS_COUNT = 70; // Remember to update this value when updating KeyCode enum
         constexpr uint8_t KEYS_STATE_ARRAY_SIZE = 127;
 
@@ -15,8 +14,7 @@ namespace Crust {
          *
          * @sa InputHandler.hpp
          */
-        enum KeyCode : int32_t
-        {
+        enum KeyCode : int32_t {
             KEY_NONE = 0,
 
             KEY_A = 4,
@@ -77,8 +75,7 @@ namespace Crust {
             KEY_SLASH = 56,
         };
     }
-    namespace Event
-    {
+    namespace Event {
         constexpr uint8_t EVENTS_COUNT = 7; // Remember to update this value when updating EventType enum
 
         /**
@@ -86,8 +83,7 @@ namespace Crust {
          *
          * @sa InputHandler.hpp
          */
-        enum EventType : uint8_t
-        {
+        enum EventType : uint8_t {
             EVENT_UNKNOWN = 0,
             EVENT_WINDOW_QUIT,
             EVENT_KEY_DOWN,
@@ -102,8 +98,7 @@ namespace Crust {
  * @brief Struct of an event. Engine at each event checks what type of an event occured and what key was pressed (If EVENT_KEY_DOWN or EVENT_KEY_UP occured).
  *
  */
-    typedef struct InputEvent
-    {
+    typedef struct InputEvent {
         Key::KeyCode key_code;
         Event::EventType type;
     } InputEvent_t;

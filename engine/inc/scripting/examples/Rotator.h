@@ -7,18 +7,20 @@ namespace Crust {
     class Rotator : public Script {
     public:
         Rotator() = default;
+
         Rotator(float p_dx, float p_dy, float p_dz);
 
         void start() override;
+
         void update(float p_delta_time) override;
 
     private:
-        float m_dx { 1.0f };
-        float m_dy { 1.0f };
-        float m_dz { 1.0f };
+        float m_dx{1.0f};
+        float m_dy{1.0f};
+        float m_dz{1.0f};
     };
 
-    Rotator::Rotator(float p_dx, float p_dy, float p_dz) : m_dx(p_dx), m_dy(p_dy), m_dz(p_dz) { }
+    Rotator::Rotator(float p_dx, float p_dy, float p_dz) : m_dx(p_dx), m_dy(p_dy), m_dz(p_dz) {}
 
     inline void Rotator::start() {}
 

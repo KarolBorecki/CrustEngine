@@ -23,16 +23,18 @@ namespace Crust {
          * @param p_width The width of the projector.
          * @param p_height The height of the projector.
          */
-        PerspectiveProjector(uint16_t  p_width, uint16_t p_height) : AbstractProjector(p_width, p_height) { }
+        PerspectiveProjector(uint16_t p_width, uint16_t p_height) : AbstractProjector(p_width, p_height) {}
 
         /**
          * @brief Destroy the Projector object.
          */
         ~PerspectiveProjector() override = default;
 
-        void setupCamera(Camera& camera) override;
-        void setupLightning(LightSource& p_light) override;
-        void project(RenderObject& p_object) override;
+        void setupCamera(Camera &camera) override;
+
+        void setupLightning(LightSource &p_light) override;
+
+        void project(RenderObject &p_object) override;
     };
 }
 

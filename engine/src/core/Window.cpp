@@ -1,13 +1,14 @@
 #include "core/Window.h"
 
 namespace Crust {
-    Window::Window(uint16_t p_width, uint16_t p_height) : m_width(p_width), m_height(p_height), m_renderer(p_width, p_height) {}
+    Window::Window(uint16_t p_width, uint16_t p_height) : m_width(p_width), m_height(p_height),
+                                                          m_renderer(p_width, p_height) {}
 
     Window::~Window() {
         unLoadScene();
     }
 
-    Status Window::loadScene(Scene& p_scene) {
+    Status Window::loadScene(Scene &p_scene) {
         if (p_scene.isLoaded() || m_scene != nullptr) {
             return ERROR;
         }
@@ -17,7 +18,7 @@ namespace Crust {
     }
 
     Status Window::unLoadScene() {
-        if  (m_scene == nullptr) {
+        if (m_scene == nullptr) {
             return OK;
         }
         m_scene->onUnLoad();
@@ -50,7 +51,8 @@ namespace Crust {
             m_time_provider.onFrameEnd();
         }
         close();
-        Logger::info("Average frame time: %lf [s] (%lf FPS)", m_time_provider.getAverageFrameTime_s(), m_time_provider.getAverageFPS());
+        Logger::info("Average frame time: %lf [s] (%lf FPS)", m_time_provider.getAverageFrameTime_s(),
+                     m_time_provider.getAverageFPS());
     }
 
     Status Window::changeProjection(Projection p_projection_model) {

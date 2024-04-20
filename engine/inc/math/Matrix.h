@@ -15,7 +15,7 @@ namespace Crust {
      * @tparam H Amount of rows in this matrix.
      * @tparam W Amount of columns in this matrix.
      */
-    template <typename T, int H, int W>
+    template<typename T, int H, int W>
     class Matrix : public Eigen::Matrix<T, H, W> {
     public:
         Matrix() : Eigen::Matrix<T, H, W>() {};
@@ -50,8 +50,7 @@ namespace Crust {
         void makeIdentity();
 
         template<typename D>
-        Matrix<T, H, W>& operator=(const Eigen::MatrixBase <D>& other)
-        {
+        Matrix<T, H, W> &operator=(const Eigen::MatrixBase<D> &other) {
             this->Eigen::Matrix<T, H, W>::operator=(other);
             return *this;
         }

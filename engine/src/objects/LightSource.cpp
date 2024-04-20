@@ -1,7 +1,8 @@
 #include "objects/LightSource.h"
 
 namespace Crust {
-    LightSource::LightSource(LightType p_type, LightIntensity p_intensity) : Object(), m_type(p_type), m_intensity(p_intensity) {
+    LightSource::LightSource(LightType p_type, LightIntensity p_intensity)
+            : Object(), m_type(p_type), m_intensity(p_intensity) {
 
     }
 

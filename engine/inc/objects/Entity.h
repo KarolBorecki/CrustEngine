@@ -51,7 +51,7 @@ namespace Crust {
          *
          * @return The scripts attached to the object.
          */
-        inline std::vector<Script*> getScripts() const { return m_scripts; }
+        inline std::vector<Script *> getScripts() const { return m_scripts; }
 
         /**
          * @brief Attach the script to the object.
@@ -59,22 +59,23 @@ namespace Crust {
          * @param p_script The script to attach.
          * @return Status The status of the operation.
          */
-        inline Status attachScript(Script& p_script) {
+        inline Status attachScript(Script &p_script) {
             m_scripts.push_back(&p_script);
             p_script.attachTo(this);
             return OK;
         }
 
-        virtual Transform& transform() = 0;
+        virtual Transform &transform() = 0;
 
     protected:
-        uint32_t m_id { 0 }; /**< The id of the object. */
-        bool m_active { true }; /**< Whether object is active: is rendered, it's scripts are performed etc. If not active it behaves like it not exists. */
+        uint32_t m_id{0}; /**< The id of the object. */
+        bool m_active{
+                true}; /**< Whether object is active: is rendered, it's scripts are performed etc. If not active it behaves like it not exists. */
 
     private:
-        std::vector<Script*> m_scripts; /**< The scripts attached to the object. */
+        std::vector<Script *> m_scripts; /**< The scripts attached to the object. */
 
-        static inline uint32_t NEXT_ID { 0 }; /**< The next id of the object. Static field. */
+        static inline uint32_t NEXT_ID{0}; /**< The next id of the object. Static field. */
     };
 }
 

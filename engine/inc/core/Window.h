@@ -36,7 +36,7 @@ namespace Crust {
          * @param p_scene Scene to be loaded.
          * @return Status::OK if scene was loaded successfully, Status::ERROR otherwise.
          */
-        Status loadScene(Scene& p_scene);
+        Status loadScene(Scene &p_scene);
 
         /**
          * @brief Unloads the scene from the window. Remember that this method doesn't delete the scene and scene's start method will not be called ever again.
@@ -86,16 +86,16 @@ namespace Crust {
          *
          * @return The scene that is being rendered on the window.
          */
-        inline Scene* scene() const { return m_scene; }
+        inline Scene *scene() const { return m_scene; }
 
     private:
         Renderer m_renderer; /**< Renderer used to render the scene. */
-        Scene* m_scene { nullptr }; /**< Scene that is being rendered on the window. */
+        Scene *m_scene{nullptr}; /**< Scene that is being rendered on the window. */
 
         TimeProvider m_time_provider; /**< Time provider used to get the time and manage time-oriented tasks like FPS calculations. */
 
-        uint16_t m_width { 0 }; /**< Width of the window. */
-        uint16_t m_height { 0 }; /**< Height of the window. */
+        uint16_t m_width{0}; /**< Width of the window. */
+        uint16_t m_height{0}; /**< Height of the window. */
     };
 }
 

@@ -25,7 +25,8 @@ namespace Crust {
          * @para p_out_mesh The mesh to load to.
          * @return The loaded mesh pointer. Remember to delete it after using.
          */
-        static Status loadMesh(const char* p_path, Mesh* p_out_mesh);
+        static Status loadMesh(const char *p_path, Mesh *p_out_mesh);
+
     private:
         /**
          * @brief Load a mesh from the specified .obj file.
@@ -34,7 +35,7 @@ namespace Crust {
          * @param p_out_mesh The mesh to load to.
          * @return The status of the operation.
          */
-        static Status loadObj(const char* p_path, Mesh* p_out_mesh);
+        static Status loadObj(const char *p_path, Mesh *p_out_mesh);
     };
 }
 

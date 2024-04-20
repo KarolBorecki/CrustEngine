@@ -54,7 +54,7 @@ namespace Crust {
          */
         void rotateEuler(float dX, float dY, float dZ) override;
 
-        Matrix4x4f& transformMatrix() override;
+        Matrix4x4f &transformMatrix() override;
 
     private:
         Matrix4x4f m_transform_mat;
@@ -65,8 +65,11 @@ namespace Crust {
         Matrix4x4f m_rotation_z_mat;
 
         void recalculateTransformMatrix();
+
         void recalculateTranslationMatrix();
+
         void recalculateScaleMatrix();
+
         void recalculateRotationMatrix();
     };
 }

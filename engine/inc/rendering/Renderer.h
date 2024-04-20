@@ -47,7 +47,7 @@ namespace Crust {
          *
          * @param scene The scene to render.
          */
-        void renderScene(Scene& p_scene);
+        void renderScene(Scene &p_scene);
 
         /**
          * @brief Open the window.
@@ -83,11 +83,11 @@ namespace Crust {
         Status setProjector(Projection p_projection_model);
 
     private:
-        uint16_t m_width { 0 }; /** !< The width of the projector. */
-        uint16_t m_height { 0 }; /** !< The height of the projector. */
+        uint16_t m_width{0}; /** !< The width of the projector. */
+        uint16_t m_height{0}; /** !< The height of the projector. */
 
         Library2DWrapper m_lib_2d; /** !< The 2D library wrapper. */
-        AbstractProjector* m_projector; /** !< The projector. */
+        AbstractProjector *m_projector; /** !< The projector. */
     };
 }
 

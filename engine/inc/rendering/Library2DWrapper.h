@@ -95,7 +95,7 @@ namespace Crust {
          * @param p_caption The caption of the window.
          * @return The status of the caption setting.
          */
-        Crust::Status setWindowCaption(const char* p_caption);
+        Crust::Status setWindowCaption(const char *p_caption);
 
         /**
          * @brief Draw a triangle on the window in greyscale.
@@ -108,14 +108,27 @@ namespace Crust {
          */
         void drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t p_shade);
 
+        /**
+         * @brief Draw a line on the window in greyscale.
+         *
+         * @details Draws a line on the window from the specified position to the specified position with the specified color.
+         *
+         * @param p_x1 The x position of the line's start.
+         * @param p_y1 The y position of the line's start.
+         * @param p_x2 The x position of the line's end.
+         * @param p_y2 The y position of the line's end.
+         * @param p_shade The color of the line in greyscale.
+         */
+        void drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t p_shade);
+
     private:
-        uint16_t m_width { 0 }; /**< Width of the window. */
-        uint16_t m_height { 0 }; /**< Height of the window. */
+        uint16_t m_width{0}; /**< Width of the window. */
+        uint16_t m_height{0}; /**< Height of the window. */
 
-        SDL_Window *m_window { nullptr }; //!< Drawing window handler.
-        SDL_Renderer *m_renderer { nullptr };     //!< Drawing renderer handler.
+        SDL_Window *m_window{nullptr}; //!< Drawing window handler.
+        SDL_Renderer *m_renderer{nullptr};     //!< Drawing renderer handler.
 
-        SDL_bool m_is_running { SDL_TRUE }; //!< Flag representing if the renderer thread is running.
+        SDL_bool m_is_running{SDL_TRUE}; //!< Flag representing if the renderer thread is running.
     };
 }
 

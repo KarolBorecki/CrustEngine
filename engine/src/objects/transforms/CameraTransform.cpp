@@ -1,5 +1,7 @@
 #include "objects/transforms/CameraTransform.h"
 
+#include <iostream>
+
 namespace Crust {
     CameraTransform::CameraTransform() : Transform::Transform() {
     }
@@ -28,11 +30,44 @@ namespace Crust {
         Transform::rotateEuler(p_dx, p_dy, p_dz);
     }
 
-    Matrix4x4f& CameraTransform::transformMatrix() {
-        m_transform_mat.makeIdentity() ;
+    // TODO optimize
+    Matrix4x4f &CameraTransform::transformMatrix() {
         Vector3 look_dir = {0.0f, 0.0f, 1.0f};
-        Vector3 v_target = m_position;
-        v_target += look_dir;
+
+        Vector3 Q = m_position;
+        Vector3 T = m_position;
+        T += look_dir;
+
+        Vector3 W = T;
+        W -= Q; // it really is just W = look_dir
+        W.normalize();
+
+        Vector3 U = WORLD_UP;
+        U = U.cross(W);
+        U.normalize();
+
+        Vector3 V = U;
+        V = V.cross(W);
+
+        m_transform_mat(0, 0) = U(0);
+        m_transform_mat(1, 0) = U(1);
+        m_transform_mat(2, 0) = U(2);
+        m_transform_mat(3, 0) = -Q.dot(U);
+
+        m_transform_mat(0, 1) = V(0);
+        m_transform_mat(1, 1) = -V(1);
+        m_transform_mat(2, 1) = V(2);
+        m_transform_mat(3, 1) = -Q.dot(V);
+
+        m_transform_mat(0, 2) = W(0);
+        m_transform_mat(1, 2) = W(1);
+        m_transform_mat(2, 2) = W(2);
+        m_transform_mat(3, 2) = -Q.dot(W);
+
+        m_transform_mat(0, 3) = 0.0f;
+        m_transform_mat(1, 3) = 0.0f;
+        m_transform_mat(2, 3) = 0.0f;
+        m_transform_mat(3, 3) = 1.0f;
 
         return m_transform_mat;
     }

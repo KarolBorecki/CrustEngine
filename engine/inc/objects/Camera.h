@@ -57,13 +57,13 @@ namespace Crust {
          *
          * @return The transform of the object.
          */
-        virtual inline Transform& transform() override { return m_transform; }
+        virtual inline Transform &transform() override { return m_transform; }
 
     private:
-        uint16_t m_f_fov_deg { 0 }; //!< Represents the field of view of the camera as the angle value in degrees.
-        float m_fNear { 0.0 }; //!< Represents the distance between the virtual eye and the rendered plane.
-        float m_f_far { 0.0 }; //!< Represents the maximum depth of the viewed image.
-        float m_f_fov_rad { 0.0 }; //!< Represents the field of view in radians.
+        uint16_t m_f_fov_deg{0}; //!< Represents the field of view of the camera as the angle value in degrees.
+        float m_fNear{0.0}; //!< Represents the distance between the virtual eye and the rendered plane.
+        float m_f_far{0.0}; //!< Represents the maximum depth of the viewed image.
+        float m_f_fov_rad{0.0}; //!< Represents the field of view in radians.
 
     protected:
         CameraTransform m_transform; /**< The transform of the object. Represents coordinates, scale and rotation in 3D space */

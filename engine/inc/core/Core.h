@@ -31,7 +31,7 @@ namespace Crust {
          * @param p_height The height of the window.
          * @return Pointer to the opened window.
          */
-        Window* openWindow(uint16_t p_width, uint16_t p_height);
+        Window *openWindow(uint16_t p_width, uint16_t p_height);
 
         /**
          * @brief Get the window with the specified index.
@@ -39,17 +39,17 @@ namespace Crust {
          * @param p_index The index of the window.
          * @return The window reference with the specified index.
          */
-        Window& getWindow(uint16_t p_index);
+        Window &getWindow(uint16_t p_index);
 
         /**
          * @brief Get the list of managed windows.
          *
          * @return The list of managed windows.
          */
-        std::vector<Window*> getWindows() const;
+        std::vector<Window *> getWindows() const;
 
     private:
-        std::vector<Window*> m_windows; /**< List of managed windows. */
+        std::vector<Window *> m_windows; /**< List of managed windows. */
     };
 }
 

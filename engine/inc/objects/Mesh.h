@@ -26,7 +26,7 @@ namespace Crust {
         /**
          * @brief Construct a new Mesh object with name set to #name.
          */
-        explicit Mesh(const char* name);
+        explicit Mesh(const char *name);
 
         /**
          * @brief Deletes all of the polygons of this mesh.
@@ -45,7 +45,7 @@ namespace Crust {
          *
          * @return polygons.
          */
-        std::vector<Triangle*> &getPolygons();
+        std::vector<Triangle *> &getPolygons();
 
         /**
          * @brief Getter for polygon.
@@ -66,18 +66,18 @@ namespace Crust {
          *
          * @param p_newName new mesh's name.
          */
-        void setName(const char* p_newName);
+        void setName(const char *p_newName);
 
         /**
          * @brief Getter for #name field.
          *
          * @return The mesh's file name.
          */
-        const char* getName() const;
+        const char *getName() const;
 
     private:
-        const char* m_name; //!< Name of the mesh.
-        std::vector<Triangle*> m_polygons; //!< Array of polygons that this mesh consists of.
+        const char *m_name; //!< Name of the mesh.
+        std::vector<Triangle *> m_polygons; //!< Array of polygons that this mesh consists of.
     };
 }
 

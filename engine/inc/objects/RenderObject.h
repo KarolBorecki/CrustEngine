@@ -17,7 +17,7 @@ namespace Crust {
          *
          * @param p_mesh_path The path to the mesh file.
          */
-        explicit RenderObject(const char* p_mesh_path);
+        explicit RenderObject(const char *p_mesh_path);
 
         /**
          * @brief Destroy the RenderObject object with it's mesh.
@@ -29,10 +29,10 @@ namespace Crust {
          *
          * @return The mesh to render.
          */
-        Mesh& getMesh();
+        Mesh &getMesh();
 
-        private:
-            Mesh m_mesh; /** !< The mesh to render. */
+    private:
+        Mesh m_mesh; /** !< The mesh to render. */
     };
 }
 

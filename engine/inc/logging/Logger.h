@@ -9,14 +9,12 @@ namespace Crust {
     /**
      * @brief Static class allowing to log with certain color and style on classic console with well-known printf() arguments.
      */
-    class Logger
-    {
+    class Logger {
     public:
         /**
          * @brief representing console color codes.
          */
-        enum FontColor
-        {
+        enum FontColor {
             WHITE = 0,
             GREY = 37,
             LIGHT_BLUE = 36,
@@ -30,8 +28,7 @@ namespace Crust {
         /**
          * @brief Enumeration representing console font styles codes.
          */
-        enum FontStyle
-        {
+        enum FontStyle {
             NORMAL = 0,
             BOLD = 1
         };
@@ -40,10 +37,12 @@ namespace Crust {
          * @brief Logs onto the console in red color.
          */
         static void error(const char *p_format, ...);
+
         /**
          * @brief Logs onto the console in yellow color.
          */
         static void warning(const char *p_format, ...);
+
         /**
          * @brief Logs onto the console in blue color.
          */
@@ -109,6 +108,7 @@ namespace Crust {
          * @brief Sets console color to colorCode and console font style to styleCode;
          */
         static void setFont(int p_color_code, int p_style_code);
+
         /**
          * @brief Sets console color to colorCode.
          */

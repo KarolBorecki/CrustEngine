@@ -15,8 +15,7 @@ namespace Crust {
      */
     class AbstractProjector {
     public:
-        typedef struct ProjectionData
-        {
+        typedef struct ProjectionData {
             Vector3<> v1;
             Vector3<> v2;
             Vector3<> v3;
@@ -43,21 +42,21 @@ namespace Crust {
          *
          * @param camera - main camera on the scene from which projection will be done.
          */
-        virtual void setupCamera(Camera& camera) = 0;
+        virtual void setupCamera(Camera &camera) = 0;
 
         /**
          * @brief Setups the lightning on the scene. Saves the direction of the perpendicular rays (currently on this is supported).
          *
          * @param p_light - Light source which emits the light on the scene.
          */
-        virtual void setupLightning(LightSource& p_light) = 0; // TODO handle multiple lights?
+        virtual void setupLightning(LightSource &p_light) = 0; // TODO handle multiple lights?
 
         /**
          * @brief Projects the Render object and saves projected faces to the #m_projection_data vector.
          *
          * @param p_object - object to project.
          */
-        virtual void project(RenderObject& p_object) = 0;
+        virtual void project(RenderObject &p_object) = 0;
 
         /**
          * @brief Retrieve the projection data, which is the data of the projections made in the current frame.
@@ -65,13 +64,13 @@ namespace Crust {
          * @return std::vector<ProjectionData_t> The projection data.
          */
         inline virtual std::vector<ProjectionData_t> retrieveProjections() {
-//            sort(m_projection_data.begin(), m_projection_data.end(), [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b)
-//            {
-//                /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
-//                float za = (a.z1 + a.z2 + a.z3) / 3;
-//                float zb = (b.z1 + b.z2 + b.z3) / 3;
-//                return za > zb;
-//            });
+            sort(m_projection_data.begin(), m_projection_data.end(),
+                 [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b) {
+                     /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
+                     float za = (a.v1.z() + a.v2.z() + a.v3.z()) / 3;
+                     float zb = (b.v1.z() + b.v2.z() + b.v3.z()) / 3;
+                     return za < zb;
+                 });
 
             return m_projection_data;
         }
@@ -92,13 +91,13 @@ namespace Crust {
         inline void resize(uint16_t p_width, uint16_t p_height) {
             m_width = p_width;
             m_height = p_height;
-            m_aspect_ratio = (float)p_height / (float)p_width;
+            m_aspect_ratio = (float) p_height / (float) p_width;
         }
 
     protected:
-        float m_aspect_ratio { 0 }; /** !< The aspect ratio of the projector. */
-        uint16_t m_width { 0 }; /** !< The width of the projector. */
-        uint16_t m_height { 0 }; /** !< The height of the projector. */
+        float m_aspect_ratio{0}; /** !< The aspect ratio of the projector. */
+        uint16_t m_width{0}; /** !< The width of the projector. */
+        uint16_t m_height{0}; /** !< The height of the projector. */
 
         std::vector<ProjectionData_t> m_projection_data; /** !< The data of the projection. Holds all projections made in current frame */
 

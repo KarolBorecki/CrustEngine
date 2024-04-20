@@ -1,8 +1,7 @@
 #include "logging/Logger.h"
 
 namespace Crust {
-    void Logger::error(const char *p_format, ...)
-    {
+    void Logger::error(const char *p_format, ...) {
         setFont(Logger::FontColor::RED);
         va_list args;
         va_start(args, p_format);
@@ -11,8 +10,7 @@ namespace Crust {
         va_end(args);
     }
 
-    void Logger::warning(const char *p_format, ...)
-    {
+    void Logger::warning(const char *p_format, ...) {
         setFont(FontColor::YELLOW);
         va_list args;
         va_start(args, p_format);
@@ -21,8 +19,7 @@ namespace Crust {
         va_end(args);
     }
 
-    void Logger::info(const char *p_format, ...)
-    {
+    void Logger::info(const char *p_format, ...) {
         setFont(FontColor::BLUE);
         va_list args;
         va_start(args, p_format);
@@ -31,14 +28,12 @@ namespace Crust {
         va_end(args);
     }
 
-    void Logger::log()
-    {
+    void Logger::log() {
         setFont(FontColor::WHITE);
         printf("\n");
     }
 
-    void Logger::log(const char *p_format, ...)
-    {
+    void Logger::log(const char *p_format, ...) {
         setFont(FontColor::WHITE);
         va_list args;
         va_start(args, p_format);
@@ -47,8 +42,7 @@ namespace Crust {
         va_end(args);
     }
 
-    void Logger::log(int p_color_code, const char *p_format, ...)
-    {
+    void Logger::log(int p_color_code, const char *p_format, ...) {
         setFont(p_color_code);
         va_list args;
         va_start(args, p_format);
@@ -57,8 +51,7 @@ namespace Crust {
         va_end(args);
     }
 
-    void Logger::logInline(const char *p_format, ...)
-    {
+    void Logger::logInline(const char *p_format, ...) {
         setFont(FontColor::WHITE);
         va_list args;
         va_start(args, p_format);
@@ -91,15 +84,13 @@ namespace Crust {
 //        logInline("[%.2f, %.2f, %.2f, %.2f]\n", p_vector.x(), p_vector.y(), p_vector.z(), p_vector.w());
 //    }
 
-    void Logger::setFont(int p_color_code, int p_style_code)
-    {
+    void Logger::setFont(int p_color_code, int p_style_code) {
         printf("\033[%dm", Logger::FontColor::WHITE);
         printf("\033[%dm", p_style_code);
         printf("\033[%dm", p_color_code);
     }
 
-    void Logger::setFont(int colorCode)
-    {
+    void Logger::setFont(int colorCode) {
         setFont(colorCode, FontStyle::NORMAL);
     }
 }
