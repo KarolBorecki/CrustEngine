@@ -66,7 +66,7 @@ namespace Crust {
                                               {transformedP3.x(), transformedP3.y(), transformedP3.z()});
 
 #ifndef CRUST_RENDERER_STOP_CULLING
-                if (normal.dot(referencePoint) >= 0.0) {
+                if (normal.dot(referencePoint) > 0.0) {
                     continue;
                 }
 

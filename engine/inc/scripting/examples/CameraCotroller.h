@@ -60,11 +60,11 @@ namespace Crust {
             Logger::info("S (%d)", m_object->transform().position().x());
         }
         if (InputHandler::isPressed(Key::KeyCode::KEY_A)) {
-            m_object->transform().translate(m_dx * p_delta_time, 0.0, 0.0);
+            m_object->transform().translate(-m_dx * p_delta_time, 0.0, 0.0);
             Logger::info("A (%d)", m_object->transform().position().y());
         }
         if (InputHandler::isPressed(Key::KeyCode::KEY_D)) {
-            m_object->transform().translate(-m_dx * p_delta_time, 0.0, 0.0);
+            m_object->transform().translate(m_dx * p_delta_time, 0.0, 0.0);
             Logger::info("D (%d)", m_object->transform().position().y());
         }
         if (InputHandler::isPressed(Key::KeyCode::KEY_Q)) {

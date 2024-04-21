@@ -56,6 +56,7 @@ namespace Crust {
         p_y2 = m_height - p_y2;
         p_x3 = m_width - p_x3;
         p_y3 = m_height - p_y3;
+
         SDL_Vertex verts[3] =
                 {
                         {
@@ -77,11 +78,46 @@ namespace Crust {
         SDL_RenderGeometry(m_renderer, nullptr, verts, 3, nullptr, 0);
     }
 
+    void Library2DWrapper::drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
+                                              uint8_t p_shade) {
+        p_x1 = m_width - p_x1;
+        p_y1 = m_height - p_y1;
+        p_x2 = m_width - p_x2;
+        p_y2 = m_height - p_y2;
+        p_x3 = m_width - p_x3;
+        p_y3 = m_height - p_y3;
+
+        SDL_Vertex verts[3] =
+                {
+                        {
+                                SDL_FPoint{p_x1, p_y1},
+                                SDL_Color{p_shade, p_shade, p_shade, 0},
+                                SDL_FPoint{0},
+                        },
+                        {
+                                SDL_FPoint{p_x2, p_y2},
+                                SDL_Color{p_shade, p_shade, p_shade, 0},
+                                SDL_FPoint{0},
+                        },
+                        {
+                                SDL_FPoint{p_x3, p_y3},
+                                SDL_Color{p_shade, p_shade, p_shade, 0},
+                                SDL_FPoint{0},
+                        },
+                };
+        SDL_RenderGeometry(m_renderer, nullptr, verts, 3, nullptr, 0);
+    }
+
     void Library2DWrapper::drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t p_shade) {
         p_x1 = m_width - p_x1;
         p_y1 = m_height - p_y1;
         p_x2 = m_width - p_x2;
         p_y2 = m_height - p_y2;
+
+        if (p_x1 < 0 || p_x1 > m_width || p_x2 < 0 || p_x2 > m_width || p_y1 < 0 || p_y1 > m_height || p_y2 < 0 ||
+            p_y2 > m_height)
+            return;
+
         SDL_SetRenderDrawColor(m_renderer, 0xFF, p_shade, p_shade, 0xFF);
         SDL_RenderDrawLine(m_renderer, p_x1, p_y1, p_x2, p_y2);
     }
