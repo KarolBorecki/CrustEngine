@@ -42,32 +42,24 @@ namespace Crust {
             transformedP3 *= m_view_matrix;
 
             // Clipping
-            int n_clipped_triangles = 0;
-            Triangle clipped_triangles[2];
-            Triangle viewed_triangle;
-            viewed_triangle.setVertex(0, transformedP1.x(), transformedP1.y(), transformedP1.z());
-            viewed_triangle.setVertex(1, transformedP2.x(), transformedP2.y(), transformedP2.z());
-            viewed_triangle.setVertex(2, transformedP3.x(), transformedP3.y(), transformedP3.z());
-            n_clipped_triangles = Math::triangleClipAgainstPlane({0.0f, 0.0f, 0.3f}, {0.0f, 0.0f, 1.0f},
-                                                                 viewed_triangle,
-                                                                 clipped_triangles[0], clipped_triangles[1]);
-            std::cout << "n_clipped_triangles: " << n_clipped_triangles << std::endl;
+            Triangle tri;
+            tri.setVertex(0, transformedP1.x(), transformedP1.y(), transformedP1.z());
+            tri.setVertex(1, transformedP2.x(), transformedP2.y(), transformedP2.z());
+            tri.setVertex(2, transformedP3.x(), transformedP3.y(), transformedP3.z());
 
+            Vector3 n(0.0f, 0.0f, 1.0f);
+            Vector3 p_n(0.0f, 0.0f, 0.3f);
+
+            Triangle out[2];
+
+            uint8_t n_clipped_triangles = Math::triangleClipAgainstPlane(p_n, n, tri, out[0], out[1]);
 
             for (uint8_t n = 0; n < n_clipped_triangles; n++) {
+                tri = out[n];
+                transformedP1 << tri.getVertex(0).x(), tri.getVertex(0).y(), tri.getVertex(0).z(), transformedP1.w();
+                transformedP2 << tri.getVertex(1).x(), tri.getVertex(1).y(), tri.getVertex(1).z(), transformedP2.w();
+                transformedP3 << tri.getVertex(2).x(), tri.getVertex(2).y(), tri.getVertex(2).z(), transformedP3.w();
 
-                std::cout << "clipped: " << std::endl << clipped_triangles[n].getVertex(0) << " - "
-                          << clipped_triangles[n].getVertex(1) << " - " << clipped_triangles[n].getVertex(2)
-                          << std::endl;
-                std::cout << "transformed: " << std::endl << transformedP1 << " - " << transformedP2 << " - "
-                          << transformedP3 << std::endl << std::endl;
-                transformedP1 << clipped_triangles[n].getVertex(0).x(), clipped_triangles[n].getVertex(0).y(),
-                        clipped_triangles[n].getVertex(0).z(), 1.0f;
-                transformedP2 << clipped_triangles[n].getVertex(1).x(), clipped_triangles[n].getVertex(1).y(),
-                        clipped_triangles[n].getVertex(1).z(), 1.0f;
-                transformedP3 << clipped_triangles[n].getVertex(2).x(), clipped_triangles[n].getVertex(2).y(),
-                        clipped_triangles[n].getVertex(2).z(), 1.0f;
-                
                 Vector3 referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
                 Vector3 normal = Math::normal(referencePoint,
                                               {transformedP2.x(), transformedP2.y(), transformedP2.z()},

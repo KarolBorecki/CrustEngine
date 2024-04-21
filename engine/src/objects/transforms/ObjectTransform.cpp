@@ -18,9 +18,9 @@ namespace Crust {
 
     void ObjectTransform::recalculateTranslationMatrix() {
         m_translation_mat = m_translation_mat.Identity();
-        m_translation_mat(3, 0) = m_position.x(); // TODO should be minus?
-        m_translation_mat(3, 1) = m_position.y();
-        m_translation_mat(3, 2) = m_position.z();
+        m_translation_mat(3, 0) = -m_position.x(); // TODO should be minus?
+        m_translation_mat(3, 1) = -m_position.y();
+        m_translation_mat(3, 2) = -m_position.z();
     }
 
     void ObjectTransform::recalculateScaleMatrix() {

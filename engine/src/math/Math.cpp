@@ -87,14 +87,6 @@ namespace Crust {
             outside_points[n_outside_points++] = &p_in_tri.getVertex(2);
         }
 
-        for (uint8_t i = 0; i < n_inside_points; i++) {
-            std::cout << "inside_points: " << *inside_points[i] << std::endl;
-        }
-        std::cout << std::endl;
-        for (uint8_t i = 0; i < n_outside_points; i++) {
-            std::cout << "outside_points: " << *outside_points[i] << std::endl;
-        }
-
         if (n_inside_points == 0) {
             return 0;
         }

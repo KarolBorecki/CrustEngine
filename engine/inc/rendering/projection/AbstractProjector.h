@@ -69,7 +69,7 @@ namespace Crust {
                      /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
                      float za = (a.v1.z() + a.v2.z() + a.v3.z()) / 3;
                      float zb = (b.v1.z() + b.v2.z() + b.v3.z()) / 3;
-                     return za < zb;
+                     return za > zb;
                  });
 
             return m_projection_data;
