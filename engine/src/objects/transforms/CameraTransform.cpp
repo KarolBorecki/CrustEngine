@@ -1,5 +1,7 @@
 #include "objects/transforms/CameraTransform.h"
 
+// TODO camera has other coordination system so when we going +x it should be -x
+// TODO +y = -y and +z = -z but +x = +x WTF
 namespace Crust {
     CameraTransform::CameraTransform() : Transform::Transform() {
         recalculateTranslationMatrix();
@@ -18,24 +20,24 @@ namespace Crust {
         m_rotation_z_mat(1, 0) = -Math::sin(m_rotation.z());
         m_rotation_z_mat(0, 1) = Math::sin(m_rotation.z());
         m_rotation_z_mat(1, 1) = Math::cos(m_rotation.z());
-        m_rotation_z_mat(2, 2) = 1.0f;
-        m_rotation_z_mat(3, 3) = 1.0f;
+        m_rotation_z_mat(2, 2) = 1.0;
+        m_rotation_z_mat(3, 3) = 1.0;
 
         Matrix4x4f m_rotation_x_mat;
-        m_rotation_x_mat(0, 0) = 1.0f;
+        m_rotation_x_mat(0, 0) = 1.0;
         m_rotation_x_mat(1, 1) = Math::cos(m_rotation.x());
         m_rotation_x_mat(2, 1) = -Math::sin(m_rotation.x());
         m_rotation_x_mat(1, 2) = Math::sin(m_rotation.x());
         m_rotation_x_mat(2, 2) = Math::cos(m_rotation.x());
-        m_rotation_x_mat(3, 3) = 1.0f;
+        m_rotation_x_mat(3, 3) = 1.0;
 
         Matrix4x4f m_rotation_y_mat;
         m_rotation_y_mat(0, 0) = Math::cos(m_rotation.y());
         m_rotation_y_mat(2, 0) = -Math::sin(m_rotation.y());
         m_rotation_y_mat(0, 2) = Math::sin(m_rotation.y());
-        m_rotation_y_mat(1, 1) = 1.0f;
+        m_rotation_y_mat(1, 1) = 1.0;
         m_rotation_y_mat(2, 2) = Math::cos(m_rotation.y());
-        m_rotation_y_mat(3, 3) = 1.0f;
+        m_rotation_y_mat(3, 3) = 1.0;
 
         m_rotation_mat = m_rotation_z_mat * m_rotation_x_mat * m_rotation_y_mat;
 
@@ -66,10 +68,10 @@ namespace Crust {
         m_transform_mat(2, 2) = W(2);
         m_transform_mat(3, 2) = -Q.dot(W);
 
-        m_transform_mat(0, 3) = 0.0f;
-        m_transform_mat(1, 3) = 0.0f;
-        m_transform_mat(2, 3) = 0.0f;
-        m_transform_mat(3, 3) = 1.0f;
+        m_transform_mat(0, 3) = 0.0;
+        m_transform_mat(1, 3) = 0.0;
+        m_transform_mat(2, 3) = 0.0;
+        m_transform_mat(3, 3) = 1.0;
 
         return m_transform_mat;
     }

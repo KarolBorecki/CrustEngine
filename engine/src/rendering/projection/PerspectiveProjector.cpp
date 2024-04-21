@@ -9,7 +9,7 @@ namespace Crust {
         m_projection_matrix(0, 0) = m_aspect_ratio * camera.getFFovRad();
         m_projection_matrix(1, 1) = camera.getFFovRad();
         m_projection_matrix(2, 2) = camera.getFFar() / (camera.getFFar() - camera.getFNear());
-        m_projection_matrix(2, 3) = 1.0f;
+        m_projection_matrix(2, 3) = 1.0;
         m_projection_matrix(3, 2) = -(camera.getFFar() * camera.getFNear()) / (camera.getFFar() - camera.getFNear());
         // Calculate view matrix
         m_view_matrix = camera.transform().transformMatrix();
@@ -47,8 +47,8 @@ namespace Crust {
             tri.setVertex(1, transformedP2.x(), transformedP2.y(), transformedP2.z());
             tri.setVertex(2, transformedP3.x(), transformedP3.y(), transformedP3.z());
 
-            Vector3 n(0.0f, 0.0f, 1.0f);
-            Vector3 p_n(0.0f, 0.0f, 0.3f);
+            Vector3 n(0.0, 0.0, 1.0);
+            Vector3 p_n(0.0, 0.0, 0.3);
 
             Triangle out[2];
 
@@ -66,7 +66,7 @@ namespace Crust {
                                               {transformedP3.x(), transformedP3.y(), transformedP3.z()});
 
 #ifndef CRUST_RENDERER_STOP_CULLING
-                if (normal.dot(referencePoint) >= 0.0f) {
+                if (normal.dot(referencePoint) >= 0.0) {
                     continue;
                 }
 
@@ -82,14 +82,14 @@ namespace Crust {
                 transformedP3 *= m_projection_matrix;
 
                 // Normalization & Data mapping
-                m_projection_data.push_back({Vector3((transformedP1.x() / transformedP1.w() + 1.0f) * m_width * 0.5f,
-                                                     (transformedP1.y() / transformedP1.w() + 1.0f) * m_height * 0.5f,
+                m_projection_data.push_back({Vector3((transformedP1.x() / transformedP1.w() + 1.0) * m_width * 0.5,
+                                                     (transformedP1.y() / transformedP1.w() + 1.0) * m_height * 0.5,
                                                      transformedP1.z() / transformedP1.w()),
-                                             Vector3((transformedP2.x() / transformedP2.w() + 1.0f) * m_width * 0.5f,
-                                                     (transformedP2.y() / transformedP2.w() + 1.0f) * m_height * 0.5f,
+                                             Vector3((transformedP2.x() / transformedP2.w() + 1.0) * m_width * 0.5,
+                                                     (transformedP2.y() / transformedP2.w() + 1.0) * m_height * 0.5,
                                                      transformedP2.z() / transformedP2.w()),
-                                             Vector3((transformedP3.x() / transformedP3.w() + 1.0f) * m_width * 0.5f,
-                                                     (transformedP3.y() / transformedP3.w() + 1.0f) * m_height * 0.5f,
+                                             Vector3((transformedP3.x() / transformedP3.w() + 1.0) * m_width * 0.5,
+                                                     (transformedP3.y() / transformedP3.w() + 1.0) * m_height * 0.5,
                                                      transformedP3.z() / transformedP3.w()),
                                              light});
             }

@@ -97,24 +97,24 @@ namespace Crust {
         }
 
         if (n_inside_points == 1 && n_outside_points == 2) {
-            p_out_tri1.setVertex(0, *inside_points[0]);
-            p_out_tri1.setVertex(1,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]));
-            p_out_tri1.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[1]));
+            p_out_tri1.setVertex(0, inside_points[0]->x(), inside_points[0]->y(), inside_points[0]->z());
+            Vector3 p1 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]);
+            Vector3 p2 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[1]);
+            p_out_tri1.setVertex(1, p1.x(), p1.y(), p1.z());
+            p_out_tri1.setVertex(2, p2.x(), p2.y(), p2.z());
             return 1;
         }
 
         if (n_inside_points == 2 && n_outside_points == 1) {
-            p_out_tri1.setVertex(0, *inside_points[0]);
-            p_out_tri1.setVertex(1, *inside_points[1]);
-            p_out_tri1.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]));
+            p_out_tri1.setVertex(0, inside_points[0]->x(), inside_points[0]->y(), inside_points[0]->z());
+            p_out_tri1.setVertex(1, inside_points[1]->x(), inside_points[1]->y(), inside_points[1]->z());
+            Vector3 p1 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]);
+            p_out_tri1.setVertex(2, p1.x(), p1.y(), p1.z());
 
-            p_out_tri2.setVertex(0, *inside_points[1]);
-            p_out_tri2.setVertex(1, p_out_tri1.getVertex(2));
-            p_out_tri2.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[1], *outside_points[0]));
+            p_out_tri2.setVertex(0, inside_points[1]->x(), inside_points[1]->y(), inside_points[1]->z());
+            p_out_tri2.setVertex(1, p1.x(), p1.y(), p1.z());
+            Vector3 p2 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[1], *outside_points[0]);
+            p_out_tri2.setVertex(2, p2.x(), p2.y(), p2.z());
             return 2;
         }
 

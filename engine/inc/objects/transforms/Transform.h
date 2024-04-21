@@ -42,24 +42,24 @@ namespace Crust {
         /**
          * @brief Set the position of this object to given vector (x, y, z).
          */
-        virtual void setPosition(float x, float y, float z);
+        virtual void setPosition(double x, double y, double z);
 
         /**
          * @brief Set the scale of this object to given vector (x, y, z).
          */
-        virtual void setSize(float x, float y, float z);
+        virtual void setSize(double x, double y, double z);
 
         /**
          * @brief Set the euler's rotation of this object to given vector (x, y, z) in degrees.
          */
-        virtual void setEulerRotation(float x, float y, float z);
+        virtual void setEulerRotation(double x, double y, double z);
 
         /**
          * @brief Moves object by given values.
          *
          * @details Adds dX, dY and dZ to adequate values of #pos vector values.
          */
-        virtual void translate(float dX, float dY, float dZ);
+        virtual void translate(double dX, double dY, double dZ);
 
         /**
          * @brief Scales object by given values.
@@ -68,14 +68,14 @@ namespace Crust {
          * @param dY delta Y of which the scale of the object will be increased.
          * @param dZ delta Z of which the scale of the object will be increased.
          */
-        virtual void scale(float dX, float dY, float dZ);
+        virtual void scale(double dX, double dY, double dZ);
 
         /**
          * @brief Rotates object by given values.
          *
          * @details Adds dX, dY and dZ to adequate values of #rot vector values.
          */
-        virtual void rotateEuler(float dX, float dY, float dZ);
+        virtual void rotateEuler(double dX, double dY, double dZ);
 
         virtual Matrix4x4f &transformMatrix() = 0;
 

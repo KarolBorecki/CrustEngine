@@ -43,7 +43,7 @@ namespace Crust {
          * @param p_y The y coordinate of the vertex.
          * @param p_z The z coordinate of the vertex.
          */
-        inline void setVertex(uint8_t p_index, float p_x, float p_y, float p_z) {
+        inline void setVertex(uint8_t p_index, double p_x, double p_y, double p_z) {
             if (p_index >= V) { // TODO delete this check
                 ExceptionsHandler::throwError("Index out of range for polygon of size [%d]: %d", V, p_index);
             }

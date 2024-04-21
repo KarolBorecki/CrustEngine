@@ -15,7 +15,7 @@ namespace Crust {
 
         virtual void start() {};
 
-        virtual void update(float p_delta_time) {};
+        virtual void update(double p_delta_time) {};
 
         void attachTo(Entity *p_object) { m_object = p_object; }
 

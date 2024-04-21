@@ -4,7 +4,7 @@
 #include <Eigen/Dense>
 
 namespace Crust {
-    typedef Eigen::Matrix<float, 1, 4> Vector4;
+    typedef Eigen::Matrix<double, 1, 4> Vector4;
     typedef Eigen::Matrix<double, 1, 4> Vector4d;
 }
 

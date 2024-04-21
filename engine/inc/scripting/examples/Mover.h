@@ -12,7 +12,7 @@ namespace Crust {
 
         void start() override;
 
-        void update(float p_delta_time) override;
+        void update(double p_delta_time) override;
 
     private:
         float m_dx{1.0f};
@@ -22,7 +22,7 @@ namespace Crust {
 
     inline void Mover::start() {}
 
-    inline void Mover::update(float p_delta_time) {
+    inline void Mover::update(double p_delta_time) {
         if (InputHandler::isPressed(Key::KeyCode::KEY_W)) {
             m_object->transform().translate(0.0f, m_dy * p_delta_time, 0.0f);
             Logger::info("W (%d)", m_object->transform().position().x());

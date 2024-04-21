@@ -7,10 +7,6 @@
 #include "math/geometry/Triangle.h"
 #include "static/Defaults.h"
 
-namespace {
-    template<typename T = float>
-    class Vector3;
-}
 // TODO rename polygons to faces
 namespace Crust {
     /**

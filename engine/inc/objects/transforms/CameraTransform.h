@@ -19,9 +19,9 @@ namespace Crust {
         Matrix4x4f &transformMatrix() override;
 
     private:
-        static inline Matrix1x4f WORLD_RIGHT = {1.0f, 0.0f, 0.0f, 1.0f};
-        static inline Matrix1x4f WORLD_UP = {0.0f, 1.0f, 0.0f, 1.0f};
-        static inline Matrix1x4f WORLD_FORWARD = {0.0f, 0.0f, 1.0f, 1.0f};
+        static inline Matrix1x4f WORLD_RIGHT = {1.0, 0.0, 0.0, 1.0};
+        static inline Matrix1x4f WORLD_UP = {0.0, 1.0, 0.0, 1.0};
+        static inline Matrix1x4f WORLD_FORWARD = {0.0, 0.0, 1.0, 1.0};
 
         Matrix4x4f m_transform_mat;
         Matrix4x4f m_rotation_mat;

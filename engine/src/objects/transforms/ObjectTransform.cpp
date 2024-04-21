@@ -35,21 +35,21 @@ namespace Crust {
         m_rotation_z_mat(1, 0) = -Math::sin(m_rotation.z());
         m_rotation_z_mat(0, 1) = Math::sin(m_rotation.z());
         m_rotation_z_mat(1, 1) = Math::cos(m_rotation.z());
-        m_rotation_z_mat(2, 2) = 1.0f;
-        m_rotation_z_mat(3, 3) = 1.0f;
+        m_rotation_z_mat(2, 2) = 1.0;
+        m_rotation_z_mat(3, 3) = 1.0;
 
-        m_rotation_x_mat(0, 0) = 1.0f;
+        m_rotation_x_mat(0, 0) = 1.0;
         m_rotation_x_mat(1, 1) = Math::cos(m_rotation.x());
         m_rotation_x_mat(2, 1) = -Math::sin(m_rotation.x());
         m_rotation_x_mat(1, 2) = Math::sin(m_rotation.x());
         m_rotation_x_mat(2, 2) = Math::cos(m_rotation.x());
-        m_rotation_x_mat(3, 3) = 1.0f;
+        m_rotation_x_mat(3, 3) = 1.0;
 
         m_rotation_y_mat(0, 0) = Math::cos(m_rotation.y());
         m_rotation_y_mat(2, 0) = -Math::sin(m_rotation.y());
         m_rotation_y_mat(0, 2) = Math::sin(m_rotation.y());
-        m_rotation_y_mat(1, 1) = 1.0f;
+        m_rotation_y_mat(1, 1) = 1.0;
         m_rotation_y_mat(2, 2) = Math::cos(m_rotation.y());
-        m_rotation_y_mat(3, 3) = 1.0f;
+        m_rotation_y_mat(3, 3) = 1.0;
     }
 }
