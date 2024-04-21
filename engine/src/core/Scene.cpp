@@ -26,37 +26,41 @@ namespace Crust {
         if (m_started) {
             return;
         }
-        m_started = true;
-        for (auto object: m_objects) {
-                for (auto script: object->getScripts()) {
-                        script->start();
-                }
 
-        }
-        for (auto script : m_camera->getScripts()) {
+        for (auto script: m_camera->getScripts()) {
             script->start();
         }
+
+        for (auto object: m_objects) {
+            for (auto script: object->getScripts()) {
+                script->start();
+            }
+
+        }
+        m_started = true;
+
     }
 
     void Scene::update(double p_delta_time) {
+        for (auto script: m_camera->getScripts()) {
+            script->update(p_delta_time);
+        }
+
         for (auto object: m_objects) {
             for (auto script: object->getScripts()) {
                 script->update(p_delta_time);
             }
         }
-        for (auto script : m_camera->getScripts()) {
-            script->update(p_delta_time);
-        }
     }
 
     void Scene::reload() {
+        for (auto script: m_camera->getScripts()) {
+            script->reload();
+        }
         for (auto object: m_objects) {
             for (auto script: object->getScripts()) {
                 script->reload();
             }
-        }
-        for (auto script: m_camera->getScripts()) {
-            script->reload();
         }
     }
 

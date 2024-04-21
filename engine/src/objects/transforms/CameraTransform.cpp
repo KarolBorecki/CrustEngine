@@ -2,10 +2,13 @@
 
 namespace Crust {
     CameraTransform::CameraTransform() : Transform::Transform() {
+        recalculateTranslationMatrix();
+        recalculateScaleMatrix();
+        recalculateRotationMatrix();
+        recalculateTransformMatrix();
     }
 
     void CameraTransform::recalculateTransformMatrix() {
-
     }
 
     // TODO optimize
@@ -34,12 +37,12 @@ namespace Crust {
         m_rotation_y_mat(2, 2) = Math::cos(m_rotation.y());
         m_rotation_y_mat(3, 3) = 1.0f;
 
-        Matrix4x4f m_rotation_mat = m_rotation_z_mat * m_rotation_x_mat * m_rotation_y_mat;
+        m_rotation_mat = m_rotation_z_mat * m_rotation_x_mat * m_rotation_y_mat;
 
         Vector3 Q = {m_position.x(), m_position.y(), m_position.z()};
         Vector4 v4_U = WORLD_RIGHT; // X
         v4_U *= m_rotation_mat;
-        Vector4 v4_V = WORLD_UP;// Y
+        Vector4 v4_V = WORLD_UP; // Y
         v4_V *= m_rotation_mat;
         Vector4 v4_W = WORLD_FORWARD; // Z
         v4_W *= m_rotation_mat;

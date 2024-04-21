@@ -1,7 +1,7 @@
 #include "objects/transforms/Transform.h"
 
 namespace Crust {
-    Transform::Transform() : m_position({0.0f, 0.0f, 0.0f}),
+    Transform::Transform() : m_position({0.0f, 0.0f, 0.10f}),
                              m_rotation({0.0f, 0.0f, 0.0f}),
                              m_scale({1.0f, 1.0f, 1.0f}) {}
 

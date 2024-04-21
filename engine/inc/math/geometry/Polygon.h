@@ -43,14 +43,24 @@ namespace Crust {
          * @param p_y The y coordinate of the vertex.
          * @param p_z The z coordinate of the vertex.
          */
-        void setVertex(uint8_t p_index, float p_x, float p_y, float p_z) {
-            if (p_index >= V) {
+        inline void setVertex(uint8_t p_index, float p_x, float p_y, float p_z) {
+            if (p_index >= V) { // TODO delete this check
                 ExceptionsHandler::throwError("Index out of range for polygon of size [%d]: %d", V, p_index);
             }
 
             m_vertices[p_index].x() = p_x;
             m_vertices[p_index].y() = p_y;
             m_vertices[p_index].z() = p_z;
+        }
+
+        /**
+         * @brief Set the vertex at the specified index.
+         *
+         * @param p_index The index of the vertex to set.
+         * @param p_vector The vector to set.
+         */
+        inline void setVertex(uint8_t p_index, Vector3 p_vector) {
+            m_vertices[p_index] = p_vector;
         }
 
 

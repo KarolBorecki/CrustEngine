@@ -5,6 +5,7 @@ namespace Crust {
         recalculateTranslationMatrix();
         recalculateScaleMatrix();
         recalculateRotationMatrix();
+        recalculateTransformMatrix();
     }
 
     Matrix4x4f &ObjectTransform::transformMatrix() {

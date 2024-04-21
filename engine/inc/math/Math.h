@@ -4,6 +4,7 @@
 #include <cmath>
 #include "Vector3.h"
 #include "Vector4.h"
+#include "math/geometry/Triangle.h"
 
 namespace Crust {
     /**
@@ -84,6 +85,12 @@ namespace Crust {
          * @return The normal of the plane.
          */
         static Vector3 normal(const Vector3 &p_a, const Vector3 &p_b, const Vector3 &p_c);
+
+        static Vector3 v3IntersectPlane(const Vector3 &p_plane_p, const Vector3 &p_plane_n, const Vector3 &p_line_start,
+                                        const Vector3 &p_line_end);
+
+        static uint8_t triangleClipAgainstPlane(const Vector3 &p_plane_p, const Vector3 &p_plane_n, Triangle &p_in_tri,
+                                                Triangle &p_out_tri1, Triangle &p_out_tri2);
 
     public:
         static constexpr double PI{M_PI}; //!< The value of PI
