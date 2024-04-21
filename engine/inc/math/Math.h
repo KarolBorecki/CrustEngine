@@ -31,6 +31,15 @@ namespace Crust {
         static float abs(float p_a);
 
         /**
+         * @brief Returns the square root of a number.
+         *
+         * @param p_a The number to get the square root of.
+         *
+         * @return The square root of the number.
+         */
+        static float sqrt(float p_a);
+
+        /**
          * @brief Returns the radians of a number.
          *
          * @param p_degrees The number to get the radians of.

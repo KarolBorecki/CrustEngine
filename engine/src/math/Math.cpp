@@ -10,6 +10,10 @@ namespace Crust {
         return p_a < 0 ? -p_a : p_a;
     }
 
+    float Math::sqrt(float p_a) {
+        return std::sqrt(p_a);
+    }
+
     float Math::degreesToRadians(int p_degrees) {
         return p_degrees * (Math::PI / 180.0);
     }
@@ -51,71 +55,74 @@ namespace Crust {
                                            Crust::Triangle &p_out_tri2) {
         Vector3 plane_n = p_plane_n.normalized();
 
-        auto dist = [&](const Vector3 &p_point) {
+        // Return signed shortest distance from point to plane, plane normal must be normalised
+        auto distance_from_plane = [&](const Vector3 &p_point) {
             return plane_n.dot(p_point) - plane_n.dot(p_plane_p);
-//            Vector3 n = p_point.normalized();
-//            return (plane_n.x() * p_point.x() + plane_n.y() * p_point.y() + plane_n.z() * p_point.z() -
-//                    plane_n.dot(p_plane_p));
         };
 
-        Vector3 inside_points[3];
-        int nInsidePointCount = 0;
-        Vector3 outside_points[3];
-        int nOutsidePointCount = 0;
+        Vector3 *inside_points[3];
+        Vector3 *outside_points[3];
+        uint8_t n_inside_points = 0;
+        uint8_t n_outside_points = 0;
 
-        float d0 = dist(p_in_tri.getVertex(0));
-        float d1 = dist(p_in_tri.getVertex(1));
-        float d2 = dist(p_in_tri.getVertex(2));
+        float d0 = distance_from_plane(p_in_tri.getVertex(0));
+        float d1 = distance_from_plane(p_in_tri.getVertex(1));
+        float d2 = distance_from_plane(p_in_tri.getVertex(2));
 
         if (d0 >= 0) {
-            inside_points[nInsidePointCount++] = p_in_tri.getVertex(0);
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(0);
         } else {
-            outside_points[nOutsidePointCount++] = p_in_tri.getVertex(0);
-        }
-        if (d1 >= 0) {
-            inside_points[nInsidePointCount++] = p_in_tri.getVertex(1);
-        } else {
-            outside_points[nOutsidePointCount++] = p_in_tri.getVertex(1);
-        }
-        if (d2 >= 0) {
-            inside_points[nInsidePointCount++] = p_in_tri.getVertex(2);
-        } else {
-            outside_points[nOutsidePointCount++] = p_in_tri.getVertex(2);
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(0);
         }
 
-        if (nInsidePointCount == 0) {
+        if (d1 >= 0) {
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(1);
+        } else {
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(1);
+        }
+
+        if (d2 >= 0) {
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(2);
+        } else {
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(2);
+        }
+
+        for (uint8_t i = 0; i < n_inside_points; i++) {
+            std::cout << "inside_points: " << *inside_points[i] << std::endl;
+        }
+        std::cout << std::endl;
+        for (uint8_t i = 0; i < n_outside_points; i++) {
+            std::cout << "outside_points: " << *outside_points[i] << std::endl;
+        }
+
+        if (n_inside_points == 0) {
             return 0;
         }
-        if (nInsidePointCount == 3) {
-            p_out_tri1.setVertex(0, p_in_tri.getVertex(0));
-            p_out_tri1.setVertex(1, p_in_tri.getVertex(1));
-            p_out_tri1.setVertex(2, p_in_tri.getVertex(2));
-            return 1;
-        }
-        if (nInsidePointCount == 1 && nOutsidePointCount == 2) {
-            p_out_tri1.setVertex(0, inside_points[0]);
-            p_out_tri1.setVertex(1,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, inside_points[0], outside_points[0]));
-            p_out_tri1.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, inside_points[0], outside_points[1]));
-            std::cout << "p_out_tri1: " << p_out_tri1.getVertex(0) << " - " << p_out_tri1.getVertex(1) << " - "
-                      << p_out_tri1.getVertex(2) << std::endl;
-            return 1;
-        }
-        if (nInsidePointCount == 2 && nOutsidePointCount == 1) {
-            p_out_tri1.setVertex(0, inside_points[0]);
-            p_out_tri1.setVertex(1, inside_points[1]);
-            p_out_tri1.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, inside_points[0], outside_points[0]));
 
-            p_out_tri2.setVertex(0, inside_points[1]);
+        if (n_inside_points == 3) {
+            p_out_tri1 = p_in_tri;
+            return 1;
+        }
+
+        if (n_inside_points == 1 && n_outside_points == 2) {
+            p_out_tri1.setVertex(0, *inside_points[0]);
+            p_out_tri1.setVertex(1,
+                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]));
+            p_out_tri1.setVertex(2,
+                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[1]));
+            return 1;
+        }
+
+        if (n_inside_points == 2 && n_outside_points == 1) {
+            p_out_tri1.setVertex(0, *inside_points[0]);
+            p_out_tri1.setVertex(1, *inside_points[1]);
+            p_out_tri1.setVertex(2,
+                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]));
+
+            p_out_tri2.setVertex(0, *inside_points[1]);
             p_out_tri2.setVertex(1, p_out_tri1.getVertex(2));
             p_out_tri2.setVertex(2,
-                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, inside_points[1], outside_points[0]));
-            std::cout << "p_out_tri1: " << p_out_tri1.getVertex(0) << " - " << p_out_tri1.getVertex(1) << " - "
-                      << p_out_tri1.getVertex(2) << std::endl;
-            std::cout << "p_out_tri2: " << p_out_tri2.getVertex(0) << " - " << p_out_tri2.getVertex(1) << " - "
-                      << p_out_tri2.getVertex(2) << std::endl;
+                                 Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[1], *outside_points[0]));
             return 2;
         }
 
