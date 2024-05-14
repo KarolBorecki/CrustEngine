@@ -5,6 +5,7 @@
 #include "Object.h"
 #include "Mesh.h"
 #include "files/MeshLoader.h"
+#include "materials/Material.h"
 
 namespace Crust {
     /**
@@ -31,8 +32,16 @@ namespace Crust {
          */
         Mesh &getMesh();
 
+        /**
+         * @brief Get the material of the object.
+         *
+         * @return The material of the object.
+         */
+        Material &getMaterial();
+
     private:
         Mesh m_mesh; /** !< The mesh to render. */
+        Material m_material; /** !< The material of the object. */
     };
 }
 

@@ -52,7 +52,7 @@ namespace Crust {
 
             Triangle out[2];
 
-            uint8_t n_clipped_triangles = Math::triangleClipAgainstPlane(p_n, n, tri, out[0], out[1]);
+            uint8_t n_clipped_triangles = Math::triangle3DClipAgainstPlane(p_n, n, tri, out[0], out[1]);
 
             for (uint8_t n = 0; n < n_clipped_triangles; n++) {
                 tri = out[n];
@@ -91,6 +91,10 @@ namespace Crust {
                                              Vector3((transformedP3.x() / transformedP3.w() + 1.0) * m_width * 0.5,
                                                      (transformedP3.y() / transformedP3.w() + 1.0) * m_height * 0.5,
                                                      transformedP3.z() / transformedP3.w()),
+                                             p_object.getMaterial().getDiffuse().r,
+                                             p_object.getMaterial().getDiffuse().g,
+                                             p_object.getMaterial().getDiffuse().b,
+                                             p_object.getMaterial().getDiffuse().a,
                                              light});
             }
 

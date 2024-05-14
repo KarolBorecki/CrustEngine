@@ -19,6 +19,7 @@ namespace Crust {
             Vector3 v1;
             Vector3 v2;
             Vector3 v3;
+            uint8_t r, g, b, a;
             uint8_t light = 0;
         } ProjectionData_t;
 
@@ -64,6 +65,52 @@ namespace Crust {
          * @return std::vector<ProjectionData_t> The projection data.
          */
         inline virtual std::vector<ProjectionData_t> retrieveProjections() {
+//            uint32_t size = m_projection_data.size();
+//            static Triangle out_tri_1;
+//            static Triangle out_tri_2;
+//            static Triangle clipped_tri;
+//            static Triangle edge_tri;
+//            for (uint32_t i = 0; i < m_projection_data.size(); i++) {
+//                clipped_tri.setVertex(0, m_projection_data[i].v1);
+//                clipped_tri.setVertex(1, m_projection_data[i].v2);
+//                clipped_tri.setVertex(2, m_projection_data[i].v3);
+//                for (uint32_t j = i; j < size; j++) {
+//                    uint8_t n_clipped_triangles = Math::triangle3DClipAgainstPlane(m_projection_data[j].v1,
+//                                                                                   m_projection_data[j].v2,
+//                                                                                   clipped_tri,
+//                                                                                   out_tri_1,
+//                                                                                   out_tri_2);
+//                    if (n_clipped_triangles == 0) {
+//                        continue;
+//                    }
+//
+//                    if (n_clipped_triangles == 1) {
+//                        m_projection_data[i].v1 = out_tri_1.getVertex(0);
+//                        m_projection_data[i].v2 = out_tri_1.getVertex(1);
+//                        m_projection_data[i].v3 = out_tri_1.getVertex(2);
+//                    } else {
+//                        m_projection_data[i].v1 = out_tri_1.getVertex(0);
+//                        m_projection_data[i].v2 = out_tri_1.getVertex(1);
+//                        m_projection_data[i].v3 = out_tri_1.getVertex(2);
+//                        m_projection_data.push_back({out_tri_1.getVertex(0), out_tri_1.getVertex(1),
+//                                                     out_tri_1.getVertex(2), m_projection_data[i].r,
+//                                                     m_projection_data[i].g, m_projection_data[i].b,
+//                                                     m_projection_data[i].a,
+//                                                     m_projection_data[i].light});
+//                        m_projection_data.push_back({out_tri_2.getVertex(0), out_tri_2.getVertex(1),
+//                                                     out_tri_2.getVertex(2), m_projection_data[i].r,
+//                                                     m_projection_data[i].g, m_projection_data[i].b,
+//                                                     m_projection_data[i].a,
+//                                                     m_projection_data[i].light});
+//                        m_projection_data.push_back({out_tri_1.getVertex(0), out_tri_1.getVertex(1),
+//                                                     out_tri_1.getVertex(2), m_projection_data[i].r,
+//                                                     m_projection_data[i].g, m_projection_data[i].b,
+//                                                     m_projection_data[i].a,
+//                                                     m_projection_data[i].light});
+//                    }
+//                }
+//            }
+
             sort(m_projection_data.begin(), m_projection_data.end(),
                  [](const AbstractProjector::ProjectionData &a, const AbstractProjector::ProjectionData &b) {
                      /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */

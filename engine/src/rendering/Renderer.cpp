@@ -34,11 +34,12 @@ namespace Crust {
         for (auto data: m_projector->retrieveProjections()) {
 #ifndef CRUST_RENDERER_DRAW_WIREFRAME
             m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(),
-                                  data.light);
+                                  data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255,
+                                  data.a);
 #else
-            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.light);
-            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.light);
-            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.light);
+            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a);
+            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a;
+            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a);
 #endif
         }
 

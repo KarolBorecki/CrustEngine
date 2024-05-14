@@ -104,9 +104,13 @@ namespace Crust {
          *
          * @param p_x The x position of the triangle's point.
          * @param p_y The y position of the triangle's point.
-         * @param p_shade The color of the pixel in greyscale.
+         * @param r The red color of the pixel. 0-255.
+         * @param g The green color of the pixel. 0-255.
+         * @param b The blue color of the pixel. 0-255.
+         * @param a The alpha color of the pixel. 0-255.
          */
-        void drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t p_shade);
+        void drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t r, uint8_t g,
+                          uint8_t b, uint8_t a);
 
         /**
          * @brief Draw a hollow triangle on the window in greyscale.
@@ -115,10 +119,14 @@ namespace Crust {
          *
          * @param p_x1 The x position of the triangle's point.
          * @param p_y1 The y position of the triangle's point.
-         * @param p_shade The color of the pixel in greyscale.
+         * @param r The red color of the pixel. 0-255.
+         * @param g The green color of the pixel. 0-255.
+         * @param b The blue color of the pixel. 0-255.
+         * @param a The alpha color of the pixel. 0-255.
          */
         void
-        drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t p_shade);
+        drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t r, uint8_t g,
+                           uint8_t b, uint8_t a);
 
         /**
          * @brief Draw a line on the window in greyscale.
@@ -129,9 +137,13 @@ namespace Crust {
          * @param p_y1 The y position of the line's start.
          * @param p_x2 The x position of the line's end.
          * @param p_y2 The y position of the line's end.
-         * @param p_shade The color of the line in greyscale.
+         * @param r The red color of the pixel. 0-255.
+         * @param g The green color of the pixel. 0-255.
+         * @param b The blue color of the pixel. 0-255.
+         * @param a The alpha color of the pixel. 0-255.
          */
-        void drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t p_shade);
+        void drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t r, uint8_t g, uint8_t b,
+                      uint8_t a);
 
     private:
         uint16_t m_width{0}; /**< Width of the window. */

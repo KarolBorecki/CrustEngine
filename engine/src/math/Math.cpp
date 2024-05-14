@@ -1,6 +1,8 @@
 #include "math/Math.h"
 #include <iostream>
 
+#include <iomanip> // TODO delete
+
 namespace Crust {
     bool Math::equal(float p_a, float p_b, float p_epsilon) {
         return Math::abs(p_a - p_b) < p_epsilon;
@@ -50,9 +52,29 @@ namespace Crust {
         return p_line_start + (p_line_end - p_line_start) * p_t;
     }
 
-    uint8_t Math::triangleClipAgainstPlane(const Crust::Vector3 &p_plane_p, const Crust::Vector3 &p_plane_n,
-                                           Crust::Triangle &p_in_tri, Crust::Triangle &p_out_tri1,
-                                           Crust::Triangle &p_out_tri2) {
+    Vector3 Math::v3IntersectEdge(const Vector3 &p_edge_start, const Vector3 &p_edge_end,
+                                  const Vector3 &p_line_start, const Vector3 &p_line_end) {
+
+        float a1 = (p_edge_end.y() - p_edge_start.y()) / (p_edge_end.x() - p_edge_start.x());
+        float b1 = p_edge_start.y() - a1 * p_edge_start.x();
+        float a2 = (p_line_end.y() - p_line_start.y()) / (p_line_end.x() - p_line_start.x());
+        float b2 = p_line_start.y() - a2 * p_line_start.x();
+
+        if (a1 == a2) {
+            // Odcinki są równoległe lub współliniowe
+            return Vector3(); // Zwróć pusty wektor
+        }
+
+        float x = (b2 - b1) / (a1 - a2);
+        float y = a1 * x + b1;
+
+        return Vector3(x, y, (p_line_start.z() + p_line_end.z()) / 2.0);
+    }
+
+
+    uint8_t Math::triangle3DClipAgainstPlane(const Crust::Vector3 &p_plane_p, const Crust::Vector3 &p_plane_n,
+                                             Crust::Triangle &p_in_tri, Crust::Triangle &p_out_tri1,
+                                             Crust::Triangle &p_out_tri2) {
         Vector3 plane_n = p_plane_n.normalized();
 
         // Return signed shortest distance from point to plane, plane normal must be normalised
@@ -97,11 +119,11 @@ namespace Crust {
         }
 
         if (n_inside_points == 1 && n_outside_points == 2) {
-            p_out_tri1.setVertex(0, inside_points[0]->x(), inside_points[0]->y(), inside_points[0]->z());
+            p_out_tri1.setVertex(0, *inside_points[0]);
             Vector3 p1 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]);
             Vector3 p2 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[1]);
-            p_out_tri1.setVertex(1, p1.x(), p1.y(), p1.z());
-            p_out_tri1.setVertex(2, p2.x(), p2.y(), p2.z());
+            p_out_tri1.setVertex(1, p1);
+            p_out_tri1.setVertex(2, p2);
             return 1;
         }
 
@@ -109,15 +131,110 @@ namespace Crust {
             Vector3 p1 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[0], *outside_points[0]);
             Vector3 p2 = Math::v3IntersectPlane(p_plane_p, p_plane_n, *inside_points[1], *outside_points[0]);
 
-            p_out_tri1.setVertex(2, inside_points[1]->x(), inside_points[1]->y(), inside_points[1]->z());
-            p_out_tri1.setVertex(1, p1.x(), p1.y(), p1.z());
-            p_out_tri1.setVertex(0, inside_points[0]->x(), inside_points[0]->y(), inside_points[0]->z());
+            p_out_tri1.setVertex(2, *inside_points[1]);
+            p_out_tri1.setVertex(1, p1);
+            p_out_tri1.setVertex(0, *inside_points[0]);
 
-            p_out_tri2.setVertex(2, inside_points[1]->x(), inside_points[1]->y(), inside_points[1]->z());
-            p_out_tri2.setVertex(1, p2.x(), p2.y(), p2.z());
-            p_out_tri2.setVertex(0, p1.x(), p1.y(), p1.z());
+            p_out_tri2.setVertex(2, *inside_points[1]);
+            p_out_tri2.setVertex(1, p2);
+            p_out_tri2.setVertex(0, p1);
             return 2;
         }
 
+        return 0;
+    }
+
+    uint8_t Math::triangle2DClipAgainstEdge(const Vector3 &p_edge_p1, const Vector3 &p_edge_p2,
+                                            Triangle &p_in_tri,
+                                            Triangle &p_out_tri1, Triangle &p_out_tri2, Triangle &p_out_tri3) {
+        Vector3 *inside_points[3];
+        Vector3 *outside_points[3];
+        uint8_t n_inside_points = 0;
+        uint8_t n_outside_points = 0;
+
+        auto distance_from_edge = [&](const Vector3 &p_point) {
+            return (p_edge_p2.x() - p_edge_p1.x()) * (p_point.y() - p_edge_p1.y()) -
+                   (p_edge_p2.y() - p_edge_p1.y()) * (p_point.x() - p_edge_p1.x());
+        };
+
+        float d1 = distance_from_edge(p_in_tri.getVertex(0));
+        float d2 = distance_from_edge(p_in_tri.getVertex(1));
+        float d3 = distance_from_edge(p_in_tri.getVertex(2));
+
+        if (d1 >= 0) {
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(0);
+        } else {
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(0);
+        }
+
+        if (d2 >= 0) {
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(1);
+        } else {
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(1);
+        }
+
+        if (d3 >= 0) {
+            inside_points[n_inside_points++] = &p_in_tri.getVertex(2);
+        } else {
+            outside_points[n_outside_points++] = &p_in_tri.getVertex(2);
+        }
+
+        if (n_inside_points == 0) {
+            return 0;
+        }
+
+        if (n_inside_points == 3) {
+            p_out_tri1 = p_in_tri;
+            return 1;
+        }
+
+        if (n_inside_points == 1 && n_outside_points == 2) {
+            std::cout << "n_inside_points == 1 && n_outside_points == 2" << std::endl;
+            Vector3 p1 = Math::v3IntersectEdge(p_edge_p1, p_edge_p2, *inside_points[0], *outside_points[0]);
+            Vector3 p2 = Math::v3IntersectEdge(p_edge_p1, p_edge_p2, *inside_points[0], *outside_points[1]);
+            std::cout << std::fixed << std::setprecision(4) << "p1: " << p1.x() << " " << p1.y() << " " << p1.z()
+                      << std::endl;
+            std::cout << std::fixed << std::setprecision(4) << "p2: " << p2.x() << " " << p2.y() << " " << p2.z()
+                      << std::endl;
+            p_out_tri1.setVertex(0, *outside_points[0]);
+            p_out_tri1.setVertex(1, p1);
+            p_out_tri1.setVertex(2, *outside_points[1]);
+
+            p_out_tri2.setVertex(0, p1);
+            p_out_tri2.setVertex(1, p2);
+            p_out_tri2.setVertex(2, *outside_points[1]);
+
+            p_out_tri3.setVertex(0, p2);
+            p_out_tri3.setVertex(1, p1);
+            p_out_tri3.setVertex(2, *inside_points[0]);
+
+            return 3;
+        }
+
+        if (n_inside_points == 2 && n_outside_points == 1) {
+            std::cout << "n_inside_points == 2 && n_outside_points == 1" << std::endl;
+            Vector3 p1 = Math::v3IntersectEdge(p_edge_p1, p_edge_p2, *inside_points[0], *outside_points[0]);
+            Vector3 p2 = Math::v3IntersectEdge(p_edge_p1, p_edge_p2, *inside_points[1], *outside_points[0]);
+            std::cout << std::fixed << std::setprecision(4) << "p1: " << p1.x() << " " << p1.y() << " " << p1.z()
+                      << std::endl;
+            std::cout << std::fixed << std::setprecision(4) << "p2: " << p2.x() << " " << p2.y() << " " << p2.z()
+                      << std::endl;
+
+            p_out_tri1.setVertex(1, p1);
+            p_out_tri1.setVertex(2, p2);
+            p_out_tri1.setVertex(0, *outside_points[0]);
+
+            p_out_tri2.setVertex(0, p1);
+            p_out_tri2.setVertex(1, *inside_points[1]);
+            p_out_tri2.setVertex(2, p2);
+
+            p_out_tri3.setVertex(0, p1);
+            p_out_tri3.setVertex(1, *inside_points[0]);
+            p_out_tri3.setVertex(2, *inside_points[1]);
+
+            return 3;
+        }
+
+        return 0;
     }
 }

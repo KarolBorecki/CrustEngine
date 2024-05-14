@@ -49,7 +49,7 @@ namespace Crust {
     }
 
     void Library2DWrapper::drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
-                                        uint8_t p_shade) {
+                                        uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
         p_x1 = m_width - p_x1;
         p_y1 = m_height - p_y1;
         p_x2 = m_width - p_x2;
@@ -61,17 +61,17 @@ namespace Crust {
                 {
                         {
                                 SDL_FPoint{p_x1, p_y1},
-                                SDL_Color{p_shade, p_shade, p_shade, 255},
+                                SDL_Color{r, g, b, a},
                                 SDL_FPoint{0},
                         },
                         {
                                 SDL_FPoint{p_x2, p_y2},
-                                SDL_Color{p_shade, p_shade, p_shade, 255},
+                                SDL_Color{r, g, b, a},
                                 SDL_FPoint{0},
                         },
                         {
                                 SDL_FPoint{p_x3, p_y3},
-                                SDL_Color{p_shade, p_shade, p_shade, 255},
+                                SDL_Color{r, g, b, a},
                                 SDL_FPoint{0},
                         },
                 };
@@ -79,36 +79,15 @@ namespace Crust {
     }
 
     void Library2DWrapper::drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
-                                              uint8_t p_shade) {
-        p_x1 = m_width - p_x1;
-        p_y1 = m_height - p_y1;
-        p_x2 = m_width - p_x2;
-        p_y2 = m_height - p_y2;
-        p_x3 = m_width - p_x3;
-        p_y3 = m_height - p_y3;
-
-        SDL_Vertex verts[3] =
-                {
-                        {
-                                SDL_FPoint{p_x1, p_y1},
-                                SDL_Color{p_shade, p_shade, p_shade, 0},
-                                SDL_FPoint{0},
-                        },
-                        {
-                                SDL_FPoint{p_x2, p_y2},
-                                SDL_Color{p_shade, p_shade, p_shade, 0},
-                                SDL_FPoint{0},
-                        },
-                        {
-                                SDL_FPoint{p_x3, p_y3},
-                                SDL_Color{p_shade, p_shade, p_shade, 0},
-                                SDL_FPoint{0},
-                        },
-                };
-        SDL_RenderGeometry(m_renderer, nullptr, verts, 3, nullptr, 0);
+                                              uint8_t r, uint8_t g,
+                                              uint8_t b, uint8_t a) {
+        drawLine(p_x1, p_y1, p_x2, p_y2, r, g, b, a);
+        drawLine(p_x2, p_y2, p_x3, p_y3, r, g, b, a);
+        drawLine(p_x3, p_y3, p_x1, p_y1, r, g, b, a);
     }
 
-    void Library2DWrapper::drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t p_shade) {
+    void Library2DWrapper::drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t r, uint8_t g,
+                                    uint8_t b, uint8_t a) {
         p_x1 = m_width - p_x1;
         p_y1 = m_height - p_y1;
         p_x2 = m_width - p_x2;
@@ -118,7 +97,7 @@ namespace Crust {
             p_y2 > m_height)
             return;
 
-        SDL_SetRenderDrawColor(m_renderer, 0xFF, p_shade, p_shade, 0xFF);
+        SDL_SetRenderDrawColor(m_renderer, r, g, b, a);
         SDL_RenderDrawLine(m_renderer, p_x1, p_y1, p_x2, p_y2);
     }
 }

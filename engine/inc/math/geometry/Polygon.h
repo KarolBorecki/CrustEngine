@@ -59,7 +59,7 @@ namespace Crust {
          * @param p_index The index of the vertex to set.
          * @param p_vector The vector to set.
          */
-        inline void setVertex(uint8_t p_index, Vector3 p_vector) {
+        inline void setVertex(uint8_t p_index, const Vector3 &p_vector) {
             m_vertices[p_index] = p_vector;
         }
 
