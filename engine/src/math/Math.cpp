@@ -72,20 +72,32 @@ namespace Crust {
                                   const Vector3 &p_line_start, const Vector3 &p_line_end,
                                   const Vector3 &p_default_value) {
 
-        float a1 = (p_edge_end.y() - p_edge_start.y()) / (p_edge_end.x() - p_edge_start.x());
-        float b1 = p_edge_start.y() - a1 * p_edge_start.x();
-        float a2 = (p_line_end.y() - p_line_start.y()) / (p_line_end.x() - p_line_start.x());
-        float b2 = p_line_start.y() - a2 * p_line_start.x();
+        double a1 = (p_edge_end.y() - p_edge_start.y()) / (p_edge_end.x() - p_edge_start.x());
+        double b1 = p_edge_start.y() - a1 * p_edge_start.x();
+        double a2 = (p_line_end.y() - p_line_start.y()) / (p_line_end.x() - p_line_start.x());
+        double b2 = p_line_start.y() - a2 * p_line_start.x();
 
         if (a1 == a2) {
 //            Logger::warning("Lines are parallel or collinear!");
             return p_default_value;
         }
 
-        float x = (b2 - b1) / (a1 - a2);
-        float y = a1 * x + b1;
+        double x = (b2 - b1) / (a1 - a2);
+        double y = a1 * x + b1;
+        if (!(x > p_edge_start.x() && x > p_edge_end.x()) && !(x < p_edge_start.x() && x < p_edge_end.x()) &&
+            !(x > p_line_start.x() && x > p_line_end.x()) && !(x < p_line_start.x() && x < p_line_end.x()) &&
+            !(y > p_edge_start.y() && y > p_edge_end.y()) && !(y < p_edge_start.y() && y < p_edge_end.y()) &&
+            !(y > p_line_start.y() && y > p_line_end.y()) && !(y < p_line_start.y() && y < p_line_end.y())) {
 
-        return Vector3(x, y, (p_line_start.z() + p_line_end.z()) / 2.0);
+            return Vector3(x, y, (p_line_start.z() + p_line_end.z()) / 2.0);
+        }
+
+//        if ((x > p_edge_start.x() && x < p_edge_end.x() && x < p_line_end.x() && x > p_line_start.x() &&
+//             y < p_edge_end.y() && y > p_edge_start.y() && y < p_line_end.y() && y > p_line_start.y())) {
+//
+//            return Vector3(x, y, (p_line_start.z() + p_line_end.z()) / 2.0);
+//        }
+        return p_default_value;
     }
 
 
@@ -178,9 +190,9 @@ namespace Crust {
                                Math::pow2(p_edge_p2.y() - p_edge_p1.y())));
         };
 
-        float d1 = distance_from_edge(p_in_tri.getVertex(0));
-        float d2 = distance_from_edge(p_in_tri.getVertex(1));
-        float d3 = distance_from_edge(p_in_tri.getVertex(2));
+        double d1 = distance_from_edge(p_in_tri.getVertex(0));
+        double d2 = distance_from_edge(p_in_tri.getVertex(1));
+        double d3 = distance_from_edge(p_in_tri.getVertex(2));
 
 //        std::cout << "distance from edge 1: " << d1 << std::endl;
 //        std::cout << "distance from edge 2: " << d2 << std::endl;
@@ -210,22 +222,23 @@ namespace Crust {
             line_points[n_line_points++] = &p_in_tri.getVertex(2);
         }
 
-        if (n_inside_points == 3 || n_outside_points == 3 || n_line_points == 2) {
+        if (n_inside_points == 3 || n_outside_points == 3 || n_line_points == 2 ||
+            (n_line_points == 1 && n_inside_points == 2) || (n_line_points == 1 && n_outside_points == 2)) {
             p_out_tri1 = p_in_tri;
-            return 1;
+            return 0;
         }
 
-        if (n_inside_points == 1 && n_outside_points == 1) {
+        if (n_line_points == 1 && n_inside_points == 1 && n_outside_points == 1) {
             Vector3 p1 = Math::v3IntersectEdge(p_edge_p1, p_edge_p2, *inside_points[0], *outside_points[0],
                                                *outside_points[0]);
 
-            p_out_tri1.setVertex(0, *outside_points[0]);
-            p_out_tri1.setVertex(1, p1);
-            p_out_tri1.setVertex(2, *line_points[0]);
+            p_out_tri1.setVertex(0, *line_points[0]);
+            p_out_tri1.setVertex(1, *inside_points[0]);
+            p_out_tri1.setVertex(2, p1);
 
-            p_out_tri1.setVertex(0, *inside_points[0]);
-            p_out_tri1.setVertex(1, p1);
-            p_out_tri1.setVertex(2, *line_points[0]);
+            p_out_tri2.setVertex(0, *line_points[0]);
+            p_out_tri2.setVertex(1, p1);
+            p_out_tri2.setVertex(2, *outside_points[0]);
 
             return 2;
         }
@@ -273,7 +286,7 @@ namespace Crust {
         }
 
         p_out_tri1 = p_in_tri;
-        return 1;
+        return 0;
     }
 
     uint8_t Math::triangle2DClipAgainstTriangle(Triangle &p_clip_tri, Triangle &p_in_tri,
