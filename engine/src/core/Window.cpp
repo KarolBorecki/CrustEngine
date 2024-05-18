@@ -47,7 +47,6 @@ namespace Crust {
                 m_scene->update(m_time_provider.getDeltaTime_s());
                 m_renderer.renderScene(*m_scene);
             }
-
             m_time_provider.onFrameEnd();
         }
         close();

@@ -2,11 +2,13 @@
 
 namespace Crust {
     Renderer::Renderer() : m_width(0), m_height(0), m_lib_2d() {
-        setProjector(Projection::PERSPECTIVE);
+        Crust::Status status = setProjector(Projection::PERSPECTIVE);
+        if (status != Crust::Status::OK) Logger::error("Failed to set projector!");
     }
 
     Renderer::Renderer(uint16_t p_width, uint16_t p_height) : m_width(p_width), m_height(p_height), m_lib_2d() {
-        setProjector(Projection::PERSPECTIVE); // TODO delete
+        Crust::Status status = setProjector(Projection::PERSPECTIVE); // TODO delete
+        if (status != Crust::Status::OK) Logger::error("Failed to set projector!");
     }
 
     Renderer::~Renderer() {
@@ -37,9 +39,12 @@ namespace Crust {
                                   data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255,
                                   data.a);
 #else
-            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a);
-            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a;
-            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255, data.a);
+            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255,
+                              data.g * data.light / 255, data.b * data.light / 255, data.a);
+            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255,
+                              data.g * data.light / 255, data.b * data.light / 255, data.a);
+            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255,
+                              data.g * data.light / 255, data.b * data.light / 255, data.a);
 #endif
         }
 

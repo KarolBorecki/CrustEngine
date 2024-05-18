@@ -22,6 +22,27 @@ namespace Crust {
         static bool equal(float p_a, float p_b, float p_epsilon = DOUBLE_DEFAULT_DELTA);
 
         /**
+         * @brief Compares two vectors to determin wheter they are equal.
+         *
+         * @param p_a The first vector to compare.
+         * @param p_b The second vector to compare.
+         * @param p_epsilon The margin of error.
+         *
+         * @return True if the vectors are equal, false otherwise.
+         */
+        static bool vectorEqual(const Vector3 &p_a, const Vector3 &p_b, float p_epsilon = DOUBLE_DEFAULT_DELTA);
+
+        /**
+         * @brief Determines whether a vector is a zero vector equal to {0.0, 0.0, 0.0}.
+         *
+         * @param p_a The first vector to compare.
+         * @param p_epsilon The margin of error.
+         *
+         * @return True if the vector is a zero vector, false otherwise.
+         */
+        static bool isVectorZero(const Vector3 &p_a, float p_epsilon = DOUBLE_DEFAULT_DELTA);
+
+        /**
          * @brief Gets the absolute value of a number.
          *
          * @param p_a The number to get the absolute value of.
@@ -29,6 +50,15 @@ namespace Crust {
          * @return The absolute value of the number.
          */
         static float abs(float p_a);
+
+        /**
+         * @brief Returns the power of 2 of a number.
+         *
+         * @param p_a The number to get the power of 2 of.
+         *
+         * @return The power of 2 of the number.
+         */
+        static float pow2(float p_a);
 
         /**
          * @brief Returns the square root of a number.
@@ -96,17 +126,34 @@ namespace Crust {
         static Vector3 normal(const Vector3 &p_a, const Vector3 &p_b, const Vector3 &p_c);
 
         static Vector3 v3IntersectPlane(const Vector3 &p_plane_p, const Vector3 &p_plane_n,
-                                        const Vector3 &p_line_start, const Vector3 &p_line_end);
+                                        const Vector3 &p_line_start, Vector3 &p_line_end);
 
+        /**
+         * @brief Returns the intersection of an edge and a line.
+         *
+         * @param p_edge_start The start of the edge. Against this edge the line will be clipped.
+         * @param p_edge_end The end of the edge. Against this edge the line will be clipped.
+         * @param p_line_start The start of the line. This line will be clipped.
+         * @param p_line_end The end of the line. This line will be clipped.
+         * @param p_default_value The default value to return if the intersection is not possible.
+         *
+         * @return The intersection of the edge and the line.
+         */
         static Vector3 v3IntersectEdge(const Vector3 &p_edge_start, const Vector3 &p_edge_end,
-                                       const Vector3 &p_line_start, const Vector3 &p_line_end);
+                                       const Vector3 &p_line_start, const Vector3 &p_line_end,
+                                       const Vector3 &p_default_value = Vector3Zero);
 
         static uint8_t triangle3DClipAgainstPlane(const Vector3 &p_plane_p, const Vector3 &p_plane_n,
                                                   Triangle &p_in_tri, Triangle &p_out_tri1, Triangle &p_out_tri2);
 
-        static uint8_t triangle2DClipAgainstEdge(const Vector3 &p_edge_p1, const Vector3 &p_edge_p2,
+        static uint8_t triangle2DClipAgainstEdge(Vector3 &p_edge_p1, Vector3 &p_edge_p2,
                                                  Triangle &p_in_tri,
                                                  Triangle &p_out_tri1, Triangle &p_out_tri2, Triangle &p_out_tri3);
+
+        static uint8_t triangle2DClipAgainstTriangle(Triangle &p_clip_tri, Triangle &p_in_tri,
+                                                     Triangle &p_out_tri1, Triangle &p_out_tri2, Triangle &p_out_tri3,
+                                                     Triangle &p_out_tri4, Triangle &p_out_tri5, Triangle &p_out_tri6,
+                                                     Triangle &p_out_tri7, Triangle &p_out_tri8, Triangle &p_out_tri9);
 
     public:
         static constexpr double PI{M_PI}; //!< The value of PI
