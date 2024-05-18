@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     uint8_t cube_count_y = 2;
     uint8_t cube_count_z = 2;
     float cube_size = 0.3;
-    float cube_spacing = 0.605; // cubes are of size 2
+    float cube_spacing = 0.607; // cubes are of size 2
     for (uint8_t x = 0; x < cube_count_x; x++) {
         for (uint8_t y = 0; y < cube_count_y; y++) {
             for (uint8_t z = 0; z < cube_count_z; z++) {
