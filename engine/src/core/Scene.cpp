@@ -92,6 +92,10 @@ namespace Crust {
         return m_lights;
     }
 
+    uint8_t Scene::getAmbientIntensivity() const {
+        return m_ambient_intensivity;
+    }
+
     std::vector<RenderObject *> Scene::getRenderObjects() const {
         return m_render_objects;
     }

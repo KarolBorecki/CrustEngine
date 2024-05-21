@@ -32,7 +32,7 @@ namespace Crust {
 
         void setupCamera(Camera &camera) override;
 
-        void setupLightning(LightSource &p_light) override;
+        void setupLightning(LightSource &p_light, uint8_t p_ambient_light) override;
 
         void project(RenderObject &p_object) override;
     };

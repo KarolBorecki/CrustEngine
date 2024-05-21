@@ -24,31 +24,31 @@ namespace Crust {
         return p_a < 0 ? -p_a : p_a;
     }
 
-    float Math::pow2(float p_a) {
+    double Math::pow2(double p_a) {
         return p_a * p_a;
     }
 
-    float Math::sqrt(float p_a) {
+    double Math::sqrt(double p_a) {
         return std::sqrt(p_a);
     }
 
-    float Math::degreesToRadians(int p_degrees) {
+    double Math::degreesToRadians(int p_degrees) {
         return p_degrees * (Math::PI / 180.0);
     }
 
-    int Math::radiansToDegrees(float p_radians) {
+    int Math::radiansToDegrees(double p_radians) {
         return p_radians * (180.0 / Math::PI);
     }
 
-    float Math::tan(float p_t) {
+    double Math::tan(double p_t) {
         return std::tan(p_t);
     }
 
-    float Math::sin(float p_t) {
+    double Math::sin(double p_t) {
         return std::sin(p_t);
     }
 
-    float Math::cos(float p_t) {
+    double Math::cos(double p_t) {
         return std::cos(p_t);
     }
 
@@ -313,5 +313,40 @@ namespace Crust {
                                                                         p_out_tri9);
 
         return n_clipped_triangles_1 + n_clipped_triangles_2 + n_clipped_triangles_3;
+    }
+
+    bool Math::lineIntersect(const Vector3 &p_edge_start, const Vector3 &p_edge_end, const Vector3 &p_line_start,
+                             const Vector3 &p_line_end, Vector3 &intersection) {
+        double a1 = (p_edge_end.y() - p_edge_start.y()) / (p_edge_end.x() - p_edge_start.x());
+        double b1 = p_edge_start.y() - a1 * p_edge_start.x();
+        double a2 = (p_line_end.y() - p_line_start.y()) / (p_line_end.x() - p_line_start.x());
+        double b2 = p_line_start.y() - a2 * p_line_start.x();
+
+        if (a1 == a2) {
+//            Logger::warning("Lines are parallel or collinear!");
+            intersection = Vector3Zero;
+            return false;
+        }
+
+        double x = (b2 - b1) / (a1 - a2);
+        double y = a1 * x + b1;
+        if (!(x > p_edge_start.x() && x > p_edge_end.x()) && !(x < p_edge_start.x() && x < p_edge_end.x()) &&
+            !(x > p_line_start.x() && x > p_line_end.x()) && !(x < p_line_start.x() && x < p_line_end.x()) &&
+            !(y > p_edge_start.y() && y > p_edge_end.y()) && !(y < p_edge_start.y() && y < p_edge_end.y()) &&
+            !(y > p_line_start.y() && y > p_line_end.y()) && !(y < p_line_start.y() && y < p_line_end.y())) {
+
+            intersection.x() = x;
+            intersection.y() = y;
+            intersection.z() = (p_line_start.z() + p_line_end.z()) / 2.0;
+            return true;
+
+        }
+
+//        if ((x > p_edge_start.x() && x < p_edge_end.x() && x < p_line_end.x() && x > p_line_start.x() &&
+//             y < p_edge_end.y() && y > p_edge_start.y() && y < p_line_end.y() && y > p_line_start.y())) {
+//
+//            return Vector3(x, y, (p_line_start.z() + p_line_end.z()) / 2.0);
+//        }
+        return false;
     }
 }

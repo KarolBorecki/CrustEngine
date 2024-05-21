@@ -59,8 +59,12 @@ namespace Crust {
          * @brief Start the drawing.
          *
          * @details Starts the drawing. Should be called before each draw frame before any drawing is done and after the window is created.
+         *
+         * @param p_background_r The red color of the background. 0-255.
+         * @param p_background_g The green color of the background. 0-255.
+         * @param p_background_b The blue color of the background. 0-255.
          */
-        void onDrawStart();
+        void onDrawStart(uint8_t p_background_r, uint8_t p_background_g, uint8_t p_background_b);
 
         /**
          * @brief End the drawing.

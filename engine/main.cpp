@@ -14,11 +14,11 @@ int main(int argc, char *argv[]) {
     camera.attachScript(controller);
     scene.setMainCamera(camera);
 
-    uint8_t cube_count_x = 2;
+    uint8_t cube_count_x = 3;
     uint8_t cube_count_y = 2;
     uint8_t cube_count_z = 2;
     float cube_size = 0.3;
-    float cube_spacing = 0.607; // cubes are of size 2
+    float cube_spacing = 0.62; // cubes are of size 2
     for (uint8_t x = 0; x < cube_count_x; x++) {
         for (uint8_t y = 0; y < cube_count_y; y++) {
             for (uint8_t z = 0; z < cube_count_z; z++) {
@@ -27,14 +27,22 @@ int main(int argc, char *argv[]) {
                 cube->transform().setPosition(x * cube_spacing, y * cube_spacing, z * cube_spacing);
                 cube->transform().setEulerRotation(0.0, 0.0, 0.0);
                 cube->getMaterial().setDiffuse(
-                        {(uint8_t) (120 + x * 150 / cube_count_x),
-                         (uint8_t) (120 + y * 150 / cube_count_x),
-                         (uint8_t) (120 + z * 150 / cube_count_x),
+                        {(uint8_t)(80 + x * 170 / cube_count_x),
+                         (uint8_t)(80 + y * 170 / cube_count_x),
+                         (uint8_t)(80 + z * 170 / cube_count_x),
                          255});
                 scene.addObject(*cube);
             }
         }
     }
+
+    Crust::RenderObject *video = new Crust::RenderObject("/Users/karolborecki/Desktop/cube/VideoShip.obj");
+    video->transform().setSize(cube_size, cube_size, cube_size);
+    video->transform().setPosition(2, 2, 2);
+    video->transform().setEulerRotation(0.0, 0.0, 0.0);
+    video->getMaterial().setDiffuse(
+            {50, 143, 164, 255});
+    scene.addObject(*video);
 
 //    Crust::RenderObject cube1("/Users/karolborecki/Desktop/cube/cube.obj");
 //    cube1.transform().setSize(1, 0.1, 0.1);
@@ -173,7 +181,7 @@ int main(int argc, char *argv[]) {
     Crust::InputHandler::beginInputMonitoring();
     while (!wrapper.shouldClose()) {
         Crust::InputHandler::pollEvent();
-        wrapper.onDrawStart();
+        wrapper.onDrawStart(10, 10, 10);
         if (Crust::InputHandler::isPressed(Crust::Key::KEY_SPACE)) {
             wrapper.drawLine(v1.x(), v1.y(), v2.x(), v2.y(), 255, 255, 255, 255);
             wrapper.drawLine(v1.x(), v1.y(), v3.x(), v3.y(), 255, 255, 255, 255);

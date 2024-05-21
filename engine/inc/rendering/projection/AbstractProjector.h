@@ -10,6 +10,7 @@
 #include "math/Vector4.h"
 #include <random>
 #include <algorithm>
+#include "input/InputHandler.h"
 
 
 namespace Crust {
@@ -48,9 +49,9 @@ namespace Crust {
             return a.x() * b.y() - a.y() * b.x();
         }
 
-        bool
-        linesIntersect(const Vector3 &p1, const Vector3 &p2, const Vector3 &q1, const Vector3 &q2,
-                       Vector3 &intersection) {
+        bool linesIntersect(const Vector3 &p1, const Vector3 &p2,
+                            const Vector3 &q1, const Vector3 &q2,
+                            Vector3 &intersection) {
             Vector3 r = p2 - p1;
             Vector3 s = q2 - q1;
             double rxs = cross2D(r, s);
@@ -183,9 +184,7 @@ namespace Crust {
                 axes[i + 3] = crossProduct(edges2[i], (Vector3) {0, 0, 1});
             }
 
-            for (int i = 0; i < 6; ++i) {
-                Vector3 axis = axes[i];
-
+            for (auto axis: axes) {
                 double minA = project(axis, t1.v1);
                 double maxA = minA;
                 for (int j = 1; j < 3; ++j) {
@@ -222,7 +221,7 @@ namespace Crust {
          *
          * @param p_light - Light source which emits the light on the scene.
          */
-        virtual void setupLightning(LightSource &p_light) = 0; // TODO handle multiple lights?
+        virtual void setupLightning(LightSource &p_light, uint8_t p_ambient_light) = 0; // TODO handle multiple lights?
 
         /**
          * @brief Projects the Render object and saves projected faces to the #m_projection_data vector.
@@ -237,33 +236,52 @@ namespace Crust {
          * @return std::vector<ProjectionData_t> The projection data.
          */
         inline virtual std::vector<ProjectionData_t> retrieveProjections() {
+            sort(m_projection_data.begin(), m_projection_data.end(),
+                 [](const ProjectionData &a, const ProjectionData &b) {
+                     /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
+                     double za = Math::sqrt(a.v1.z() * a.v1.z() + a.v2.z() * a.v2.z() + a.v3.z() * a.v3.z());
+                     double zb = Math::sqrt(b.v1.z() * b.v1.z() + b.v2.z() * b.v2.z() + b.v3.z() * b.v3.z());
+
+                     return za > zb;
+                 });
 #ifndef CRUST_STOP_TRIANGLE_DIVISION_IN_PROJECTION_SORTING
             std::vector<ProjectionData_t> result;
-            for (size_t i = 0; i < m_projection_data.size(); ++i) {
-                for (size_t j = i + 1; j < m_projection_data.size(); ++j) {
-                    if (trianglesOverlap(m_projection_data[i], m_projection_data[j])) {
-                        auto split1 = splitTriangle(m_projection_data[i], m_projection_data[j]);
-                        auto split2 = splitTriangle(m_projection_data[j], m_projection_data[i]);
 
-                        for (const auto &t: split1) {
-                            result.push_back({t});
+            if (InputHandler::isPressed(Key::KeyCode::KEY_O)) {
+                for (size_t i = 0; i < m_projection_data.size(); ++i) {
+                    for (size_t j = i + 1; j < m_projection_data.size(); ++j) {
+                        if (trianglesOverlap(m_projection_data[i], m_projection_data[j])) {
+                            auto split1 = splitTriangle(m_projection_data[i], m_projection_data[j]);
+                            auto split2 = splitTriangle(m_projection_data[j], m_projection_data[i]);
+
+                            for (const auto &t: split1) {
+                                result.push_back({t});
+                            }
+                            for (const auto &t: split2) {
+                                result.push_back({t});
+                            }
+                        } else {
+                            result.push_back(m_projection_data[i]);
+                            result.push_back(m_projection_data[j]);
                         }
-                        for (const auto &t: split2) {
-                            result.push_back({t});
-                        }
-                    } else {
-                        result.push_back(m_projection_data[i]);
-                        result.push_back(m_projection_data[j]);
                     }
                 }
+            } else {
+                result = m_projection_data;
             }
+# else
+            std::vector<ProjectionData_t> result = m_projection_data;
 #endif
 
             sort(result.begin(), result.end(),
                  [](const ProjectionData &a, const ProjectionData &b) {
                      /* https://en.wikipedia.org/wiki/Painter%27s_algorithm */
-                     double za = (a.v1.z() + a.v2.z() + a.v3.z()) / 3;
-                     double zb = (b.v1.z() + b.v2.z() + b.v3.z()) / 3;
+//                     double za = (a.v1.z() + a.v2.z() + a.v3.z()) / 3;
+//                     double zb = (b.v1.z() + b.v2.z() + b.v3.z()) / 3;
+//                     double za = Math::min(a.v1.z(), a.v2.z(), a.v3.z());
+//                     double zb = Math::min(b.v1.z(), b.v2.z(), b.v3.z());
+                     double za = Math::sqrt(a.v1.z() * a.v1.z() + a.v2.z() * a.v2.z() + a.v3.z() * a.v3.z());
+                     double zb = Math::sqrt(b.v1.z() * b.v1.z() + b.v2.z() * b.v2.z() + b.v3.z() * b.v3.z());
                      return za > zb;
                  });
 
@@ -301,6 +319,7 @@ namespace Crust {
         Matrix4x4f m_translation_matrix; /** !< The translation matrix. */
 
         Vector3 m_light_direction; /** !< The direction of the light source. */
+        uint8_t m_ambient_light; /** !< The ambient light intensity. */
     };
 
 }

@@ -5,7 +5,7 @@
 namespace Crust {
     void PerspectiveProjector::setupCamera(Camera &camera) {
         // Calculate projection matrix
-        static float q;
+        static double q;
         m_projection_matrix(0, 0) = m_aspect_ratio * camera.getFFovRad();
         m_projection_matrix(1, 1) = camera.getFFovRad();
         m_projection_matrix(2, 2) = camera.getFFar() / (camera.getFFar() - camera.getFNear());
@@ -15,8 +15,9 @@ namespace Crust {
         m_view_matrix = camera.transform().transformMatrix();
     }
 
-    void PerspectiveProjector::setupLightning(LightSource &p_light) {
+    void PerspectiveProjector::setupLightning(LightSource &p_light, uint8_t p_ambient_light) {
         m_light_direction = p_light.direction();
+        m_ambient_light = p_ambient_light;
     }
 
     void PerspectiveProjector::project(
@@ -37,7 +38,12 @@ namespace Crust {
             transformedP2 *= m_translation_matrix;
             transformedP3 *= m_translation_matrix;
 
-            transformedP1 *= m_view_matrix;
+            Vector3 referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
+            Vector3 light_normal = Math::normal(referencePoint,
+                                                {transformedP2.x(), transformedP2.y(), transformedP2.z()},
+                                                {transformedP3.x(), transformedP3.y(), transformedP3.z()});
+
+            transformedP1 *= m_view_matrix; // SHOULD BE DONE AFTER LIGHT CALCULATIONS !!!!
             transformedP2 *= m_view_matrix;
             transformedP3 *= m_view_matrix;
 
@@ -60,21 +66,20 @@ namespace Crust {
                 transformedP2 << tri.getVertex(1).x(), tri.getVertex(1).y(), tri.getVertex(1).z(), transformedP2.w();
                 transformedP3 << tri.getVertex(2).x(), tri.getVertex(2).y(), tri.getVertex(2).z(), transformedP3.w();
 
-                Vector3 referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
+                referencePoint = {transformedP1.x(), transformedP1.y(), transformedP1.z()};
                 Vector3 normal = Math::normal(referencePoint,
                                               {transformedP2.x(), transformedP2.y(), transformedP2.z()},
                                               {transformedP3.x(), transformedP3.y(), transformedP3.z()});
 
 #ifndef CRUST_RENDERER_STOP_CULLING
-                if (normal.dot(referencePoint) > 0.0) {
+                if (normal.dot(referencePoint) >= 0.0) {
                     continue;
                 }
 
 #endif
                 static uint8_t light = 0;
-                if (m_light_direction.dot(normal) > 0)
-                    m_light_direction *= -1;
-                light = m_light_direction.dot(normal) * 255;
+                light = m_light_direction.dot(light_normal) * 255;
+                light += m_ambient_light;
 
                 // Projection
                 transformedP1 *= m_projection_matrix;

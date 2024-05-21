@@ -20,11 +20,12 @@ namespace Crust {
     }
 
     void Renderer::renderScene(Scene &scene) {
-        m_lib_2d.onDrawStart();
+        uint8_t scene_ambient_light = scene.getAmbientIntensivity();
+        m_lib_2d.onDrawStart(scene_ambient_light, scene_ambient_light, scene_ambient_light);
 
         m_projector->setupCamera(scene.getMainCamera());
         if (!scene.getLights().empty()) {
-            m_projector->setupLightning(*scene.getLights()[0]);
+            m_projector->setupLightning(*scene.getLights()[0], scene.getAmbientIntensivity());
         } else {
             Logger::warning("No lights in the scene!");
         }
@@ -35,9 +36,18 @@ namespace Crust {
 
         for (auto data: m_projector->retrieveProjections()) {
 #ifndef CRUST_RENDERER_DRAW_WIREFRAME
-            m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(),
-                                  data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255,
-                                  data.a);
+            if (InputHandler::isPressed(Key::KeyCode::KEY_L)) {
+                m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255,
+                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
+                m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255,
+                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
+                m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255,
+                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
+            } else {
+                m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(),
+                                      data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255,
+                                      data.a);
+            }
 #else
             m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255,
                               data.g * data.light / 255, data.b * data.light / 255, data.a);

@@ -20,8 +20,8 @@ namespace Crust {
         return m_is_running == SDL_FALSE;
     }
 
-    void Library2DWrapper::onDrawStart() {
-        SDL_SetRenderDrawColor(m_renderer, 10, 10, 10, 255); // background color
+    void Library2DWrapper::onDrawStart(uint8_t p_background_r, uint8_t p_background_g, uint8_t p_background_b) {
+        SDL_SetRenderDrawColor(m_renderer, p_background_r, p_background_g, p_background_b, 255); // background color
         SDL_RenderClear(m_renderer);
     }
 

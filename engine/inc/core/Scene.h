@@ -129,6 +129,13 @@ namespace Crust {
         std::vector<LightSource *> getLights() const;
 
         /**
+         * @brief Getter for #m_ambient_intensivity field.
+         *
+         * @return #m_ambient_intensivity field.
+         */
+        uint8_t getAmbientIntensivity() const;
+
+        /**
          * @brief Getter for #m_render_objects field.
          *
          * @return #m_render_objects field.
@@ -154,6 +161,8 @@ namespace Crust {
         std::vector<Object *> m_objects; /**< Objects in the scene. */
         std::vector<LightSource *> m_lights; /**< Light sources in the scene. */
         std::vector<RenderObject *> m_render_objects; /**< Renderable objects in the scene. */
+
+        uint8_t m_ambient_intensivity = DEFAULT_SCENE_AMBIENT_LIGHT; /**< Ambient light intensivity. */
     };
 }
 

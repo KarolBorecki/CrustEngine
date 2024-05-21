@@ -13,6 +13,58 @@ namespace Crust {
     class Math {
     public:
         /**
+         * @brief Returns the minimum of two numbers. Base for the variadic method.
+         *
+         * @tparam T - type of the numbers.
+         * @param a - first number.
+         * @return a - the first number.
+         */
+        template<typename T>
+        static T min(T a) {
+            return a;
+        }
+
+        /**
+         * @brief Returns the minimum of two numbers.
+         *
+         * @tparam T - type of the numbers.
+         * @param a - first number.
+         * @param Args - the following numbers.
+         * @return The minimum of the given numbers.
+         */
+        template<typename T, typename... Args>
+        static T min(T first, Args... args) {
+            T min_of_rest = min(args...);
+            return (first < min_of_rest) ? first : min_of_rest;
+        }
+
+        /**
+         * @brief Returns the maximum of two numbers. Base for the variadic method.
+         *
+         * @tparam T - type of the numbers.
+         * @param a - first number.
+         * @return a - the first number.
+         */
+        template<typename T>
+        static T max(T a) {
+            return a;
+        }
+
+        /**
+         * @brief Returns the maximum of two numbers.
+         *
+         * @tparam T - type of the numbers.
+         * @param a - first number.
+         * @param Args - the following numbers.
+         * @return The maximum of the given numbers.
+         */
+        template<typename T, typename... Args>
+        static T max(T first, Args... args) {
+            T min_of_rest = min(args...);
+            return (first > min_of_rest) ? first : min_of_rest;
+        }
+
+        /**
          * @brief Compares two floating point numbers with a given margin of error.
          *
          * @param p_a The first number to compare.
@@ -58,7 +110,7 @@ namespace Crust {
          *
          * @return The power of 2 of the number.
          */
-        static float pow2(float p_a);
+        static double pow2(double p_a);
 
         /**
          * @brief Returns the square root of a number.
@@ -67,7 +119,7 @@ namespace Crust {
          *
          * @return The square root of the number.
          */
-        static float sqrt(float p_a);
+        static double sqrt(double p_a);
 
         /**
          * @brief Returns the radians of a number.
@@ -76,7 +128,7 @@ namespace Crust {
          *
          * @return The radians of the number.
          */
-        static float degreesToRadians(int p_degrees);
+        static double degreesToRadians(int p_degrees);
 
         /**
          * @brief Returns the degrees of a number.
@@ -85,7 +137,7 @@ namespace Crust {
          *
          * @return The degrees of the number.
          */
-        static int radiansToDegrees(float p_radians);
+        static int radiansToDegrees(double p_radians);
 
         /**
          * @brief Returns the tangens of a number.
@@ -94,7 +146,7 @@ namespace Crust {
          *
          * @return The tangens of the number.
          */
-        static float tan(float p_t);
+        static double tan(double p_t);
 
         /**
          * @brief Returns the sin of a number.
@@ -103,7 +155,7 @@ namespace Crust {
          *
          * @return The sin of the number.
          */
-        static float sin(float p_t);
+        static double sin(double p_t);
 
         /**
          * @brief Returns the cos of a number.
@@ -112,7 +164,7 @@ namespace Crust {
          *
          * @return The cos of the number.
          */
-        static float cos(float p_t);
+        static double cos(double p_t);
 
         /**
          * @brief Returns the square root of a plane defined by the verticies of the vectors.
@@ -142,6 +194,10 @@ namespace Crust {
         static Vector3 v3IntersectEdge(const Vector3 &p_edge_start, const Vector3 &p_edge_end,
                                        const Vector3 &p_line_start, const Vector3 &p_line_end,
                                        const Vector3 &p_default_value = Vector3Zero);
+
+        static bool lineIntersect(const Vector3 &p_edge_start, const Vector3 &p_edge_end,
+                                  const Vector3 &p_line_start, const Vector3 &p_line_end,
+                                  Vector3 &intersection);
 
         static uint8_t triangle3DClipAgainstPlane(const Vector3 &p_plane_p, const Vector3 &p_plane_n,
                                                   Triangle &p_in_tri, Triangle &p_out_tri1, Triangle &p_out_tri2);
