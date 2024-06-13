@@ -41,8 +41,9 @@ namespace Crust {
             Vector3 v1;
             Vector3 v2;
             Vector3 v3;
-            uint8_t r, g, b, a;
-            uint8_t light = 0;
+            Color v1_color;
+            Color v2_color;
+            Color v3_color;
         } ProjectionData_t;
 
         double cross2D(const Vector3 &a, const Vector3 &b) {
@@ -120,8 +121,8 @@ namespace Crust {
             for (size_t i = 0; i < points.size(); ++i) {
                 for (size_t j = i + 1; j < points.size(); ++j) {
                     for (size_t k = j + 1; k < points.size(); ++k) {
-                        ProjectionData_t newTriangle = {points[i], points[j], points[k], t1.r, t1.g, t1.b, t1.a,
-                                                        t1.light};
+                        ProjectionData_t newTriangle = {points[i], points[j], points[k], t1.v1_color, t1.v2_color,
+                                                        t1.v3_color};
                         bool valid = true;
                         for (size_t m = 0; m < points.size(); ++m) {
                             if (m != i && m != j && m != k) {
@@ -314,12 +315,13 @@ namespace Crust {
 
         std::vector<ProjectionData_t> m_projection_data; /** !< The data of the projection. Holds all projections made in current frame */
 
+        Camera *m_camera; /** !< The camera. */
         Matrix4x4f m_projection_matrix; /** !< The projection matrix. */
         Matrix4x4f m_view_matrix; /** !< The view matrix. */
         Matrix4x4f m_translation_matrix; /** !< The translation matrix. */
 
-        Vector3 m_light_direction; /** !< The direction of the light source. */
-        uint8_t m_ambient_light; /** !< The ambient light intensity. */
+        LightSource m_light; /** !< The current light source on the scene. */
+        float m_ambient_light; /** !< The ambient light intensity. */
     };
 
 }

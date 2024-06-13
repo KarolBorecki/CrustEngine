@@ -104,13 +104,33 @@ namespace Crust {
         static float abs(float p_a);
 
         /**
+         * @brief Returns the power of a number.
+         *
+         * @param p_a The number to get the power of.
+         * @param p_b The power to raise the number to.
+         *
+         * @return The power of the number.
+         */
+        static uint32_t power(uint32_t p_a, uint32_t p_b);
+
+        /**
+         * @brief Returns the power of a number.
+         *
+         * @param p_a The number to get the power of.
+         * @param p_b The power to raise the number to.
+         *
+         * @return The power of the number.
+         */
+        static double power(double p_a, double p_b);
+
+        /**
          * @brief Returns the power of 2 of a number.
          *
          * @param p_a The number to get the power of 2 of.
          *
          * @return The power of 2 of the number.
          */
-        static double pow2(double p_a);
+        static double power2(double p_a);
 
         /**
          * @brief Returns the square root of a number.

@@ -21,15 +21,6 @@ namespace Crust {
 //        POINT = 1, // not implemented
 //        SPOT = 2 // not implemented
     };
-
-    enum LightIntensity : uint8_t {
-        INTENSIVITY_DARK = 0,
-        INTENSIVITY_LOW = 64,
-        INTENSIVITY_MEDIUM = 128,
-        INTENSIVITY_BRIGHT = 192,
-        INTENSIVITY_HIGH = 232,
-        INTENSIVITY_MAX = 255
-    };
 }
 
 

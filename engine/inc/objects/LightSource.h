@@ -24,7 +24,7 @@ namespace Crust {
          * @param p_type Type of the light source.
          * @param p_intensity Intensity of the light source.
          */
-        LightSource(LightType p_type, LightIntensity p_intensity);
+        LightSource(LightType p_type, float p_intensity);
 
         /**
          * @brief Destroy the LightSource object.
@@ -50,14 +50,14 @@ namespace Crust {
          *
          * @param p_intensity Intensity of the light source.
          */
-        void setIntensity(LightIntensity p_intensity);
+        void setIntensity(float p_intensity);
 
         /**
          * @brief Get the intensity of the light source.
          *
          * @return Intensity of the light source.
          */
-        LightIntensity getIntensity() const;
+        float getIntensity() const;
 
         /**
          * @brief Get the direction of the light source.
@@ -68,7 +68,7 @@ namespace Crust {
 
     private:
         LightType m_type{Crust::DEFAULT_LIGHT_TYPE}; /**< Type of the light source. */
-        LightIntensity m_intensity{Crust::DEFAULT_LIGHT_INTENSITY}; /**< Intensity of the light source. */
+        float m_intensity{Crust::DEFAULT_LIGHT_INTENSITY}; /**< Intensity of the light source. */
     };
 }
 

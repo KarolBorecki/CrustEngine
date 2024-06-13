@@ -108,13 +108,23 @@ namespace Crust {
          *
          * @param p_x The x position of the triangle's point.
          * @param p_y The y position of the triangle's point.
-         * @param r The red color of the pixel. 0-255.
-         * @param g The green color of the pixel. 0-255.
-         * @param b The blue color of the pixel. 0-255.
-         * @param a The alpha color of the pixel. 0-255.
+         * @param r_v1 The red color of the vertex 1. 0-255.
+         * @param g_v1 The green color of the vertex 1. 0-255.
+         * @param b_v1 The blue color of the vertex 1. 0-255.
+         * @param a_v1 The alpha color of the vertex 1. 0-255.
+         * @param r_v2 The red color of the vertex 2. 0-255.
+         * @param g_v2 The green color of the vertex 2. 0-255.
+         * @param b_v2 The blue color of the vertex 2. 0-255.
+         * @param a_v2 The alpha color of the vertex 2. 0-255.
+         * @param r_v3 The red color of the vertex 3. 0-255.
+         * @param g_v3 The green color of the vertex 3. 0-255.
+         * @param b_v3 The blue color of the vertex 3. 0-255.
+         * @param a_v3 The alpha color of the vertex 3. 0-255.
          */
-        void drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t r, uint8_t g,
-                          uint8_t b, uint8_t a);
+        void drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
+                          uint8_t r_v1, uint8_t g_v1, uint8_t b_v1, uint8_t a_v1,
+                          uint8_t r_v2, uint8_t g_v2, uint8_t b_v2, uint8_t a_v2,
+                          uint8_t r_v3, uint8_t g_v3, uint8_t b_v3, uint8_t a_v3);
 
         /**
          * @brief Draw a hollow triangle on the window in greyscale.
@@ -123,14 +133,26 @@ namespace Crust {
          *
          * @param p_x1 The x position of the triangle's point.
          * @param p_y1 The y position of the triangle's point.
-         * @param r The red color of the pixel. 0-255.
-         * @param g The green color of the pixel. 0-255.
-         * @param b The blue color of the pixel. 0-255.
-         * @param a The alpha color of the pixel. 0-255.
+         * @param p_x The x position of the triangle's point.
+         * @param p_y The y position of the triangle's point.
+         * @param r_v1 The red color of the vertex 1. 0-255.
+         * @param g_v1 The green color of the vertex 1. 0-255.
+         * @param b_v1 The blue color of the vertex 1. 0-255.
+         * @param a_v1 The alpha color of the vertex 1. 0-255.
+         * @param r_v2 The red color of the vertex 2. 0-255.
+         * @param g_v2 The green color of the vertex 2. 0-255.
+         * @param b_v2 The blue color of the vertex 2. 0-255.
+         * @param a_v2 The alpha color of the vertex 2. 0-255.
+         * @param r_v3 The red color of the vertex 3. 0-255.
+         * @param g_v3 The green color of the vertex 3. 0-255.
+         * @param b_v3 The blue color of the vertex 3. 0-255.
+         * @param a_v3 The alpha color of the vertex 3. 0-255.
          */
         void
-        drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3, uint8_t r, uint8_t g,
-                           uint8_t b, uint8_t a);
+        drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
+                           uint8_t r_v1, uint8_t g_v1, uint8_t b_v1, uint8_t a_v1,
+                           uint8_t r_v2, uint8_t g_v2, uint8_t b_v2, uint8_t a_v2,
+                           uint8_t r_v3, uint8_t g_v3, uint8_t b_v3, uint8_t a_v3);
 
         /**
          * @brief Draw a line on the window in greyscale.

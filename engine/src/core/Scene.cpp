@@ -92,7 +92,7 @@ namespace Crust {
         return m_lights;
     }
 
-    uint8_t Scene::getAmbientIntensivity() const {
+    float Scene::getAmbientIntensivity() const {
         return m_ambient_intensivity;
     }
 

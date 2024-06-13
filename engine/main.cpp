@@ -27,10 +27,11 @@ int main(int argc, char *argv[]) {
                 cube->transform().setPosition(x * cube_spacing, y * cube_spacing, z * cube_spacing);
                 cube->transform().setEulerRotation(0.0, 0.0, 0.0);
                 cube->getMaterial().setDiffuse(
-                        {(uint8_t)(80 + x * 170 / cube_count_x),
-                         (uint8_t)(80 + y * 170 / cube_count_x),
-                         (uint8_t)(80 + z * 170 / cube_count_x),
-                         255});
+                        {(float) ((80 + x * 90 / cube_count_x) / 255),
+                         (float) ((80 + y * 90 / cube_count_x) / 255),
+                         (float) ((80 + z * 90 / cube_count_x) / 255),
+                         1.0f});
+                cube->getMaterial().setShininess(x * y * z * 7);
                 scene.addObject(*cube);
             }
         }
@@ -41,7 +42,7 @@ int main(int argc, char *argv[]) {
     video->transform().setPosition(2, 2, 2);
     video->transform().setEulerRotation(0.0, 0.0, 0.0);
     video->getMaterial().setDiffuse(
-            {50, 143, 164, 255});
+            {0.1f, 0.5f, 0.9f, 1.0f});
     scene.addObject(*video);
 
 //    Crust::RenderObject cube1("/Users/karolborecki/Desktop/cube/cube.obj");
@@ -66,188 +67,12 @@ int main(int argc, char *argv[]) {
 //    scene.addObject(cube3);
 
 
-    Crust::LightSource light(Crust::LightType::DIRECTIONAL, Crust::LightIntensity::INTENSIVITY_BRIGHT);
+    Crust::LightSource light(Crust::LightType::DIRECTIONAL, 0.79f);
     light.transform().setEulerRotation(0.4, -0.9, -0.89);
     scene.addObject(light);
 
     Crust::Window *window = core.openWindow(900, 800);
     window->loadScene(scene);
     window->startRenderingLoop();
-    return 0;
-    Crust::Vector3 intersection;
-    intersection = Crust::Math::v3IntersectEdge({0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}, {1.0, 1.0, 0.0},
-                                                {1.0, 1.0, 0.0});
-    std::cout << "Intersection: " << intersection.x() << " " << intersection.y() << " " << intersection.z()
-              << std::endl;
-    std::cout << std::endl;
-
-    Crust::Vector3 v1(200.0, 25.0, 0.0);
-    Crust::Vector3 v2(350.0, 200.0, 0.0);
-    Crust::Vector3 v3(50.0, 150.0, 0.0);
-    Crust::Triangle tri;
-    tri.setVertex(0, {100.0, 50.0, 0.0});
-    tri.setVertex(1, {300.0, 50.0, 0.0});
-    tri.setVertex(2, {150.0, 250.0, 0.0});
-    Crust::Triangle out_tri1;
-    Crust::Triangle out_tri2;
-    Crust::Triangle out_tri3;
-    Crust::Triangle out_tri4;
-    Crust::Triangle out_tri5;
-    Crust::Triangle out_tri6;
-    Crust::Triangle out_tri7;
-    Crust::Triangle out_tri8;
-    Crust::Triangle out_tri9;
-    uint8_t tri_count = Crust::Math::triangle2DClipAgainstEdge(v1, v2, tri, out_tri1, out_tri2, out_tri3);
-
-    uint8_t tri_count2 = Crust::Math::triangle2DClipAgainstEdge(v1, v3, tri, out_tri4, out_tri5, out_tri6);
-
-    uint8_t tri_count3 = Crust::Math::triangle2DClipAgainstEdge(v3, v2, tri, out_tri7, out_tri8, out_tri9);
-
-    std::cout << "Triangle count: " << (int) tri_count << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 1: " << out_tri1.getVertex(0).x() << " " << out_tri1.getVertex(0).y() << " "
-              << out_tri1.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri1.getVertex(1).x() << " " << out_tri1.getVertex(1).y() << " "
-              << out_tri1.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri1.getVertex(2).x() << " " << out_tri1.getVertex(2).y() << " "
-              << out_tri1.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 2: " << out_tri2.getVertex(0).x() << " " << out_tri2.getVertex(0).y() << " "
-              << out_tri2.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri2.getVertex(1).x() << " " << out_tri2.getVertex(1).y() << " "
-              << out_tri2.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri2.getVertex(2).x() << " " << out_tri2.getVertex(2).y() << " "
-              << out_tri2.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 3: " << out_tri3.getVertex(0).x() << " " << out_tri3.getVertex(0).y() << " "
-              << out_tri3.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri3.getVertex(1).x() << " " << out_tri3.getVertex(1).y() << " "
-              << out_tri3.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri3.getVertex(2).x() << " " << out_tri3.getVertex(2).y() << " "
-              << out_tri3.getVertex(2).z() << std::endl;
-
-    std::cout << std::endl;
-    std::cout << "Triangle count: " << (int) tri_count2 << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 1: " << out_tri4.getVertex(0).x() << " " << out_tri4.getVertex(0).y() << " "
-              << out_tri4.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri4.getVertex(1).x() << " " << out_tri4.getVertex(1).y() << " "
-              << out_tri4.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri4.getVertex(2).x() << " " << out_tri4.getVertex(2).y() << " "
-              << out_tri4.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 2: " << out_tri5.getVertex(0).x() << " " << out_tri5.getVertex(0).y() << " "
-              << out_tri5.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri5.getVertex(1).x() << " " << out_tri5.getVertex(1).y() << " "
-              << out_tri5.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri5.getVertex(2).x() << " " << out_tri5.getVertex(2).y() << " "
-              << out_tri5.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 3: " << out_tri6.getVertex(0).x() << " " << out_tri6.getVertex(0).y() << " "
-              << out_tri6.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri6.getVertex(1).x() << " " << out_tri6.getVertex(1).y() << " "
-              << out_tri6.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri6.getVertex(2).x() << " " << out_tri6.getVertex(2).y() << " "
-              << out_tri6.getVertex(2).z() << std::endl;
-
-    std::cout << std::endl;
-    std::cout << "Triangle count: " << (int) tri_count3 << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 1: " << out_tri7.getVertex(0).x() << " " << out_tri7.getVertex(0).y() << " "
-              << out_tri7.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri7.getVertex(1).x() << " " << out_tri7.getVertex(1).y() << " "
-              << out_tri7.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 1: " << out_tri7.getVertex(2).x() << " " << out_tri7.getVertex(2).y() << " "
-              << out_tri7.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 2: " << out_tri8.getVertex(0).x() << " " << out_tri8.getVertex(0).y() << " "
-              << out_tri8.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri8.getVertex(1).x() << " " << out_tri8.getVertex(1).y() << " "
-              << out_tri8.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 2: " << out_tri8.getVertex(2).x() << " " << out_tri8.getVertex(2).y() << " "
-              << out_tri8.getVertex(2).z() << std::endl;
-    std::cout << std::endl;
-    std::cout << "Triangle 3: " << out_tri9.getVertex(0).x() << " " << out_tri9.getVertex(0).y() << " "
-              << out_tri9.getVertex(0).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri9.getVertex(1).x() << " " << out_tri9.getVertex(1).y() << " "
-              << out_tri9.getVertex(1).z() << std::endl;
-    std::cout << "Triangle 3: " << out_tri9.getVertex(2).x() << " " << out_tri9.getVertex(2).y() << " "
-              << out_tri9.getVertex(2).z() << std::endl;
-
-
-    Crust::Library2DWrapper wrapper;
-    wrapper.init();
-    wrapper.createWindow(800, 600);
-    Crust::InputHandler::beginInputMonitoring();
-    while (!wrapper.shouldClose()) {
-        Crust::InputHandler::pollEvent();
-        wrapper.onDrawStart(10, 10, 10);
-        if (Crust::InputHandler::isPressed(Crust::Key::KEY_SPACE)) {
-            wrapper.drawLine(v1.x(), v1.y(), v2.x(), v2.y(), 255, 255, 255, 255);
-            wrapper.drawLine(v1.x(), v1.y(), v3.x(), v3.y(), 255, 255, 255, 255);
-            wrapper.drawLine(v2.x(), v2.y(), v3.x(), v3.y(), 255, 255, 255, 255);
-        }
-
-        if (tri_count > 0)
-            wrapper.drawHollowTriangle(out_tri1.getVertex(0).x(), out_tri1.getVertex(0).y(),
-                                       out_tri1.getVertex(1).x(),
-                                       out_tri1.getVertex(1).y(), out_tri1.getVertex(2).x(),
-                                       out_tri1.getVertex(2).y(),
-                                       255, 255, 255, 255);
-        if (tri_count > 1)
-            wrapper.drawHollowTriangle(out_tri2.getVertex(0).x(), out_tri2.getVertex(0).y(),
-                                       out_tri2.getVertex(1).x(),
-                                       out_tri2.getVertex(1).y(), out_tri2.getVertex(2).x(),
-                                       out_tri2.getVertex(2).y(),
-                                       255, 255, 255, 255);
-        if (tri_count > 2)
-            wrapper.drawHollowTriangle(out_tri3.getVertex(0).x(), out_tri3.getVertex(0).y(),
-                                       out_tri3.getVertex(1).x(),
-                                       out_tri3.getVertex(1).y(), out_tri3.getVertex(2).x(),
-                                       out_tri3.getVertex(2).y(),
-                                       255, 255, 255, 255);
-
-        if (tri_count2 > 0)
-            wrapper.drawHollowTriangle(out_tri4.getVertex(0).x(), out_tri4.getVertex(0).y(),
-                                       out_tri4.getVertex(1).x(),
-                                       out_tri4.getVertex(1).y(), out_tri4.getVertex(2).x(),
-                                       out_tri4.getVertex(2).y(),
-                                       20, 255, 255, 255);
-
-        if (tri_count2 > 1)
-            wrapper.drawHollowTriangle(out_tri5.getVertex(0).x(), out_tri5.getVertex(0).y(),
-                                       out_tri5.getVertex(1).x(),
-                                       out_tri5.getVertex(1).y(), out_tri5.getVertex(2).x(),
-                                       out_tri5.getVertex(2).y(),
-                                       20, 255, 255, 255);
-        if (tri_count2 > 2)
-            wrapper.drawHollowTriangle(out_tri6.getVertex(0).x(), out_tri6.getVertex(0).y(),
-                                       out_tri6.getVertex(1).x(),
-                                       out_tri6.getVertex(1).y(), out_tri6.getVertex(2).x(),
-                                       out_tri6.getVertex(2).y(),
-                                       20, 255, 255, 255);
-        if (tri_count3 > 0)
-            wrapper.drawHollowTriangle(out_tri7.getVertex(0).x(), out_tri7.getVertex(0).y(),
-                                       out_tri7.getVertex(1).x(),
-                                       out_tri7.getVertex(1).y(), out_tri7.getVertex(2).x(),
-                                       out_tri7.getVertex(2).y(),
-                                       255, 20, 255, 255);
-        if (tri_count3 > 1)
-            wrapper.drawHollowTriangle(out_tri8.getVertex(0).x(), out_tri8.getVertex(0).y(),
-                                       out_tri8.getVertex(1).x(),
-                                       out_tri8.getVertex(1).y(), out_tri8.getVertex(2).x(),
-                                       out_tri8.getVertex(2).y(),
-                                       255, 20, 255, 255);
-        if (tri_count3 > 2)
-            wrapper.drawHollowTriangle(out_tri9.getVertex(0).x(), out_tri9.getVertex(0).y(),
-                                       out_tri9.getVertex(1).x(),
-                                       out_tri9.getVertex(1).y(), out_tri9.getVertex(2).x(),
-                                       out_tri9.getVertex(2).y(),
-                                       255, 20, 255, 255);
-        wrapper.onDrawEnd();
-    }
-
-    wrapper.close();
-
     return 0;
 }

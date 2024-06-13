@@ -49,7 +49,9 @@ namespace Crust {
     }
 
     void Library2DWrapper::drawTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
-                                        uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+                                        uint8_t r_v1, uint8_t g_v1, uint8_t b_v1, uint8_t a_v1,
+                                        uint8_t r_v2, uint8_t g_v2, uint8_t b_v2, uint8_t a_v2,
+                                        uint8_t r_v3, uint8_t g_v3, uint8_t b_v3, uint8_t a_v3) {
         p_x1 = m_width - p_x1;
         p_y1 = m_height - p_y1;
         p_x2 = m_width - p_x2;
@@ -61,17 +63,17 @@ namespace Crust {
                 {
                         {
                                 SDL_FPoint{p_x1, p_y1},
-                                SDL_Color{r, g, b, a},
+                                SDL_Color{r_v1, g_v1, b_v1, a_v1},
                                 SDL_FPoint{0},
                         },
                         {
                                 SDL_FPoint{p_x2, p_y2},
-                                SDL_Color{r, g, b, a},
+                                SDL_Color{r_v2, g_v2, b_v2, a_v2},
                                 SDL_FPoint{0},
                         },
                         {
                                 SDL_FPoint{p_x3, p_y3},
-                                SDL_Color{r, g, b, a},
+                                SDL_Color{r_v3, g_v3, b_v3, a_v3},
                                 SDL_FPoint{0},
                         },
                 };
@@ -79,11 +81,12 @@ namespace Crust {
     }
 
     void Library2DWrapper::drawHollowTriangle(float p_x1, float p_y1, float p_x2, float p_y2, float p_x3, float p_y3,
-                                              uint8_t r, uint8_t g,
-                                              uint8_t b, uint8_t a) {
-        drawLine(p_x1, p_y1, p_x2, p_y2, r, g, b, a);
-        drawLine(p_x2, p_y2, p_x3, p_y3, r, g, b, a);
-        drawLine(p_x3, p_y3, p_x1, p_y1, r, g, b, a);
+                                              uint8_t r_v1, uint8_t g_v1, uint8_t b_v1, uint8_t a_v1,
+                                              uint8_t r_v2, uint8_t g_v2, uint8_t b_v2, uint8_t a_v2,
+                                              uint8_t r_v3, uint8_t g_v3, uint8_t b_v3, uint8_t a_v3) {
+        drawLine(p_x1, p_y1, p_x2, p_y2, r_v1, g_v1, b_v1, a_v1);
+        drawLine(p_x2, p_y2, p_x3, p_y3, r_v2, g_v2, b_v2, a_v2);
+        drawLine(p_x3, p_y3, p_x1, p_y1, r_v3, g_v3, b_v3, a_v3);
     }
 
     void Library2DWrapper::drawLine(uint16_t p_x1, uint16_t p_y1, uint16_t p_x2, uint16_t p_y2, uint8_t r, uint8_t g,

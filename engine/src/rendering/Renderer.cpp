@@ -37,24 +37,30 @@ namespace Crust {
         for (auto data: m_projector->retrieveProjections()) {
 #ifndef CRUST_RENDERER_DRAW_WIREFRAME
             if (InputHandler::isPressed(Key::KeyCode::KEY_L)) {
-                m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255,
-                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
-                m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255,
-                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
-                m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255,
-                                  data.g * data.light / 255, data.b * data.light / 255, data.a);
+                m_lib_2d.drawHollowTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(),
+                                            data.v3.y(),
+                                            data.v1_color.r * 255, data.v1_color.g * 255, data.v1_color.b * 255,
+                                            data.v1_color.a * 255,
+                                            data.v2_color.r * 255, data.v2_color.g * 255, data.v2_color.b * 255,
+                                            data.v2_color.a * 255,
+                                            data.v3_color.r * 255, data.v3_color.g * 255, data.v3_color.b * 255,
+                                            data.v3_color.a * 255);
             } else {
-                m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(),
-                                      data.r * data.light / 255, data.g * data.light / 255, data.b * data.light / 255,
-                                      data.a);
+                m_lib_2d.drawTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(),
+                                      data.v3.y(),
+                                      data.v1_color.r * 255, data.v1_color.g * 255, data.v1_color.b * 255,
+                                      data.v1_color.a * 255,
+                                      data.v2_color.r * 255, data.v2_color.g * 255, data.v2_color.b * 255,
+                                      data.v2_color.a * 255,
+                                      data.v3_color.r * 255, data.v3_color.g * 255, data.v3_color.b * 255,
+                                      data.v3_color.a * 255);
             }
 #else
-            m_lib_2d.drawLine(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.r * data.light / 255,
-                              data.g * data.light / 255, data.b * data.light / 255, data.a);
-            m_lib_2d.drawLine(data.v2.x(), data.v2.y(), data.v3.x(), data.v3.y(), data.r * data.light / 255,
-                              data.g * data.light / 255, data.b * data.light / 255, data.a);
-            m_lib_2d.drawLine(data.v3.x(), data.v3.y(), data.v1.x(), data.v1.y(), data.r * data.light / 255,
-                              data.g * data.light / 255, data.b * data.light / 255, data.a);
+            m_lib_2d.drawHollowTriangle(data.v1.x(), data.v1.y(), data.v2.x(), data.v2.y(), data.v3.x(),
+                                            data.v3.y(),
+                                            data.v1_color.r * 255, data.v1_color.g* 255, data.v1_color.b* 255, data.v1_color.a* 255,
+                                            data.v2_color.r* 255, data.v2_color.g* 255, data.v2_color.b* 255, data.v2_color.a* 255,
+                                            data.v3_color.r* 255, data.v3_color.g* 255, data.v3_color.b* 255, data.v3_color.a* 255);
 #endif
         }
 

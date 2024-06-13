@@ -1,7 +1,7 @@
 #include "objects/LightSource.h"
 
 namespace Crust {
-    LightSource::LightSource(LightType p_type, LightIntensity p_intensity)
+    LightSource::LightSource(LightType p_type, float p_intensity)
             : Object(), m_type(p_type), m_intensity(p_intensity) {
 
     }
@@ -14,11 +14,11 @@ namespace Crust {
         return m_type;
     }
 
-    void LightSource::setIntensity(LightIntensity p_intensity) {
+    void LightSource::setIntensity(float p_intensity) {
         m_intensity = p_intensity;
     }
 
-    LightIntensity LightSource::getIntensity() const {
+    float LightSource::getIntensity() const {
         return m_intensity;
     }
 }

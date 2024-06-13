@@ -1,8 +1,6 @@
 #include "math/Math.h"
 #include <iostream>
 
-#include <iomanip> // TODO delete
-
 namespace Crust {
     bool Math::equal(float p_a, float p_b, float p_epsilon) {
         return Math::abs(p_a - p_b) < p_epsilon;
@@ -24,7 +22,15 @@ namespace Crust {
         return p_a < 0 ? -p_a : p_a;
     }
 
-    double Math::pow2(double p_a) {
+    double Math::power(double p_a, double p_b) {
+        return pow(p_a, p_b);
+    }
+
+    uint32_t Math::power(uint32_t p_a, uint32_t p_b) {
+        return pow(p_a, p_b);
+    }
+
+    double Math::power2(double p_a) {
         return p_a * p_a;
     }
 
@@ -186,8 +192,8 @@ namespace Crust {
         auto distance_from_edge = [&](const Vector3 &p_point) {
             return ((p_edge_p2.x() - p_edge_p1.x()) * (p_point.y() - p_edge_p1.y()) -
                     (p_point.x() - p_edge_p1.x()) * (p_edge_p2.y() - p_edge_p1.y())) /
-                   (Math::sqrt(Math::pow2(p_edge_p2.x() - p_edge_p1.x()) +
-                               Math::pow2(p_edge_p2.y() - p_edge_p1.y())));
+                   (Math::sqrt(Math::power2(p_edge_p2.x() - p_edge_p1.x()) +
+                               Math::power2(p_edge_p2.y() - p_edge_p1.y())));
         };
 
         double d1 = distance_from_edge(p_in_tri.getVertex(0));

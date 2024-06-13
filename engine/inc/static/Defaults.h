@@ -11,9 +11,9 @@ namespace Crust {
     static const uint8_t DEFAULT_PROJECTOR = Projection::PERSPECTIVE;
 
     static const uint8_t DEFAULT_LIGHT_TYPE = LightType::DIRECTIONAL;
-    static const uint8_t DEFAULT_LIGHT_INTENSITY = LightIntensity::INTENSIVITY_BRIGHT;
+    static const float DEFAULT_LIGHT_INTENSITY = 0.85f;
 
-    static const uint8_t DEFAULT_SCENE_AMBIENT_LIGHT = 16;
+    static const float DEFAULT_SCENE_AMBIENT_LIGHT = 0.1f;
 }
 
 #endif /* CRUSTENGINE_DEFAULTS_H */
